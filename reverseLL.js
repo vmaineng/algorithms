@@ -4,22 +4,22 @@ var reverseList = function (head) {
 
   //Start iterating through at the head(current pointer)
   //look at the next pointer (curr.next)
-  //create a previous pointer
+  //create a previous pointer //initialize it null
   //loop through the original array while current has not hit null
-  //
+  //then switch the pointers to point to prev null
 
-  if (!head) return null;
+  if (head === null || head.next === null) return head;
 
   let current = head;
   let prev = null;
 
   while (current !== null) {
     let next = current.next; //need the next node
-    current.next = prev; // pointer from 3 to pointer 1 //reverse
-    prev = current; //1 becomes 2
-    current = next;
+    current.next = prev; // pointer from 3 to pointer 1 //reverse the pointers
+    prev = current; //1 becomes 2 //increment prev to current
+    current = next; //increment current to = the next node
   }
-  return prev;
+  return prev; 
 };
 
 //console.log(reverseList([1, 2,3,4, 5]))
@@ -52,3 +52,7 @@ var reverseBetween = function (head, left, right) {
 
 
 console.log(reverseBetween([1,2,3,4,5], 2, 4))
+
+//identify which nodes are important to you
+//find 4 nodes
+//then connect them
