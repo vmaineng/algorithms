@@ -56,3 +56,11 @@ console.log(reverseBetween([1,2,3,4,5], 2, 4))
 //identify which nodes are important to you
 //find 4 nodes
 //then connect them
+
+//bring up the worst case scenarios pops up - how much storage it takes
+//worry about the storage of how much it takes
+//vs 100 and 1000 
+//do not need to code brute force solution
+//code more of the optimized solution
+//it's the aggrevate of the other 3 solutions
+//get something done that works
