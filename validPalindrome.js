@@ -8,4 +8,11 @@ const isPalindrome = (s) => {
     //check if they equal each other
     //if they do, keep traversing
     //if they don't, return false
+
+    const newWord = s.toLowerCase();
+    const noSpace = newWord.split("");
+    console.log(noSpace)
+
 }
+
+console.log(isPalindrome('Jump through the window!'))
