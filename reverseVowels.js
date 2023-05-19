@@ -7,27 +7,23 @@ const reverseVowels = (s) => {
 
   //return the string
 
-  let str = s.split("");
-  const vowels = "aeiou";
-  let i = 0;
-  let j = s.length - 1;
+  let letter = s.split("")
+  let vowels = "aeiou"
+  let i= 0;
+  let j = s.length - 1
 
   while (i < j) {
-    if (vowels.includes(str[i]) && vowels.includes(str[j])) {
-      console.log(str[i], str[j]);
-      [str[i], str[j]] = [str[j], str[i] ]
-      i++;
-      j--;
-    }
-     if (!vowels.includes(s[i])) {
-        i++
-    } 
-    if(!vowels.includes(str[j])) {
-       j--
-    }
+      if (vowels.includes(letter[i].toLowerCase()) && vowels.includes(letter[j].toLowerCase())){
+          [ letter[i], letter[j]] = [letter[j], letter[i]]
+          i++
+          j--
+      } else if (!vowels.includes(letter[i].toLowerCase())) {
+          i++
+      } else if (!vowels.includes(letter[j].toLowerCase())) {
+          j--
+      }
   }
-
-  return str.join("");
+  return letter.join("")
 };
 
 console.log(reverseVowels("leetcode"));
