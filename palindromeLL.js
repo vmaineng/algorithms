@@ -21,9 +21,10 @@ const palidromeLL = (head) => {
     // }
     // return true
 
+//optimized method
 
 
-    
+
 }
 
 console.log(palidromeLL([1,2]))
