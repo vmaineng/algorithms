@@ -12,22 +12,36 @@ const longestPalindrome = (s) => {
     //check if they are the same
     //do one more check of the letters on the inside
     //then add to the result
+    //keep track of the length
+
+    //odd vs even
+
+    //check palindrome
+
+  
+    let longest = "";
+    let longestLength = 0;
 
     let left = 0;
-    let right = s.length - 1;
+    let right = 0;
 
-    // ! when do we use split to get each letter
-
-    let letters = s.split("")
-    let longest = ""
-
-    while (left < right) {
-        if (letters[left] === letters[right]) {
-            longest += letters[left], letters[right]
-        }
+    while (left >= 0 && right < s.length && letters[left] === letters[right]) {
+        left--;
+        right++
     }
+
+for (let i = 0; i < s.length; i++) {
+    let i = 0;
+    let 
+}
+
 return longest
 
 }
 
 console.log(longestPalindrome("cbbd"))
+
+//time = O (n^2)
+
+  // ! when do we use split to get each letter
+  // ! when do you traverse through s.length - 1 vs s.length;
