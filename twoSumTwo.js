@@ -11,19 +11,31 @@ const twoSumTwo = (numbers, target) => {
 
 //starting the array at index 1 instead of 0
 
-    let left = 0;
-    let right = numbers.length -1;
+    // let left = 0;
+    // let right = numbers.length -1;
 
-    while (left < right) {
-        let sum = numbers[left] + numbers[right]
+    // while (left < right) {
+    //     let sum = numbers[left] + numbers[right]
 
-        if (sum === target) {
-            return [left, right]
-        } else if (sum > target) {
-            right--
-        } else [
-            left++
-        ]
+    //     if (sum === target) {
+    //         return [left, right]
+    //     } else if (sum > target) {
+    //         right--
+    //     } else [
+    //         left++
+    //     ]
+    // }
+
+    //hashmap method:
+    let answers = {}
+
+    for (let number of numbers) {
+        
+        let dif = target - numbers[number]
+        if (dif in answers) { return [answers[dif]+1, number + 1] }
+       
+            else {answers[numbers[number]] = number}
+            console.log(answers)
     }
 }
 
