@@ -33,8 +33,25 @@ const palidromeLL = (head) => {
 //     return true
 
 //optimized method w/ fast and slow pointer
+//https://leetcode.com/problems/palindrome-linked-list/solutions/1137027/js-python-java-c-easy-floyd-s-reversal-solution-w-explanation/
+//start with both pointers at the head
+//move fast pointer to move 2x faster
+//once the fast pointer reaches the end, the start reaches the middle since it is 2x as fast
 
 
+
+let fast = head
+let slow = head
+
+while (fast && fast.next) {
+    fast = fast.next.next
+    slow = slow.next
+}
+
+let prev = null
+while (slow !== null) {
+
+}
 
 }
 
