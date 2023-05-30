@@ -2,6 +2,7 @@ const palidromeLL = (head) => {
     //palindrome = same as it is forward as it is backward
 
     //brute force method
+    //convert the linked list into an array and checkng there
     //reverse LL 
     //create pointers to point to prev node
     //iterate through while current node does not equal null
@@ -9,19 +10,29 @@ const palidromeLL = (head) => {
     //return true
     //else it's false
 
-    // if (!head) return [];
+//     if (!head) return [];
 
-    // let current = head;
-    // let prev;
+//  let nums = []
 
-    // while (current !== null) {
-    //     let current = current.next
-    //     let prev = current
+//     while (current !== null) {
+//        nums.push(head.val)
+//        //update pointer
+//        head = head.next
+//     }
 
-    // }
-    // return true
+//     let left = 0;
+//     let right = nums.length - 1
+//     while (left < right) {
+//         if (nums[left] !== nums[right]) {
+//             return false
+//         } else {
+//             l++
+//             right--
+//         }
+//     }
+//     return true
 
-//optimized method
+//optimized method w/ fast and slow pointer
 
 
 
