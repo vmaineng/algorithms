@@ -14,4 +14,16 @@
 //ex: remove, remove, remove, add(3), add(1), remove, remove
        //1 ,    2 ,     3,     1,    3
 
+class AddRemove(){
+    constructor(){
+        
+    }
 
+    remove(){
+
+    }
+
+    add(num){
+
+    }
+}
