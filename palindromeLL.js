@@ -42,6 +42,8 @@ const palidromeLL = (head) => {
 
 let fast = head
 let slow = head
+let prev;
+let temp;
 
 while (fast && fast.next) {
     fast = fast.next.next
