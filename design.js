@@ -20,9 +20,10 @@ class AddRemove{
         //use set b/c we only need keys
         //we don't need the values so we don't need to use map
 
-        this.addedNums = {} //can add any numbers
-        this.removedNums = {}
-
+        //this.addedNums = {} //can add any numbers
+        this.removedNums = new Set()
+        this.pq = new MinPriorityQueue()
+        this.pq.enqueue(1)
 
     }
 
@@ -41,9 +42,15 @@ class AddRemove{
 
         //if priority queue is empty, always increment by 1 when queue is empty
 
-
+        //heaps will alwyas be popping off top node and it's a log n
         //looking for smallest one to remove
 
+        //optimized solution:
+        //take from pq
+
+        //print
+
+        //check; add to removedNums if necessary from 
 
     }
 
@@ -53,7 +60,9 @@ class AddRemove{
 
         //if number has been removed from the removedNums, it should show up
         if (removedNums[num]) {
-            addedNums = true
+            //add it back
+            this.pq.enqueue(num)
+            this.removedNums.delete()
         }
     }
 }
