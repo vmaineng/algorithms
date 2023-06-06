@@ -16,7 +16,7 @@ const palidromeLL = (head) => {
 
 //     while (current !== null) {
 //        nums.push(head.val)
-//        //update pointer
+//        update pointer
 //        head = head.next
 //     }
 
