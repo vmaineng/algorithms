@@ -23,13 +23,17 @@ for (let i = 0; i< s.length; i++) {
 
     let left = i; //looking to left
     let right = i; //initialize the pointers to be where your index is //looking to the right
+//console.log(left, right)
+
 
     while(left => 0 && right <= s.length -1) {
         if (s[left] === c) {
+            // console.log(s[left] , c) //pointer ends at the letter found
             difference = i - left //left is smaller than index (i)
             answer.push(difference)
             break;
         } else if ( s[right] === c) {
+            // console.log(s[right] , c) //pointer ends at the letter found
             difference = right - i //right is bigger than index (i)
             answer.push(difference)
             break;
@@ -44,8 +48,12 @@ for (let i = 0; i< s.length; i++) {
 }
 //eeee, e
 //answer = [3, 2, 1, 0, 1, 0 ,0, 1, 2, 2, 1, 0]
-console.log(shortest("loveleetcode", "e"))
+console.log(shortest("baaa", "b"))
            //0, 1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11 = index [i]
+
+//start both pointers at the beginning of string
+//keep looking til you hit the letter, then start going outwards to look at the difference
+
 
 
 //create two pointers next to i pointer - iterate 
