@@ -16,3 +16,6 @@ const isPalindrome = (s) => {
 }
 
 console.log(isPalindrome('Jump through the window!'))
+
+
+https://www.youtube.com/watch?v=jJXJ16kPFWg
