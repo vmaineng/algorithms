@@ -13,6 +13,7 @@ const reverseVowels = (s) => {
   let j = s.length - 1
 
   while (i < j) {
+    //need both values at the indexes to equal vowerl to swap them
       if (vowels.includes(letter[i].toLowerCase()) && vowels.includes(letter[j].toLowerCase())){
           [ letter[i], letter[j]] = [letter[j], letter[i]]
           i++
