@@ -7,7 +7,7 @@ const intersection  = (nums1, nums2) => {
 //space = O(n) = storing a new array of intersection
 
 //optimized method:
-//create start pointer for each index in the array
+//create start pointer for at the first index in each array
 //initialize an array to keep track of same values
 //check if they are the same,
 //then return the value they intersect at
