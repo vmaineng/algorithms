@@ -18,6 +18,7 @@ const removeDuplicates = (nums) => {
   console.log(i);
   //i is pointing to previous value and needs to finish iterating through rest of array
   return i + 1;
+  //i + 1 returns the length of the modified array
 };
 
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
