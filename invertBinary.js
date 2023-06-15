@@ -1,4 +1,24 @@
 const invertTree = (root) => {
+//if the root is empty, return the root
+
+//BFS - level order traversal
+//create queue to store the values
+//then shift and unshift out of the queue the values 
+
+if (root === null) return root;
+
+//calling function recursively for left subtree
+invertTree(root.left)
+
+//calling function recursively for right subtree
+invertTree(root.right)
+
+
+//swapping node values
+let curr = root.left
+root.left = root.right
+root.right = curr
+return root
 
 }
 
