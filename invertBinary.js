@@ -1,7 +1,8 @@
 const invertTree = (root) => {
 //if the root is empty, return the root
 
-//BFS - level order traversal
+//BFS - level order traversal would not work b/c it's not a BST
+// ! uses DFS b/c started at the most left node
 //create queue to store the values
 //then shift and unshift out of the queue the values 
 
