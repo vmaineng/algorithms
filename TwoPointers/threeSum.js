@@ -15,8 +15,13 @@ const threeSum = (nums) => {
   let answer = [];
   nums.sort((a, b) => a - b);
 
+  //edge case - can't have an array less than 3 values since we are doing a 3SUM
+  if (nums.length < 3) return 
+
   //iterate through where nums.length - 2 b/c we need to output 3 answers
   for (let i = 0; i < nums.length - 2; i++) {
+    //if left value is not equal to the same value where pointer i is, b/c if same value, skip it to prevent duplicate answers
+    
     if (i === 0 || nums[i] !== nums[i - 1]) {
       let left = i + 1;
       let right = nums.length - 1;
