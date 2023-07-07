@@ -6,11 +6,13 @@ function count(string) {
     
     //iterate through letter in string
     for (let letter of string) {
-        //update the value for each letter into the hash
-          hash[letter] = (hash[letter] || 0) + 1
-      }
+
+     //update the value for each letter into the hash
+        hash[letter] = (hash[letter] || 0) + 1
+        console.log(hash)
+     }
     
-    return hash;
+    // return hash;
   }
 
   console.log(count("ABD"))
