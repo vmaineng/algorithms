@@ -19,18 +19,46 @@ function twoSum(array, target) {
 
 //optimized solution:
 
-let left = 0;
-let right = array.length - 1
+// let left = 0;
+// let right = array.length - 1
 
-while (left < right) {
-    if (array[left] + array[right] === target) {
-        return [left, right]
-    } else if (array[left] < target) {
-        left++
-    } else {
-        right --
+// while (left < right) {
+//     if (array[left] + array[right] === target) {
+//         return [left, right]
+//     } else if (array[left] < target) {
+//         left++
+//     } else {
+//         right --
+//     }
+// }
+
+//optimized:
+
+    let results = {};
+    
+    for (let i = 0; i < array.length; i++) {
+        //setting key here ; result key of 2
+        // 2 = 0; keeping track of value, and the index
+        //getting value of array and being set to key
+        //store if it doesn't equal to the difference, store the index
+        let difference = target - array[i]
+        
+    
+    //does fridge have vegetables of carrots?
+    //i is further out of object
+    //return i and index you stored (carrots)
+        if (results.hasOwnProperty(difference)) {
+            //{ '2': 1, '3': 0 } stores the index position
+            //looking for the index position
+            //console.log(Object.keys(results)) // 2, 3 => the values at index position are keys
+         //console.log(Object.values(results)) // 1, 0 => the index position
+            return [results[difference], i]
+        } else {
+            //set it in the object
+           results[array[i]] = i
+        }
     }
-}
+    
 
 }
 
