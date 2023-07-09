@@ -21,4 +21,23 @@ function toWeirdCase(string){
     }
     //return words together
     return newWord.join(" ")
+
+
+
+    // var str = '';
+    // var counter = 0;
+    
+    // for(var i = 0; i < string.length; i++) {
+    //   if(string[i] === ' ') {
+    //     str += ' ';
+    //     counter = 0;
+    //   } else if(counter % 2 === 0) {
+    //     str += string[i].toUpperCase();
+    //     counter++;
+    //   } else if(counter % 2 !== 0) {
+    //     str += string[i].toLowerCase();
+    //     counter++;
+    //   }
+    // }
+    // return str;
   }
