@@ -25,25 +25,38 @@ const longestConsecutive = (nums) => {
 //add to count
 //otherwise reset count to 1;
 
-nums.sort((a,b) => a - b); 
+//time: O(n log n) b/c using sort
+//space: O(1) b/c using the same space and not creating new one
 
-let count = 0;
-let temp = 0;
+// nums.sort((a,b) => a - b); 
 
-for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1] - 1) { //if the number in front of the current index is before the value, count it
-       console.log(nums[i], nums[i+1])
-        temp++;
-        count = Math.max(temp, count);
-    } else if (nums[i] === nums[i + 1]) {
-        count = Math.max(temp, count);
-    } else {
-        temp = 1; 
-        count = Math.max(temp, count);
-    }
-}
+// let count = 0;
+// let temp = 1; //set it to 1 b/c it captures at least the first beginning element
 
-return count; 
+// for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i + 1] - 1) { //if the number in front of the current index is before the value, count it
+//        console.log(nums[i], nums[i+1], nums[i + 1] -1)
+//         temp++;
+//         count = Math.max(temp, count);
+//     } else if (nums[i] === nums[i + 1]) {
+//         count = Math.max(temp, count);
+//     } else {
+//         temp = 1; 
+//         count = Math.max(temp, count);
+//     }
+// }
+
+// return count; 
+
+
+//optimized method: 
+//use a Set to iterate through the array to remove duplicates
+//iterate and check to see if Set has previous and the after number
+//increase count if found
+//time: O(n)
+//space: O(n) b/c using a set for as long as the input is
+
+
 
 
 }
