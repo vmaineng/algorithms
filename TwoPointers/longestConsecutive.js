@@ -49,16 +49,31 @@ const longestConsecutive = (nums) => {
 // return count; 
 
 
-//optimized method: 
+//optimized method - removes duplcates;
 //use a Set to iterate through the array to remove duplicates
 //iterate and check to see if Set has previous and the after number
 //increase count if found
 //time: O(n)
 //space: O(n) b/c using a set for as long as the input is
 
+// let newSet = new Set();
+let set = new Set(nums);
+// console.log(newSet, set)
+let count = 0;
 
+for (let element of nums) {
+    if (!set.has(element - 1)) {//check to see if set has the start of the sequence
+        let temp  = 0; //initialize start of the count
 
-
+        while (set.has(element)) {
+            temp++; //increment if you find the sequential order
+            element++; //increment to the next element in the set
+        }
+        count = Math.max(count,temp) //find the max of the two
+    } 
 }
+
+return count;
+ }
 
 console.log(longestConsecutive([1,2,2,2,3]))
