@@ -61,20 +61,23 @@ function containDup(array) {
 
 //object
 
+
 let newObject = {};
 
 for (const element of array) {
     if (!newObject[element]) {
-        newObject[element] = (1 || 0) + 1
+        newObject[element] = 1
+    } else {
+        newObject[element] ++;
     }
     
-    if(newObject[element] < 2) {
+    if(newObject[element] > 1) {
         return true
     }
-    console.log(newObject, newObject[element])
-    return false
+    
 }
-
+console.log(newObject)
+    return false
 // let results = {};
 
 // for (let num of array) {
@@ -94,3 +97,8 @@ for (const element of array) {
 
 // console.log(containDup([1,2,-1, -1]))
 console.log(containDup([1,2,-1, 3]))
+
+
+// One immediate advantage of using Objects is that you can return early 
+// if you detect a duplicate, whereas with Sets, you have to convert the entire array 
+// to a Set before you can decide if there are duplicates.
