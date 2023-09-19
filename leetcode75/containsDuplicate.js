@@ -22,6 +22,23 @@
 //[-1, 5, 3, 2, -1] => true
 
 //BF: double nested loops
+//iterate through array
+//keep a pointer on first element, second pointer on second element
+//if they do equal each other, return true
+//else after checking entire array, return false
 //time: O(n^2)
 //space: O(1)
 
+function containDup(array) {
+    for (let i = 0 ; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+// console.log(containDup([1,2,-1, -1]))
+console.log(containDup([1,2,-1, 3]))
