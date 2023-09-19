@@ -30,14 +30,35 @@
 //space: O(1)
 
 function containDup(array) {
-    for (let i = 0 ; i < array.length; i++) {
-        for (let j = i + 1; j < array.length; j++) {
-            if (array[i] === array[j]) {
-                return true;
-            }
-        }
+    // for (let i = 0 ; i < array.length; i++) {
+    //     for (let j = i + 1; j < array.length; j++) {
+    //         if (array[i] === array[j]) {
+    //             return true;
+    //         }
+    //     }
+    // }
+    // return false;
+
+//optimized: 
+//could use a Set
+//iterate and check if Set already has element, if so, return true;
+//else return false after checking Set
+//time: O(n)
+//space: O(n) //creating new Set for every element in the Set
+
+// let setArray = new Set(array); //would not use this b/c we want to store the element into Set
+
+let setArray = new Set(); 
+
+for (const element of array) {
+    if (setArray.has(element)) {
+        return true
+    } else {
+        setArray.add(element)
     }
-    return false;
+}
+return false;
+
 }
 
 // console.log(containDup([1,2,-1, -1]))
