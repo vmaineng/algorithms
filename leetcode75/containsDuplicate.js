@@ -48,16 +48,47 @@ function containDup(array) {
 
 // let setArray = new Set(array); //would not use this b/c we want to store the element into Set
 
-let setArray = new Set(); 
+// let setArray = new Set(); 
+
+// for (const element of array) {
+//     if (setArray.has(element)) {
+//         return true
+//     } else {
+//         setArray.add(element)
+//     }
+// }
+// return false;
+
+//object
+
+let newObject = {};
 
 for (const element of array) {
-    if (setArray.has(element)) {
-        return true
-    } else {
-        setArray.add(element)
+    if (!newObject[element]) {
+        newObject[element] = (1 || 0) + 1
     }
+    
+    if(newObject[element] < 2) {
+        return true
+    }
+    console.log(newObject, newObject[element])
+    return false
 }
-return false;
+
+// let results = {};
+
+// for (let num of array) {
+//     //if object has it already, return true;
+//     if (results[num]) {
+//         console.log(results[num])
+//         return true
+//     } else {
+//         //else set it to true
+//         results[num] = true; //set the value to true
+//     }
+//     console.log(results)
+// }
+// return false;
 
 }
 
