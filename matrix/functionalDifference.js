@@ -34,3 +34,11 @@ function diagonalDifference(arr) {
 let arr1 = [[11,2,4],[4,5,6],[10,8,-12]]
 
 console.log(diagonalDifference(arr1))
+
+//in each iteration of the loop, the row represents the current row index;
+//when the row is 0, it access elements at row[0][0]
+//when row is 1, it access the element at row[1][1]
+
+//likewise for otherside, when row is 0
+//it is row[0][arr.length - 1 - 0], access the last element of the first row
+//for a square matrix.
