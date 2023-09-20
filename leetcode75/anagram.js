@@ -26,19 +26,20 @@ const anAnagram = (s, t) => {
 //if found any letter that does not match, return false
 //otherwise if search through entire string, return true
 
-s.split("").sort().join("");
-t.split("").sort().join("");
+let str1 = s.split("").sort().join(""); //splits the input string in an array of individual characters, then sorts in dictionary order, then joins back into a single string
+let str2 = t.split("").sort().join("");
 
-for (let i = 0; i < s.length; i++) {
-    if (t[i] !== s[i]) {
+for (let i = 0; i < str1.length; i++) {
+    if (str2[i] !== str1[i]) {
         return false;
     }
+    console.log(str2[i], str1[i])
 }
 return true;
 
 }
 
-console.log(anAnagram("rat", "car"))
+console.log(anAnagram("rat", "cat"))
 
 //notes
 //with strings, have to split them up by the quotation marks, can sort, then join them back together
