@@ -28,14 +28,22 @@ function groupAna(words) {
     //check to see if eaach word are equal
     //push to an array together
 
-    let answer = [];
+    //edge case - if less than 1, send back the word
+    if (words.length <= 1) return [words];
 
     let objSource = {};
 
     for (let word of words) {
-        word.split("").sort().join("");
-        console.log(word)
+       // let sortedStr = word.split("").sort().join(""); this returns sorted strings in the array;
+       word.split("").sort().join(""); //this returns the original words
+       // console.log(word)
+
+        if (!objSource[word]) objSource[word] = [];
+        objSource[word].push(word)
+
     }
+    return Object.values(objSource)
+
 
 }
 
