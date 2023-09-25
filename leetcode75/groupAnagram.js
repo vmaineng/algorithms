@@ -22,7 +22,20 @@ function groupAna(words) {
     //anagrams of each other
 
     
+    
+    //optimized approach - use an object to keep track of values
+    //sort each word
+    //check to see if eaach word are equal
+    //push to an array together
 
+    let answer = [];
+
+    let objSource = {};
+
+    for (let word of words) {
+        word.split("").sort().join("");
+        console.log(word)
+    }
 
 }
 
