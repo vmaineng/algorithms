@@ -17,3 +17,13 @@
 // (price = 6), profit = 6-1 = 5.
 // Note that buying on day 2 and selling on day 1 is not allowed because you 
 // must buy before you sell.
+
+const stock = (array) => {
+    //an array of integers (positive and negative)
+    //return max profit (buy -  sell)
+    //stock([1,2]) => buy the stock for 1, and sell for 2; //return 0; b/c wouldve been -1;
+    //buy high, sell low
+
+}
+
+console.log(stock([1,2,3,1]))
