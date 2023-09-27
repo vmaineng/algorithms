@@ -28,6 +28,8 @@ const stock = (array) => {
     //we can look at each possible pair and calculate the profit,
     //then you can find the pair of dates that has the highest total
     //initialize profit
+    //time: O(n ^ 2)
+    //space: O(1)
     
     let maxProfit = 0;
     
