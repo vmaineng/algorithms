@@ -24,6 +24,28 @@ const stock = (array) => {
     //stock([1,2]) => buy the stock for 1, and sell for 2; //return 0; b/c wouldve been -1;
     //buy high, sell low
 
+    //brute force; 
+    //we can look at each pair and calculate the total highest
+    //initialize profit
+    
+    let profit = 0;
+    
+    for (let i = 0; i < array.length; i++) { //i= buy
+        for (j = i + 1; j < array.length; j++) { //sell
+            if (array[i] > array[j])  {
+                console.log(array[i] - array[j])
+                sum = array[i] - array[j]
+                
+                profit = Math.max(sum, profit)
+            }
+        }   
+    }
+
+    return profit;
+
+    //optimized method: 
+
+
 }
 
-console.log(stock([1,2,3,1]))
+console.log(stock([1,2,3,1])) //buy 1, sell 3 = 2
