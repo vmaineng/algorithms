@@ -25,23 +25,24 @@ const stock = (array) => {
     //buy high, sell low
 
     //brute force; 
-    //we can look at each pair and calculate the total highest
+    //we can look at each possible pair and calculate the profit,
+    //then you can find the pair of dates that has the highest total
     //initialize profit
     
-    let profit = 0;
+    let maxProfit = 0;
     
     for (let i = 0; i < array.length; i++) { //i= buy
         for (j = i + 1; j < array.length; j++) { //sell
-            if (array[i] > array[j])  {
-                console.log(array[i] - array[j])
-                sum = array[i] - array[j]
-                
-                profit = Math.max(sum, profit)
+            profit = array[j] - array[i]
+            if (profit > maxProfit)  {
+                console.log(array[j], array[i])
+              maxProfit = profit;
+
             }
         }   
     }
 
-    return profit;
+    return maxProfit;
 
     //optimized method: 
 
