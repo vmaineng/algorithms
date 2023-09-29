@@ -49,10 +49,18 @@ const stock = (array) => {
     let buy = sell + 1;
 
     while (buy < array.length) {
+        if (array[sell] < array[buy]) {
+        profit = array[buy] - array[sell]
+        maxProfit = Math.max(profit, maxProfit)
 
+    } else {
+        sell = buy
+    }
+    buy++;
     }
 
-
+    return maxProfit
 }
 
-console.log(stock([1,2,3,1])) //buy 1, sell 3 = 2
+console.log(stock([1,2,3,1])) 
+//buy 1, sell 3 = 2
