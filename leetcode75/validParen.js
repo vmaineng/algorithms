@@ -23,6 +23,30 @@
 // Output: false
 
 
-const validParen = (array) => {
+const validParen = (s) => {
+//a string filled with opening and closing parenthesis/brackets
+//return true if the string can open and close themselves
+//validParen("{]}[") => no b/c [ after ]
+
+//use an object to see if you found the closing 
+//if can't find it, return false
+//otherwise, after searching entire string, return true;
+
+let obj = {
+    "[" : "]",
+    "{" : "}",
+    "(" : ")"
+}
+
+for (let paren of s) {
+    if (paren !== obj[propery]) {
+        return false
+    }
+}
+
+return true;
+
 
 }
+
+console.log(validParen("[]"))
