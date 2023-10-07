@@ -32,6 +32,11 @@ const validParen = (s) => {
 //if can't find it, return false
 //otherwise, after searching entire string, return true;
 
+
+//if you are the closing bracket, add it on to stack
+//if found an opening bracket, check last item on the stack to see
+//if same element
+let stack = [];
 let obj = {
     "[" : "]",
     "{" : "}",
@@ -39,12 +44,15 @@ let obj = {
 }
 
 for (let paren of s) {
-    if (paren !== obj[propery]) {
-        return false
+    if (obj[paren]) {
+        console.log(obj[paren], paren)
+        stack.push(paren)
+    } else {
+        stack.pop();
     }
 }
 
-return true;
+return stack.length === 0;
 
 
 }
