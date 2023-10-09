@@ -24,8 +24,26 @@ const threeSum = (nums) => {
     //return all triplets that sums the target of 0 and all of must be unique numbers; 
     //[0,1,2,-5, 4] => [-5, 1, 4]
 
+    //brute force; 
+    //use triple nested loops
+    //make sure the numbers do not equal each other
+    //push them into an array to be pushed into the final result
+
+    let result = [];
+    
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length - 1; j++) {
+            for (let k = j + 1; k < nums.length - 2; k++) {
+                if (nums[i] !== nums[j] !== nums[k])
+            }
+        }
+    }
+
     //edge case - if all numbers in array are the same, can't find solution then
 
 }
 
 console.log(threeSum([]))
+
+
+// * start with the first element and use two pointers with left and right 
