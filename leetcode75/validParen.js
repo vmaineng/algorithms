@@ -44,8 +44,8 @@ let obj = {
 }
 
 for (let paren of s) {
-    if (obj[paren]) {
-        console.log(obj[paren], paren)
+    if (obj[paren]) { //if obj has the other corresponding one from the s string
+        console.log(obj[paren], paren)// obj[paren] = ], paren = [
         stack.push(paren)
     } else {
         stack.pop();
