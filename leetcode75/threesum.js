@@ -29,17 +29,44 @@ const threeSum = (nums) => {
     //make sure the numbers do not equal each other
     //push them into an array to be pushed into the final result
 
-    let result = [];
+    // let result = [];
     
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length - 1; j++) {
-            for (let k = j + 1; k < nums.length - 2; k++) {
-                if (nums[i] !== nums[j] !== nums[k])
-            }
-        }
-    }
+    // for (let i = 0; i < nums.length; i++) {
+    //     for (let j = i + 1; j < nums.length - 1; j++) {
+    //         for (let k = j + 1; k < nums.length - 2; k++) {
+    //             if (nums[i] !== nums[j] !== nums[k])
+    //         }
+    //     }
+    // }
 
     //edge case - if all numbers in array are the same, can't find solution then
+
+//optimized approach: 
+//initialize an [] to capture the results;
+//sort the elements
+//have a pointer on the first index;
+//have a poitner next to it and pointer at the end; 
+
+//time: O(n^2)
+//space: O(n) b/c of creating new array
+
+let result = [];
+nums.sort((a,b) => a - b)
+
+let target = 0;
+
+for (let i = 0; i < nums.length - 2; i++) {
+    let left = i + 1;
+    let right = nums.length - 1
+    while ( left < right) {
+        if (nums[i] + nums[left] + nums[right] === sum) {
+            result.push([nums[i], nums[left], nums[right] ])
+        } else if (nums[i] + nums[left] + nums[right] > sum){
+            left ++
+        }
+    }
+}
+
 
 }
 
