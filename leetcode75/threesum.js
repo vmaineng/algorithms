@@ -51,26 +51,37 @@ const threeSum = (nums) => {
 //space: O(n) b/c of creating new array
 
 let result = [];
-nums.sort((a,b) => a - b)
+nums = nums.sort((a,b) => a - b)
 
 let target = 0;
 
 for (let i = 0; i < nums.length - 2; i++) {
+    // if (nums[i] > target) break;
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
     let left = i + 1;
     let right = nums.length - 1
     while ( left < right) {
-        if (nums[i] + nums[left] + nums[right] === sum) {
-            result.push([nums[i], nums[left], nums[right] ])
-        } else if (nums[i] + nums[left] + nums[right] > sum){
-            left ++
+        let sum = nums[i] + nums[left] + nums[right]
+        // console.log([nums[i], nums[left], nums[right]])
+        if (sum === target) {
+            result.push([nums[i], nums[left], nums[right]])
+           // console.log([nums[i], nums[left], nums[right]])
+            while (nums[left] === nums[left+1]) left++;
+            while (nums[right] === nums[right - 1]) right--;
+            left++;
+            right--;
+        } else if (sum < target){
+            left++
+        } else {
+            right--;
         }
     }
 }
-
+return result;
 
 }
 
-console.log(threeSum([]))
+console.log(threeSum([-1,0,1,2,-1,-4]))
 
 
 // * start with the first element and use two pointers with left and right 
