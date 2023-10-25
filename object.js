@@ -11,8 +11,12 @@ for (let i = 0; i < age.length; i++) {
   }
 }
 
-console.log(alienAges[11]) //2
+//console.log(alienAges[11]) //2
+
+alienAges[14] = 1; //adding in a new age
 
 
+
+console.log(alienAges)
 
 
