@@ -16,6 +16,22 @@
 
 
 function solve(array) {
+//an array of array fillled with integers
+//return total amount of unique arrays that can be formed
+
+//[[1,2], [4]] => [1,4], [2,4] => 2
+
+//initialize an amount to keep track of unique arrays made
+//iterate through array in the Set
+
+
+let count = 0; 
+
+let uniqueSet = new Set(array)
+
+for (let i = 0; i < uniqueSet.length; i++) {
+    
+}
 
 }
 
