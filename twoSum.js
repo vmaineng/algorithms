@@ -43,7 +43,7 @@ var twoSum = function(nums, target) {
         if (answer.has(difference)) {
 
             console.log(answer, answer.get(difference))
-            return [i, answer.get(difference)]
+            return [i, answer.get(difference)] //get the differencce
         } else {
             answer.set(nums[i], i) //set the values, and the index
         }
