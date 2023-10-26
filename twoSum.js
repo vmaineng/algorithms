@@ -36,19 +36,18 @@ var twoSum = function(nums, target) {
     //then return index
     //else if we have never seen it, store it in
 
-    let answer = {};
+    let answer = new Map();
 
     for (let i = 0; i < nums.length; i++) {
         let difference = nums[i] - target
-        if (answer[difference] !== undefined) {
+        if (answer.has(difference)) {
 
-            console.log(answer, answer[difference])
-            return [i, answer[difference] - 1]
+            console.log(answer, answer.get(difference))
+            return [i, answer.get(difference)]
         } else {
-            answer[nums[i]] = i + 1
+            answer.set(nums[i], i) //set the values, and the index
         }
     }
-
 
     
     };
