@@ -23,9 +23,42 @@
 const findMin = (nums) => {
 //an array of integers, negative and positive
 //return the min element value
+//might have to rotate to get a sorted array
 //[-3, 0, 5, 8, -5] => min = -5
-//
+
+//keep rotating array
+//keep track of min element seen
+//check to see if this is smaller than the last value we've seen
+//update min
+//return min
+
+//edge cases, if array is one, then return that value
+//if array only has two, check the values against each other
+//and return the min value
+
+if (nums.length === 1) return nums[0];
+
+if (nums.length === 2) return Math.min(nums[0], nums[1]);
+
+//O(n log n)time = binary search
+
+// let left = 0; 
+// let right = nums.length - 1; 
+
+// while (left < right) {
+//     let middle = Math.floor(nums.length /2)
+
+//     if (nums[middle] < nums[left]) {
+
+//     } else if (nums[middle] > nums[right]) {
+
+//     } else {
+
+//     }
+// }
+
+
 
 }
 
-console.log(findMin([]))
+console.log(findMin([-3, -5]))
