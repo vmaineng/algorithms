@@ -36,20 +36,19 @@ const findMin = (nums) => {
 //if array only has two, check the values against each other
 //and return the min value
 
-if (nums.length === 1) return nums[0];
+// if (nums.length === 1) return nums[0];
 
-if (nums.length === 2) return Math.min(nums[0], nums[1]);
+// if (nums.length === 2) return Math.min(nums[0], nums[1]);
 
 //O(n log n)time = binary search
 
 let res = nums[0]
-
 let left = 0; 
 let right = nums.length - 1; 
 
 while (left <= right) {
     if (nums[left] < nums[right]) {
-        res = Math.min(nums[left], nums[right]);
+        res = Math.min(nums[left], res); //take math.min of new left compared to the initialize new left spot
         break;
     }
     
