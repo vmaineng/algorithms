@@ -42,20 +42,24 @@ if (nums.length === 2) return Math.min(nums[0], nums[1]);
 
 //O(n log n)time = binary search
 
-// let left = 0; 
-// let right = nums.length - 1; 
+let res = nums[0]
 
-// while (left < right) {
-//     let middle = Math.floor(nums.length /2)
+let left = 0; 
+let right = nums.length - 1; 
 
-//     if (nums[middle] < nums[left]) {
+while (left <= right) {
+    let middle = Math.floor((left + right) /2)
+    res = Math.min(res, nums[middle])
 
-//     } else if (nums[middle] > nums[right]) {
+    if (nums[middle] >= nums[left]) {
+        l = m + 1
 
-//     } else {
+    } else if (nums[middle] < nums[right]) {
+        r = m - 1
+    } else {
 
-//     }
-// }
+    }
+}
 
 
 
