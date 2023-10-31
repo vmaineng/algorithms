@@ -48,21 +48,25 @@ let left = 0;
 let right = nums.length - 1; 
 
 while (left <= right) {
+    if (nums[left] < nums[right]) {
+        res = Math.min(nums[left], nums[right]);
+        break;
+    }
+    
     let middle = Math.floor((left + right) /2)
     res = Math.min(res, nums[middle])
 
     if (nums[middle] >= nums[left]) {
-        l = m + 1
+        left = middle + 1
 
-    } else if (nums[middle] < nums[right]) {
-        r = m - 1
     } else {
-
+        right = middle - 1
     }
 }
 
+return res
 
 
 }
 
-console.log(findMin([-3, -5]))
+console.log(findMin([4,5,6,7,0,1,2]))
