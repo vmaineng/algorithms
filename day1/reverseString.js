@@ -10,15 +10,40 @@ const reverseString = (string) => {
 //add on to the string
 //return string
 
-let reverseString = "";
+// let reverseString = "";
 
-for (let i = string.length - 1; i >= 0; i-- ) {
-    reverseString += string[i]
+// for (let i = string.length - 1; i >= 0; i-- ) {
+//     reverseString += string[i]
+// }
+
+// return reverseString
+
+//time: O(n)
+//space: O(N)
+
+//optimized method without using a reverse method
+
+//initialize two pointers - one at beginning, one at end
+//split the string into individual characters
+//swap it
+//return string and join it back together;
+
+if (string.length === 1) return string;
+
+let stringArray = string.split("")
+
+let left = 0
+let right = string.length - 1;
+
+while (left < right) {
+    let temp = stringArray[left]
+    stringArray[left] = stringArray[right]
+    stringArray[right]= temp
+    left++
+    right--
 }
 
-return reverseString
-
-//time 
+return stringArray.join("")
 
 }
 
