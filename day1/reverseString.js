@@ -25,7 +25,7 @@ const reverseString = (string) => {
 
 //initialize two pointers - one at beginning, one at end
 //split the string into individual characters
-//swap it
+//swap the values
 //return string and join it back together;
 
 if (string.length === 1) return string;
