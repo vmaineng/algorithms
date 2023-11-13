@@ -21,13 +21,20 @@ function selectionSort(arr) {
 
 let sortedArray = [];
 
-for (let element of arr) {
-    if (arr[element] > 0) {
-        sortedArray.push(element)
+for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < arr[i + 1]) {
+        console.log(i, arr[i])
+        sortedArray.push(arr[i])
     }
 }
 return sortedArray
 
 }
 
-console.log(selectionSort([]))
+console.log(selectionSort([ 90, -3424, 34]))
+
+//overall theme is swapping values
+//Selection Sort is an in-place, unstable and comparison-type algorithm.
+//Selection sort works by going up an array and selecting the minimum value.
+// The minimum value is then moved to the beginning of the array. 
+//The left side of the array becomes more sorted at the end of each pass through the array, until the whole array is sorted.
