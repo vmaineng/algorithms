@@ -14,13 +14,18 @@ function shortString(array) {
     //keep track of min of current word and the minValue
     //return the minvalue
 
-    let minValue = array[0];
+    // let minValue = array[0];
 
-    for (let i = 0; i < array.length; i ++) {
-        if (array[i].length < minValue.length)
-        minValue = array[i]
-    }
-    return minValue;
+    // for (let i = 0; i < array.length; i ++) {
+    //     if (array[i].length < minValue.length)
+    //     minValue = array[i]
+    // }
+    // return minValue;
+
+return array.reduce((shortest, current) => (
+    current.length < shortest.length ? current : shortest
+), array[0]
+)
 
 }
 
