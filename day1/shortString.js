@@ -27,6 +27,7 @@ return array.reduce((shortest, current) => (
 ), array[0]
 )
 
+
 }
 
 console.log(shortString(["apple", "john", 'c', 'rawr']))
