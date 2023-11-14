@@ -17,7 +17,7 @@ function count(num) {
         return count(num + 1)
    
 }
-console.log(count(3))
+// console.log(count(3))
 
 function recursiveSearch(arr, target) {
 //an array of integers, and an integer (whole numbers)
