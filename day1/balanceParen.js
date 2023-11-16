@@ -46,8 +46,26 @@ const balanceParen = (string) => {
     for (let i = 0; i < string.length; i++) {
         if (string[i] === '(') {
             stack.push(string[i])
-        } e
+        } else if (string[i] === ')') {
+            if(stack.length > 0) {
+                stack.pop()
+            } else {
+                additionalParanetheses++;
+            }
+        }
     }
+    // additionalParanetheses += stack.length; //+= stack.length to capture the remaining opening paranthesis left in stack;
+    // console.log(additionalParanetheses, stack.length);
+    return additionalParanetheses
 }
+
+//create a stack structure
+//a counter
+//iterate through the string
+//if found an opening paraenthesis, add it to the stack
+//if found a closing paranethesis, check if the stack has any paranethesis added
+//if it does, then pop off the opening paranthesis
+//otherwise, add to counter for missing paranthesis
+//take the missing parantheses and subtract from the length
 
 console.log(balanceParen('())))'))
