@@ -19,5 +19,35 @@ const balanceParen = (string) => {
     //otherwise, increment count to add more parenthesis
     //return count;
 
-    
+    if (string.length === 1) return '1';
+
+    // let missing = 0;
+    // let opening = 0;
+
+    // for (let i = 0 ; i < string.length; i++) {
+    //     if (string[i] === '(') {
+    //         opening++;
+    //         continue;
+    //     }
+
+    //     if (opening > 0) {
+    //         opening--; 
+            
+    //     } else {
+    //         missing++;
+    //     }
+    // }
+    // console.log(opening, missing) //opening = '('; missing = ')'
+    // return missing + opening;
+
+    let stack = [];
+    let additionalParanetheses = 0; //count how many paranetheses are needed
+
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === '(') {
+            stack.push(string[i])
+        } e
+    }
 }
+
+console.log(balanceParen('())))'))
