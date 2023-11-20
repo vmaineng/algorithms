@@ -19,4 +19,4 @@ return removed.concat(array)
 
 }
 
-console.log(rotateArray([1,2,3,4], 1))
+console.log(rotateArray([1,2,3,4,5,6,7], 3))
