@@ -41,6 +41,7 @@ function consecutiveString(string) {
 //space: O(n) depends on how many characters in string
 
 
+
 }
 
 console.log(consecutiveString('abc'))
