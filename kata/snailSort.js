@@ -24,9 +24,18 @@ const snail = (array) => {
   //get the left side numbers
 
   let finalArray = [];
-  while (array.length) {
-    finalArray.push(...array.shift())
-    console.log(finalArray)
+  while (array.length) { //while array is not empty
+    finalArray.push(...array.shift()) //captures the first row
+
+    for (let i = 0; i < array.length; i++) { //captures the right side numbers
+        finalArray.push(array[i].pop());
+    }
+    
+    finalArray.push(...(array.pop() || []).reverse()) //grab bottom row
+
+    for (let i = array.length - 1; i >= 0; i--) { //grab left column
+        finalArray.push(array[i].shift())//
+    }
   }
 }
 
