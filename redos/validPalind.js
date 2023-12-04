@@ -21,6 +21,24 @@ const validPali = (string) => {
 //time = O(n) b/c going through the string once
 //space = O(n) b/c creating a new string as much as string's input intakes
 
+//optimized solution in space
+//iterate through the string with two pointers; one at beginning and one at end
+//check to see if they are not identical, return false
+//else return true
+
+let left = 0;
+let right = string.length - 1;
+
+while (left < right) {
+    if (string[left] !== string[right]) {
+        return false
+    }
+    left++
+    right--
+}
+
+return true;
+
 }
 
 console.log(validPali("appa"))
