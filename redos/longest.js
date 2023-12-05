@@ -10,20 +10,30 @@ const longestSubstring = (s) =>  {
     //iterate through the string until meet same letter, then start new window all over again
     //then take max
 
-    let longestSub = {};
+    // let longestSub = {};
+    // let maxLength = 0;
+    // let i = 0;
+
+    // for (let j = 0; j < s.length; j++) {
+    //     if (s[j] in longestSub && longestSub[s[j]] >= i) {
+    //         i = longestSub[s[j]] + 1;
+    //     }
+
+    //     longestSub[s[j]] = j;
+    //     maxLength = Math.max(maxLength, j - i + 1)
+    // }
+
+    // return maxLength;
+
+    let longestSub = new Set();
     let maxLength = 0;
     let i = 0;
 
     for (let j = 0; j < s.length; j++) {
-        if (s[j] in longestSub && longestSub[s[j]] >= i) {
-            i = longestSub[s[j]] + 1;
+        if (longestSub.has(s[j])) {
+            j = 
         }
-
-        longestSub[s[j]] = j;
-        maxLength = Math.max(maxLength, j - i + 1)
     }
-
-    return maxLength;
 }
 
 console.log(longestSubstring("green"))
