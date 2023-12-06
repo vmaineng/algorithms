@@ -10,7 +10,7 @@ const longestConsecutive = (array) => {
 //initialize a length to keep track of current longest sequence
 //sort array
 //iterate through array
-//identify if the value next to it is +1
+//identify if the value next to it is +1 and -1 (prefix and postfix)
 //if so increase length;
 //if not; reset length to 0
 //return length;
@@ -20,18 +20,20 @@ const sortedArray = array.sort((a,b) => a -b );
 
 if (array.length === 1) return 1;
 
-let length = 0; 
-let temp = 1;
+let length = 1; 
+let maxLength = 1; //start maxlength at 1 to account for the first number;
 
 for (let i = 0; i < sortedArray.length - 1; i++) {
-    if (sortedArray[i+1] = sortedArray[i] + 1){
+    if (sortedArray[i+1] === sortedArray[i] + 1){
         length ++
+        maxLength = Math.max(maxLength, length)
         console.log(length);
-    } else {
-        length = 0
+    } else  {
+        length = 1
+        
     }
 }
-return length;
+return maxLength;
 
 
 }
