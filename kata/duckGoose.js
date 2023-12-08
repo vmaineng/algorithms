@@ -27,3 +27,6 @@ console.log(duckGoose(playersArray, index))
 //by writing (goose - 1);
 //(goose - 1) % players.length = ensure the adjusted index stays within the valid range
 //ex: if index is 5, it will wrap around in the players array
+
+//players[(goose - 1) % players.length].name
+//players[3].name //this is what it's saying
