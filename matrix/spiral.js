@@ -43,19 +43,23 @@ while (endRow >= startRow && endColumn >= startColumn) {
     //move the endcolumn in by one since we visited all the values on the right
     endColumn--;
 
-
+//since we incremented the startRow, we need to make sure we have not crossed to bottom row
 if (endRow >= startRow) {
     for (let column= endColumn; column >= startColumn; column--) {
         result.push(matrix[endRow][column])
     }
 }
+//move it up by one, since we visited the bottom numbers
 endRow--;
 
+//verify the columns have not crossed
 if (endColumn >= startColumn) {
+    //add in numbers bottom-up for the start column
     for (let row = endRow; row >= startRow; row--) {
         result.push(matrix[row][startColumn])
     }
 }
+//increment the column in since we have visited it already
 startColumn++;
 
 }
