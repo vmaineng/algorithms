@@ -31,10 +31,35 @@ while (endRow >= startRow && endColumn >= startColumn) {
         //console.log(matrix[startRow]) //matrix[0]
          //console.log(matrix[startRow][column]) //matrix[0][i] /the first row and move to the other column
         result.push(matrix[startRow][column])
-        
     }
+    //increment our start row since we visited each value
+    startRow++;
    
+    for (let row = startRow; row <= endRow; row++) {
+        //console.log(matrix[row]) //grab the second row
+        //console.log(matrix[row][endColumn]) //grabs last digit from the end column
+        result.push(matrix[row][endColumn])
+    }
+    //move the endcolumn in by one since we visited all the values on the right
+    endColumn--;
+
+
+if (endRow >= startRow) {
+    for (let column= endColumn; column >= startColumn; column--) {
+        result.push(matrix[endRow][column])
+    }
 }
+endRow--;
+
+if (endColumn >= startColumn) {
+    for (let row = endRow; row >= startRow; row--) {
+        result.push(matrix[row][startColumn])
+    }
+}
+startColumn++;
+
+}
+return result;
 
 }
 
