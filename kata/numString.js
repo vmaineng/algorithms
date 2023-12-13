@@ -41,4 +41,19 @@ function positiveSum(arr) {
 return arr.reduce((a,b) => a + (b > 0 ? b : 0), 0)
 }
 
-console.log(positiveSum([1, -4, 3, 5]))
+// console.log(positiveSum([1, -4, 3, 5]))
+
+function makeNegative(num) {
+    //get an integer
+    //return the negative number of it
+    //9 => -9; -4 => -4
+
+//if number is 0, return 0
+//if number is positive, make it negative
+//otherwise if number is negative already, return the number
+
+if (num === 0) return 0;
+return num > 0 ? -num : num;
+}
+
+console.log(makeNegative(-4))
