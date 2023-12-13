@@ -90,3 +90,36 @@ function litres(time) {
   //return the time * 0.5
   return Math.floor(time * 0.5);
 }
+
+// console.log(litres(6.7))
+
+function maps(x){
+    return x.map((num) => num * 2)
+    }
+
+    var summation = function (num) {
+        //an integer
+        //return the numbers adding up to the integer
+        //1 => 1 
+        //2 => 1 + 2 => 3
+        //4 => 1 + 2 + 3 +4  = 10
+        
+        //iterate up to the numb and add to the total
+    //     let total = 0;
+    //     let n = 1;
+    //    while (n <= num ) {
+    //   total += n
+    //      n++
+    //   }
+      
+    //   return total;
+
+let total = 0;
+
+for (let i = 1;i <= num ; i++) {
+    total += i //add the i's since there is no num[i]
+}
+return total;
+      }
+
+      console.log(summation(1))
