@@ -56,4 +56,26 @@ if (num === 0) return 0;
 return num > 0 ? -num : num;
 }
 
-console.log(makeNegative(-4))
+// console.log(makeNegative(-4))
+
+function noSpace(x) {
+    //get a string with spaces
+    //return the string back with no spaces
+    //'test this algo' => 'testthisalgo'
+
+    //split by spaces
+    //join back
+    //return the string
+
+//   return x.split(" ").join("")
+
+let result = "";
+for (let i =0; i < x.length; i++) {
+    if (x[i] !== " ") {
+        result += x[i]
+    }
+}
+return result;
+}
+
+console.log(noSpace("test this algo"))
