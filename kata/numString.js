@@ -78,4 +78,15 @@ for (let i =0; i < x.length; i++) {
 return result;
 }
 
-console.log(noSpace("test this algo"))
+// console.log(noSpace("test this algo"))
+
+function litres(time) {
+     //get a number in time
+  //return how many litres Nathan needs to drink
+  //for 1 hour, he needs to drink 0.5 litres
+  //round down
+  //time = 3 => 1 hr = 0.5 ; 2hr => 1; 3 hours => 1.5 litres
+  
+  //return the time * 0.5
+  return Math.floor(time * 0.5);
+}
