@@ -161,4 +161,19 @@ function findOdd(A) {
 //time: O(n) //it doesn't grow as n grow
 //space: O(n)
 
-console.log(findOdd([0,1,0,1,0,1,0,0]))
+// console.log(findOdd([0,1,0,1,0,1,0,0]))
+
+function paperwork(n, m) {
+  //integers - negative and positive
+  //return the amount of pages needed
+  //n= -4; m = 4 => 0; n = 4, m = 10 => 40
+  
+  //if n or m is negative, return 0
+  //return n * m
+  
+  if (n < 0 || m < 0) return 0;
+  
+  let total = n * m
+  return total;
+}
+
