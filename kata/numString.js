@@ -180,3 +180,37 @@ function paperwork(n, m) {
 function solution(str){
   return str.split('').reverse().join('');  
 }
+
+function solution(number){
+  //an integer number
+  //return the total of all numbers divisible by 3 and/or 5 
+  //15 => 3, 5, 6, 9, 15 => 38
+  
+  //edge case: if number is <0, return 0;
+  
+  //intiailize a total
+  //iterate up to the number provided
+  //check to see if it the number is divisible by 3 & 5
+  //add to total
+  //check to see if it is divisble by 5
+  //add to total
+  //check to see if it is divisble by 3
+  //add to total
+  //return total
+  
+  if (number < 0) return 0;
+  
+  let total = 0;
+  
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      total += i
+    } else if (i % 3 === 0) {
+      total += i
+    } else if (i % 5 === 0){
+      total += i
+    }
+}
+  
+  return total;
+}
