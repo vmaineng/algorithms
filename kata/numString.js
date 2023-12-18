@@ -177,3 +177,6 @@ function paperwork(n, m) {
   return total;
 }
 
+function solution(str){
+  return str.split('').reverse().join('');  
+}

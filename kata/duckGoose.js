@@ -21,7 +21,7 @@ let playersArray = ['a','b','c','d']
 // const adjustedIdx = (index - 1) % playersArray.length;
 // console.log(adjustedIdx)
 
-console.log(duckGoose(playersArray, index))
+// console.log(duckGoose(playersArray, index))
 
 //since it is 1-based indexing, need to adjust back to 0-based indexing in JS
 //by writing (goose - 1);
