@@ -26,9 +26,14 @@ const reverseList = (head1, head2) => {
             tail.next = current1;
             current1 = current1.next;
         }
+        tail = tail.next; //move tail up to the node that just got connencted
         count++
     }
+    if (current1 !== null) return current1.next;
+    if (current2 !== null) return current2.next;
+
     return current1;
 }
 
 //concept: merge alternatively despite value
+//always keep track of nodes in both lists; i.e. - current1, current2
