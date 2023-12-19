@@ -11,6 +11,24 @@ const reverseList = (head1, head2) => {
     //iterate until it reaches null
     //if count is even, take it from second LL, else take it from the first LL
     //if a LL Is longer than the other, add the rest of it and vice versa for LL 2
+    //return head 
+
+    let current1 = head1;
+    let tail = head1.next;
+    let current2 = head2;
+    let count = 0;
+
+    while (current1 !== null || current2 !== null) {
+        if (count % 2 === 0) {
+            tail.next = current2; //the pointer will point towards the node from LL2
+            current2 = current2.next;
+        } else {
+            tail.next = current1;
+            current1 = current1.next;
+        }
+        count++
+    }
+    return current1;
 }
 
 //concept: merge alternatively despite value
