@@ -37,3 +37,6 @@ const reverseList = (head1, head2) => {
 
 //concept: merge alternatively despite value
 //always keep track of nodes in both lists; i.e. - current1, current2
+//traverse through both lists until it hits null
+//check to see if even or odd, add on to list
+//move the tail node to the newest node that got linked to
