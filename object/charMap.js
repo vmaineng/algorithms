@@ -50,4 +50,17 @@ function maxChar(string) {
             charMap[char] = 1
         }
     }
+
+    charArray = Object.keys(charMap);
+    //console.log(charArray) //[ 'a', 'b', 'd', 'e', 'w' ]
+    // const val = Object.values(charMap)
+    // console.log(val)
+    valuesArray = Object.values(charMap)
+    // console.log(valuesArray) //[ 4, 1, 2, 1, 1 ]
+    maxCharValue = Math.max(...valuesArray)
+   // console.log(maxCharValue) //4
+   
+    return charArray[valuesArray.indexOf(maxCharValue)]
 }
+
+console.log(maxChar('aabaadewd'))
