@@ -35,3 +35,19 @@ return maxChar;
 }
 
 console.log(maxRecurringChar('aaabcadd'))
+
+function maxChar(string) {
+
+    let charMap = {};
+    let charArray = [];
+    let valuesArray = [];
+    let maxCharValue = 0; 
+
+    for (let char of string) {
+        if (charMap.hasOwnProperty(char)) {
+            charMap[char]++
+        } else {
+            charMap[char] = 1
+        }
+    }
+}
