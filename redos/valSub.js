@@ -14,6 +14,16 @@ if (subString.length > string.length) return false;
 
 let subPointer = 0;
 
+for (let i = 0; i < string.length; i++) {
+    if (string[i] === subString[subPointer]) {
+        subPointer++
+    }
 }
 
-console.log(valSub('applesaregood', 'arg'))
+console.log(subPointer, subString.length) //2, 3
+//pointer stopped at index 2 and does not match the full length of string
+return subPointer === subString.length;
+
+}
+
+console.log(valSub('applesaregood', 'arh'))
