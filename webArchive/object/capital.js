@@ -11,7 +11,17 @@ function capSentence(string) {
 
     if (string.length < 2) return string[0].toUpperCase();
 
+    //option 1: 
+    //convert string into an array to use array methods
 
+    let wordsArray = string.toLowerCase().split(' ')
+    let capsArray = [];
+
+    wordsArray.forEach((word) => {
+        capsArray.push(word[0].toUpperCase() + word.slice(1))
+    })
+
+    return capsArray.join(' ')
 }
 
 console.log(capSentence('the tales'))
