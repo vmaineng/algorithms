@@ -15,6 +15,7 @@ function insertionSort(array) {
      let j = i;
       while (j > 0 && array[j] < array[j-1]) { //if pointer j is equal to index 0, it's false
         [array[j], array[j-1]] = [array[j-1],  array[j]] //swap the numbers
+        //also this is destructing it
         j -= 1; //decrement j b/c if an element has been pushed in front of what was the current
         //j, compare the next value in line to the newest j
       }
