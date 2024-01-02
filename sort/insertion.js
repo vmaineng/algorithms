@@ -5,14 +5,15 @@ function insertionSort(array) {
     //return the array sorted
     //[0, 4, -10, 23, 100, -52] => [-52, -10, 0 ,4, 23, 100]
   
-    //have a pointer on the first number in the array
-    //check if the number next to it less than, then swap the number to the left
-    //else keep iterating through
-    //return the array
+//keep a pointer on the second element
+//compare that number to the first number in array
+//if it is less, swap the numbers
+//then move the pointer down by 1 to compare the rest of the numbers to the newest low numbers
+
   
-    for (let i = 1;i  < array.length; i++) {
+    for (let i = 1;i  < array.length; i++) { //
      let j = i;
-      while (j > 0 && array[j] < array[j-1]) {
+      while (j > 0 && array[j] < array[j-1]) { //if pointer j is equal to index 0, it's false
         [array[j], array[j-1]] = [array[j-1],  array[j]] //swap the numbers
         j -= 1; //decrement j b/c if an element has been pushed in front of what was the current
         //j, compare the next value in line to the newest j
