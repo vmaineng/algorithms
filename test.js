@@ -26,11 +26,11 @@ return false;
 
 }
 
-console.log(containDuplicates([2,14,18,22,22]))
+// console.log(containDuplicates([2,14,18,22,22]))
 
 const reduceString = (string) => {
-    let wordSplit = string.split(" ")
-    return wordSplit.reduce((acc, cv) => acc + cv, " ")
+   
+    return string.split("").reduce((acc, cv) => cv + acc, "")
 }
 
 console.log(reduceString("the jack in the box"))
