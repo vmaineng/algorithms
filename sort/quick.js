@@ -7,3 +7,7 @@
 
 //!always swap left and right number when the left number is greater than pivot and right
 //!number is less than the pivot
+
+//using recursion; apply quick sort on two subarrays at same time
+//apply quick sort on the smallest of two subarrays to get O(n log(n)) space
+
