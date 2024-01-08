@@ -21,7 +21,7 @@ for (let [num, freq] of map) {
     bucket[freq] = (bucket[freq] || new Set()).add(num);
 }
 
-for (let i = bucket.length - 1; i >=0; i--) {
+for (let i = bucket.length -1; i >=0; i--) {
     if (bucket[i]) result.push(...bucket[i]);
     if (result.length === k) break;
 }
@@ -29,4 +29,6 @@ return result;
 
 }
 
-console.log(topK([1,1,1,1,1,3,2,3,4], 3))
+console.log(topK([1,1,1,2,2,3,3,,53], ))
+
+//array has to be sorted?
