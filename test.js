@@ -30,7 +30,7 @@ return false;
 
 const reduceString = (string) => {
    
-    return string.split("").reduce((acc, cv) => cv + acc, "")
+    return string.split(" ").reduce((acc, cv) => cv + acc, " ")
 }
 
 console.log(reduceString("the jack in the box"))
