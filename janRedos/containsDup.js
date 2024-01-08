@@ -23,18 +23,38 @@ if (array.length === 2) {
 //check if the value next to it are equal to each other return true, 
 //else return false
 
-array.sort((a,b) => a - b);
+// array.sort((a,b) => a - b);
 
-for (let i = 0; i < array.length; i++) {
-    console.log(array)
-    if (array[i] === array[i + 1]) {
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array)
+//     if (array[i] === array[i + 1]) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+//optimized
+//use a set to store the number
+//ask set if it has the number, return true;
+//else return false;
+//time: O(n)
+//space: O (n)
+
+let count = new Set();
+
+for (const num of array) {
+    console.log(count)
+    if (count.has(num)) {
         return true;
     } else {
-        return false;
+        count.add(num)
     }
 }
-
+return false;
 
 }
+
+
 
 console.log(containDups([2, -2, 4, -2]))
