@@ -39,7 +39,11 @@ const recursiveLL = (head, prev = null) => {
 if (head === null) return prev;
 
 const next = head.next;
-return recursiveLL(next, )
+head.next = prev; //switching pointers
+
+return recursiveLL(next, head); //pass in the next node, and head
+//next will replace head node
+//head node will replace prev node
 
 
 }
