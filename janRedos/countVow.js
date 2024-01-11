@@ -5,10 +5,11 @@ const countVow = (string) => {
 
 //initialize vowels
 
-const vowels = [aeiouAEIOU]
+const vowels = ['a','e','i','o','u','A','E','I','O','U'];
 let count = 0;
 
 for (let letter of string) {
+    console.log(letter)
     if (vowels.includes(letter)) {
         count++
     }
@@ -18,3 +19,6 @@ return count;
 }
 
 console.log(countVow('apple'))
+
+
+
