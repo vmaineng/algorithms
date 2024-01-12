@@ -33,6 +33,8 @@ const mergeLL = (head1, head2) => {
             current2 = current2.next; // ! have to move pointer to the next node so the newnode will be added on correctly
         }
         //update tail pointer after done working through list1 and list 2
+        //after looping through list1 and list2, move the pointer to the last node
+        //so then the remaining nodes of list1 or list2 can be added
         tail = tail.next;
     }
 
@@ -43,3 +45,5 @@ return dummy.next;
 }
 
 //objective:
+//make the tail node point to the new node
+//move the pointer to point to the new node that's been added
