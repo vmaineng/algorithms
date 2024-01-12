@@ -27,11 +27,13 @@ const mergeLL = (head1, head2) => {
     while (current1 !== null && current2 !== null) {
         if (current1.val < current2.val) {
             tail.next = current1;
-            current1 = current1.next; // ! have to assign pointer
+            current1 = current1.next; // ! have to move pointer to the next node so the newnode will be added on correctly
         } else {
             tail.next = current2;
-            current2 = current2.next; // ! have to create pointer
+            current2 = current2.next; // ! have to move pointer to the next node so the newnode will be added on correctly
         }
+        //update tail pointer after done working through list1 and list 2
+        tail = tail.next;
     }
 
     if (current1) return tail.next = current1;
@@ -39,3 +41,5 @@ const mergeLL = (head1, head2) => {
     
 return dummy.next;
 }
+
+//objective:
