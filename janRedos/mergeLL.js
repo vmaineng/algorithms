@@ -38,8 +38,8 @@ const mergeLL = (head1, head2) => {
         tail = tail.next;
     }
 
-    if (current1) return tail.next = current1;
-    if (current2) return tail.next = current2;
+    if (current1)  tail.next = current1;
+    if (current2)  tail.next = current2;
     
 return dummy.next;
 }
