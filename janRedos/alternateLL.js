@@ -96,5 +96,14 @@ if (current2) tail.next = current2;
 
 return tail;
 
-
 }
+
+//return length === set.size();
+
+function playArray(array) {
+    const last = array[array.length - 1];
+    console.log(last, array.length-1) //last = value, array.length-1 = index
+    return last * (last + 1) /2
+}
+
+console.log(playArray([1,2,3]))
