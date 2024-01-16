@@ -44,3 +44,15 @@ return head;
 // objective:
 //move tail to the end of the node, then
 // increment count after looking at the Node
+
+
+
+
+
+
+
+
+const altLL2 = (head1, head2) => {
+//head of two linked lists
+//return one linked list of the two values
+}
