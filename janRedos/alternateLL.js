@@ -55,4 +55,46 @@ return head;
 const altLL2 = (head1, head2) => {
 //head of two linked lists
 //return one linked list of the two values
+
+//edge cases: 
+//if list1 is empty, then return list2
+//if list2 is empty, return list1
+
+//initiate a count
+//if odd, add in node from first list
+//if even, add in from second list
+//then increment counter
+
+//if remaining list1, add rest of list1
+//if remaining list2, add rest of list 2
+
+if (!head1) return head2;
+if (!head2) return head1;
+
+let count = 0; 
+let head = head1;
+let tail = head;
+let current1 = head1.next;
+let current2 = head2;
+
+   
+
+while (current1 !== null && current2 !== null) {
+    if (count % 2 === 0) {
+        tail.next = current2;
+        current2 = current2.next;
+    } else {
+        tail.next = current;
+        current = current.next;
+    }
+    tail = tail.next;
+    count ++
+}
+
+if (current) tail.next = current;
+if (current2) tail.next = current2;
+
+return tail;
+
+
 }
