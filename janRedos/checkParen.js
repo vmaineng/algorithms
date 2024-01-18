@@ -51,4 +51,35 @@ const replaceChar = (s,k) => {
     //get a string of letter, and an integer that states how many letters can be replaced
     //return the length of the longest substring containing same letters
     //'ARGRRGR',4 => 'RRRRRRR' => 7
+
+    //edge cases:
+    //if the number of replacements exceed the letters of the string
+
+    //keep track of length size
+    //!have to keep track of most frequent character seen
+    //iterate at first letter
+    //see if second letter is equal to the first letter
+    //if so, keep going until k is reached
+    //return maxLength
+
+    let maxLength = 0;
+    let charFreq = {};
+    let maxFreq = 0;
+    let i = 0; 
+    let j = 0;
+
+   while (j < s.length) {
+    const rightChar = s.CharAt(right);
+    charFreq[rightChar] = charFreq[rightChar] + 1 || 1
+    maxFreq = Math.max(maxFreq, charFreq[rightChar])
+
+    while ((j - i + 1) - maxFreq > k) {
+        const leftChar = s.CharAt(left);
+        charFreq[leftChar] -= 1
+        left++
+    }
+    maxLength = Math.max(maxLength, (right - left + 1)) 
+    right++
+   }
+   return maxLength;
 }
