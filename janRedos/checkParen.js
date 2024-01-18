@@ -156,9 +156,17 @@ const revLL = (head) => {
 }
 
 //recursive;
-const revLL = (head, prev = null) {
-    if (head === null) return prev;
-    const next = head.next;
-    head.next = prev ; // !have to switch pointers
-    return revLL(next, head)
+// const revLL = (head, prev = null) {
+//     if (head === null) return prev;
+//     const next = head.next;
+//     head.next = prev ; // !have to switch pointers
+//     return revLL(next, head)
+// }
+
+function add(array) {
+    return array.map((letter, idx) => {
+      return `${idx} + 1, ${letter}`
+    })
 }
+
+console.log(add(["a", "b"]))
