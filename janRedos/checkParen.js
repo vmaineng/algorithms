@@ -164,8 +164,8 @@ const revLL = (head) => {
 // }
 
 function add(array) {
-    return array.map((letter, idx) => {
-      return `${idx} + 1, ${letter}`
+    return array.map((letter, idx) => { //return for overall function
+      return idx + 1 + " : " + letter//returns for each individual transformed element of the array
     })
 }
 
