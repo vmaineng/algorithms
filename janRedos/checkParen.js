@@ -128,4 +128,34 @@ const revLL = (head) => {
     //get a head of a linked list
     //return it reverse
     //1 -> 3 -> 4 -> null => 4 -> 3 -> 1 -> null
+
+    //edge case:
+    //if head is empty, return nulll
+
+    //set up pointers: prev, curr
+
+    //iterate through while the linked list is not null
+    //capture the next node
+    //switch the pointer from next to prev
+    //move pointers: next, curr, prev
+    //return the prev
+
+    let prev = null;
+    let current = head;
+    
+    while (current !== null) {
+        const next = current.next;
+        current.next = prev; 
+        current = next;
+        prev = current;
+    }
+    return prev;
+}
+
+//recursive;
+const revLL = (head, prev = null) {
+    if (head === null) return prev;
+    const next = head.next;
+    head.next = prev ; // !have to switch pointers
+    return revLL(next, head)
 }
