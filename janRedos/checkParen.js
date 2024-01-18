@@ -105,12 +105,12 @@ let left = 0;
 let right = 0; 
 
 while (right < s.length) {
-    const rightChar = s.CharAt(right);
+    const rightChar = s.charAt(right);
     trackFrequencies[rightChar] = trackFrequencies[rightChar] + 1 || 1
     maxChar = Math.max(maxChar, trackFrequencies[rightChar])
 
     while ((right - left + 1) - maxChar > k) {
-        const leftChar = s.CharAt(left)
+        const leftChar = s.charAt(left)
         trackFrequencies[leftChar] -= 1
         left++
     }
