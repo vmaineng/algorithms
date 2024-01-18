@@ -140,14 +140,17 @@ const revLL = (head) => {
     //move pointers: next, curr, prev
     //return the prev
 
+    if (!head) return null;
+
     let prev = null;
     let current = head;
     
     while (current !== null) {
         const next = current.next;
         current.next = prev; 
+        prev = current; //! move prev to current first
         current = next;
-        prev = current;
+       
     }
     return prev;
 }
