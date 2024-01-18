@@ -123,3 +123,9 @@ return maxLength;
 }
 
 console.log(replaceChar('ABA', 1))
+
+const revLL = (head) => {
+    //get a head of a linked list
+    //return it reverse
+    //1 -> 3 -> 4 -> null => 4 -> 3 -> 1 -> null
+}
