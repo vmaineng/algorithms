@@ -62,27 +62,27 @@ const replaceChar = (s,k) => {
     //if so, keep going until k is reached
     //return maxLength
 
-    let maxLength = 0;
-    let charFreq = {};
-    let maxFreq = 0;
-    let i = 0; 
-    let j = 0;
+//     let maxLength = 0;
+//     let charFreq = {};
+//     let maxFreq = 0;
+//     let i = 0; 
+//     let j = 0;
 
-   while (j < s.length) {
-    const rightChar = s.CharAt(right);
-    charFreq[rightChar] = charFreq[rightChar] + 1 || 1
-    maxFreq = Math.max(maxFreq, charFreq[rightChar])
+//    while (j < s.length) {
+//     const rightChar = s.CharAt(right);
+//     charFreq[rightChar] = charFreq[rightChar] + 1 || 1
+//     maxFreq = Math.max(maxFreq, charFreq[rightChar])
 
-    while ((j - i + 1) - maxFreq > k) {
-        const leftChar = s.CharAt(left);
-        charFreq[leftChar] -= 1
-        left++
-    }
-    maxLength = Math.max(maxLength, (right - left + 1)) 
-    right++
-   }
-   return maxLength;
-}
+//     while ((j - i + 1) - maxFreq > k) {
+//         const leftChar = s.CharAt(left);
+//         charFreq[leftChar] -= 1
+//         left++
+//     }
+//     maxLength = Math.max(maxLength, (right - left + 1)) 
+//     right++
+//    }
+//    return maxLength;
+
 
 //initiate an object to keep track of how many characters seen
 //keep track of length;
@@ -96,3 +96,30 @@ const replaceChar = (s,k) => {
 //keep track of length
 //move right window
 //return the length;
+
+let trackFrequencies = {};
+let maxLength = 0;
+let maxChar = 0; 
+
+let left = 0;
+let right = 0; 
+
+while (right < s.length) {
+    const rightChar = s.CharAt(right);
+    trackFrequencies[rightChar] = trackFrequencies[rightChar] + 1 || 1
+    maxChar = Math.max(maxChar, trackFrequencies[rightChar])
+
+    while ((right - left + 1) - maxChar > k) {
+        const leftChar = s.CharAt(left)
+        trackFrequencies[leftChar] -= 1
+        left++
+    }
+    maxLength = Math.max(maxLength, (right - left + 1))
+    right++
+}
+
+return maxLength;
+
+}
+
+console.log(replaceChar('ABA', 1))
