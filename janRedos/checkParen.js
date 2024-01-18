@@ -83,3 +83,16 @@ const replaceChar = (s,k) => {
    }
    return maxLength;
 }
+
+//initiate an object to keep track of how many characters seen
+//keep track of length;
+//start window at the first letter
+//iterate through until end of string
+//store the letters seen in the object and how many times we've seen it
+//keep track of the letter we have seen the most
+//during this operation,
+//make sure the window and the maxLetter seen does not exceed k operations
+//if it does, move left window up
+//keep track of length
+//move right window
+//return the length;
