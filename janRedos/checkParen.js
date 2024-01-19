@@ -169,7 +169,7 @@ function add(array) {
     })
 }
 
-console.log(add(["a", "b"]))
+// console.log(add(["a", "b"]))
 
 const groupAna = (array) => {
     //an array of strings
@@ -182,5 +182,24 @@ const groupAna = (array) => {
     //split the strings, sort them, and create an object to store the words as values
     //return the values as arrays
 
-    
+    if (array.length === 1) return [array];
+
+//     let sortedWords = array.map(string => string.split("").sort().join(""))
+//    return sortedWords
+
+let answer = [];
+let trackWords = {};
+
+for (const word of array) {
+    let sortedWords = word.split("").sort().join("");
+
+    if (!trackWords[sortedWords]) trackWords[sortedWords] = [];
+    trackWords[sortedWords].push(word)
+
 }
+return Object.values(trackWords) //return the values from the object
+
+
+}
+
+console.log(groupAna(["bat", 'abt', 'rat']))
