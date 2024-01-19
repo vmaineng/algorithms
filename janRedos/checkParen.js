@@ -252,3 +252,15 @@ const longestRepeating = (string, k) => {
 }
 
 console.log(longestRepeating('ABCDBCD', 4))
+
+const checkPa = (string) => {
+    //get a string of paranethesis
+    //return true of paranthesis matches, else return false
+    //"(({})[])" => true
+
+    //edge case:
+    //if length is one, return false
+
+    //create a stack to store parenthesis
+    //
+}
