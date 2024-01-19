@@ -97,32 +97,32 @@ const replaceChar = (s,k) => {
 //move right window
 //return the length;
 
-let trackFrequencies = {};
-let maxLength = 0;
-let maxChar = 0; 
+// let trackFrequencies = {};
+// let maxLength = 0;
+// let maxChar = 0; 
 
-let left = 0;
-let right = 0; 
+// let left = 0;
+// let right = 0; 
 
-while (right < s.length) {
-    const rightChar = s.charAt(right);
-    trackFrequencies[rightChar] = trackFrequencies[rightChar] + 1 || 1
-    maxChar = Math.max(maxChar, trackFrequencies[rightChar])
+// while (right < s.length) {
+//     const rightChar = s.charAt(right);
+//     trackFrequencies[rightChar] = trackFrequencies[rightChar] + 1 || 1
+//     maxChar = Math.max(maxChar, trackFrequencies[rightChar])
 
-    while ((right - left + 1) - maxChar > k) {
-        const leftChar = s.charAt(left)
-        trackFrequencies[leftChar] -= 1
-        left++
-    }
-    maxLength = Math.max(maxLength, (right - left + 1))
-    right++
-}
+//     while ((right - left + 1) - maxChar > k) {
+//         const leftChar = s.charAt(left)
+//         trackFrequencies[leftChar] -= 1
+//         left++
+//     }
+//     maxLength = Math.max(maxLength, (right - left + 1))
+//     right++
+// }
 
-return maxLength;
+// return maxLength;
 
-}
+// }
 
-console.log(replaceChar('ABA', 1))
+// console.log(replaceChar('ABA', 1))
 
 const revLL = (head) => {
     //get a head of a linked list
@@ -201,7 +201,7 @@ return Object.values(trackWords) //return the values from the object
 
 
 }
-
+}
 // console.log(groupAna(["bat", 'abt', 'rat']))
 
 const longestRepeating = (string, k) => {
@@ -228,5 +228,27 @@ const longestRepeating = (string, k) => {
     //find max length
     //return the max length;
 
+    let trackFreq = {};
+    let maxFreq = 0;
+    let length = 0; 
+
+    let left = 0;
+    let right = 0;
+
+    while (right < string.length) {
+        const rightChar = string.charAt(right) 
+        trackFreq[rightChar] = trackFreq[rightChar] + 1 || 1
+        maxFreq = Math.max(maxFreq,trackFreq[rightChar])
+
+        while ((right - left + 1) - maxFreq > k) {
+            const leftChar = string.charAt(left);
+            trackFreq[leftChar] -= 1
+            left++
+        }
+        length = Math.max(length, (right - left + 1))
+        right ++
+    }
+    return length;
 }
 
+console.log(longestRepeating('ABCDBCD', 4))
