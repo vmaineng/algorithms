@@ -170,3 +170,17 @@ function add(array) {
 }
 
 console.log(add(["a", "b"]))
+
+const groupAna = (array) => {
+    //an array of strings
+    //return anagrams together in one array
+    //["bat", 'abt', 'rat'] => [['rat'], ["bat", 'abt']]
+
+    //if only one word, return the word
+
+    //create an array to store the answers
+    //split the strings, sort them, and create an object to store the words as values
+    //return the values as arrays
+
+    
+}
