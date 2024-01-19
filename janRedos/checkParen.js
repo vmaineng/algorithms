@@ -202,4 +202,31 @@ return Object.values(trackWords) //return the values from the object
 
 }
 
-console.log(groupAna(["bat", 'abt', 'rat']))
+// console.log(groupAna(["bat", 'abt', 'rat']))
+
+const longestRepeating = (string, k) => {
+    //received a string of letters, an integer to state how many to replace
+    //return the length of longest substring of replacement available
+    //"ABCDBCD", 4 => "ABBBBBB" => 6
+
+    //edge case:
+    //if the amount of replacements exceeds the string, then can't do that much replacement
+    if (k > string.length) return "can't complete";
+
+    //create an object to keep track of the letters seen
+    //keep track of maxFreq
+    //keep track of maxLength;
+
+    //create pointers starting at the first letter
+
+    //iterate through the string and keep track of letters seen
+    //find the max frequeny letter
+
+    //while looping through, make sure the length and the changes does not exceed what k stated
+    //otherwise, shift window in from left side
+
+    //find max length
+    //return the max length;
+
+}
+
