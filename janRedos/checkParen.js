@@ -262,5 +262,19 @@ const checkPa = (string) => {
     //if length is one, return false
 
     //create a stack to store parenthesis
-    //
+    //create object to state values
+    //iterate through the string
+    //push on stack
+    //if stack pop off does not match, return false
+    //else if after checking the entire string
+    //return true
+
+    let check = [];
+
+    for (let paren of string) {
+        check.push(paren)
+    } else if (paren.pop !== paren) {
+        return false
+    }
+    return true;
 }
