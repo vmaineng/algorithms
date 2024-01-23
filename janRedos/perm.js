@@ -56,5 +56,26 @@ console.log(perm('abdfs', 'rhinabo'))
 
 
 const perm2 = (s1, s2) => {
-    
+    //get two strings of lowercase letters
+    //return true if s2 contains s1, else false
+    //'joe', 'paeoj' => true => 'eoj'
+    //'abcd', 'a' => false
+
+    //edge case:
+    //if s2's length is shorter than s1, return false; not enough to search and confirm
+
+    //keep track of the letters seen in s1
+
+    //keep track of s1's length
+    //iterate and look through s2's string
+    //extend right side of window up to s1's lenth
+
+    //if the window size is = s1's length ,return true;
+
+    //if the right side value exceeds 0, then decrement
+    //left side window
+
+    //after searching entire strings, return false
+
+
 }
