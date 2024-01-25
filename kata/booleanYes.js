@@ -55,19 +55,22 @@ return bool ? "Yes" : "No"
       //add to sum
       //return sum
       
-      let sum = 0; 
+//       let sum = 0; 
       
-      for (let i of numbers) {
-    // for (let i = 0; i < numbers.length; i++){
-        const sqRoot = i**2
-        console.log(sqRoot, i)
-        sum += sqRoot
-      }
+//       for (let i of numbers) {
+//     // for (let i = 0; i < numbers.length; i++){
+//         const sqRoot = i**2
+//         console.log(sqRoot, i)
+//         sum += sqRoot
+//       }
 
 // let sqRtNums = numbers.map(num => Math.exp(num))
 // console.log(sqRtNums)
 
-      return sum
+//       return sum
+
+return numbers.reduce((acc, num) => acc + (num **2), 0)
+
     }
 
     console.log(squareSum([1,2,3]))
