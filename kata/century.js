@@ -38,8 +38,27 @@ function century(year) {
 //map through it and grab first letter
 //return it capitalize
 
-return name.split(" ").map(letter => letter[0].toUpperCase()).join(".")
+// return name.split(" ").map(letter => letter[0].toUpperCase()).join(".")
       
     }
 
-    console.log(abbrevName("ma van"))
+    // console.log(abbrevName("ma van"))
+
+    function digitize(n) {
+        //receive an integer
+        //return the reverse order in an array
+        //453453 => [3,5,4,3,5,4]
+        
+        //convert it into a string and reverse it ?
+        
+        let stringNumber= String(n).split("").reverse().map(Number);
+        //convert to string to split and reverse the nubmers
+        //then have to map back and convert it back to numbers since 
+        //they were strings
+        console.log(stringNumber)
+        
+        // return stringNumber.reverse();
+        
+      }
+
+      console.log(digitize(453453))
