@@ -5,14 +5,14 @@ function repeatStr (n, s) {
     //ex: (10,"Mai") => "MaiMaiMaiMaiMaiMaiMaiMaiMaiMai"
     
     //create a new string
+    //keep repeating the same actions onto the new String n times
     //add the s word/char on to the string
-    //if the times it's been added exceeds n, then stop
     //return string
     
   //   let newString = "";
-  //   for (let word of s) {
+  //   for (let i = 0;i < n; i++) {
   //     newString += word
-  //     if ( n )
+  //     return newString
   //   }
     
     return s.repeat(n)
