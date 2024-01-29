@@ -44,7 +44,7 @@ function repeatStr (n, s) {
     }
   }
 
-  console.log(SmallestIntegerFinder(findSmallestInt([-342,-453, 452,47, 8])))
+//   console.log(SmallestIntegerFinder(findSmallestInt([-342,-453, 452,47, 8])))
 
   function countSheeps(sheep) {
     //an array of true or false
@@ -63,12 +63,15 @@ function repeatStr (n, s) {
     
     if (!sheep || sheep === undefined || sheep === null) return 0;
     
-    let count = 0;
-    for (let i = 0;i < sheep.length; i++) {
-      if (sheep[i] === true) {
-        count += 1
-      }
-    }
-    return count;
+    // let count = 0;
+    // for (let i = 0;i < sheep.length; i++) {
+    //   if (sheep[i] === true) {
+    //     count += 1
+    //   }
+    // }
+    // return count;
   
+    return sheep.filter(Boolean).length;
   }
+
+  console.log(countSheeps([true, false, true, true]))
