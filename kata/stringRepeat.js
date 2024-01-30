@@ -75,3 +75,24 @@ function repeatStr (n, s) {
   }
 
   console.log(countSheeps([true, false, true, true]))
+
+  function basicOp(operation, value1, value2){
+    //string of an operation, an integer, and an integer
+    //return the sum of the operation
+    //('/', 16, 4) => 4
+    
+    //if operation is a +, then add the two values
+    //if the operation is a -, then subtract the two values
+    //if operation is a *, then multiply the two values
+    //if the operation is a /, then divide the two values
+    
+    if (operation === '+') {
+      return value1 + value2
+    } else if (operation === '-') {
+      return value1 - value2
+    } else if (operation === '*') {
+      return value1 * value2
+    } else {
+      return value1 / value2
+    }
+  }
