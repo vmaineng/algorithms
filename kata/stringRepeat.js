@@ -147,3 +147,33 @@ return `found the needle at position ${haystack.indexOf("needle")}`
     // ! essentially stating that the reminder does not equal the same 
     return flower1 % 2 !== flower2 % 2
   }
+
+  function squareDigits(num){
+    //get a number
+    //return the number of each digit squared and add them back together as a Number
+    //428 => 16464
+    
+    //if the num is 0, return 0
+    
+    //take the num and convert to string => "428"
+    //traverse through each num and 
+    //square the digit
+    //then concat them
+    //return the number
+    
+    if (num === 0) return 0;
+    
+    let answer = "";
+    
+    let stringNum = String(num);
+    
+    for (let i = 0; i < stringNum.length;i++) {
+      let powNum = Math.pow(parseInt(stringNum[i]), 2)
+     answer += powNum
+    }
+    return Number(answer)
+  }
+
+  console.log(squareDigits(3212))
+
+  //3212 => 9424
