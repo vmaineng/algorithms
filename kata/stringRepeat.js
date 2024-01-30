@@ -102,3 +102,25 @@ function repeatStr (n, s) {
     
     return `Hello, ${name} how are you doing today?`
   }
+
+  function findNeedle(haystack) {
+    // an array filled with strings, integers of characters/words
+    //return the index where the word need is found
+    //["needle", "ja", 'rawr', '234', 2]
+    
+    //edge case:
+    //if haystack is empty, return "Your function didn't return anything"
+    
+    //iterate through each element in the array
+    //if the value is "needle",
+    //return "found the needle at position " index value
+    
+    if (!haystack) return "Your function didn't return anything"
+    
+    for (let i = 0; i < haystack.length; i++) {
+      if (haystack[i] === "needle") {
+        return `found the needle at position ${i}`
+      } 
+    }
+    
+  }
