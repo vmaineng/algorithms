@@ -126,3 +126,24 @@ function repeatStr (n, s) {
 return `found the needle at position ${haystack.indexOf("needle")}`
 
   }
+
+  function lovefunc(flower1, flower2){
+    // a value for both flowers
+    //return true, if in love, else false
+    //if one flower is even and the other flower is odd, true
+    //else it's false
+    
+    // if ((flower1 % 2 === 0) && (flower2 % 2 !== 0)) {
+    //   return true
+    // } else if ((flower1 % 2 !== 0) && (flower2 % 2 === 0)) {
+    //   return true
+    // } else {
+    //   return false
+    // }
+
+
+    //condense it into one:
+
+    // ! essentially stating that the reminder does not equal the same 
+    return flower1 % 2 !== flower2 % 2
+  }
