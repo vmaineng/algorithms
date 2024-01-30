@@ -117,10 +117,12 @@ function repeatStr (n, s) {
     
     if (!haystack) return "Your function didn't return anything"
     
-    for (let i = 0; i < haystack.length; i++) {
-      if (haystack[i] === "needle") {
-        return `found the needle at position ${i}`
-      } 
-    }
+    // for (let i = 0; i < haystack.length; i++) {
+    //   if (haystack[i] === "needle") {
+    //     return `found the needle at position ${i}`
+    //   } 
+    // }
     
+return `found the needle at position ${haystack.indexOf("needle")}`
+
   }
