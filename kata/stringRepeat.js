@@ -202,4 +202,30 @@ return `found the needle at position ${haystack.indexOf("needle")}`
   //   console.log(name[0])
     
     return name[0] === 'r' || name[0] === "R" ? `${name} plays banjo` : `${name} does not play banjo`
+  
+//return name + (name[0].toLowerCase() === 'r' ? 'plays' : 'does not play ') + 'banjo';
+
+}
+
+function getCount(str) {
+    //get a string of characters
+    //return the count of vowels existing in the string
+    //'jumped' => 2
+    
+    //initialize a count
+    //create an array containing the vowels
+    
+    //iterate through each letter in string
+    //if it's a vowel, increase count
+    //return count
+    
+    let count = 0;
+    let vowels = ['a', 'e', 'i', 'o', 'u']
+    
+    for (let char of str) {
+      if (vowels.includes(char)) {
+        count++
+      }
+    }
+    return count
   }
