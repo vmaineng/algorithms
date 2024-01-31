@@ -177,3 +177,29 @@ return `found the needle at position ${haystack.indexOf("needle")}`
   console.log(squareDigits(3212))
 
   //3212 => 9424
+
+  function booleanToString(b){
+    //boolean - true, false
+    //return 'true', 'false' (string type)
+    //false => 'false'
+    
+    return String(b)
+    //return b.toString();
+  }
+
+  function areYouPlayingBanjo(name) {
+    // receive a string of a name
+    //return 'plays banjo' if first name is 'R' or 'r', else 'does not play banjo'
+    //'joe' => 'does not play banjo'
+    //'ro' => 'plays panjo'
+  
+    
+    //check the first letter of the name to see if it equals 'r' or 'R'
+    //then return 'plays banjo'
+    //else, 'does not play banjo'
+    
+    
+  //   console.log(name[0])
+    
+    return name[0] === 'r' || name[0] === "R" ? `${name} plays banjo` : `${name} does not play banjo`
+  }
