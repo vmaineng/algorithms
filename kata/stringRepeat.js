@@ -245,15 +245,20 @@ function getCount(str) {
     //calc for second
     //add to total
     
-    let sum = 0;
+    // let sum = 0;
     
-    let totalHour = (360 * h) * 10000
+    let totalHour = (60 * 60 * h) * 1000 // ! converting hours to mins; then mins to seconds
     let totalMin = (60 * m) * 1000
     let totalSec = (1 * s) * 1000
+
+    return totalHour + totalMin + totalSec
     
-    if (h > 0 || m > 0 || s > 0) {
-      console.log(totalHour, totalMin, totalSec)
-      sum += totalHour + totalMin + totalSec
-    }
-    return sum 
+    // if (h > 0 || m > 0 || s > 0) {
+    //   console.log(totalHour, totalMin, totalSec)
+    //   sum += totalHour + totalMin + totalSec
+    // }
+    // return sum 
   }
+
+  // ! bringinghour and mins to level playing ground with seconds
+
