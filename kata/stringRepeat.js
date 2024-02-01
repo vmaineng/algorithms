@@ -288,3 +288,51 @@ function getCount(str) {
      let sum = array.reduce((acc, cv) => acc + cv, 0)
      let averageSum = sum/array.length;
      return averageSum;
+
+  }
+
+     function betterThanAverage(classPoints, yourPoints) {
+      //receive an array of integers, and then an integer classifying my points
+       //return true if myPoints was better than the class, else false
+       
+       //[2,4,3, 6], 2 => 17/4 => false
+       
+       //add up the sum in classPoints and divide it by the length to get the average
+       //then check to see if the points are less than myPoints, return true
+       //else return false
+       
+       
+     //   let sum = 0;
+     //   let avgClass = 0;
+       
+     //   for (let i = 0; i < classPoints.length; i++) {
+     //     sum += classPoints[i]
+     //     avgClass = sum/classPoints.length
+     //   }
+       
+     //   return avgClass > yourPoints ? false : true
+     
+      //  let avgClass = classPoints.reduce((acc, cv) => acc +cv, 0)/classPoints.length 
+      //  return avgClass > yourPoints ? false : true
+     
+      return yourPoints > classPoints.reduce((acc, cv) => acc +cv, 0)/classPoints.length 
+     }
+
+     function highAndLow(numbers){
+      //get a string of numbers with spaces in between
+      //return the highest number first, then the lowest number with spaces in between and as strings
+      //" 34, 53, 55, -83, 92" => "92 -83"
+      
+      //if numbers only has one number, return the number as highest and lowest
+      
+      //split the string by spaces
+      //find the max and min
+      //join them back by spaces
+      
+      if (numbers.length === 1) return `${numbers} ${numbers}`
+      
+      let arrayNum = numbers.split(" ")
+      let maxNum = Math.max(...arrayNum)
+      let minNum = Math.min(...arrayNum)
+      return `${maxNum} ${minNum}`
+    }
