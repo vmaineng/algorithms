@@ -229,3 +229,31 @@ function getCount(str) {
     }
     return count
   }
+
+  function past(h, m, s){
+    //get an integer for hour, min, sec
+    //return the time in milliseconds
+    //milliseconds = 1000 = one thousandth of a second
+    
+    //past(1, 3, 3) => 360, 90, 3 => 360,000 + 90000 + 3000 => 3690300
+    
+  //keep a running total
+    //calc for hours first
+    //add to total
+    //calc for mins
+    //add to total
+    //calc for second
+    //add to total
+    
+    let sum = 0;
+    
+    let totalHour = (360 * h) * 10000
+    let totalMin = (60 * m) * 1000
+    let totalSec = (1 * s) * 1000
+    
+    if (h > 0 || m > 0 || s > 0) {
+      console.log(totalHour, totalMin, totalSec)
+      sum += totalHour + totalMin + totalSec
+    }
+    return sum 
+  }
