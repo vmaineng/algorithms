@@ -262,3 +262,29 @@ function getCount(str) {
 
   // ! bringinghour and mins to level playing ground with seconds
 
+  function findAverage(array) {
+    //get an array of integers
+     //return the average from the integers listed
+     
+     //[2,4,-2, 8] => 12/4 => 3 is average
+     
+     //if array is empty return 0
+     
+     //sum up all the integers in array
+     //divide it by the length 
+     //return avg
+     
+     if (array.length === 0) return 0;
+     
+   //   let sum = 0;
+   //   let averageSum = 0;
+     
+   //   for (let i = 0; i < array.length; i++) {
+   //     sum += array[i]
+   //     averageSum = sum/array.length;
+   //   }
+   //   return averageSum
+     
+     let sum = array.reduce((acc, cv) => acc + cv, 0)
+     let averageSum = sum/array.length;
+     return averageSum;
