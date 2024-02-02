@@ -380,11 +380,51 @@ return Math.ceil(month/3)
         
         if (!array) return 0;
         
-      let sortedArray = array.sort((a,b) => a -b);
+      // let sortedArray = array.sort((a,b) => a -b);
         
-        let sum = 0;
-        for (let i = 1; i < array.length - 1; i++) {
-          sum += array[i]
+      //   let sum = 0;
+      //   for (let i = 1; i < sortedArray.length - 1; i++) {
+      //     sum += sortedArray[i]
+      //   }
+      // return sum
+
+
+      //sort
+      //slice out the first and last index
+      //reduce on it
+      function sumArray(array) {
+        return array ? array.sort((a,b) => a - b).slice(1, -1).reduce((acc, cv) => acc, cv, 0) : 0
         }
-      return sum
       }
+      function makeValley(arr) {
+        // receive an array of integers
+      //return the array sorted in two ways: left side starts with biggest number decreasing
+      //right side ends with the numbers increasing
+      //[34, 25, 64, 75, 86, 83] => left = [86, 75, 34 ]      right = [25, 64,83]
+      
+      //seems like you find the biggest one, then add to left, then add to right
+      
+      //set up two arrays - left and right
+      //sort
+      //look at the end of the nubmers
+      //push it into the left array
+      //then next number, shift into the right array
+      //return the arrays concat
+      
+      let leftArray = [];
+      let rightArray = [];
+      
+       let sortedArray = arr.sort((a, b) => b - a);
+    
+      for (let i = 0; i < sortedArray.length; i++) {
+        let currentNumber = sortedArray[i];
+    
+        if (i % 2 === 0) {
+          leftArray.push(currentNumber);
+        } else {
+          rightArray.unshift(currentNumber);
+        }
+      }
+    
+      return leftArray.concat(rightArray);
+    }
