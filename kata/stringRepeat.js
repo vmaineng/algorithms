@@ -352,13 +352,39 @@ function getCount(str) {
       
       if (month > 12) return "Not acceptable. Please try again"
       
-      if (month >= 1 && month < 4) {
-        return 1
-      } else if (month >= 4 && month < 7){
-        return 2
-      }   else if (month >= 7 && month < 10){
-        return 3
-      } else {
-        return 4
-      }
+      // if (month >= 1 && month < 4) {
+      //   return 1
+      // } else if (month >= 4 && month < 7){
+      //   return 2
+      // }   else if (month >= 7 && month < 10){
+      //   return 3
+      // } else {
+      //   return 4
+      // }
+
+return Math.ceil(month/3)
+
     }
+
+    function sumArray(array) {
+      //get an array of integers
+        //return the total sum (not counting the min and the max)
+      //[34, 2, 8, 16] => 8 + 16 = 24
+        
+        //edge case: if (array is empty or null) return 0
+        
+        //keep a track of the sum
+        //sort?
+        //iterate at the second index and go up to second last one
+        //add to sum
+        
+        if (!array) return 0;
+        
+      let sortedArray = array.sort((a,b) => a -b);
+        
+        let sum = 0;
+        for (let i = 1; i < array.length - 1; i++) {
+          sum += array[i]
+        }
+      return sum
+      }
