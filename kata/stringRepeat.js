@@ -428,3 +428,25 @@ return Math.ceil(month/3)
     
       return leftArray.concat(rightArray);
     }
+
+    function descendingOrder(n){
+      //receive a number
+      //return the number in descending order
+      //32 => 32 
+      
+      //if number's length is 1, return the number
+      
+      //convert number to string
+      //sort it
+      //parseInt it
+      
+      // if (n.length === 1) return n;
+      
+      // let array = n.toString().split("").sort((a,b) => b- a).join("")
+      
+      // let answer = parseInt(array)
+      // return answer;
+    //   console.log(array, answer)
+      
+    return parseInt(String(n).split("").reverse().join(""))
+    }
