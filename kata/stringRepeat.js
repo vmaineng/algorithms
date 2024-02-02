@@ -336,3 +336,29 @@ function getCount(str) {
       let minNum = Math.min(...arrayNum)
       return `${maxNum} ${minNum}`
     }
+
+    const quarterOf = (month) => {
+      //get an integer to represent the month
+      //return which quarter it is in
+      //4 => 1 b/c of first quarter
+      
+      //edge case:
+      //if the number pass in exceeds 12, it's not acceptable
+      
+      //if the number falls within 1-3, it is 1
+      //if number falls within 4 - 7, it is 2
+      //if number falls within 8 - 10, it is 3
+      //else it is 4
+      
+      if (month > 12) return "Not acceptable. Please try again"
+      
+      if (month >= 1 && month < 4) {
+        return 1
+      } else if (month >= 4 && month < 7){
+        return 2
+      }   else if (month >= 7 && month < 10){
+        return 3
+      } else {
+        return 4
+      }
+    }
