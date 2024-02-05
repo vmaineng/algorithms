@@ -392,10 +392,16 @@ return Math.ceil(month/3)
       //sort
       //slice out the first and last index
       //reduce on it
-      function sumArray(array) {
-        return array ? array.sort((a,b) => a - b).slice(1, -1).reduce((acc, cv) => acc, cv, 0) : 0
-        }
+    
+         return array ? array.sort((a,b) => a - b).slice(1, -1)
+        // return array ? array.sort((a,b) => a - b).slice(1, -1).reduce((acc, cv) => acc, cv, 0) : 0
+        // console.log(answer)
+    
+       
       }
+
+      console.log(sumArray[23, 432, 53])
+
       function makeValley(arr) {
         // receive an array of integers
       //return the array sorted in two ways: left side starts with biggest number decreasing
@@ -448,5 +454,21 @@ return Math.ceil(month/3)
       // return answer;
     //   console.log(array, answer)
       
-    return parseInt(String(n).split("").reverse().join(""))
+    return parseInt(String(n).split("").sort().reverse().join(""))
     }
+
+
+    function monkeyCount(n) {
+      // receive an integer
+        //output: an array of each individual number
+        //6 => [1, 2, 3, 4,5 ,6]
+        
+        //add a number on to the array each time
+        
+        let array = []
+        
+        for (let i = 1; i <= n; i ++) {
+          array.push(i)
+        }
+        return array;
+      }
