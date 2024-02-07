@@ -89,3 +89,36 @@ function makeUpperCase(str) {
   //optimized: use a set
   return new Set(str.toLowerCase()).size === str.length;
   }
+
+  function getMiddle(s) {
+    //receive a string of characters
+    //return the middle character(s)
+    //'apple' => 'p'
+    //'fork' => 'or'
+    
+    //edge case: if string is less than 1, return the str
+    
+    
+  //find the middleIndex
+    //if the string's length is even, 
+    //return the value before the index and after index
+    //else string is odd,
+    //return the char at the middle
+    
+    if (s.length <= 1) return s
+    
+    const middleIndex = Math.floor(s.length / 2) //2 
+    
+    if (s.length % 2 === 0 ) {
+        console.log(s[middleIndex]) //r
+      console.log(s.slice(middleIndex - 1, middleIndex + 1)) //or b/c // ! extract the beginning up to and exclude the letter next to middleIndex
+    } else {
+      return s.charAt(middleIndex)
+    }
+  
+  }
+
+  console.log(getMiddle('fork'))
+    //                     MI
+
+
