@@ -42,3 +42,47 @@ function makeUpperCase(str) {
     
     return str.toUpperCase();
   }
+
+  function isIsogram(str){
+    //receive a string
+    //return true if letters are used once, else false
+    //'jump' => true
+    //'apple' => false
+    
+    //edge case: if string is less than 1, it is unique => true
+    
+    //iterate through the string
+    //keep track of the values in a frequnecy counter
+    
+    //check if the counter has more than two values
+    //return false
+    
+    //otherwise return true after checking;
+    
+    if (str.length <= 1) return true;
+    
+    let checkLetter = {};
+    
+    //PIT frequency counter:
+    
+    for (let char of str.toLowerCase()) {
+      if (checkLetter[char]) { //if character exists already
+        return false;
+      } else {
+        checkLetter[char] = 1
+      }
+    }
+    
+    return true;
+    
+  //   for (let char of str.toLowerCase()) {
+  //     checkLetter[char] = checkLetter[char] + 1 || 1
+  //   }
+    
+  //   for (let values in checkLetter) {
+  //   if (checkLetter[values] > 1) {
+  //     return false;
+  //   } 
+  //  }
+  //   return true;
+  }
