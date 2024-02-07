@@ -15,3 +15,22 @@ function multiply(a, b){
    return number % 2 === 0 ? number * 8 : number * 9;
  }
  
+
+ // Sum Numbers
+function sum (numbers) {
+    "use strict";
+    
+    //get an array of integers
+  //return the sum of all the integers added
+  //[-1, -2, -2, -34] => -39
+  
+  //if empty, return 0
+  
+  //create a sum
+  //add up each integer in the loop
+  //return the sum
+  
+  //use reduce to calculate the total
+  
+  return numbers.length > 0 ? numbers.reduce((acc, cv) => acc + cv, 0) : 0;
+};
