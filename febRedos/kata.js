@@ -34,3 +34,11 @@ function sum (numbers) {
   
   return numbers.length > 0 ? numbers.reduce((acc, cv) => acc + cv, 0) : 0;
 };
+
+function makeUpperCase(str) {
+    // receive a string of letters
+    //return it uppercase
+    //"hi" => "HI"
+    
+    return str.toUpperCase();
+  }
