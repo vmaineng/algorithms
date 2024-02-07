@@ -85,4 +85,7 @@ function makeUpperCase(str) {
   //   } 
   //  }
   //   return true;
+
+  //optimized: use a set
+  return new Set(str.toLowerCase()).size === str.length;
   }
