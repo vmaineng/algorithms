@@ -148,6 +148,13 @@ function makeUpperCase(str) {
           
          return (dragons * 2) <= bullets;
           
-          
         }
+
+        function grow(x){
+            //receive an array with integers
+              //return the sumproduct of all the integers, in order
+              //[3, 4, 5, 3] => 900
+              
+              return x.reduce((acc, cv) => acc * cv)
+            }
         
