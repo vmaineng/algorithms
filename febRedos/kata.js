@@ -166,3 +166,25 @@ function XO(str) {
 
   return lowercaseStr.split("x").length === lowercaseStr.split("o").length;
 }
+
+
+String.prototype.toJadenCase = function () {
+    //receive a string with spaces and letters
+    //return the first letter in each word capitalize
+    
+    //"how to help you today?" => 'How To Help You Today?'
+    
+    //split on spaces
+    //iterate trhough each word and capitalize the first letter
+    //return the string
+    
+   let words = this.split(' ') //split = turned the string into an array
+   
+   for (let i = 0; i < words.length; i++) {
+     words[i] = words[i][0].toUpperCase() + words[i].slice(1)
+   }
+    
+    return words.join(" ")
+     
+     
+  };
