@@ -122,3 +122,16 @@ function makeUpperCase(str) {
     //                     MI
 
 
+    function invert(array) {
+        //receive an array of integers
+       //return the array and invert the values
+       //[-3, 0, 4, -2] > [3, 0, -4, 2]
+       
+       //edge case: if the array has no element, return the array
+       
+       //go through each number and return the absolute number
+       
+       if (!array) return 0;
+       
+       return array.map(num => -(num))
+     }
