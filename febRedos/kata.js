@@ -135,3 +135,19 @@ function makeUpperCase(str) {
        
        return array.map(num => -(num))
      }
+
+     function hero(bullets, dragons){
+        //get integers for bullets and dragons
+          //return true if he survives, else return false
+          //to kill a dragon = 2 bullets
+          
+          //30, 30 => false
+          //hero(15, 5) => true
+          
+          //if the amount of bullets is equal to dragson * 2, return true, else return false
+          
+         return (dragons * 2) <= bullets;
+          
+          
+        }
+        
