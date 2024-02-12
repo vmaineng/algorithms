@@ -186,5 +186,42 @@ String.prototype.toJadenCase = function () {
     
     return words.join(" ")
      
-     
   };
+
+  function findShort(s){
+    //a string of words
+      //return the length of the shortest word
+      
+      //"the superbowl was a great show last night" => 1 b/c of "a"
+      
+      //initialize a min to 0;
+      
+      //split the string into words
+      //keep track of the length
+      //update the min
+      
+      //return the min
+
+  //     let words = s.split(" ");
+      
+  //  let minLWord = words[0].length
+      
+     
+      //console.log(words) //[ 'the', 'superbowl', 'was', 'fun' ]
+      
+      // for (let i = 1; i < words.length; i++) {
+      //   const wordLength = words[i].length
+      //   if ( wordLength < minLWord) {
+      //     minLWord = wordLength
+      //     console.log(words[i])
+      //     // minWord = word
+        
+      //   }
+      //   } 
+      //   return minLWord;
+     
+      return Math.min(...s.split(" ").map(s => s.length))
+    
+    }
+
+    console.log(findShort("the superbowl was fun"))
