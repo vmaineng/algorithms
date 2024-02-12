@@ -225,3 +225,28 @@ String.prototype.toJadenCase = function () {
     }
 
     console.log(findShort("the superbowl was fun"))
+
+
+    //capitlize first letter in each string
+
+    function capLetter(string) {
+
+
+      let wordsArray = string.split(" ")
+
+      for (let i = 0 ; i < wordsArray.length; i++) {
+       wordsArray[i] = wordsArray[i][0].toUpperCase() + wordsArray[i].slice(1)
+     // ! modify the words
+      }
+
+      return wordsArray.join(" ")
+    }
+
+    console.log(capLetter("this apple juice is good"))
+
+    function mergeLL(head1, head2){
+      //head of two linked lists
+      //return one linked lists of the two nodes merged in
+
+      
+    }
