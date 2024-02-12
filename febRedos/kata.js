@@ -248,5 +248,47 @@ String.prototype.toJadenCase = function () {
       //head of two linked lists
       //return one linked lists of the two nodes merged in
 
+      //edge case: if one head is empty, return the other head; 
+
+      //if even, add node from head2; if odd, add from head1
+      //take the first node from head1
+      //then point to the first node from head 2
+      //then take the first node from head2
+
+      //return head1
+
+      if (!head1) return head2;
+      if (!head2) return head1; 
+
+      let count = 0; 
       
+      let current1 = head1;
+      let tail = head1;
+      let current2 = head2;
+
+      while(current1 !== null && current2 !== null){
+    if (count % 2 === 0) {
+      tail.next = current2
+      current2 = current2.next
+    } else {
+      tail.next = current1
+      current1 = current1.next
     }
+    current = current.next
+    count++
+  }
+
+    if (head1) tail.next = current1;
+    if (head2) tail = current2.next;
+
+    return current1;
+    }
+
+    //recursive
+
+  function mergeRecu(head1, prev = null) {
+     if (head === null) return prev; //base case
+    const next = head.next;
+    head.next = prev; // ! point to prev node
+    return mergeRecu(next, head)
+  }
