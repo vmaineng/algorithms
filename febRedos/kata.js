@@ -307,6 +307,31 @@ String.prototype.toJadenCase = function () {
     
   //   return minSum
     
-    
-    
   }
+
+  function getSum(a, b) {
+    //receive integers for a and b
+   //sum up the integers between a and b
+   //(2, -3) => -3 + -2 + -1 + 0 + 1 + 2 = -3
+   
+   //edge case, if a and b = same numbers = return a
+   if ( a === b) return a;
+   
+   //keep a running total
+   //find the smallest integer between a and b
+   //add each number up to the max
+   //return the running total
+   
+   let total = 0;
+   
+   if ( a < b) { 
+     for (let i = a; i <= b; i++) {
+       total += i
+     } 
+ } else {
+       for (let i = b;i <= a; i++ ) {
+         total += i
+       }   
+ }
+   return total
+   }
