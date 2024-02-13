@@ -322,16 +322,24 @@ String.prototype.toJadenCase = function () {
    //add each number up to the max
    //return the running total
    
-   let total = 0;
+//    let total = 0;
    
-   if ( a < b) { 
-     for (let i = a; i <= b; i++) {
-       total += i
-     } 
- } else {
-       for (let i = b;i <= a; i++ ) {
-         total += i
-       }   
- }
-   return total
+//    if ( a < b) { 
+//      for (let i = a; i <= b; i++) {
+//        total += i
+//      } 
+//  } else {
+//        for (let i = b;i <= a; i++ ) {
+//          total += i
+//        }   
+//  }
+//    return total
+
+//use Gauss's trick b/c it's sorted
+//find the min and max
+
+let max = Math.max(a,b)
+let min = Math.min(a,b)
+
+return (max - min + 1) * (max - min)/2;
    }
