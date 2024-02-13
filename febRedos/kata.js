@@ -292,3 +292,21 @@ String.prototype.toJadenCase = function () {
     head.next = prev; // ! point to prev node
     return mergeRecu(next, head)
   }
+
+  function sumTwoSmallestNumbers(numbers) {  
+    //receive an integer of positive numbers
+    //return the sum of two lowest numbers
+    //[14, 32, 09, 98] => 14 + 9 = 23
+    
+    //sort them and add the first two numbers
+    //time: o(n log n)
+    
+  //   numbers.sort((a,b) => a - b)
+    
+  //   let minSum = numbers[0] + numbers[1]
+    
+  //   return minSum
+    
+    
+    
+  }
