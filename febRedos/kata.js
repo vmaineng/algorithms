@@ -361,3 +361,22 @@ return (max - min + 1) * (max - min)/2;
    return number * 5**(Math.abs(number).toString().length);
     
   }
+
+  function flickSwitch(arr){
+    //receive an array of words
+     //return true/false in an array 
+     //['jump', 'flick', 'app', 'flick', 'trust'] => [true, false, false, true, true]
+     
+     //iterate through each item
+     //check if it is not 'flick', return true
+     //else, return false
+     
+     let switchBoolean = true;
+     
+     return arr.map(word => {
+      if (word === 'flick') {
+        switchBoolean = !switchBoolean;
+      } 
+    return switchBoolean;
+     })
+     }
