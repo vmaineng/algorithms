@@ -373,10 +373,13 @@ return (max - min + 1) * (max - min)/2;
      
      let switchBoolean = true;
      
-     return arr.map(word => {
-      if (word === 'flick') {
-        switchBoolean = !switchBoolean;
-      } 
-    return switchBoolean;
-     })
+    //  return arr.map(word => {
+    //   if (word === 'flick') {
+    //     switchBoolean = !switchBoolean;
+    //   } 
+    // return switchBoolean;
+    //  })
+
+    return arr.map(word => word === 'flick' ? switchBoolean = !switchBoolean : switchBoolean)
+    //if you are flick, switch it, otherwise, keep it as switchBoolean
      }
