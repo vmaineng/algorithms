@@ -343,3 +343,21 @@ let min = Math.min(a,b)
 
 return (max - min + 1) * (max - min)/2;
    }
+
+   function multiply(number){
+    //receive an integer
+    //return the total 
+    //14 => 14* 5 = 70 ** 2 = 4900
+    //take the integer digit and multiply by 5
+    //then power it to the length of the integer
+    
+    //edge case: multiply anything by 0, is 0
+    
+    if (number === 0) return 0;
+    
+    console.log(number.toString().length)
+    
+    //.     2.   *  25 (5 ** 2) //- is being count as a length
+   return number * 5**(Math.abs(number).toString().length);
+    
+  }
