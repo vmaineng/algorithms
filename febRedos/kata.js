@@ -383,3 +383,26 @@ return (max - min + 1) * (max - min)/2;
     return arr.map(word => word === 'flick' ? switchBoolean = !switchBoolean : switchBoolean)
     //if you are flick, switch it, otherwise, keep it as switchBoolean
      }
+
+     function yearDays(year) {
+      //receive an integer for the year
+      //return whether it has 366 days or 365 days
+      //yearDays(4) => 365 days
+      
+      //leap year = year /4
+      //end of century (2000/400) => 366 days
+      
+      //if the number is divided by 4, it has 366 days,
+      //else if it is a century year, divide it by 400, it has 366 days
+      //else it has 365 days
+      
+      if (year % 4 !== 0) {
+        return `${year} has 365 days`
+      } else if (year % 100 !== 0) {
+        return `${year} has 366 days`
+      }  else if (year % 400 !== 0) {
+        return `${year} has 365 days`
+      } else {
+        return `${year} has 366 days`
+      }
+    }
