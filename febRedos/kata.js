@@ -448,7 +448,7 @@ return (max - min + 1) * (max - min)/2;
         //if they are less than 0, add to negative sum
         //return positive sum, negative sum in an array format
         
-        if (!input) return [];
+        if (!input || input.length < 1) return [];
         
         let positiveSum = 0;
         let negativeSum = 0;
@@ -463,3 +463,14 @@ return (max - min + 1) * (max - min)/2;
       
         return [positiveSum, negativeSum]
       }
+
+      let pair = {};
+
+for (let i = 0; i < nums.length; i++) {
+let difference = target - nums[i];
+    if (pair.hasOwnProperty(difference)){ //checking its own property if the difference exists
+        return [pair[difference], i] //return the value and current index position
+    } else {
+        pair[nums[i]] = i //add the index position to the object
+    }
+}
