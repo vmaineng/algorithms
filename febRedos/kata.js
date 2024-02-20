@@ -406,3 +406,29 @@ return (max - min + 1) * (max - min)/2;
         return `${year} has 366 days`
       }
     }
+
+    class God{
+      /**
+       * @returns Human[]
+       */
+        static create(){
+          return [new Man(), new Woman()]
+        }
+      }
+      class Human {
+        constructor(name) {
+           this.name=name;
+        }
+      }
+      
+      class Man extends Human {
+        constructor(name){
+          super(name);
+        }
+      }
+      
+      class Woman extends Human {
+        constructor(name){
+          super(name);
+        }
+      }
