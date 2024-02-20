@@ -432,3 +432,34 @@ return (max - min + 1) * (max - min)/2;
           super(name);
         }
       }
+
+
+      function countPositivesSumNegatives(input) {
+        // an array of integers
+        //return back an array with the sum of positives and then the sum of negatives
+        //[2, 34, -3, 5,-53] => [41, -56]
+        
+        //if the array is empty, return an empty array
+        
+        //create a positive sum
+        //create a negative sum
+        //look through the numbers
+        //if they are > 0, add to the positive sum
+        //if they are less than 0, add to negative sum
+        //return positive sum, negative sum in an array format
+        
+        if (!input) return [];
+        
+        let positiveSum = 0;
+        let negativeSum = 0;
+        
+        for (let i = 0; i < input.length; i++) {
+          if (input[i] > 0) {
+            positiveSum += 1
+          } else if (input[i] < 0) {
+            negativeSum += input[i]
+          }
+        }
+      
+        return [positiveSum, negativeSum]
+      }
