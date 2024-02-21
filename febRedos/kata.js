@@ -484,3 +484,36 @@ function smash (words) {
  
  return words.join(' ')
 };
+
+var twoSum = function(nums, target) {
+  //receive an array of integers, and an integer
+  //return the index positions of the first two numbers that adds up to target
+  //[0, 2, 45, 6], 45 => [0, 2]
+  
+  //look through each num and see if it adds up to the target
+  // for (let i = 0; i < nums.length; i++) {
+  //     for(let j = i + 1; j < nums.length; j++) {
+  //         if (nums[i] + nums[j] === target) {
+  //             return [i , j]
+  //         }
+  //     }
+  // }
+  
+  //optimized
+  //create an object
+  //store the index position as the value as continue through the nums
+  //find the difference between target and current value
+  //if we found it, return the key index position
+  
+  let answer = {};
+  
+  for (let i = 0; i < nums.length; i ++) {
+      let difference = target - nums[i]
+      if (answer.hasOwnProperty(difference)) {
+          return [answer[difference], i]
+      } else {
+          answer[nums[i]] = i
+      }
+  }
+  
+  };
