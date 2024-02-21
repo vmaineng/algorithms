@@ -474,3 +474,13 @@ let difference = target - nums[i];
         pair[nums[i]] = i //add the index position to the object
     }
 }
+
+function smash (words) {
+  //receive an array of words
+ //return a string
+ //['this', 'is', 'Wednesday'] => 'this is Wednesday'
+ 
+ //can use the join method to add them together
+ 
+ return words.join(' ')
+};
