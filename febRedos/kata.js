@@ -517,3 +517,15 @@ var twoSum = function(nums, target) {
   }
   
   };
+
+
+  // Create the combineNames function here
+function combineNames(string1, string2) {
+  //received two strings
+  //return the two strings joined together
+  //'Ma', 'Love' => 'Ma Love'
+  
+  //can use .concat method
+  
+  return string1.concat(" ",string2) // adding space here
+}
