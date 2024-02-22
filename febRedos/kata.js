@@ -505,18 +505,18 @@ var twoSum = function(nums, target) {
   //find the difference between target and current value
   //if we found it, return the key index position
   
-  let answer = {};
+  // let answer = {};
   
-  for (let i = 0; i < nums.length; i ++) {
-      let difference = target - nums[i]
-      if (answer.hasOwnProperty(difference)) {
-          return [answer[difference], i]
-      } else {
-          answer[nums[i]] = i
-      }
-  }
+  // for (let i = 0; i < nums.length; i ++) {
+  //     let difference = target - nums[i]
+  //     if (answer.hasOwnProperty(difference)) {
+  //         return [answer[difference], i]
+  //     } else {
+  //         answer[nums[i]] = i
+  //     }
+  // }
   
-  };
+  // };
 
 
   // Create the combineNames function here
@@ -529,3 +529,9 @@ function combineNames(string1, string2) {
   
   return string1.concat(" ",string2) // adding space here
 }
+
+function check(n) {
+  console.log(Math.sqrt(n))
+}
+
+console.log(check(25))

@@ -34,7 +34,40 @@ const longestRepeat = (s, k) => {
     maxLength = Math.max(maxLength, right - left + 1); // keeps track of length
     right++;  // ! after capturing longest length then can move teh right side of the window
 }
-  return maxLength;
+  // return maxLength;
 };
 
-console.log(longestRepeat("APPLE", 1));
+// console.log(longestRepeat("APPLE", 1));
+
+function check(n) {
+  console.log(Math.sqrt(n) % 1 )
+}
+
+console.log(check(25))
+
+function palindromeNum(num) {
+  return num.toString().split('').reverse().join('') === num.toString();
+}
+
+function fib(n) {
+  return fib(n-1)
+}
+
+function twosum(num, target) {
+  //create an object to store the value as key, and index as value
+  //look for the difference of nums and target
+  //check if object has the difference as a property
+  //and return the index position
+  //otherwise, store the index 
+
+  let indexCheck = {};
+
+  for (let i = 0; i <num.length; i++) {
+    let difference = target - num[i];
+    if (indexCheck.hasOwnProperty(difference)) {
+      return [indexCheck[difference], i]
+    } else {
+      indexCheck[num[i]] = i 
+    }
+  }
+}
