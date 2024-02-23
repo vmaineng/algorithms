@@ -185,3 +185,30 @@ function bmi(weight, height) {
     return "Obese"
   }
 }
+
+function fakeBin(x){
+  //received a string of integers
+  //return a new string of 0 if the digit is less than 5, and 5 and above is replaced with a 1
+  //'038509237849' => '001101001101'
+  
+  
+  //create a new string
+  //iterate through the string
+  //look at each value
+  //check to see if the value is < 5, turn it into a 0, add it to the new string
+  //else, > 5, turn it in a 1, add it to the new string
+  
+  let replaceString = "";
+  
+  for (let i = 0; i < x.length; i++) {
+    if (parseInt(x[i]) < 5) {
+      replaceString += '0'
+    } else {
+      replaceString += '1'
+    }
+  }
+return replaceString
+}
+
+//O(n) = time
+//O(n) = space
