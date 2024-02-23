@@ -163,3 +163,25 @@ function flick(array) {
   // }
   // return newArray
 }
+
+
+
+function bmi(weight, height) {
+  //received integers for weight and height
+  //return "underweight" if bmi <= 18.5, "normal" if bmi <= 25, "overweight" if <= 30, "obese"
+  // bmi(32) => 'obese', bmi(28) => "overweight"
+  
+  let bmiCalc = weight / Math.pow(height, 2)
+  
+  if (bmiCalc < 0) return "Invalid Number. Try Again!"
+  
+  if (bmiCalc <= 18.5) {
+    return "Underweight"
+  } else if (bmiCalc > 18.5 && bmiCalc <= 25.0){
+    return "Normal"
+  } else if (bmiCalc > 25 && bmiCalc <= 30.0) {
+    return "Overweight"
+  } else {
+    return "Obese"
+  }
+}
