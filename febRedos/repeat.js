@@ -198,16 +198,19 @@ function fakeBin(x){
   //check to see if the value is < 5, turn it into a 0, add it to the new string
   //else, > 5, turn it in a 1, add it to the new string
   
-  let replaceString = "";
+//   let replaceString = "";
   
-  for (let i = 0; i < x.length; i++) {
-    if (parseInt(x[i]) < 5) {
-      replaceString += '0'
-    } else {
-      replaceString += '1'
-    }
-  }
-return replaceString
+//   for (let i = 0; i < x.length; i++) {
+//     if (parseInt(x[i]) < 5) {
+//       replaceString += '0'
+//     } else {
+//       replaceString += '1'
+//     }
+//   }
+// return replaceString
+
+//grabbed the string, split on "", look through each number to see if < 5, turn it to 0, else turn 1, then join back with strings
+return x.split("").map((n) => n < 5 ? 0 : 1).join('')
 }
 
 //O(n) = time
