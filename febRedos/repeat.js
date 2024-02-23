@@ -215,3 +215,32 @@ return x.split("").map((n) => n < 5 ? 0 : 1).join('')
 
 //O(n) = time
 //O(n) = space
+
+
+function rr(head){
+  //receive the head of a linked list
+  //return the list reversed
+  //1 -> 2 -> 3 -> null => 3-> 2 -> 1 -> null
+
+  //create a prev node and set it to null (empty space)
+  //take the head as current
+  //traverse through the nodes
+  //capture the next node
+  //switch the pointer to prev node
+
+  //return the node next to dummy
+
+  if (!head) return null;
+
+  let prev = null;
+  let current =head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current; //! move the previous to current first
+    current = next;
+    
+  }
+  return prev;
+}
