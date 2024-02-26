@@ -578,3 +578,53 @@ function check(a, x) {
   
   return a.find(element => element === x)  ? true : false
 }
+
+function isIsogram(str){
+  //get a string of characters
+  //return true if letters were only used once, else false
+  //'dfjwieos'=> true
+  //create an object to store the values
+  //if it's greater than one, return false, else return true 
+  
+  let seenValues = {} ;
+let strLower = str.toLowerCase()
+  
+  for (let i = 0; i < strLower.length; i++) {
+    const value = strLower[i]
+    seenValues[value] = seenValues[value] + 1 || 1
+    if (seenValues[value] > 1) {
+      return false
+    }
+  }
+return true
+}
+
+function isIsogram(str){
+  return new Set(str.toLowerCase()).size === str.length;
+  }
+
+  return array.filter(element => typeof element === Number)
+
+  function create(array) {
+    let answer = []
+    for (let i = 0; i < array.length; i++) {
+      answer.push(i, array[i])
+    }
+    return answer;
+  }
+
+  let answer = num.toString();
+
+  let left = 0;
+  let right = num.length - 1;
+
+  while (left < right) {
+    if (answer[left] !== answer[right]) {
+      return false
+    }
+    left++
+    right--
+  }
+  return true;
+
+  

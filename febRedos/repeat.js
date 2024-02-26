@@ -269,3 +269,57 @@ function groupAna(strs) {
   }
   return Object.values(anagramObj)
 }
+
+function substringRepeat(s) {
+  //receive a string
+  //return the max length with no repeating chars
+  //'igloo' => 'iglo' => 4
+
+  //create an object to store values
+  //look through the strings
+  //if a value exists already, then grab the length
+
+  //edge case: if s is empty, return 0
+  if (!s) return 0; 
+
+  
+  let length = 0; 
+  let subValues = {};
+  let left = 0;
+
+ for (let i = 0; i < s.length; i++) {
+    const value = s[i]
+    if (subValues[value] >= left) {
+      left = subValues[value] + 1
+      console.log(left, subValues)
+    }
+    subValues[value] = i; 
+    length = Math.max(length, (i - left + 1))
+  }
+return length;
+}
+
+var lengthOfLongestSubstring = function(s) {
+
+  if (!s) return 0; 
+  
+   let answer = new Set(); 
+   let length = 0 ;
+  let left = 0; 
+  //create a set
+  //look through each element
+  //if an element has been found that exists in set,
+  //decrease the left one
+  //add element from the right
+  //look at window size
+  
+  for (let i = 0; i < s.length; i++) {
+      while (answer.has(s[i])) {
+          answer.delete(s[left])
+          left++
+      }
+      answer.add(s[i])
+      length = Math.max(length, answer.size)
+  }
+  return length;
+  }
