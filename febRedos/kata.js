@@ -565,3 +565,16 @@ if (list.length === 1) return list[0]
 
 return Math.max(...list)
 }
+
+function check(a, x) {
+  // receive an array of integers or strings, and x is an integer or string
+  //return true if x exists in a, else, return false
+  //[2389, 34, 292, 39, 4], 85 => false;
+  
+  //edge cases: if a has only one element, and it does not equal x, return false; or if a is empty, return false
+
+//array has a method .find
+  //find x; return true else return false;
+  
+  return a.find(element => element === x)  ? true : false
+}
