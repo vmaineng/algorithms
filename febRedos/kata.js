@@ -535,3 +535,33 @@ function check(n) {
 }
 
 console.log(check(25))
+
+var min = function(list){
+  //receive an array of integers
+//return the min value from the array
+//[32, 93, -34, 64, 62] => -34
+
+//edge case; if the length only has one value, it's automatically the min value
+if (list.length === 1) return list[0]
+
+//use the spread operator to take out the values
+//use the Math.min function to find the min value
+
+return Math.min(...list)
+//(32, 93, -34, 64, 62)
+  
+}
+
+var max = function(list){
+//receive an array of integers
+//return the max value from the array
+ //[32, 93, -34, 64, 62] => -34
+
+//edge case; if the length only has one value, it's automatically the max value
+if (list.length === 1) return list[0]
+
+//use the spread operator to take out the values
+//use the Math.max function to find the max value
+
+return Math.max(...list)
+}

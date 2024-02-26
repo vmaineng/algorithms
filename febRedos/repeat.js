@@ -244,3 +244,28 @@ function rr(head){
   }
   return prev;
 }
+
+function groupAna(strs) {
+  //receive an array of strings
+  //return anagrams of word group together back in an array
+  //['jum','iop', 'ewr','muj'] => [['jum','muj'], ['iop'], ['ewr']]
+
+  //if string is less than one, return the string 
+
+  //create an object to store the words sorted together
+  //look through the words
+  //and add in the words
+  //return back the values in an array format
+
+  if (strs.length === 1 || !strs.length) return [strs];
+
+  let anagramObj = {};
+
+  for (let word of strs) {
+    let sortedWord = word.split('').sort().join("");
+
+    if (!anagramObj[sortedWord]) anagramObj[sortedWord] = []
+    anagramObj[sortedWord].push(word)
+  }
+  return Object.values(anagramObj)
+}
