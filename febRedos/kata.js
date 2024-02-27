@@ -627,4 +627,18 @@ function isIsogram(str){
   }
   return true;
 
-  
+  const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    // receive an integer for distance, mpg, and fuel
+    //return true if you can make it the pump, else false
+    //(25, 10, 2) => 10 * 2 = 20 => 25 => false
+    
+    //calc mpg * fuelLeft 
+    //check to see if it is greater than or equal to the distance
+    
+    let milesLeft = mpg * fuelLeft
+    if(milesLeft >= distanceToPump) {
+      return true
+    } else {
+      return false;
+    }
+  };
