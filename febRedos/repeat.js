@@ -323,3 +323,41 @@ var lengthOfLongestSubstring = function(s) {
   }
   return length;
   }
+
+  const repeatChar= (s, k) => {
+    //receive a string and an integer of how many times you can switch out a char
+    //return the max length of how many times a character can be switched out
+    //'ROAMAN', 2 => 'ROAAAA' => 4
+
+    //edge case: if the amount of operations of switching exceeds the s's length;
+    //if s.length is one and k is greater than or equal to 1, return length of one
+
+    //keep track of length, count of characters seen, and store the chars seen
+    //loop through string, keep track of the values seen
+
+    //make sure the amount of operations switch does not exceed k times,
+    //if so, pull back from the left window side to keep looking at the right side;
+    
+    let seenValues = {};
+    let count = 0;
+    let maxLength = 0; 
+
+   let left = 0;
+   let right = 0;
+
+   while (right < s.length) {
+    const rightChar = s.charAt(right);
+    seenValues[rightChar] =  seenValues[rightChar] + 1 || 1
+    count = Math.max(count, seenValues[rightChar])
+
+    if ((right - left + 1) - count > k) {
+      const leftChar = s.charAt(left);
+      seenValues[leftChar] -= 1
+      left++
+    }
+    maxLength = Math.max(maxLength, (right - left + 1))
+    right++
+   }
+   return maxLength;
+    
+  }
