@@ -449,3 +449,21 @@ var lengthOfLongestSubstring = function(s) {
     return replaceString
   //   return dna.toUpperCase().replace(/T/g, 'U')
   }
+
+  function reverseRecuLL(head, prev= null) {
+    //base case: if head is null, return the previous node, exit the loop
+    //recall the function: 
+    //capture the next node
+    //assign pointer to prev node
+    //call function again on prev and next
+
+    if (head === null) return prev; // ! return previous node
+    const next = head.next;
+    head.next = prev;
+    return reverseRecuLL(next, head)
+  }
+
+  //121
+  return num.toString().split('').reverse().join("") === num.toString();
+
+  
