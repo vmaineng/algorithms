@@ -642,3 +642,7 @@ function isIsogram(str){
       return false;
     }
   };
+
+  return char[0].toUpperCase() + char.slice(1)
+
+  return array.filter((element) => typeof element === "number")

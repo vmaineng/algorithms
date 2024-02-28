@@ -361,3 +361,91 @@ var lengthOfLongestSubstring = function(s) {
    return maxLength;
     
   }
+
+  const checkArr = (array) => {
+    return array.filter((ele) => typeof ele === 'number')
+  }
+
+  // console.log(checkArr([1,2,3, 'a', 'b']))
+
+  const mergeSortedLL = (head1, head2) => {
+    //receive two sorted linked lists
+    //return one linked list back sorted;
+
+    //take the first node from head1 as current node
+    //if the value of the first node is < second node,
+    //add in first node
+    //then add in second node from second head
+    //add any remaining from head1, or head2
+
+    let dummy = new ListNode(); // ! add in dummy node b/c unsure of which head is the smaller value
+    let tail = dummy;
+    let current = head1;
+    let current2 = head2; 
+
+    if (!current1) return current2; // ! add in edge cases
+    if (!current2) return current1; // ! add in edge cases
+
+    while (current !== null & current2 !== null) {
+      if (current.val < current2.val) {
+        tail.next = current;
+        current = current.next;
+      } else {
+        tail.next = current2;
+        current2 = current2.next;
+      }
+      tail = tail.next;
+    }
+
+    if (head1) return tail.next = head1;
+    if (head2) return tail.next = head2;
+
+    return tail;
+    
+  }
+
+  function DNAtoRNA(dna) {
+    //string of uppercase of 'G', 'C', 'A', 'T'
+    // returns an RNA sequence from the given DNA sequence
+    //'GACGT' => 'GACGU'
+    
+    //iterate through the string
+    //if the char is a T, replace it with a U
+    //return the new string
+    
+    let newString = dna.split("")
+    
+    for (let i = 0; i < newString.length; i++) {
+      if (newString[i] === 'T') {
+        
+        newString[i] = newString[i].replace('T', 'U') //! need to assign back to newString[i]
+        console.log(newString[i]) // with strings, have to reassign back to original ones
+      }
+    }
+    return newString.join("")
+  }
+
+  console.log(DNAtoRNA('TTT'))
+
+  function DNAtoRNA(dna) {
+    //string of uppercase of 'G', 'C', 'A', 'T'
+    // returns an RNA sequence from the given DNA sequence
+    //'GACGT' => 'GACGU'
+    
+    //iterate through the string
+    //if the char is a T, replace it with a U
+    //return the new string
+    
+    let newString = dna.split("")
+    let replaceString = ""
+    
+    for (let i = 0; i < newString.length; i++) {
+      if (newString[i] === 'T') {
+        replaceString += "U"
+      } else {
+        replaceString += newString[i]
+      }
+    }
+    return replaceString
+  //   return dna.toUpperCase().replace(/T/g, 'U')
+  }
