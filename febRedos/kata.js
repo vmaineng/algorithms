@@ -646,3 +646,28 @@ function isIsogram(str){
   return char[0].toUpperCase() + char.slice(1)
 
   return array.filter((element) => typeof element === "number")
+
+  function pillars(numPill, dist, width) {
+    // receive integers for how many pillars, distance, and width
+    //return total distance between first and last in cm
+    //pillar(1, 10, 10) => 0 b/c there's only one
+    //pillar(2 , 40, 60) => 4000 b/c (100 * 40) * (2 - 1) 
+    
+    
+    //edge case, if num of pillars is 1, return 0
+    if(numPill === 1) return 0;
+    
+    //calc total distance of pillars; omit first one; (numPill - 1) * dist
+    
+    //calc width: (numPill - 2) * width = exclude first and last pill
+    //return distance = totaldistance - width
+    
+    // !have to understand the width should be excluded from the distance
+    
+    let totalDistance = (numPill - 1) * (dist*100)   //to convert m to cm is 100
+    let totalWidth = (numPill - 2) * width
+    
+    let distance = (totalDistance + totalWidth) 
+    //include width
+  
+    return distance
