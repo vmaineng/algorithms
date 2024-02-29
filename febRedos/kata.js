@@ -671,3 +671,40 @@ function isIsogram(str){
     //include width
   
     return distance
+
+    function naughtyOrNice(data) {
+      //receive an object in object
+      //return if Nice! or Naughty! based on the occurences
+      
+      //{
+    //   {
+    //     "May": {
+    //       "1": "Naughty",
+    //         "2": "Nice!"
+    //     }
+    //   }
+    // } //returns "Nice!" since it is equal
+      
+      //look through each month
+      //then go deeper to look at the days
+      //count how many times Nice!/Naughty! has occurred, return max
+      
+      let naughty = 0;
+      let nice = 0;
+      
+      for (let month in data) {
+        for (let day in data[month]) {
+          if (data[month][day] === "Nice") {
+            nice++
+          } else {
+            naughty++
+          }
+        }
+      }
+      
+      if (naughty > nice){
+        return "Naughty!"
+      } else {
+        return "Nice!"
+      }
+    }
