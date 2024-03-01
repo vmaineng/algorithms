@@ -708,3 +708,23 @@ function isIsogram(str){
         return "Nice!"
       }
     }
+
+    function countBy(x, n) {
+      //receive an integer for x and n 
+       //return an array starting at x and ending at the first multiple of x * n
+       //countBy(4, 4) => [4, 8, 12, 16]
+       
+       //create an array
+       //find the multiple
+       //iterate through x all the way til it reaches the muliple
+       //add to the array
+       //return array
+       
+       let answer = [];
+       let multiple = x * n
+       
+       for (let i = x; i <= multiple; i += x) {
+       answer.push(i)
+       }
+     return answer;
+     }
