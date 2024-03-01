@@ -466,4 +466,54 @@ var lengthOfLongestSubstring = function(s) {
   //121
   return num.toString().split('').reverse().join("") === num.toString();
 
-  
+  function checkParen(string) {
+//receive a string of parenthesis
+//return true if there are pairs, else return false
+//'{})()' => false
+
+//create an object with opening paren as key and closing paren as value
+
+//iterate through the string
+//add the paren to the stack if it is opening
+//else check if it is a closing 
+  //then check if there's any element in the stack
+//return if the stack is empty
+
+let parenPairs = {
+  '(' : ')',
+  '{' : '}',
+  '[' : ']'
+}
+
+let stack = [];
+
+for (let char of string) {
+  if (parenPairs[char])
+}
+
+
+  }
+
+
+for (let i = 0; i < string.length; i++) {
+  if (string[i] === '(' || string[i] === '{' || string[i] === '[' ) {
+    stack.push(string[i])
+  } else if (string[i] === ')' || string[i] === '}') {
+    if (stack.length >0)
+  }
+
+  const reverseSeq = n => {
+    //receive an integer
+     //return an array of integers from n to 1 (reversed direction)
+     //n = 4  => [4, 3, 2, 1]
+     
+     //create an array
+     //start at n, add to the array
+     //return the array
+     
+     let answer = [];
+     for (let i = n; i > 0; i--) {
+       answer.push(i)
+     }
+   return answer
+   };
