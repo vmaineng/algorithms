@@ -11,3 +11,17 @@ function isDivisible(n, x, y) {
       return false;
     }
   }
+
+  var countSheep = function (num){
+    //receive an integer
+    //return "1 sheep....2 sheep... n sheep"
+    //countSheep(4) => "1 sheep....2 sheep...3 sheep...4 sheep"
+    
+  //iterate up to nums and add a sheep afterwards
+    
+    let string = ""
+    for (let i = 1; i <= num; i++) {
+      string += i + ` sheep...`
+    }
+  return string
+  }
