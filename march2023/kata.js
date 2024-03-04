@@ -25,3 +25,18 @@ function isDivisible(n, x, y) {
     }
   return string
   }
+
+  function accum(s) {
+	// recive a string of letters
+  //return a string where first letter is captialize
+  // and for every new letter added, add an addt'l letter
+  //'abEd' => 'A - Bb-Eee- Dddd'
+
+//iterate through the string
+  //for each letter, capitialize the first one
+  //and for each index position, add char letter extra if applicable
+  //join them together with a '-'
+  
+  return s.split("").map((char,idx) => char[0].toUpperCase() + 
+char.repeat(idx).toLowerCase()).join('-')
+}
