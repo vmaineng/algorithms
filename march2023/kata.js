@@ -40,3 +40,42 @@ function isDivisible(n, x, y) {
   return s.split("").map((char,idx) => char[0].toUpperCase() + 
 char.repeat(idx).toLowerCase()).join('-')
 }
+
+function greet (name, owner) {
+    // receive string for name and owner
+    //return if the name is the same as the owner's, return 'Hello boss', else return 'Hello guest'
+    //greet(Mai, Mai) => 'Hello boss'
+  
+  if (name === owner) {
+    return "Hello boss"
+  } else {
+    return 'Hello guest'
+  }
+  }
+
+  function dnaStrand(dna){
+    //receive a string of letter
+    //return a new string back with A replacing T, T relace A, C replace G, and G replace C
+    //'TACG' => 'ATGC'
+    
+    //split the string
+    //look through each char, and swap it out with the replacements
+    //return new string
+    
+    let newString = "";
+    
+    let stringSplit = dna.split("");
+    
+    for (let i = 0; i <= stringSplit.length; i++) {
+      if (stringSplit[i]==='A') {
+        newString += 'T'
+      } else if (stringSplit[i]==='T') {
+        newString += 'A'
+    } else if (stringSplit[i]==='C') {
+        newString += 'G'
+  } else if (stringSplit[i]==='G') {
+        newString += 'C'
+    }
+      }
+  return newString
+    }
