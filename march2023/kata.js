@@ -148,3 +148,39 @@ function rentalCarCost(d) {
     }
   
   }
+
+  // return masked string
+function maskify(cc) {
+    //receive a string - numbers or characters
+      //return a new string and cover everything with #, excep tthe last four
+      //'applesauce' => '######auce'
+      
+      //initialize a new string
+      //iterate through the string
+      //check if it is not the last four, then add it to the string as #
+      //else, enter it is the value
+      
+    //edge case: if length is less than 4, return the same string back
+    if (cc.length < 4) return cc
+      
+      let maskedString = "";
+      let splitStr = cc.split("");
+      
+      for (let i = 0; i < splitStr.length; i++) {
+        if (i < splitStr.length - 4) {
+          maskedString += '#'
+        } else{
+          maskedString += splitStr[i]
+        }
+      }
+      return maskedString
+    
+// return masked string
+function maskify(cc) {
+    const last4Digits = cc.slice(-4)
+    return last4Digits.padStart(cc.length, '#')
+    }
+    
+
+    }
+    
