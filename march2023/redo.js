@@ -104,4 +104,62 @@ var mergeTwoLists = function(list1, list2) {
   return dummy.next;
   };
     
+  function LongestRepeat(s, k) {
+    //receive a string and integer of how much to replace
+    //return length of longest substring that does not exceed k replacement
+    //'CRAYYYAB', 2 => 'CYYYYYAB' => 5
+
+    //create track of the letters seen
+    //keep track of the length of the window
+    //if the window size - current count of replacements done exceeds, k,
+    //then shrink window fom left
+    //keep iterating through the rest of the string
+    //return maxLength captured
+
+
+    let count = 0;
+    let valueCount = {};
+    let length = 0;
+
+    let left = 0;
+    let right = 0;
+
+    while (right < s.length) {
+      const rightChar = s.charAt(right)
+      valueCount[rightChar] = valueCount[rightChar] + 1 || 1
+      count = Math.max(count, valueCount[rightChar])
   
+    if ((right - left + 1) - count > k) {
+      const leftChar = s.charAt(left)
+      valueCount[leftChar] -=1
+      left++
+    }
+
+    length = Math.max(length, (right - left + 1))
+    right++
+  }
+  return length;
+  }
+
+  console.log(LongestRepeat('ABAB', 2))
+
+  function rentalCarCost(d) {
+    // receive an integer for days
+    //return the total amount for different days
+    //
+    
+    //1 days = $40
+    //or > 3 days = total - $20
+    // > 7 days = total - $50
+    
+    let total = 0;
+    
+    if (d < 3) {
+      return total = 40 * d
+    } else if (d >= 3 && d < 7){
+      return total = (40 * d) - 20
+    } else {
+      return total = (40 * d) - 50
+    }
+  
+  }

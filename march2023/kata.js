@@ -128,3 +128,23 @@ function solution(str, ending){
 
 console.log(solution('abc', 'bc'))
 
+function rentalCarCost(d) {
+    // receive an integer for days
+    //return the total amount for different days
+    //
+    
+    //1 days = $40
+    //or > 3 days = total - $20
+    // > 7 days = total - $50
+    
+    let total = 0;
+    
+    if (d < 3) {
+      return total = 40 * d
+    } else if (d >= 3 && d < 7){
+      return total = (40 * d) - 20
+    } else {
+      return total = (40 * d) - 50
+    }
+  
+  }
