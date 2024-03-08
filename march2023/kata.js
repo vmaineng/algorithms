@@ -207,3 +207,26 @@ function maskify(cc) {
           return 'F'
         }
       }
+
+      function friend(friends){
+        //receive an array of string
+        //return an array with string that contains only name with 4 letters in it
+        //friend(['Mai', 'Joe', 'Joey', 'Mary']) => ['Joey', 'Mary']
+      
+      //iterate through, and return the array where string's length is excactly 4
+        
+      //   return friends.map((friend) => friend.length === 4 ? )
+        
+        let newFriend = []
+        
+        for (let i = 0; i < friends.length;i++) {
+          const name = friends[i]
+      console.log(name)
+          if (name.length === 4) {
+            newFriend.push(name)
+          }
+        }
+      return newFriend
+
+      return friends.filter(friend => friend.length === 4)
+      }
