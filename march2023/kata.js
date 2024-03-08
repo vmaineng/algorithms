@@ -181,6 +181,29 @@ function maskify(cc) {
     return last4Digits.padStart(cc.length, '#')
     }
     
-
     }
     
+    function getGrade (s1, s2, s3) {
+        // receive 3 scores
+        //return the letter value associated with it
+        
+        //getGrade(42, 85, 55) => 42 + 85 + 55 / 3 => 60.67 => 'D'
+        
+        //find the average of the score
+        //if the score is between 90 and 100, it's an 'A'
+        
+        let gradeAverage = (s1 + s2 + s3)/3
+        console.log(gradeAverage)
+        
+        if (gradeAverage >= 90 ) {
+          return 'A'
+        } else if (gradeAverage >=80 && gradeAverage < 90){
+          return 'B'
+        } else if (gradeAverage >=70 && gradeAverage < 80){
+          return 'C'
+        } else if (gradeAverage >=60 && gradeAverage < 70){
+          return 'D'
+        } else {
+          return 'F'
+        }
+      }
