@@ -230,3 +230,45 @@ function maskify(cc) {
 
       return friends.filter(friend => friend.length === 4)
       }
+
+      class Kata {
+        static getVolumeOfCuboid(length, width, height) {
+          // receive postive whole number integers 
+          //return the volume
+          
+          //getVolofCuboid(4, 5, 5) = taking (width * height) * length = 100
+          
+          return (width * height) * length
+        }
+      }
+
+      function addBinary(a,b) {
+        //receive two numbers (positive)
+          //return the binary number in a string
+          
+          //addBinary(9, 3) => 12 => "0011"
+        //12/2 = 6 = 0
+          //6/2 = 3 = 0
+          //3 /2 = 1
+          //1 /2 = 0
+        
+        //add the two numbers together
+          //divide the total by 2,
+          //if a remainder, it's a 1, else it's a 0
+          //add 0 to the string
+        
+          
+          
+          let binaryNumber = "";
+          let total = a + b;
+          
+          //edge case: if total is 0, return "0"
+          if (total === 0) return '0';
+        
+          while (total > 0) {
+          let remainder = total % 2 
+            binaryNumber = remainder + binaryNumber
+            total = Math.floor(total / 2);
+              }
+        return binaryNumber
+        }
