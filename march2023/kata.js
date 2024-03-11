@@ -310,20 +310,27 @@ function maskify(cc) {
             if (!s1) return s2;
             if (!s2) return s1;
             
-            let seenValues = new Set();
+        //     let seenValues = new Set();
             
-            for (let i = 0; i < s1.length; i++) {
-              const s1Char = s1[i]
-              if (!seenValues.has(s1Char)){
-                seenValues.add(s1Char)
-              }
-            }
+        //     for (let i = 0; i < s1.length; i++) {
+        //       const s1Char = s1[i]
+        //       if (!seenValues.has(s1Char)){
+        //         seenValues.add(s1Char)
+        //       }
+        //     }
             
-            for (let i = 0; i < s2.length; i++){
-              const s2Char = s2[i]
-           if (!seenValues.has(s2Char)){
-                seenValues.add(s2Char)
-              }
-            }
-            return Array.from(seenValues).sort().join("")
+        //     for (let i = 0; i < s2.length; i++){
+        //       const s2Char = s2[i]
+        //    if (!seenValues.has(s2Char)){
+        //         seenValues.add(s2Char)
+        //       }
+        //     }
+        //     return Array.from(seenValues).sort().join("")
+
+        return [...new Set(s1 + s2)].sort().join("");
+        //concats the strings together
+        //creats a new Set from the strings to ensure unique chars
+        //spread out the elements into an array; converts set back into an array;
+        //sort the characters 
+        //join it back together with strings from the array element
           }

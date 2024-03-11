@@ -143,23 +143,45 @@ var mergeTwoLists = function(list1, list2) {
 
   console.log(LongestRepeat('ABAB', 2))
 
-  function rentalCarCost(d) {
-    // receive an integer for days
-    //return the total amount for different days
-    //
-    
-    //1 days = $40
-    //or > 3 days = total - $20
-    // > 7 days = total - $50
-    
-    let total = 0;
-    
-    if (d < 3) {
-      return total = 40 * d
-    } else if (d >= 3 && d < 7){
-      return total = (40 * d) - 20
-    } else {
-      return total = (40 * d) - 50
-    }
-  
+  /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxFrequencyElements = function(nums) {
+  //receive an integer of numbers/
+  //return the total of the max frequences shown in nums * how many elements have the max
+  //[1, 2, 3, 5, 3, 3, 5, 5] => { 3: 3, 5: 3} => 3 * 2 = 6
+
+  //create an object to store the occurences
+  //iterate and keep track of counter
+
+  //then iterate through to find the max value
+
+  //then iterate through to find the keys of the object
+
+  //multiply each other and return the total
+
+  let maxFreqElements = 0;
+  let seenValues = {};
+  let maxFrequency = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+      const numValues = nums[i]
+      seenValues[numValues] = seenValues[numValues] + 1 || 1
   }
+
+  for (let key in seenValues) {
+      if (seenValues[key] > maxFrequency) {
+          maxFrequency = Math.max(maxFrequency, seenValues[key])
+      }
+  }
+
+for (let key in seenValues) { //multiple max frequency elements
+  if (seenValues[key] === maxFrequency) {
+maxFreqElements++
+  }
+}
+
+return (maxFreqElements * maxFrequency)
+};
+
