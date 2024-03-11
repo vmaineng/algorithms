@@ -259,16 +259,71 @@ function maskify(cc) {
         
           
           
-          let binaryNumber = "";
-          let total = a + b;
+        //   let binaryNumber = "";
+        //   let total = a + b;
           
-          //edge case: if total is 0, return "0"
-          if (total === 0) return '0';
+        //   //edge case: if total is 0, return "0"
+        //   if (total === 0) return '0';
         
-          while (total > 0) {
-          let remainder = total % 2 
-            binaryNumber = remainder + binaryNumber
-            total = Math.floor(total / 2);
-              }
-        return binaryNumber
+        //   while (total > 0) {
+        //   let remainder = total % 2 
+        //     binaryNumber = remainder + binaryNumber
+        //     total = Math.floor(total / 2);
+        //       }
+        // return binaryNumber
+
+        return (a+b).toString(2)
         }
+
+        function removeExclamationMarks(s) {
+            //receive a string of characters
+            //return the word back with no '!'
+            //"Jump In!" => "Jump In"
+          
+          //split string into an array, filter out '!', join it back together
+            
+            //  return s.split(" ").filter((str) => str !== '!').join(" ")
+             //let splitS = s.split(" ") //[ 'Jump', 'In!' ]
+                //let splitS = s.split("") //
+             console.log(splitS) // [
+            //     'J', 'u', 'm',
+            //     'p', '!', ' ',
+            //     'I', 'n', '!'
+            //   ]
+
+            // return s.replaceAll("!", "")
+          }
+
+          console.log(removeExclamationMarks('Jump! In!'))
+
+          function longest(s1, s2) {
+            //receive two strings
+            //return one string sorted
+            //a='apple', b='banana' => 'abelnp'
+            
+            //edge case, if one string is empty, rturn the other, vice versa;
+            //use a Set
+            //iterate through s1 and add to Set,
+            //then iterate in s1, check if Set does not have it, add
+            //return the set back sorted
+            
+            if (!s1) return s2;
+            if (!s2) return s1;
+            
+            let seenValues = new Set();
+            
+            for (let i = 0; i < s1.length; i++) {
+              const s1Char = s1[i]
+              if (!seenValues.has(s1Char)){
+                seenValues.add(s1Char)
+              }
+            }
+            
+            for (let i = 0; i < s2.length; i++){
+              const s2Char = s2[i]
+           if (!seenValues.has(s2Char)){
+                seenValues.add(s2Char)
+              }
+            }
+            return Array.from(seenValues).sort().join("")
+          }
