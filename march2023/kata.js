@@ -334,3 +334,35 @@ function maskify(cc) {
         //sort the characters 
         //join it back together with strings from the array element
           }
+
+
+          function points(games) {
+            //receive an array of string key value pair
+             //return total points x achieved
+             //"3: 1"
+             // x: y = 3 points
+             
+             //["4:0", "2:4", "3: 5"] => 3 + 0 + 0 = 3 points
+             
+             //edge case: if there are less than 10 matches, then it's not valid
+             
+             //initialize a total
+             //iterate over every string
+             //check if the first value is > second value, add 3 points
+             //or if first value is < second value, add 0 points
+             //else add one point if tied
+             
+             let total = 0;
+             
+             for (let str of games) {
+           //     console.log(str[0], str[2])
+               if (str[0] > str[2]) {
+                 total += 3
+               } else if (str[0] < str[2]) {
+                 total += 0
+               } else {
+                 total += 1
+               }
+             }
+             return total
+           }
