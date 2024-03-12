@@ -352,17 +352,24 @@ function maskify(cc) {
              //or if first value is < second value, add 0 points
              //else add one point if tied
              
-             let total = 0;
+        //      let total = 0;
              
-             for (let str of games) {
-           //     console.log(str[0], str[2])
-               if (str[0] > str[2]) {
-                 total += 3
-               } else if (str[0] < str[2]) {
-                 total += 0
-               } else {
-                 total += 1
-               }
-             }
-             return total
+        //      for (let str of games) {
+        //    //     console.log(str[0], str[2])
+        //        if (str[0] > str[2]) {
+        //          total += 3
+        //        } else if (str[0] < str[2]) {
+        //          total += 0
+        //        } else {
+        //          total += 1
+        //        }
+        //      }
+        //      return total
+
+        // ! reduce method can be used strings and arrays
+
+        return games.reduce((game, element) => { // ! game = accummulated value and element is CV being processed
+            let arraySplit = element.split(":");
+            return (arraySplit[0] > arraySplit[1]) ? game += 3 : (arraySplit[0] < arraySplit[1]) ? game += 0 : game+= 1
+        }, 0);
            }
