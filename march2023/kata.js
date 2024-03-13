@@ -373,3 +373,22 @@ function maskify(cc) {
             return (arraySplit[0] > arraySplit[1]) ? game += 3 : (arraySplit[0] < arraySplit[1]) ? game += 0 : game+= 1
         }, 0);
            }
+
+           function updateLight(current) {
+  
+            //receive a string of one color
+            //return the next following color afterwards
+            
+            //'red' => 'green'
+            
+            //if else stmts?
+            
+            if (current === 'green') {
+              return 'yellow'
+            } else if (current === 'yellow') {
+              return 'red'
+            } else if (current === 'red') {
+              return 'green'
+            }
+          
+          }
