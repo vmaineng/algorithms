@@ -402,16 +402,19 @@ function openOrSenior(data) {
   //return 'Senior' if both conditions are met
   //else return 'Open'
 
-  let output = [];
+//   let output = [];
 
-  for (let i = 0; i < data.length; i++) {
-    //   console.log(data[i])
-    let dataSet = data[i];
-    if (dataSet[0] >= 55 && dataSet[1] > 7) {
-      output.push("Senior");
-    } else {
-      output.push("Open");
-    }
-  }
-  return output;
+//   for (let i = 0; i < data.length; i++) {
+//     //   console.log(data[i])
+//     let dataSet = data[i];
+//     if (dataSet[0] >= 55 && dataSet[1] > 7) {
+//       output.push("Senior");
+//     } else {
+//       output.push("Open");
+//     }
+//   }
+//   return output;
+
+return data.map(([age, handicap]) => (age >= 55 & handicap > 7) ? 'Senior' : 'Open')
+
 }

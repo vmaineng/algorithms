@@ -185,3 +185,57 @@ maxFreqElements++
 return (maxFreqElements * maxFrequency)
 };
 
+function twoSum(number, target) {
+  //receive a number array, target (integer)
+  //return the index position of the two numbers that add up to target
+  //[3, 5, 2, 3], 6 => [0, 3]
+
+  //create an object
+  //look through number array
+  //store the index position as value
+  //take the difference subtract target's and current value
+  //find the difference in the value of the object
+  //return the two index position back as an array
+
+  let seenValues = {}
+
+  for (let i = 0; i < number.length; i++) {
+    let difference = target - number[i]
+    if (seenValues.hasOwnProperty(difference)) {
+      return [difference, number[i]]
+    } else {
+      seenValues[difference] = number[i]
+    }
+  }
+
+}
+
+function revLL(head) {
+  //receive a head of a LL
+  //return the LL reverse
+  // 1 -> 2 -> 3 => 3 -> 2 -> 1
+
+  //edge case: if LL is empty
+
+  //create a new node to capture the prev node
+  //traverse through the head of the linked list
+  //capture the next node
+  //point to the prev node
+  //then move the pointer of curr to the next node
+  //the move the pointer to prev
+  
+  if (!head) return null;
+
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next
+    current.next = prev;
+    prev = current;
+    current = next;
+   
+  }
+  return prev;
+  
+}
