@@ -418,3 +418,21 @@ function openOrSenior(data) {
 return data.map(([age, handicap]) => (age >= 55 & handicap > 7) ? 'Senior' : 'Open')
 
 }
+
+function setAlarm(employed, vacation){
+    //receive two boolean for employed and vacation
+      //return boolean; 
+      //if vacation is true, then return false
+      //if not employed and not on vacation, return false
+      //else return true
+      
+      if (vacation === true && employed === false) {
+        return false
+      }  else if (employed === true && vacation === false) {
+        return true
+      } else if (employed === false && vacation === false) {
+        return false
+      } else {
+        return false
+      }
+    }
