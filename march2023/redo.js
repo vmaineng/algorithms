@@ -29,7 +29,8 @@ function checkParen(string) {
       //then pop of the previous one
       if (stack.length > 0) {
         stack.pop();
-      } else {//if don't match, keep track for paren
+      } else {
+        //if don't match, keep track for paren
         addParen++;
       }
     }
@@ -40,20 +41,19 @@ function checkParen(string) {
 
 console.log(checkParen("([()"));
 
-var isPalindrome = function(x) {
+var isPalindrome = function (x) {
   //receive a number
   //return true if palindrome, else return false
   //345 => 543 => false
-  
-  //edge case: if the length is 1, return true
-  
-  //convert number to String, split it, reverse it, join it back together and see if it's the same
-  
-  return x.toString().split("").reverse().join("") === x.toString();
-  
-  };
 
-  /**
+  //edge case: if the length is 1, return true
+
+  //convert number to String, split it, reverse it, join it back together and see if it's the same
+
+  return x.toString().split("").reverse().join("") === x.toString();
+};
+
+/**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
  *     this.val = (val===undefined ? 0 : val)
@@ -65,89 +65,88 @@ var isPalindrome = function(x) {
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(list1, list2) {
+var mergeTwoLists = function (list1, list2) {
   //get the heads of two linked lists
   //return one LL where the nodes are sorted
-  
+
   //if list2 is empty, return list1;
   //if list1 is empty, return list2;
-  
+
   //create a dummy node;
-  //capture the head1, head2 as current node in both lists; 
+  //capture the head1, head2 as current node in both lists;
   //check to see which value is less
   //if list2's value is less, add list 2
   //else add in list1
   //then if there's any remaining, add in the remaining from either list1, or list 2
-  
-  if (!list1) return list2
-  if (!list2) return list1
-  
-  let dummy = new ListNode()
+
+  if (!list1) return list2;
+  if (!list2) return list1;
+
+  let dummy = new ListNode();
   let tail = dummy;
   let current1 = list1;
   let current2 = list2;
-  
+
   while (current1 !== null && current2 !== null) {
-      if (current1.val <= current2.val) {
-          tail.next = current1; //tail's pointer points to new current1's node
-          current1 = current1.next //update pointer
-      } else {
-          tail.next = current2;
-          current2 = current2.next;
-      }
-      tail = tail.next
+    if (current1.val <= current2.val) {
+      tail.next = current1; //tail's pointer points to new current1's node
+      current1 = current1.next; //update pointer
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
   }
-  
+
   if (list1) tail.next = current1;
   if (list2) tail.next = current2;
-  
+
   return dummy.next;
-  };
-    
-  function LongestRepeat(s, k) {
-    //receive a string and integer of how much to replace
-    //return length of longest substring that does not exceed k replacement
-    //'CRAYYYAB', 2 => 'CYYYYYAB' => 5
+};
 
-    //create track of the letters seen
-    //keep track of the length of the window
-    //if the window size - current count of replacements done exceeds, k,
-    //then shrink window fom left
-    //keep iterating through the rest of the string
-    //return maxLength captured
+function LongestRepeat(s, k) {
+  //receive a string and integer of how much to replace
+  //return length of longest substring that does not exceed k replacement
+  //'CRAYYYAB', 2 => 'CYYYYYAB' => 5
 
+  //create track of the letters seen
+  //keep track of the length of the window
+  //if the window size - current count of replacements done exceeds, k,
+  //then shrink window fom left
+  //keep iterating through the rest of the string
+  //return maxLength captured
 
-    let count = 0;
-    let valueCount = {};
-    let length = 0;
+  let count = 0;
+  let valueCount = {};
+  let length = 0;
 
-    let left = 0;
-    let right = 0;
+  let left = 0;
+  let right = 0;
 
-    while (right < s.length) {
-      const rightChar = s.charAt(right)
-      valueCount[rightChar] = valueCount[rightChar] + 1 || 1
-      count = Math.max(count, valueCount[rightChar])
-  
-    if ((right - left + 1) - count > k) {
-      const leftChar = s.charAt(left)
-      valueCount[leftChar] -=1
-      left++
+  while (right < s.length) {
+    const rightChar = s.charAt(right);
+    valueCount[rightChar] = valueCount[rightChar] + 1 || 1;
+    count = Math.max(count, valueCount[rightChar]);
+
+    if (right - left + 1 - count > k) {
+      const leftChar = s.charAt(left);
+      valueCount[leftChar] -= 1;
+      left++;
     }
 
-    length = Math.max(length, (right - left + 1))
-    right++
+    length = Math.max(length, right - left + 1);
+    right++;
   }
   return length;
-  }
+}
 
-  console.log(LongestRepeat('ABAB', 2))
+// console.log(LongestRepeat("ABAB", 2));
 
-  /**
+/**
  * @param {number[]} nums
  * @return {number}
  */
-var maxFrequencyElements = function(nums) {
+var maxFrequencyElements = function (nums) {
   //receive an integer of numbers/
   //return the total of the max frequences shown in nums * how many elements have the max
   //[1, 2, 3, 5, 3, 3, 5, 5] => { 3: 3, 5: 3} => 3 * 2 = 6
@@ -166,23 +165,24 @@ var maxFrequencyElements = function(nums) {
   let maxFrequency = 0;
 
   for (let i = 0; i < nums.length; i++) {
-      const numValues = nums[i]
-      seenValues[numValues] = seenValues[numValues] + 1 || 1
+    const numValues = nums[i];
+    seenValues[numValues] = seenValues[numValues] + 1 || 1;
   }
 
   for (let key in seenValues) {
-      if (seenValues[key] > maxFrequency) {
-          maxFrequency = Math.max(maxFrequency, seenValues[key])
-      }
+    if (seenValues[key] > maxFrequency) {
+      maxFrequency = Math.max(maxFrequency, seenValues[key]);
+    }
   }
 
-for (let key in seenValues) { //multiple max frequency elements
-  if (seenValues[key] === maxFrequency) {
-maxFreqElements++
+  for (let key in seenValues) {
+    //multiple max frequency elements
+    if (seenValues[key] === maxFrequency) {
+      maxFreqElements++;
+    }
   }
-}
 
-return (maxFreqElements * maxFrequency)
+  return maxFreqElements * maxFrequency;
 };
 
 function twoSum(number, target) {
@@ -197,17 +197,16 @@ function twoSum(number, target) {
   //find the difference in the value of the object
   //return the two index position back as an array
 
-  let seenValues = {}
+  let seenValues = {};
 
   for (let i = 0; i < number.length; i++) {
-    let difference = target - number[i]
+    let difference = target - number[i];
     if (seenValues.hasOwnProperty(difference)) {
-      return [difference, number[i]]
+      return [difference, number[i]];
     } else {
-      seenValues[difference] = number[i]
+      seenValues[difference] = number[i];
     }
   }
-
 }
 
 function revLL(head) {
@@ -223,19 +222,72 @@ function revLL(head) {
   //point to the prev node
   //then move the pointer of curr to the next node
   //the move the pointer to prev
-  
+
   if (!head) return null;
 
   let prev = null;
   let current = head;
 
   while (current !== null) {
-    const next = current.next
+    const next = current.next;
     current.next = prev;
     prev = current;
     current = next;
-   
   }
   return prev;
-  
 }
+
+function countVow(string) {
+  //receive a string
+  //return total vowels exist
+  //'Hello' => 2
+
+  //edge case: a word without no vowels
+  //create an array of vowels
+  //iterate through the string
+  //check if it has the vowel, increment total
+  //return total
+
+  if (!string) return 0;
+
+  const vowels = ["a", "e", "i", "o", "u"];
+  let totalVowels = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i].toLowerCase())) {
+      totalVowels += 1;
+    }
+  }
+  return totalVowels;
+}
+
+console.log(countVow('HELLO'))
+
+function groupAnagrams(strs) {
+  //receive an array of strings
+  //return anagrams together in one array
+  //['cat', 'bat', 'tac', 'sat'] => [['cat','tac'], ['bat'], ['sat']]
+
+  //edge case: if strs is empty, return [""]
+
+  if (strs.length === 0) return ['']
+  if (strs.length < 2) return [strs]
+
+  //iterate through each word in strs
+  //sort it
+  //use the sorted word as key, and the actual words as the values
+  //return the values back in array format
+ 
+  let sortedKey = {}
+
+  for (let str of strs) { //'abt'
+    let sortedWord = str.split("").sort().join("")
+    if (!sortedKey[sortedWord]) sortedKey[sortedWord] = []
+      sortedKey[sortedWord].push(str) //'abt': ['bat']
+  }
+return Object.values(sortedKey)
+
+}
+console.log(groupAnagrams(['cat', 'bat', 'tac', 'sat']))
+
+// ! sort inside the loop, if it's empty, initialize an empty array, then push in the actual strings for the values

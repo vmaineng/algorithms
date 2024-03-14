@@ -402,37 +402,68 @@ function openOrSenior(data) {
   //return 'Senior' if both conditions are met
   //else return 'Open'
 
-//   let output = [];
+  //   let output = [];
 
-//   for (let i = 0; i < data.length; i++) {
-//     //   console.log(data[i])
-//     let dataSet = data[i];
-//     if (dataSet[0] >= 55 && dataSet[1] > 7) {
-//       output.push("Senior");
-//     } else {
-//       output.push("Open");
-//     }
-//   }
-//   return output;
+  //   for (let i = 0; i < data.length; i++) {
+  //     //   console.log(data[i])
+  //     let dataSet = data[i];
+  //     if (dataSet[0] >= 55 && dataSet[1] > 7) {
+  //       output.push("Senior");
+  //     } else {
+  //       output.push("Open");
+  //     }
+  //   }
+  //   return output;
 
-return data.map(([age, handicap]) => (age >= 55 & handicap > 7) ? 'Senior' : 'Open')
-
+  return data.map(([age, handicap]) =>
+    (age >= 55) & (handicap > 7) ? "Senior" : "Open"
+  );
 }
 
-function setAlarm(employed, vacation){
-    //receive two boolean for employed and vacation
-      //return boolean; 
-      //if vacation is true, then return false
-      //if not employed and not on vacation, return false
-      //else return true
-      
-      if (vacation === true && employed === false) {
-        return false
-      }  else if (employed === true && vacation === false) {
-        return true
-      } else if (employed === false && vacation === false) {
-        return false
-      } else {
-        return false
-      }
-    }
+function setAlarm(employed, vacation) {
+  //receive two boolean for employed and vacation
+  //return boolean;
+  //if vacation is true, then return false
+  //if not employed and not on vacation, return false
+  //else return true
+
+  //   if (vacation === true && employed === false) {
+  //     return false
+  //   }  else if (employed === true && vacation === false) {
+  //     return true
+  //   } else if (employed === false && vacation === false) {
+  //     return false
+  //   } else {
+  //     return false
+  //   }
+
+  return employed && !vacation;
+}
+
+var number = function (busStops) {
+  // get an array of arrays = [people who get on the bus, people who get off the bus]
+  //return the amount of people who still left on the bus
+  //[[4, 0], [5, 2], [3,6]] =>
+  //4 people get on, 5 people who get on (9), 2 people left (7)
+  //3 people get on(10), then 6 people get off => 4
+
+  //edge case: the amount of people who get off cannot surpass the amt that are on the bus
+
+  //initialize an amt for people on bus
+  //iterate through and subtract from total amt on bus
+  //return total
+
+  //   return busStops.map(([getOn, getOff]) => )
+
+//   let totalPeople = 0;
+
+//   for (let i = 0; i < busStops.length; i++) {
+//     //     console.log(busStops[i])
+//     const peopleSet = busStops[i];
+//     totalPeople += peopleSet[0];
+//     totalPeople -= peopleSet[1];
+//   }
+//   return totalPeople;
+
+  return busStops.reduce((total, [on, off]) => total + on - off, 0);
+};
