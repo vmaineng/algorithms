@@ -281,7 +281,7 @@ function removeExclamationMarks(s) {
   //  return s.split(" ").filter((str) => str !== '!').join(" ")
   //let splitS = s.split(" ") //[ 'Jump', 'In!' ]
   //let splitS = s.split("") //
-  console.log(splitS); // [
+  //console.log(splitS); // [
   //     'J', 'u', 'm',
   //     'p', '!', ' ',
   //     'I', 'n', '!'
@@ -467,3 +467,61 @@ var number = function (busStops) {
 
   return busStops.reduce((total, [on, off]) => total + on - off, 0);
 };
+
+// return names.filter((name) => name.length > 5)
+
+function switchFlick(array) {
+    let switchBoolean = true
+    return array.map((word) =>  {
+        if (word === 'flick') {
+            switchBoolean = !switchBoolean
+        }
+        return switchBoolean
+    })
+}
+
+console.log(switchFlick(['jump', 'flick', 'app', 'flick', 'trust']))
+
+// return array.map((num) => typeof num === 'number')
+
+for (let char of string) {
+    if (answer.hasOwnProperty(char)) {
+        answer[char]++
+    } else {
+        answer[char] = 1
+    }
+}
+
+function howMuchILoveYou(nbPetals) {
+    // receive a number
+  //return a string based on the total amount petals plucked from the flower
+  //petals(9) => 'a lot'
+
+  //any remainders left over aligns with 
+
+// if (nbPetals % 6 === 1) {
+//   return "I love you"
+// } else if (nbPetals % 6 ===  2) {
+//   return 'a little'
+// } else if (nbPetals % 6 === 3) {
+//   return "a lot"
+// }  else if (nbPetals % 6 === 4) {
+//   return "passionately"
+// }  else if (nbPetals % 6 === 5) {
+//   return "madly"
+// }  else {
+//   return "not at all"
+// }
+
+const phrases = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all',
+]
+
+return phrases[(nbPetals - 1) % phrases.length]
+
+}
