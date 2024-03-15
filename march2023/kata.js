@@ -525,3 +525,25 @@ const phrases = [
 return phrases[(nbPetals - 1) % phrases.length]
 
 }
+
+function gaslighting(shirtWord,yourWord,friendsLetters) {
+    //receive strings for all 3
+     //return true if friend knows you're fooling him, else return false
+     //'jump', 'pump',[p] => true
+     
+     //traverse through shirtWord and yourWord,
+     //compare each letter to each other and check if the friendsLetters exist in shirtWord
+     //return true
+     
+     //return false
+     
+     //edge case: if the strings are smaller than the friendsLetters?
+     
+    for (let i = 0; i < shirtWord.length; i++) {
+           // Check if the letters are different
+           if (shirtWord[i] !== yourWord[i] && !friendsLetters.includes(shirtWord[i]) || !friendsLetters.includes(yourWord[i])) {
+                   return true; // Friend knows you're fooling
+           }
+       return false; // Friend does not know
+   }
+     }
