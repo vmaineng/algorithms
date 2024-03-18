@@ -547,3 +547,25 @@ function gaslighting(shirtWord,yourWord,friendsLetters) {
        return false; // Friend does not know
    }
      }
+
+     function sumMix(x){
+        //receive an array of integers and string of numbers
+          //return total sum
+          //["3", "6",'4', 1] => 14
+          
+          //keep a total amount
+          //iterate through array
+          //if it is a string, then turn it into an integer and add to total
+          //else it's a number, and add to the total
+          //return total
+          
+          let total = 0;
+          for (let i = 0;i < x.length;i++) {
+            if (typeof x[i] === 'string') {
+              total += parseInt(x[i])
+            } else {
+              total += x[i]
+            }
+          }
+        return total;
+        }
