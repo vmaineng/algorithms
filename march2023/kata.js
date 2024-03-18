@@ -559,13 +559,16 @@ function gaslighting(shirtWord,yourWord,friendsLetters) {
           //else it's a number, and add to the total
           //return total
           
-          let total = 0;
-          for (let i = 0;i < x.length;i++) {
-            if (typeof x[i] === 'string') {
-              total += parseInt(x[i])
-            } else {
-              total += x[i]
-            }
-          }
-        return total;
+        //   let total = 0;
+        //   for (let i = 0;i < x.length;i++) {
+        //     if (typeof x[i] === 'string') {
+        //       total += parseInt(x[i])
+        //     } else {
+        //       total += x[i]
+        //     }
+        //   }
+        // return total;
+
+        return x.reduce(
+            (total, cv) => total + Number(cv) ,0 )
         }
