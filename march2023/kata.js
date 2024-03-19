@@ -275,9 +275,7 @@ function removeExclamationMarks(s) {
   //receive a string of characters
   //return the word back with no '!'
   //"Jump In!" => "Jump In"
-
   //split string into an array, filter out '!', join it back together
-
   //  return s.split(" ").filter((str) => str !== '!').join(" ")
   //let splitS = s.split(" ") //[ 'Jump', 'In!' ]
   //let splitS = s.split("") //
@@ -286,7 +284,6 @@ function removeExclamationMarks(s) {
   //     'p', '!', ' ',
   //     'I', 'n', '!'
   //   ]
-
   // return s.replaceAll("!", "")
 }
 
@@ -455,15 +452,15 @@ var number = function (busStops) {
 
   //   return busStops.map(([getOn, getOff]) => )
 
-//   let totalPeople = 0;
+  //   let totalPeople = 0;
 
-//   for (let i = 0; i < busStops.length; i++) {
-//     //     console.log(busStops[i])
-//     const peopleSet = busStops[i];
-//     totalPeople += peopleSet[0];
-//     totalPeople -= peopleSet[1];
-//   }
-//   return totalPeople;
+  //   for (let i = 0; i < busStops.length; i++) {
+  //     //     console.log(busStops[i])
+  //     const peopleSet = busStops[i];
+  //     totalPeople += peopleSet[0];
+  //     totalPeople -= peopleSet[1];
+  //   }
+  //   return totalPeople;
 
   return busStops.reduce((total, [on, off]) => total + on - off, 0);
 };
@@ -471,104 +468,154 @@ var number = function (busStops) {
 // return names.filter((name) => name.length > 5)
 
 function switchFlick(array) {
-    let switchBoolean = true
-    return array.map((word) =>  {
-        if (word === 'flick') {
-            switchBoolean = !switchBoolean
-        }
-        return switchBoolean
-    })
+  let switchBoolean = true;
+  return array.map((word) => {
+    if (word === "flick") {
+      switchBoolean = !switchBoolean;
+    }
+    return switchBoolean;
+  });
 }
 
-console.log(switchFlick(['jump', 'flick', 'app', 'flick', 'trust']))
+console.log(switchFlick(["jump", "flick", "app", "flick", "trust"]));
 
 // return array.map((num) => typeof num === 'number')
 
 for (let char of string) {
-    if (answer.hasOwnProperty(char)) {
-        answer[char]++
-    } else {
-        answer[char] = 1
-    }
+  if (answer.hasOwnProperty(char)) {
+    answer[char]++;
+  } else {
+    answer[char] = 1;
+  }
 }
 
 function howMuchILoveYou(nbPetals) {
-    // receive a number
+  // receive a number
   //return a string based on the total amount petals plucked from the flower
   //petals(9) => 'a lot'
 
-  //any remainders left over aligns with 
+  //any remainders left over aligns with
 
-// if (nbPetals % 6 === 1) {
-//   return "I love you"
-// } else if (nbPetals % 6 ===  2) {
-//   return 'a little'
-// } else if (nbPetals % 6 === 3) {
-//   return "a lot"
-// }  else if (nbPetals % 6 === 4) {
-//   return "passionately"
-// }  else if (nbPetals % 6 === 5) {
-//   return "madly"
-// }  else {
-//   return "not at all"
-// }
+  // if (nbPetals % 6 === 1) {
+  //   return "I love you"
+  // } else if (nbPetals % 6 ===  2) {
+  //   return 'a little'
+  // } else if (nbPetals % 6 === 3) {
+  //   return "a lot"
+  // }  else if (nbPetals % 6 === 4) {
+  //   return "passionately"
+  // }  else if (nbPetals % 6 === 5) {
+  //   return "madly"
+  // }  else {
+  //   return "not at all"
+  // }
 
-const phrases = [
-    'I love you',
-    'a little',
-    'a lot',
-    'passionately',
-    'madly',
-    'not at all',
-]
+  const phrases = [
+    "I love you",
+    "a little",
+    "a lot",
+    "passionately",
+    "madly",
+    "not at all",
+  ];
 
-return phrases[(nbPetals - 1) % phrases.length]
-
+  return phrases[(nbPetals - 1) % phrases.length];
 }
 
-function gaslighting(shirtWord,yourWord,friendsLetters) {
-    //receive strings for all 3
-     //return true if friend knows you're fooling him, else return false
-     //'jump', 'pump',[p] => true
-     
-     //traverse through shirtWord and yourWord,
-     //compare each letter to each other and check if the friendsLetters exist in shirtWord
-     //return true
-     
-     //return false
-     
-     //edge case: if the strings are smaller than the friendsLetters?
-     
-    for (let i = 0; i < shirtWord.length; i++) {
-           // Check if the letters are different
-           if (shirtWord[i] !== yourWord[i] && !friendsLetters.includes(shirtWord[i]) || !friendsLetters.includes(yourWord[i])) {
-                   return true; // Friend knows you're fooling
-           }
-       return false; // Friend does not know
-   }
-     }
+function gaslighting(shirtWord, yourWord, friendsLetters) {
+  //receive strings for all 3
+  //return true if friend knows you're fooling him, else return false
+  //'jump', 'pump',[p] => true
 
-     function sumMix(x){
-        //receive an array of integers and string of numbers
-          //return total sum
-          //["3", "6",'4', 1] => 14
-          
-          //keep a total amount
-          //iterate through array
-          //if it is a string, then turn it into an integer and add to total
-          //else it's a number, and add to the total
-          //return total
-          
-        //   let total = 0;
-        //   for (let i = 0;i < x.length;i++) {
-        //     if (typeof x[i] === 'string') {
-        //       total += parseInt(x[i])
-        //     } else {
-        //       total += x[i]
-        //     }
-        //   }
-        // return total;
+  //traverse through shirtWord and yourWord,
+  //compare each letter to each other and check if the friendsLetters exist in shirtWord
+  //return true
 
-        return x.reduce(
-            (total, cv) => total + Number(cv) ,0 )
-        }
+  //return false
+
+  //edge case: if the strings are smaller than the friendsLetters?
+
+  for (let i = 0; i < shirtWord.length; i++) {
+    // Check if the letters are different
+    if (
+      (shirtWord[i] !== yourWord[i] &&
+        !friendsLetters.includes(shirtWord[i])) ||
+      !friendsLetters.includes(yourWord[i])
+    ) {
+      return true; // Friend knows you're fooling
+    }
+    return false; // Friend does not know
+  }
+}
+
+function sumMix(x) {
+  //receive an array of integers and string of numbers
+  //return total sum
+  //["3", "6",'4', 1] => 14
+
+  //keep a total amount
+  //iterate through array
+  //if it is a string, then turn it into an integer and add to total
+  //else it's a number, and add to the total
+  //return total
+
+  //   let total = 0;
+  //   for (let i = 0;i < x.length;i++) {
+  //     if (typeof x[i] === 'string') {
+  //       total += parseInt(x[i])
+  //     } else {
+  //       total += x[i]
+  //     }
+  //   }
+  // return total;
+
+  return x.reduce((total, cv) => total + Number(cv), 0);
+}
+
+function reverseWords(str) {
+  let reversedWord = "";
+  let reversedStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      reversedWord = str[i] + reversedWord;
+    } else {
+      reversedStr += reversedWord + " ";
+      reversedWord = ""; //clear it back to empty
+    }
+  }
+  return reversedStr + reversedWord;
+
+  //return str.split(" ").map(word => word.split("").reverse().join("")).join(" ")
+}
+
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  // receive an integer for all 3's
+  //return the total sum of all 3 integers
+  //goals(2, 4, 8) => 14
+
+  //edge case: there's no negative points
+
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+
+function removeSmallest(numbers) {
+    //receive an array of integers
+    //return back an array of integers with the smallest value removed
+      //if multiple smallest value, remove the lowest index one
+    
+    //smallest([1,2, 3, 1, 5,2]) => [2, 3, 1, 5, 2]
+    
+  //create a copy of the numbers array
+    //find the min index
+    //slice it out
+    //return it
+    
+    const copyNumbers = numbers.slice(0);
+    const minValue = numbers.indexOf(Math.min(...numbers))
+    copyNumbers.splice(minValue, 1)
+    return copyNumbers
+    
+    //return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
+    
+  } 
