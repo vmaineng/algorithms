@@ -291,3 +291,36 @@ return Object.values(sortedKey)
 console.log(groupAnagrams(['cat', 'bat', 'tac', 'sat']))
 
 // ! sort inside the loop, if it's empty, initialize an empty array, then push in the actual strings for the values
+
+function altLL(head1, head2) {
+  //receive two head of linked lists
+  //return one list w/ nodes alternated
+
+  //keep a count of odd or even
+  //keep track of a current node starting from list 1
+  //iterate through til it's null
+  //if one list is not empty, add in the remaining nodes
+
+  let current = head1.next;
+  const head = head1
+  let tail = head1;
+  let current2 = head2;
+  let count = 0;
+
+  while (current !== null && current2 !== null) {
+    if (count % 2 === 0) {
+      tail.next = current2; 
+      current2 = current2.next;
+    } else {
+      tail.next = current;
+      current = current.next;
+    }
+    tail = tail.next;
+    count++
+  }
+
+  if (!current) return tail.next = current2;
+  if (!current2) return tail.next = current; 
+
+return head;
+}
