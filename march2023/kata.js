@@ -619,3 +619,48 @@ function removeSmallest(numbers) {
     //return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
     
   } 
+
+  function nameFiil(names) {
+    return names.filter((name) => name.length === 4)
+  }
+
+  function switcheroo(array) {
+    let switchBolean = false;
+    return array.map((word) => {
+        if (word === 'flick') {
+            switchBolean = !switchBolean
+            return switchBolean
+        }
+    })
+  }
+
+  function revWords(string) {
+    //receive a string with spaces
+    //return the string in reverse
+    //"double space" => "ecaps elbuod"
+
+    //split the words into their own separate word
+    //iterate through the word
+    //and add in current letter to the beginning
+    //then add the word back into a new string
+    //return the string
+
+    let revWord = '';
+    let revStr = "";
+
+    for (let i = 0; i < string.length; i++) {
+        if(string[i] !== " ") {
+            revWord = string[i] + revWord
+        } else {
+            revStr += revWord + " "
+            revWord = ""
+        }
+        return revStr + revWord;
+    }
+  }
+
+  //return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
+  //const copyNumbers = numbers.slice(0); 
+  //const minValue = numbers.indexOf(Math.min(...numbers)); 
+  //copyNumbers.splice(minValue, 1); 
+  //return copyNumbers;  
