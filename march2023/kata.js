@@ -722,3 +722,15 @@ function removeSmallest(numbers) {
   }
 
   //return numbers.filter((num, idx) => idx !== numbers.indexOf(Math.min(...numbers)))
+
+//switch case = stmt and you're evaulating an expression and there are cases for each expression
+//also a default you could use
+
+switch(operator) {
+    case('add' ):
+    return a + b;
+    break;
+    default:
+        console.log("can't find")
+}
+

@@ -324,3 +324,34 @@ function altLL(head1, head2) {
 
 return head;
 }
+
+function longestSub(s) {
+  //receive a string of lowercase letters
+  //return the length of longest substring with no repeating characters
+  //'apple' => 3 => 'ple'
+
+  //keep track of length;
+  //utilized a Set to store values seen;
+  //iterate through the string
+  //check if set already  has it;
+  //if so, then remove from set, move left pointer
+  //return max length;
+
+  let maxLength = 0; 
+  let seenValues = new Set();
+
+  let left = 0;
+  let right = 0;
+
+  while (right < s.length) {
+    if (seenValues.has(s[right])){
+      seenValues.remove(s[left])
+      left++
+    } else { 
+      seenValues.add(s[right]);
+      right++
+    }
+    maxLength = Math.max(maxLength, seenValues.size)
+  }
+  return maxLength;
+}
