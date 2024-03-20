@@ -664,3 +664,24 @@ function removeSmallest(numbers) {
   //const minValue = numbers.indexOf(Math.min(...numbers)); 
   //copyNumbers.splice(minValue, 1); 
   //return copyNumbers;  
+
+  function arithmetic(a, b, operator){
+    //integers for a and b, and a string to state what operator is
+    //return the total based on what the operation stated
+    //4, 6, "subtract" => 4 - 6 = -2
+    
+    //if the operator states "add", add a + b
+    //if operator states "subtract", a - b
+    //multiply, a * b
+    //divide, a / b
+    
+    if (operator === "add") {
+      return a + b
+    } else if (operator === "subtract") {
+      return a - b
+    } else if (operator === "multiply") {
+      return a * b
+    } else {
+      return a /b 
+    }
+  }
