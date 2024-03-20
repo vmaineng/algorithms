@@ -675,13 +675,48 @@ function removeSmallest(numbers) {
     //multiply, a * b
     //divide, a / b
     
-    if (operator === "add") {
-      return a + b
-    } else if (operator === "subtract") {
-      return a - b
-    } else if (operator === "multiply") {
-      return a * b
-    } else {
-      return a /b 
+    // if (operator === "add") {
+    //   return a + b
+    // } else if (operator === "subtract") {
+    //   return a - b
+    // } else if (operator === "multiply") {
+    //   return a * b
+    // } else {
+    //   return a /b 
+    // }
+
+    switch(operator) {
+        case("add") : 
+        return a + b;
+        break;
+        case("subtract"): 
+        return a - b; 
+        break;
+        case("multiply"):
+        return a * b;
+        break;
+        case('divide'):
+        return a/b ;
     }
+  }
+
+  //have to create an empty string for the word, and for the reversed String
+  //iterate through the string
+  //add in the letter to the remaining word
+  //check if you have encountered a space
+  //if so, clear the word and add the reversed word to the string
+  //return string
+
+
+  let revWord = "";
+  let revStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+        revWord = str[i] + revWord
+    } else { 
+        revStr += revWord + " "
+        revWord = ""
+    }
+    return revStr + revWord
   }
