@@ -720,3 +720,5 @@ function removeSmallest(numbers) {
     }
     return revStr + revWord
   }
+
+  //return numbers.filter((num, idx) => idx !== numbers.indexOf(Math.min(...numbers)))
