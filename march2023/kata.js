@@ -734,3 +734,19 @@ switch(operator) {
         console.log("can't find")
 }
 
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  // receive two ingeters for dad's age and son's age
+  //return how many years ago father was 2x as old as his son
+  //twiceAsOld(40, 10) => 10 * 2 = 20; 40 -20 = 20; 
+  
+  //calc twice Son's age;
+  //then subtract from dad's current age;
+  //return the age
+  
+  //36 , 7 => 7 * 2 = 14; 36 - 14 = 22
+  //30 * 2 = 60; 55 - 60 = 5
+  
+  let twiceSonAge = sonYearsOld * 2
+  const dadTwice = Math.abs(dadYearsOld - twiceSonAge)
+  return dadTwice
+}
