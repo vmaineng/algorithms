@@ -750,3 +750,30 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
   const dadTwice = Math.abs(dadYearsOld - twiceSonAge)
   return dadTwice
 }
+
+function oddOrEven(array) {
+  //receive an array of integers
+ //return "odd" or "even" based on total amount
+ //[0] => 'even'; [0, 2, 4, 1] => 7 => 'odd'
+
+//edge case: if it is 0, or empty, return 'even';
+ 
+ //create a total
+ //iterate through the array
+ //add up to the total
+ //check if the total leaves any remainder, then it's odd
+ //else it's even
+ 
+ if (array.length === 0) return 'even'
+ 
+ let total = 0;
+ 
+ for (let i = 0; i < array.length; i++) {
+   total += array[i]
+ }
+ if (total % 2 === 0) {
+   return 'even'
+ } else {
+   return 'odd'
+ }
+}
