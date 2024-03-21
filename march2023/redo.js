@@ -382,3 +382,57 @@ const paliNumber = (x) => {
   }
 };
 
+const gauss = (array) => {
+  //receive a sorted array
+  //return the total amt
+
+  const lastDigit = array[array.length - 1];
+  return (lastDigit * (lastDigit + 1)) / 2;
+};
+
+//return array.map((item, idx) => [item, idx])
+
+const longRepeat = (s, k) => {
+  //receive a string of uppercase letters, and an integer to state how much you can replace
+  //return the max length of replacements can do
+  //'APPLE', 2 => "PPPPE"or "APPPP" => 4
+
+  //create an object to store letters seen
+  //create a length to track maxLength;
+  //keep count of how many letters have seen
+
+  //iterate at the first letter and add to the object
+  //keep adding letters until the replacement has not been breached
+  //if window size and replacement has been breached, move left pointer up
+  //return max length;
+
+  let maxLength = 0;
+  let count = 0;
+  let seenVal = {};
+
+  let left = 0;
+  let right = 0;
+
+  while (right < s.length) {
+    const rightChar = s.charAt(right);
+    seenVal[rightChar] = seenVal[rightChar] + 1 || 1;
+    count = Math.max(count, seenVal[rightChar]);
+
+    if (right - left + 1 - count > k) {
+      const leftChar = s.charAt(left);
+      seenVal[leftChar] -= 1;
+      left++;
+    }
+    maxLength = Math.max(maxLength, right - left + 1);
+    right++;
+  }
+  return maxLength;
+};
+
+//return array.map((element) element => typeof element === 'number')
+//return array.map((ele, idx) =>{ 
+//   const newIdx = idx + 1
+//   return `${newIdx} : ${ele}`
+// )
+
+//return (players - 1) % players.length;
