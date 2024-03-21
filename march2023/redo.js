@@ -261,7 +261,7 @@ function countVow(string) {
   return totalVowels;
 }
 
-console.log(countVow('HELLO'))
+console.log(countVow("HELLO"));
 
 function groupAnagrams(strs) {
   //receive an array of strings
@@ -270,25 +270,25 @@ function groupAnagrams(strs) {
 
   //edge case: if strs is empty, return [""]
 
-  if (strs.length === 0) return ['']
-  if (strs.length < 2) return [strs]
+  if (strs.length === 0) return [""];
+  if (strs.length < 2) return [strs];
 
   //iterate through each word in strs
   //sort it
   //use the sorted word as key, and the actual words as the values
   //return the values back in array format
- 
-  let sortedKey = {}
 
-  for (let str of strs) { //'abt'
-    let sortedWord = str.split("").sort().join("")
-    if (!sortedKey[sortedWord]) sortedKey[sortedWord] = []
-      sortedKey[sortedWord].push(str) //'abt': ['bat']
+  let sortedKey = {};
+
+  for (let str of strs) {
+    //'abt'
+    let sortedWord = str.split("").sort().join("");
+    if (!sortedKey[sortedWord]) sortedKey[sortedWord] = [];
+    sortedKey[sortedWord].push(str); //'abt': ['bat']
   }
-return Object.values(sortedKey)
-
+  return Object.values(sortedKey);
 }
-console.log(groupAnagrams(['cat', 'bat', 'tac', 'sat']))
+console.log(groupAnagrams(["cat", "bat", "tac", "sat"]));
 
 // ! sort inside the loop, if it's empty, initialize an empty array, then push in the actual strings for the values
 
@@ -302,27 +302,27 @@ function altLL(head1, head2) {
   //if one list is not empty, add in the remaining nodes
 
   let current = head1.next;
-  const head = head1
+  const head = head1;
   let tail = head1;
   let current2 = head2;
   let count = 0;
 
   while (current !== null && current2 !== null) {
     if (count % 2 === 0) {
-      tail.next = current2; 
+      tail.next = current2;
       current2 = current2.next;
     } else {
       tail.next = current;
       current = current.next;
     }
     tail = tail.next;
-    count++
+    count++;
   }
 
-  if (!current) return tail.next = current2;
-  if (!current2) return tail.next = current; 
+  if (!current) return (tail.next = current2);
+  if (!current2) return (tail.next = current);
 
-return head;
+  return head;
 }
 
 function longestSub(s) {
@@ -337,21 +337,48 @@ function longestSub(s) {
   //if so, then remove from set, move left pointer
   //return max length;
 
-  let maxLength = 0; 
+  let maxLength = 0;
   let seenValues = new Set();
 
   let left = 0;
   let right = 0;
 
   while (right < s.length) {
-    if (seenValues.has(s[right])){
-      seenValues.remove(s[left])
-      left++
-    } else { 
+    if (seenValues.has(s[right])) {
+      seenValues.remove(s[left]);
+      left++;
+    } else {
       seenValues.add(s[right]);
-      right++
+      right++;
     }
-    maxLength = Math.max(maxLength, seenValues.size)
+    maxLength = Math.max(maxLength, seenValues.size);
   }
   return maxLength;
 }
+
+const paliNumber = (x) => {
+  //receive an integer
+  //return true if it is a palindrome, else return false
+  //4323 => false
+
+  //convert number to string
+  //use left pointer on the first one, and right pointer on the last
+  //see if they are identical, keep looking through rest of number
+  //else return false
+
+  const stringX = x.toString();
+
+  let left = 0;
+  let right = stringX.length - 1;
+
+  while (left < right) {
+    if (stringX[left] !== stringX[right]) {
+      return false;
+    } else {
+      left++;
+      right--;
+    }
+    return true;
+  }
+};
+

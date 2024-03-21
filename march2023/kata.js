@@ -776,4 +776,33 @@ function oddOrEven(array) {
  } else {
    return 'odd'
  }
+
+ //return array.reduce((accum, cv) => accum + cv, 0) % 2 ? 'even' : 'odd'
 }
+
+//return names.filter((name) => name.length === 4)
+
+function pillars(number, distance, width) {
+  //return total distance between 1st pillar and last pillar
+
+//calc distance
+//1m = 100cm
+//omit the first pillar
+
+let totalDistance = (distance*100) * (number - 1)
+let totalWidth = (number - 2) * width;
+return totalDistance + totalWidth
+
+  //edge case: if 1 pillar, then return 0
+}
+
+const flick = (array) => {
+  let switchBool = true
+  return array.map((str) => {
+    if (str === 'flick') {
+      switchBool = !switchBool
+    }
+    return switchBool;
+  } )
+}
+
