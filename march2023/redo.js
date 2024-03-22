@@ -436,3 +436,49 @@ const longRepeat = (s, k) => {
 // )
 
 //return (players - 1) % players.length;
+
+function mergeLL(list1, list2) {
+  //receive two linked lists
+  //return one sorted linked list
+  //
+
+  //edge case: if list1 is empty, return list2
+  //if list2 is emptyr, return list1
+
+  //capture the head of list1
+  //capture tail of list1
+  //capture current of list1, list2
+
+  //check the values of the nodes
+  //if list1's val < list2, add in list1, first
+  //else add in list2,
+  //move the tail node to point to next node;
+  //add in remaining of list1, or add in remaining of list2
+
+  //return head1
+
+  if (!list1) return list2;
+  if (!list2) return list1;
+
+  let head1 = list1;
+  let tail = new Node();
+  let current = list1;
+  let current2 = list2;
+
+  while (current !== null && current2 !== null) {
+    if (current.val < current2.val) {
+      tail.next = current;
+      current = current.next;
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
+  }
+
+  if (!current)  tail.next = current;
+  if (!current2)  tail.next = current2;
+
+  return head1
+
+}

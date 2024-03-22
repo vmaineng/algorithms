@@ -838,3 +838,30 @@ const sequenceSum = (begin, end, step) => {
   }
   return total;
 };
+
+//(goose- 1) % goose.length;
+
+function isoGram(string) {
+  //takes in a string of characters
+  //return true if no repeating letters
+  //'jump' = true
+
+  //create an object
+  //store the values
+  //check if the values exist
+  //if there's a value in there already, return false
+  //else return true
+
+  let seenVals = {};
+
+  let lowercaseStr = string.toLowerCase();
+
+  for (let letter of lowercaseStr) {
+    if (!seenVals[letter]) {
+      seenVals[letter] = 1
+    } else {
+      return false
+    }
+  }
+  return true;
+}
