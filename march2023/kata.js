@@ -806,3 +806,12 @@ const flick = (array) => {
   } )
 }
 
+function hoopCount (n) {
+  //receive an integer
+ //return a certain message depending on how many numbers received
+ //17 => "Great, now move on to tricks"
+ 
+ //if n >=10, "Great, now move on to tricks", else "Keep at it until you get it"
+ 
+return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+}
