@@ -815,3 +815,26 @@ function hoopCount (n) {
  
 return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
 }
+
+const sequenceSum = (begin, end, step) => {
+  // receive all 3 integers
+  //return the total from begin, end, by the steps taken
+  //(2, 8, 2) => (2 + 4 + 6 + 8) => 20
+  
+  //if begin value > end, return 0
+  //if end is not the result of the steps taken, don't add to sum
+  
+  //create a total sum
+ //start at begin, iterate up to end, increment by step
+ //add each number
+ //return total
+  
+  if (begin > end) return 0;
+  
+  let total = 0;
+ 
+  for (let i = begin; i <= end; i += step) {
+    total += i
+  }
+  return total;
+};
