@@ -482,3 +482,22 @@ function mergeLL(list1, list2) {
   return head1
 
 }
+
+//return letter[0].toUpperCase() + letter.slice(1)
+
+function revLLRec(head, prev = null) {
+  //get a head of linkedlist,
+  //return the list reversed
+
+  //base case
+  if (head === null) return prev;
+
+//pass in prev as a default parameter set to null
+//capture next which is the next node after head
+//call the function and pass in (next as head, )
+
+const next = head.next;
+head.next = prev //point to prev node;
+return revLLRec(next, head)
+
+}
