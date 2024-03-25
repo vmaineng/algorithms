@@ -887,3 +887,20 @@ function firstNonConsecutive (arr) {
       }
       return null;
   }
+  function breakChocolate(n,m) {
+    //get a row and column of integer (whole number)
+     //return total amount of splits you need to make
+     //breakChoc(6, 6) => 
+     
+     //if input dad is invalid, rturn 0 b/c no breaks are neccessary;
+     
+     //edge case
+     //n = columns
+     //m = rows
+     
+     //columns * rows -1
+     
+     if (n=== 0 || m===0) return 0;
+     
+     return n*m -1
+   }
