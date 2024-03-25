@@ -865,3 +865,25 @@ function isoGram(string) {
   }
   return true;
 }
+
+function firstNonConsecutive (arr) {
+  //receive an array of integers
+    //return the digit that's not consecutive, which means +1 after the previous digit
+    //[1,2,3,8,9] => 8
+    
+    //if array is empty, return null
+    
+    //iterate through the array
+  //start at the second element, compare it to the previous value
+    //if it is not consecutive, return the value
+    //else return null 
+    
+    if (!arr) return null;
+    
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] !== arr[i - 1] + 1){ //take the value at arr[i] and compare it to (move the index down by 1) then add by 1
+        return arr[i]
+      }
+      }
+      return null;
+  }

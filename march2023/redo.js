@@ -499,5 +499,15 @@ function revLLRec(head, prev = null) {
 const next = head.next;
 head.next = prev //point to prev node;
 return revLLRec(next, head)
-
 }
+
+function paliNum(num){
+  //receive a num
+  //return true if palindrome, else false
+  //3456543 => false
+
+  //turn to string, split it, and reverse it and compare it the same num passed in
+
+  return num.toString().split().reverse().join("") = num.toString()
+}
+
