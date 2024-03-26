@@ -928,3 +928,20 @@ function firstNonConsecutive (arr) {
     }
   return answer;
   }
+
+  function calculateYears(principal, interest, tax, desired) {
+    // receive integers for all parameters
+  //return how many years it will take to receive desired outcome
+  
+  //capture years
+  //capture principal=principal+((principal*interest)-(principal*interest*tax))
+  //if principle < desired, return years
+  
+  let years = 0;
+  
+  while (principal < desired) {
+    years++
+    principal=principal+((principal*interest)-(principal*interest*tax))
+  }
+  return years;
+}
