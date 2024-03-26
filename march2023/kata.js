@@ -897,6 +897,9 @@ function firstNonConsecutive (arr) {
      //edge case
      //n = columns
      //m = rows
+
+     //horizontal and vertical breaks:
+     // (n-1) || (m - 1) b/c there are only n - 1 spaces between the rows b/c the last row doesnt need a break
      
      //columns * rows -1
      
@@ -904,3 +907,24 @@ function firstNonConsecutive (arr) {
      
      return n*m -1
    }
+
+   function between(a, b) {
+    // receive two integers
+    //return an array back of all the integers between a and b
+    //[8, 12] => [8, 9, 10, 11, 12]
+    
+    //edge case: if a > b, return empty array
+    
+    //create an empty array
+    //iterate starting at a, and keep going until reach b
+    //push the integer into the empty array
+    //return array
+    
+    if (a > b) return [];
+    
+    let answer = [];
+    for(let i = a; i <= b; i++) {
+      answer.push(i)
+    }
+  return answer;
+  }
