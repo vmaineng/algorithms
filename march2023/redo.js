@@ -511,3 +511,53 @@ function paliNum(num){
   return num.toString().split().reverse().join("") = num.toString()
 }
 
+function checkPar(string) {
+  //receive a string of paranethesis
+  //return true if valid pairs; else false
+  //'{()(}' => false
+
+  //iterate through an object of pair parenthesis
+//if it is '(', then add to a stack
+//else if it is ')' closing,
+//then check stack, to make sure it's not empty and retrieve the previous one has an open;
+//return the opposite of stack if it's empty, return true else it will return false
+
+let result = [];
+
+for (let str of string) {
+  if (str === '(') {
+    result.push(str)
+  } else {
+    if (!result || str === ')' && result[result.lenght - 1] !== '(') {
+      return false
+    }
+    stack.pop()
+  }
+}
+return !result.length
+}
+
+function revWords(s) {
+  //receive a string with spaces and uppercase
+  //return the string reversed
+  //'Applesauce is good' => 'doog si ecuaselppA'
+
+  //create strings - word, sentence
+  //split the s by space => ["Applesauce", "is", "good"]
+//check if it is not a space,
+  //then add in the letters tot he string
+  //else add in the space and clear out the rev word
+
+  const wrd = "";
+  const newStr = "";
+
+  for (let i = 0; i < s.length;i++) {
+    if (s[i] !== " ") {
+      wrd = s[i] + wrd
+    } else { 
+      newStr =  wrd + " "
+      wrd = ""
+    }
+  }
+return newStr + wrd
+}

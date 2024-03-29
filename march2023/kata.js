@@ -945,3 +945,22 @@ function firstNonConsecutive (arr) {
   }
   return years;
 }
+
+function stray(numbers) {
+  //receive an array of integers
+  //return which number is odd one out
+  //[3, 4, 3, 3, 3] => 4
+  
+  //sort it
+  //check if the first value is not the same as the second value
+  //then return the first value
+  //else return the value at the end
+  
+  let sortedArray = numbers.sort();
+  
+  if (sortedArray[0] !== sortedArray[1]) {
+    return sortedArray[0]
+  } else {
+    return sortedArray[sortedArray.length - 1]
+  }
+}
