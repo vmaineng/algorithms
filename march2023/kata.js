@@ -600,184 +600,182 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 }
 
 function removeSmallest(numbers) {
-    //receive an array of integers
-    //return back an array of integers with the smallest value removed
-      //if multiple smallest value, remove the lowest index one
-    
-    //smallest([1,2, 3, 1, 5,2]) => [2, 3, 1, 5, 2]
-    
+  //receive an array of integers
+  //return back an array of integers with the smallest value removed
+  //if multiple smallest value, remove the lowest index one
+
+  //smallest([1,2, 3, 1, 5,2]) => [2, 3, 1, 5, 2]
+
   //create a copy of the numbers array
-    //find the min index
-    //slice it out
-    //return it
-    
-    const copyNumbers = numbers.slice(0);
-    const minValue = numbers.indexOf(Math.min(...numbers))
-    copyNumbers.splice(minValue, 1)
-    return copyNumbers
-    
-    //return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
-    
-  } 
+  //find the min index
+  //slice it out
+  //return it
 
-  function nameFiil(names) {
-    return names.filter((name) => name.length === 4)
-  }
-
-  function switcheroo(array) {
-    let switchBolean = false;
-    return array.map((word) => {
-        if (word === 'flick') {
-            switchBolean = !switchBolean
-            return switchBolean
-        }
-    })
-  }
-
-  function revWords(string) {
-    //receive a string with spaces
-    //return the string in reverse
-    //"double space" => "ecaps elbuod"
-
-    //split the words into their own separate word
-    //iterate through the word
-    //and add in current letter to the beginning
-    //then add the word back into a new string
-    //return the string
-
-    let revWord = '';
-    let revStr = "";
-
-    for (let i = 0; i < string.length; i++) {
-        if(string[i] !== " ") {
-            revWord = string[i] + revWord
-        } else {
-            revStr += revWord + " "
-            revWord = ""
-        }
-        return revStr + revWord;
-    }
-  }
+  const copyNumbers = numbers.slice(0);
+  const minValue = numbers.indexOf(Math.min(...numbers));
+  copyNumbers.splice(minValue, 1);
+  return copyNumbers;
 
   //return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
-  //const copyNumbers = numbers.slice(0); 
-  //const minValue = numbers.indexOf(Math.min(...numbers)); 
-  //copyNumbers.splice(minValue, 1); 
-  //return copyNumbers;  
+}
 
-  function arithmetic(a, b, operator){
-    //integers for a and b, and a string to state what operator is
-    //return the total based on what the operation stated
-    //4, 6, "subtract" => 4 - 6 = -2
-    
-    //if the operator states "add", add a + b
-    //if operator states "subtract", a - b
-    //multiply, a * b
-    //divide, a / b
-    
-    // if (operator === "add") {
-    //   return a + b
-    // } else if (operator === "subtract") {
-    //   return a - b
-    // } else if (operator === "multiply") {
-    //   return a * b
-    // } else {
-    //   return a /b 
-    // }
+function nameFiil(names) {
+  return names.filter((name) => name.length === 4);
+}
 
-    switch(operator) {
-        case("add") : 
-        return a + b;
-        break;
-        case("subtract"): 
-        return a - b; 
-        break;
-        case("multiply"):
-        return a * b;
-        break;
-        case('divide'):
-        return a/b ;
+function switcheroo(array) {
+  let switchBolean = false;
+  return array.map((word) => {
+    if (word === "flick") {
+      switchBolean = !switchBolean;
+      return switchBolean;
     }
-  }
+  });
+}
 
-  //have to create an empty string for the word, and for the reversed String
-  //iterate through the string
-  //add in the letter to the remaining word
-  //check if you have encountered a space
-  //if so, clear the word and add the reversed word to the string
-  //return string
+function revWords(string) {
+  //receive a string with spaces
+  //return the string in reverse
+  //"double space" => "ecaps elbuod"
 
+  //split the words into their own separate word
+  //iterate through the word
+  //and add in current letter to the beginning
+  //then add the word back into a new string
+  //return the string
 
   let revWord = "";
   let revStr = "";
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== " ") {
-        revWord = str[i] + revWord
-    } else { 
-        revStr += revWord + " "
-        revWord = ""
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== " ") {
+      revWord = string[i] + revWord;
+    } else {
+      revStr += revWord + " ";
+      revWord = "";
     }
-    return revStr + revWord
+    return revStr + revWord;
   }
+}
 
-  //return numbers.filter((num, idx) => idx !== numbers.indexOf(Math.min(...numbers)))
+//return numbers.filter((num) => num !== numbers.indexOf(Math.min(...numbers)))
+//const copyNumbers = numbers.slice(0);
+//const minValue = numbers.indexOf(Math.min(...numbers));
+//copyNumbers.splice(minValue, 1);
+//return copyNumbers;
+
+function arithmetic(a, b, operator) {
+  //integers for a and b, and a string to state what operator is
+  //return the total based on what the operation stated
+  //4, 6, "subtract" => 4 - 6 = -2
+
+  //if the operator states "add", add a + b
+  //if operator states "subtract", a - b
+  //multiply, a * b
+  //divide, a / b
+
+  // if (operator === "add") {
+  //   return a + b
+  // } else if (operator === "subtract") {
+  //   return a - b
+  // } else if (operator === "multiply") {
+  //   return a * b
+  // } else {
+  //   return a /b
+  // }
+
+  switch (operator) {
+    case "add":
+      return a + b;
+      break;
+    case "subtract":
+      return a - b;
+      break;
+    case "multiply":
+      return a * b;
+      break;
+    case "divide":
+      return a / b;
+  }
+}
+
+//have to create an empty string for the word, and for the reversed String
+//iterate through the string
+//add in the letter to the remaining word
+//check if you have encountered a space
+//if so, clear the word and add the reversed word to the string
+//return string
+
+let revWord = "";
+let revStr = "";
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] !== " ") {
+    revWord = str[i] + revWord;
+  } else {
+    revStr += revWord + " ";
+    revWord = "";
+  }
+  return revStr + revWord;
+}
+
+//return numbers.filter((num, idx) => idx !== numbers.indexOf(Math.min(...numbers)))
 
 //switch case = stmt and you're evaulating an expression and there are cases for each expression
 //also a default you could use
 
-switch(operator) {
-    case('add' ):
+switch (operator) {
+  case "add":
     return a + b;
     break;
-    default:
-        console.log("can't find")
+  default:
+    console.log("can't find");
 }
 
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   // receive two ingeters for dad's age and son's age
   //return how many years ago father was 2x as old as his son
-  //twiceAsOld(40, 10) => 10 * 2 = 20; 40 -20 = 20; 
-  
+  //twiceAsOld(40, 10) => 10 * 2 = 20; 40 -20 = 20;
+
   //calc twice Son's age;
   //then subtract from dad's current age;
   //return the age
-  
+
   //36 , 7 => 7 * 2 = 14; 36 - 14 = 22
   //30 * 2 = 60; 55 - 60 = 5
-  
-  let twiceSonAge = sonYearsOld * 2
-  const dadTwice = Math.abs(dadYearsOld - twiceSonAge)
-  return dadTwice
+
+  let twiceSonAge = sonYearsOld * 2;
+  const dadTwice = Math.abs(dadYearsOld - twiceSonAge);
+  return dadTwice;
 }
 
 function oddOrEven(array) {
   //receive an array of integers
- //return "odd" or "even" based on total amount
- //[0] => 'even'; [0, 2, 4, 1] => 7 => 'odd'
+  //return "odd" or "even" based on total amount
+  //[0] => 'even'; [0, 2, 4, 1] => 7 => 'odd'
 
-//edge case: if it is 0, or empty, return 'even';
- 
- //create a total
- //iterate through the array
- //add up to the total
- //check if the total leaves any remainder, then it's odd
- //else it's even
- 
- if (array.length === 0) return 'even'
- 
- let total = 0;
- 
- for (let i = 0; i < array.length; i++) {
-   total += array[i]
- }
- if (total % 2 === 0) {
-   return 'even'
- } else {
-   return 'odd'
- }
+  //edge case: if it is 0, or empty, return 'even';
 
- //return array.reduce((accum, cv) => accum + cv, 0) % 2 ? 'even' : 'odd'
+  //create a total
+  //iterate through the array
+  //add up to the total
+  //check if the total leaves any remainder, then it's odd
+  //else it's even
+
+  if (array.length === 0) return "even";
+
+  let total = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+  if (total % 2 === 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
+
+  //return array.reduce((accum, cv) => accum + cv, 0) % 2 ? 'even' : 'odd'
 }
 
 //return names.filter((name) => name.length === 4)
@@ -785,56 +783,58 @@ function oddOrEven(array) {
 function pillars(number, distance, width) {
   //return total distance between 1st pillar and last pillar
 
-//calc distance
-//1m = 100cm
-//omit the first pillar
+  //calc distance
+  //1m = 100cm
+  //omit the first pillar
 
-let totalDistance = (distance*100) * (number - 1)
-let totalWidth = (number - 2) * width;
-return totalDistance + totalWidth
+  let totalDistance = distance * 100 * (number - 1);
+  let totalWidth = (number - 2) * width;
+  return totalDistance + totalWidth;
 
   //edge case: if 1 pillar, then return 0
 }
 
 const flick = (array) => {
-  let switchBool = true
+  let switchBool = true;
   return array.map((str) => {
-    if (str === 'flick') {
-      switchBool = !switchBool
+    if (str === "flick") {
+      switchBool = !switchBool;
     }
     return switchBool;
-  } )
-}
+  });
+};
 
-function hoopCount (n) {
+function hoopCount(n) {
   //receive an integer
- //return a certain message depending on how many numbers received
- //17 => "Great, now move on to tricks"
- 
- //if n >=10, "Great, now move on to tricks", else "Keep at it until you get it"
- 
-return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+  //return a certain message depending on how many numbers received
+  //17 => "Great, now move on to tricks"
+
+  //if n >=10, "Great, now move on to tricks", else "Keep at it until you get it"
+
+  return n >= 10
+    ? "Great, now move on to tricks"
+    : "Keep at it until you get it";
 }
 
 const sequenceSum = (begin, end, step) => {
   // receive all 3 integers
   //return the total from begin, end, by the steps taken
   //(2, 8, 2) => (2 + 4 + 6 + 8) => 20
-  
+
   //if begin value > end, return 0
   //if end is not the result of the steps taken, don't add to sum
-  
+
   //create a total sum
- //start at begin, iterate up to end, increment by step
- //add each number
- //return total
-  
+  //start at begin, iterate up to end, increment by step
+  //add each number
+  //return total
+
   if (begin > end) return 0;
-  
+
   let total = 0;
- 
+
   for (let i = begin; i <= end; i += step) {
-    total += i
+    total += i;
   }
   return total;
 };
@@ -858,90 +858,91 @@ function isoGram(string) {
 
   for (let letter of lowercaseStr) {
     if (!seenVals[letter]) {
-      seenVals[letter] = 1
+      seenVals[letter] = 1;
     } else {
-      return false
+      return false;
     }
   }
   return true;
 }
 
-function firstNonConsecutive (arr) {
+function firstNonConsecutive(arr) {
   //receive an array of integers
-    //return the digit that's not consecutive, which means +1 after the previous digit
-    //[1,2,3,8,9] => 8
-    
-    //if array is empty, return null
-    
-    //iterate through the array
+  //return the digit that's not consecutive, which means +1 after the previous digit
+  //[1,2,3,8,9] => 8
+
+  //if array is empty, return null
+
+  //iterate through the array
   //start at the second element, compare it to the previous value
-    //if it is not consecutive, return the value
-    //else return null 
-    
-    if (!arr) return null;
-    
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] !== arr[i - 1] + 1){ //take the value at arr[i] and compare it to (move the index down by 1) then add by 1
-        return arr[i]
-      }
-      }
-      return null;
-  }
-  function breakChocolate(n,m) {
-    //get a row and column of integer (whole number)
-     //return total amount of splits you need to make
-     //breakChoc(6, 6) => 
-     
-     //if input dad is invalid, rturn 0 b/c no breaks are neccessary;
-     
-     //edge case
-     //n = columns
-     //m = rows
+  //if it is not consecutive, return the value
+  //else return null
 
-     //horizontal and vertical breaks:
-     // (n-1) || (m - 1) b/c there are only n - 1 spaces between the rows b/c the last row doesnt need a break
-     
-     //columns * rows -1
-     
-     if (n=== 0 || m===0) return 0;
-     
-     return n*m -1
-   }
+  if (!arr) return null;
 
-   function between(a, b) {
-    // receive two integers
-    //return an array back of all the integers between a and b
-    //[8, 12] => [8, 9, 10, 11, 12]
-    
-    //edge case: if a > b, return empty array
-    
-    //create an empty array
-    //iterate starting at a, and keep going until reach b
-    //push the integer into the empty array
-    //return array
-    
-    if (a > b) return [];
-    
-    let answer = [];
-    for(let i = a; i <= b; i++) {
-      answer.push(i)
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] !== arr[i - 1] + 1) {
+      //take the value at arr[i] and compare it to (move the index down by 1) then add by 1
+      return arr[i];
     }
-  return answer;
   }
+  return null;
+}
+function breakChocolate(n, m) {
+  //get a row and column of integer (whole number)
+  //return total amount of splits you need to make
+  //breakChoc(6, 6) =>
 
-  function calculateYears(principal, interest, tax, desired) {
-    // receive integers for all parameters
+  //if input dad is invalid, rturn 0 b/c no breaks are neccessary;
+
+  //edge case
+  //n = columns
+  //m = rows
+
+  //horizontal and vertical breaks:
+  // (n-1) || (m - 1) b/c there are only n - 1 spaces between the rows b/c the last row doesnt need a break
+
+  //columns * rows -1
+
+  if (n === 0 || m === 0) return 0;
+
+  return n * m - 1;
+}
+
+function between(a, b) {
+  // receive two integers
+  //return an array back of all the integers between a and b
+  //[8, 12] => [8, 9, 10, 11, 12]
+
+  //edge case: if a > b, return empty array
+
+  //create an empty array
+  //iterate starting at a, and keep going until reach b
+  //push the integer into the empty array
+  //return array
+
+  if (a > b) return [];
+
+  let answer = [];
+  for (let i = a; i <= b; i++) {
+    answer.push(i);
+  }
+  return answer;
+}
+
+function calculateYears(principal, interest, tax, desired) {
+  // receive integers for all parameters
   //return how many years it will take to receive desired outcome
-  
+
   //capture years
   //capture principal=principal+((principal*interest)-(principal*interest*tax))
   //if principle < desired, return years
-  
+
   let years = 0;
-  
+
   while (principal < desired) {
-    years++
-    principal=principal+((principal*interest)-(principal*interest*tax))
+    years++;
+    principal = principal + (principal * interest - principal * interest * tax);
   }
   return years;
 }
@@ -950,17 +951,49 @@ function stray(numbers) {
   //receive an array of integers
   //return which number is odd one out
   //[3, 4, 3, 3, 3] => 4
-  
+
   //sort it
   //check if the first value is not the same as the second value
   //then return the first value
   //else return the value at the end
-  
+
   let sortedArray = numbers.sort();
-  
+
   if (sortedArray[0] !== sortedArray[1]) {
-    return sortedArray[0]
+    return sortedArray[0];
   } else {
-    return sortedArray[sortedArray.length - 1]
+    return sortedArray[sortedArray.length - 1];
+  }
+}
+
+function switchItUp(number) {
+  switch (number) {
+    case 1:
+      return "One";
+      break;
+    case 2:
+      return "Two";
+      break;
+    case 3:
+      return "Three";
+      break;
+    case 4:
+      return "Four";
+      break;
+    case 5:
+      return "Five";
+      break;
+    case 6:
+      return "Six";
+      break;
+    case 7:
+      return "Seven";
+      break;
+    case 8:
+      return "Eight";
+      break;
+    case 9:
+      return "Nine";
+      break;
   }
 }
