@@ -55,4 +55,33 @@ for (let i = 0; i < nums.length; i++) {
 }
 }
 
+function revLL(head1) {
+    //receive the head of a linked list
+    //return the list in reverse
+    // 1 -> 2 -> 3 => 3 -> 2 -> 1
+
+    //edge case if the ll is empty, return null
+
+    //create a prev node set to null
+    //capture head as current node
+    //iterate through ll
+    //capture the next node
+    //switch pointers from next to prev
+    //push prev node to capture current node
+    //then push current to next node
+    //return prev node;
+
+    if (!head1) return null;
+
+    let prev;
+    let current = head1;
+
+    while (current !== null) {
+        let next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    return prev;
+}
 
