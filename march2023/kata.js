@@ -995,5 +995,16 @@ function switchItUp(number) {
     case 9:
       return "Nine";
       break;
+      default:
+        return "Unknown number"
   }
 }
+
+function getAge(inputString){
+  // return the girl's correct age as an integer. 
+    //receive an integer;
+    //getAge(4) => "4 years old";
+    
+    //slice out the 1 char and turn it into an integer
+    return parseInt(inputString.slice(0, 1))
+  }
