@@ -1007,4 +1007,30 @@ function getAge(inputString){
     
     //slice out the 1 char and turn it into an integer
     return parseInt(inputString.slice(0, 1))
+    //return parseInt(inputString[0])
   }
+
+  function stray(numbers) {
+    //receive an odd-length array of numbers;
+     //return the stray number
+     //[2, 2, 3] => 3
+     
+     //sort the integers;
+     //the odd number should be the first one in the list, or either the list one in the list
+     
+    //  let sortNumbers = numbers.sort();
+     
+    //  if (sortNumbers[0] !== sortNumbers[1]) {
+    //    return sortNumbers[0]
+    //  } else {
+    //    return sortNumbers[sortNumbers.length - 1]
+    //  }
+     
+     //time: O(n log n)
+     //space: O(n)
+   
+   //find if the index values are equal to the last position;
+     //if not return the value at the index position
+     return numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num))
+     //checking for a num that has the same index position
+   }
