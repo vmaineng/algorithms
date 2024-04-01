@@ -1034,3 +1034,31 @@ function getAge(inputString){
      return numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num))
      //checking for a num that has the same index position
    }
+
+   function solution(nums){
+    //receive an array of numbers
+      //return the array back sorted
+      //[-2, 4, -5, 8] => [-5, -2, 4, 8]
+      //edge case: if null or empty, return an empty array
+      
+      //start at the first index;
+      //compare it to the second index;
+      //if value is smaller, swap the values
+      //add to an array and return the array
+      
+      if (nums === null || !nums) return [];
+      
+    //   let sortedArray = [];
+      let temp;
+      
+      for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+          if (nums[j] < nums[i]) {
+            let temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+          }
+        }
+      }
+    return nums;
+    }
