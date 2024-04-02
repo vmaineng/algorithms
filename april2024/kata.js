@@ -19,4 +19,6 @@ function arrayPlusArray(arr1, arr2) {
     let min = Math.min(...arr);
     let max = Math.max(...arr);
     return [min, max]
+
+    //return [Math.min(...arr), Math.max(...arr)]
   }

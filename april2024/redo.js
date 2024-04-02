@@ -85,3 +85,28 @@ function revLL(head1) {
     return prev;
 }
 
+function groupAnagrams(arr) {
+    //receive an array of strings
+    //return an array back with anagroups in the array
+    
+    //edge case: //if array is empty, return an empty array back
+    //if array has one element, return the eleement back
+
+    //sort the strings
+    //create an object
+    //iterate through the sorted Strings
+    //check if the key exists, 
+    //then add array of strings as the value
+    //return the values as an array
+
+    if (arr.length === 1 || !arr) return [arr];
+
+    let sortedWords = {}
+
+    for (let word of sortedArr ) {
+        let sortedArr = arr.split("").sort().join("")
+        if (!sortedWords[sortedArr]) sortedWords[word] = []
+        sortedWords[word].push(word)
+    }
+return Object.values(sortedWords)
+}
