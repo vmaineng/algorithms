@@ -40,3 +40,25 @@ function arrayPlusArray(arr1, arr2) {
   return doubleStr
   }
   
+  function dontGiveMeFive(start, end) {
+    //receive an integer for start and end
+    //return the total amount of all numbers with no 5 in it
+    //Five(8, 16) => 8, 9, 10, 11, 12, 13, 14, 16 => 7
+    
+    //initialize a count to keep track of the numbers seen
+    //iterate through starting at start to the end
+    //if number does not have a five, add to count
+    //return count
+    
+    let count = 0;
+    
+    for (let i = start; i <= end; i++) {
+      // 1, 2, 3, 4, 6, 7, 8, 9
+      // i
+      let stringNum = i.toString()
+      if (!stringNum.match(/5/)) {
+        count++
+      }
+    }
+  return count;
+  }
