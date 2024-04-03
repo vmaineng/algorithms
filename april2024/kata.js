@@ -22,3 +22,21 @@ function arrayPlusArray(arr1, arr2) {
 
     //return [Math.min(...arr), Math.max(...arr)]
   }
+
+  function doubleChar(str) {
+    //receive a string
+    //return a new string with double the characters
+    //'Super' => 'SSuuppeerr'
+    
+    //iterate through string
+    //repeat the same digit
+    //return new string
+    
+    let doubleStr = '';
+    
+    for (let char of str) {
+      doubleStr += char.repeat(2)
+    }
+  return doubleStr
+  }
+  
