@@ -157,3 +157,35 @@ function countVow(str) {
     }
     return vowelsCount
 }
+
+const longestRepeat =(s)=> {
+//receive a string of lowercase letters
+//return the maxlength of chars that are not repeating
+//'applesauce' => 'plesauc' => 7
+
+//create a Set to capture unique values
+//create two pointers starting at the first index
+//check if the Set has not seen the values, increase the right window
+//else if the set has it, decrease the window from the left
+//keep track of maxLength
+
+let uniqueChar = new Set();
+
+let left = 0;
+let right = 0;
+let maxLength = 0;
+
+while (right < s.length) {
+    if (!uniqueChar.has(s[right])) {
+        uniqueChar.add(s[right])
+        right++
+    } else {
+        uniqueChar.delete(s[left])
+        left++
+        
+    }
+    maxLength = Math.max(maxLength, uniqueChar.size)
+}
+
+return maxLength
+}
