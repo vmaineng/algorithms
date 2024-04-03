@@ -110,3 +110,50 @@ function groupAnagrams(arr) {
     }
 return Object.values(sortedWords)
 }
+
+function groupAna(arr) {
+//receive an array of strings
+//return an array with arrays of anagrams together
+
+//split the chars in arr, sort them, and join them back together
+//iterate through the sorted chars
+//create an object to store similar values seen
+//insert the original word as values, keys are the sorted word
+//return the values as an array
+
+
+let anaObject = {}
+
+for (let word of arr) {
+    let sortedWord = word.split("").sort().join("");
+    if (!anaObject[sortedWord]) anaObject[sortedWord] = []
+    anaObject[sortedWord].push(word)
+}
+return Object.values(anaObject)
+
+}
+
+function countVow(str) {
+    //receive a string
+    //return count of vowels in string
+    //'window' => 2
+
+    //create a vowels array holding all vowels
+    //iterate through the string
+    //if the char matches any of the vowels char
+    //add to count
+    //return count
+
+    let vowelsCount = 0;
+
+    let vowelsArray = ['a', 'e', 'i', 'o', 'u']
+
+    let lowerCaseStr = str.toLowerCase();
+
+    for (let i = 0; i <= lowerCaseStr.length; i++) {
+        if (vowelsArray.includes(lowerCaseStr[i])){
+            vowelsCount++
+        }
+    }
+    return vowelsCount
+}
