@@ -189,3 +189,28 @@ while (right < s.length) {
 
 return maxLength
 }
+
+function paliNum(num) {
+    //receive a number
+    //return true if palindrome, else false
+    //34565 => false
+
+    //convert num to string
+    //use left and right pointer ; left at 1st num and right at the end num
+    //check if they are not equal to each other, return false
+    //return true
+
+    let numString = num.toString();
+
+    let i = 0;
+    let j = numString.length - 1;
+
+    while (i < j) {
+        if (numString[i] !== numString[j]) {
+            return false
+        }
+        i++;
+        j--;
+    }
+    return true;
+}
