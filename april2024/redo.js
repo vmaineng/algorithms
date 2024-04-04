@@ -214,3 +214,68 @@ function paliNum(num) {
     }
     return true;
 }
+
+const longSubstring = (s) => {
+    //receive a string of chars
+    //return max length of chars
+    //'unique' => 'uniq' => 4
+
+    //create a Set of values seen
+    //iterate through string
+    //check if the value exists in Set, 
+    //if so, delete from set and move the pointer
+    //keep track of maxLength
+    //return maxLength
+
+    let uniqueVals = new Set();
+
+    let left = 0;
+    let right = 0;
+    let maxLength = 0;
+
+    while (right < s.length) {
+        if (!uniqueVals.has(s[right])) {
+            uniqueVals.add(s[right])
+            right++
+        } else {
+            uniqueVals.delete(s[left])
+            left++
+        }
+        maxLength = Math.max(maxLength, uniqueVals.size)
+    }
+    return maxLength
+}
+
+function create(arr) {
+    //receive an array
+    //return an array with arrays + idx
+    //[0, 1, 2] => [[0,1], [1,2], [2, 3]]
+
+    //iterate through arr, capture the idx + 1
+    //return the arr
+
+    // return arr.map((ele, idx) => {
+    //     const newIdx = idx + 1
+    //     return [ele, newIdx]
+    // })
+    let newArr = []
+
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i], arr[i + 1])
+    }
+    return arr;
+}
+
+//return (goose - 1) % goose.length
+//return arr.filter((ele) => typeof ele === 'number')
+//return word[0].toUpperCase + word.slice(1)
+
+//const lastEle = array.length - 1;
+//return lastEle - lastEle / 1
+
+function revLL(head, prev = null) {
+    if (head === null) return prev;
+    const next = head.next;
+    head.next = prev
+    return revLL(next, head)
+}
