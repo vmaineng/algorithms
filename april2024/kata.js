@@ -62,3 +62,17 @@ function arrayPlusArray(arr1, arr2) {
     }
   return count;
   }
+
+  function bonusTime(salary, bonus) {
+    // receiving salary (number), boolean for bonus
+      //return the salary + bonus if bonus is true, else return the salary
+      //(15000, false) => 15000
+      //(20000, true) => 20000 * 10 => 200000
+      
+      if (bonus === true) {
+        let newSalary = salary * 10
+        return '\u00A3'+`${newSalary}`
+      } else {
+        return '\u00A3'+`${salary}`
+      }
+    }
