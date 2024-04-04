@@ -76,3 +76,34 @@ function arrayPlusArray(arr1, arr2) {
         return '\u00A3'+`${salary}`
       }
     }
+
+    // write the function isAnagram
+var isAnagram = function(test, original) {
+
+    //receive string of chars for test and original
+      //see if they are anagrams if each other, return true, if they are
+      //else return false
+      //(happy, pappy) => false
+      
+      //sort both words
+      //see if they both start with same letters
+      //return false
+      
+      //else return true after searching entire string
+
+      return test.toLowerCase().split("").sort().join("") === original.toLowerCase().split("").sort().join("")
+      
+    //   let sortedTest = test.split("").sort().join("").toLowerCase();
+    //   let sortedOriginal = original.split("").sort().join("").toLowerCase();
+      
+    // console.log(sortedOriginal, sortedTest)
+      
+    //   for (let j = 0; j < sortedOriginal.length; j++) {
+    //     if (sortedOriginal[j] !== sortedTest[j]) {
+    //       console.log(sortedOriginal[j], sortedTest[j])
+    //       return false
+    //     } 
+    //   }
+    //   return true
+    };
+    
