@@ -115,6 +115,17 @@ var isAnagram = function(test, original) {
       //turn the string into number
       //add them up
       //return the sum in string format
-      let sum = parseInt(a) + parseInt(b)
-      return sum.toString()
+    
+    if (b === "" && a === "") return "0"
+    
+      let sum = 0;
+    
+      if (a === "") {
+        sum = 0 + parseInt(b)
+      } else if (b === "") {
+        sum = 0 + parseInt(a)
+      } else {
+        sum = parseInt(a) + parseInt(b)
+      }
+    return sum.toString()
     }
