@@ -107,3 +107,14 @@ var isAnagram = function(test, original) {
     //   return true
     };
     
+    function sumStr(a,b) {
+      //receive string of integers
+      //return the sum in string format
+      //("4", "8") => "12"
+      
+      //turn the string into number
+      //add them up
+      //return the sum in string format
+      let sum = parseInt(a) + parseInt(b)
+      return sum.toString()
+    }

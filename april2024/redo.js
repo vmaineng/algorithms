@@ -256,7 +256,7 @@ function create(arr) {
 
     // return arr.map((ele, idx) => {
     //     const newIdx = idx + 1
-    //     return [ele, newIdx]
+    //     return "ele, newIdx"
     // })
     let newArr = []
 
