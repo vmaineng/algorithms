@@ -128,4 +128,28 @@ var isAnagram = function(test, original) {
         sum = parseInt(a) + parseInt(b)
       }
     return sum.toString()
+
+    //return String(Number(a) + Number(b))
     }
+
+    function oddCount(n){
+      //receive a whole integer
+      //return how many odd numbers are below n
+        //oddCount(13) => [1, 3, 5, 7, 9, 11] => 6
+        
+        //keep an oddCount
+        //iterate up to n
+        //if not mod by 2, increment oddcount
+        //return oddcount
+        
+      //   let oddTotal = 0;
+        
+      //   for (let i = 1; i < n; i += 2) {
+        
+      //       oddTotal += 1
+          
+      //   }
+      // return oddTotal;
+        
+       return Math.floor(n / 2);
+      }
