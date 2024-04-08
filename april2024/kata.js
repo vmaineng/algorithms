@@ -153,3 +153,5 @@ var isAnagram = function(test, original) {
         
        return Math.floor(n / 2);
       }
+
+      //return string.split("").reduce((acc, cv) => cv + acc, "")
