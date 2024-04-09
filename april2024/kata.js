@@ -170,3 +170,24 @@ var isAnagram = function(test, original) {
         
         return revWord === x.toLowerCase();
       }
+
+      function sumDigits(number) {
+        //receive integers
+        //return the sum of all digits included
+        //-342 => -3 + 4 + 2 => 1
+        
+        //turn the numbers into string
+        //split them 
+        //parseInt them to add them up
+        //and return the number back
+        
+        let sum = 0;
+      
+        let numString = Math.abs(number).toString();
+      
+        for (let i = 0; i < numString.length;i++) {
+          console.log(numString[i])
+          sum += parseInt(numString[i])
+        }
+      return sum
+      }
