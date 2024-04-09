@@ -155,3 +155,18 @@ var isAnagram = function(test, original) {
       }
 
       //return string.split("").reduce((acc, cv) => cv + acc, "")
+
+      function isPalindrome(x) {
+        // receive strings
+        //return true if it's a plaindrome,e lse false
+        //'happy' => false
+        
+        //take string x, reverse it, and see if it's still the same as x
+        //reversed === original
+      
+        let revWord = x.toLowerCase().split("").reverse().join("")
+      
+      //   console.log(revWord, x) //abbA, Abba
+        
+        return revWord === x.toLowerCase();
+      }
