@@ -191,3 +191,28 @@ var isAnagram = function(test, original) {
         }
       return sum
       }
+
+      String.prototype.toAlternatingCase = function () {
+        // Define your method here :)
+      //this is a method
+        //return opposite of the letter; if it's uppercase, make it lowercase and vice versa
+        //'jUmp around'.toAlternatingCase => 'JuMP AROUND'
+      
+      //if string is empty, return empty string
+      //split string, 
+        //iterate through it
+        //if lowercase, make it uppercase
+        //else make it lowercase
+        //return string
+        
+      let newStr = "";
+      //   let stringSplit = this.split(" ")
+      for (let i = 0; i < this.length;i++) {
+        if (this[i] === this[i].toLowerCase()) {
+          newStr += this[i].toUpperCase()
+        } else {
+          newStr += this[i].toLowerCase()
+        }
+      }
+        return newStr
+      }
