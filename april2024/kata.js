@@ -215,4 +215,6 @@ var isAnagram = function(test, original) {
         }
       }
         return newStr
+
+        //return this.split("").map((str) => str === str.toLowerCase() ? str.toUpperCase : str.toLowerCase()).join("")
       }
