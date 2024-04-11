@@ -218,3 +218,36 @@ var isAnagram = function(test, original) {
 
         //return this.split("").map((str) => str === str.toLowerCase() ? str.toUpperCase : str.toLowerCase()).join("")
       }
+
+      function expressionMatter(a, b, c) {
+        //receive 3 integers
+        //return max total maount using +, *, and () once
+        //(2, 3, 4) => 
+        //2 * (3 + 4) => 2 * 7 = 14
+        //2* 3 * 4 => 24
+        
+        //edge case: if number is not sorted in order, return can't do
+        
+        //initialize a max sum
+        
+        //if a * (b + c), take the math sum of this one
+        //if (a * b * c), record as max sum
+        
+      let output = [];
+        output.push(a*b*c)
+        output.push(a * (b + c))
+        output.push(a + b * c)
+        output.push((a + b) * c)
+        output.push(a + b + c)
+        
+        return Math.max(...output)
+
+        //return Math.max(
+    //       a + b + c,
+    // a * b * c,
+    // a * (b + c),
+    // (a + b) * c,
+    // a + b * c,
+    // a * b + c,
+    //     )
+      }
