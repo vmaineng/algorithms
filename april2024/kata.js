@@ -279,4 +279,67 @@ function shortcut(string) {
     }
   }
   return newStr;
+
+  //return string.split("").filter((str) => !lowercaseVowels.includes(str)).join("")
 }
+
+const doPillars = (pillars, distance, width)  => {
+//receive amoutn of pillars, distance in meters, width in cms
+//return the distance between the first and the last pillar
+}
+
+const naughtyOrNice = (data) => {
+//receive an obj instead in obj
+//return "Naughty!" or "Nice!" based on total amts
+
+//iterate through the data
+//then iterate through the month
+//then grab the dates (key)
+//tally up the total amount based on wehther the value is "Naughty" or "Nice"
+
+let naughtyCount = 0;
+let niceCount = 0;
+
+for (let month in data) {
+  for (let day in month)  {
+    if ([month][day] === "Nice") {
+      niceCount++
+    } else {
+      naughtyCount++
+    }
+  }
+}
+
+if (niceCount > naughtyCount) {
+  return "Naughty!"
+} else {
+  return "Nice!"
+}
+}
+
+function correct(string)
+{
+	//receive uppercase strings with numbers
+  //return the answers back in uppercase letters
+  //"K0REA" => "KOREA"
+  
+  //if the char is a 5, turn it into an S
+  //if the char is a 0, turn it into a O
+  //if the char is a 1, turn it into a I
+  
+  let stringArray = string.split("");
+  let correctedString = "";
+  
+  for (let i = 0; i <= stringArray.length -1; i++) {
+    if (stringArray[i] === '5') {
+    correctedString += "S"
+  } else if (stringArray[i] === '0') {
+    correctedString += "O"
+  } else if (stringArray[i] === '1') {
+    correctedString += "I"
+} else {
+  correctedString += stringArray[i]
+}
+}
+return correctedString
+  }
