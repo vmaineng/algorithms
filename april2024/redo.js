@@ -279,3 +279,21 @@ function revLL(head, prev = null) {
     head.next = prev
     return revLL(next, head)
 }
+
+//return array.map((ele, idx) => {
+    // const newIdx = idx + 1
+    // return newIdx + ":" + ele
+// })
+
+function move (position, roll) {
+    //receive two integers (current position, # on dice roll)
+    // return the new position
+  //move(4, 4) => 4 * 2 = 8 , 4 + 8 = 12
+    
+    //take the roll * 2
+    //add the amount of Moves needed to current position
+    //return new Position
+    
+    let amtOfMoves = roll * 2
+    return position + amtOfMoves
+  }

@@ -343,3 +343,14 @@ function correct(string)
 }
 return correctedString
   }
+
+  //return array.reduce((acc, cv) => acc * cv)
+  //return array.match(/brown/);
+
+
+  //grab total sum
+  //[1, 2, 3, 4, 5] ==> 15
+  //grab last item
+  //
+  //const lastItem = array[array.length - 1];
+//return lastItem * (lastItem + 1) / 2 ==> 15
