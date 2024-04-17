@@ -309,3 +309,35 @@ function twoSort(s) {
 
   return sortedWords[0].split("").join("***");
 }
+
+function revWords(s) {
+    //receive a string of chars with spaces
+    //return a string with the words reversed in the same order
+    //'Hello, it's you' => 'olleH, s'ti uoy'
+
+    //split on spaces, reverse it, join back on spaces
+}
+
+function twoSumObj(nums, target) {
+    //receive a nums array, and a target
+    //return the index position of the values that add up to target
+
+    //create an object
+    //iterate thorugh nums
+    //find the difference
+    //check if object has the property
+    //return the value given
+    //else set the index positon as the values for the values seen
+
+    let answer = {}
+
+    for (let i = 0; i < nums.length; i++) {
+        let difference = target - nums[i]
+        if (answer.hasOwnProperty(difference)) {
+            return [nums, answer[difference]]
+        } else {
+            answer[nums[i]] = i
+        }
+    }
+}
+
