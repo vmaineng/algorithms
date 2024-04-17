@@ -1,269 +1,267 @@
 function checkParen(str) {
-    //receive a string of parenthesis
-    //return true if they pair up, else false
-    //'()()' => true
+  //receive a string of parenthesis
+  //return true if they pair up, else false
+  //'()()' => true
 
-//if paren starts with a closing bracket first, then return false;
+  //if paren starts with a closing bracket first, then return false;
 
-//create a stack
-//iterate through string
-//if it's an opening bracket, add to the stack
-//if it's a closing bracket, and if the stack is not empty
-//pop it off
-//return if stack is empty
+  //create a stack
+  //iterate through string
+  //if it's an opening bracket, add to the stack
+  //if it's a closing bracket, and if the stack is not empty
+  //pop it off
+  //return if stack is empty
 
-let stack = [];
+  let stack = [];
 
-for(let i = 0; i < s.length; i++) {
-    if(s[i] === '(' || s[i] === '[' || s[i] === '{') {
-        stack.push(s[i])
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+      stack.push(s[i]);
     } else {
-        //if found closing bracket
-        if (!stack.length || //if stack is empty or if you can't find the corresponding  opening character, then return false;
-        (s[i] === ')' && stack[stack.length - 1] !== '(') ||
-        (s[i] === '}' && stack[stack.length - 1] !== '{' ) ||
-        (s[i] === ']' && stack[stack.length - 1] !== '[' )) {
-            return false
-        }
-        stack.pop(); //else pop off the opening bracket
+      //if found closing bracket
+      if (
+        !stack.length || //if stack is empty or if you can't find the corresponding  opening character, then return false;
+        (s[i] === ")" && stack[stack.length - 1] !== "(") ||
+        (s[i] === "}" && stack[stack.length - 1] !== "{") ||
+        (s[i] === "]" && stack[stack.length - 1] !== "[")
+      ) {
+        return false;
+      }
+      stack.pop(); //else pop off the opening bracket
     }
-    
-}
-return !stack.length;
+  }
+  return !stack.length;
 }
 
 const twoSum = (nums, target) => {
-//receive an array of numbers, target
-//return the index position
-//[3, 4, 5, 8], 9 => [1, 2]
+  //receive an array of numbers, target
+  //return the index position
+  //[3, 4, 5, 8], 9 => [1, 2]
 
-//create an object
-//iterate through nums array
-//look for a the difference by taking the target - current value
-//check if the object already has the value as key, then return the index positions
-//else set the index position in
+  //create an object
+  //iterate through nums array
+  //look for a the difference by taking the target - current value
+  //check if the object already has the value as key, then return the index positions
+  //else set the index position in
 
-let answer = {};
+  let answer = {};
 
-for (let i = 0; i < nums.length; i++) {
-    let difference = target - nums[i]
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
     if (answer.hasOwnProperty(difference)) {
-        return [answer[difference], nums[i]]
+      return [answer[difference], nums[i]];
     } else {
-        answer[difference] = i
+      answer[difference] = i;
     }
-}
-}
+  }
+};
 
 function revLL(head1) {
-    //receive the head of a linked list
-    //return the list in reverse
-    // 1 -> 2 -> 3 => 3 -> 2 -> 1
+  //receive the head of a linked list
+  //return the list in reverse
+  // 1 -> 2 -> 3 => 3 -> 2 -> 1
 
-    //edge case if the ll is empty, return null
+  //edge case if the ll is empty, return null
 
-    //create a prev node set to null
-    //capture head as current node
-    //iterate through ll
-    //capture the next node
-    //switch pointers from next to prev
-    //push prev node to capture current node
-    //then push current to next node
-    //return prev node;
+  //create a prev node set to null
+  //capture head as current node
+  //iterate through ll
+  //capture the next node
+  //switch pointers from next to prev
+  //push prev node to capture current node
+  //then push current to next node
+  //return prev node;
 
-    if (!head1) return null;
+  if (!head1) return null;
 
-    let prev;
-    let current = head1;
+  let prev;
+  let current = head1;
 
-    while (current !== null) {
-        let next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
-    }
-    return prev;
+  while (current !== null) {
+    let next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
 }
 
 function groupAnagrams(arr) {
-    //receive an array of strings
-    //return an array back with anagroups in the array
-    
-    //edge case: //if array is empty, return an empty array back
-    //if array has one element, return the eleement back
+  //receive an array of strings
+  //return an array back with anagroups in the array
 
-    //sort the strings
-    //create an object
-    //iterate through the sorted Strings
-    //check if the key exists, 
-    //then add array of strings as the value
-    //return the values as an array
+  //edge case: //if array is empty, return an empty array back
+  //if array has one element, return the eleement back
 
-    if (arr.length === 1 || !arr) return [arr];
+  //sort the strings
+  //create an object
+  //iterate through the sorted Strings
+  //check if the key exists,
+  //then add array of strings as the value
+  //return the values as an array
 
-    let sortedWords = {}
+  if (arr.length === 1 || !arr) return [arr];
 
-    for (let word of sortedArr ) {
-        let sortedArr = arr.split("").sort().join("")
-        if (!sortedWords[sortedArr]) sortedWords[word] = []
-        sortedWords[word].push(word)
-    }
-return Object.values(sortedWords)
+  let sortedWords = {};
+
+  for (let word of sortedArr) {
+    let sortedArr = arr.split("").sort().join("");
+    if (!sortedWords[sortedArr]) sortedWords[word] = [];
+    sortedWords[word].push(word);
+  }
+  return Object.values(sortedWords);
 }
 
 function groupAna(arr) {
-//receive an array of strings
-//return an array with arrays of anagrams together
+  //receive an array of strings
+  //return an array with arrays of anagrams together
 
-//split the chars in arr, sort them, and join them back together
-//iterate through the sorted chars
-//create an object to store similar values seen
-//insert the original word as values, keys are the sorted word
-//return the values as an array
+  //split the chars in arr, sort them, and join them back together
+  //iterate through the sorted chars
+  //create an object to store similar values seen
+  //insert the original word as values, keys are the sorted word
+  //return the values as an array
 
+  let anaObject = {};
 
-let anaObject = {}
-
-for (let word of arr) {
+  for (let word of arr) {
     let sortedWord = word.split("").sort().join("");
-    if (!anaObject[sortedWord]) anaObject[sortedWord] = []
-    anaObject[sortedWord].push(word)
-}
-return Object.values(anaObject)
-
+    if (!anaObject[sortedWord]) anaObject[sortedWord] = [];
+    anaObject[sortedWord].push(word);
+  }
+  return Object.values(anaObject);
 }
 
 function countVow(str) {
-    //receive a string
-    //return count of vowels in string
-    //'window' => 2
+  //receive a string
+  //return count of vowels in string
+  //'window' => 2
 
-    //create a vowels array holding all vowels
-    //iterate through the string
-    //if the char matches any of the vowels char
-    //add to count
-    //return count
+  //create a vowels array holding all vowels
+  //iterate through the string
+  //if the char matches any of the vowels char
+  //add to count
+  //return count
 
-    let vowelsCount = 0;
+  let vowelsCount = 0;
 
-    let vowelsArray = ['a', 'e', 'i', 'o', 'u']
+  let vowelsArray = ["a", "e", "i", "o", "u"];
 
-    let lowerCaseStr = str.toLowerCase();
+  let lowerCaseStr = str.toLowerCase();
 
-    for (let i = 0; i <= lowerCaseStr.length; i++) {
-        if (vowelsArray.includes(lowerCaseStr[i])){
-            vowelsCount++
-        }
+  for (let i = 0; i <= lowerCaseStr.length; i++) {
+    if (vowelsArray.includes(lowerCaseStr[i])) {
+      vowelsCount++;
     }
-    return vowelsCount
+  }
+  return vowelsCount;
 }
 
-const longestRepeat =(s)=> {
-//receive a string of lowercase letters
-//return the maxlength of chars that are not repeating
-//'applesauce' => 'plesauc' => 7
+const longestRepeat = (s) => {
+  //receive a string of lowercase letters
+  //return the maxlength of chars that are not repeating
+  //'applesauce' => 'plesauc' => 7
 
-//create a Set to capture unique values
-//create two pointers starting at the first index
-//check if the Set has not seen the values, increase the right window
-//else if the set has it, decrease the window from the left
-//keep track of maxLength
+  //create a Set to capture unique values
+  //create two pointers starting at the first index
+  //check if the Set has not seen the values, increase the right window
+  //else if the set has it, decrease the window from the left
+  //keep track of maxLength
 
-let uniqueChar = new Set();
+  let uniqueChar = new Set();
 
-let left = 0;
-let right = 0;
-let maxLength = 0;
+  let left = 0;
+  let right = 0;
+  let maxLength = 0;
 
-while (right < s.length) {
+  while (right < s.length) {
     if (!uniqueChar.has(s[right])) {
-        uniqueChar.add(s[right])
-        right++
+      uniqueChar.add(s[right]);
+      right++;
     } else {
-        uniqueChar.delete(s[left])
-        left++
-        
+      uniqueChar.delete(s[left]);
+      left++;
     }
-    maxLength = Math.max(maxLength, uniqueChar.size)
-}
+    maxLength = Math.max(maxLength, uniqueChar.size);
+  }
 
-return maxLength
-}
+  return maxLength;
+};
 
 function paliNum(num) {
-    //receive a number
-    //return true if palindrome, else false
-    //34565 => false
+  //receive a number
+  //return true if palindrome, else false
+  //34565 => false
 
-    //convert num to string
-    //use left and right pointer ; left at 1st num and right at the end num
-    //check if they are not equal to each other, return false
-    //return true
+  //convert num to string
+  //use left and right pointer ; left at 1st num and right at the end num
+  //check if they are not equal to each other, return false
+  //return true
 
-    let numString = num.toString();
+  let numString = num.toString();
 
-    let i = 0;
-    let j = numString.length - 1;
+  let i = 0;
+  let j = numString.length - 1;
 
-    while (i < j) {
-        if (numString[i] !== numString[j]) {
-            return false
-        }
-        i++;
-        j--;
+  while (i < j) {
+    if (numString[i] !== numString[j]) {
+      return false;
     }
-    return true;
+    i++;
+    j--;
+  }
+  return true;
 }
 
 const longSubstring = (s) => {
-    //receive a string of chars
-    //return max length of chars
-    //'unique' => 'uniq' => 4
+  //receive a string of chars
+  //return max length of chars
+  //'unique' => 'uniq' => 4
 
-    //create a Set of values seen
-    //iterate through string
-    //check if the value exists in Set, 
-    //if so, delete from set and move the pointer
-    //keep track of maxLength
-    //return maxLength
+  //create a Set of values seen
+  //iterate through string
+  //check if the value exists in Set,
+  //if so, delete from set and move the pointer
+  //keep track of maxLength
+  //return maxLength
 
-    let uniqueVals = new Set();
+  let uniqueVals = new Set();
 
-    let left = 0;
-    let right = 0;
-    let maxLength = 0;
+  let left = 0;
+  let right = 0;
+  let maxLength = 0;
 
-    while (right < s.length) {
-        if (!uniqueVals.has(s[right])) {
-            uniqueVals.add(s[right])
-            right++
-        } else {
-            uniqueVals.delete(s[left])
-            left++
-        }
-        maxLength = Math.max(maxLength, uniqueVals.size)
+  while (right < s.length) {
+    if (!uniqueVals.has(s[right])) {
+      uniqueVals.add(s[right]);
+      right++;
+    } else {
+      uniqueVals.delete(s[left]);
+      left++;
     }
-    return maxLength
-}
+    maxLength = Math.max(maxLength, uniqueVals.size);
+  }
+  return maxLength;
+};
 
 function create(arr) {
-    //receive an array
-    //return an array with arrays + idx
-    //[0, 1, 2] => [[0,1], [1,2], [2, 3]]
+  //receive an array
+  //return an array with arrays + idx
+  //[0, 1, 2] => [[0,1], [1,2], [2, 3]]
 
-    //iterate through arr, capture the idx + 1
-    //return the arr
+  //iterate through arr, capture the idx + 1
+  //return the arr
 
-    // return arr.map((ele, idx) => {
-    //     const newIdx = idx + 1
-    //     return "ele, newIdx"
-    // })
-    let newArr = []
+  // return arr.map((ele, idx) => {
+  //     const newIdx = idx + 1
+  //     return "ele, newIdx"
+  // })
+  let newArr = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        newArr.push(arr[i], arr[i + 1])
-    }
-    return arr;
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i], arr[i + 1]);
+  }
+  return arr;
 }
 
 //return (goose - 1) % goose.length
@@ -274,26 +272,40 @@ function create(arr) {
 //return lastEle - lastEle / 1
 
 function revLL(head, prev = null) {
-    if (head === null) return prev;
-    const next = head.next;
-    head.next = prev
-    return revLL(next, head)
+  if (head === null) return prev;
+  const next = head.next;
+  head.next = prev;
+  return revLL(next, head);
 }
 
 //return array.map((ele, idx) => {
-    // const newIdx = idx + 1
-    // return newIdx + ":" + ele
+// const newIdx = idx + 1
+// return newIdx + ":" + ele
 // })
 
-function move (position, roll) {
-    //receive two integers (current position, # on dice roll)
-    // return the new position
+function move(position, roll) {
+  //receive two integers (current position, # on dice roll)
+  // return the new position
   //move(4, 4) => 4 * 2 = 8 , 4 + 8 = 12
-    
-    //take the roll * 2
-    //add the amount of Moves needed to current position
-    //return new Position
-    
-    let amtOfMoves = roll * 2
-    return position + amtOfMoves
-  }
+
+  //take the roll * 2
+  //add the amount of Moves needed to current position
+  //return new Position
+
+  let amtOfMoves = roll * 2;
+  return position + amtOfMoves;
+}
+
+function twoSort(s) {
+  //receive a an array of strings
+  //return the first string and have "***"between each of its letters
+  //['hello', 'is', 'you', 'doing'] => ['doing', 'hello', 'is', 'you'] => 'd***o***i***n***g'
+
+  //sort the array by first letter in each string
+  //grab the first value in the array and split it with '***'' in between
+
+  let sortedWords = s.sort();
+  //console.log(sortedWords)
+
+  return sortedWords[0].split("").join("***");
+}
