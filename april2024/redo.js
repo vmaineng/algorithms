@@ -341,3 +341,8 @@ function twoSumObj(nums, target) {
     }
 }
 
+//for (let month in data) {
+    //for (let day in data[month]) {
+//         if (data[month][day] === "nice")
+//     }
+// }
