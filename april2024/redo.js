@@ -387,3 +387,70 @@ for (let char of s) {
     }
     return !stack.length
 }
+
+function validAnagram(s, t) {
+    //receive two strings
+    //return true if anagram of each other, else return false
+    //'apple', 'pear' => false
+
+    //edge case: if they are not the same length, they can't be anagrams
+    if (s.length === t.length) return false;
+
+    //split each string, sort and join them back together to see if they are equal to each other
+    return s.split("").sort().join("") === t.split("").sort().join("")
+}
+
+function groupsAna(strs) {
+    //receive an array of strings
+    //return anagrams back together in one array in an array
+    //['app', 'pap', 'tan'] => [ ['app', 'pap'], ['tan']]
+
+//create an object
+
+    //iterate through the array
+//split the words, sort, and join them back together as the key   
+//add values that start together the same 
+//return the object values back
+
+let sortedWordObj = {};
+
+for (let word of strs) {
+    let sortedWord = word.split("").sort().join("")
+    if (!sortedWordObj[sortedWord]) sortedWordObj[sortedWord] = []
+    sortedWordObj[sortedWord].push(word)
+}
+
+return Object.values(sortedWordObj)
+
+}
+
+function paliNumber(x) {
+    //receive an integer
+    //return true if palindrome number, else false
+    //345 => false, 45654 => true
+
+    //convert number to string
+    //create a pointer on left side, and right side
+    //if they are they not the same, return false
+    //else increment them
+
+    let stringX = x.toString();
+
+    let left = 0; 
+    let right = stringX.length - 1;
+
+    while (left < right) {
+        if (stringX[left] !== stringX[right]) {
+            return false
+        }
+        left++;
+        right--
+    }
+    return true;
+}
+
+//return word[0].toUpppercase() + word.slice(1)
+
+//if (vowels.includes(string[i])) {
+//     vowelCount++
+// }
