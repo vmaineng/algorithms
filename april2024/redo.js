@@ -346,3 +346,44 @@ function twoSumObj(nums, target) {
 //         if (data[month][day] === "nice")
 //     }
 // }
+
+function checkParen(s) {
+    //receive a string of opening and closing chars
+    //return true if string is valid (opening and closing), return false
+    //'([]' => false
+
+    //edge case: if it does not start with opening char, then return false
+
+    //create a stack
+
+    //iterate through the string
+    //if the string is an opening char, push it on the stack
+    //else if the char is an closing char, pop it off the stack
+    //if the stack is empty, return true, else return false
+
+//  let stack = [];
+
+//  let anyParen = 0;
+
+//  for (let i = 0; i <= s.length; i++) {
+//     if (s[i] === '(') {
+//         stack.push(s[i])
+//     } else if (s[i] === ')') {
+//         if( stack.length > 0) {
+//             stack.pop()
+//         } else {
+//             anyParen++
+//         }
+//     }
+//  }
+
+for (let char of s) {
+    if (checkObj[char]) {
+        stack.push(checkObj[char])
+    } else {
+        if (stack.pop() !== char) {
+            return false
+        }
+    }
+    return !stack.length
+}
