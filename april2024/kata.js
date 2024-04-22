@@ -283,74 +283,104 @@ function shortcut(string) {
   //return string.split("").filter((str) => !lowercaseVowels.includes(str)).join("")
 }
 
-const doPillars = (pillars, distance, width)  => {
-//receive amoutn of pillars, distance in meters, width in cms
-//return the distance between the first and the last pillar
-}
+const doPillars = (pillars, distance, width) => {
+  //receive amoutn of pillars, distance in meters, width in cms
+  //return the distance between the first and the last pillar
+};
 
 const naughtyOrNice = (data) => {
-//receive an obj instead in obj
-//return "Naughty!" or "Nice!" based on total amts
+  //receive an obj instead in obj
+  //return "Naughty!" or "Nice!" based on total amts
 
-//iterate through the data
-//then iterate through the month
-//then grab the dates (key)
-//tally up the total amount based on wehther the value is "Naughty" or "Nice"
+  //iterate through the data
+  //then iterate through the month
+  //then grab the dates (key)
+  //tally up the total amount based on wehther the value is "Naughty" or "Nice"
 
-let naughtyCount = 0;
-let niceCount = 0;
+  let naughtyCount = 0;
+  let niceCount = 0;
 
-for (let month in data) {
-  for (let day in month)  {
-    if ([month][day] === "Nice") {
-      niceCount++
-    } else {
-      naughtyCount++
+  for (let month in data) {
+    for (let day in month) {
+      if ([month][day] === "Nice") {
+        niceCount++;
+      } else {
+        naughtyCount++;
+      }
     }
   }
-}
 
-if (niceCount > naughtyCount) {
-  return "Naughty!"
-} else {
-  return "Nice!"
-}
-}
+  if (niceCount > naughtyCount) {
+    return "Naughty!";
+  } else {
+    return "Nice!";
+  }
+};
 
-function correct(string)
-{
-	//receive uppercase strings with numbers
+function correct(string) {
+  //receive uppercase strings with numbers
   //return the answers back in uppercase letters
   //"K0REA" => "KOREA"
-  
+
   //if the char is a 5, turn it into an S
   //if the char is a 0, turn it into a O
   //if the char is a 1, turn it into a I
-  
+
   let stringArray = string.split("");
   let correctedString = "";
-  
-  for (let i = 0; i <= stringArray.length -1; i++) {
-    if (stringArray[i] === '5') {
-    correctedString += "S"
-  } else if (stringArray[i] === '0') {
-    correctedString += "O"
-  } else if (stringArray[i] === '1') {
-    correctedString += "I"
-} else {
-  correctedString += stringArray[i]
+
+  for (let i = 0; i <= stringArray.length - 1; i++) {
+    if (stringArray[i] === "5") {
+      correctedString += "S";
+    } else if (stringArray[i] === "0") {
+      correctedString += "O";
+    } else if (stringArray[i] === "1") {
+      correctedString += "I";
+    } else {
+      correctedString += stringArray[i];
+    }
+  }
+  return correctedString;
 }
-}
-return correctedString
+
+//return array.reduce((acc, cv) => acc * cv)
+//return array.match(/brown/);
+
+//grab total sum
+//[1, 2, 3, 4, 5] ==> 15
+//grab last item
+//
+//const lastItem = array[array.length - 1];
+//return lastItem * (lastItem + 1) / 2 ==> 15
+
+function duplicateCount(text) {
+  //receive a string of chars and numbers
+  //return the count of chars and numbers that appear more than once
+  //'hello' => 1 => 'l'
+
+  //create an object
+  //iterate through the string
+  //if the char is seen, add 1 to it
+
+  //iterate through the object, check the amount of chars that > 1
+  //return the amount of chars
+
+  //edgecase: if string is empty, return 0
+
+  if (text.length === 0) return 0;
+
+  let lowercaseString = text.toLowerCase();
+
+  let seenValues = {};
+  let total = 0;
+
+  for (let char of lowercaseString) {
+    seenValues[char] = (seenValues[char] || 0) + 1;
+    //     console.log(seenValues)
   }
 
-  //return array.reduce((acc, cv) => acc * cv)
-  //return array.match(/brown/);
-
-
-  //grab total sum
-  //[1, 2, 3, 4, 5] ==> 15
-  //grab last item
-  //
-  //const lastItem = array[array.length - 1];
-//return lastItem * (lastItem + 1) / 2 ==> 15
+  for (let key in seenValues) {
+    if (seenValues[key] > 1) total += 1;
+  }
+  return total;
+}
