@@ -384,3 +384,6 @@ function duplicateCount(text) {
   }
   return total;
 }
+
+//time: O(n) - looping through every data structure once
+//space: O(n) - creating a new object
