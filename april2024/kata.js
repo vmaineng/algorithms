@@ -387,3 +387,28 @@ function duplicateCount(text) {
 
 //time: O(n) - looping through every data structure once
 //space: O(n) - creating a new object
+
+function reverseList(list) {
+  //receive an array of integers - unsorted
+  //return the list reversed back
+  //[6, 3, 8] => [ 8, 3, 6]
+
+  //create a new array
+  //iterate through the current list
+  //add from the end to the new array
+  //return the new array
+
+  //time: O(n)
+  //space: O(n) - creating a new array
+
+  // let reversedArray = [];
+
+  //   for (let i = list.length - 1; i >= 0; i--) {
+  //     reversedArray.push(list[i])
+  //   }
+
+  // return reversedArray
+
+  //space: O(1) - reverse in place
+  return list.reverse();
+}
