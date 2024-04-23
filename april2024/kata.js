@@ -412,3 +412,32 @@ function reverseList(list) {
   //space: O(1) - reverse in place
   return list.reverse();
 }
+
+function noOdds(values) {
+  // receive an array of values of integers
+  //return values in order that are not odd
+  //[2,3, 4, 5] => [2, 4]
+
+  //edge case: if there's only 1 element in the array, then have to check if you mod it by 2, it equals 0 and return the value
+
+  //create an array
+
+  //iterate through the values array
+  //check if the remainder % 2 is 0, then it's an even number
+  //push to the array
+  //return the array
+
+  //   let evenArray = []
+
+  // for(let i = 0; i < values.length; i++) {
+  //   if (values[i] % 2 === 0) {
+  //     evenArray.push(values[i])
+  //   }
+  // }
+  // return evenArray
+
+  //optimized:
+  //use .filter?
+
+  return values.filter((ele) => ele % 2 === 0);
+}
