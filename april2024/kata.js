@@ -441,3 +441,37 @@ function noOdds(values) {
 
   return values.filter((ele) => ele % 2 === 0);
 }
+
+function solution(number) {
+  //receive an integer to iterate up to
+  //return the sum of multiples of 3 or 5
+  //(5) => 3, 5 => 8
+
+  //edge case: if number is negative, return 0
+  if (number < 0) return 0;
+
+  //intialize a sum
+  //iterate up to number
+  //check if it is a multiple of 3 & 5,
+  //add to sum
+  //check if it is multiple of 3
+  //add to sum
+  //check if it is a mutiple of 5
+  //add to sum
+
+  let sum = 0;
+
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      sum += i;
+    } else if (i % 3 === 0) {
+      sum += i;
+    } else if (i % 5 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+
+  //time: o(n) - iterate through each number once
+  //space: O(1) - sum is changing;
+}
