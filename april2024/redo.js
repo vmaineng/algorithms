@@ -311,84 +311,83 @@ function twoSort(s) {
 }
 
 function revWords(s) {
-    //receive a string of chars with spaces
-    //return a string with the words reversed in the same order
-    //'Hello, it's you' => 'olleH, s'ti uoy'
-
-    //split on spaces, reverse it, join back on spaces
+  //receive a string of chars with spaces
+  //return a string with the words reversed in the same order
+  //'Hello, it's you' => 'olleH, s'ti uoy'
+  //split on spaces, reverse it, join back on spaces
 }
 
 function twoSumObj(nums, target) {
-    //receive a nums array, and a target
-    //return the index position of the values that add up to target
+  //receive a nums array, and a target
+  //return the index position of the values that add up to target
 
-    //create an object
-    //iterate thorugh nums
-    //find the difference
-    //check if object has the property
-    //return the value given
-    //else set the index positon as the values for the values seen
+  //create an object
+  //iterate thorugh nums
+  //find the difference
+  //check if object has the property
+  //return the value given
+  //else set the index positon as the values for the values seen
 
-    let answer = {}
+  let answer = {};
 
-    for (let i = 0; i < nums.length; i++) {
-        let difference = target - nums[i]
-        if (answer.hasOwnProperty(difference)) {
-            return [nums, answer[difference]]
-        } else {
-            answer[nums[i]] = i
-        }
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
+    if (answer.hasOwnProperty(difference)) {
+      return [nums, answer[difference]];
+    } else {
+      answer[nums[i]] = i;
     }
+  }
 }
 
 //for (let month in data) {
-    //for (let day in data[month]) {
+//for (let day in data[month]) {
 //         if (data[month][day] === "nice")
 //     }
 // }
 
 function checkParen(s) {
-    //receive a string of opening and closing chars
-    //return true if string is valid (opening and closing), return false
-    //'([]' => false
+  //receive a string of opening and closing chars
+  //return true if string is valid (opening and closing), return false
+  //'([]' => false
 
-    //edge case: if it does not start with opening char, then return false
+  //edge case: if it does not start with opening char, then return false
 
-    //create a stack
+  //create a stack
 
-    //iterate through the string
-    //if the string is an opening char, push it on the stack
-    //else if the char is an closing char, pop it off the stack
-    //if the stack is empty, return true, else return false
+  //iterate through the string
+  //if the string is an opening char, push it on the stack
+  //else if the char is an closing char, pop it off the stack
+  //if the stack is empty, return true, else return false
 
-//  let stack = [];
+  //  let stack = [];
 
-//  let anyParen = 0;
+  //  let anyParen = 0;
 
-//  for (let i = 0; i <= s.length; i++) {
-//     if (s[i] === '(') {
-//         stack.push(s[i])
-//     } else if (s[i] === ')') {
-//         if( stack.length > 0) {
-//             stack.pop()
-//         } else {
-//             anyParen++
-//         }
-//     }
-//  }
+  //  for (let i = 0; i <= s.length; i++) {
+  //     if (s[i] === '(') {
+  //         stack.push(s[i])
+  //     } else if (s[i] === ')') {
+  //         if( stack.length > 0) {
+  //             stack.pop()
+  //         } else {
+  //             anyParen++
+  //         }
+  //     }
+  //  }
 
-for (let char of s) {
+  for (let char of s) {
     if (checkObj[char]) {
-        stack.push(checkObj[char])
+      stack.push(checkObj[char]);
     } else {
-        if (stack.pop() !== char) {
-            return false
-        }
+      if (stack.pop() !== char) {
+        return false;
+      }
     }
-    return !stack.length
-}
+    return !stack.length;
+  }
 
-function validAnagram(s, t) {
+  function validAnagram(s, t) {
     //receive two strings
     //return true if anagram of each other, else return false
     //'apple', 'pear' => false
@@ -397,34 +396,33 @@ function validAnagram(s, t) {
     if (s.length === t.length) return false;
 
     //split each string, sort and join them back together to see if they are equal to each other
-    return s.split("").sort().join("") === t.split("").sort().join("")
-}
+    return s.split("").sort().join("") === t.split("").sort().join("");
+  }
 
-function groupsAna(strs) {
+  function groupsAna(strs) {
     //receive an array of strings
     //return anagrams back together in one array in an array
     //['app', 'pap', 'tan'] => [ ['app', 'pap'], ['tan']]
 
-//create an object
+    //create an object
 
     //iterate through the array
-//split the words, sort, and join them back together as the key   
-//add values that start together the same 
-//return the object values back
+    //split the words, sort, and join them back together as the key
+    //add values that start together the same
+    //return the object values back
 
-let sortedWordObj = {};
+    let sortedWordObj = {};
 
-for (let word of strs) {
-    let sortedWord = word.split("").sort().join("")
-    if (!sortedWordObj[sortedWord]) sortedWordObj[sortedWord] = []
-    sortedWordObj[sortedWord].push(word)
-}
+    for (let word of strs) {
+      let sortedWord = word.split("").sort().join("");
+      if (!sortedWordObj[sortedWord]) sortedWordObj[sortedWord] = [];
+      sortedWordObj[sortedWord].push(word);
+    }
 
-return Object.values(sortedWordObj)
+    return Object.values(sortedWordObj);
+  }
 
-}
-
-function paliNumber(x) {
+  function paliNumber(x) {
     //receive an integer
     //return true if palindrome number, else false
     //345 => false, 45654 => true
@@ -436,21 +434,87 @@ function paliNumber(x) {
 
     let stringX = x.toString();
 
-    let left = 0; 
+    let left = 0;
     let right = stringX.length - 1;
 
     while (left < right) {
-        if (stringX[left] !== stringX[right]) {
-            return false
-        }
-        left++;
-        right--
+      if (stringX[left] !== stringX[right]) {
+        return false;
+      }
+      left++;
+      right--;
     }
     return true;
+  }
 }
-
 //return word[0].toUpppercase() + word.slice(1)
 
 //if (vowels.includes(string[i])) {
 //     vowelCount++
+// }
+
+const longRepeat = (s, k) => {
+  //receive a string of chars uppercase, an amount that you can replace chars
+  //return length of the string, up to k amount of replacements
+  //'FSISHS', 3 => 'SSSSSS' => 6
+
+  //keep track of max length, count of letters we've seen
+
+  //create pointers (left and right) starting at the first char
+
+  //iterate through the string
+  //update the values seen in an object
+  //if the current window exceeds k replacement,
+  //then we need to move left window in
+  //remove left window's value from the object
+
+  //return the current window
+
+  let count = 0;
+  let maxLength = 0;
+  let seenChars = {};
+
+  let left = 0;
+  let right = 0;
+
+  while (right < s.length) {
+    // ! iterate from right window to the end of the string
+    const rightChar = s.charAt(right);
+    seenChars[rightChar] = (seenChars[rightChar] || 0) + 1;
+    count = Math.max(count, seenChars[right]);
+
+    if (right - left + 1 - count > k) {
+      const leftChar = s.charAt(left);
+      seenChars[leftChar] = -1;
+      left++;
+    }
+    maxLength = Math.max(maxLength, right - left + 1);
+    right++; // ! increment right window to keep moving
+  }
+  return maxLength;
+};
+
+//return (goose - 1) % goose.length
+
+//for (let i = 0; i < array.length; i++) {
+// const lastEle = array[array.length - 1]
+// return lastEle * (lastEle + 1) /2
+//      3            4
+//       12 /2 = 6
+// }
+
+//[1, 2, 3] = > 1 + 2 + 3 = 6
+
+//return [ele, ele + 1]
+
+// function makeNew(array) {
+//let newArray = [];
+// for (let i = 0; i < array.length; i++) {
+//   newArray.push([array[i], array[i + 1]])
+// }
+// }
+
+//return array.map( ele, idx => {
+//   const num = idx + 1
+//   return idx + ":" + ele
 // }
