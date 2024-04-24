@@ -541,6 +541,130 @@ function stringy(size) {
   }
   return output;
 
+  //return "".padStart(size, "10")
+
   //time: O(n) we are going through everything once
   //space: O(n) creating `output`
+}
+
+function findUniq(arr) {
+  // receive an array of integers (whole and floats)
+  //return the value that is different
+  //[3,3,3,3,4,3] => 4
+
+  //brute force:
+  //look through each individual one and compare it to the previous
+  //if different, then return the value
+
+  // for (let i = 0; i <= arr.length; i++) {
+  //   if (arr[i] !== arr[i + 1]) {
+  //     return arr[i + 1]
+  //   }
+  // }
+
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+  //     return arr[i];
+  //   }
+  // }
+
+  //optimized:
+  //use Set to get unique value
+
+  // let setUnique = new Set(...arr)
+  // console.log(setUnique)
+
+  let freqCounter = {};
+
+  for (let num of arr) {
+    freqCounter[num] = (freqCounter[num] || 0) + 1;
+  }
+
+  for (let key in freqCounter) {
+    if (freqCounter[key] === 1) return Number(key);
+  }
+}
+
+function mergeLL(head1, head2) {
+  //receive two sorted linked lists
+  //return one LL in sorted order
+  //create a dummy node
+  //then check if head1's first node is < head2's first node,
+  //then add in head1,
+  //else add in head2
+
+  let current1 = head1;
+  let current2 = head2;
+  let dummy = new Node();
+  let tail = dummy;
+
+  while (current1 !== null && current2 !== null) {
+    if (current1.val < current2.val) {
+      tail.next = current1;
+      current1 = current1.next;
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
+  }
+
+  if (current1) tail.next = current1;
+  if (current2) tail.next = current2;
+
+  return dummy.next;
+}
+
+//if char.hasOwnProperty()
+//char++
+
+function recurRevLL(head, prev = null) {
+  //receive a linked list
+  //return the ll in reverse
+  //base case: if head === null, return prev
+  //recursive call and create
+  //next variable to capture next node
+  //pass in head and next to the function
+
+  if (head === null) return prev;
+
+  const next = head.next;
+  head.next = prev;
+  return recurRevLL(next, head);
+}
+
+function repeatChar(s, k) {
+  //receive a string of uppercase letters, an integer amount of how many times you can replace
+  //return max length of how many chars you can replace
+  //'FOOD", 1 ="OOOD" => 3
+  //create an object to store the values seen
+  //create a count
+  //create a length
+  //create two pointers (left and right) starting at 0 index
+  //iterate through s string to keep track of how many chars seen
+  // if the amount of replacements has been breached,
+  //move left window up and remove value seen from object
+  //return max length
+
+  let valuesSeen = {};
+  let count = 0;
+  let length = 0;
+
+  let left = 0;
+  let right = 0;
+
+  while (right < s.length) {
+    const rightChar = s.charAt(right);
+    valuesSeen[rightChar] = (valuesSeen[rightChar] || 0) + 1;
+    count = Math.max(count, valuesSeen[rightChar]);
+
+    if (right - left + 1 - count > k) {
+      const leftChar = s.charAt(left);
+      valuesSeen[leftChar] -= 1;
+      left++;
+    }
+    length = Math.max(length, right - left + 1);
+    right++;
+  }
+  return length;
 }
