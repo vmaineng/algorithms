@@ -518,3 +518,29 @@ const longRepeat = (s, k) => {
 //   const num = idx + 1
 //   return idx + ":" + ele
 // }
+
+function stringy(size) {
+  // receive an integer to determine the length
+  //return a string back with the length of size starting with 1, then add a 0
+  //stringy(5) => '10101'
+
+  //create a new string
+  //iterate up to size
+  //add 1 for odds to new string
+  //odd 0 for positive number to new string
+  //return new string
+
+  let output = "";
+
+  for (let i = 1; i <= size; i++) {
+    if (i % 2 !== 0) {
+      output += "1";
+    } else {
+      output += "0";
+    }
+  }
+  return output;
+
+  //time: O(n) we are going through everything once
+  //space: O(n) creating `output`
+}
