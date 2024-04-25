@@ -475,3 +475,34 @@ function solution(number) {
   //time: o(n) - iterate through each number once
   //space: O(1) - sum is changing;
 }
+
+function fixTheMeerkat(arr) {
+  //receive an array of 3 strings: "tail", "body", "head"
+  //return it back in order of ["head", "body", "tail"]
+
+  //["body", "tail", "head"] => ["head", "body", "tail"]
+
+  //create a new array
+  //iterate through the current array
+  //check if the element is equal to head
+  //push it into the array
+  //then check if next element is equal to body, push in body
+  //then do same thing for tail
+
+  return arr.reverse();
+}
+
+function reverseLetter(str) {
+  //receive a string of chars and numbers
+  //return a string back reversed ; only with chars
+  //"3425se324see" => "eeses"
+
+  //filter them out to equal only chars
+  //then reverse it
+
+  return str
+    .replaceAll(/[^a-z]/gi, "")
+    .split("")
+    .reverse()
+    .join("");
+}
