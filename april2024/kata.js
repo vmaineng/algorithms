@@ -532,3 +532,52 @@ for (let i = 0; i < this.length; i++) {
 }
 // If all characters are uppercase, return true
 return true;
+
+function wordsToMarks(string) {
+  ////receive an array of strings
+  //return the total value dervied from the strings in the order of the alphabet
+  //'hi' => 8 + 9 = 17
+
+  //create an object that holds a - z with the matching value in the alphabet
+  //iterate through the strings
+  //total up the value
+
+  let charMatch = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6,
+    g: 7,
+    h: 8,
+    i: 9,
+    j: 10,
+    k: 11,
+    l: 12,
+    m: 13,
+    n: 14,
+    o: 15,
+    p: 16,
+    q: 17,
+    r: 18,
+    s: 19,
+    t: 20,
+    u: 21,
+    v: 22,
+    w: 23,
+    x: 24,
+    y: 25,
+    z: 26,
+  };
+
+  let sum = 0;
+
+  for (let char of string) {
+    if (charMatch[char]) {
+      sum += charMatch[char];
+    }
+  }
+
+  return sum;
+}
