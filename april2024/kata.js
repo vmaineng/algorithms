@@ -506,3 +506,29 @@ function reverseLetter(str) {
     .reverse()
     .join("");
 }
+
+function peopleWithAgeDrink(old) {
+  //receive an age
+  //return the statement on the age given
+  //drink(12) => "drink toddy"
+
+  //check if age is < 13, "drink toddy", else if age is > 13 and < 17, "drink coke"
+  //if age is > 17, "drink beer", else over 21, "drink whisky"
+
+  return old < 15
+    ? "drink toddy"
+    : old > 14 && old < 18
+    ? "drink coke"
+    : old > 18 && old < 21
+    ? "drink beer"
+    : "drink whisky";
+}
+
+for (let i = 0; i < this.length; i++) {
+  // If any character is lowercase, return false
+  if (this[i] !== this[i].toUpperCase()) {
+    return false;
+  }
+}
+// If all characters are uppercase, return true
+return true;
