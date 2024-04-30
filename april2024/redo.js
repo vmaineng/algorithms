@@ -668,3 +668,38 @@ function repeatChar(s, k) {
   }
   return length;
 }
+
+function subStringLong(s) {
+  //receive a string of chars with no whitespaces
+  //return an integer of the longest length with no repeating chars
+  //'fishing' => 'fish' => 4
+
+  //create a Set
+  //iterate through the string
+  //check if the set does not have it
+  //add it in
+  //if the set does have it already
+  //delete the char out of it
+  //update size
+  //return size
+
+  let seenSet = new Set();
+  let length = 0;
+  let left = 0;
+  let right = 0;
+
+  while (right < s.length) {
+    if (!seenSet.has(s[right])) {
+      seenSet.add(s[right]);
+      right++;
+    } else {
+      seenSet.detlete(s[left]);
+      left++;
+    }
+    length = Math.max(length, set.size);
+  }
+  return length;
+}
+
+//time: O(n) - going through the elements once
+//space: O(n) - creating a new Set

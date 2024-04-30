@@ -581,3 +581,26 @@ function wordsToMarks(string) {
 
   return sum;
 }
+
+function gooseFilter(birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  //receive an array of strings of birds
+  // return an array containing all of the strings in the input array except those that match strings in geese
+  //['African', "Mallard", 'Crested', 'Roman Tufted'] => ["Mallard", "Crested"]
+
+  //iterate through the array of birds
+  //check if the word does not contains any of the geese
+  //add them to the new array
+  //return new array
+
+  let noGeese = [];
+
+  // for (let i = 0; i < birds.length; i++) {
+  //   if (!geese.includes(birds[i])) {
+  //     noGeese.push(birds[i])
+  //   }
+  // }
+  // return noGeese
+
+  return birds.filter((bird) => !geese.includes(bird));
+}
