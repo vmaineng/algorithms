@@ -604,3 +604,31 @@ function gooseFilter(birds) {
 
   return birds.filter((bird) => !geese.includes(bird));
 }
+
+function longestConsec(strarr, k) {
+  //receive an array of strings, and an integer dictating how many strings you can connect together
+  //return the longest length string
+  //['hi', 'hello', 'char'], 2 => ['hellochar']
+
+  //keep track of length of k strings together
+  //iterate through strarr array
+  //add the next string
+  //until k times
+  //track the length
+  //return the length
+
+  if (strarr.length === 0 || k > strarr.length || k <= 0) {
+    return "";
+  }
+
+  let maxStr = "";
+  let newStr = "";
+
+  for (let i = 0; i < strarr.length; i++) {
+    newStr = strarr.slice(i, i + k).join("");
+    if (newStr.length > maxStr.length) {
+      maxStr = newStr;
+    }
+  }
+  return maxStr;
+}
