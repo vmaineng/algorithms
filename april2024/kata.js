@@ -632,3 +632,46 @@ function longestConsec(strarr, k) {
   }
   return maxStr;
 }
+
+let canBeCorrect = true;
+let canBeIncorrect = true;
+
+for (let i = 0; i < answerKey.length; i++) {
+  if (answerKey[i] !== "_" && answerKey[i] !== studentAnswers[i]) {
+    canBeCorrect = false;
+  }
+  if (answerKey[i] !== "_" && answerKey[i] === studentAnswers[i]) {
+    canBeIncorrect = false;
+  }
+}
+
+return canBeCorrect || canBeIncorrect;
+
+function moveZeros(arr) {
+  //receive an array of multiple data types
+  //return the same array back in order, but with the 0's placed at the end
+  //['hi', 3, 0, 2, 0, true] => ['hi', 3, 2, true, 0 , 0]
+
+  //edge case: if array is empty or only has one element
+
+  //create two empty arrays = one to hold 0, one to hold everything else
+  //iterate through the array
+  //if 0, push into the array that holds zero
+  //else push to the other array
+  //return the array added back together with the 0's second
+
+  //time: O(n); iterate through arr at least once
+  //spacee: O(N); creating two new arrays
+
+  let zeroArray = [];
+  let restArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      zeroArray.push(arr[i]);
+    } else {
+      restArray.push(arr[i]);
+    }
+  }
+  return restArray.concat(zeroArray);
+}
