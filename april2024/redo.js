@@ -703,3 +703,26 @@ function subStringLong(s) {
 
 //time: O(n) - going through the elements once
 //space: O(n) - creating a new Set
+
+function twoSum(num, target) {
+  //receive an array of integer, and a target (integer)
+  //return the index position of the two integers that total up to target
+  //[3, 4, 5, 8], 9 => [1, 2]
+
+  //create an object
+  //iterate through num
+  //store the index positon for each num
+  //return the index position
+  //else, set the index position
+
+  let targetObject = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
+    if (targetObject.hasOwnProperty(difference)) {
+      return [targetObject[difference], i];
+    } else {
+      targetObject[nums[i]] = i;
+    }
+  }
+}
