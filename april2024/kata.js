@@ -675,3 +675,60 @@ function moveZeros(arr) {
   }
   return restArray.concat(zeroArray);
 }
+
+function getRealFloor(n) {
+  //receive an integer
+  //return the floor in European style
+  //floor(18) => 16
+
+  //if the floor is less than 0, return the actual num
+  //if the floor is less 13, and between 1, reduce it by 1
+  //else if anything is over 13, reduce it by 2
+
+  if (n <= 0) {
+    return n;
+  } else if (n >= 1 && n < 13) {
+    return n - 1;
+  } else {
+    return n - 2;
+  }
+}
+
+function wave(str) {
+  //receive a string
+  //return an array back with strings and in each string, a wave is occuring starting from first letter to the last where it's capitalized first
+  //wave("ate") => ['Ate', 'aTe', 'atE']
+
+  //split the string
+  //create an array to store the wave of strings
+  //iterate through each char
+  //for each round we go through,
+  //capitalize that letter
+  //add back to the string
+  //return the array back
+
+  let answerArr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      answerArr.push(str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1));
+    }
+  }
+
+  return answerArr;
+}
+
+function enough(cap, on, wait) {
+  // receive 3 integers
+  //return 0 if there's enough space, else, return the number of passengers that he can't take
+  //enough(15, 5, 20) => Can't fit 5 people
+
+  //if on + wait > cap, cap - on + wait
+  //else return 0
+
+  if (on + wait > cap) {
+    return Math.abs(cap - (on + wait));
+  } else {
+    return 0;
+  }
+}
