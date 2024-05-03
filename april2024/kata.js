@@ -732,3 +732,22 @@ function enough(cap, on, wait) {
     return 0;
   }
 }
+function mxdiflg(a1, a2) {
+  //receive an array of strings
+  //return the max length from a1 - max length from a2 (integer)
+
+  //if a1 and/or a2 are empty, return -1
+
+  //iterate through the array, find the length of each strings
+  //take the longest lenght from a1 - longest length from a2
+
+  if (!a1 || !a2) return -1;
+
+  let longestA1 = a1.map((str) => str.length);
+  let longestA2 = a2.map((str) => str.length);
+
+  console.log(Math.max(...longestA1));
+  console.log(Math.max(...longestA2));
+
+  //   return Math.max(...longestA1) - Math.max(...longestA2)
+}
