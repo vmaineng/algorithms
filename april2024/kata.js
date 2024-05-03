@@ -749,5 +749,8 @@ function mxdiflg(a1, a2) {
   console.log(Math.max(...longestA1));
   console.log(Math.max(...longestA2));
 
-  //   return Math.max(...longestA1) - Math.max(...longestA2)
+  return Math.max(
+    Math.max(...longestA1) - Math.min(...longestA1),
+    Math.min(...longestA1) - Math.max(...longestA2)
+  );
 }
