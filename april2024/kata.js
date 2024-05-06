@@ -754,3 +754,24 @@ function mxdiflg(a1, a2) {
     Math.min(...longestA1) - Math.max(...longestA2)
   );
 }
+
+function solution(a, b) {
+  // receive two strings of numbers or chars
+  //return the shorter string on the outside and longer string on the inside
+  //solution("45", "2") => "2452"
+
+  //create a new string
+  //compare the string's length
+  //if the string's length is shorter, add that one in first
+  //then add in the other one, then add in the first one again
+
+  let newString = "";
+
+  if (a.length < b.length) {
+    newString = a + b + a;
+  } else {
+    newString = b + a + b;
+  }
+
+  return newString;
+}
