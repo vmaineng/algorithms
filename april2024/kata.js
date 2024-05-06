@@ -775,3 +775,33 @@ function solution(a, b) {
 
   return newString;
 }
+
+function goodVsEvil(good, evil) {
+  //receive two strings of numbers
+  //return good win if good total > evil total, else if evil total > good evil, return Evil wins
+  //or if tie, return no victor
+  //goodVsEvil('1 1 1', '1 0 1') => "Battle Result: Good triumphs over Evil"
+
+  //turn the strings into an array
+  //find the sum (by using reduce function)
+  //compare the sum of two teams
+  //return the result based on the total
+
+  const goodStrengths = [1, 2, 3, 3, 4, 10]; // Strengths of good characters
+  const evilStrengths = [1, 2, 2, 2, 3, 5, 10]; // Strengths of evil characters
+
+  const goodTotal = good
+    .split(" ")
+    .reduce((acc, cv, index) => acc + cv * goodStrengths[index], 0);
+  const evilTotal = evil
+    .split(" ")
+    .reduce((acc, cv, index) => acc + cv * evilStrengths[index], 0);
+
+  if (goodTotal > evilTotal) {
+    return "Battle Result: Good triumphs over Evil";
+  } else if (evilTotal > goodTotal) {
+    return "Battle Result: Evil eradicates all trace of Good";
+  } else {
+    return "Battle Result: No victor on this battle field";
+  }
+}
