@@ -726,3 +726,82 @@ function twoSum(num, target) {
     }
   }
 }
+
+function checkParens(s) {
+  //receive a string of parens
+  //return true if they pair up, else return false
+  //'({)' = false
+
+  //edge case: if it did not start with an opening bracket, then false
+
+  //create a stack
+  //if it is a opening paren, then add to the stack
+  //then check if stack's not empty
+  //check if the previous one added was a closed one
+  //if so, remove it
+  //check if stack's length is empty
+
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      stack.push(s[i]);
+    } else {
+      if (!stack || stack.pop !== ")") {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function paliNumb(x) {
+  //receive an integer
+  //return true if palindrome
+  //3455 => false
+
+  //modify to string, split it, reverse, join and see if it's equal to x
+  return x.toString().split("").reverse().join("") === String(x);
+}
+
+function altLL(head1, head2) {
+  //receive two heads of two linked lists
+  //return one linked list with nodes alternating between
+  // 1 -> 2 -> 3 -> null
+  // 4 -> 5 -> 6 -> null
+  //=> 1 -> 4 -> 2 - > 5 -> 3 -> 6 -> null
+
+  //edge cases: head1 is empty, return head2 and vice versa
+  if (!head1) return head2;
+  if (!head2) return head1;
+
+  //capture current node in head1 and head2
+  //initialize a count to keep track of odd or even
+  //capture tail
+  //iterate through while linkedlist is not empty
+  //if head1 has been added, add from head2
+
+  let current1 = head1;
+  let current2 = head2;
+  let tail = current1;
+  let count = 0;
+
+  while (current1 !== null && current2 !== null) {
+    if (count % 2 !== 0) {
+      tail.next = current1;
+      current1 = current.next;
+    } else {
+      taill.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
+    count++;
+  }
+
+  if (current1) tail.next = current1;
+  if (current2) tail.next = current2;
+
+  return head1;
+}
+
+return array.filter((ele) => typeof ele === "number");

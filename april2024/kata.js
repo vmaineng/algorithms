@@ -850,3 +850,18 @@ function findOutlier(integers) {
     return evenCount[0];
   }
 }
+
+let naughtyCount = 0;
+let niceCount = 0;
+
+for (let month in data) {
+  for (let day in data[month]) {
+    if (data[month][day] === "Naughty") {
+      naughtyCount++;
+    } else {
+      niceCount++;
+    }
+  }
+}
+
+return niceCount > naughtyCount ? "Nice!" : "Naughty";
