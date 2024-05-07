@@ -821,3 +821,32 @@ function finalGrade(exam, projects) {
     ? 75
     : 0;
 }
+
+function findOutlier(integers) {
+  //receive an array of integers
+  //return the outlier value
+  //[3, 9, 13, 4] => 4
+
+  //keep track of odds and evens
+  //if evens are greater than odds, return the odds
+  //else return the evens
+
+  //edge case: if length is less than 3
+
+  let oddCount = [];
+  let evenCount = [];
+
+  for (let i = 0; i < integers.length; i++) {
+    if (integers[i] % 2 === 0) {
+      evenCount.push(integers[i]);
+    } else {
+      oddCount.push(integers[i]);
+    }
+  }
+
+  if (evenCount.length > oddCount.length) {
+    return oddCount[0];
+  } else {
+    return evenCount[0];
+  }
+}
