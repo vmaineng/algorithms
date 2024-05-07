@@ -805,3 +805,19 @@ function goodVsEvil(good, evil) {
     return "Battle Result: No victor on this battle field";
   }
 }
+
+function finalGrade(exam, projects) {
+  //receive two integers (exam, projects)
+  //return 100 (if exam > 90 or if a number of completed projects > 10)
+  //else return 90 (if exam > 75 and if completed projects >= 5)
+  //else return 75 (if exam > 50 and if completed projects >= 2)
+  //else return 0
+
+  return exam > 90 || projects > 10
+    ? 100
+    : exam > 75 && projects >= 5
+    ? 90
+    : exam > 50 && projects >= 2
+    ? 75
+    : 0;
+}
