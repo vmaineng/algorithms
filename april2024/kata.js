@@ -875,3 +875,32 @@ function unusualFive() {
   const str = "=====";
   return str.length;
 }
+
+function humanReadable(seconds) {
+  //receive a number for seconds
+  //return the time in a readable human format (HH: MM : SS)
+
+  //80 => '00:01:20'
+
+  //calculate the seconds received
+  //for hour: divide by 3600
+  //for minutes: divide by 60
+  //for seconds: mod by 60 to see what remainder is
+
+  let hour = Math.floor(seconds / 3600);
+  let minutes = Math.floor((seconds % 3600) / 60);
+  let second = seconds % 60;
+
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  if (second < 10) {
+    second = "0" + second;
+  }
+
+  return `${hour}:${minutes}:${second}`;
+}
