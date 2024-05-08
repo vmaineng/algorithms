@@ -865,3 +865,13 @@ for (let month in data) {
 }
 
 return niceCount > naughtyCount ? "Nice!" : "Naughty";
+
+function unusualFive() {
+  //receive nothing
+  //return 5 w/o using any 0123456789*+-/
+  // unusualFive() => 5
+  //create a string of five chars
+  //return the length
+  const str = "=====";
+  return str.length;
+}
