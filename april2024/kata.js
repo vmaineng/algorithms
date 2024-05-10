@@ -904,3 +904,19 @@ function humanReadable(seconds) {
 
   return `${hour}:${minutes}:${second}`;
 }
+
+function nameShuffler(str) {
+  //receive a string with space
+  //return the words in string swapped
+  //'Mary Joe' => 'Joe Mary'
+
+  //create a new string
+  //iterate up to a space
+  //then add tot he next one
+  //split on space
+  //console.log(str.split(" ")) //['john', 'McClane']
+  //let splitString = str.split(" ");
+  //return splitString[1] + " " + splitString[0];
+
+  return str.split(" ").reverse().join(" ");
+}
