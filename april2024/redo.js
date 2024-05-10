@@ -805,3 +805,13 @@ function altLL(head1, head2) {
 }
 
 return array.filter((ele) => typeof ele === "number");
+
+return array.map(ele, idx => {
+  const newIdx = idx + 1
+  return newIdx + ":" ele
+})
+
+const array = [1,2,3] 
+const lastEle = array[array.length-1]
+return lastEle * (lastEle + 1) /2 
+         3             4
