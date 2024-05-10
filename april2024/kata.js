@@ -920,3 +920,23 @@ function nameShuffler(str) {
 
   return str.split(" ").reverse().join(" ");
 }
+
+String.prototype.toJadenCase = function () {
+  //receive a string
+  //return the string back with first letter of every word capitalized
+  //"hi, how you doing?" => "Hi, How You Doing?"
+
+  //create a new string
+  //split the string on spaces
+  //iterate through the string
+  //take the first letter of the word and capitalize
+  //add in the rest of the letter in the word
+  //add to the string
+
+  let splitString = this.split(" ");
+
+  for (let i = 0; i < splitString.length; i++) {
+    splitString[i] = splitString[i][0].toUpperCase() + splitString[i].slice(1);
+  }
+  return splitString.join(" ");
+};
