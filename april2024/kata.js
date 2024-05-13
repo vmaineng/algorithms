@@ -958,3 +958,25 @@ function distinct(a) {
   let answer = new Set(a);
   return Array.from(answer);
 }
+
+function well(x) {
+  //get an array of 'good', 'bad'
+  //return 'Publish' = if one or two 'good'
+  //else return 'I smell a series' if > 'good' > 2
+  //else 'return 'Fail'
+
+  let goodCount = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] === "good") {
+      goodCount++;
+    }
+  }
+
+  if (goodCount === 0) {
+    return "Fail!";
+  } else if (goodCount > 0 && goodCount < 3) {
+    return "Publish!";
+  } else {
+    return "I smell a series!";
+  }
+}
