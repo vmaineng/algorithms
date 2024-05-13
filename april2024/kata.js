@@ -940,3 +940,21 @@ String.prototype.toJadenCase = function () {
   }
   return splitString.join(" ");
 };
+
+function distinct(a) {
+  //receive an array of integers
+  //return an array back of unique integers
+  //[3, 5, 6,5] => [3, 5, 6]
+
+  //edge case: if the element only has one, return the array back
+  if (a.length === 1) return a;
+
+  //create an array
+  //iterate through the a array,
+  //check if the next element to it is !== to the second element in the array
+  //push to the array
+  //return the array
+
+  let answer = new Set(a);
+  return Array.from(answer);
+}
