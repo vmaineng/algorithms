@@ -839,3 +839,25 @@ for (let word of arrayWord) {
  return newString.trim();
 
 };
+
+function groupAnaTwo(strs) {
+//receive an array of strings
+//return an array back of anagrams of strings grouped together
+
+//edge case: if length is one, return the strs back in an array
+
+//create an object
+//split the words, sort, and join it back togehter as key
+//insert the words where it matches the keys
+//return the values back in an array
+
+if (strs.length === 1) return [strs];
+
+let sortedAna = {}
+for (let str of strs) {
+  let sortedWord = str.split("").sort().join("")
+  if (!sortedAna[sortedWord])sortedAna[sortedWord] = []
+  sortedAna[sortedWord].push(str)
+}
+return Object.values(sortedAna)
+}
