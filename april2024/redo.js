@@ -896,3 +896,28 @@ for (let i = 0; i < array.length; i++) {
 }
 return count
 }
+
+function paliTwo(num) {
+  //receive an integer
+  //return true if palindrome, else false
+  //89789 => true
+
+  //stringfy the num
+  //use two pointers at the outside of the num
+  //return false if they don't equal to the eqeual other when pointing
+  //else return true
+
+  let stringNum = num.toString();
+
+  let i =0;
+  let j = stringNum.length - 1;
+
+  while (i < j) {
+    if (stringNum[i] !== stringNum[j]) {
+      return fasle
+    }
+    i++;
+    j--;
+  }
+  return true
+}
