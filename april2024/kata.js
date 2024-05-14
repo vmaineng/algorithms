@@ -980,3 +980,12 @@ function well(x) {
     return "I smell a series!";
   }
 }
+
+function howManyLightsabersDoYouOwn(name) {
+  //receive a string for a name with no space
+  //return 18 if your name is Zach, otherwise it's 0
+  //("Joe") => 0; ("Zach") => 18
+
+  //if name is not Zach, return 0, else return 18
+  return name !== "Zach" ? 0 : 18;
+}
