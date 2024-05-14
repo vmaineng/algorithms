@@ -861,3 +861,26 @@ for (let str of strs) {
 }
 return Object.values(sortedAna)
 }
+
+function twoSumTwo(num, target) {
+  //receive an array of numbers, and a target
+  //return the index positions of the numbers that make up the target
+  //[3, 5, 6,3,1], 9 => [0, 2]
+
+  //create an object
+  //iterate through num
+  //find the difference between target and the current value looking for
+  //if the difference has been found,
+  //return the index positions of both
+  //else set the difference in 
+
+  let answer = { }
+  for (let i = 0; i< nums.length; i++) {
+    let difference = target - nums[i]
+    if (answer.hasOwnProperty(difference)) {
+      return [i, answer[difference]]
+    } else {
+      answer[nums[i]] = i
+    }
+  }
+}
