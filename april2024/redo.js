@@ -884,3 +884,15 @@ function twoSumTwo(num, target) {
     }
   }
 }
+
+function vowelCo(array) {
+let count = 0;
+let vowel = ['a', 'e', 'i', 'o', 'u']
+
+for (let i = 0; i < array.length; i++) {
+  if (vowel.includes(array[i])) {
+    count++
+  }
+}
+return count
+}
