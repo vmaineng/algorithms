@@ -815,3 +815,27 @@ const array = [1,2,3]
 const lastEle = array[array.length-1]
 return lastEle * (lastEle + 1) /2 
          3             4
+
+function revWords(s) {
+  //receive a string with space and uppercase && lowercase letters
+  //return the words reversed
+  //revWords("Hey, it's happy!") => ("!yppah s'ti ,yeH")
+
+  //edge case:
+  //if there's only one word, reverse it, and return the reversed word
+
+//brute force:
+//split on the spaces
+//grab each word in the array
+//reverse it, join it back on spaces
+
+// console.log(s.split(" ")) [ "Let's", 'take', 'LeetCode', 'contest' ]
+let newString = ""
+let arrayWord = s.split(" ")
+for (let word of arrayWord) {
+  let revWod = word.split("").reverse().join("") //'s'teL
+  newString += revWod + " "
+}
+ return newString.trim();
+
+};
