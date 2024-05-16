@@ -989,3 +989,29 @@ function howManyLightsabersDoYouOwn(name) {
   //if name is not Zach, return 0, else return 18
   return name !== "Zach" ? 0 : 18;
 }
+
+function checkExam(array1, array2) {
+  //receive two same lengths arrays
+  //return a total sscore
+  //['a', 'b', 'b'], ['a','','c'] => +4, +0, -1 => 3
+
+  //create a score
+  //iterte through student's answer
+  //check if the same value at the same index are equal, then +4
+  //else check if they do not equal each other then, -1
+  //else check if the answer's blank, return +0
+  //return score
+
+  let score = 0;
+
+  for (let i = 0; i < array2.length; i++) {
+    if (array2[i] === "") {
+      score += 0;
+    } else if (array2[i] === array1[i]) {
+      score += 4;
+    } else if (array2[i] !== array1[i]) {
+      score -= 1;
+    }
+  }
+  return score > 0 ? score : 0;
+}
