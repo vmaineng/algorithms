@@ -1015,3 +1015,34 @@ function checkExam(array1, array2) {
   }
   return score > 0 ? score : 0;
 }
+
+function checkParent(s) {
+  //receive a string of s
+  //return true if matching pairs, else false
+  //']()' => false b/c can't start with closing brackets
+
+  //create a stack to hold the opening parens
+  //itereate through
+  //check if it is an open one
+  //add to the stack
+  //if it is a closing one
+  //check if the stack is not empty
+  //pop it off if it matches the closing
+  //if it doesn't, return false
+  //otherwise return true
+
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      stack.push(s[i]);
+    } else {
+      if (!stack.length) {
+        if (stack.pop() !== s[i]) {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+}
