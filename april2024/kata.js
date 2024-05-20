@@ -1046,3 +1046,27 @@ function checkParent(s) {
   }
   return true;
 }
+
+function addLength(str) {
+  //receive a string of words with spaces
+  //return an array with the length of the word with a space next to the word
+  //'hi, i'm hungry" => ["hi 2", "i'm 2", 'hungry 6']
+
+  //split the strings by spaces => which converts into an array
+  //map through the array and grab the length
+  //return the str + length in one string
+
+  let splitString = str.split(" ");
+  //   splitString.map((word) =>
+  //     word + ' ' word.length
+  //)
+
+  let newAnswer = [];
+  for (let i = 0; i < splitString.length; i++) {
+    //[apple, ban]
+    let length = splitString[i].length;
+    let newItem = splitString[i] + " " + length;
+    newAnswer.push(newItem);
+  }
+  return newAnswer;
+}
