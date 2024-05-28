@@ -1070,3 +1070,13 @@ function addLength(str) {
   }
   return newAnswer;
 }
+
+function plural(n) {
+  //receive a number
+  //return true if pluaral is needed, else return false
+  //plural (4) =>true
+
+  //if greater than 1, return true, else return false
+
+  return n === 1 ? false : true;
+}
