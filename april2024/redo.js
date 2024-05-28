@@ -949,3 +949,32 @@ const longChar = (s, k) => {
  
   return length;
 }
+
+const revLL = (head)=> {
+  //receive a head of a LL
+  //return the LL reverse
+  // 1 -> 2 -> 3 => 3 -> 2 -> 1
+   
+  //edge case: if LL is empty, return null
+
+  //capture the head as current node
+  //intialize a prev node to null
+  //intialize a next node to null
+  //while current is not null
+  //capture the next node
+  //set the next node to the prev
+  //set the prev node to the current
+
+  if (!head) return null;
+
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
