@@ -921,3 +921,31 @@ function paliTwo(num) {
   }
   return true
 }
+
+const longChar = (s, k) => {
+  //receive a string of uppercase letters and an integer to identify how many replacements can be done
+  //return the max length of how many chars you can replace
+
+  let seenValues = {};
+    let count = 0;
+    let length = 0; 
+
+   let left = 0;
+   let right = 0;
+
+  while (right < s.length) {
+    const rightChar = s.charAt(right) 
+    seenVal[rightChar] = seenVal[rightChar] + 1 || 1
+    count = Math.max(count, seenVal[rightChar])
+
+    if ((right - left + 1) - count > k) {
+        const leftChar = s.charAt(left)
+        seenVal[leftChar] -= 1
+        left++
+    }
+    length = Math.max((right - left + 1), length)
+      right++
+    }
+ 
+  return length;
+}
