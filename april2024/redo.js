@@ -978,3 +978,17 @@ const revLL = (head)=> {
   }
   return prev;
 }
+
+function recurLL(head, prev = null) {
+  //receive a head of a LL
+  //return the head in reverse
+
+  //capture next;
+  //base case: if head is empty return prev;
+  //recursive call: pass in prev and current
+
+  if (!head) return prev;
+  const next = head.next;
+  head.next = prev;
+  return recurLL(prev, current)
+}
