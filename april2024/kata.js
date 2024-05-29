@@ -1088,3 +1088,31 @@ function mouthSize(animal) {
 
   return animal.toLowerCase() === "alligator" ? "small" : "wide";
 }
+
+String.prototype.toJadenCase = function () {
+  //receive a string with words and spaces
+  //return the first letter of each word capitalize
+  //"what's new with you" => "What's New With You"
+
+  //split the string on spaces to grab each word
+  //iterate through the words
+  //capitalize the first letter
+  //and add on the rest of the letters in the strings
+  //join back together on space
+
+  let splitString = this.split(" ");
+  // console.log(splitString) //[
+  //   'How',     'can',
+  //   'mirrors', 'be',
+  //   'real',    'if',
+  //   'our',     'eyes',
+  //   "aren't",  'real'
+  // ]
+
+  for (let i = 0; i < splitString.length; i++) {
+    //"how"
+    splitString[i] = splitString[i][0].toUpperCase() + splitString[i].slice(1);
+  }
+
+  return splitString.join(" ");
+};
