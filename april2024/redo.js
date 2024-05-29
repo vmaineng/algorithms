@@ -992,3 +992,5 @@ function recurLL(head, prev = null) {
   head.next = prev;
   return recurLL(prev, current)
 }
+
+//Math.sqrt(n) % 1 === 0

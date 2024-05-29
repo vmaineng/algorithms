@@ -1080,3 +1080,11 @@ function plural(n) {
 
   return n === 1 ? false : true;
 }
+function mouthSize(animal) {
+  //receive a string of an animal
+  //return a string of "small" if meets alligator, otherwise return "wide"
+  //"mouse" => "wide"
+  //"alligator" => "small"
+
+  return animal.toLowerCase() === "alligator" ? "small" : "wide";
+}
