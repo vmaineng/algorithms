@@ -994,3 +994,12 @@ function recurLL(head, prev = null) {
 }
 
 //Math.sqrt(n) % 1 === 0
+
+for (let month in data) {
+  for (let day in data[month])
+  if(data[month][day] === 'Nice')
+}
+
+if char.hasOwnProperty(str) {
+  char[str]++
+}
