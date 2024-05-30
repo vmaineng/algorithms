@@ -1116,3 +1116,49 @@ String.prototype.toJadenCase = function () {
 
   return splitString.join(" ");
 };
+
+const gauss = (array) => {
+  const last = array[array.length - 1];
+
+  return (last * (last + 1)) / 2;
+  3 * 2;
+  //[1,2, 3] = 6
+};
+
+function removeSmallest(numbers) {
+  //receive an array of integers, not sorted
+  //return an output array with min val removed and not mess up orders of other values
+  //[3, 2, 5, 56, 7] => [3, 5, 56, 7]
+
+  //sort the array
+  //find min value index in numbers
+  //splice it out
+  //return the array back
+
+  const copyNumbers = numbers.slice(0);
+  const minVal = numbers.indexOf(Math.min(...numbers)); //findng index of min numbers
+  copyNumbers.splice(minVal, 1);
+  return copyNumbers;
+}
+
+function feast(beast, dish) {
+  //receive two strings for beast and dish
+  //return boolean if first letter of dish is same as first letter of beast's
+  //feast(rooster, pig roast) => false
+  //feast(cat, candy) => true
+
+  //check if the first letter of beast is equal to first letter in dish
+  //return true, else return false
+
+  if (
+    beast[0] === dish[0] &&
+    beast[beast.length - 1] === dish[dish.length - 1]
+  ) {
+    //   console.log(beast[beast.length -1 ])
+    return true;
+  } else {
+    return false;
+  }
+
+  //return dish.starts(beast[0]) && dish.ends(beast[beast.length - 1]);
+}
