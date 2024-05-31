@@ -1162,3 +1162,29 @@ function feast(beast, dish) {
 
   //return dish.starts(beast[0]) && dish.ends(beast[beast.length - 1]);
 }
+
+function replace(s) {
+  //receive a string of letters and chracters
+  //return the string back where vowels (upper and lower) are replaced with a '!'
+  //'jump' => 'j!mp'
+
+  //split string, if it includes vowels, then replace with ! instead
+
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+  let sSplit = s.split(""); //['j', 'i', 'm', 'p']
+
+  let newString = "";
+
+  for (let i = 0; i < sSplit.length; i++) {
+    if (vowels.includes(s[i])) {
+      newString += s[i] = "!";
+    } else {
+      newString += s[i];
+    }
+  }
+  return newString;
+}
+
+//time: O(n)
+//space:O(n)
