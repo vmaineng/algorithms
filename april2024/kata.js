@@ -1184,6 +1184,8 @@ function replace(s) {
     }
   }
   return newString;
+
+  //return s.replace(/aeiou/g, !)
 }
 
 //time: O(n)

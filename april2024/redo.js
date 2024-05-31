@@ -1003,3 +1003,27 @@ for (let month in data) {
 if char.hasOwnProperty(str) {
   char[str]++
 }
+
+function twoSumThree(nums, target) {
+  //receive an array of integers and a target
+  //return an array of the index of the first two index
+  //[3, 4, 5,6], 9 => [1, 2]
+
+  //create an object to store the values seen as key, and their index position as value
+  //iterate through the nums array
+  //store the values
+  //if the difference has been spotted, then return the index position
+  //else set the index for the value
+
+  let object = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i]
+    if (object.hasOwnProperty(nums[i])) {
+      return [i, object[difference]]
+    } else {
+      object[nums[i]] = i
+    }
+  }
+  
+}
