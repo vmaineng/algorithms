@@ -19,3 +19,29 @@ function divisibleBy(numbers, divisor) {
 
 //time: O(n)
 //space: O(n)
+
+function order(words) {
+  //receive a string with space and chars and letters
+  //return the string back in order '1', '2', '3'
+  //'hi2 kit3 air1' => 'air2 hi2 kit3'
+
+  //edge case: if string is empty, return string
+  if (!words) return "";
+
+  //split the string into an array to get individual words
+  //iterate through the array to find 1, then add to new string
+  //add count?
+  //join them back together
+
+  let splitWords = words.split(" ");
+  const sortedWords = splitWords.sort((a, b) => {
+    const numA = parseInt(a.match(/\d/)[0]);
+    const numB = parseInt(b.match(/\d/)[0]);
+    console.log(numA, numB);
+    return numA - numB;
+  });
+  console.log(sortedWords);
+  return sortedWords.join(" ");
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
