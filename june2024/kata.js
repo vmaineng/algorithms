@@ -13,6 +13,8 @@ function divisibleBy(numbers, divisor) {
     }
   }
   return outputArray;
+
+  //return numbers.filter((number % divisor === 0 )
 }
 
 //time: O(n)
