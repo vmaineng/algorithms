@@ -43,5 +43,24 @@ function order(words) {
   console.log(sortedWords);
   return sortedWords.join(" ");
 }
+function reverseWords(str) {
+  //receive a string of words and spaces
+  //return the string back reversed and spaces in same order
+  //'this fish' => 'hsif siht'
+
+  //split the words
+  //take the word and reverse it
+  //join the word back into one
+  //then join it back with spaces
+
+  let newStr = [];
+
+  let splitStr = str.split(" ");
+  for (let i = 0; i < splitStr.length; i++) {
+    splitStr[i] = splitStr[i].split("").reverse().join("");
+    newStr.push(splitStr[i]);
+  }
+  return newStr.join(" ");
+}
 
 console.log(order("is2 Thi1s T4est 3a"));
