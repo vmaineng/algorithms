@@ -64,3 +64,8 @@ function reverseWords(str) {
 }
 
 console.log(order("is2 Thi1s T4est 3a"));
+
+var replaceDots = function (str) {
+  const regex = /\./g;
+  return str.replaceAll(regex, "-");
+};
