@@ -33,3 +33,49 @@ var lengthOfLongestSubstring = function (s) {
   }
   return count;
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+  //receive a string of opening and closing parens
+  //return true if all pairs up together, else false
+  //')[]' = false
+  //'[(])' => true
+
+  //edge case: if string is empty, return false
+  //if string does not start with opening, return false
+
+  //create a stack
+  //iterate through the string
+  //if it is an opening char, add it to the stack
+  //else if it is a closing char, check the stack to make sure it's not empty
+  //then pop it off
+  //if not, return false
+
+  //else return true
+
+  if (s.length === 0) return false;
+  if (s[0] === ")" || s[0] === "]" || s[0] === "}") return false;
+
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+      stack.push(s[i]);
+    } else {
+      if (stack.length > 0) {
+        if (
+          (s[i] === ")" && stack[stack.length - 1] === "(") ||
+          s[i] === "]" ||
+          s[i] === "}"
+        ) {
+          stack.pop();
+        }
+      }
+      return false;
+    }
+  }
+  return true;
+};
