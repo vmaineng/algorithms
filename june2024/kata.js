@@ -69,3 +69,19 @@ var replaceDots = function (str) {
   const regex = /\./g;
   return str.replaceAll(regex, "-");
 };
+
+function dutyFree(normPrice, discount, hol) {
+  //receive integers for norm Price, discount, and hol
+  //return bottles you have to purchase (round down)
+
+  //dutyFree (12, .50, 1000) => 166 bottles
+  //12  * .5 = 6; 1000 / 6 = 166
+
+  //calc rate of normPrice * discount
+  //take hol % rate
+  //return round down of hol % rate
+
+  let rate = normPrice * (discount / 100);
+
+  return Math.floor(hol / rate);
+}
