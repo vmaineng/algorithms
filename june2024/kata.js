@@ -85,3 +85,37 @@ function dutyFree(normPrice, discount, hol) {
 
   return Math.floor(hol / rate);
 }
+
+function duplicateEncode(word) {
+  // receive a string of chars
+  //return a string back showcasing '(' if char only occurs once, else ')' for the letter that appears
+  //more than once
+  //'apple' => '())(('
+
+  //create a new string
+
+  //store the values in a map
+  //if values > than one, then new string will add a ')'
+  //else, add a '('
+
+  //return new string
+
+  let lowercaseWords = word.toLowerCase();
+
+  let result = "";
+
+  let charsSeen = {};
+
+  for (let char of lowercaseWords) {
+    charsSeen[char] = (charsSeen[char] || 0) + 1;
+  }
+
+  for (let char of lowercaseWords) {
+    if (charsSeen[char] > 1) {
+      result += ")";
+    } else {
+      result += "(";
+    }
+  }
+  return result;
+}
