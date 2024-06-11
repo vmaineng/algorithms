@@ -119,3 +119,24 @@ function duplicateEncode(word) {
   }
   return result;
 }
+
+function noBoringZeros(n) {
+  //receive an integer
+  //return an integer back; if it has a 0, remove the zero at end
+  //45 => 45
+  //450 => 45
+
+  //turn the number to string
+  //iterate through stringNum starting at the end
+  //check if it is a 0, slice it out
+  //return new string
+
+  let stringNum = n.toString();
+
+  while (stringNum.endsWith("0")) {
+    stringNum = stringNum.slice(0, -1);
+    //0, -1 => grab everything from beginning until the very last one
+  }
+
+  return Number(stringNum);
+}
