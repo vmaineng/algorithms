@@ -140,3 +140,25 @@ function noBoringZeros(n) {
 
   return Number(stringNum);
 }
+
+function friend(friends) {
+  //receive an array of strings
+  //return a new array back of strings with chars = 4
+
+  //filter method on it
+
+  return friends.filter((name) => name.length === 4);
+}
+function problem(x) {
+  //receive an integer
+  //return a new integer where input is * 50 + 6
+  //problem(4) = 50 * 4 = 200 + 6 = 206
+
+  //edge case, if value is string, return "Error"
+  //take input * 50 + 6
+
+  if (typeof x === "string") return "Error";
+
+  let sum = x * 50 + 6;
+  return sum;
+}
