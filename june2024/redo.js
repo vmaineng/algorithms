@@ -79,3 +79,29 @@ var isValid = function (s) {
   }
   return true;
 };
+
+function makeNew(array) {
+  //receive an array
+  //return a new array with pairs wrapped around an array
+  //[0, 1]
+
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push([array[i], array[i + 1]]);
+  }
+  return newArray;
+}
+
+function twoSum(numbers, target) {
+  //receive an array of numbers, target
+  //return the index position
+  //[3, 4, 5, 8], 9 => [1, 2]
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+}

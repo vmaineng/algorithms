@@ -162,3 +162,12 @@ function problem(x) {
   let sum = x * 50 + 6;
   return sum;
 }
+
+function nthEven(n) {
+  // receive a number to pull the even number from the numerical order
+  //return the even number in numerical order
+  //nthEven(4) => 0, 2, 4, 6 => 6
+
+  //take the input value * 2 then - 2
+  return n * 2 - 2;
+}
