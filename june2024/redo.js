@@ -105,3 +105,47 @@ function twoSum(numbers, target) {
     }
   }
 }
+
+function mergeLL(head1, head2) {
+  //receive head of two sorted linked lists
+  //return one linked list with nodes sorted in order
+  //1 -> 2 -> 3 -> null
+  //2 -> 4 -> 6 -> null
+  //return 1 -> 2 -> 2 -> 3 -> 4 -> 6 -> null
+
+  //edge case: if one head is empty, return the other head;
+
+  //create a dummy node
+  //check which val of the first node is smaller,
+  //add in that node
+  //then add in the rest of the nodes
+  //return the dummy node
+
+  if (!head1) return head2;
+  if (!head2) return head1;
+
+  let dummyNode = new Node();
+  let current1 = head1;
+  let current2 = head2;
+  let tail = dummyNode;
+
+  while (current1 && current2) {
+    if (current1.val < current2.val) {
+      tail.next = current1;
+      current1 = current1.next;
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    if (current1) tail.next = current1;
+    if (current2) tail.next = current2;
+  }
+  return dummyNode.next;
+}
+
+function newArray(array) {
+  array.map((ele, idx) => {
+    const newIdx = idx + 1;
+    return newIdx + ":" + ele;
+  });
+}
