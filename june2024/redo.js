@@ -161,3 +161,20 @@ function checkForFactor(base, factor) {
 
   return base % factor === 0 ? true : false;
 }
+
+var reverseWords = function (s) {
+  //receive a string of words with spaces
+  //return each word reversed
+  //"hi, my name is" => 'si eman ym ,ih'
+
+  //split the string to grab each words
+  //grab the words and split them, and reverse and join back together
+  //join it all back
+
+  let splitWords = s.split(" ");
+  let reversedWords = splitWords.map((word) => {
+    return word.split("").reverse().join("");
+  });
+  return reversedWords.join(" ");
+  // ! new strings have to be named and have to return the words
+};
