@@ -178,3 +178,29 @@ var reverseWords = function (s) {
   return reversedWords.join(" ");
   // ! new strings have to be named and have to return the words
 };
+
+var groupAnagrams = function (strs) {
+  //receive an array with strings
+  //return grouped strings together in an array all put in an array back
+
+  //edge case: if empty, return empty array back
+
+  //create an object
+  //sort the strings
+  //the sorted strings will be the key in the object
+  //the actual strings will be the value
+
+  //return the values back;
+
+  if (strs.length === 0) return [strs];
+
+  let sortedStrObj = {};
+
+  for (let str of strs) {
+    let sortedStr = str.split("").sort().join("");
+    if (!sortedStrObj[sortedStr]) sortedStrObj[sortedStr] = [];
+    sortedStrObj[sortedStr].push(str);
+  }
+
+  return Object.values(sortedStrObj);
+};
