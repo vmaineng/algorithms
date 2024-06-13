@@ -149,3 +149,15 @@ function newArray(array) {
     return newIdx + ":" + ele;
   });
 }
+
+function checkForFactor(base, factor) {
+  //receive two numbers for base and factor
+  //return true if factor of base
+  //else return false
+
+  //(4, 8) 8 % 4 => 2 with no remainder = true
+
+  //take factor % base, if remainder is 0, true, else it's false
+
+  return base % factor === 0 ? true : false;
+}
