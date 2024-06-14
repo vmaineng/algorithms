@@ -171,3 +171,37 @@ function nthEven(n) {
   //take the input value * 2 then - 2
   return n * 2 - 2;
 }
+
+var humanYearsCatYearsDogYears = function (humanYears) {
+  // receive an integer for humanyears
+  //return an array back with the human years, catYears, dogYears
+  //[5] => (1: 15, 2: 9, 3: 4, 4: 4,5:4)
+  //[5,36, 39]
+
+  //intiialize a variable to humanYears = number passed in
+  //initialize a variable to cat years
+  //if humanYears > +15, after 2 years, +9, after 3, +4
+  //initialize a variable to dog years
+  //if humanYears > +15, after 2 years, +9, after 3, +5
+
+  //push into an array
+
+  let catAge = 0;
+  let dogAge = 0;
+
+  //for every year after 3 years, add 4 (cat), 5(dog)
+
+  for (let i = 1; i <= humanYears; i++) {
+    if (i === 1) {
+      catAge += 15;
+      dogAge += 15;
+    } else if (i === 2) {
+      catAge += 9;
+      dogAge += 9;
+    } else {
+      catAge += 4;
+      dogAge += 5;
+    }
+  }
+  return [humanYears, catAge, dogAge];
+};
