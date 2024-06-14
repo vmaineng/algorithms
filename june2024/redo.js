@@ -204,3 +204,17 @@ var groupAnagrams = function (strs) {
 
   return Object.values(sortedStrObj);
 };
+function gimme(triplet) {
+  //receive an array of inters
+  //return an integer of where the middle value lives
+  //[3, 4,5] => 1
+
+  //create a copy of the triplet and sort it
+  //find the index of the middle value
+
+  let sortedTriplet = [...triplet].sort((a, b) => a - b); //[1,2, 3]
+  let middleValue = sortedTriplet[1]; //1
+  console.log(sortedTriplet, middleValue);
+
+  return triplet.indexOf(middleValue);
+}

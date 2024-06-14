@@ -205,3 +205,43 @@ var humanYearsCatYearsDogYears = function (humanYears) {
   }
   return [humanYears, catAge, dogAge];
 };
+
+function position(letter) {
+  //receive a string of char
+  //return the posiition it is in the alphabet
+  //'c' => 3
+
+  //create an alphabet to hold all the strings in an array
+  //return the indexOf the letter
+
+  const alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+
+  return `Position of alphabet: ${alphabet.indexOf(letter) + 1}`;
+}
