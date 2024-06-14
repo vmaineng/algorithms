@@ -218,3 +218,49 @@ function gimme(triplet) {
 
   return triplet.indexOf(middleValue);
 }
+
+function flickSwitch(arr) {
+  //receive an array of strings
+  //return an array with booleans, if 'flick', convert it to opposite
+  //['mad', 'happy', 'flick', 'joe', 'flick'] => [True, True, False, True, False]
+
+  //iterate through the array
+  //if the word equals false, switch it to the opposite
+  //else keep as is
+  //return the array
+
+  let switchBooealn = true;
+
+  return arr.map((word) => {
+    if (word === "flick") {
+      switchBooealn = !switchBooealn;
+    }
+    return switchBooealn;
+  });
+}
+
+function longestConsec(strarr, k) {
+  //receive an array of strings, and integer to tell you how many strings you can add
+  //return the string length of two strings connected
+  //['hi', 'yellow', 'four'], => 'yellow'
+
+  //create a maxString
+  //iterate through the string
+  //keep track of the maxString seen
+  //if i + j surpasses k, move i and j up
+
+  if (strarr.length === 0 || k > strarr.length || k <= 0) {
+    return "";
+  }
+
+  let maxString = "";
+  let currString = "";
+
+  for (let i = 0; i < strarr.length; i++) {
+    currString = strarr.slice(i, i + k).join("");
+    if (currString.length > maxString.length) {
+      maxString = currString;
+    }
+  }
+  return maxString;
+}
