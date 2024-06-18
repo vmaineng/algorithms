@@ -264,3 +264,43 @@ function longestConsec(strarr, k) {
   }
   return maxString;
 }
+
+/**
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
+ */
+var canPlaceFlowers = function (flowerbed, n) {
+  //receive an array of 1 (flower), 0 (empty), n = how many more flowers to plant
+  //return true if n amount can be planted, else return false
+  //[0, 1, 0, 1], 2 => false
+
+  //adjacent = right next to each other
+
+  //checkhow many 0 next to 1,
+  //if this exceeds n, return false
+
+  //iterate through flowerbed array
+  //check if value is a 0, then check if the one before it is a 0, and the one after it is a 0
+  //keep track of total
+
+  //if total < n, return false, else return true
+
+  let count = 0;
+
+  for (let i = 1; i < flowerbed.length; i++) {
+    if (flowerbed[i - 1] === 0 && flowerbed[i + 1] === 0) {
+      flowerbed[i] = 1;
+      count++;
+    }
+
+    if (count >= n) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+//time: O(n)
+//space: O(n) - to keep track of count
