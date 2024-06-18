@@ -304,3 +304,61 @@ var canPlaceFlowers = function (flowerbed, n) {
 
 //time: O(n)
 //space: O(n) - to keep track of count
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function (s) {
+  //receive a string of words
+  //return the words in reversed order
+  //'hi joe jilly' => 'jilly joe hi'
+
+  //split the string to capture each word
+  //create a new string
+  //add in the last word in first
+  //return the string back
+
+  let revWord = "";
+  let splitString = s.split(" ");
+
+  for (let i = splitString.length - 1; i >= 0; i--) {
+    if (splitString[i] !== "") {
+      revWord += splitString[i] + " ";
+    }
+  }
+  return revWord.trim();
+};
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var increasingTriplet = function (nums) {
+  //receive an array of integers
+  //return true if the index are in chronological order and so are the values (increasing)
+  //[3, 5, 6, 2, 1] => true => [3, 5, 6] && index are 0, 1, 2
+
+  //create an array to store index
+  //create an array to store values
+
+  //iterate through the nums array (i)
+  //iterate again for j and k
+  //check if the value is increasing && check if the index position are increasing, return true;
+  //else after checking everything return false
+
+  for (let i = 0; i < nums.length - 2; i++) {
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      for (let k = j + 1; k < nums.length; k++) {
+        if (nums[i] < nums[j] && nums[j] < nums[k] && i < j < k) {
+          console.log(nums[i], nums[j], nums[k]);
+          console.log(i, j, k);
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+};
+
+//time: O(n^3)
+//space: O(1)
