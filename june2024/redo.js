@@ -362,3 +362,35 @@ var increasingTriplet = function (nums) {
 
 //time: O(n^3)
 //space: O(1)
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function (s, t) {
+  //receive two strings of lowercase letters
+  //return true if s is a subsequence of t, else return false
+  //'', 'joe' => false
+
+  //keep a pointer on s,
+  //iterate through t word
+  //if t has the letter, then incremenet s's pointer,
+  //else return false
+  //else return true after checking
+
+  if (s.length === 0 || t.length === 0) return false;
+
+  let i = 0;
+
+  for (let j = 0; j < t.length; j++) {
+    if (s[i] === t[j]) {
+      i++;
+    }
+
+    if (i === s.length) {
+      return true;
+    }
+  }
+  return false;
+};
