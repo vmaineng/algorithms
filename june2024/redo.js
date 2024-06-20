@@ -433,3 +433,44 @@ var maxArea = function (height) {
   }
   return maxArea;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var maxOperations = function (nums, k) {
+  //receive an array of integers and a k target (integer)
+  //return an integer of amt of operations to remove two nums
+  //that total to k
+  //[3, 4, 5,8], 8 => 1 ; 3 & 5
+
+  //edge case: if nums array is empty
+
+  //keep track of how many operations done
+  //iterate through nums array
+  //keep track of pointter in first number
+  //keep track of second number
+  //check if this is equal to k, if so add 1 to count of operations
+  //return count
+
+  let count = 0;
+  let left = 0;
+  let right = nums.length - 1;
+
+  nums.sort((a, b) => a - b);
+
+  while (left < right) {
+    let currentSum = nums[left] + nums[right];
+    if (currentSum === k) {
+      count++;
+      left++;
+      right--;
+    } else if (currentSum < k) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return count;
+};
