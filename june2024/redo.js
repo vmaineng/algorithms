@@ -394,3 +394,42 @@ var isSubsequence = function (s, t) {
   }
   return false;
 };
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function (height) {
+  //receive an array of integers for height of container
+  //return max height of water you can store
+  //[3, 4, 5, 3] => 16 => 4 X 4 = length * width
+
+  //edge case: if height only has one, can only store that value
+
+  //create two pointers - one at front & one at end
+  //keep track of maxArea
+
+  //iterate through and look at each possibilites
+  //calculate the area and take the min number of height * width (right - left)
+  //check if value at left is bigger than max count,
+  //update it to max count
+  //if height is smaller than the height at right, move left pointer up, else move right pointer
+  //return maxArea
+
+  let maxArea = 0;
+
+  let left = 0;
+  let right = height.length - 1;
+
+  while (left < right) {
+    let area = Math.min(height[left], height[right]) * (right - left);
+    maxArea = Math.max(area, maxArea);
+
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return maxArea;
+};
