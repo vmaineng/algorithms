@@ -509,3 +509,33 @@ var mergeAlternately = function (word1, word2) {
 
 //time = O(n) iterate through the max length of the words
 //space = O(n) = have to create new string
+
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+var kidsWithCandies = function (candies, extraCandies) {
+  //receive an array. of integers to represent the amount of candy a kid has, and the extra candies you will give each kid
+  //return an array back with booleans ; true if they have will have greatest number of candies
+  //else false
+
+  //find max number of candies amongst the current candies
+  //iterate through the candies array
+  //if you add in what the current candy has + extra candy > maxCandy
+  //return true
+  //else return false
+
+  let answer = [];
+
+  let maxCandy = Math.max(...candies);
+
+  for (let i = 0; i < candies.length; i++) {
+    if (candies[i] + extraCandies >= maxCandy) {
+      answer.push(true);
+    } else {
+      answer.push(false);
+    }
+  }
+  return answer;
+};
