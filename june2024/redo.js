@@ -474,3 +474,38 @@ var maxOperations = function (nums, k) {
   }
   return count;
 };
+
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {string}
+ */
+var mergeAlternately = function (word1, word2) {
+  //receive two strings of a word
+  //return one string back with one letter alternating between the two
+  //'rawr', 'sauce' => 'rsaawurce'
+
+  //edge case: if one of the word is empty, return the other string
+
+  //create a new string
+  //split the words to grab each indiviual char
+  //add in char from word1, then add in char from word2
+  //if any left over of word1, or word 2, add in the rest
+
+  if (!word1) return word2;
+  if (!word2) return word1;
+
+  let mergedString = "";
+  let longestChar = Math.max(word1.length, word2.length);
+  console.log(longestChar);
+
+  for (let i = 0; i < longestChar; i++) {
+    if (i < word1.length) mergedString += word1[i]; //if pointer is less than the length of first word, then add it in
+    if (i < word2.length) mergedString += word2[i];
+  }
+
+  return mergedString;
+};
+
+//time = O(n) iterate through the max length of the words
+//space = O(n) = have to create new string
