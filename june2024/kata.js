@@ -245,26 +245,3 @@ function position(letter) {
 
   return `Position of alphabet: ${alphabet.indexOf(letter) + 1}`;
 }
-
-function mergeArrays(arr1, arr2) {
-  //receive two arrays of integers
-  //return back one array with integers sorted in order
-  //[2, 3, 4, 5, 7], [1, 2, 3, 4] => [1, 2, 3, 4, 5, 7]
-
-  //edge cases: if one array is empty, return the other one if it's not empty
-  //otherwise if both empty, return an empty array back
-
-  if (!arr1) return arr2;
-  if (!arr2) return arr1;
-  if (!arr1 && !arr2) return [];
-
-  //add them all together into one big array
-  //filter out duplicates
-  //return sorted array
-
-  let groupedArray = arr1.concat(arr2).sort((a, b) => a - b);
-  return [...new Set(groupedArray)];
-}
-
-//time: O(n);
-//space: O(n); //creating a new Array to store
