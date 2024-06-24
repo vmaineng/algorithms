@@ -295,3 +295,36 @@ function sortReindeer(reindeerNames) {
     }
   });
 }
+
+function gHappy(str) {
+  //receive a string of letters
+  //return true if 'g' is spotted next to a 'gg', else false
+  //'happg' => 'false'
+
+  //edge case: if string is empty, return false
+
+  //if str does not include two g's, return false
+
+  //split the string
+  //iterate through it
+  //check if it equals a 'g'
+  //check previous one before and after
+  //if there isn't, return false
+  //else return true
+
+  //all 'g' have to have a matching pair
+
+  if (!str) return false;
+
+  let splitStr = str.split("");
+
+  for (let i = 0; i < splitStr.length; i++) {
+    if (splitStr[i] === "g") {
+      console.log(splitStr[i]);
+      if (splitStr[i - 1] !== "g" && splitStr[i + 1] !== "g") {
+        return false;
+      }
+    }
+  }
+  return true;
+}
