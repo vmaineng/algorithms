@@ -268,3 +268,30 @@ function mergeArrays(arr1, arr2) {
 
 //time: O(n);
 //space: O(n); //creating a new Array to store
+
+function sortReindeer(reindeerNames) {
+  //receive an array of strings with firstName and lastName
+  //return the array back with last Names in alphabetical order
+  //['joe jim', 'mary blige', 'array ham'] => ['mary blige', 'array ham', 'joe jim']
+
+  //brute force
+  //create an array to hold the sorted names
+  //iterate through the array
+  //split the strings
+  //check the first letter of the lastName
+  //sort
+  //return back with " "
+
+  return reindeerNames.sort((a, b) => {
+    const lastNameA = a.split(" ")[1];
+    const lastNameB = b.split(" ")[1];
+
+    if (lastNameA < lastNameB) {
+      return -1;
+    } else if (lastNameA > lastNameB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
