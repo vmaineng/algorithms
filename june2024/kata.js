@@ -349,3 +349,129 @@ function combat(health, damage) {
 
 //time: O(1)
 //space: O(n)
+
+function alphabetPosition(text) {
+  //receive a string of letters with spaces
+  //return back a string of integers - ignore spaces & punctuations
+  //'joe jam' => '10 15 5 10 1 13'
+
+  //a: 1, b: 2, c:3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, l:12
+  //m: 13, n: 14, o: 15
+
+  //edge cases: if the string is empty, return back an empty string
+
+  //create an object and store the position as the value
+  //key: letter, value: position in the alphabet
+
+  //iterate through the text, add it to the new string
+  //return the string
+
+  //.charAt
+
+  let newString = "";
+
+  let letterPosition = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6,
+    g: 7,
+    h: 8,
+    i: 9,
+    j: 10,
+    k: 11,
+    l: 12,
+    m: 13,
+    n: 14,
+    o: 15,
+    p: 16,
+    q: 17,
+    r: 18,
+    s: 19,
+    t: 20,
+    u: 21,
+    v: 22,
+    w: 23,
+    x: 24,
+    y: 25,
+    z: 26,
+  };
+
+  for (let char of text.toLowerCase()) {
+    console.log(char);
+    if (letterPosition[char]) {
+      newString += letterPosition[char] + " ";
+    }
+  }
+  return newString.trim();
+}
+
+//time: O(n);
+//space: O(n); creating a new string
+
+function isIsogram(str) {
+  //receive a string of letters
+  //return true if all chars are unique
+  //else return false
+  //'jump' => true
+  //'he1l0' => false
+
+  //lowercase all the letters
+  //keep track o it in an object
+  //if the value has been seen, return false
+  //else add one
+
+  //after checking everything, return true
+
+  let seenVals = {};
+  for (let char of str.toLowerCase()) {
+    if (seenVals[char]) {
+      return false;
+    } else {
+      seenVals[char] = 1;
+    }
+  }
+  return true;
+}
+
+String.prototype.toJadenCase = function () {
+  //receive a string of words & spaces
+  //return the string back with the first letter of each word capitalize
+  //'i'm doing great' => 'I'm Doing Great'
+
+  //split the string into words
+  //take each word and capitalize the first letter and add in the rest
+  //return the string back joined by spaces
+
+  let splitWords = this.split(" ");
+
+  for (let i = 0; i < splitWords.length; i++) {
+    splitWords[i] = splitWords[i][0].toUpperCase() + splitWords[i].slice(1);
+  }
+  return splitWords.join(" ");
+};
+
+function twoSum(nums, target) {
+  //receive an array of integers and an integer for the target
+  //return back the index position
+  //[3, 4, 5, 3], 6 => [0, 3]
+
+  //create an object
+  //store the value as key, index position as value
+  //check the object if it has the difference stored as a value
+  //return the index position
+  //else store
+
+  let valsSeen = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let different = target - nums[i];
+    if (valsSeen.hasOwnProperty(difference)) {
+      return [valsSeen[difference], i];
+    } else {
+      valsSeen[nums[i]] = i;
+    }
+  }
+}
