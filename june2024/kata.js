@@ -328,3 +328,24 @@ function gHappy(str) {
   }
   return true;
 }
+
+function combat(health, damage) {
+  // receive integers
+  //return back one integer that sums up the newHealth
+  //combat(40, 20) => 40 - 20 = 20
+  //combat(10, 30) => 0,
+
+  //edge cases: if a parameter isn't a number,
+
+  //initialize to capture newHealth at 0;
+  //take health - damage
+  //return the total back
+  //if it is negative, return 0
+
+  let newHealth = health - damage;
+
+  return newHealth > 0 ? newHealth : 0;
+}
+
+//time: O(1)
+//space: O(n)
