@@ -475,3 +475,29 @@ function twoSum(nums, target) {
     }
   }
 }
+
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {string}
+ */
+var mergeAlternately = function (word1, word2) {
+  //receive two strings of one word
+  //return one string back with each alternating letter from both words
+  //'hi', 'joe' => 'hjioe'
+
+  //create a new string
+  //iterate through the longest string
+  //add the letter from the first word
+  //then add in the letter from the second word
+  //return the new string
+
+  let newString = "";
+
+  for (let i = 0; i < Math.max(word1.length, word2.length); i++) {
+    if (i < word1.length) newString += word1[i];
+    if (i < word2.length) newString += word2[i];
+  }
+
+  return newString;
+};
