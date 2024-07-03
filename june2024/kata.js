@@ -501,3 +501,36 @@ var mergeAlternately = function (word1, word2) {
 
   return newString;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function (nums) {
+  //receive an array of integers
+  //return back an array of integers where it is the product of all the other elements excluding the current value
+  //[3, 4, 5, 2] => [40, 30, 24, 60]
+
+  //initialize an empty array
+  //initialize a count
+  //iterate through the nums array
+  //take the product and multiply the other
+  //push the product into the array
+  const n = nums.length;
+  const result = new Array(n).fill(1);
+
+  let leftProduct = 1; //multiply by current element
+  for (let i = 0; i < n; i++) {
+    result[i] *= leftProduct; //multiply by 1 to capture each value
+    console.log(result);
+    leftProduct *= nums[i]; //update actual values
+  }
+
+  let rightProduct = 1;
+  for (let i = n - 1; i >= 0; i--) {
+    result[i] *= rightProduct;
+    rightProduct *= nums[i];
+  }
+
+  return result;
+};
