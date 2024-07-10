@@ -534,3 +534,15 @@ var productExceptSelf = function (nums) {
 
   return result;
 };
+
+var isPalindrome = function (x) {
+  //receive a number
+  //return boolean - true if palindrome, else false
+  //75638 => false
+
+  //using methods:
+  //turn the number to string, split it, reverse it, join it back together
+  //check if teh reversed string is equal to the origianl
+
+  return x.toString().split("").reverse().join("") === x.toString();
+};
