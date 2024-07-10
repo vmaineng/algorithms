@@ -539,3 +539,50 @@ var kidsWithCandies = function (candies, extraCandies) {
   }
   return answer;
 };
+
+Function alternate(Ll1, ll2) {
+
+  //receive two heads of separate ll
+  //return one ll back where alternating the ll
+  // 1 -> 2 > null
+  // 2 -> 3 > null
+  
+  //1 -> 2 - > 2 -> 3 -> null
+  
+  //edge cases: if one of the linked lists are null, return the other ll
+  
+  If (!ll1) return ll2
+  If (!ll2) return ll1
+  
+  //initialize a count at 0
+  //capture the head of both linked list
+  //if the count is even, grab the next node from the second ll
+  //else grab it from the first linked list (since it’s odd)
+  //move the tail upwards
+  //return the head
+  
+  
+  Let count = 0;
+  
+  Let current1 = ll1
+  Let current2 = ll2
+  Let tail = ll1;
+  Const head = head1;
+  
+  While (ll1 !== null && !ll2 !== null) {
+  If (count % 2 === 0) {
+    Tail.next = curren2
+    Current2 = current2.next;
+  } else {
+    Tail.next = current1;
+    Current1 = current1.next
+  }
+  Tail.next = tail;
+  Count++
+  }
+  
+  If (current1) tail.next = current1;
+  If (current2) tail.next = current2;
+  
+  Return head;
+  
