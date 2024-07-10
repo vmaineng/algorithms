@@ -546,3 +546,36 @@ var isPalindrome = function (x) {
 
   return x.toString().split("").reverse().join("") === x.toString();
 };
+
+function revLL(head1) {
+  //receive a head of a linked list
+  //return the LL in reverse
+  // 1-> 2 -> 3
+  //3 -> 2 -> 1
+
+  //edge case: if head is empty
+
+  //create a prev node ; set it null;
+  //capture the current node of head1
+
+  //iterate through the linked list
+  //capture the next node in the iteration
+  //switch the pointer from next to point to the prev node
+  //move prev node to current node
+  //move current node to next node
+
+  //return prev
+
+  if (!head1) return;
+
+  let prev = null;
+  let current = head1;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
