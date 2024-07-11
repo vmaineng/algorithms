@@ -586,3 +586,43 @@ Function alternate(Ll1, ll2) {
   
   Return head;
   
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+  //receive a root of a node
+  //return the tree with nodes in reverse with dfs
+
+  //if root node is empty, return null;
+
+  //recursive path: 
+  //call the function on the left node
+  //call the funciton on the right node
+
+  //grab curr node
+  //swap it
+
+//return the tree
+
+if (root === null) return null;
+
+invertTree(root.left);
+invertTree(root.right);
+
+let curr = root.left;
+root.left = root.right;
+root.right = curr;
+
+return root
+
+
+};
