@@ -23,3 +23,32 @@ function kadanesAlgorithm(array) {
 
 // Do not edit the line below.
 exports.kadanesAlgorithm = kadanesAlgorithm;
+
+function twoNumberSum(array, targetSum) {
+  //receive an array of integers (pos and neg), and a target sum (integer) to reach
+  //return the two values that adds up to targetSum in an array
+
+  //[3, -3, -2, -4, 6], -6 => [-2, -4]
+
+  //edge case if array is empty
+  //need to make sure sum is two differente integers
+
+  //iterate through the array
+  //create another pointer to point to the next value
+  //if you find the first instance and they are not of the same value
+  //return the values
+
+  if (!array) return [];
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === targetSum) {
+        return [array[i], array[j]];
+      }
+    }
+  }
+  return [];
+}
+
+// Do not edit the line below.
+exports.twoNumberSum = twoNumberSum;
