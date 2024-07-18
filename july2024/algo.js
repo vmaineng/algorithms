@@ -52,3 +52,42 @@ function twoNumberSum(array, targetSum) {
 
 // Do not edit the line below.
 exports.twoNumberSum = twoNumberSum;
+
+function moveElementToEnd(array, toMove) {
+  //receive an array of integers, and an integer to identify which number to move
+  //return an array of integers back with all the elements === toMove towards the end
+  //[1,2,3,1,4],1 => [2, 3, 4 1, 1]
+
+  //edge cases: if array is empty
+
+  //initialize a pointer at starting index
+  //initialize a pointer at end of array
+  //check if the value at beginning of array is equal toMove
+  //swap the value
+  //then increment left point, decrement right pointer
+  //return array
+
+  //time: O(n) - iterating through array once
+  //space: O(1) - doing it in place
+
+  if (array.length === 0) return [];
+
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left < right) {
+    while (left < right && array[right] === toMove) {
+      right--;
+    }
+    if (array[left] === toMove) {
+      let temp = array[left];
+      array[left] = array[right];
+      array[right] = temp;
+    }
+    left++;
+  }
+  return array;
+}
+
+// Do not edit the line below.
+exports.moveElementToEnd = moveElementToEnd;
