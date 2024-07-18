@@ -91,3 +91,34 @@ function moveElementToEnd(array, toMove) {
 
 // Do not edit the line below.
 exports.moveElementToEnd = moveElementToEnd;
+
+function twoNumberSum(array, targetSum) {
+  //receive an array of integers (pos and neg), targetSum (an integer)
+  //return an array back of the two values
+  //[2, 3, 5, 1], 4 => [3, 1]
+
+  //if array is empty, return empty array
+
+  //create an object
+  //iterate through array, put the value seen as value in obj
+  //check if the difference exists in obj,
+  //return it
+  //else store it
+
+  if (array.length === 0) return [];
+
+  let seenVals = {};
+
+  for (let i = 0; i < array.length; i++) {
+    let difference = targetSum - array[i];
+    if (seenVals.hasOwnProperty(difference)) {
+      return [seenVals[difference], array[i]];
+    } else {
+      seenVals[array[i]] = array[i];
+    }
+  }
+  return [];
+}
+
+// Do not edit the line below.
+exports.twoNumberSum = twoNumberSum;
