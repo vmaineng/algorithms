@@ -122,3 +122,40 @@ function twoNumberSum(array, targetSum) {
 
 // Do not edit the line below.
 exports.twoNumberSum = twoNumberSum;
+
+function binarySearch(array, target) {
+  //receive an array of sorted integers and a target number
+  //return the index if the target value is found in the array, else return -1;
+
+  //[3, 5, 6, 8, 11, 15, 23], 3 => return index 0
+
+  //edge case: if array is empty
+
+  //binary search algo
+  //capture left(start of index) and right(end of the array) pointer
+  //calc middle index, check the value
+  //if the value does not equal target, check if the target is less than the middle value
+  //move right pointer down
+  //else if the value is greater than middle value, move left pointer up
+  //else return -1;
+
+  if (array.length === 0) return -1;
+
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (array[middle] === target) {
+      return middle;
+    } else if (array[middle] > target) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+  return -1;
+}
+
+// Do not edit the line below.
+exports.binarySearch = binarySearch;
