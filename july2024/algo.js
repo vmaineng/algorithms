@@ -159,3 +159,47 @@ function binarySearch(array, target) {
 
 // Do not edit the line below.
 exports.binarySearch = binarySearch;
+
+function shiftedBinarySearch(array, target) {
+  //receive an array that has been shifted and a number integer target
+  //return index of the target if found in the array, else return -1;
+  //[1, 2, 3, 4, 5] => shifted [3, 4, 5, 1, 2], 2 => index 4
+
+  //edge case: if array is empty, return -1
+
+  //set up the binary algo
+  //difference is add another if stmt to check if the left value is < middle idx
+  //if not, return -1;
+
+  //same set up for the right value too
+
+  if (array.length === 0) return -1;
+
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left <= right) {
+    let middleIdx = Math.floor((left + right) / 2);
+    if (array[middleIdx] === target) {
+      return middleIdx;
+    } else if (array[left] <= array[middleIdx]) {
+      // know the array is still sorted
+      if (target < array[middleIdx] && target >= array[left]) {
+        //check if the value is less than middleIdx value and greater than the left value
+        right = middleIdx - 1;
+      } else {
+        left = middleIdx + 1;
+      }
+    } else {
+      if (target > array[middleIdx] && target <= array[right]) {
+        left = middleIdx + 1;
+      } else {
+        right = middleIdx - 1;
+      }
+    }
+  }
+  return -1;
+}
+
+// Do not edit the line below.
+exports.shiftedBinarySearch = shiftedBinarySearch;
