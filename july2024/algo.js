@@ -203,3 +203,52 @@ function shiftedBinarySearch(array, target) {
 
 // Do not edit the line below.
 exports.shiftedBinarySearch = shiftedBinarySearch;
+
+function findClosestValueInBst(tree, target) {
+  //receive a BST and a target value
+  //we want to find the closest node value to target
+
+  //edge cases: if the tree is empty
+
+  //traverse through the tree while the tree is not null
+  //keep track of closestValue to target
+  //keep track of closestValue node
+
+  //if the target's value is less than root node, traverse on left side
+  //else traverse on right side
+  //return the treeNode value
+
+  if (!tree) return 0;
+
+  let treeNodeValue = null;
+  let treeNodeDiff = Infinity;
+  let treeNode = tree;
+
+  while (treeNode !== null) {
+    if (Math.abs(treeNode.value - target) <= treeNodeDiff) {
+      treeNodeDiff = Math.abs(treeNode.value - target);
+      treeNodeValue = treeNode.value;
+    }
+    if (treeNodeValue === 0) {
+      break;
+    }
+    if (target < treeNode.value) {
+      treeNode = treeNode.left;
+    } else {
+      treeNode = treeNode.right;
+    }
+  }
+  return treeNodeValue;
+}
+
+// This is the class of the input tree. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Do not edit the line below.
+exports.findClosestValueInBst = findClosestValueInBst;
