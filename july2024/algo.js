@@ -288,3 +288,47 @@ function validateBst(tree, min = -Infinity, max = Infinity) {
 // Do not edit the line below.
 exports.BST = BST;
 exports.validateBst = validateBst;
+
+function inOrderTraverse(tree, array) {
+  //starts at the left node
+  //check if tree is not empty
+  //adds in nodes from the left
+  //then adds in nodes from the right
+
+  if (tree !== null) {
+    inOrderTraverse(tree.left, array);
+    array.push(tree.value);
+    inOrderTraverse(tree.right, array);
+  }
+  return array;
+}
+
+function preOrderTraverse(tree, array) {
+  //checks if the tree is not empty,
+  //adds in root node first
+  //then adds in left nodes, then right nodes
+
+  if (tree !== null) {
+    array.push(tree.value);
+    preOrderTraverse(tree.left, array);
+    preOrderTraverse(tree.right, array);
+  }
+  return array;
+}
+
+function postOrderTraverse(tree, array) {
+  //checks if the tree is not empty,
+  //adds in nodes from left, right, then root node
+
+  if (tree !== null) {
+    postOrderTraverse(tree.left, array);
+    postOrderTraverse(tree.right, array);
+    array.push(tree.value);
+  }
+  return array;
+}
+
+// Do not edit the lines below.
+exports.inOrderTraverse = inOrderTraverse;
+exports.preOrderTraverse = preOrderTraverse;
+exports.postOrderTraverse = postOrderTraverse;
