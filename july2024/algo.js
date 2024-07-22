@@ -252,3 +252,39 @@ class BST {
 
 // Do not edit the line below.
 exports.findClosestValueInBst = findClosestValueInBst;
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function validateBst(tree, min = -Infinity, max = Infinity) {
+  //receive a tree
+  //return a boolean: true if BST, else false
+
+  //if the tree is empty, return true
+
+  //!check the min on right side, check the max on left side
+
+  //traverse through the tree
+  //check if the left node of the tree is < than parent,
+  //if not, return false immediately
+  //then check the right side of the tree is > than parent node
+  //if not, return false immediately
+
+  if (!tree) return true;
+
+  if (tree.value < min || tree.value >= max) return false;
+  return (
+    validateBst(tree.left, min, tree.value) &&
+    validateBst(tree.right, tree.value, max)
+  );
+}
+
+// Do not edit the line below.
+exports.BST = BST;
+exports.validateBst = validateBst;
