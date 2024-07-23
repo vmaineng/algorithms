@@ -332,3 +332,52 @@ function postOrderTraverse(tree, array) {
 exports.inOrderTraverse = inOrderTraverse;
 exports.preOrderTraverse = preOrderTraverse;
 exports.postOrderTraverse = postOrderTraverse;
+
+function inOrderTraverse(tree, array) {
+  //if tree is not empty,
+  //traverse through the left node,
+  //add to the array,
+  //then traverse through right node
+  //return array;
+
+  if (tree !== null) {
+    inOrderTraverse(tree.left, array);
+    array.push(tree.value);
+    inOrderTraverse(tree.right, array);
+  }
+  return array;
+}
+
+function preOrderTraverse(tree, array) {
+  //if tree is not empty
+  //start at root node
+  //add in node values
+  //then go to left
+  //then go to right
+
+  if (tree !== null) {
+    array.push(tree.value);
+    preOrderTraverse(tree.left, array);
+    preOrderTraverse(tree.right, array);
+  }
+  return array;
+}
+
+function postOrderTraverse(tree, array) {
+  // Write your code here.
+  //if tree is not empty
+  //traverse through left
+  //traverse through right
+  //add nodes to array
+  if (tree !== null) {
+    postOrderTraverse(tree.left, array);
+    postOrderTraverse(tree.right, array);
+    array.push(tree.value);
+  }
+  return array;
+}
+
+// Do not edit the lines below.
+exports.inOrderTraverse = inOrderTraverse;
+exports.preOrderTraverse = preOrderTraverse;
+exports.postOrderTraverse = postOrderTraverse;
