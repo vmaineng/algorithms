@@ -436,3 +436,43 @@ function sortedSquaredArray(array) {
 
 // Do not edit the line below.
 exports.sortedSquaredArray = sortedSquaredArray;
+
+function tournamentWinner(competitions, results) {
+  //receive an array of array of teams, and an array of results
+  //return which team was the winner
+  //[
+  //  Home        away
+  //[ "Fashion", "Makeup"],
+  //["Shoes", "Fashion"],
+  //["Makeup", "Fashion"]
+  //]
+
+  //[0,0,1] => Fashion, Fashion, Fashion => winner Fashion
+
+  //keep track of score with the teams as key
+  //iterate through array based on the results received
+  //iterate through object to see who has the most point, return the key (team)
+
+  let scores = {};
+  let currentBestTeam = "";
+  scores[currentBestTeam] = 0;
+
+  for (let i = 0; i < competitions.length; i++) {
+    const [homeTeam, awayTeam] = competitions[i]; //good to deconstruct
+    const result = results[i];
+    const winningTeam = result === 1 ? homeTeam : awayTeam;
+
+    if (!scores[winningTeam]) {
+      scores[winningTeam] = 0;
+    }
+    scores[winningTeam] += 1;
+
+    if (scores[winningTeam] > scores[currentBestTeam]) {
+      currentBestTeam = winningTeam;
+    }
+  }
+  return currentBestTeam;
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
