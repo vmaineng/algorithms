@@ -381,3 +381,32 @@ function postOrderTraverse(tree, array) {
 exports.inOrderTraverse = inOrderTraverse;
 exports.preOrderTraverse = preOrderTraverse;
 exports.postOrderTraverse = postOrderTraverse;
+
+function isValidSubsequence(array, sequence) {
+  //receive two arrays of integers
+  //return true if sequence exists in array in the same order, else false
+  //[3, 5, 6, 1, 3], [2, 3] => false
+  //[-3,63,7,8,2], [-3, 7, 8] => true
+
+  //edge cases: empty array
+  //if sequence length is > array.length, return false
+
+  //start at first index of both arrays
+  //if you found the same values, then move pointer in sequence
+  //else return false
+
+  //else return true
+
+  if (sequence.length > array.length) return false;
+  let idx = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (sequence[idx] === array[i]) {
+      idx++;
+    }
+  }
+  return idx === sequence.length;
+}
+
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
