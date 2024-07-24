@@ -410,3 +410,29 @@ function isValidSubsequence(array, sequence) {
 
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
+
+function sortedSquaredArray(array) {
+  // Write your code here.
+  //receive an array of integers
+  //return an array back with numbers squared
+  //[2,3 ,5, 8] => [4, 9, 25, 64]
+
+  //edge case: if they are not in non-ascending order
+
+  //create an array
+  //iterate through the nums
+  //math.pow the nums
+  //return the array created
+
+  let powerNums = [];
+  let powNum = Infinity;
+
+  for (let i = 0; i < array.length; i++) {
+    powNum = Math.pow(array[i], 2);
+    powerNums.push(powNum);
+  }
+  return powerNums.sort((a, b) => a - b);
+}
+
+// Do not edit the line below.
+exports.sortedSquaredArray = sortedSquaredArray;
