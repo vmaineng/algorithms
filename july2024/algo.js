@@ -476,3 +476,46 @@ function tournamentWinner(competitions, results) {
 
 // Do not edit the line below.
 exports.tournamentWinner = tournamentWinner;
+
+const teams = [
+  ["Fashion", "Makeup"],
+  ["Shoes", "Fashion"],
+  ["Makeup", "Fashion"],
+];
+
+const results = [0, 0, 1];
+
+for (let i = 0; i < teams.length; i++) {
+  const [homeTeam, awayTeam] = teams[i];
+  const result = results[i];
+  const winningTeam = result === 1 ? homeTeam : awayTeam;
+  console.log(winningTeam);
+}
+
+function majorityElement(array) {
+  //receive an array of integers
+  //return the value that is seen the most
+  //[3, 5, ,6, 2,2,3,3] => 3
+
+  //keep track of how many times an element has been seen
+  //with frequency counter
+
+  let seenVals = {};
+  let maxCount = 0;
+  let ele = null;
+
+  for (let num of array) {
+    seenVals[num] = (seenVals[num] || 0) + 1;
+  }
+
+  for (let key in seenVals) {
+    if (seenVals[key] > maxCount) {
+      maxCount = seenVals[key];
+      ele = key;
+    }
+  }
+  return parseInt(ele);
+}
+
+// Do not edit the line below.
+exports.majorityElement = majorityElement;
