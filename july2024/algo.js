@@ -519,3 +519,34 @@ function majorityElement(array) {
 
 // Do not edit the line below.
 exports.majorityElement = majorityElement;
+
+function mergeOverlappingIntervals(array) {
+  // receive an array of arrays
+  //return an array of arrays where similar numbers are merged together
+  //[[1,6], [2, 4], [8, 9]] => [[1, 6], [8, 9]]
+
+  //edge case:
+
+  //sort the intervals by start time
+  //iterate through the arrays
+  //look at the first number of start time, compare it to the end time of the next interval
+  //if it is less than or equal to, they can be truncated together
+  //return the array back
+
+  array.sort((a, b) => a[0] - b[0]);
+  const mergedIntervals = [array[0]];
+
+  for (let i = 1; i < array.length; i++) {
+    const current = array[i];
+    const last = mergedIntervals[mergedIntervals.length - 1];
+    if (current[0] <= last[1]) {
+      last[1] = Math.max(last[1], current[1]);
+    } else {
+      mergedIntervals.push(current);
+    }
+  }
+  return mergedIntervals;
+}
+
+// Do not edit the line below.
+exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
