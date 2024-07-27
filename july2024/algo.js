@@ -550,3 +550,30 @@ function mergeOverlappingIntervals(array) {
 
 // Do not edit the line below.
 exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
+
+function nonConstructibleChange(coins) {
+  //receive an array of integers
+  //return the min amt for change you can't make
+  //[3, 6, 7, 2] => 1
+  //[1, 3,4] => 2
+
+  //keep track of change,
+  //sort the coins
+  //iterate through the coins
+  //add to change
+  //check if the next coin is more than what the current change is,
+  //can't make it
+  //return change + 1
+
+  let change = 0;
+  coins.sort((a, b) => a - b);
+
+  for (let i = 0; i < coins.length; i++) {
+    if (coins[i] > change + 1) return change + 1;
+    change += coins[i];
+  }
+  return change + 1;
+}
+
+// Do not edit the line below.
+exports.nonConstructibleChange = nonConstructibleChange;
