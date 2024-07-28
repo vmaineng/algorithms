@@ -652,3 +652,31 @@ function nonConstructibleChange(coins) {
 
 // Do not edit the line below.
 exports.nonConstructibleChange = nonConstructibleChange;
+function classPhotos(redShirtHeights, blueShirtHeights) {
+  //receive an array of integers for red shirts, and blue shirts
+  //return true or false
+
+  //sort the arrays from tallest to shortest
+
+  redShirtHeights.sort((a, b) => b - a);
+  blueShirtHeights.sort((a, b) => b - a);
+
+  const firstShirt = redShirtHeights[0] > blueShirtHeights[0] ? "BLUE" : "RED";
+
+  for (let i = 0; i < redShirtHeights.length; i++) {
+    const redShirtHeight = redShirtHeights[i];
+    const blueShirtHeight = blueShirtHeights[i];
+
+    if (firstShirt === "RED") {
+      if (redShirtHeight >= blueShirtHeight) {
+        return false;
+      }
+    } else if (blueShirtHeight >= redShirtHeight) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Do not edit the line below.
+exports.classPhotos = classPhotos;
