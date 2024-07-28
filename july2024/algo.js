@@ -628,3 +628,27 @@ var spiralOrder = function (matrix) {
   }
   return result;
 };
+
+function nonConstructibleChange(coins) {
+  //receive an array of coins (pos)
+  //return back an integer of the min change you cannot create
+  //[3, 4, 1, 8] => 2
+
+  //initialize variables change at 0
+  //itereate through the array of integers
+  //if the next coin >= change + 1, then return change + 1
+  //else if iterate through entire array
+  //return all of coins + 1 can't make
+
+  coins.sort((a, b) => a - b);
+  let change = 0;
+
+  for (let coin of coins) {
+    if (coin > change + 1) return change + 1;
+    change += coin;
+  }
+  return change + 1;
+}
+
+// Do not edit the line below.
+exports.nonConstructibleChange = nonConstructibleChange;
