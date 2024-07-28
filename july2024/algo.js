@@ -577,3 +577,54 @@ function nonConstructibleChange(coins) {
 
 // Do not edit the line below.
 exports.nonConstructibleChange = nonConstructibleChange;
+
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var spiralOrder = function (matrix) {
+  //receive a matrix
+  //return an array back of the values seen in a spiral
+
+  //edge case: if matrix is empty
+  if (matrix.length === 0) return [];
+
+  //create an array to store the values
+  //iterate at top row, then right col, then bottom row, then left col
+  //as i'm iterating, add the value into the array and after searching each row/col
+  //decrement or increment b/c it's been visited
+  //return the result back
+
+  let result = [];
+
+  let top = 0;
+  let bottom = matrix.length - 1;
+  let left = 0;
+  let right = matrix[0].length - 1;
+
+  while (top <= bottom && left <= right) {
+    for (let i = left; i <= right; i++) {
+      result.push(matrix[top][i]);
+    }
+    top++;
+
+    for (let i = top; i <= bottom; i++) {
+      result.push(matrix[i][right]);
+    }
+    right--;
+
+    if (top <= bottom) {
+      for (let i = right; i >= left; i--) {
+        result.push(matrix[bottom][i]);
+      }
+      bottom--;
+    }
+    if (left <= right) {
+      for (let i = bottom; i >= top; i--) {
+        result.push(matrix[i][left]);
+      }
+      left++;
+    }
+  }
+  return result;
+};
