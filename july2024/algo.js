@@ -680,3 +680,29 @@ function classPhotos(redShirtHeights, blueShirtHeights) {
 
 // Do not edit the line below.
 exports.classPhotos = classPhotos;
+
+function minimumWaitingTime(queries) {
+  //receive an an array of integers
+  //return the min waiting time
+  //[6, 2, 4] => (0) +(6) + (6+ 2) + (8+ 4) = 26
+  //[2, 4, 6] => (0) + (2) + (4 + 2) + (6 + 6) = 20
+
+  //sort by smallest
+  //iterate through queries
+  //add each value to the waiting time
+  //return min total waiting time
+
+  queries.sort((a, b) => a - b);
+
+  let waitingTime = 0;
+
+  for (let i = 0; i < queries.length; i++) {
+    let currentLoad = queries[i];
+    let previousLoad = queries.length - (i + 1);
+    waitingTime += currentLoad * previousLoad;
+  }
+  return waitingTime;
+}
+
+// Do not edit the line below.
+exports.minimumWaitingTime = minimumWaitingTime;
