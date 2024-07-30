@@ -736,3 +736,41 @@ function minimumWaitingTime(queries) {
 
 // Do not edit the line below.
 exports.minimumWaitingTime = minimumWaitingTime;
+
+function classPhotos(redShirtHeights, blueShirtHeights) {
+  //receive equal amount of length for redShirt and blueShirt
+  //return true if place all same color in the back row, else false
+  //[8, 32, 4], [8, 2, 9] =>
+  //after sorting: [32, 8, 4], [9, 8, 2] => false b/c [8, 8]
+
+  //edge case: not equal lengths
+
+  //sort red and blue by tallest
+  //first indicate who in in the front row
+
+  //iterate through the redshirt array
+  //check who is in front row
+  //verify the back row is not taller than the front row
+  //else return false
+  //after checking, return true;
+
+  redShirtHeights.sort((a, b) => b - a);
+  blueShirtHeights.sort((a, b) => b - a);
+
+  let firstRowShirt = redShirtHeights[0] > blueShirtHeights[0] ? "BLUE" : "RED";
+
+  for (let i = 0; i < redShirtHeights.length; i++) {
+    blueShirt = blueShirtHeights[i];
+    redShirt = redShirtHeights[i];
+
+    if (firstRowShirt === "BLUE") {
+      if (redShirt <= blueShirt) return false;
+    } else {
+      if (redShirt >= blueShirt) return false;
+    }
+  }
+  return true;
+}
+
+// Do not edit the line below.
+exports.classPhotos = classPhotos;
