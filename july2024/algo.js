@@ -774,3 +774,37 @@ function classPhotos(redShirtHeights, blueShirtHeights) {
 
 // Do not edit the line below.
 exports.classPhotos = classPhotos;
+
+function transposeMatrix(matrix) {
+  //receive a matrix
+  //return the matrix transposed - columns into rows
+  //[
+  // [3, 4],
+  //   [5, 6]
+  // ]
+
+  //[
+  // [3, 5],
+  //   [4, 6],
+  // ]
+
+  //iterate through cols first
+  //create a new array
+  //iterate through row
+  //push in the row and columns
+  //add it to the new matrix
+
+  let transposedMatrix = [];
+
+  for (let cols = 0; cols < matrix[0].length; cols++) {
+    let newRow = [];
+    for (let rows = 0; rows < matrix.length; rows++) {
+      newRow.push(matrix[rows][cols]);
+    }
+    transposedMatrix.push(newRow);
+  }
+  return transposedMatrix;
+}
+
+// Do not edit the line below.
+exports.transposeMatrix = transposeMatrix;
