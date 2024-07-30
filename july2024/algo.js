@@ -699,9 +699,39 @@ function minimumWaitingTime(queries) {
   for (let i = 0; i < queries.length; i++) {
     let currentLoad = queries[i];
     let previousLoad = queries.length - (i + 1);
+    console.log(previousLoad);
     waitingTime += currentLoad * previousLoad;
   }
   return waitingTime;
+}
+
+// Do not edit the line below.
+exports.minimumWaitingTime = minimumWaitingTime;
+
+console.log(minimumWaitingTime([5, 1, 4]));
+
+function minimumWaitingTime(queries) {
+  //reeceiv an array of integers
+  //return the min waiting time
+  //[5,1 ,4] => 0 + 5 + (5 + 1) + (1+ 4) = 16
+  // [ 1, 4, 5] => 0 + 1 + (1 + 4) + (4 + 5) =15
+
+  //sort
+  //initialize a minWaitingTime to 0
+  //iterate through each queries
+  //take each queries * duration
+  //duration = the queries remaining + 1 (since array is 0 - indexed);
+  //return minWaiting Time
+
+  queries.sort((a, b) => a - b);
+  let minWaitingTime = 0;
+
+  for (let i = 0; i < queries.length; i++) {
+    let query = queries[i];
+    let duration = queries.length - (i + 1);
+    minWaitingTime += query * duration;
+  }
+  return minWaitingTime;
 }
 
 // Do not edit the line below.
