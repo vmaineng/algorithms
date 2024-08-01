@@ -851,3 +851,31 @@ function commonCharacters(strings) {
 
 // Do not edit the line below.
 exports.commonCharacters = commonCharacters;
+
+function commonCharacters(strings) {
+  //receive an array of strings
+  //return an array of common characters
+  //['jump', 'ube', 'run'] => ['u']
+
+  //initialize a Set
+  //capture the first array in the set
+  //then iterate at the second word in the set, check if any of the letters exist in it
+  //if it doesn't, then delete it
+
+  //return the chars left in set as an array
+
+  let firstSet = new Set(strings[0]);
+
+  for (let i = 1; i < strings.length; i++) {
+    let theRestSet = new Set(strings[i]);
+    for (let char of firstSet) {
+      if (!theRestSet.has(char)) {
+        firstSet.delete(char);
+      }
+    }
+  }
+  return Array.from(firstSet);
+}
+
+// Do not edit the line below.
+exports.commonCharacters = commonCharacters;
