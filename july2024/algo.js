@@ -808,3 +808,46 @@ function transposeMatrix(matrix) {
 
 // Do not edit the line below.
 exports.transposeMatrix = transposeMatrix;
+
+function commonCharacters(strings) {
+  // Write your code here.
+  //input: array of strings
+  //output: array of common chars
+  //constraints:
+  //edge cases:  if string is empty
+  //brute force: have a pointer on one and check on every string
+
+  //optimized: use a Set
+  //iterate through each char
+  //return what's left in the set
+
+  // let standardSet = new Set(strings[0])
+
+  // do a frequency counter
+  //count all the letters in each string
+  //if the letters have the same amount as the strings length in array
+  //that means they are found in all strings
+
+  let freq = {};
+
+  for (const string of strings) {
+    const uniqueStringChars = new Set(string); //makes a set of unique chars
+    for (const char of uniqueStringChars) {
+      if (!freq[char]) {
+        freq[char] = 0;
+      }
+      freq[char]++;
+    }
+  }
+  const finalChars = [];
+
+  for (const [char, count] of Object.entries(freq)) {
+    if (count === strings.length) {
+      finalChars.push(char);
+    }
+  }
+  return finalChars;
+}
+
+// Do not edit the line below.
+exports.commonCharacters = commonCharacters;
