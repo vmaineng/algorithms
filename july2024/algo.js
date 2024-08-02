@@ -914,3 +914,31 @@ function findThreeLargestNumbers(array) {
 
 // Do not edit the line below.
 exports.findThreeLargestNumbers = findThreeLargestNumbers;
+
+function caesarCipherEncryptor(string, key) {
+  //receive a string of chars and key of integer to add more placements
+  //return a new string + key spaces
+  //'abc', 3 => 'def'
+
+  //edge case: if string is empty
+  //iterate through string
+  //add key spaces
+  //if it surpasses the length of 26, % to loop around
+  //return new string
+
+  if (!string) return "";
+  key = key % 26;
+  let newString = "";
+
+  for (let char of string) {
+    let newCharCode = char.charCodeAt(0) + key;
+    if (newCharCode > 122) {
+      newCharCode = 96 + (newCharCode - 122);
+    }
+    newString += String.fromCharCode(newCharCode);
+  }
+  return newString;
+}
+
+// Do not edit the line below.
+exports.caesarCipherEncryptor = caesarCipherEncryptor;
