@@ -879,3 +879,38 @@ function commonCharacters(strings) {
 
 // Do not edit the line below.
 exports.commonCharacters = commonCharacters;
+
+function findThreeLargestNumbers(array) {
+  //receive an array of integers (pos and neg)
+  //return an array of sorted integers of 3 highest integers
+  //[3,2,-34, 12, 56, 1] => [3,12, 56]
+
+  //create an array and initalize 3 spots to null
+  //iterate through the array
+  //if the value is > than the last array
+  //then move all the values down
+  //assign the values to the last spot in the array since it's the highest
+  //same for the other 2 values
+  //return the array
+
+  if (array.length === 0) return [];
+
+  let biggestNumsArray = [-Infinity, -Infinity, -Infinity];
+
+  for (let num of array) {
+    if (num > biggestNumsArray[2]) {
+      biggestNumsArray[0] = biggestNumsArray[1];
+      biggestNumsArray[1] = biggestNumsArray[2];
+      biggestNumsArray[2] = num;
+    } else if (num > biggestNumsArray[1]) {
+      biggestNumsArray[0] = biggestNumsArray[1];
+      biggestNumsArray[1] = num;
+    } else if (num > biggestNumsArray[0]) {
+      biggestNumsArray[0] = num;
+    }
+  }
+  return biggestNumsArray;
+}
+
+// Do not edit the line below.
+exports.findThreeLargestNumbers = findThreeLargestNumbers;
