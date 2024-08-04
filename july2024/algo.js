@@ -942,3 +942,25 @@ function caesarCipherEncryptor(string, key) {
 
 // Do not edit the line below.
 exports.caesarCipherEncryptor = caesarCipherEncryptor;
+
+function isValidSubsequence(array, sequence) {
+  // Write your code here.
+  //input - two arrays, ,
+  //output - true or false
+  //edge - if array length is less than sequence length;
+  //strategy - create a pointer starting at the first value
+  //create a pointer for array and pointer for sequence
+  //check if they are equal to each other
+  //return true, otherwise, return false
+
+  let idx = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === sequence[idx]) {
+      idx++;
+    }
+  }
+  return idx === sequence.length;
+}
+
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
