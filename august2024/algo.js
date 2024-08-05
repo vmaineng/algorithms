@@ -55,4 +55,46 @@ function commonChar(strings) {
   return Array.from(firstSet);
 }
 
-console.log(commonChar(["hi", "hello", "hey"]));
+//console.log(commonChar(["hi", "hello", "hey"]));
+
+function firstNonRepeatingCharacter(string) {
+  //receive a string of chars with no spaces
+  //return the index position of non-repeating char
+  //'abcdebc' => a
+
+  //brute force: create nested for loops?
+
+  //optimized: freq counter
+
+  //create an object
+  //iterate through the string
+  //keep track of how many times you've seen it
+  //return the index position of values seen 1 time
+
+  let seenVals = {};
+
+  for (let char of string) {
+    if (!seenVals[char]) {
+      seenVals[char] = 0;
+    }
+    seenVals[char] += 1;
+  }
+
+  //   for (let key in seenVals) {
+  //     if (seenVals[key] === 1) {
+  //       return key;
+  //     }
+  //   } //grabs the value
+
+  //grab idex position =
+  for (let i = 0; i < string.length; i++) {
+    if (seenVals[string[i]] === 1) return i;
+  }
+
+  return -1;
+}
+
+// Do not edit the line below.
+exports.firstNonRepeatingCharacter = firstNonRepeatingCharacter;
+
+console.log(firstNonRepeatingCharacter("abcdebc"));
