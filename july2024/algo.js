@@ -991,3 +991,40 @@ function isValidSubsequence(array, sequence) {
 
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
+
+function smallestDifference(arrayOne, arrayTwo) {
+  //receive two array of integers
+  //return an array with a pair (the values) (one from both arrays) with smalleset difference
+  //[3, 4, 5, -1], [1, 3, 2, 5] => [-1, 1]
+
+  //edge case: if one array is empty, can't get a pair
+
+  //sort both arrays from smallest to biggest
+  //create an array to store pairs
+  //keep track of min total
+  //iterate through both arrays
+
+  //if found min pair, return the array
+
+  let pairArray = [];
+  let minTotal = Number.MAX_SAFE_INTEGER;
+
+  arrayOne.sort((a, b) => a - b);
+  arrayTwo.sort((a, b) => a - b);
+
+  let idx = 0;
+  let idxTwo = 0;
+
+  while (idx < arrayOne.length && idxTwo < arrayTwo.length) {
+    let tempSum = Math.abs(arrayOne[idx] - arrayTwo[idxTwo]);
+    if (tempSum < minTotal) {
+      minTotal = tempSum;
+      pairArray.push[(arrayOne[idx], arrayTwo[idxTwo])]; //replaces
+    }
+    arrayOne[idx] > arrayTwo[idxTwo] ? idxTwo++ : idx++;
+  }
+  return pairArray;
+}
+
+// Do not edit the line below.
+exports.smallestDifference = smallestDifference;
