@@ -29,3 +29,30 @@ function caesarCipherEncryptor(string, key) {
 exports.caesarCipherEncryptor = caesarCipherEncryptor;
 
 // console.log(caesarCipherEncryptor("abc", 3));
+
+function commonChar(strings) {
+  //receive an array of strings
+  //return an array of common chars
+  //['hi', 'hello', 'hey'] => ['h']
+
+  //create a set of the first word
+  //iterate through the rest of the array
+  //create a new set of second word
+  //check if the letters in the first set is found in second set
+  //if not, delete from first
+  //return first set
+
+  let firstSet = new Set(strings[0]);
+
+  for (let i = 1; i < strings.length; i++) {
+    let resetSet = new Set(strings[i]);
+    for (let char of firstSet) {
+      if (!resetSet.has(char)) {
+        firstSet.delete(char);
+      }
+    }
+  }
+  return Array.from(firstSet);
+}
+
+console.log(commonChar(["hi", "hello", "hey"]));
