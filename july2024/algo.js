@@ -1028,3 +1028,39 @@ function smallestDifference(arrayOne, arrayTwo) {
 
 // Do not edit the line below.
 exports.smallestDifference = smallestDifference;
+
+function isPalindrome(string) {
+  //receive a string w/ no spaces
+  //return boolean if written same forward and backwards
+  //'apple' =false
+  //'hijih' => true
+
+  //if string has one length = return true;
+
+  //use methods
+  //split it and reverse and it and see if it equals the string
+
+  //return string.split("").reverse().join("") === string
+
+  //two pointers
+  //create one at beginning and one at end
+  //check if they are not the same
+  //return false
+  //else decrement pointers
+  //return true
+
+  let left = 0;
+  let right = string.length - 1;
+
+  while (left < right) {
+    if (string[left] !== string[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+// Do not edit the line below.
+exports.isPalindrome = isPalindrome;
