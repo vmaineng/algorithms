@@ -964,3 +964,30 @@ function isValidSubsequence(array, sequence) {
 
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
+function isValidSubsequence(array, sequence) {
+  //receive two arrays of integers (pos and negative)
+  //return true if sequqnce is part of array, else false
+  //[32, 4, 52, 5], [52, 5] => true;
+
+  //edge case: if sequence's length > array's length, return false
+
+  //create two pointers for both arrays
+  //iterate through both arrays until reach the end of one of them
+  //if sequence value has been found in array, move pointer in sequence pointer
+  //else move arrays pointer
+  //then return if sequence pointer reached end of sequence's end of array
+
+  if (sequence.length > array.length) return false;
+
+  let idx = 0;
+  let sIdx = 0;
+
+  while (idx < array.length && sIdx < sequence.length) {
+    if (array[idx] === sequence[sIdx]) sIdx++;
+    idx++;
+  }
+  return sIdx === sequence.length;
+}
+
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
