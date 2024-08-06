@@ -97,4 +97,106 @@ function firstNonRepeatingCharacter(string) {
 // Do not edit the line below.
 exports.firstNonRepeatingCharacter = firstNonRepeatingCharacter;
 
-console.log(firstNonRepeatingCharacter("abcdebc"));
+//console.log(firstNonRepeatingCharacter("abcdebc"));
+
+function runLengthEncoding(string) {
+  //receive a string of chars uppercase
+  //return back the count of strings in a string back
+  //ex: 'AARRRRRRRRRRRRRRS' => '2A9R4R1S'
+
+  //if string has one, return the string with one
+
+  //create an object to store the value we have seen
+  //iterate through the string
+
+  //keep track of the count;
+  //if the count surpasses 9, reset the count to 1
+
+  //check the previous letter before it
+  //if it's the same, add by 1
+  //else start a new one
+
+  //return the item
+
+  // if (string.length === 1) return `1${string}`
+
+  let objSeen = {};
+
+  for (let char of string) {
+    if (!objSeen[char]) {
+      objSeen[char] = 0;
+    }
+    objSeen[char]++;
+  }
+
+  for (let key in objSeen) {
+    if (objSeen[key] > 9) {
+    }
+  }
+}
+
+// Do not edit the line below.
+exports.runLengthEncoding = runLengthEncoding;
+
+// console.log(runLengthEncoding("AARRRRRRRRRRRRRRS"));
+
+function generateDocument(characters, document) {
+  //receive two strings of chars with spaces
+  //return boolean; true if you can agenerate document from characters, else false
+  //'hi', 'hello' => false
+
+  //edge case ; if both strings are empty, can generate empty string
+
+  //brute force: sort characters and document strings?
+  //similar to is valid subsequence?
+
+  //method: freq counter:
+
+  //create an object to track frequencies
+  //if chars exist for documents,
+  //keep looking through the rest
+  //else return false
+  //else return true
+
+  let charCount = {};
+
+  for (let char of characters) {
+    if (!charCount[char]) return (charCount[char] = 0);
+  }
+  charCount[char] += 1;
+
+  for (let char in charCount) {
+    if (!document[char] === 0) return false;
+  }
+  return true;
+}
+
+// Do not edit the line below.
+exports.generateDocument = generateDocument;
+
+function groupAnagrams(words) {
+  //receive an array of words
+  //return an array of arrays of anagrams together
+  //anagram = using same amount of letter
+  //['apple', 'pplea', 'yo'] = [['apple', 'pplea',], 'yo']
+
+  //edge case: if array has one, or empty
+
+  //create an object
+  //sort the letters
+  //create an array
+  //push the word together into the array
+  //return the object entries as arrays
+
+  let anagramObj = {};
+
+  for (let word of words) {
+    let sortedWord = word.split("").sort().join("");
+    if (!anagramObj[sortedWord]) anagramObj[sortedWord] = [];
+    anagramObj[sortedWord].push(word);
+  }
+  return Object.values(anagramObj);
+}
+
+// Do not edit the line below.
+exports.groupAnagrams = groupAnagrams;
