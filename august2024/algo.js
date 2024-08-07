@@ -200,3 +200,65 @@ function groupAnagrams(words) {
 
 // Do not edit the line below.
 exports.groupAnagrams = groupAnagrams;
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function (s) {
+  //receive a string of lowercase letters
+  //palindrome = word written the same forward as it is backwards
+  //'abacdcdef' => 'aba'
+
+  //output: longest palindromic substrings; string of characters
+
+  //example: 'racecar' => 'racecar'; //odd lengths
+  //'abbacdef' => 'abba' //even lengths
+
+  //edge case: any spaces to take consideration? all lowercase letters?
+  //if the string has only letter, return string
+  //'a' => 'a'
+
+  //create a string to hold the longest palindromic substring
+  //iterate through the strings
+  //one pointer starts at the beginning
+  //second pointer starts right next to it;
+
+  //take out a portion of the string
+  //check if the it is a palindrome, if it is, then check if it is longer than the current palindrome string
+  //right now
+
+  //return palindrome string
+
+  if (s.length === 1) return s;
+
+  let longestPalindromic = "";
+
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i; j < s.length; j++) {
+      let palindrome = true;
+      let substring = s.slice(i, j + 1);
+
+      let left = 0;
+      let right = substring.length - 1;
+
+      while (left < right) {
+        if (substring[left] !== substring[right]) {
+          palindrome = false;
+          break;
+        }
+        left++;
+        right--;
+      }
+
+      if (palindrome && substring.length > longestPalindromic.length) {
+        longestPalindromic = substring;
+      }
+    }
+  }
+
+  return longestPalindromic;
+};
+
+//time: O(n^2) -
+//space: O(n)
