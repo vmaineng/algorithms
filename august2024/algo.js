@@ -262,3 +262,34 @@ var longestPalindrome = function (s) {
 
 //time: O(n^2) -
 //space: O(n)
+
+function whatday(num) {
+  //receive an integer
+  //return a string back for the designated weekday
+  //'8' => "Wrong, please enter a number between 1 and 7"
+  //3 => "Tuesday"
+
+  //edgecase: number > 7 or < 1
+
+  //create an object to hold the number as key, and values are weekdays
+  //if the num matches the key in the obj, return the value
+
+  //time: O(1)
+  //space: O(1)
+
+  if (num < 1 || num > 7) return "Wrong, please enter a number between 1 and 7";
+
+  const weekDayObj = {
+    1: "Sunday",
+    2: "Monday",
+    3: "Tuesday",
+    4: "Wednesday",
+    5: "Thursday",
+    6: "Friday",
+    7: "Saturday",
+  };
+
+  if (num in weekDayObj) {
+    return weekDayObj[num];
+  }
+}
