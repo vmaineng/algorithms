@@ -405,3 +405,110 @@ function balancedBrackets(string) {
 
 // Do not edit the line below.
 exports.balancedBrackets = balancedBrackets;
+
+function majorityElement(array) {
+  //receive an array of positive integers
+  //return the element that appears more than half of the array
+  //[2,3,2,1] => 0 since 2 only appears 2/4
+  //[3,2 ,5 ,2, 2, 5, 1,2, 2, 2] => 2 b/c 6/10
+
+  //if array is empty return 0;
+
+  //iterate through the array
+  //keep track of the character most seen
+  //take the character divde by the length to see if majority element
+  //return the value
+
+  if (!array) return 0;
+
+  let freqElement = {};
+  let maxVal = 0;
+  let ele = null;
+
+  for (const num of array) {
+    if (!freqElement[num]) {
+      freqElement[num] = 0;
+    }
+    freqElement[num]++;
+  }
+
+  for (const key in freqElement) {
+    if (freqElement[key] > maxVal) {
+      maxVal = freqElement[key];
+      ele = key;
+      console.log(ele);
+    }
+  }
+  return parseInt(ele);
+}
+
+// Do not edit the line below.
+exports.majorityElement = majorityElement;
+
+//console.log(majorityElement([2, 3, 2, 1]));
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+exports.LinkedList = LinkedList;
+
+function middleNode(linkedList) {
+  //slow and fast pointer
+
+  let slow = linkedList;
+  let fast = linkedList;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
+}
+
+// Do not edit the line below.
+exports.middleNode = middleNode;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+exports.LinkedList = LinkedList;
+
+function middleNode(linkedList) {
+  //receive a head of linkedlist
+  //return the middle node
+  //2 -> 4 -> 8 -> 9 -> null => 8_. 9
+
+  //keep count
+  //iterate through entire linkedlist
+  //then iterate through again
+  //find the middle node
+  //return
+
+  let count = 0;
+  let current = linkedList;
+
+  while (current !== null) {
+    count++;
+    current = current.next;
+  }
+
+  let middleNode = linkedList;
+  for (let i = 0; i < Math.floor(count / 2); i++) {
+    middleNode = middleNode.next;
+  }
+
+  return middleNode;
+}
+
+// Do not edit the line below.
+exports.middleNode = middleNode;
