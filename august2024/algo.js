@@ -328,3 +328,38 @@ function mergeOverlappingIntervals(array) {
 
 // Do not edit the line below.
 exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function (prices) {
+  //receive an array of prices
+  //return maxProfit (integer)
+  //[3, 6,7 3, 2] => buy on 3, sell, on 7 => 4
+
+  //edge case: if array is empty, return 0;
+
+  //initialize a maxProfit at 0, start the buy on first day
+  //iterate through prices array
+  //look at second value in array
+  //check if the sell price is higher,
+  //if so, calc sell - buy = maxprofit
+  //if it's greater than maxProfit currently, update maxProfit
+  //return the max profit
+
+  if (prices.length === 0) return 0;
+
+  let maxProfit = 0;
+  let buy = 0;
+
+  for (let sell = 1; sell < prices.length; sell++) {
+    if (prices[buy] < prices[sell]) {
+      let profit = prices[sell] - prices[buy];
+      maxProfit = Math.max(maxProfit, profit);
+    } else {
+      buy = sell;
+    }
+  }
+  return maxProfit;
+};
