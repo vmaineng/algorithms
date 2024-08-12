@@ -363,3 +363,45 @@ var maxProfit = function (prices) {
   }
   return maxProfit;
 };
+
+function balancedBrackets(string) {
+  //receive a string of opening and closing brackets
+  //return true if they pair up together, else false;
+  //'()' => true
+  //'({(}{' => false
+
+  //create a stack
+  //create an object to show opening and closing brackets
+  //iterate through string
+  //check if it's an opening bracket, add to the stack
+  //else if it is a closing bracket,
+  //check if the stack is not empty
+  //pop up the previous one in the stack to see if it is an opening
+  //if not, return false;
+
+  //return true if stack is empty
+
+  let stack = [];
+  const bracket = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  for (const char of string) {
+    if (bracket[char]) {
+      stack.push(bracket[char]);
+    } else if (char === ")" || char === "}" || char === "]") {
+      if (!stack.length) {
+        return false;
+      }
+      if (stack.pop() !== char) {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
+}
+
+// Do not edit the line below.
+exports.balancedBrackets = balancedBrackets;
