@@ -469,6 +469,7 @@ function middleNode(linkedList) {
   }
   return slow;
 }
+//o(n time); o(1 space)
 
 // Do not edit the line below.
 exports.middleNode = middleNode;
@@ -512,3 +513,56 @@ function middleNode(linkedList) {
 
 // Do not edit the line below.
 exports.middleNode = middleNode;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function sumOfLinkedLists(linkedListOne, linkedListTwo) {
+  //receive head of two LL
+  //return a new LL that represents sum of the nodes
+  // 2 -> 3 -> 9 -> null  --> 932
+  //9 -> 2 ->  null --> 29
+  //return => 1 -> 6 -> 9 -> null --> 961
+
+  //create a dummy node
+  //initialize carry
+
+  //traverse trhough both LL
+  //add them together
+  //if carry, add to next sum;
+
+  if (!linkedListOne) return linkedListTwo;
+  if (!linkedListTwo) return linkedListOne;
+
+  let dummy = new LinkedList(0);
+  let current = dummy;
+
+  let current1 = linkedListOne;
+  let current2 = linkedListTwo;
+  let carry = 0;
+
+  while (current1 !== null || current2 !== null || carry !== 0) {
+    let value1 = current1 !== null ? current1.value : 0;
+    let value2 = current2 !== null ? current2.value : 0;
+
+    let sum = value1 + value2 + carry;
+    carry = Math.floor(sum / 10); //13 /10 = 1.3 and Math.floor gives you 1
+    let newValue = sum % 10; //looks at carry
+
+    current.next = new LinkedList(newValue);
+    current = current.next;
+
+    if (current1) current1 = current1.next;
+    if (current2) current2 = current2.next;
+  }
+  return dummy.next;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.sumOfLinkedLists = sumOfLinkedLists;
