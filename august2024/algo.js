@@ -566,3 +566,166 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
 exports.sumOfLinkedLists = sumOfLinkedLists;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function removeDuplicatesFromLinkedList(linkedList) {
+  //receive a head of linkedlist
+  //return the same linkedlist back w/ no duplicate values
+  // 1 -> 2 -> 2 -> 3 -> null => 1 -> 2 -> 3 -> null
+  //edge case: if LL is null, return null
+
+  //capture the first head of the ll
+  //traverse until null
+  //check if the next node's value === as current node
+  //if so, skip it and point to the node afterwards;
+  //else move the pointer up
+  //return the linked list
+
+  if (!linkedList) return null;
+
+  let current = linkedList;
+
+  while (current !== null && current.next !== null) {
+    if (current.value === current.next.value) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+  return linkedList;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.removeDuplicatesFromLinkedList = removeDuplicatesFromLinkedList;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function reverseLinkedList(head) {
+  //receive the head of a LL
+  //return the LL reversed in place
+  // 1 -> 2 -> 3 -> null => 3 -> 2 -> 1 -> null;
+
+  //edge case: if the head is empty, return null;
+  //capture the current as the head
+  if (!head) return null;
+
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.reverseLinkedList = reverseLinkedList;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function reverseLinkedList(head) {
+  //receive a head of LL;
+  //return the LL reverse;
+  // 1 -> 2 -> 3 -> null => 3 -> 2 -> 1 => null;
+
+  let dummyNode = new LinkedList();
+  let prev = dummyNode;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.reverseLinkedList = reverseLinkedList;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function mergeLinkedLists(headOne, headTwo) {
+  //receive the head of two LL;
+  //return one LL with sorted values;
+
+  // 1-> 3 -> 5 -> null;
+  //2 -> 4 -> 9 -> null;
+  // => 1 -> 2 -> 3 -> 4 -> 5 -> 9 -> null;
+
+  //edge case; if one is emtpy, return the other
+  if (!headOne) return headTwo;
+  if (!headTwo) return headOne;
+
+  //capture the head of both LL
+  //compare the values
+  //then add them in;
+  //if one list has any remaining, add in the rest
+  //else return the head;
+
+  let current1 = headOne;
+  let current2 = headTwo;
+  let head;
+  let tail;
+
+  if (current1.value < current2.value) {
+    head = current1;
+    current1 = current1.next;
+  } else {
+    head = current2;
+    current2 = current2.next;
+  }
+  tail = head;
+
+  while (current1 !== null && current2 !== null) {
+    if (current1.value < current2.value) {
+      tail.next = current1;
+      current1 = current1.next;
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
+  }
+
+  if (current1 !== null) tail.next = current1;
+  if (current2 !== null) tail.next = current2;
+
+  return head;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.mergeLinkedLists = mergeLinkedLists;
