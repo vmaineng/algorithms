@@ -729,3 +729,44 @@ function mergeLinkedLists(headOne, headTwo) {
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
 exports.mergeLinkedLists = mergeLinkedLists;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function removeDuplicatesFromLinkedList(linkedList) {
+  //receive the head of a linkedlist
+  //return the linkedlist removing duplicate values
+  //1 -> 2 ->  2 -> 3 -> null
+  // => 1 -> 2 -> 3 -> null
+
+  //edge case: if the head is empty, return null;
+
+  //capture the head of the linkedlist
+  //traverse through entire LL until hit null;
+  //check the current node values and the next node values,
+  //if they are the same, current node point to the next node after it
+  //else move the current node to the node next since they are not the same
+  //return linkedlist
+
+  if (!linkedList) return null;
+
+  let current = linkedList;
+
+  while (current !== null && current.next !== null) {
+    if (current.value === current.next.value) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+  return linkedList;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.removeDuplicatesFromLinkedList = removeDuplicatesFromLinkedList;
