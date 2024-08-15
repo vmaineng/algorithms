@@ -770,3 +770,44 @@ function removeDuplicatesFromLinkedList(linkedList) {
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
 exports.removeDuplicatesFromLinkedList = removeDuplicatesFromLinkedList;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function reverseLinkedList(head) {
+  // receive the head of a LL
+  //return the LL in reverse
+  // 1-> 2 -> 3 -> null => 3-> 2 -> 1 -> null
+
+  //edge case: if it's empty, return null;
+
+  //create a prev node set it null;
+  //have a pointer on the first node of LL
+  //capture the next node;
+  //have the pointer point to prev;
+  //move prev to current node;
+  //move current node to next
+  //return prev
+
+  if (!head) return null;
+
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.reverseLinkedList = reverseLinkedList;
