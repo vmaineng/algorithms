@@ -811,3 +811,13 @@ function reverseLinkedList(head) {
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
 exports.reverseLinkedList = reverseLinkedList;
+
+function saleHotdogs(n) {
+  //receive an integer
+  //return the amount paid per unit
+  //4 => 400;
+
+  //if n < 5, 100 * n; else if n >= 5 && n < 10 , 95 * n; else n * 90
+
+  return n < 5 ? n * 100 : n >= 5 && n < 10 ? n * 95 : n * 90;
+}
