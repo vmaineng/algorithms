@@ -821,3 +821,111 @@ function saleHotdogs(n) {
 
   return n < 5 ? n * 100 : n >= 5 && n < 10 ? n * 95 : n * 90;
 }
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+  //input: string : consist of lowercase, uppercasae, space, puncations, number
+  //return a boolean; true if it is a palindrome; else false;
+
+  //'RaCecar' => 'racecar' => true;
+  // 'racecar'
+
+  //'h5ll0!' => 'h5ll0' => false
+  //'0ll50'
+
+  //'hi, the FiSh' => 'hithefish'
+
+  //edge case: if it's empty, return true;
+  //if string only has one element, return true;  'a' => 'a'
+
+  //take the string, lowercase it. split it on spaces
+
+  //initialize an empty string
+  //check to see if it has numbers and letters; (helps ignore the punctation marks)
+  //reverse method -
+  //join it back with ""
+
+  //check to see if the reverse string matches the string input
+
+  if (!s) return true;
+  if (s.length === 1) return true;
+
+  s = s.toLowerCase();
+
+  let left = 0;
+  let right = s.length - 1;
+  //ensures condition is met as long as left pointer is left of the right pointer
+  while (left < right) {
+    //the inner while loops
+    //Within each iteration of the outer while loop, the code compares the characters at the left and right pointers.
+    //If the characters don't match, the function returns false, indicating that the string is not a palindrome.
+    //If they do match, the pointers are moved inward (left++ and right--), and the process repeats for the next pair of characters.
+    while (left < right && !isAlphanumeric(s[left])) {
+      left++;
+    }
+
+    while (left < right && !isAlphanumeric(s[right])) {
+      right--;
+    }
+    // Compare the characters at the left and right pointers
+    if (s[left] !== s[right]) {
+      return false;
+    }
+
+    // Move pointers inward
+    left++;
+    right--;
+  }
+  return true;
+};
+
+function isAlphanumeric(char) {
+  return (char >= "a" && char <= "z") || (char >= "0" && char <= "9");
+}
+
+//time: O(N)
+//space: O(N)
+
+import { Interval } from "/opt/node/lib/lintcode/index.js";
+
+/**
+ * Definition of Interval:
+ * class Interval {
+ *   constructor(start, end) {
+ *     this.start = start;
+ *     this.end = end;
+ *   }
+ * }
+ */
+
+export class Solution {
+  /**
+   * @param intervals: an array of meeting time intervals
+   * @return: if a person could attend all meetings
+   */
+  canAttendMeetings(intervals) {
+    //receive an array of meetings (start and end)
+    //return boolean; true if they can make it; else, false;
+    //[(3, 15), (4, 8)] => false since 15 overlaps with 4 - 8
+
+    //sort start time
+    //iterate through the intervals
+    //check if the end time is >= start time
+    //return false
+    //else return true
+
+    intervals.sort((a, b) => a.start - b.start);
+
+    for (let i = 0; i < intervals.length; i++) {
+      const [end] = intervals[i].end;
+      const [nextStart] = intervals[i + 1].start;
+      if (end > nextStart) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
