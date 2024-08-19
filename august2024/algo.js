@@ -929,3 +929,43 @@ export class Solution {
     return true;
   }
 }
+
+console.log(
+  canAttendMeetings([
+    [3, 15],
+    [4, 8],
+  ])
+);
+
+function isMonotonic(array) {
+  //receive an array of integers
+  //return boolean ; true if monotonic; else false
+  //[-3, 1, 5, 1, 4] => false [ 5 -> 1]
+  //[3] = true;;
+
+  //check for both at the same time;
+  //set isDecreasing to true;
+  //set isIncreasing to true;
+
+  //iterate through the array
+  //look at the next value;
+  //check if the next value less than the current value, switch boolean to false
+
+  //return the value for isDecreasing and isIncreasing;
+
+  //edge case: if empty return true;
+  if (array.length <= 2) return true;
+
+  let isIncreasing = true;
+  let isDecreasing = true;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < array[i - 1]) isDecreasing = false;
+    if (array[i] > array[i - 1]) isIncreasing = false;
+  }
+
+  return isIncreasing || isDecreasing;
+}
+
+// Do not edit the line below.
+exports.isMonotonic = isMonotonic;
