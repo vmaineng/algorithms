@@ -969,3 +969,28 @@ function isMonotonic(array) {
 
 // Do not edit the line below.
 exports.isMonotonic = isMonotonic;
+
+function isMonotonic(array) {
+  //receive an array of integers (pos and neg)
+  //return true or false
+  //[3, 5, 6,7 2, 4, ] => false b/c 72 -> 4
+
+  //intiialize two variables set to true;
+  //iterate trhough the array
+  //check for both instances
+  //return the array back
+
+  if (array.length < 2) return true;
+
+  let isIncreasing = true;
+  let isDecreasing = true;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < array[i - 1]) isDecreasing = false;
+    if (array[i] > array[i - 1]) isIncreasing = false;
+  }
+  return isDecreasing || isIncreasing;
+}
+
+// Do not edit the line below.
+exports.isMonotonic = isMonotonic;
