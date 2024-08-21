@@ -994,3 +994,65 @@ function isMonotonic(array) {
 
 // Do not edit the line below.
 exports.isMonotonic = isMonotonic;
+
+function invertBinaryTree(tree) {
+  //receive an input of the roote note of a tree
+  //return the tree where the nodes are swapped
+
+  //iterative - take the nodes from the beginning of the array, swap, add them back in at the end
+  //done using BFS - uses queue - FIFO
+  //initalize a queue and pass in the root node
+  //take the current node (since FIFO)
+
+  //iterate through while queue is not empty
+  //remove the firstNode, swap it if there is a right node, add it back to the end
+
+  if (tree === null) return null;
+
+  const queue = [tree];
+  while (queue.length > 0) {
+    const current = queue.shift(); //this function will show the node that was popped off
+
+    const left = current.left;
+    current.left = current.right;
+    current.right = left;
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+  return tree;
+
+  //recursive: //dfs/post order traversal (starting at root node)
+  //base case: if the tree root is empty, return null
+
+  //recursive case:
+  //call on left node;
+  //call on right node;
+
+  //swap the nodes
+  //return the tree;
+
+  if (!tree) return null;
+
+  invertBinaryTree(tree.left);
+  invertBinaryTree(tree.right);
+
+  let temp = tree.left;
+  tree.left = tree.right;
+  tree.right = temp;
+
+  //O(n): time
+  //O(d):
+}
+
+// This is the class of the input binary tree.
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Do not edit the line below.
+exports.invertBinaryTree = invertBinaryTree;
