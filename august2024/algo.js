@@ -1056,3 +1056,29 @@ class BinaryTree {
 
 // Do not edit the line below.
 exports.invertBinaryTree = invertBinaryTree;
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function (s) {
+  //receive a string of characters - uppercase, lowercase, space.
+  //return the length of last word in string
+
+  //'hello world' => 'world' => 5
+  //jump around' => 'around' => 6
+
+  //edge case; if there's only one word; return th elength of the one word
+
+  //split strings into spaces
+  //grab the last string
+  //return the length
+
+  if (s.length === 1) return s.length;
+
+  s = s.trim().split(" ");
+  console.log(s);
+  const lastWord = s[s.length - 1];
+  console.log(lastWord);
+  return lastWord.length;
+};
