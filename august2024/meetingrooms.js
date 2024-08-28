@@ -145,3 +145,61 @@ function longestPeak(array) {
 
 // Do not edit the line below.
 exports.longestPeak = longestPeak;
+
+// Do not edit the class below except for the buildHeap,
+// siftDown, siftUp, peek, remove, and insert methods.
+// Feel free to add new properties and methods to the class.
+class MinHeap {
+  constructor(array) {
+    this.heap = this.buildHeap(array);
+  }
+
+  buildHeap(array) {
+    // 
+  }
+
+  siftDown() {
+    // Write your code here.
+  }
+
+  siftUp(currentIdx, heap) {
+    //find the parent first
+    //keep going while element hasn't reached the beginning of the arry
+    //and as long as the value is < parent
+    //swap the newNode and parent
+    //assign the newNode's temp and parent's value
+    //newNode = parent's Idx
+    //recalc parent's Idx if necessary
+
+    let parentIdx = Math.floor((currentIdx - 1) / 2)
+    while (currentIdx >= 0 && heap[currentIdx] < heap[parentIdx]) {
+      this.heap.swap(currentIdx, parentIdx, heap)
+      currentIdx = parentIdx
+      parentIdx = Math.floor((currentIdx - 1) / 2))
+    }
+  }
+
+  peek() {
+   this.heap[0]
+  }
+
+  remove() {
+    // Write your code here.
+  }
+
+  insert(value) {
+    //push the element
+    //sift up if necessary to make sure nodes are correct
+     this.heap.push(value)
+    this.siftUp(this.heap.length - 1, this.heap)
+  }
+
+swap(i, j, heap) {
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+}
+}
+
+// Do not edit the line below.
+exports.MinHeap = MinHeap;
