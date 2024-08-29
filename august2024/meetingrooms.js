@@ -155,7 +155,7 @@ class MinHeap {
   }
 
   buildHeap(array) {
-    // 
+    //
   }
 
   siftDown() {
@@ -163,24 +163,24 @@ class MinHeap {
   }
 
   siftUp(currentIdx, heap) {
-    //find the parent first
-    //keep going while element hasn't reached the beginning of the arry
+    //find the parent index
+    //keep going while element hasn't reached the beginning of the array
     //and as long as the value is < parent
     //swap the newNode and parent
     //assign the newNode's temp and parent's value
     //newNode = parent's Idx
     //recalc parent's Idx if necessary
 
-    let parentIdx = Math.floor((currentIdx - 1) / 2)
+    let parentIdx = Math.floor((currentIdx - 1) / 2);
     while (currentIdx >= 0 && heap[currentIdx] < heap[parentIdx]) {
-      this.heap.swap(currentIdx, parentIdx, heap)
-      currentIdx = parentIdx
-      parentIdx = Math.floor((currentIdx - 1) / 2))
+      this.heap.swap(currentIdx, parentIdx, heap);
+      currentIdx = parentIdx;
+      parentIdx = Math.floor((currentIdx - 1) / 2);
     }
   }
 
   peek() {
-   this.heap[0]
+    this.heap[0];
   }
 
   remove() {
@@ -190,16 +190,29 @@ class MinHeap {
   insert(value) {
     //push the element
     //sift up if necessary to make sure nodes are correct
-     this.heap.push(value)
-    this.siftUp(this.heap.length - 1, this.heap)
+    this.heap.push(value);
+    this.siftUp(this.heap.length - 1, this.heap);
   }
 
-swap(i, j, heap) {
-  let temp = array[i];
-  array[i] = array[j];
-  array[j] = temp;
-}
+  swap(i, j, heap) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
 // Do not edit the line below.
 exports.MinHeap = MinHeap;
+
+function seatsInTheater(nCols, nRows, col, row) {
+  //receive the total rows and totals, plus where I'm sitting (what row and col my seat is in)
+  //return total of how many seats are behind me and to the left of me;
+
+  //calc how many cols left taking total - where I'm sitting - 1;
+  //calc how many rows taking total rows - where i'm sitting
+  //multiply together and return the rows
+
+  let colsLeft = nCols - (col - 1);
+  let rowsLeft = nRows - row;
+  return colsLeft * rowsLeft;
+}
