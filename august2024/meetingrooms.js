@@ -216,3 +216,11 @@ function seatsInTheater(nCols, nRows, col, row) {
   let rowsLeft = nRows - row;
   return colsLeft * rowsLeft;
 }
+
+// add the value "codewars" to the websites array 1,000 times
+var websites = [];
+// const websites = new Array(1000).fill("codewars")
+
+for (let i = 0; i < 1000; i++) {
+  websites.push("codewars");
+}
