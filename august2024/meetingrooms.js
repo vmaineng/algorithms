@@ -224,3 +224,21 @@ var websites = [];
 for (let i = 0; i < 1000; i++) {
   websites.push("codewars");
 }
+
+function remove(string) {
+  //receive a string of lowercase and uppercase chars with exclamation point
+  //return a string with the exclamation mark removed at the end
+  //'Yo!' => 'Yo'
+  //'Mary' => "Mary"
+
+  //edge case => if string is empty, return empty string back
+  //check if end of string is an !, then slice it out
+  //return the string
+
+  if (!string) return "";
+
+  if (string[string.length - 1] === "!") {
+    return string.slice(0, -1);
+  }
+  return string;
+}
