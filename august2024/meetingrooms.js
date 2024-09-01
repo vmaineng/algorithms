@@ -242,3 +242,44 @@ function remove(string) {
   }
   return string;
 }
+
+function optimalFreelancing(jobs) {
+  //receive an array of objects
+  //return the totalMaxProfit made in 7 days
+
+  //objective is to make the most profit so I'd push as much as tasks as I can in 7 days
+
+  //use an array to store 7 days
+  //initialize a variable to hold max profit
+
+  //iterate through all jobs
+  //then iterate through the array,
+  //store the deadline in the 7 days array
+  //add the payment
+  //return payment
+
+  jobs.sort((a, b) => b.payment - a.payment);
+
+  let maxProfit = 0;
+  let fillJobs = new Array(7).fill(false);
+
+  for (const job of jobs) {
+    for (let day = Math.min(7, job.deadline) - 1; day >= 0; day--) {
+      //By iterating backward from the latest possible day (Math.min(7, job.deadline) - 1) to the earliest (day >= 0), the code tries to find the latest slot that fits the job's deadline.
+      //we want to do the job on the latest day possible
+      //ex: For example, consider the job { "deadline": 3, "payment": 50 }:
+
+      //Iteration Start: It starts checking from day 2 (Math.min(7, 3) - 1 = 2).
+      //For the job with a deadline of day 3 (zero-indexed as day 2 in the array)
+      if (!fillJobs[day]) {
+        fillJobs[day] = true;
+        maxProfit += job.payment;
+        break;
+      }
+    }
+  }
+  return maxProfit;
+}
+
+// Do not edit the line below.
+exports.optimalFreelancing = optimalFreelancing;
