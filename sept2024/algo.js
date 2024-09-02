@@ -33,3 +33,37 @@ function taskAssignment(k, tasks) {
 
 // Do not edit the line below.
 exports.taskAssignment = taskAssignment;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function removeDuplicatesFromLinkedList(linkedList) {
+  //receive a SLL in sorted order
+  //return the a LL where there are no duplicates
+  // 1 -> 1 -> 2 -> 3 -> null => 1 -> 2 -> 3 -> null
+
+  //iterate through LL while current and the next node is not null
+  //compare the two values
+  //if they are the same, point to the next next node
+  //return ll
+
+  let current = linkedList;
+
+  while (current !== null && current.next !== null) {
+    if (current.value === current.next.value) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+  return linkedList;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.removeDuplicatesFromLinkedList = removeDuplicatesFromLinkedList;
