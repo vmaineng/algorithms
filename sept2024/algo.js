@@ -67,3 +67,41 @@ function removeDuplicatesFromLinkedList(linkedList) {
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
 exports.removeDuplicatesFromLinkedList = removeDuplicatesFromLinkedList;
+
+// Do not edit the class below except
+// for the depthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+    constructor(name) {
+      this.name = name;
+      this.children = [];
+    }
+  
+    addChild(name) {
+      this.children.push(new Node(name));
+      return this;
+    }
+  
+    depthFirstSearch(array) {
+  //pushes the name of the node
+      //goes through each children of the node
+      //calls DFS on each child and add them into the array
+      //return array
+  
+  // Recursive Addition: Inside each recursive call:
+  
+  // The child node’s name is added to the array when array.push(this.name) runs for that child.
+  // This process continues for each child node, going as deep as possible into the tree before backtracking.
+  
+      array.push(this.name);
+      for (const child of this.children ) {
+        child.depthFirstSearch(array)
+      }
+    }
+    return array;
+  }
+  
+  // Do not edit the line below.
+  exports.Node = Node;
+  
