@@ -105,3 +105,63 @@ class Node {
   // Do not edit the line below.
   exports.Node = Node;
   
+  function riverSizes(matrix) {
+    //receive a matrix
+    //return the an array of where the river lies
+  
+    //use helper functions to traverse each river, count its size, and mark the cells as visited
+  
+    //create a visited matrix to track which cells have already been processed
+    //loop through each cell in the matrix
+    //if found an unvisited '1', initiate dfs or bfs to determine river size
+    //and mark all connected cells as visited
+    //add size of each river to the results array
+  
+    const sizes = [];
+    const visited = matrix.map(row => row.map(() => false));
+  
+    for (let i = 0; i < matrix.length;i++) {
+      for (let j = 0; j < matrix[i].length; j++) {
+        if (visited[i][j]) continue;
+        traverseNode(i, j, matrix, visited, sizes);
+      }
+    }
+    return sizes;
+  }
+  
+  function traverseNode(i, j, matrix, visited, sizes) {
+  let currentRiverSize = 0;
+    const nodesToExplore = [[i, j]] //stack for DFS
+  
+    while (nodesToExplore.length) {
+      const currentNode = nodesToExplore.pop();
+      const [currentI, currentJ] = currentNode;
+  
+      if (visited[currentI][currentJ]) continue;
+      visited[currentI][currentJ] = true;
+  
+  if (matrix[currentI][currentJ] === 0) continue; //skip non-river cells;
+      currentRiverSize++
+  
+  const unvisitedNeighbors = getUnvisitedNeighbors(currentI, currentJ, matrix, visited);
+      for (const neighbor of unvisitedNeighbors) {
+        nodesToExplore.push(neighbor);
+      }
+    }
+    if (currentRiverSize > 0) sizes.push(currentRiverSize);
+  }
+  
+  function getUnvisitedNeighbors(i, j, matrix, visited) {
+    const unvisitedNeighbors = [];
+    // Check neighbors: up, down, left, right
+    if (i > 0 && !visited[i-1][j]) unvisitedNeighbors.push([i-1, j]); //up
+    if (i < matrix.length - 1 && !visited[i + 1][j]) unvisitedNeighbors.push([i + 1, j]); //down
+    if (j > 0 && !visited[i][j-1]) unvisitedNeighbors.push([i, j-1]); //left
+    if (j < matrix[0].length - 1 && !visited [i][j + 1]) unvisitedNeighbors.push([i, j + 1]); //right
+    return unvisitedNeighbors
+    
+  }
+  
+  // Do not edit the line below.
+  exports.riverSizes = riverSizes;
+  
