@@ -117,13 +117,13 @@ class Node {
     //and mark all connected cells as visited
     //add size of each river to the results array
   
-    const sizes = [];
-    const visited = matrix.map(row => row.map(() => false));
+    const sizes = []; //stores the size of found rivers
+    const visited = matrix.map(row => row.map(() => false)); //track visited cells
   
     for (let i = 0; i < matrix.length;i++) {
       for (let j = 0; j < matrix[i].length; j++) {
         if (visited[i][j]) continue;
-        traverseNode(i, j, matrix, visited, sizes);
+        traverseNode(i, j, matrix, visited, sizes); // uses a stack called nodeExplore to perform DFS
       }
     }
     return sizes;
@@ -133,7 +133,7 @@ class Node {
   let currentRiverSize = 0;
     const nodesToExplore = [[i, j]] //stack for DFS
   
-    while (nodesToExplore.length) {
+    while (nodesToExplore.length) { //for each node visited, count if it is a river
       const currentNode = nodesToExplore.pop();
       const [currentI, currentJ] = currentNode;
   
@@ -148,9 +148,14 @@ class Node {
         nodesToExplore.push(neighbor);
       }
     }
+
+    //once a full river is traverse, the size is added to sizes array
     if (currentRiverSize > 0) sizes.push(currentRiverSize);
   }
   
+//explore neighbors - returns valid neighbors that haven't been visited;
+//helps expand DFS to adjacent cells
+
   function getUnvisitedNeighbors(i, j, matrix, visited) {
     const unvisitedNeighbors = [];
     // Check neighbors: up, down, left, right
