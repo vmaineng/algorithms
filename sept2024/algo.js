@@ -170,3 +170,67 @@ class Node {
   // Do not edit the line below.
   exports.riverSizes = riverSizes;
   
+  // This is an input class. Do not edit.
+class AncestralTree {
+    constructor(name) {
+      this.name = name;
+      this.ancestor = null;
+    }
+  }
+  
+  function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+  let currentOne = descendantOne;
+    let currentTwo = descendantTwo;
+  
+    while (currentOne !== currentTwo) {
+      currentOne = currentOne === topAncestor ? descendantTwo : currentOne.ancestor;
+      currentTwo = currentTwo === topAncestor ? descendantOne : currentTwo.ancestor;
+    }
+    return currentOne;
+  }
+  
+  // Do not edit the lines below.
+  exports.AncestralTree = AncestralTree;
+  exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
+  
+  // This is an input class. Do not edit.
+class AncestralTree {
+    constructor(name) {
+      this.name = name;
+      this.ancestor = null;
+    }
+  }
+  
+  function getDepth(descendant, topAnestor) {
+    let depth = 0;
+    while (descendant !== topAnestor) {
+      depth++;
+     descendant = descendant.ancestor;
+    }
+  return depth;
+  }
+  
+  function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+    //receive the top node
+    //return the node where both descendant nodes meet
+  
+    //obj = find the parentNode where two nodes "merge together" or meet in the tree structure
+    //calc depth of each node
+    //then equalize depths
+    //move both nodes up until they meet
+    //return the yca
+  
+    const depthOne = getDepth(descendantOne, topAncestor);
+    const depthTwo = getDepth(descendantTwo, topAncestor);
+  
+    if (depthOne > depthTwo) {
+      return backTrack(descendantOne, descendantTwo, depthOne - depthTwo)
+    }else {
+      return backTrack(descendantTwo, descendantOne, depthTwo - depthOne)
+    }
+  }
+  
+  // Do not edit the lines below.
+  exports.AncestralTree = AncestralTree;
+  exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
+  
