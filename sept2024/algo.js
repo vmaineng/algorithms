@@ -234,3 +234,27 @@ class AncestralTree {
   exports.AncestralTree = AncestralTree;
   exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
   
+  class Ship {
+    constructor(draft, crew) {
+      this.draft = draft
+      this.crew = crew
+    }
+    
+    //YOUR CODE HERE...
+    isWorthIt() {
+  //draft = total ship weight
+      //crew = # of humans
+      //eaach crew + 1.5
+      //draft - crew weight > 20, return true
+      //else return false
+      
+      let crewWeight = this.crew* 1.5
+     let newWeight = this.draft - crewWeight
+     
+     if (newWeight > 20) {
+       return true
+     } else { 
+     return false; 
+     }
+      }
+  }
