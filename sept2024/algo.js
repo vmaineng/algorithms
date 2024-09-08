@@ -258,3 +258,85 @@ class AncestralTree {
      }
       }
   }
+
+  function findSmallestInt(arr) {
+    //receive an array of integers 9pos and negative
+      //return tsmallest number
+      
+      //[34, 2, 5, -6, 6] => -6
+      
+      //sort the values smallest to biggest
+      //grab the first number
+      
+      arr.sort((a,b) => a - b);
+      return arr[0]
+    
+    //time: O(n log n)
+    //space: O(n) => sorting 
+    
+    //optimized method:
+      //capture the first value as smallest
+      //iterate through the rest of the array integers
+      //check if the value is smaller, than the current smallest one
+      //update if necessary
+      //return smallest value
+    
+      let smallestValue = arr[0]
+    
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] < smallestValue) {
+        smallestValue = arr[i]
+      }
+      }
+    return smallestValue
+    }
+    
+    //time:O(n)
+    //space:O(1)
+    
+    
+    //spread out the values and use Math.min
+    return Math.min(...arr)
+    
+    }
+    
+    //time:O(n)
+    //space:O(n)
+
+    function nodeDepths(root) {
+        //receive root of a tree
+         //return the depths of tree
+       
+         //if tree is empty, return 0;
+       
+         //create a stack
+         //add the root to the stack
+         //while stack is not empty, pop off the nodes, and add to the depths
+         //return depths
+       
+         if (!root) return 0;
+       let sumOfDepths = 0;
+         let stack = [{node: root, depth:0}];
+       
+         while (stack.length > 0 ) {
+           const { node, depth} = stack.pop();
+           if (node === null) continue;
+           sumOfDepths += depth
+           stack.push({node: node.left, depth: depth + 1})
+           stack.push({node: node.right, depth: depth + 1})
+         }
+         return sumOfDepths
+       }
+       
+       // This is the class of the input binary tree.
+       class BinaryTree {
+         constructor(value) {
+           this.value = value;
+           this.left = null;
+           this.right = null;
+         }
+       }
+       
+       // Do not edit the line below.
+       exports.nodeDepths = nodeDepths;
+       
