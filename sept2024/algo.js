@@ -340,3 +340,28 @@ class AncestralTree {
        // Do not edit the line below.
        exports.nodeDepths = nodeDepths;
        
+       function sumOfDifferences(arr) {
+        //receive an array of integers
+        //return the sum of the difference in pairs in descending order
+        //[34, 2, -4] = [ 32, 2, -4] = (32 - 4) + (2 - -4) 28 + 6 = 34
+        
+        //if array is empty, return 0
+        //initialize a total to 0 that the differences will add to
+        //iterate through the array
+        //calc the difference between two numbers
+        //add to the total
+        //move on to the rest of the array
+        //return the total
+        
+        if (!arr) return 0;
+        
+        arr.sort((a,b) => b - a);
+        
+        let total = 0;
+        
+        for (let i = 0; i < arr.length - 1; i++) {
+          let pairTotal = arr[i] - arr[i + 1]
+          total += pairTotal
+        }
+      return total
+      }
