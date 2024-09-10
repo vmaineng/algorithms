@@ -475,3 +475,35 @@ class Node {
   // Do not edit the line below.
   exports.Node = Node;
   
+  function twoColorable(edges) {
+    //receive a graph with verties and edges
+      //return true if can make graph two-colorable
+      //else false
+    
+      //create a stack that has same length of edges
+      //grab the first node
+    
+    
+      const colors = new Array(edges.length).fill(null);
+      colors[0] = true;
+      const stack = [0]; //use stack for dfs
+    
+      //start with the first node and color it with true
+    
+      while (stack.length > 0) {
+        const node = stack.pop();
+        for (const connection of edges[node]) {
+          if (colors[connection] === null) {
+            colors[connection] = !colors[node];
+            stack.push(connection);
+          } else if (colors[connection] === colors[node]) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    
+    // Do not edit the line below.
+    exports.twoColorable = twoColorable;
+    
