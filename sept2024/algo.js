@@ -397,3 +397,44 @@ class AncestralTree {
          return s.toLowerCase()
         }
         }
+
+        // Do not edit the class below except
+// for the breadthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+    constructor(name) {
+      this.name = name;
+      this.children = [];
+    }
+  
+    addChild(name) {
+      this.children.push(new Node(name));
+      return this;
+    }
+  
+    breadthFirstSearch(array) {
+  //return the final array with all nodes inside
+      //initialize our queue with current node (root node)
+      //while queue is not empty,
+      //grab first node (FIFO)
+      //add in the node to array
+      //then add in their children into the queue
+      //get out of the w hile loop
+      //return the array
+  const queue = [this]; 
+      while (queue.length > 0) {
+        const current = queue.shift();
+        array.push(current.name);
+        for (const child of current.children) {
+          queue.push(child)
+        }
+      }
+      return array;
+    }
+    //O(v+e) time; O(v) space (return length of V)
+  }
+  
+  // Do not edit the line below.
+  exports.Node = Node;
+  
