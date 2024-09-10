@@ -438,3 +438,40 @@ class Node {
   // Do not edit the line below.
   exports.Node = Node;
   
+  // Do not edit the class below except
+// for the depthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+    constructor(name) {
+      this.name = name;
+      this.children = [];
+    }
+  
+    addChild(name) {
+      this.children.push(new Node(name));
+      return this;
+    }
+  
+    depthFirstSearch(array) {
+  //dfs = goes deep
+      //add children to the array
+      //push in parent's node
+      //then iterate through it's children
+      
+    array.push(this.name) //push in the parent node
+      //then go through each child
+      //each child will repeat line 22
+      //where it gets pushed in and it traverse through it's child
+      //return array
+      for (const child of this.children) {
+    child.depthFirstSearch(array)
+      }
+      return array;
+   
+    }
+  }
+  
+  // Do not edit the line below.
+  exports.Node = Node;
+  
