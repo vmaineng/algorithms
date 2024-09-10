@@ -365,3 +365,35 @@ class AncestralTree {
         }
       return total
       }
+      function solve(s){
+        //receive a string of characters with no spaces
+          //return the string of char uppercase if majority of letters uppercase, else lowercase it
+          //'warS' => 'wars'
+          //'WaRs' => 'wars' => equal amount of uppercase and lowercase = change all to lowercase
+          
+          //edge case: if string length is empty, return an empty string
+          
+          //keep track of count of uppercase and lowercase
+          //if they're equal, lowercase them
+          //else if majority are uppercase, then uppercase teh words
+          //return string
+          
+          if (s.length === 0) return '';
+          
+        let upperCaseCount = 0;
+          let lowerCaseCount = 0;
+          
+          for (let char of s) {
+            if (char === char.toLowerCase()) {
+              lowerCaseCount++
+            } else {
+              upperCaseCount++
+            }
+          }
+        
+        if (upperCaseCount > lowerCaseCount) {
+          return s.toUpperCase()
+        } else {
+         return s.toLowerCase()
+        }
+        }
