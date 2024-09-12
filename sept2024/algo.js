@@ -558,3 +558,44 @@ class Node {
               
             return Math.ceil(n /5) * 5
             }
+
+            function nodeDepths(root) {
+                //receive a tree's root
+                  //return an integer stating level of trees
+                  //1 // 0 && then Node 2: Depth 1
+                //Node 3: Depth 1
+                //2  3 => 0 + 1 + 1 = 2, not 3.
+                
+                  //capture root node
+                  //create a stack
+                  //capture the node and depth
+                  //add in depth from left side
+                  //add in depth from right side
+                  //return the sum of depths
+                
+                let sumDepths = 0;
+                
+                  let stack = [{node: root, depths: 0}];
+                  while (stack.length > 0) {
+                    const {node, depths} = stack.pop();
+                    if (node === null) continue;
+                    sumDepths += depths;
+                    stack.push({node: node.left, depths: depths + 1});
+                 stack.push({node: node.right, depths: depths + 1});
+                
+                  }
+                return sumDepths
+                }
+                
+                // This is the class of the input binary tree.
+                class BinaryTree {
+                  constructor(value) {
+                    this.value = value;
+                    this.left = null;
+                    this.right = null;
+                  }
+                }
+                
+                // Do not edit the line below.
+                exports.nodeDepths = nodeDepths;
+                
