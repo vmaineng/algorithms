@@ -507,3 +507,54 @@ class Node {
     // Do not edit the line below.
     exports.twoColorable = twoColorable;
     
+    function generateDocument(characters, document) {
+        //receive a string of chars with spaces, uppercase and lowercase letters
+          //return true if you can make the document string with characters string
+          //document('hello', 'hi') => false b/c need 'ello'
+        
+          //edge case: if not the same length, can't generate the same string
+          //if string is empty, return 0;
+        
+          //freq counter pattern
+        
+          //create an object
+          //track how many values have been seen
+          //if values is not found in document's length, return false
+          //else after seaching entire string, return true
+        
+   
+          let objChars = {};
+        
+          for (let char of characters) {
+            if (!objChars[char]) {
+             objChars[char] = 0
+            }
+        objChars[char]++
+          }
+        
+        for (let char of document) {
+          if (!objChars[char] || objChars[char] === 0) {
+          return false;
+          }
+         objChars[char] -= 1
+        }
+        return true;
+        
+        }
+        
+        // Do not edit the line below.
+        exports.generateDocument = generateDocument;
+        
+        function roundToNext5(n){
+            //receive an integer as input
+              //return the next closest multiple of 5
+              
+              //25 => 25
+              //18 => 20 b/c 18/5; closest one is 20, so it's 20
+              
+              //take the integer module of 5
+              //round it up
+             //return what's it's difvided by
+              
+            return Math.ceil(n /5) * 5
+            }
