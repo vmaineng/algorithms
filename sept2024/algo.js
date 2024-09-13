@@ -631,4 +631,30 @@ class Node {
                     
                     // Do not edit the line below.
                     exports.generateDocument = generateDocument;
-                    
+                    function stringClean(s){
+                        //receive a string of characters - letters, spaces, digits
+                          //return remove numbers
+                          //'h3ello, worl2d' => 'hello, world'
+                          
+                          //look at each characters
+                          //check to see if it's a number, if it is don't add to the string
+                          //return the string back
+                         
+                        //edge cases: string is empty, return back an empty string
+                          
+                          //create a varaible to hold string
+                          //iterate through each characters in the string that we received
+                          //check if it does not equal a number, add it to string
+                          //return the string
+                          
+                          if (!s) return '';
+                          
+                          let stringWord = '';
+                          
+                         for (let i = 0; i < s.length; i++) {
+                           if (isNaN(s[i]) || s[i] === ' ') {
+                             stringWord += s[i]
+                           }
+                         }
+                        return stringWord;
+                        }
