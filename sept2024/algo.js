@@ -599,3 +599,36 @@ class Node {
                 // Do not edit the line below.
                 exports.nodeDepths = nodeDepths;
                 
+                function generateDocument(characters, document) {
+                    //receive a string of characters of chars and string of document of lowercase chars
+                      //return true if can make document out of chars, else false
+                      //'hazyew', 'hazy' => true
+                    
+                      //create an object of chars seen in characters
+                      //then iterate through document
+                      //if seen values, subtract by 1
+                    
+                      //if characters is missing and empty,return false
+                    //return true;
+                    
+                      let objChars = {};
+                    
+                      for (let char of characters) {
+                        if (!objChars[char]) {
+                          objChars[char] = 1
+                        }
+                    objChars[char] += 1
+                      }
+                    
+                    for (let char of document) {
+                      if (!objChars[char] || objChars[char] === 0) {
+                      return false
+                      }
+                      objChars[char] -= 1
+                    }
+                    return true;
+                    }
+                    
+                    // Do not edit the line below.
+                    exports.generateDocument = generateDocument;
+                    
