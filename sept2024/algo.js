@@ -658,3 +658,107 @@ class Node {
                          }
                         return stringWord;
                         }
+                        //time O(n) | space O(n)
+
+                        function generateRange(min, max, step){
+                            //receive 3 arguments; all integers
+                              //return an array showing the range of characters, based on steps
+                              //range(1, 3, 1) => [1, 2, 3]
+                              
+                              //create an array, push range of integers in
+                              //loop all the way up to max
+                              //increment by steps
+                              
+                              //edge case: steps can't be greater than max, return min
+                              if (step > max) return [min];
+                              
+                              let rangeArray = [];
+                              
+                              for (let i = min; i <= max; i += step) {
+                                rangeArray.push(i)
+                              }
+                            return rangeArray
+                            }
+                            
+                            //time: array = O(N)
+                            //space: array = O(N)
+
+                            function weatherInfo (temp) {
+                                const c = convertToCelsius(temp)
+                                console.log("c", c)
+                                if (c < 0)
+                                  return (c + " is freezing temperature")
+                                else
+                                  return (c + " is above freezing temperature")
+                              }
+                              
+                              function convertToCelsius (temp) {
+                                const celsius = (temp - 32) * (5/9)
+                                console.log("celsius", celsius)
+                                return celsius
+                              }
+
+                              function nodeDepths(root) {
+                                //receive the root of a tree
+                                  //return an integer of how many node's depths there are
+                                  // 1 => 1 depth
+                                
+                                
+                                  //go deep left, go deep right => dfs => stack => LIFO
+                                
+                                  //initialize a variable to hold the root node in a stack
+                                  //a variable to count how many integers
+                                  //iterate through the stack while it's not empty
+                                  //look at the node and add depth by 1
+                                  //do for left side and right side
+                                  //return level of depths
+                                
+                                  let stack = [{node: root, depth: 0}];
+                                  let sumOfDepths = 0;
+                                
+                                  while (stack.length > 0) {
+                                    const {node, depth} = stack.pop();
+                                    if (node === null) continue;
+                                    sumOfDepths += depth;
+                                    stack.push({node: node.left, depth: depth + 1});
+                                    stack.push({node: node.right, depth: depth + 1});
+                                  }
+                                  return sumOfDepths
+                                }
+                                
+                                // This is the class of the input binary tree.
+                                class BinaryTree {
+                                  constructor(value) {
+                                    this.value = value;
+                                    this.left = null;
+                                    this.right = null;
+                                  }
+                                }
+                                
+                                // Do not edit the line below.
+                                exports.nodeDepths = nodeDepths;
+                                
+                                function nodeDepths(root, depth = 0) {
+                                    //receive root node;
+                                    
+                                      //base case;
+                                      if (!root) return 0;
+                                    
+                                      //recursive: 
+                                      //pass in a depth parameter at 0;
+                                      //traverse through left and right childs
+                                     return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1) 
+                                    }
+                                    
+                                    // This is the class of the input binary tree.
+                                    class BinaryTree {
+                                      constructor(value) {
+                                        this.value = value;
+                                        this.left = null;
+                                        this.right = null;
+                                      }
+                                    }
+                                    
+                                    // Do not edit the line below.
+                                    exports.nodeDepths = nodeDepths;
+                                    
