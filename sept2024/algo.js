@@ -762,3 +762,45 @@ class Node {
                                     // Do not edit the line below.
                                     exports.nodeDepths = nodeDepths;
                                     
+                                    // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function evaluateExpressionTree(tree) {
+  //receive the root of a tree 
+    //return an integer from the operators conducted
+  
+    //eddge case: if root tree is empty, return 0
+  
+    //intialize a sum
+    //iterate through left side of tree
+    //iterate through right side of tree
+    //if the value of the node is -1, left + right
+    //if value is -2, left - right
+    //if valueis -3, left / right
+    //if value is -4, left * right
+    
+  //return value
+  
+  //the leaf nodes represent numbers (operands), while the parent nodes (non-leaf nodes) represent operators (evaluators)
+  
+  if (tree.value >=0 ) return tree.value;
+    const leftValue = evaluateExpressionTree(tree.left);
+    const rightValue = evaluateExpressionTree(tree.right);
+  
+  if (tree.value === -1) return leftValue + rightValue;
+    if (tree.value === -2) return leftValue - rightValue;
+    if (tree.value === -3 ) return Math.trunc(leftValue / rightValue);
+  
+  return leftValue * rightValue
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.evaluateExpressionTree = evaluateExpressionTree;
+  
