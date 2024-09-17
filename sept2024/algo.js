@@ -803,4 +803,53 @@ class BinaryTree {
   // Do not edit the lines below.
   exports.BinaryTree = BinaryTree;
   exports.evaluateExpressionTree = evaluateExpressionTree;
-  
+
+  let encoded = "";
+  let count = 1;
+
+for (let i = 1; i <= string.length; i++) {
+  if (i < string.length && string[i] === string[i - 1]) {
+    count++
+if (count === 10) {
+  encoded += "9" + string[i - 1]
+  count = 1
+}
+  } else {
+  encoded += `${count}` + string[i-1]
+  count = 1
+}
+}
+  return encoded
+}
+    
+    // Do not edit the line below.
+    exports.runLengthEncoding = runLengthEncoding;
+    
+    function runLengthEncoding(string) {
+        //create a string to hold encoded
+         //iterate through string
+         //grab the first char
+         //add the number
+         //check if letters still equal each other and count < 9
+         //return the  string
+       
+       let encodedString = "";
+         let count = 1;
+         let char = null;
+       
+         for (let i = 0; i < string.length; i++) {
+           char = string[i]
+       
+       if (char === string[i + 1] && count <9) {
+       count++
+       } else {
+         encodedString += `${count}${char}`
+         count= 1;
+       }
+         }
+         return encodedString
+       }
+       
+       // Do not edit the line below.
+       exports.runLengthEncoding = runLengthEncoding;
+       
