@@ -892,4 +892,40 @@ class Node {
     
     }
     
+    function generateDocument(characters, document) {
+        //receive a string for chars and document
+         //return true if can generate document from chars, else false
+       
+         //'hello', 'hlo' => false; need an 'e', 'l'
+       
+       //edge case: if chars is empty;
+         //if both chars and document, return true;
+       
+         //iterate through chars, keep count of frequency
+         //iterate through document, each time a char is found, decrement it from the object
+         //if can't find a value, return false
+         //else return true;
+       
+         let chars = {};
+       
+         for (let char of characters){
+           if (!chars[char]){
+             chars[char] = 0
+           } 
+             chars[char]++
+           
+         }
+       
+         for (let char of document) {
+            if (!chars[char] || chars[char] === 0) {
+              return false
+            }
+          chars[char]--
+          }
+          return true
+       }
+       
+       // Do not edit the line below.
+       exports.generateDocument = generateDocument;
+       
     
