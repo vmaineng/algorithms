@@ -880,3 +880,16 @@ class Node {
   // Do not edit the line below.
   exports.Node = Node;
   
+  function animal(obj){
+    //receive an object
+      //return a string of the values
+      //obj= {
+      //name: "mary",
+      //last: "joe"
+    // } => 'Their name is mary joe'
+    
+    return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+    
+    }
+    
+    
