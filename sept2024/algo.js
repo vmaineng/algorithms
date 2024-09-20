@@ -928,4 +928,36 @@ class Node {
        // Do not edit the line below.
        exports.generateDocument = generateDocument;
        
-    
+       function arrayOfProducts(array) {
+        //receive an array of integers
+          //return an output array where all integers of the product sums
+          //[1, 2, 4] => [6, 4, 2]
+        
+          //create an array to store the output
+          //edge cases: if array is empty, return an empty array
+          //keep a pointer on first value;
+          //create a second pointer to the value right of it;
+          //multiply each value
+          //push value into array;
+          //return new array;
+          
+        let productArray = [];
+        
+          for (let i = 0; i < array.length; i++) {
+            let multiplier = 1
+            for (let j = 0; j < array.length; j++) {
+              if (i !== j) {
+                multiplier *= array[j]
+              }
+        productArray[i] = multiplier
+            }
+          }
+        return productArray
+        }
+        
+        //time:O(n^2)
+        //space:O(n)
+        
+        // Do not edit the line below.
+        exports.arrayOfProducts = arrayOfProducts;
+        
