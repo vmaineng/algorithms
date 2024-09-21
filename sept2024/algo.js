@@ -961,3 +961,36 @@ class Node {
         // Do not edit the line below.
         exports.arrayOfProducts = arrayOfProducts;
         
+        function arrayOfProducts(array) {
+            //receive an array of integers unsorted
+             //return an aray back with products
+             //[3,2] => [2, 3]
+           
+             //create an array product
+             //iterate through array starting at left at 0
+             //add to the array product
+             //iterate trhough array starting at right at the end
+             //add to the array product
+             //return array product
+           
+             let productArray = new Array(array.length).fill(1)
+           
+             let multipler = 1;
+             for (let i = 0 ; i < array.length; i++) {
+               productArray[i] = multipler
+                 multipler *= array[i]
+             }
+           
+             let rightMultipler = 1;
+           for (let j = array.length - 1; j >=0; j--) {
+             productArray[j] *= rightMultipler //For each element, it multiplies the existing value in productArray[j] 
+             //(which already contains the product of elements to the left) by the product of elements to the right, updating the final result.
+             rightMultipler *= array[j]
+           }
+           
+           return productArray
+           }
+           
+           // Do not edit the line below.
+           exports.arrayOfProducts = arrayOfProducts;
+           
