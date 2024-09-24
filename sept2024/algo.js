@@ -994,3 +994,30 @@ class Node {
            // Do not edit the line below.
            exports.arrayOfProducts = arrayOfProducts;
            
+           // This is an input class. Do not edit.
+class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function validateBst(tree, min = -Infinity, max = Infinity) {
+   //receive a root node of a tree
+    //return true if bst is valid, else false
+  
+    //base case: if node's value is < than min, and greater than max, return false
+    //recursive case: keep traversing left and checking the value, and keep traversing right and check the values
+  
+    if (!tree) return true;
+  
+    if (tree.value <= min || tree.value >= max) return false;
+    
+  return validateBst(tree.left, min, tree.value) && validateBst(tree.right, tree.value, max)
+  }
+  
+  // Do not edit the line below.
+  exports.BST = BST;
+  exports.validateBst = validateBst;
+  
