@@ -1096,6 +1096,8 @@ class LinkedList {
       diameter = Math.max(diameter, leftHeight + rightHeight);
   
       // Return the height of this node
+      //determines the max height of the two subtrees,
+      //adds 1 for the height of the current node
       return Math.max(leftHeight, rightHeight) + 1;
     }
   
@@ -1111,4 +1113,42 @@ class LinkedList {
   root.left.right = new TreeNode(5);
   
   console.log(diameterOfBinaryTree(root));  // Output: 3
+  
+  function invertBinaryTree(tree) {
+    //receive a tree root node
+      //return the tree with nodes reverted
+    
+      //recursive bfs - level order traversal
+    
+      //edge case; if tree node is empty, return null
+      //traverse through left, traverse through right
+      //swap
+      //return tree
+    
+      if (!tree) return null;
+    
+      if (tree) {
+        let temp = tree.left
+        tree.left = tree.right;
+        tree.right = temp
+      }
+    
+       invertBinaryTree(tree.left)
+        invertBinaryTree(tree.right) 
+    
+    return tree
+    }
+    
+    // This is the class of the input binary tree.
+    class BinaryTree {
+      constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+      }
+    }
+    
+    // Do not edit the line below.
+    exports.invertBinaryTree = invertBinaryTree;
+    
   
