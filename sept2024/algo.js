@@ -1012,7 +1012,7 @@ class BST {
   
     if (!tree) return true;
   
-    if (tree.value <= min || tree.value >= max) return false;
+    if (tree.value < min || tree.value >= max) return false;
     
   return validateBst(tree.left, min, tree.value) && validateBst(tree.right, tree.value, max)
   }
@@ -1020,4 +1020,95 @@ class BST {
   // Do not edit the line below.
   exports.BST = BST;
   exports.validateBst = validateBst;
+  
+  // This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  exports.LinkedList = LinkedList;
+  
+  function mergingLinkedLists(linkedListOne, linkedListTwo) {
+  //receive two LL's 
+    //return the node where the two LL merges
+    //1 -> 2 -> 3 -> null
+    // 2-> 3 -> null
+  
+  //return 2 -> 3
+  
+    //keep track of the head LL1
+    //keep track of the head LL2
+  
+    //while the values do not equal, 
+    //keep traversing
+    //if we hit the null of the linked list, go look in the other LL
+  //return the first current head
+  
+    let p1 = linkedListOne;
+    let p2 = linkedListTwo;
+  
+    while (p1 !== p2) {
+      p1 = p1 === null ? linkedListTwo : p1.next
+      p2 = p2 === null ? linkedListOne : p2.next
+    }
+    return p1
+  }
+  
+  // Do not edit the line below.
+  exports.mergingLinkedLists = mergingLinkedLists;
+  
+
+  class TreeNode {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  // Separate function to find the longest path (or height)
+  function longestPath(node) {
+    if (!node) return 0;  // Base case: null node has height 0
+  
+    // Recursively find the height of the left and right subtrees
+    let leftHeight = longestPath(node.left);
+    let rightHeight = longestPath(node.right);
+  
+    // Return the height of the current node
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
+  
+  // Main function to find the diameter
+  function diameterOfBinaryTree(root) {
+    let diameter = 0;  // Store the maximum diameter found
+  
+    function calculateDiameter(node) {
+      if (!node) return 0;
+  
+      // Get the height of the left and right subtrees
+      let leftHeight = longestPath(node.left);
+      let rightHeight = longestPath(node.right);
+  
+      // Update the diameter if the path through this node is larger
+      diameter = Math.max(diameter, leftHeight + rightHeight);
+  
+      // Return the height of this node
+      return Math.max(leftHeight, rightHeight) + 1;
+    }
+  
+    calculateDiameter(root);  // Start the recursion from the root node
+    return diameter;  // Return the largest diameter found
+  }
+  
+  // Example binary tree
+  let root = new TreeNode(1);
+  root.left = new TreeNode(2);
+  root.right = new TreeNode(3);
+  root.left.left = new TreeNode(4);
+  root.left.right = new TreeNode(5);
+  
+  console.log(diameterOfBinaryTree(root));  // Output: 3
   
