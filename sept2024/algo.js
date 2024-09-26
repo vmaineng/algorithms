@@ -1151,4 +1151,24 @@ class LinkedList {
     // Do not edit the line below.
     exports.invertBinaryTree = invertBinaryTree;
     
-  
+    function getPermutations(array, perm=[], output=[]) {
+        // Base case: if the input array is empty, push the current permutation to output
+        if (array.length === 0) {
+          output.push(perm);  // Store the permutation
+          return [];
+        }
+        
+        // Iterate through the elements of the array
+        for (let i = 0; i < array.length; i++) {
+          let curr = array[i];  // Select the current element
+          let newArr = array.filter(integer => integer !== curr);  // Create a new array excluding the current element
+          let newPerm = perm.concat([curr]);  // Add the current element to the permutation path
+          
+          // Recursive call to continue building permutations with the new array and new permutation path
+          getPermutations(newArr, newPerm, output);
+        }
+        
+        // Once all permutations are generated, return the output
+        return output;
+      }
+      
