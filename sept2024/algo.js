@@ -1172,3 +1172,82 @@ class LinkedList {
         return output;
       }
       
+      // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function binaryTreeDiameter(tree) {
+  //receive the root node of a tree
+    //return the longestpath of edges between nodes
+  
+    //base case: if there is no more node, return null
+    //recursive case: keep calling left and right
+    //return the diameter
+
+    //diameter = height of left + height of right
+    //add 1 for the parent's node
+    //you calculate the height of the left and right subtrees
+    //add in 1 for the parent's node
+    //return the diameter
+  
+    let diameter = 0;
+  
+    function traverseTree(node) {
+        if (!node) return 0;
+      let left = traverseTree(node.left, height);
+      let right = traverseTree(node.right, height);
+      diameter = Math.max(diameter, left + right)
+      return 1 + Math.max(left, right) // Return the height of the current node
+    }
+    traverseTree(tree)
+    return diameter
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.binaryTreeDiameter = binaryTreeDiameter;
+  
+  // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function binaryTreeDiameter(tree) {
+  //receive the root node of a tree
+    //return an integer of the longest path in the tree connected
+  
+    //initialize a variable to keep track of the diameter
+    //iterate through the left side of a tree
+    //iterate through the right side of a tree
+    //update diameter's length based on max length seen
+    //add +1 to account for height every time traverse
+  //return diameter
+  
+    let diameter = 0;
+  
+    function calculateHeight(node) {
+      if (!node) return 0;
+  
+      const left = calculateHeight(node.left);
+      const right = calculateHeight(node.right);
+    diameter = Math.max(diameter, left + right); //diameter
+      return 1 + Math.max(left, right) //height
+    }
+    calculateHeight(tree);
+    return diameter
+  
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.binaryTreeDiameter = binaryTreeDiameter;
+  
