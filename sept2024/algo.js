@@ -1251,3 +1251,90 @@ class BinaryTree {
   exports.BinaryTree = BinaryTree;
   exports.binaryTreeDiameter = binaryTreeDiameter;
   
+  function zeroSumSubarray(nums) {
+    //receive an array of integers; pos and negative; not sorted
+      //return true if there is a zero sum subarray ,else false after looking through entire array
+      //[-3, 5, 2] => true b/c the whole entire array
+    
+      //edge case: if the nums is empty, return false;
+    
+      //brute force; sliding window technique;
+      //nested loop
+      //create a sum variable
+      //start at first index
+      //increment through the array
+      //if the num total is positive, move left pointer in
+    
+      let sum = 0;
+    
+      let i = 0;
+    
+      for (let j = 0; j < nums.length; j++) {
+        if (sum > 0) {
+          i++
+        } else {
+          return true
+        }
+      }
+    return false
+      
+    }
+    
+    // Do not edit the line below.
+    exports.zeroSumSubarray = zeroSumSubarray;
+    
+    function zeroSumSubarray(nums) {
+        //receive an array of integers
+          //return true if zero-sum subarray exists, else return false
+        
+          //[3, 4, 2, 5, 6 , 0] => true b/c of 0
+        
+          //brute force: use a sliding window
+        
+        //let left pointer start at first value
+          //let right pointer start at second value
+          //if the total is 0, return true, else keep moving right window
+        
+          //when to move left window?
+        
+          //return false after looking at entire array
+        
+          if (!nums) return false;
+        
+          let sum = [0];
+        
+        for (let i = 0; i < nums.length; i++) {
+          let currentSum = sum[i] + nums[i];
+          if (sum.includes(currentSum)) {
+            return true;
+          }
+          sum.push(currentSum);
+        }
+          return false;
+        }
+        
+        // Do not edit the line below.
+        exports.zeroSumSubarray = zeroSumSubarray;
+        
+        function zeroSumSubarray(nums) {
+            //receive an array of integers
+              //return true, else return false
+            
+              if (!nums) return false;
+            
+              let subSet = new Set([0]);
+               let currentSum = 0
+            
+              for (let num of nums) {
+                currentSum += num
+                if (subSet.has(currentSum)) {
+                  return true
+                }
+                subSet.add(currentSum)
+              }
+              return false
+            }
+            
+            // Do not edit the line below.
+            exports.zeroSumSubarray = zeroSumSubarray;
+            
