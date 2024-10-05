@@ -311,3 +311,40 @@ var maxOperations = function(nums, k) {
         // Do not edit the line below.
         exports.firstNonRepeatingCharacter = firstNonRepeatingCharacter;
         
+        // This is an input class. Do not edit.
+class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function findKthLargestValueInBst(tree, k) {
+  //receive the root node of a tree and an integer stating the largest integer contained in the bst
+  
+    //edge case: k exceeds tree's length
+  
+    //brute force;
+    //solve it using an array and return the end of the array - k
+    //base case: if k = 0, return the last array
+  
+    //else, traverse through left, then traverse through right, push nodes into an array
+  
+    const sortedValues = [];
+    inOrderTraverse(tree, sortedValues);
+    return sortedValues[sortedValues.length - k];
+  
+    function inOrderTraverse(node, sortedValues) {
+      if (node == null) return ;
+      inOrderTraverse(node.left, sortedValues);
+      sortedValues.push(node.value)
+      inOrderTraverse(node.right, sortedValues);
+  }
+    
+  }
+  
+  // Do not edit the lines below.
+  exports.BST = BST;
+  exports.findKthLargestValueInBst = findKthLargestValueInBst;
+  
