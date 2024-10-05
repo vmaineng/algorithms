@@ -273,3 +273,41 @@ var maxOperations = function(nums, k) {
     }
     return count
     };
+
+    function firstNonRepeatingCharacter(string) {
+        //receive a string of letters (all lowercase)
+          //return the index of the string's first nonRepeat char
+        
+          //'hiehsljf' => '1' b/c of 'i'
+        
+          //edge case: if string is empty, return -1;
+        
+          //if string is 1, return 0
+        
+          //brute force: 
+          //keep a pointer on the first value
+          //create a second pointer on the second value
+          //check if the value are equal to each other,
+          //if they are not, move on to the next one
+          //if not found after searching entire string, return i
+          //else return -1
+        
+          if (!string) return -1; 
+          if (string.length === 1) return 0;
+        
+          for (let i = 0; i < string.length;i++) {
+            let foundDuplicate = false;
+            for (let j = 0; j < string.length; j++) {
+              if (string[i] === string[j] && i !== j) foundDuplicate = true;
+            }
+            if (!foundDuplicate) return i
+          }
+        return -1
+        
+          //start j at index 0 b/c when i is at index 3, j will check the values again starting from index 0
+        
+        }
+        
+        // Do not edit the line below.
+        exports.firstNonRepeatingCharacter = firstNonRepeatingCharacter;
+        
