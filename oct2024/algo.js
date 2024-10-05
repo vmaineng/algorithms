@@ -348,3 +348,40 @@ class BST {
   exports.BST = BST;
   exports.findKthLargestValueInBst = findKthLargestValueInBst;
   
+  // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  //O(n) time for all nodes; O(h) space due to recursion stack
+  function heightBalancedBinaryTree(tree) {
+  //receive the root node of a binary tree;
+  //return true if height is balanced, else false
+  
+    //if height is empty, return true;
+  
+    //traverse through left sub tree, count how many edges
+    //traverse through right subtree, count how many edges
+  
+  
+    function calcHeight(node, height, balance) {
+        if (!node) return height;
+      const leftHeight = calcHeight(node.left, height+1, balance);
+      const rightHeight = calcHeight(node.right, height+1, balance);
+  
+      if (Math.abs(leftHeight - rightHeight) > 1) balance.isBalanced = false;
+      return Math.max(leftHeight, rightHeight)
+    }
+    const balance = {isBalanced: true};
+    calcHeight(tree, 0, balance);
+    return balance.isBalanced;
+  
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.heightBalancedBinaryTree = heightBalancedBinaryTree;
+  
