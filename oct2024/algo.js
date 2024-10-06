@@ -385,3 +385,44 @@ class BinaryTree {
   exports.BinaryTree = BinaryTree;
   exports.heightBalancedBinaryTree = heightBalancedBinaryTree;
   
+  \// This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+      this.parent = null;
+    }
+  }
+  
+  // If the node has a right child, traverse down to find the leftmost node in the right subtree.
+  // If the node does not have a right child, traverse up the tree using the parent pointer until you find a node where the given node is in the left subtree (i.e., where the node is the left child of its parent).
+  // If no such node exists (e.g., the node is the rightmost node), return null.
+  
+  
+  function findSuccessor(tree, node) {
+  if (node.right) {
+    return getLeftMostChild(node.right);
+  }
+    return getRightmostParent(node);
+  }
+  
+  function getLeftMostChild(node) {
+    let current = node;
+    while (current.left) {
+      current = current.left;
+    }
+    return current;
+  }
+  
+  function getRightmostParent(node) {
+    let current = node;
+    while (current.parent && current.parent.right === current) {
+      current = current.parent;
+    }
+    return current.parent;
+  }
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.findSuccessor = findSuccessor;
+  
