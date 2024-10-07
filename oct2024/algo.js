@@ -426,3 +426,31 @@ class BinaryTree {
   exports.BinaryTree = BinaryTree;
   exports.findSuccessor = findSuccessor;
   
+
+  function reversePolishNotation(tokens) {
+    //receive an an array of strings of integers and arthmetic operators
+    //return an integer result
+  
+    const stack = [];
+  
+    for (const token of tokens) {
+      if (token === '+') {
+        stack.push(stack.pop() + stack.pop())
+      } else if (token === '-') {
+        const firstNum = stack.pop();
+        stack.push(stack.pop() - firstNum);
+      } else if (token === '*') {
+        stack.push(stack.pop() * stack.pop())
+      } else if (token === '/') {
+        const firstNum = stack.pop()
+        stack.push(Math.trunc(stack.pop() / firstNum))
+      } else {
+        stack.push(parseInt(token)); //push the string numbers as integers into the stack
+      }
+    }
+    return stack.pop()
+  }
+  
+  // Do not edit the line below.
+  exports.reversePolishNotation = reversePolishNotation;
+  
