@@ -454,3 +454,15 @@ class BinaryTree {
   // Do not edit the line below.
   exports.reversePolishNotation = reversePolishNotation;
   
+  function formatMoney(amount){
+    //receive a float number
+      //return the float number in dollar and cents
+      //(4.99) => $4.99
+      
+      //parseInt the amount
+      //with dollars signs
+      
+      return '$'+ `${amount.toFixed(2)}`
+      
+      
+    }
