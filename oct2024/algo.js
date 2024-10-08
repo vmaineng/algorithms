@@ -504,3 +504,57 @@ var hasCycle = function(head) {
     return false;
      
     };
+
+    //receive the root node of a tree
+//return the tree inverted
+
+//.     1
+//    /. \
+//. 32.   5
+
+
+// => 1
+//  /. \
+// 5.   32
+
+//recursive: 
+//time: O(n)
+//space: O(d) number of nodes the queue will hold
+
+//base case: if tree is empty, return null;
+//recursive case: 
+//swap nodes
+//call function on the left subtree, then call function on the right subtree
+//return tree
+
+if (root === null) return root;
+
+let temp = root.left;
+root.left = root.right;
+root.right = temp;
+
+invertTree(root.left);
+invertTree(root.right);
+return root;
+
+//iterative: using bfs - level order traversal, uses a queue, FIFO
+//create a queue to hold the nodes from tree
+//as long the queue is not empty
+//swap the nodes
+//add them to the array being returned back$
+
+let queue = [root]
+while (queue.length > 0) {
+    let current = queue.shift();
+
+    if (current === null) continue;
+    let temp = current.left
+    current.left = current.right;
+    current.right = temp; 
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+}
+return root
+//time: O(n)
+//space:O(n) #number of nodes
