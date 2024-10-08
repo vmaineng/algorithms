@@ -466,3 +466,41 @@ class BinaryTree {
       
       
     }
+
+    /**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    //receive the head of a linked list
+    //return true if cycle, else falase
+    
+    if (!head) return false;
+    
+    //fast and slow pointer
+    //if fast meets slow = true
+    //else false
+    
+        let slow = head;
+        let fast = head;
+    
+    while (fast.next !== null && fast.next.next !== null) {
+            slow.next;
+     fast.next.next;
+        if (fast === slow) {
+            return true
+        }
+    
+    }
+    
+    return false;
+     
+    };
