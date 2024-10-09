@@ -558,3 +558,12 @@ while (queue.length > 0) {
 return root
 //time: O(n)
 //space:O(n) #number of nodes
+
+function isSantaClausable(obj) {
+    //receive an object
+    //return true if the object's methods exists, else false
+    
+    //check if the functions exists
+    
+    return typeof obj.sayHoHoHo === 'function' && typeof obj.distributeGifts === 'function'&& typeof obj.goDownTheChimney === 'function'
+  }
