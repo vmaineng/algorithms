@@ -619,3 +619,50 @@ class BinaryTree {
   scoobydoo.bark = function() {
     return "Woof";
   }
+
+  class Dog {
+    constructor(breed) {
+    this.breed = breed;
+}
+  bark() {
+    return "Woof"
+  }
+ 
+  }
+  
+  var snoopy = new Dog("Beagle");
+  
+  snoopy.bark()
+  
+  var scoobydoo = new Dog("Great Dane");
+  
+  scoobydoo.bark()
+  
+  function getDrinkByProfession(param){
+    //receive an input of string letters
+      //return the output of a string associated with it
+      
+      //'RaPPer' => 'Cristal'
+      
+      //lowercase the params
+      //check if the params is in the object
+      //return the value associated with it
+      
+      
+      const drinkObj = {
+      "jabroni": "Patron Tequila",
+        "school counselor": "Anything with Alcohol",
+        "programmer": "Hipster Craft Beer",
+        "bike gang member": "Moonshine",
+        "politician": "Your tax dollars",
+        "rapper": "Cristal"
+    }
+    
+    const lowerCaseParam = param.toLowerCase()
+    
+    if (drinkObj[lowerCaseParam]) {
+      return drinkObj[lowerCaseParam]
+    } else {
+      return "Beer"
+    }
+    }
