@@ -567,3 +567,55 @@ function isSantaClausable(obj) {
     
     return typeof obj.sayHoHoHo === 'function' && typeof obj.distributeGifts === 'function'&& typeof obj.goDownTheChimney === 'function'
   }
+
+  // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function heightBalancedBinaryTree(tree) {
+  //receive the root node of a tree
+    //return true if balanced, else false
+  
+    //if tree is empty, return true
+  
+    //recursively call: traverse through left, traverse through right
+    //keep track of height
+    //if height exceeds 1 , then return false
+    //else traverse through entire tree, return true
+  
+    if (!tree) return true;
+  
+    function calcHeight(tree, height) {
+      const leftHeight = calcHeight(tree.left, height + 1)
+      const rightHeight = calcHeight(tree.right, height + 1)
+  
+      maxHeight = Math.max (leftHeight, rightHeight)
+    }
+  
+    return tree.balanced
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.heightBalancedBinaryTree = heightBalancedBinaryTree;
+  
+  function Dog (breed) {
+    this.breed = breed;
+  }
+  
+  var snoopy = new Dog("Beagle");
+  
+  snoopy.bark = function() {
+    return "Woof";
+  };
+  
+  var scoobydoo = new Dog("Great Dane");
+  
+  scoobydoo.bark = function() {
+    return "Woof";
+  }
