@@ -676,3 +676,28 @@ class BinaryTree {
         return `Hello ${yourName}, my name is ${this.name}`;
       }
     }      
+
+    function reverseWordsInString(string) {
+        // Write your code here.
+      let result = "";
+      
+          
+          let i = string.length - 1; 
+      let word = "";
+        
+          while (i >= 0) {
+              const char = string[i];
+              if (char === " ") {
+                  result += word + " ";
+                  //reset
+                  word = "";
+              } else word = char + word;
+              i--;
+          }
+      
+          return result + word
+      }
+      
+      // Do not edit the line below.
+      exports.reverseWordsInString = reverseWordsInString;
+      
