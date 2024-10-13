@@ -832,3 +832,22 @@ class BinaryTree {
         }
         return hasThree && hasTwo
         }
+
+        function checkThreeAndTwo(array) {
+            //receive an array of fixed chars
+              //return true if 3 values & 2 values, else false
+              
+              //initialize an object to the fixed chars
+              //iterate trhough the array
+              //increment the counts
+              //return if values matches
+              
+              let objCount = {"a": 0, "b": 0, "c": 0};
+              
+              for (let char of array) {
+            objCount[char]++
+            }
+            
+            const counts = Object.values(objCount);
+              return counts.includes(3) && counts.includes(2)
+            }
