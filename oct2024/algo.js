@@ -800,3 +800,35 @@ class BinaryTree {
       // Do not edit the line below.
       exports.tournamentWinner = tournamentWinner;
       
+      function checkThreeAndTwo(array) {
+        //receive an array of 5 strings of either 'a', 'b', or 'c',
+          //return true if array contains 3 of same values and 2 of same values
+          //['a', 'a', 'a', 'b', 'a'] => false
+          
+          //sorted order? 
+        
+          //keep count of values seen
+          
+          //iterate through the object to check if there are 3 of values and 2 of values
+          
+          let objCount = { };
+          
+          for (let char of array){
+            if (!objCount[char]) {
+              objCount[char] = 0
+            }
+        objCount[char] += 1
+          }
+        
+        let hasThree = false;
+          let hasTwo = false;
+        
+        for (let key in objCount) {
+         if (objCount[key] === 3) {
+          hasThree = true;
+         } else if (objCount[key] === 2) {
+           hasTwo = true;
+         }
+        }
+        return hasThree && hasTwo
+        }
