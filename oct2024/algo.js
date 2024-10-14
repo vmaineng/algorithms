@@ -877,3 +877,9 @@ class BinaryTree {
               //return true if user guess number right
               //else false & lose a life
               //if guess > limit, throw an error
+
+              class Cat extends Animal {
+                speak() {
+                  return `${this.name}` + ' meows.'
+                }
+              }
