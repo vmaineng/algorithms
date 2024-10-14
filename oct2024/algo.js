@@ -918,3 +918,38 @@ class BinaryTree {
                 // Do not edit the line below.
                 exports.tournamentWinner = tournamentWinner;
                 
+                function bestSeat(seats) {
+                    //receive an array of 0 (open seats) & 1(reserved seats)
+                     //return the index of a good seat
+                   
+                   //iterate through seats
+                     //have a pointer at beginning and a pointer seraching next to it
+                     //if it's a 1, check before and after if it's a 0, then return the index
+                     //else keep looking
+                     //return -1 after looking b/c no seats
+                   
+                     if (!seats) return -1;
+                   
+                   let bestSeat = -1;
+                     let maxSpace = 0;
+                   
+                     let left = 0;
+                     while (left < seats.length) {
+                       let right = left + 1;
+                       while (right < seats.length && seats[right] === 0) {
+                         right+=1;
+                       }
+                   const availableSpace = right - left - 1;
+                       if (availableSpace > maxSpace) {
+                         bestSeat = Math.floor((left + right) /2);
+                         maxSpace = availableSpace
+                       }
+                       left = right;
+                     }
+                   return bestSeat
+                     
+                   }
+                   
+                   // Do not edit the line below.
+                   exports.bestSeat = bestSeat;
+                   
