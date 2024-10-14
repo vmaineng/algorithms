@@ -851,3 +851,29 @@ class BinaryTree {
             const counts = Object.values(objCount);
               return counts.includes(3) && counts.includes(2)
             }
+
+            class Guesser {
+                constructor(number, lives) {
+                  this.number = number;
+                  this.lives = lives;
+                }
+                
+                guess(n) {
+                 if (!this.lives ) {
+                   throw new Error('Expect error already dead')
+                 }  
+              
+              if (n === this.number) {
+                   return true
+                 } else {
+               this.lives--
+                   return false
+                  
+                 }
+                }
+              }
+              
+              //receives integer for number and lives
+              //return true if user guess number right
+              //else false & lose a life
+              //if guess > limit, throw an error
