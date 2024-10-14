@@ -883,3 +883,38 @@ class BinaryTree {
                   return `${this.name}` + ' meows.'
                 }
               }
+
+              function tournamentWinner(competitions, results) {
+                //receive an array of array for compeitions (homeTeam, awayTeam) and an array results
+                  //return the winningTeam based on results
+                
+                //iterate through compeitions
+                  //keep track of their points from results
+                  //find the max score
+                  //return winning team
+                
+                  let scores = {};
+                  let currentBestTeam = "";
+                  scores[currentBestTeam] = 0;
+                
+                  for (let i = 0; i < competitions.length; i++) {
+                    const [homeTeam, awayTeam] = competitions[i]
+                    const result = results[i]
+                    const winningTeam = result === 1 ? homeTeam : awayTeam
+                
+                if (!scores[winningTeam]) {
+                  scores[winningTeam] = 0
+                 }
+                scores[winningTeam]++
+                
+                if (scores[winningTeam] > scores[currentBestTeam]) {
+                  currentBestTeam = winningTeam
+                }
+                  }
+                return currentBestTeam
+                
+                }
+                
+                // Do not edit the line below.
+                exports.tournamentWinner = tournamentWinner;
+                
