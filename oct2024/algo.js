@@ -953,3 +953,38 @@ class BinaryTree {
                    // Do not edit the line below.
                    exports.bestSeat = bestSeat;
                    
+                   function smallestDifference(arrayOne, arrayTwo) {
+                    //receive two arrays of unsorted integers
+                      //return an array with pairs closest to 0
+                      //[3, 2, -1]
+                      // [0, 4, 2]
+                      //=> [2, 2]
+                    
+                      //edge case: If one array is empty, then can't return pairs
+                      //or both arrays are empty, return an empty array
+                    
+                      //initialize an empty array to return the pair
+                    
+                      //iterate through both arrays
+                      //keep pointer at the first value in the arrays
+                      //check if total is close to 0, add in to the array
+                      //else keep iterating
+                    
+                      let smallestDiff = Infinity;
+                      let pairArray = [];
+                    
+                     for (let i = 0;i < arrayOne.length;i++) {
+                       for (let j = 0; j < arrayTwo.length; j++) {
+                         let currentDiff = Math.abs(arrayOne[i] - arrayTwo[j])
+                         if (currentDiff < smallestDiff) {
+                           smallestDiff = currentDiff
+                           pairArray = [arrayOne[i], arrayTwo[j]]
+                         }
+                       }
+                     }
+                      return pairArray
+                    }
+                    
+                    // Do not edit the line below.
+                    exports.smallestDifference = smallestDifference;
+                    
