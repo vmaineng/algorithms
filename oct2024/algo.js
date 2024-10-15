@@ -988,3 +988,34 @@ class BinaryTree {
                     // Do not edit the line below.
                     exports.smallestDifference = smallestDifference;
                     
+                    function past(h, m, s){
+                        //receive integers for h, m, and s
+                          //return milliseconds
+                          
+                          //if all 0 then return 0
+                          
+                          //divide all my 1 milliseconds
+                        
+                        //past(1,1, 1) => 1* 360mins *1000 =60000, 1 * 60mins, 1* 1000
+                        
+                        //hour = h * 360 * 1000
+                          //min = m * 60 * 1000
+                          //sec = s * 1000
+                          
+                        
+                        let total = 0
+                          
+                          if (h > 0 || m > 0 || s > 0) {
+                         let totalHour = h * 3600 *1000
+                         let totalMin = m * 60 * 1000
+                         let sec = s * 1000
+                        total = totalHour + totalMin + sec
+                          }
+                        return total
+                        
+                        // To convert hours, minutes, and seconds into milliseconds:
+                        
+                        // 1 hour = 60 minutes × 60 seconds × 1000 milliseconds = 3,600,000 milliseconds
+                        // 1 minute = 60 seconds × 1000 milliseconds = 60,000 milliseconds
+                        // 1 second = 1,000 milliseconds
+                        }
