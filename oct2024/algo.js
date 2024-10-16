@@ -1019,3 +1019,14 @@ class BinaryTree {
                         // 1 minute = 60 seconds × 1000 milliseconds = 60,000 milliseconds
                         // 1 second = 1,000 milliseconds
                         }
+
+                        function findSum(matrix) {
+                            let sum = 0;
+                            for (let i = 0; i < matrix.length; i++) {
+                              for (let j = 0; j < matrix[i].length; j++) {
+                                sum += matrix[i][j];
+                              }
+                            }
+                            return sum;
+                          }
+                          
