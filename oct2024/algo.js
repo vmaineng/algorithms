@@ -1064,3 +1064,29 @@ let transposed = []
   }
   return transposed
 };
+
+
+function findMax(matrix) {
+    //receive a 2D array
+    //return the max element found in matrix
+    //[[1,2, 3]
+    //[4, 8, 2]] => 8
+
+    //initialize a variable to -Infinity (to account for negative values)
+    //iterate through rows
+    //then iterate through columns
+    //check if the value is > what we currently have
+    //set it as the new maxValue
+    //return the maxValue
+
+    let maxValue = -Infinity
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] > maxValue){
+                maxValue = matrix[i][j]
+            }
+        }
+    }
+    return maxValue
+}
