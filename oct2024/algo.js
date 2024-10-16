@@ -1030,3 +1030,37 @@ class BinaryTree {
                             return sum;
                           }
                           
+                          /**
+ * @param {number[][]} matrix
+ * @return {number[][]}
+ */
+var transpose = function(matrix) {
+    //receive a 2d matrix of cols and rows;
+    //return a matrix back where the columns are swapped with row numbers
+    //[[1,2],
+    //[3, 4]]
+
+    //[[1, 3
+    //2, 4]]
+
+    //if matrix is empty, return an empty array back
+    ///initialize an array at the beginning
+    //iterate through the cols
+    //then create another array
+    //iterate through rows
+    //push in row values
+    //push in col value sinto the rows
+    //return the array
+
+    if (!matrix) return [];
+
+let transposed = []
+  for(let j = 0; j < matrix[0].length; j++) {
+    let newRow = [];
+    for (let i = 0; i < matrix.length;i++) {
+        newRow.push(matrix[i][j]);
+    }
+    transposed.push(newRow)
+  }
+  return transposed
+};
