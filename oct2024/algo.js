@@ -1171,3 +1171,28 @@ class BST {
   exports.BST = BST;
   exports.findKthLargestValueInBst = findKthLargestValueInBst;
   
+  function  calculateAge(birthYear, countYears) {
+    //receive two integers
+    //return 'You are...year(s) old'
+  
+  //calculateAge(2012, 2018) => 2018 - 2012 = 6 years old
+  
+  //calc the age
+    //if the age > 1, return 'You are ...years old',
+    //else return "you are 1 year old."
+  
+  let age = countYears - birthYear;
+    if (age > 1) {
+      return "You are " + `${age}` + " years old."
+    } else if (age === 1){
+      return "You are 1 year old."
+    } else if (age === - 1) {
+      return 'You will be born in ' + Math.abs(age) + " year."
+    } else if (age < 0) {
+      return 'You will be born in ' + Math.abs(age) + " years."
+    } else {
+      return 'You were born this very year!'
+    }
+  }
+  
+  
