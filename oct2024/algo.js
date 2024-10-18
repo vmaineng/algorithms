@@ -1090,3 +1090,84 @@ function findMax(matrix) {
     }
     return maxValue
 }
+
+//time : O(m*n)
+//space : O(1)
+
+function countNegs(matrix) {
+    //receive a 2D matrix
+    //return an integer of count of negatives values in 2d
+
+    //iterate through rows and values
+    //if they are <0, increment count
+    //return count
+
+    let count = 0;
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length;j++) {
+            if (matrix[i][j] < 0) {
+                count++
+            }
+        }
+    }
+    return count
+}
+
+//time:O(m * n)
+
+// This is an input class. Do not edit.
+class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function findKthLargestValueInBst(tree, k) {
+   //receive a BST, and integer to find the kth largest value in bst
+    //return the node value of kth largest value
+  
+    //edge case if tree is empty, return 0
+  
+    //brute force: traverse through every node in the array
+    //using inOrderTraversal
+  
+  //create an array
+    //do recrusive call on three node, and array
+    //then return the array.length - k b/c it's toward the endo fthe array
+  
+  
+  let sortedValues = []
+   inOrderTraversal(tree, sortedValues);
+    return sortedValues[sortedValues.length - k];
+  
+    function inOrderTraversal(node, sortedValues) {
+      if (node === null) return;
+  
+      inOrderTraversal (node.left, sortedValues)
+      sortedValues.push(node.value);
+      inOrderTraversal(node.right, sortedValues);
+    }
+    //optimized: using reverse inOrder
+  
+  // let kthLargestValue = null;
+  
+  //   function helperKthLargest(tree) {
+  //     if (!tree) return;
+  
+  //     helperKthLargest(tree.right);
+  //     if (k === 0) return;
+  //     kthLargestValue = tree.value;
+  //     k--;
+  //     helperKthLargest(tree.left;)
+  //   }
+  // helperKthLargest(tree);
+  //   return kthLargestValue;
+  }
+  
+  // Do not edit the lines below.
+  exports.BST = BST;
+  exports.findKthLargestValueInBst = findKthLargestValueInBst;
+  
