@@ -1304,3 +1304,51 @@ for (let char of uniqueSet2) {
 }
 return [array1, array2]
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {number}
+ */
+var pathSum = function(root, targetSum) {
+    //receive the root node of a tree and an integer for targetSum
+    //return the # of paths that totals up to targetSum
+
+    //initialize a variable for totalPaths
+    //use dfs -> go as deep as possible, and add each value up
+    //if the ttotal is equal to targetSum, increment TotalPaths
+    //else, keep looking
+
+    //edge cases: if rootnode is empty, return 0
+    //else add in root node's value from left and right
+
+    //base case: if the total is > targetSum, move to th enext node
+    //else keep looking
+
+    if (!root) return 0;
+
+ let totalPaths = findsPaths(root, targetSum)
+  totalPaths += findsPaths(root.left, targetSum);
+  totalPaths += findsPaths(root.right, targetSum);
+  return totalPaths;
+};
+
+function findsPaths(node, targetSum) {
+    if (!node) return 0;
+    let paths = 0;
+
+    if (node.val === targetSum) {
+        paths = 1
+    }
+    paths += findsPaths(node.left, targetSum - node.val)
+    paths += findsPaths(node.right, targetSum - node.val)
+    return paths
+}
