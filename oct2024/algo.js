@@ -1196,3 +1196,111 @@ class BST {
   }
   
   
+  /**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[][]}
+ */
+var findDifference = function(nums1, nums2) {
+    //receive two arrays of integers
+    //return an array of arrays fwhere values do not exist in the other array
+
+    //[1, 2, 3], [3, 4, 2]
+    //=[[1], [4]]
+
+    //edge cases: if the array is empty, return the other array
+    //if both arrays are empty, return empty arrays
+
+    //brute force: have a pointer at first array
+    //have a pointer on second array
+    //iterate through entire second array
+    //check if the value is the same in the array
+    //else, add it tothe uqniue arrays
+    //return array
+
+    if (!nums1) return [nums2];
+    if (!nums2) return [nums1];
+
+    let uniqueVals = [];
+    let uniqueVals2 = [];
+
+    for (let i = 0; i < nums1.length; i++) {
+        if ((!nums2.includes(nums1[i])) && !uniqueVals.includes(nums1[i])) {
+            uniqueVals.push(nums1[i])
+        }
+    }
+
+    for (let i = 0; i < nums2.length; i++) {
+        if (!nums1.includes(nums2[i])  && !uniqueVals2.includes(nums2[i])) {
+            uniqueVals2.push(nums2[i])
+        }
+    }
+    return [uniqueVals, uniqueVals2]
+};
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[][]}
+ */
+var findDifference = function(nums1, nums2) {
+    //receive two arrays of integers
+    //return an array of arrays fwhere values do not exist in the other array
+
+    //[1, 2, 3], [3, 4, 2]
+    //=[[1], [4]]
+
+    //edge cases: if the array is empty, return the other array
+    //if both arrays are empty, return empty arrays
+
+    //brute force: have a pointer at first array
+    //have a pointer on second array
+    //iterate through entire second array
+    //check if the value is the same in the array
+    //else, add it tothe uqniue arrays
+    //return array
+
+//     if (!nums1) return [nums2];
+//     if (!nums2) return [nums1];
+
+//     let uniqueVals = [];
+//     let uniqueVals2 = [];
+
+//     for (let i = 0; i < nums1.length; i++) {
+//         if ((!nums2.includes(nums1[i])) && !uniqueVals.includes(nums1[i])) {
+//             uniqueVals.push(nums1[i])
+//         }
+//     }
+
+//     for (let i = 0; i < nums2.length; i++) {
+//         if (!nums1.includes(nums2[i])  && !uniqueVals2.includes(nums2[i])) {
+//             uniqueVals2.push(nums2[i])
+//         }
+//     }
+//     return [uniqueVals, uniqueVals2]
+
+//optimized; using Sets
+//initialize both arrays into sets
+//check if nums1's values exists in nums2.
+//if not, then return the arrays
+//push into the array
+
+let uniqueSet1 = new Set(nums1);
+let uniqueSet2 = new Set(nums2);
+
+let array1 = []
+let array2 = []
+
+for (let char of uniqueSet1) {
+    if (!uniqueSet2.has(char)) {
+        array1.push(char)
+    }
+}
+
+for (let char of uniqueSet2) {
+    if (!uniqueSet1.has(char)) {
+        array2.push(char)
+    }
+}
+return [array1, array2]
+};
