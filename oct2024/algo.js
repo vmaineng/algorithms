@@ -1391,3 +1391,42 @@ return visited.every(room => room === true)
 
 
 };
+
+/**
+ * @param {number[][]} rooms
+ * @return {boolean}
+ */
+var canVisitAllRooms = function(rooms) {
+    //receieve an array of rooms
+    //return true if can visit all rooms, else return fals
+    
+    //ex: [[1], [3, 1]] => false b/c I need to visit room 2
+    
+    //initialize an array with same length of rooms filled with false
+    //visit the rooms bfs with queue
+    //if we can visit in the array, flip it to true
+    //then add key into the queue
+    
+    let visitedRooms = new Array(rooms.length).fill(false);
+    let queue = [0];
+    visitedRooms[0] = true;
+    let visitedCount = 1;
+    
+    while (queue.length > 0) {
+        const currentRoom = queue.shift();
+        for (let key of rooms[currentRoom]) {
+            if (!visitedRooms[key]) {
+                visitedRooms[key] = true;
+                visitedCount++
+                queue.push(key)
+    
+                if (visitedCount === rooms.length) {
+                    return true;
+                }
+            }
+        }
+    }
+    return visitedCount === rooms.length;
+    
+    
+    };
