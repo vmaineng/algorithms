@@ -1352,3 +1352,42 @@ function findsPaths(node, targetSum) {
     paths += findsPaths(node.right, targetSum - node.val)
     return paths
 }
+
+/**
+ * @param {number[][]} rooms
+ * @return {boolean}
+ */
+var canVisitAllRooms = function(rooms) {
+    //receive an array of arrays
+    //return true if you can visit all rooms in arrays, else false
+
+    //ex: 2
+    //keys for 1 and 3
+    //room1: 1, 0, 3
+    //no way for us to get to room 2 - key is in room 2
+    //and can't get in to room 2
+
+    //use bfs; 
+    //add 
+
+    let visited = new Array(rooms.length).fill(false);
+    let queue = [0];
+    visited[0] = true;
+
+    while (queue.length > 0) {
+        console.log('queue:', queue)
+        let currentRoom = queue.shift();
+        for (let key of rooms[currentRoom]) {
+            console.log(currentRoom, rooms[currentRoom])
+            if (!visited[key]) {
+                visited[key] = true;
+                queue.push(key)
+            }
+        }
+    }
+
+
+return visited.every(room => room === true)
+
+
+};
