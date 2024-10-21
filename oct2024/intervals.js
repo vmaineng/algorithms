@@ -167,52 +167,50 @@ console.log(
   ])
 );
 
-
 function canAttendMeetings(intervals) {
   //receive an array of arrays
   //return true if person can attend all meetings, else false
   //example: [[0, 1], [3, 4]] => true
   //example: [[1, 4], [2, 5]] => false
-  
+
   //edge cases: if the intervals are empty, return true b/c they can make it all meetings
-  
-  //brute force: 
+
+  //brute force:
   //iterate through intervals
   //compare first pair of intervals with second pairs
   //check if the start of second interval <= first pair end time
   //if so, return false
   //after checking everything, return true
-  
-  if (!intervals) return true
-   
+
+  if (!intervals) return true;
+
   for (let i = 0; i < interals.length; i++) {
-      for (let j = i + 1; j < intervals.length ;j++) {
-          const [start1, end1] = intervals[i];
-          const [start2, end2] = intervals[j];
-  
-          if (start2 < end1 && end2 < start1) {
-              return false
-          }
+    for (let j = i + 1; j < intervals.length; j++) {
+      const [start1, end1] = intervals[i];
+      const [start2, end2] = intervals[j];
+
+      if (start2 < end1 && end2 < start1) {
+        return false;
       }
+    }
   }
-  return true
-  
+  return true;
+
   //time for brute force: O(n);
   //space for brute force: O(n)
-  
+
   //optimized method: do one loop
   //sort the arrays based on start time
   //check if the start time is less than end time
   //return false
   //else checked all the intervals, return true
-  
-  intervals.sort((a,b) => a[0] - b[0]);
-  
+
+  intervals.sort((a, b) => a[0] - b[0]);
+
   for (let i = 1; i < intervals.length; i++) {
-      if (intervals[i][0] < intervals[i - 1][1]) {
-          return false
-      }
+    if (intervals[i][0] < intervals[i - 1][1]) {
+      return false;
+    }
   }
-  return true
-  
-  
+  return true;
+}

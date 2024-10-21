@@ -1430,3 +1430,77 @@ var canVisitAllRooms = function(rooms) {
     
     
     };
+
+    /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    //receive an array of integers (postive and negative)
+    //return an answer of array where at each value it is the product of all the numbers in the array except at the pointer
+    
+    //[-3, 6, 2] => [12, -6, -18]
+    // i
+    //        j 
+    
+    //brute force: 
+    //create an answer array to hold the product values
+    //create a pointer starting the at first index, 
+    //create a second pointer starting at the first index
+    //create a multiplier, set to 1;
+    //mutiply every value that we see for j by the mutiplier
+    //take the values from the answer array * values at i;
+    //return the array
+    
+    
+    
+    //edge case: if the array only has one number, return the array itself;
+    
+    // for (let i = 0; i < nums.length;i++) {
+    //     let multiplier = 1
+    //     for (let j = 0; j < nums.length; j++) {
+    //         if (i !==j ){
+    //             multiplier *= nums[j]
+    //         }
+    //         answer[i] = multiplier
+    //     }
+    // }
+    // return answer
+    //time: O(n^2)
+    //space: O(1)
+    
+    let answer = [];
+    let leftArray = new Array(nums.length).fill(1);
+    let rightArray = new Array(nums.length).fill(1);
+    
+    //optimized
+    //create an answer array to hold each value
+    //iterate through starting at the first index in the array
+    //single loop - capture all the values from the left
+    //another single loop - capture all the values from the right - set in the values
+    //using a mutliplier, set to 1, multiply all the left values into the answer array by 1
+    //right values - use mutliplier of 1, multiply by right values
+    //return the answer array
+    
+    //[-3, 6, 2]
+    //leftArray = [ -3, 6, 2]
+                        // j
+    //rightArray = [ ]
+    
+    let leftMultiplier = 1
+    for (let i = 0; i <= nums.length; i++) {
+        leftArray[i] *= leftMultiplier
+    }
+    
+    let rightMultiplier = 1
+    for (let i = nums.length - 1; i>=0; i--) {
+        rightArray[i] *= rightMultiplier
+    }
+    
+    answer[i] *= leftArray[i]
+    
+    return answer
+    
+    };
+    
+    
