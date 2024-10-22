@@ -1724,3 +1724,55 @@ return count
 //space:O(1)
 
 }
+
+function mostWater(height) {
+    //receive an array of positive integers
+    //return max amount of water a container can store
+    //[3, 5, 6,3] => [3, 3] => 4 distances apart; 3 * 4 = 12
+
+    //initialize a count to keep track of max water a container can store
+    //iterate through the array
+    //take the min height of i and j (length)
+    //and take the width
+    //update count with new l x w
+    //return count
+
+    let maxAmount = 0;
+    for (let i = 0; i < height.length; i++) {
+        for (let j = i + 1; j < height.length; j++) {
+            const minHeight = Math.min(height[i], height[j])
+            const currentarea = minHeight * (j - i)
+            maxAmount = Math.max(maxAmount, currentarea) 
+        }
+    }
+    return maxAmount
+
+    //time: O(n^2)
+    //space: O(1)
+
+    //optimized: two pointers
+    //check from left to right
+    //grab the minHeight and width
+    //update maxAmount
+
+    const left = 0;
+    const right = height.length - 1;
+    const maxAmount =0;
+    
+    while (left < right) {
+   
+      const minHeight = Math.min (height[left], height[right])
+      const currentWidth = minHeight * (left - right)
+      maxAmount = Math.max(currentWidth, maxAmount)
+    if (height[left]< height[right]) {
+        left++
+    } else {
+        right--
+    }
+
+}
+return maxAmount
+}
+
+//time: O(n);
+//space: O(1)
