@@ -1558,4 +1558,78 @@ var productExceptSelf = function(nums) {
     return answer
     };
     
+    /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    //receive a string of lowercase letters
+    //return longest substring with unique chars
+    //'rhinocareus' => 'rhinoca' => 7
     
+    //edge case: if string is empty
+    
+    //create a new set
+    //keep track of each letter
+    //keep extending right side of window until it's no longer unique
+    //then push in the left side window
+    //keep track of the max Count you've seen
+    //return the count
+    
+    let uniqueChars = new Set();
+    let left = 0;
+    let right = 0;
+    let count = 0;
+    
+    while (right < s.length) {
+        if (!uniqueChars.has(s[right])) {
+            uniqueChars.add(s[right])
+            right++
+        } else {
+            uniqueChars.delete(s[left]) 
+            left++
+            
+        }
+        count = Math.max(count, uniqueChars.size)
+    }
+    return count
+    
+    }
+    
+    // This is an input class. Do not edit.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  //O(n) time for all nodes; O(h) space due to recursion stack
+  function heightBalancedBinaryTree(tree) {
+  //receive the root node of a binary tree;
+  //return true if height is balanced, else false
+  
+    //if height is empty, return true;
+  
+    //traverse through left sub tree, count how many edges
+    //traverse through right subtree, count how many edges
+  
+  
+    function calcHeight(node, height, balance) {
+        if (!node) return height;
+      const leftHeight = calcHeight(node.left, height+1, balance);
+      const rightHeight = calcHeight(node.right, height+1, balance);
+  
+      if (Math.abs(leftHeight - rightHeight) > 1) balance.isBalanced = false;
+      return Math.max(leftHeight, rightHeight)
+    }
+    const balance = {isBalanced: true};
+    calcHeight(tree, 0, balance);
+    return balance.isBalanced;
+  
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.heightBalancedBinaryTree = heightBalancedBinaryTree;
+  
