@@ -1776,3 +1776,44 @@ return maxAmount
 
 //time: O(n);
 //space: O(1)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMin = function(nums) {
+    //receive an array of sorted integers and unique values
+    //return the min element in the array
+
+    //ex:[1, 2, 3, 4] => 1
+    //[3, 4, 1, 2] => 1
+ //1.        4
+//Math.min(...nums) => O(n)
+
+//initialize left pointer and right pointer 
+//find the middle 
+//check if the middle is our min value
+//check if the middle value < left value 
+//or if the middle value > right value
+
+let min = nums[0];
+let left = 0;
+let right = nums.length - 1;
+
+while (left <= right) {
+    if (nums[left] < nums[right]) {
+        min = Math.min(nums[left], min)
+        break;
+    }
+    const middle = (Math.floor(left + right) /2)
+    min = Math.min(min, nums[middle])
+    if (nums[middle] < nums[left]) {
+    
+        right = middle - 1
+    } else {
+        left = middle + 1
+    }
+}
+return min
+
+};
