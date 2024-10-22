@@ -1680,3 +1680,47 @@ class BinaryTree {
    // Do not edit the line below.
    exports.spiralTraverse = spiralTraverse;
    
+   function longestSeq(nums) {
+    //receive an integer array of nums
+    //return the longest increasing subsequence
+    //ex: [3, 2, 5, ,6, 7, 8] => 4 b/c of [5,6, 7, 8]
+
+//intiailize a count
+//increment through the nums
+//check if the value before it is increasing
+//increment count
+//if the value is not, update the count to max values seen
+//then move pointer
+
+let count = 0;
+for (let i = 0; i < nums.length;i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+        if (nums[j] < nums[i]) {
+            count = Math.max(count, i - j)
+        } 
+    }
+}
+return count;
+
+//time: O(n^2)
+//space: O(1)
+
+//optimized; do it in place
+//initialize a count
+//check the value before if it's less
+//increment count
+//else start count all over again
+
+let count = 0;
+
+for (let i = 1; i<nums.length; i++) {
+    if (nums[i-1] > nums[i]) {
+        count = Math.max(count, i - (i-1))
+    }
+}
+return count
+
+//time:O(n)
+//space:O(1)
+
+}
