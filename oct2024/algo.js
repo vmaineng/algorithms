@@ -1851,3 +1851,60 @@ var maxArea = function(height) {
     
     return maxArea
     };
+
+    var maxArea = function(height) {
+        //receive an array of positive integers
+        //return max amt of water can store
+    
+        //[3, 5, 2, 1, 4, 5] => [ 5 , 5] and they are 5 apart 5 * 5 = 25
+    
+        //keep track of maxAmount of water
+        //iterate through height
+        //keep a pointer on the first value
+        //look at all the other possible maxAmt
+        //check the smallest height * width
+        //update maxAmt
+        //return maxAmt
+    
+        let maxAmount = 0
+        for (let i = 0; i < height.length;i++) {
+            for (let j = i + 1; j < height.length; j++) {
+             let minHeight = Math.min(height[i], height[j])
+             let maxArea = minHeight * (j - i)
+             maxAmount = Math.max(maxAmount, maxArea)   
+            }
+        }
+        return maxAmount
+    
+        //time: O(n^2);
+        //space: O(1)
+    
+        //optimized method:
+        //create a pointer at left side and pointer at right side
+        //find the min height of left or right
+        //find the width
+        //calculate l * x to get the max area
+       //update maxAmount
+       ////check if left side smaller or right side smaller
+       //move left pointer up
+       //else move right pointer
+       //return maxArea
+    
+       let left = 0;
+       let right = height.length - 1;
+       let maxAmount = 0;
+    
+       while (left < right) {
+        let minHeight = Math.min(height[left], height[right]);
+        let currentArea = minHeight * (right - left)
+        maxAmount = Math.max(currentArea, maxAmount)
+        if (height[left] < height[right]) {
+            left++
+        } else {
+            right++
+        }
+       }
+    return maxAmount
+    
+    //time: O(n);
+    //space:O(1)
