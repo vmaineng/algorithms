@@ -1901,10 +1901,55 @@ var maxArea = function(height) {
         if (height[left] < height[right]) {
             left++
         } else {
-            right++
+            right--
         }
        }
     return maxAmount
     
     //time: O(n);
     //space:O(1)
+
+    function dfs(matrix) {
+        //if grid is empty, return 0,
+        //capture the rows and cols
+        //intiialize a count for island at 0
+        
+        //create a dfs function that takes in the row and col
+        //checks the boundaries and if it's already water
+        
+        //expore all 4 directions, top, left, right, bottom
+        //iterate through each cell in the grid
+        //check if the value is a 1
+        //increment island count
+        //else continue searching
+        //return island count
+        
+        if (!matrix) return 0;
+        
+        let islandCount = 0; 
+        let rows = matrix.length;
+        let cols = matrix[0].length;
+        
+        function dfs(row, col) {
+            if (row < 0 || row >= rows || col < 0 || col >= cols || matrix[row][col] === '0') {
+                return;
+            }
+        
+            grid[row][col] = '0'
+        
+            dfs(row-1, col);//top
+            dfs(row + 1, col)//bottom
+            dfs(row, col - 1); //left;
+            dfs(row, col + 1); //right
+        }
+        
+        for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+                if (grid[row][col] === '1') {
+                    islandCount++
+                    dfs(row, col)
+                }
+            }
+        }
+        return islandCount
+        }
