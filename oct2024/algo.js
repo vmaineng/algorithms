@@ -1817,3 +1817,37 @@ while (left <= right) {
 return min
 
 };
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function(height) {
+    //receive an array of integers
+    //return the max amt of water a container can store
+    
+    //ex: [3, 5, 2]max is 3; l x h = 1, h 3 =3
+    
+    //brute force
+    //iterate through each one of them and create a max
+    
+    //optimized:
+    //initialize a varaible to hold max
+    //create two pointers - starting from left to right
+    //grab smallest height at left or right
+    //take w * height
+    //return max
+    
+    let maxArea = 0;
+    
+    for (let i = 0; i < height.length; i++) {
+        for (let j = i + 1; j < height.length; j++) {
+            const smallestHeight = Math.min(height[i], height[j]);
+            const width = j - i;
+            area = smallestHeight * width
+            maxArea = Math.max(maxArea, area)
+        }
+    }
+    
+    return maxArea
+    };
