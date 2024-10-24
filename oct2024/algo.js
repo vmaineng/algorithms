@@ -1953,3 +1953,73 @@ var maxArea = function(height) {
         }
         return islandCount
         }
+
+        /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var longestConsecutive = function(nums) {
+    //prefix and postfix
+    //p: an unsorted array of integers nums
+    //return the length of longest consecutive elemtns sequence
+    
+    
+    
+    //brute force would be to sort it
+    //sort the array
+    //iterate through it
+    //sliding window technique
+    //keep count of it is equal the value + 1
+    //if next element isn't adjacent to the value
+    //reset count to 0; 
+    //time: O(n log n)
+    //space: O(1) b/c not creating new space
+    
+    // nums.sort((a,b) => a - b); 
+    
+    if (nums.length === 0) return 0; 
+    if (nums.length === 1) return 1; 
+    
+    let count = 0; 
+    //let temp = 1; //start with 1 b/c there's at least one element 
+    
+    // for (let i = 0; i < nums.length - 1; i++) {
+    //     if (nums[i] === nums[i + 1] - 1) { //prefix
+    //         console.log(nums[i], nums[i+1] - 1)
+    //         temp++
+    //         count = Math.max(count, temp)
+    //     } else if (nums[i] === nums[i+ 1]) {
+    // console.log(nums[i], nums[i+1])
+    //         count = Math.max(count, temp)
+    //     } else {
+    //         temp = 1;
+    //         count = Math.max(count, temp)
+    //     }    
+    // }
+     
+    //  return count;
+    
+    //optimzed:
+    //initialize a Set to remove duplicates
+    //iterate through it
+    //increment a count
+    //increment to check next element
+    
+    let newSet = new Set(nums);
+    
+    for (let num of nums) {
+        if (!newSet.has(num - 1)) {
+            let total = 0;
+    
+            while (newSet.has(num)) {
+                total++;
+                num++;
+            }
+            count = Math.max(count, total)
+        }
+    }
+    return count;
+    
+    //
+    
+    };
