@@ -2023,3 +2023,36 @@ var longestConsecutive = function(nums) {
     //
     
     };
+
+    /**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+function topKFrequent(nums, k) {
+    //receive an array of integers and an integer for k
+    //return the k most frequent elements back in an array
+  
+    //[1, 1, 1, 1, 2, 3], k = 1 => [1]
+  
+    //edge cases: ex: k = 3, [1, 1, 1, 2, 2]
+  
+    //use a Map
+  //iterate through the array, keept rack of the values seen
+  //sort the elements in the by frequency amount
+  //slice out the top k elements
+  
+  const frequencyMap = new Map();
+  
+  for (let num of nums) {
+   frequencyMap.set(num, (frequencyMap.get(num) || 0 )+ 1)
+  }
+  
+  const sorted = [...frequencyMap.entries()].sort((a,b) => b[1] - a[1]);
+  
+  return sorted.slice(0,k).map(entry => entry[0])
+  
+  }
+  
+  //time: O(n log n)
+  //space: O(n)
