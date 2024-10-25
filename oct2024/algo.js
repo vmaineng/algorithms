@@ -2056,3 +2056,42 @@ function topKFrequent(nums, k) {
   
   //time: O(n log n)
   //space: O(n)
+
+  function majorityElement(array) {
+    //receive an array of integers unsorted
+      //return the majority element; appears more than half of its indices
+      //[3, 2, 5, 6, 6, 6,3] => -1
+    
+    //initialize a frequencyCounter pattern
+      //then check which element appeared more than half of the length
+      //return the element
+    
+    if (array.length ===0) return -1;
+    
+      let obj = {};
+    let maxVal = 0;
+      let maxEle =0
+    
+      for (let num of array){
+      if (!obj[num]) {
+        obj[num] = 0
+      }
+        obj[num]++
+      }
+    
+    for (let key in obj) {
+      if (obj[key] > maxVal) {
+       maxVal = obj[key]
+        maxEle = parseInt(key)
+      }
+    }
+    
+    if (maxVal > Math.floor(array.length /2) ) {
+      return maxEle
+    }
+    return -1;
+    }
+    
+    // Do not edit the line below.
+    exports.majorityElement = majorityElement;
+    

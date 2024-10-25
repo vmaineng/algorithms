@@ -39,4 +39,71 @@ var longestConsecutive = function (nums) {
   return maxLength;
 };
 
-console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
+// console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function (nums, k) {
+  //if nums is empty, return empty array
+  //create an object to track values seen
+  //then get all the values in an array
+  //sort by biggest to smallest
+  //take the first k elements
+
+  if (nums.length === 0) return [];
+
+  let objSeen = {};
+  for (let num of nums) {
+    objSeen[num] = objSeen[num] + 1 || 1;
+  }
+  console.log(objSeen);
+  const objSeenArray = Object.entries(objSeen);
+  console.log(objSeenArray);
+
+  objSeenArray.sort((a, b) => b[1] - a[1]);
+  console.log(objSeenArray);
+  return objSeenArray.slice(0, k).map((item) => parseInt(item[0]));
+};
+
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+
+function majorityElement(array) {
+  //receive an array of integers unsorted
+  //return the majority element; appears more than half of its indices
+  //[3, 2, 5, 6, 6, 6,3] => -1
+
+  //initialize a frequencyCounter pattern
+  //then check which element appeared more than half of the length
+  //return the element
+
+  if (array.length === 0) return -1;
+
+  let obj = {};
+  let maxVal = 0;
+  let maxEle = 0;
+
+  for (let num of array) {
+    if (!obj[num]) {
+      obj[num] = 0;
+    }
+    obj[num]++;
+  }
+
+  for (let key in obj) {
+    if (obj[key] > maxVal) {
+      maxVal = obj[key];
+      maxEle = parseInt(key);
+    }
+  }
+
+  if (maxVal > Math.floor(array.length / 2)) {
+    return maxEle;
+  }
+  return -1;
+}
+
+// Do not edit the line below.
+exports.majorityElement = majorityElement;
