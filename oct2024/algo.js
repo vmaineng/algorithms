@@ -2110,4 +2110,53 @@ function billboard(name, price = 30){
     return total
     } 
 
- 
+     //receive an array of integers
+    //return true if the number of occurrences in each value is all unique, else return false
+
+    //[3, 4, 4, 5, 5] => false b/c 2 4's and 2 5's
+
+    //brute force: FrequencyCounter
+    //create an object
+    //store the occurences of values seen into the object
+    //iterate through to check the values if ssame as others
+    //if they are, return false automatically
+    //else return true
+
+    let obj = {};
+    for (let num of arra) {
+        obj[num] = (obj[num] || 1) + 1
+    }
+
+    for (let key in obj){
+        if (obj[key] === obj[key]) {
+            return false
+        }
+    }
+    return true;
+};
+
+/**
+ * @param {number[]} arr
+ * @return {boolean}
+ */
+var uniqueOccurrences = function(arr) {
+    let freqObj = {};
+
+    for (let num of arr) {
+        freqObj[num] = (freqObj[num] || 0) + 1
+    }
+
+    let freqVals = new Set()
+
+for (let key in freqObj){
+    if (freqVals.has(freqObj[key])){
+        return false
+    } else {
+        freqVals.add(freqObj[key])
+    }
+}
+    return true
+}
+
+//time: O(n+m)
+//space:O(n)
