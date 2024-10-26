@@ -2094,4 +2094,40 @@ function topKFrequent(nums, k) {
     
     // Do not edit the line below.
     exports.majorityElement = majorityElement;
-    
+}
+function billboard(name, price = 30){
+    //receive a name
+      //return total amount it cost to add a name
+      //'mary jo' => length of name is 7, 7 * 30 = 210
+      
+      //iterate up to the names length, add the price everytime
+      //return total
+      
+      let total = 0;
+      for (let i = 0; i < name.length; i++) {
+        total += price
+      }
+    return total
+    } 
+
+    class Cuboid {
+        constructor(length, width, height) {
+          this.length = length;
+          this.width = width;
+          this.height = height;
+        }
+          
+          get surfaceArea() {
+             return 2 * (this.length * this.width + this.width * this.height + this.height * this.length);
+          }
+          
+          get volume() {
+            return this.length * this.width *this.height
+          }
+        }
+        class Cube extends Cuboid {
+          // Don't forget to make a call to super ;)
+        constructor(length) {
+          super (length, length, length)
+        }
+        }

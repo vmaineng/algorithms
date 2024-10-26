@@ -68,39 +68,32 @@ var topKFrequent = function (nums, k) {
   return objSeenArray.slice(0, k).map((item) => parseInt(item[0]));
 };
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+// console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
 
 function majorityElement(array) {
-  //receive an array of integers unsorted
-  //return the majority element; appears more than half of its indices
-  //[3, 2, 5, 6, 6, 6,3] => -1
+  let count = 0;
+  let answer;
 
-  //initialize a frequencyCounter pattern
-  //then check which element appeared more than half of the length
-  //return the element
+  //find majority element
+  for (const value of array) {
+    if (count === 0) answer = value;
 
-  if (array.length === 0) return -1;
-
-  let obj = {};
-  let maxVal = 0;
-  let maxEle = 0;
-
-  for (let num of array) {
-    if (!obj[num]) {
-      obj[num] = 0;
-    }
-    obj[num]++;
-  }
-
-  for (let key in obj) {
-    if (obj[key] > maxVal) {
-      maxVal = obj[key];
-      maxEle = parseInt(key);
+    if (value === answer) {
+      count++;
+    } else {
+      count--;
     }
   }
 
-  if (maxVal > Math.floor(array.length / 2)) {
-    return maxEle;
+  //check if majority occurs more than half of the length, else return -1
+  count = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === answer) {
+      count++;
+    }
+    if (count > array.length / 2) {
+      return answer;
+    }
   }
   return -1;
 }
