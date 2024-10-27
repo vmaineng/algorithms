@@ -2184,3 +2184,47 @@ function getLength(arr){
     arr.pop()
     return arr
   }
+
+  function capitalize(s){
+    //receive a string lowercase with no spaces
+      //return an array with even numbers captialize odd numbers capitalize 
+    
+    //'hello' => ['hElLo', 'HeLlO']
+      
+      //initialize an empty string
+      //iterate through the strings
+      //if the index mod 2 === 0, (even),
+      //capitzlize it
+      //return the string
+      
+      //iterate through the string again for odd 
+      
+      //return array
+      
+      //if string is empty, return an empty array
+      if (!s) return [];
+      
+      let capAlternative = '';
+      let capOdd = '';
+      let answer = []
+    
+      for (let i =0; i < s.length; i++) {
+        if (i % 2 === 0) {
+          const upper = s[i].toUpperCase()
+          capAlternative += upper
+        } else {
+          capAlternative += s[i]
+        }
+      }
+    
+    for (let i = 0; i < s.length; i++) {
+    if (i % 2 !== 0) {
+      const upperOdd = s[i].toUpperCase()
+      capOdd += upperOdd
+    } else {
+      capOdd += s[i]
+    }
+    }
+        answer.push(capAlternative, capOdd)
+      return answer
+    };
