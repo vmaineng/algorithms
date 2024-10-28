@@ -2320,3 +2320,49 @@ function getLength(arr){
           // Do not edit the line below.
           exports.sweetAndSavory = sweetAndSavory;
           
+
+          function sweetAndSavory(dishes, target) {
+            // receive an array of integers: neg = sweet; pos = savory, and integer target
+            //return one savory dish and one sweet dish that equals target
+            //[-3, 4, 5, -2] 1 => [-3, 4]
+          
+            //if dishes are empty, return [0,  0]
+          
+            //create 2 arrays: 1 for sweet and 1 for savory
+            //sort arrays
+            //iterate through both arrays
+            //check if the difference is smaller than the current difference
+            //update the best pairs
+            //return best pairs
+          
+            if (dishes.length === 0) return [0,0]
+          
+            let bestDiff = Infinity;
+            let pair= [0,0]
+          
+            let sweet = dishes.filter((num) => num < 0).sort((a,b) => b - a);
+            let savory = dishes.filter((num) => num > 0).sort((a,b) => a - b);
+          
+          let i = 0;
+            let j = 0;
+            
+          while (i < sweet.length && j < savory.length) {
+                let sum = sweet[i] + savory[j]
+            
+                  if (sum <= target) {
+                  let diff = (target - sum)
+                  if (diff < bestDiff) {
+                    bestDiff = diff;
+                    pair = [sweet[i], savory[j]]
+                } 
+                  j++
+                } else {
+                i++
+                }    
+          }
+            return pair
+          }
+          
+          // Do not edit the line below.
+          exports.sweetAndSavory = sweetAndSavory;
+          
