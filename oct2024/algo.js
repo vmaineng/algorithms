@@ -2202,7 +2202,7 @@ function getLength(arr){
       //return array
       
       //if string is empty, return an empty array
-      if (!s) return [];
+      if (!s) return ["", ""];
       
       let capAlternative = '';
       let capOdd = '';
@@ -2228,3 +2228,55 @@ function getLength(arr){
         answer.push(capAlternative, capOdd)
       return answer
     };
+
+    function sweetAndSavory(dishes, target) {
+        //receive an array of dishes - negative = sweet dish; positive = savory dish, and a target
+          //the abs value of the integer presents intensity of a flavor
+        
+          //return one savory and one sweet to meet the target in an array
+          
+          //edge case: if dishes empty, return an empty array
+        
+          //separate the dishes array into a sweet array (negative) and savory (positive)
+          //sort both arrays in values
+          //have a pointer at the first value in the arrays
+          //capture the pair
+          //else if the total of the two pairs is < target, move pointer in savory
+          //else move pointer in sweet
+          //return pair
+        
+          if (dishes.length === 0) return [0,0];
+        
+          let sweet = [];
+          let savory = [];
+          let pair = [0, 0]
+          let bestDiff = Infinity;
+        
+          for (let num of dishes){
+            if (num < 0) {
+              sweet.push(num)
+            } else {
+              savory.push(num)
+            }
+          }
+        
+          if (sweet.length === 0 || savory.length === 0) return [0, 0];
+        
+        for (let i = 0; i < sweet.length; i++) {
+          for (let j = 0; j < savory.length; j++) {
+            let sum = sweet[i] + savory[j]
+            let diff = Math.abs(target - sum)
+            if (diff < bestDiff) {
+              bestDiff = diff
+              pair = [sweet[i], savory[j]]
+            } 
+          }
+        }
+          
+        return pair
+        }
+        
+        
+        // Do not edit the line below.
+        exports.sweetAndSavory = sweetAndSavory;
+        
