@@ -2340,7 +2340,7 @@ function getLength(arr){
             let bestDiff = Infinity;
             let pair= [0,0]
           
-            let sweet = dishes.filter((num) => num < 0).sort((a,b) => b - a);
+            let sweet = dishes.filter((num) => num < 0).sort((a,b) => b - a); //bc of the negative value
             let savory = dishes.filter((num) => num > 0).sort((a,b) => a - b);
           
           let i = 0;

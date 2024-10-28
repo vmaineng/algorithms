@@ -20,7 +20,7 @@ var longestConsecutive = function (nums) {
   if (nums.length < 2) return nums.length;
 
   nums.sort((a, b) => a - b);
-  console.log(nums);
+  //   console.log(nums);
 
   for (let i = 1; i < nums.length; i++) {
     if (nums[i - 1] === nums[i]) continue;
@@ -31,10 +31,10 @@ var longestConsecutive = function (nums) {
       console.log(nums);
       maxLength = Math.max(maxLength, currentLength);
       currentLength = 1;
-      console.log(maxLength, currentLength);
+      //   console.log(maxLength, currentLength);
     }
   }
-  console.log(maxLength, currentLength);
+  //   console.log(maxLength, currentLength);
   maxLength = Math.max(maxLength, currentLength);
   return maxLength;
 };
@@ -64,7 +64,7 @@ var topKFrequent = function (nums, k) {
   console.log(objSeenArray);
 
   objSeenArray.sort((a, b) => b[1] - a[1]);
-  console.log(objSeenArray);
+  //   console.log(objSeenArray);
   return objSeenArray.slice(0, k).map((item) => parseInt(item[0]));
 };
 
@@ -100,3 +100,37 @@ function majorityElement(array) {
 
 // Do not edit the line below.
 exports.majorityElement = majorityElement;
+
+function riverSizes(matrix) {
+  let arr = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j]) {
+        arr.push(explore(i, j, 0, matrix));
+        console.log(arr);
+      }
+    }
+  }
+  return arr;
+}
+
+function explore(i, j, count, matrix) {
+  count++;
+  matrix[i][j] = 0;
+
+  if (matrix[i][j + 1]) size = explore(i, j + 1, count, matrix);
+  if (matrix[i][j - 1]) size = explore(i, j - 1, count, matrix);
+  if (matrix[i + 1] && matrix[i + 1][j])
+    size = explore(i + 1, j, count, matrix);
+  if (matrix[i - 1] && matrix[i - 1][j])
+    size = explore(i - 1, j, count, matrix);
+  return count;
+}
+
+console.log(
+  riverSizes([
+    [1, 0, 0, 1, 0],
+    [1, 0, 1, 0, 0],
+    [0, 0, 1, 0, 1],
+  ])
+);
