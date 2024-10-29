@@ -2366,3 +2366,41 @@ function getLength(arr){
           // Do not edit the line below.
           exports.sweetAndSavory = sweetAndSavory;
           
+          function bestSeat(seats) {
+            //receive an array of 0's (empty seat) and 1's (filled seat)
+            //return index of the best seat
+            
+              //[1, 0, 1, 1, 1] => 1
+            
+            //initialize variables to hold maxSpace and bestSeat
+              //iterate through the seats array
+              //create a pointer on second value
+              //check left while checking right
+              //to see if there's more 0
+              //once we hit a 1 on both side, then we can calculate the middle of the subarray 0's
+              //return the index
+            
+              if (!seats) return -1;
+            
+            let maxSpace = 0;
+              let seat = -1;
+            
+              let left = 0;
+              while (left < seats.length) {
+                let right = left + 1;
+                while (right < seats.length && seats[right] === 0) {
+                  right++;
+                }
+            let availableSpace = right - left - 1;
+            if (availableSpace > maxSpace) {
+              seat = Math.floor((left + right)/ 2)
+              maxSpace = availableSpace
+            }
+            left = right
+              }
+            return seat
+            }
+            
+            // Do not edit the line below.
+            exports.bestSeat = bestSeat;
+            
