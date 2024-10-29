@@ -139,11 +139,42 @@ function window(length, offset, list) {
   const answer = [];
 
   for (let i = 0; i + length <= list.length; i += offset) {
-    console.log(length, offset);
+    // console.log(length, offset);
     answer.push(list.slice(i, i + length)); // Push a window of exact 'length'
   }
 
   return answer;
 }
 
-console.log(window(3, 1, [1, 2, 3]));
+// console.log(window(3, 1, [1, 2, 3]));
+
+function twoNumberSum(array, targetSum) {
+  //receive an array of integers, return the targetSum
+  //return the two numbers that totals up the targetSum, else return an empty array
+  //[3, 4, 5, 2, -2], 0 => [2, -2]
+
+  //create an object
+  //iterate through the array
+  //store the value into the object
+  //check if obj has the difference from targetSum - value
+  //if not, add in the difference
+
+  if (!array) return [];
+
+  let obj = {};
+  for (let i = 0; i < array.length; i++) {
+    let difference = targetSum - array[i];
+    if (obj.hasOwnProperty(difference)) {
+      return [obj[difference], array[i]];
+    } else {
+      obj[array[i]] = array[i]; //setting the key to the value
+      console.log(array[i], obj[array[i]]);
+    }
+  }
+  return [];
+}
+
+// Do not edit the line below.
+exports.twoNumberSum = twoNumberSum;
+
+console.log(twoNumberSum([3, 4, 5, 2, -2], 0));
