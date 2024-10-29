@@ -127,10 +127,23 @@ function explore(i, j, count, matrix) {
   return count;
 }
 
-console.log(
-  riverSizes([
-    [1, 0, 0, 1, 0],
-    [1, 0, 1, 0, 0],
-    [0, 0, 1, 0, 1],
-  ])
-);
+// console.log(
+//   riverSizes([
+//     [1, 0, 0, 1, 0],
+//     [1, 0, 1, 0, 0],
+//     [0, 0, 1, 0, 1],
+//   ])
+// );
+
+function window(length, offset, list) {
+  const answer = [];
+
+  for (let i = 0; i + length <= list.length; i += offset) {
+    console.log(length, offset);
+    answer.push(list.slice(i, i + length)); // Push a window of exact 'length'
+  }
+
+  return answer;
+}
+
+console.log(window(3, 1, [1, 2, 3]));
