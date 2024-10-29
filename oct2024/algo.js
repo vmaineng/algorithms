@@ -2497,4 +2497,31 @@ var maxProfit = function(prices) {
 };
     
     
+function twoNumberSum(array, targetSum) {
+    //receive an array of integers, return the targetSum
+      //return the two numbers that totals up the targetSum, else return an empty array
+      //[3, 4, 5, 2, -2], 0 => [2, -2]
+    
+      //iterate through the array
+      //find a pointer on the first value
+      //put a pointer on the second value
+      //check if the two numbers equal the target
+      //if so, return the the two numbers,
+      //else return []
+    
+      if (!array) return [];
+    
+      for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+          let pair = array[i] + array[j]
+          if (pair === targetSum) {
+            return [array[i], array[j]]
+          }
+        }
+      }
+         return []
+    }
+    
+    // Do not edit the line below.
+    exports.twoNumberSum = twoNumberSum;
     
