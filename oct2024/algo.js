@@ -2441,7 +2441,60 @@ var maxProfit = function(prices) {
     
     };
     
+    /**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    //receive an array of integers
+    //return the max profit you can make, else return 0
+    //[3, 4, 5, 0] => buy 3, sell at 5 => 2
+
+    //initialize a maxprofit at 0
+    //iterate through the prices array starting at index 1
+    //iterate through the prices array starting at the first value
+    //check if the second pointer is higher than first pointer
+    //if so, then take j - i
+    //if the price is higher than max profit, update maxProfit
+    //else keep incrementing
+    //return max profit
+
+    // let maxProfit = 0;
+    // for (let i = 0; i < prices.length; i++) {
+    //     for (let j = i + 1; j < prices.length; j++) {
+    //         if (prices[j] > prices[i]) {
+    //             let sum = prices[j] - prices[i]
+    //         if (sum > maxProfit) {
+    //             maxProfit = sum
+    //         }
+    //         }
+    //     }
+    // }
+    // return maxProfit
+
+    //optimized; using two poitners
+    //initialize maxProfit to 0
+    //keep a pointer on the first value
+    //iterate through prices.length
+    //check if buy - sell > maxProfit
+    //update maxprofit
+    //return maxProfit
+
+    let maxProfit =0;
+    let buy = 0;
     
+    for (let sell = 1; sell < prices.length; sell++) {
+        if (prices[buy] < prices[sell]) {
+            let profit = prices[sell] - prices[buy]
+            if (profit > maxProfit) {
+                maxProfit = profit
+            }
+        } else {
+            buy = sell
+        }
+    }
+    return maxProfit
+};
     
     
     
