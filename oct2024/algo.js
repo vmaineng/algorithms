@@ -2715,3 +2715,32 @@ var lengthOfLongestSubstring = function(s) {
     }
     return count
 };
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+    //have two strings of lowercase english letters
+    //return true of letters in t are contained in s
+    //"apples", "sepl" => false
+    
+    
+    //edge case if s word is longer than t words 
+    //since anagram has to utilized all the letters
+    
+    // s = s.split("").sort().join("")
+    // t = t.split("").sort().join("")
+    
+    // return s === t ? true : false; 
+    
+    //optimized - use an object to keep track
+    //of occurences of the values that occur
+    
+    if (s.length !== t.length) return false;
+    
+     return s.split("").sort().join("") === t.split("").sort().join("")
+    
+    }
+    
