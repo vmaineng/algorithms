@@ -2525,3 +2525,33 @@ function twoNumberSum(array, targetSum) {
     // Do not edit the line below.
     exports.twoNumberSum = twoNumberSum;
     
+    /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    //receive an array of integers (pos and negs)
+    //return the largest sum
+    //[3, 4,-2] => [3, 4] = 7
+
+    //if array is empty, return an empty array
+  //capture the first value of array as maxSum
+  //capture the first value as currentSum
+  //keep iterating thorugh the array
+  //currentSum will udpate to max of either the next value, or continguous of next value
+  //maxSum keeps track of maxSum or current Sum
+  //return maxSum
+
+  if (nums.length === 0) return 0
+  let maxSum =nums[0];
+  let currentSum = nums[0];
+
+  for ( let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i])
+    maxSum = Math.max(currentSum, maxSum)
+  }
+  return maxSum
+};
+
+//time: O(n);
+//space: O(1)
