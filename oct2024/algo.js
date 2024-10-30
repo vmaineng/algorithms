@@ -2555,3 +2555,53 @@ var maxSubArray = function(nums) {
 
 //time: O(n);
 //space: O(1)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    //receive an array of integers (pos and negative)
+    //return largest sum from the array
+    //ex: [3, -2, 1, 4] => 4
+
+    //keep track of maxSum
+    //iterate through the array starting at first value
+    //create a pointer starting at second value
+    //keep track of current sum
+    //update maxSum with either maxSum currently has or what currentSum has
+    //return maxSum
+
+    // let maxSum = 0;
+    
+    // for (let i = 0; i < nums.length; i++) {
+    //        let currentSum = 0;
+    //     for (let j = i; j < nums.length; j++) {
+         
+    //         currentSum += nums[j]
+    //         maxSum = Math.max(maxSum, currentSum)
+    //     }
+    // }
+    // return maxSum
+
+    //if array is empty, return 0
+    //if array has only one value, return the value of the first element
+
+    //create a maxSum variable set to first number
+    //create currentSum varaiable set to first number
+    //iterate through the array starting at second value
+    //update currentSUm with either the next value or the currentSum + next value
+    //update maxSum to either currentSum or maxSUm's amount
+    //return maxSum
+
+    if (nums.length === 0) return 0;
+    if (nums.length === 1) return nums[0];
+
+    let maxSum = nums[0]
+    let currentSum = nums[0];
+    for (let i = 1; i < nums.length; i++) {
+        currentSum = Math.max(nums[i], currentSum + nums[i])
+        maxSum = Math.max(currentSum, maxSum)
+    }
+    return maxSum
+};
