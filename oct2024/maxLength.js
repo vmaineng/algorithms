@@ -177,4 +177,137 @@ function twoNumberSum(array, targetSum) {
 // Do not edit the line below.
 exports.twoNumberSum = twoNumberSum;
 
-console.log(twoNumberSum([3, 4, 5, 2, -2], 0));
+// console.log(twoNumberSum([3, 4, 5, 2, -2], 0));
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+// var productExceptSelf = function (nums) {
+//receive an array of integer
+//return a productSum array of integer back
+
+//[3, 2, -1]
+//answer = [-2, -3, 6]
+
+//create an answer array
+//initialize a multiplier of 1
+//iterate through nums array at the first value
+//iterate through the nums array with second pointer
+//check if i !== j
+//multiply the value by the multiplier
+//then mutiply the product by the value?
+//return answer array
+
+//if nums is empty return []
+//if nums array has one value, return []
+
+// if (nums.length < 2) return [];
+
+// let answer = [];
+
+// for (let i = 0; i < nums.length; i++) {
+//   let multiplier = 1;
+//   for (let j = 0; j < nums.length; j++) {
+//     if (i !== j) {
+//       multiplier *= nums[j];
+//       console.log(multiplier); // 2, 6, 24; then it will start on the next round
+//     }
+//   }
+//   answer[i] = multiplier;
+// }
+
+// return answer;
+// };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function (nums) {
+  //receive an array of integers
+  //return the productSum of all nums in the array except product of self
+  //[3, 2, -3] => [-6, -9,-6]
+
+  //edge case: if array is empty or has less than one value, return []
+
+  //create an array to hold the answers
+  //iterate through nums array with first pointer
+  //create a multiplier of 1
+  //iterate through the nums array with second pointer
+  //check if the pointers do not equal each other
+  //then take the mutlipier * value at second pointer
+  //afterwards, update the spot of index in answers array
+  //return answers array
+
+  // let answer = [];
+
+  // for (let i = 0; i < nums.length; i++) {
+  //     let multiplier = 1;
+  //     for (let j = 0; j < nums.length; j++) {
+  //         if (i !== j) {
+  //             multiplier *= nums[j]
+  //         }
+  //     }
+  //     answer[i] = multiplier
+  // }
+  // return answer
+
+  //O(n^2)
+  //space: O(n)
+
+  //optimized:
+  //iteraete through array from left to right
+  //iterate through array from right to left
+
+  let answer = [];
+
+  let multiplier = 1;
+  for (let i = 0; i < nums.length; i++) {
+    multiplier *= nums[i];
+    console.log(multiplier);
+    answer[i] *= multiplier;
+  }
+
+  let multiplier1 = 1;
+  for (let j = nums.length - 1; j >= 0; j--) {
+    // console.log(answer);
+    multiplier1 *= nums[j];
+    answer[j] *= multiplier1;
+  }
+
+  return answer;
+};
+
+// console.log(productExceptSelf([1, 2, 3, 4]));
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function (nums, k) {
+  //receive an array of integers (pos and negative), k = integer
+  //return an array where it's been shifted by right k times
+
+  //[3, 2, 4], 2 => [2, 4, 3]
+
+  //if array is empty, return an empty array
+  //create a new array
+  //iterate the array, starting at the end of the array
+  //add k amount to it and add into the new array
+  //keep going until array is empty
+
+  if (nums.length === 0) return [];
+
+  k = k % nums.length;
+
+  for (let i = 0; i < k; i++) {
+    console.log(nums.pop());
+    nums.unshift(nums.pop());
+  }
+  return nums;
+  //time: O(n x k) => n is the length of nums and k is the number of rotations
+};
+
+console.log(rotate([3, 2, 4], 2));

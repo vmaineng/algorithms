@@ -2605,3 +2605,113 @@ var maxSubArray = function(nums) {
     }
     return maxSum
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    //receive an array of integers of pos and negative
+    //return an array back of all products except self value
+    
+    //[1,2] => [2, 1]
+    
+    //initialize an empty array
+    //iterate through nums
+    //create another pointer to point at the beginning of index
+    //create a multiplie to multiply by 1
+    //multiplier * j's value
+    //add the answer into the array at designated spot in i
+    
+    // let answer = [];
+    
+    // for (let i = 0; i < nums.length; i++) {
+    //     let multiplier = 1;
+    //     for (let j = 0; j < nums.length; j++) {
+    //         if (i !== j) {
+    //             multiplier *= nums[j]
+    //         }
+    //     }
+    //     answer[i] = multiplier
+    // }
+    // return answer
+    
+    //optimized way:
+    //create an answer array
+    //iterate left and add to answer array
+    //iterate right down to 0, add to answer array
+    //return answer array
+    
+    let answer = []
+    
+    let leftMultiplier= 1
+    for (let i = 0; i < nums.length; i++) {
+        answer[i] = leftMultiplier
+        console.log(answer[i])
+        leftMultiplier *= nums[i]
+    }
+    
+    
+    let rightMultiplier = 1;
+    for (let i = nums.length - 1; i >=0 ; i--) {
+        answer[i] *= rightMultiplier
+        rightMultiplier *= nums[i]
+    }
+    
+    return answer
+    };
+    
+    /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    //receive a string of chars
+    //return the longest substring without repeating chars
+    //'hello' => 'hel' => 3
+
+    //brute force:
+    //keep a count 
+    //iterate through strings
+    // have another pointer starting at second value next to it
+    //check to see if they are the same value
+    //otherwise, add
+    // if same value
+    //keep track of length
+
+    // let count = 0;
+    // for (let i = 0; i < s.length; i++) {
+    //     for (let j = i + 1; j < s.length; j++) {
+    //         if (s[i]=== s[j]) {
+    //             count = Math.max(count, j - i + 1)
+    //         }
+    //     }
+    // }
+    // return count
+
+    //optimized: 
+    //use a map
+    //keep track of count
+    //for every letter seen, add in the count
+    //else if count already has a letter
+    //keep track of size
+    //then decrement left window
+
+    let uniqueChars = new Set();
+    let count = 0;
+
+    let left = 0;
+    let right = 0; 
+
+    while (right < s.length) {
+        if (!uniqueChars.has(s[right])) {
+            uniqueChars.add(s[right])
+              right++
+        } else {
+            uniqueChars.delete(s[left])
+            left++
+        }
+       count = Math.max(count, uniqueChars.size)
+    }
+    return count
+};
