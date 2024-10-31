@@ -2962,3 +2962,11 @@ function mergeOverlappingIntervals(array) {
     // Do not edit the line below.
     exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
     
+
+    //always think aout loud - communicating
+    //good to have optimal
+
+
+
+
+
