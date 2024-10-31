@@ -2841,6 +2841,71 @@ var groupAnagrams = function(strs) {
     
     };
     
-    
+    /**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    //receive an array of strings
+    //return an array of array of group anagrams together
+    //['rawr','warr', 'jar'] => [['rawr', 'warr'], ['jar']]
+
+//if strs is empty, return an array of array of string
+
+//initialize an array
+//iterate through each string
+
+//sort string, and join them back together
+//add them as keys, then add in the actual words as values
+//return an array of them back
+
+// if (strs.length === 0) return [[""]];
+
+// let obj = {}
+
+// for (let str of strs) {
+//     let sortedStr = str.split('').sort().join('');
+//     if (!obj[sortedStr]) obj[sortedStr] = []
+//     obj[sortedStr].push(str)
+// }
+
+// return Object.values(obj)
+//time: O(n * n log n)
+//space: O(n)
+
+//brute force: 
+//initialize an empty array to store grouped anagrams
+//compare the string with every other string in the array
+//if the current string is an anagram of another string, add both strings to smae gorup
+
+if (strs.length === 0) return [strs];
+let groupedAnagrams = [];
+
+let used = new Array(strs.length).fill(false);
+
+for (let i = 0; i < strs.length; i++){
+    if (used[i]) continue;
+    let currentGroup = [strs[i]]
+    // console.log(currentGroup)
+    used[i] = true;
+
+  for (let j = i + 1; j < strs.length; j++) {
+            if (used[j]) continue;
+            if (areAnagrams(strs[i], strs[j])) {
+                currentGroup.push(strs[j]);
+                used[j] = true; // Mark as used
+        }
+    }
+    groupedAnagrams.push(currentGroup)
+}
+
+return groupedAnagrams
+};
+
+function areAnagrams(str1, str2) {
+    return str1.split("").sort().join("") === str2.split("").sort().join("")
+}
+
+
     
     
