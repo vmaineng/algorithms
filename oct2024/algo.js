@@ -2906,6 +2906,23 @@ function areAnagrams(str1, str2) {
     return str1.split("").sort().join("") === str2.split("").sort().join("")
 }
 
+/**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+    //receive an array of chars
+    //return the length of the new array when compressed
+    //['j','j', 'j','j','j','j','j','j','j','j'] => ['1','0'] => 2
 
-    
-    
+    //create an object to store how many times the letter has been seen
+    //return back the keys and values in an array format
+
+    let lettersSeen = {};
+
+    for (let char of chars) {
+        lettersSeen[char] = lettersSeen[char] + 1 || 1
+    }
+
+    return Object.values(lettersSeen)
+};
