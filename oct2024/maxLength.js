@@ -354,5 +354,8 @@ var compress = function (chars) {
   for (let j = 0; j < answer.length; j++) {
     chars[j] = answer[j];
   }
+  console.log(answer);
   return answer.length;
 };
+
+console.log(compress(["a", "a", "b", "b", "b"]));

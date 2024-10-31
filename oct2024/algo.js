@@ -2926,3 +2926,39 @@ var compress = function(chars) {
 
     return Object.values(lettersSeen)
 };
+
+function mergeOverlappingIntervals(array) {
+    //receive an array of arrays of start and end time
+      //return back an array of arrays where the end time of the first interval is less than start time end time
+      //[[1,2], [2 , 4]] => [[1, 4]]
+    
+    //sort the star time of the array
+    
+      //capture the first array
+     //iterate trhough the array
+    //destructure end time of the first array, start of the second array
+      //check if the start time <= end time, let's merge
+      //end time = update it the max end time
+      //else - there's no conflict, push the array
+    
+      //return the array
+    
+    array.sort((a,b) => a[0] - b[0]);
+    
+      let result = [array[0]];
+    
+      for (let i = 1; i < array.length; i++) {
+        let start = array[i] //capture the current arrays
+        let end = result[result.length - 1]; //capture the previous array
+        if (start[0] <= end[1]) {
+          end[1] = Math.max(end[1], start[1])
+        } else {
+          result.push(array[i])
+        }
+      }
+    return result
+    }
+    
+    // Do not edit the line below.
+    exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
+    
