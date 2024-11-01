@@ -60,3 +60,9 @@ function maxConsecutive(nums) {
 console.log(maxConsecutive([2, 3, 4, 8, 9, 10, 11, 12, 13, 14]));
 
 //ppl care more about time complexity
+//finding the right level of details - don't need to go through each single step
+//after you written the code
+//get to that point of seeing
+//don't step through each example in the pseducodode
+//do the start and end - abbreviate that part
+//find level of detail in every step;
