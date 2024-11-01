@@ -3012,6 +3012,53 @@ var isValid = function(s) {
   
   
   
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  //receive a character of strings
+//return true if parentheses close and matches, else return false
+//ex: '(]{' => false
 
+//if string is empty, return true
+
+//brute force: initialize an array - push and pop of array
+
+//optimized: use a stack
+//if you are an opening bracket, add to the stack
+//if you are a closing bracket, first check the stack is not empty,
+//then check if the previous one added is your opening bracket,
+//if not, return false
+
+//else return true after iterating through the entire thing
+
+const parenObj = {
+  ')': '(',
+  '}': '{',
+  ']': '['
+}
+
+let stack = [];
+
+for (let char of s) {
+  if (char === '(' || char === '{' || char ==='[')  { 
+      stack.push(char)
+  } else { 
+      if (stack.length === 0 || stack.pop() !== parenObj[char]) {
+          return false
+      }
+  }
+}
+return true
+
+// Initialize an empty stack.
+// Loop through each character in the string s:
+// If the character is an opening bracket ('(', '{', '['), push it onto the stack.
+// If the character is a closing bracket (')', '}', ']'):
+// Check if the stack is empty (which means there is no corresponding opening bracket, so return false).
+// Otherwise, pop the top element from the stack and check if it matches the corresponding opening bracket. If it doesn’t, return false.
+// After the loop, if the stack is empty, return true (all open b
+};
 
 
