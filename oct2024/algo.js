@@ -3116,3 +3116,33 @@ MyQueue.prototype.empty = function() {
 * var param_3 = obj.peek()
 * var param_4 = obj.empty()
 */
+
+function likes(names) {
+  //receive an array of string of names
+  //return the names in the array with likes this
+    //if empty, return no one likes this
+    //['Mary', 'JO'] => 'Mary and JO like this'
+    
+    //edge case: check if the array's length is empty, return no one likes this
+    //if 4 or more names, take the first two names and add on '2 others' like this 
+    //if 3 names, show all 3 names
+    
+    //initialize an empty string
+    //check the length of names array
+    //if it's greater than 4, add the first two names and 2 others like this
+    //else if it's less than 4, show all 3 names
+    //else if it's empty, return no one likes htis
+    
+     if (names.length === 0) {
+          return "no one likes this"
+     } else if (names.length === 1) {
+       return `${names[0]} likes this`
+     } else if (names.length === 2) {
+       return `${names[0]} and ${names[1]} like this`
+     } else if (names.length === 3) {
+       return `${names[0]}, ${names[1]} and ${names[2]} like this`
+     } else if (names.length ===4) {
+       return `${names[0]}, ${names[1]} and ${names.length -2} others like this`
+     }
+ 
+}
