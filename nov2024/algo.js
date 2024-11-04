@@ -126,3 +126,164 @@ var subarraySum = function (nums, k) {
   }
   return count;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrder = function (root) {
+  if (root === null) return [];
+
+  let result = [];
+  let queue = [root];
+
+  while (queue.length > 0) {
+    let levelSize = queue.length;
+    let currentLevel = [];
+
+    for (let i = 0; i < levelSize; i++) {
+      let currentNode = queue.shift();
+      currentLevel.push(currentNode.val);
+
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+      }
+    }
+    result.push(currentLevel);
+  }
+  return result;
+};
+
+var topKFrequent = function (nums, k) {
+  //if nums is empty, return empty array
+  //create an object to track values seen
+  //then get all the values in an array
+  //sort by biggest to smallest
+  //take the first k elements
+
+  if (nums.length === 0) return [];
+
+  // let objSeen = {};
+  // for (let num of nums) {
+  //    objSeen[num] = (objSeen[num] || 0) + 1
+  // }
+  // const objSeenArray = Object.entries(objSeen)
+
+  // objSeenArray.sort((a,b) => b[1] - a[1]);
+
+  // return objSeenArray.slice(0,k).map((item) => parseInt(item[0]))
+  //time: O(n log n)
+
+  //optimized:
+  //count the frequencies
+  //create buckets where index represents frequency
+  //collect top 'k' most frequent elements from the buckets
+
+  let frequencyObj = {};
+  for (let num of nums) {
+    frequencyObj[num] = (frequencyObj[num] || 0) + 1;
+  }
+
+  let buckets = Array(nums.length + 1)
+    .fill()
+    .map(() => []);
+
+  for (let num in frequencyObj) {
+    let frequency = frequencyObj[num];
+    buckets[frequency].push(parseInt(num));
+  }
+
+  let result = [];
+  for (let i = buckets.length - 1; i >= 0 && result.length < k; i--) {
+    if (buckets[i].length > 0) {
+      result.push(...buckets[i]);
+    }
+  }
+  return result.slice(0, k);
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrder = function (root) {
+  //receive the root node of a binary tree
+  //return level order traversal of nodes values from left to right
+
+  //initialize a queue to hold the root's node
+  //initialize an empty array to hold each levels
+  //iterate through the queue while it's not empty
+  //create another array to hold all the levels nodes
+  //capture the current length in the queue
+  //take the first node in the queue, add it to the answer array
+  //then add in left and right children to queue next
+  //add the levels array to answer array
+  //return answer
+
+  if (!root) return [];
+
+  let queue = [root];
+  let answer = [];
+
+  while (queue.length > 0) {
+    let currentLevels = [];
+    let levelSize = queue.length;
+
+    for (let i = 0; i < levelSize; i++) {
+      const currentNode = queue.shift();
+      currentLevels.push(currentNode.val);
+
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+    answer.push(currentLevels);
+  }
+  return answer;
+};
+
+//to do bfs from right to left; add in right child first, then left child::
+
+var levelOrderRightToLeft = function (root) {
+  if (!root) return []; // Return an empty array if the root is null
+
+  const result = []; // Store the final level order traversal
+  const queue = [root]; // Queue initialized with the root node
+
+  while (queue.length > 0) {
+    const currentLevel = [];
+    const levelSize = queue.length; // Nodes at the current level
+
+    for (let i = 0; i < levelSize; i++) {
+      const currentNode = queue.shift();
+      currentLevel.push(currentNode.val);
+
+      // Add right child first, then left child
+      if (currentNode.right) queue.push(currentNode.right);
+      if (currentNode.left) queue.push(currentNode.left);
+    }
+
+    result.push(currentLevel); // Add current level to the result
+  }
+
+  return result;
+};
