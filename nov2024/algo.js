@@ -287,3 +287,44 @@ var levelOrderRightToLeft = function (root) {
 
   return result;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function (nums, k) {
+  //receive an array of integers (pos and negative), k = integer
+  //return an array where it's been shifted by right k times
+
+  //[3, 2, 4], 2 => [2, 4, 3]
+
+  //if array is empty, return an empty array
+  //create a new array
+  //iterate the array, starting at the end of the array
+  //add k amount to it and add into the new array
+  //keep going until array is empty
+
+  if (nums.length === 0) return [];
+
+  // k = k % nums.length
+
+  // for (let i = 0; i < k; i++) {
+  //     nums.unshift(nums.pop())
+
+  k = k % nums.length;
+
+  function reverse(start, end) {
+    while (start < end) {
+      [nums[start], nums[end]] = [nums[end], nums[start]];
+      start++;
+      end--;
+    }
+  }
+
+  reverse(0, nums.length - 1);
+  reverse(0, k - 1);
+  reverse(k, nums.length - 1);
+
+  //time: O(n x k) => n is the length of nums and k is the number of rotations
+};
