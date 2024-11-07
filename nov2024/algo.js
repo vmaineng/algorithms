@@ -366,3 +366,42 @@ var subarraySum = function (nums, k) {
   // }
   // return count;
 };
+
+if (!root) return [];
+
+let queue = [root];
+let answer = [];
+
+while (queue.length > 0) {
+  let currentLevels = [];
+  let levelSize = queue.length;
+
+  for (let i = 0; i < levelSize; i++) {
+    const currentNode = queue.shift();
+    currentLevels.push(currentNode.val);
+
+    if (currentNode.left) queue.push(currentNode.left);
+    if (currentNode.right) queue.push(currentNode.right);
+  }
+  answer.push(currentLevels);
+}
+return answer;
+
+function descendingOrder(n) {
+  //recevie an integer
+  //return an integer from biggest to smallest
+  //3423589 => 9854332
+
+  //turn the integer into a string, into an array
+  //sort
+  //return the string number into an number format back
+
+  let stringNum = n.toString();
+
+  console.log(stringNum);
+  stringNum = stringNum
+    .split("")
+    .sort((a, b) => b - a)
+    .join("");
+  return Number(stringNum);
+}
