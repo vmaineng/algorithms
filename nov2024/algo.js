@@ -546,3 +546,46 @@ function typeOfSum(a, b) {
   let sum = a + b;
   return typeof sum;
 }
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (nums, target) {
+  //receive an array of integers
+  //return index of target if it is in nums
+  //[1,2,3,4,5], 4
+  //rotated => [3,4,5,1,2], 4 => 1
+
+  //set up binary search method
+  //calc middle idx
+  //check the determine sorted half - if the left half is sorted to middle is sorted
+  //check if the target is in range
+  //else check the right value
+
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (target === nums[middle]) {
+      return middle;
+    }
+    if (nums[left] <= nums[middle]) {
+      //if it is sorted
+      if (nums[left] <= target && target <= nums[middle]) {
+        right = middle - 1;
+      } else {
+        left = middle + 1;
+      }
+    } else {
+      if (nums[middle] < target && target <= nums[right]) {
+        left = middle + 1;
+      } else {
+        right = middle - 1;
+      }
+    }
+  }
+  return -1;
+};
