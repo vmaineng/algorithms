@@ -634,3 +634,45 @@ var subarraySum = function (nums, k) {
     }
   }
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function (nums) {
+  //receive an array of integers
+  //return the majority element
+  //ex: [1,2,2,2,3,5,5] => 2?
+
+  //create a frequency counter
+  //check if the num / length >
+  //then update max
+
+  // const countMap = {};
+  // const majority = Math.floor(nums.length /2)
+
+  // for (const num of nums) {
+  //     countMap[num] = (countMap[num] || 0) + 1
+  //     if (countMap[num] > majority) {
+  //         return num
+  //     }
+  // }
+
+  let count = 0;
+  let candidate = null;
+
+  for (const num of nums) {
+    if (count === 0) {
+      candidate = num;
+    }
+    count += num === candidate ? 1 : -1;
+  }
+  return candidate;
+
+  // Initialize two variables: count to 0 and candidate to null.
+  // Loop through the array:
+  // If count is 0, set the current number as the candidate.
+  // If the current number is equal to the candidate, increment count.
+  // If the current number is different, decrement count.
+  // By the end of the loop, the candidate will be the majority element.
+};
