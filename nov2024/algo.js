@@ -535,3 +535,14 @@ function spEng(sentence) {
     return false;
   }
 }
+
+function typeOfSum(a, b) {
+  //receive two types of data: a and b;
+  //return the type of the sum of two arguments
+
+  //add them together
+  //return the typeof sum
+
+  let sum = a + b;
+  return typeof sum;
+}
