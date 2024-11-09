@@ -797,3 +797,52 @@ var maxArea = function (height) {
 
   return maxArea;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrderBottom = function (root) {
+  //receive a root node of a binary tree
+  //return the level order traversal
+
+  //edge case: if there is not root node, return an empty array
+
+  //initialize a queue with the root added in it
+  //while queue is not empty
+  //initialize a current level array
+  //capture the static size length of the queue
+  //iterate until the end of the queue
+  //pop off currentNode
+  //add node into the array
+  //add left and right child to queue if needed
+  //then return array reverse
+
+  if (!root) return [];
+
+  let queue = [root];
+  let array = [];
+
+  while (queue.length > 0) {
+    let currentLevel = [];
+    let levelsize = queue.length;
+
+    for (let i = 0; i < levelsize; i++) {
+      const currentNode = queue.shift();
+      currentLevel.push(currentNode.val);
+
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+    array.push(currentLevel);
+  }
+  return array.reverse();
+};
