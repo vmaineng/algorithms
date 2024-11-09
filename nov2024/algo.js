@@ -589,3 +589,48 @@ var search = function (nums, target) {
   }
   return -1;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var subarraySum = function (nums, k) {
+  //receive an array of integers of nums and an integer of k
+  //return total number of subarays total k
+  //[3, 2, 1, 1,], 2 => [2]
+
+  //brute force:
+  //keep ointer on first value
+  //keep ointer on second value
+  //increment sum
+  //if sum === k
+  //count++
+  //return count
+
+  // let count = 0;
+
+  // for (let i = 0; i < nums.length ;i++) {
+  //     let sum = 0;
+  //     for (let j = i; j < nums.length; j++) { // ! why start at i
+  //         sum += nums[j]
+  //         if (sum ===k){
+  //             count++
+  //         }
+  //     }
+  // }
+  // return count;
+
+  let count = 0;
+  let sum = 0;
+
+  const map = new Map();
+  map.set(0, 1);
+
+  for (let num of nums) {
+    sum += num;
+    if (map.has(sum - k)) {
+      count += map.get(sum - k);
+    }
+  }
+};
