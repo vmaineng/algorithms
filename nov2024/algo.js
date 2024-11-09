@@ -676,3 +676,124 @@ var majorityElement = function (nums) {
   // If the current number is different, decrement count.
   // By the end of the loop, the candidate will be the majority element.
 };
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function (height) {
+  //receive an array of positive integers
+  //return max amt of water can store
+
+  //[3, 5, 2, 1, 4, 5] => [ 5 , 5] and they are 5 apart 5 * 5 = 25
+
+  //keep track of maxAmount of water
+  //iterate through height
+  //keep a pointer on the first value
+  //look at all the other possible maxAmt
+  //check the smallest height * width
+  //update maxAmt
+  //return maxAmt
+
+  let maxAmount = 0;
+  for (let i = 0; i < height.length; i++) {
+    for (let j = i + 1; j < height.length; j++) {
+      let minHeight = Math.min(height[i], height[j]);
+      let maxArea = minHeight * (j - i);
+      maxAmount = Math.max(maxAmount, maxArea);
+    }
+  }
+  return maxAmount;
+
+  //time: O(n^2);
+  //space: O(1)
+
+  //optimized method:
+  //create a pointer at left side and pointer at right side
+  //find the min height of left or right
+  //find the width
+  //calculate l * x to get the max area
+  //update maxAmount
+  ////check if left side smaller or right side smaller
+  //move left pointer up
+  //else move right pointer
+  //return maxArea
+
+  let left = 0;
+  let right = height.length - 1;
+  let maxAmount = 0;
+
+  while (left < right) {
+    let minHeight = Math.min(height[left], height[right]);
+    let currentArea = minHeight * (right - left);
+    maxAmount = Math.max(currentArea, maxAmount);
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return maxAmount;
+
+  //time: O(n);
+  //space:O(1)
+};
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function (height) {
+  //receive a height array
+  //return the max amount of water a container can store
+
+  //[3, 4, 5, 1, 2]
+  //4
+
+  //brute force:
+  //initialize a maxArea
+  //iterate through the height array
+  //then iterate through the second value of the height array
+  //calculate the min Height
+  //then calculate the width
+  //update the area
+  //return maxArea
+
+  // let maxArea = 0;
+
+  // for (let i = 0; i < height.length ;i++) {
+  //     for (let j = i + 1; j < height.length; j++) {
+  //     let area = Math.min(height[i], height[j]) * (j - i)
+  //     maxArea = Math.max(area, maxArea)
+  // }
+  // }
+  // return maxArea
+
+  //time: O(n^2); space: O(1)
+
+  //two pointers => O(n)
+
+  //let left start at first value
+  //let right pointer start from the end
+  //while they are not equal to each other
+  //calculate the area between them taking the minHeight
+  //return max Area
+  //move left pointer and right pointer depending on which one is the smallest one
+
+  let left = 0;
+  let right = height.length - 1;
+  let maxArea = 0;
+
+  while (left < right) {
+    let area = Math.min(height[left], height[right]) * (right - left);
+    maxArea = Math.max(area, maxArea);
+
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return maxArea;
+};
