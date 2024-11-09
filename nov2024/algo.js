@@ -846,3 +846,89 @@ var levelOrderBottom = function (root) {
   }
   return array.reverse();
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function (nums, k) {
+  //receive an array of integers/ pos and negative
+  //return the array of integers rotated by k amount
+
+  //edge case: if array is empty, return empty array
+  //if array only has one value, and K > nums
+
+  //initialize a new array
+  //start at the beginning of the array
+  //pop off at the end
+  //add to the beggininng
+  //return array
+
+  //    for (let i = 0; i < k; i++) {
+  //     nums.unshift(nums.pop())
+  //    }
+  //    return nums;
+
+  //reverse entire array
+  //reverse from start to k,
+  //reverse from k to end of the length array
+
+  k = k % nums.length;
+
+  function reverse(start, end) {
+    while (start < end) {
+      [nums[start], nums[end]] = [nums[end], nums[start]];
+      start++;
+      end--;
+    }
+  }
+  reverse(0, nums.length - 1);
+  reverse(0, k - 1);
+  reverse(k, nums.length - 1);
+};
+
+/**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function (chars) {
+  //receive an array of characters,
+  //return an array of strings back with it compressed
+  //['a','a','b','b','b'] => ['2','a','3','b']
+
+  //if array is empty, return an array of an empty string
+
+  //keep track of an empty string
+  //keep count of strings seen
+  //iterate through chars
+  //check if the next value is still same letter
+  //increment count
+  //else capture the current value
+  //return array of values seen
+
+  let answer = [];
+  let i = 0;
+
+  while (i < chars.length) {
+    let char = chars[i];
+    let count = 0;
+
+    while (i < chars.length && chars[i] === char) {
+      i++;
+      count++;
+    }
+    answer.push(char);
+
+    if (count > 1) {
+      for (let digit of count.toString()) {
+        answer.push(digit);
+      }
+    }
+  }
+
+  for (let j = 0; j < answer.length; j++) {
+    chars[j] = answer[j];
+  }
+  return answer.length;
+};
