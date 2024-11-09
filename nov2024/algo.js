@@ -429,3 +429,109 @@ function solution(number) {
   }
   return sum;
 }
+
+/**
+ * @param {number[][]} rooms
+ * @return {boolean}
+ */
+var canVisitAllRooms = function (rooms) {
+  //receieve an array of rooms
+  //return true if can visit all rooms, else return fals
+
+  //ex: [[1], [3, 1]] => false b/c I need to visit room 2
+
+  //initialize an array with same length of rooms filled with false
+  //visit the rooms bfs with queue
+  //if we can visit in the array, flip it to true
+  //then add key into the queue
+
+  let visitedRooms = new Array(rooms.length).fill(false);
+  let queue = [0];
+  visitedRooms[0] = true;
+  let visitedCount = 1;
+
+  while (queue.length > 0) {
+    const currentRoom = queue.shift();
+    for (let key of rooms[currentRoom]) {
+      if (!visitedRooms[key]) {
+        visitedRooms[key] = true;
+        visitedCount++;
+        queue.push(key);
+
+        if (visitedCount === rooms.length) {
+          return true;
+        }
+      }
+    }
+  }
+  return visitedCount === rooms.length;
+};
+
+function level(instructions: string, obstacles: number[]): boolean {}
+
+// R goes 1 step to the right, L goes 1 step to the left, j goes 2 steps in the prev movement direction
+"RRRJRJRRR"[(4, 6)];
+/*
+->  ->  ->  *     *   ->   ->  ->  ->
+1   2   3   4  5  6   7    8   9   10
+*/
+level("RRRJRJRRR", [4, 6]); // -> true
+
+function level(instructions: string, obstacles: number[]): boolean {
+  let position = 0;
+  let prevMovement = null;
+
+  for (const movement of instructions) {
+    if (position >= 9) {
+      return true;
+    }
+
+    if (obstacles.includes(position)) {
+      return false;
+    }
+
+    if (movement === "R") {
+      position++;
+      prevMovement = "R";
+    } else if (movement === "L") {
+      position--;
+      prevMovement = "L";
+    } else if (movement === "J") {
+      if (prevMovement === "R") {
+        position += 2;
+      } else {
+        position -= 2;
+      }
+    }
+  }
+
+  return false;
+}
+
+function shortPath(matrix) {
+  //receive a matrix
+  //return min  directions to destination
+  //use bfs -
+  //pop on current position
+  //iterate through matrix while queue.length > 0
+  //add to steps
+}
+
+function spEng(sentence) {
+  //receive a string of letters
+  //return true if it contains "English", else false
+
+  //ex: 'ehlkwhleoEnglishjslkdjfwlk' => true
+
+  //initialize the world english
+  //lowercase the setence received
+  //check if the word contains 'English', return true, else return false
+
+  const word = "english";
+
+  if (sentence.toLowerCase().includes(word)) {
+    return true;
+  } else {
+    return false;
+  }
+}
