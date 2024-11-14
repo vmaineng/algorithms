@@ -1,22 +1,31 @@
-function solution(number) {
-  //receive a number
-  //return the sum of all multiples of 3 or 5 below the number
+function arrayOfProducts(array) {
+  //initalize an array of the array's length set it to 1
+  //create a multiplier of 1
+  //iterate through the array with all the values of the left side
+  //iterate through the answer array with all the values from the right side
+  //multiple the values from the array with the values from right side
 
-  //15 => 3, 5,6, 9, 10,12 => 45
+  let answer = new Array(array.length).fill(1);
 
-  //initialize a sum total
-  //iterate up to number
-  //check if the number can be by number with no remaineder
-  //add to the sum
-
-  let sum = 0;
-  for (let i = 1; i < number; i++) {
-    if (number / i) {
-      console.log(i, number);
-      sum += i;
-    }
+  let leftMultiplier = 1;
+  for (let i = 0; i < array.length; i++) {
+    answer[i] = leftMultiplier;
+    leftMultiplier *= array[i];
+    console.log(answer);
   }
-  return sum;
+
+  let rightMultipler = 1;
+  for (let i = array.length - 1; i >= 0; i--) {
+    answer[i] *= rightMultipler;
+    rightMultipler *= array[i];
+  }
+
+  return answer;
 }
 
-console.log(solution(10));
+// Do not edit the line below.
+exports.arrayOfProducts = arrayOfProducts;
+
+console.log(arrayOfProducts([3, 4, 5]));
+//answer of i gets updated from leftmultiplier
+//left multiplier moves over to the next value and gets updated

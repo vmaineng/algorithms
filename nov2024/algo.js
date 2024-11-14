@@ -1087,3 +1087,75 @@ var productExceptSelf = function (nums) {
 
 //time: O(2n) => O(n);
 //space: O(n)
+
+function arrayOfProducts(array) {
+  //receive an array of integers
+  //return an array back of products of the values in the array
+  //[2,3 -1] => [-3, -2, 6]
+
+  //intialize an empty array
+  //iterate through the values int he array starting at the first index
+  //creater another pointer that will point at the beginning of the array
+  //create a multiplier of 1
+  //while the indexs do not equal other
+  //multiplier * the value at j
+  //j * array[i]
+  //push the product into the array
+  //return array
+
+  let answer = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let multiplier = 1;
+    for (let j = 0; j < array.length; j++) {
+      if (i !== j) {
+        multiplier *= array[j];
+      }
+    }
+    answer[i] = multiplier;
+  }
+  return answer;
+}
+
+// Do not edit the line below.
+exports.arrayOfProducts = arrayOfProducts;
+
+// Do not edit the class below except for the
+// populateSuffixTrieFrom and contains methods.
+// Feel free to add new properties and methods
+// to the class.
+class SuffixTrie {
+  constructor(string) {
+    this.root = {};
+    this.endSymbol = "*";
+    this.populateSuffixTrieFrom(string);
+  }
+
+  populateSuffixTrieFrom(string) {
+    for (let i = 0; i < string.length; i++) {
+      this.insertSubString(i, string);
+    }
+  }
+
+  insertSubString(i, string) {
+    let node = this.root;
+    for (let j = i; j < string.length; j++) {
+      const letter = string[j];
+      if (!(letter in node)) node[letter] = {};
+      node = node[letter]; //update the green arrow in the tree; keep traversing
+    }
+    node[this.endSymbol] = true;
+  }
+
+  contains(string) {
+    let node = this.root;
+    for (const letter of string) {
+      if (!(letter in node)) return false;
+      node = node[letter]; //keep traversing down the suffix tree
+    }
+    return this.endSymbol in node;
+  }
+}
+
+// Do not edit the line below.
+exports.SuffixTrie = SuffixTrie;
