@@ -979,3 +979,111 @@ var search = function (nums, target) {
   }
   return -1;
 };
+
+function canFinish(numCourses, prerequisites) {
+  // Create adjacency list
+  const graph = new Map();
+
+  // Initialize graph
+  for (let i = 0; i < numCourses; i++) {
+    graph.set(i, []);
+  }
+
+  // Build graph
+  for (const [course, prereq] of prerequisites) {
+    graph.get(course).push(prereq);
+  }
+
+  // Keep track of visited courses in current path
+  const visiting = new Set();
+  // Keep track of courses we've fully explored
+  const visited = new Set();
+
+  // DFS function to detect cycles
+  function hasCycle(course) {
+    // If we see a course we're currently exploring, we found a cycle
+    if (visiting.has(course)) return true;
+    // If we've already fully explored this course, no need to check again
+    if (visited.has(course)) return false;
+
+    // Mark course as being explored
+    visiting.add(course);
+
+    // Check all prerequisites
+    for (const prereq of graph.get(course)) {
+      if (hasCycle(prereq)) return true;
+    }
+
+    // Remove from current path
+    visiting.delete(course);
+    // Mark as fully explored
+    visited.add(course);
+
+    return false;
+  }
+
+  // Check each course
+  for (let course = 0; course < numCourses; course++) {
+    if (hasCycle(course)) return false;
+  }
+
+  return true;
+}
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function (nums) {
+  //receive an array of integers
+  //return an array of all products except the nums itself
+  //[2, 3, 4] => [12, 8, 6]
+
+  //initialize an array
+  //iterate through nums creating a first pointer
+  //create a multiplier set to 1
+  //iterate through nums with a second poitner
+  //check if the indexes are not equal to each other
+  //multiiplier will be updated by the product of the value at second poitner
+  //then update the position in the array
+  //return array
+
+  // let answers = [];
+  // for (let i = 0; i < nums.length; i++) {
+  //     let multiplier = 1;
+  //     for (let j = 0; j < nums.length; j++) {
+  //         if (i !== j) {
+  //             multiplier *= nums[j]
+  //         }
+  //     }
+  //     answers[i] = multiplier
+  // }
+  // return answers
+
+  //time: O(n^2)
+  //space: O(n)
+
+  //optimized: iterate and update products of all the elements to the left
+  //then update all the products starting from the right
+  //return the array
+
+  let answers = new Array(nums.length).fill(1);
+
+  let leftMultiplier = 1;
+  for (let i = 0; i < nums.length; i++) {
+    answers[i] = leftMultiplier;
+    console.log(answers[i]);
+    leftMultiplier *= nums[i];
+  }
+
+  let rightMultiplier = 1;
+  for (let i = nums.length - 1; i >= 0; i--) {
+    answers[i] *= rightMultiplier;
+    rightMultiplier *= nums[i];
+  }
+
+  return answers;
+};
+
+//time: O(2n) => O(n);
+//space: O(n)
