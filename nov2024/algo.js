@@ -1159,3 +1159,129 @@ class SuffixTrie {
 
 // Do not edit the line below.
 exports.SuffixTrie = SuffixTrie;
+
+function arrayOfProducts(array) {
+  //initalize an array of the array's length set it to 1
+  //create a multiplier of 1
+  //iterate through the array with all the values of the left side
+  //iterate through the answer array with all the values from the right side
+  //multiple the values from the array with the values from right side
+
+  let answer = new Array(array.length).fill(1);
+
+  let leftMultiplier = 1;
+  for (let i = 0; i < array.length; i++) {
+    answer[i] = leftMultiplier;
+    leftMultiplier *= array[i];
+    console.log(answer);
+  }
+
+  let rightMultipler = 1;
+  for (let i = array.length - 1; i >= 0; i--) {
+    answer[i] *= rightMultipler;
+    rightMultipler *= array[i];
+  }
+
+  return answer;
+}
+
+// Do not edit the line below.
+exports.arrayOfProducts = arrayOfProducts;
+
+console.log(arrayOfProducts([3, 4, 5]));
+//answer of i gets updated from leftmultiplier
+//left multiplier moves over to the next value and gets updated
+
+function classPhotos(redShirtHeights, blueShirtHeights) {
+  //receive two arrays of integers
+  //return boolean; true if all shirts in the back row, else false
+  //blue: [5, 8, 1, 4]
+  //red: [3,8,1,7] => false b/c [8 ] & [8]
+
+  //determine which color will be in back row
+  //sort red & blue by tallest (biggest)
+  //then iterate through one of the color shirts array
+  //if the back row is red
+  //then check if the blue is not taller than red, else false
+  //vice versa
+  //otherwise return true
+
+  redShirtHeights.sort((a, b) => b - a);
+  blueShirtHeights.sort((a, b) => b - a);
+
+  let frontRow = redShirtHeights[0] > blueShirtHeights[0] ? "BLUE" : "RED";
+
+  for (let i = 0; i < blueShirtHeights.length; i++) {
+    if (frontRow === "BLUE") {
+      if (redShirtHeights[i] <= blueShirtHeights[i]) return false;
+    } else if (blueShirtHeights[i] <= redShirtHeights[i]) return false;
+  }
+
+  return true;
+}
+
+// Do not edit the line below.
+exports.classPhotos = classPhotos;
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function reverseLinkedList(head) {
+  //receive the head of a LL
+  //return the LL reversed in place
+  // 1 -> 2 -> 3 -> null => 3 -> 2 -> 1 -> null;
+
+  //edge case: if the head is empty, return null;
+  //capture the current as the head
+  if (!head) return null;
+
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.reverseLinkedList = reverseLinkedList;
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function validateBst(tree, min = -Infinity, max = Infinity) {
+  //receive a root node of a tree
+  //return true if bst is valid, else false
+
+  //base case: if node's value is < than min, and greater than max, return false
+  //recursive case: keep traversing left and checking the value, and keep traversing right and check the values
+
+  if (!tree) return true;
+
+  if (tree.value < min || tree.value >= max) return false;
+
+  return (
+    validateBst(tree.left, min, tree.value) &&
+    validateBst(tree.right, tree.value, max)
+  );
+}
+
+// Do not edit the line below.
+exports.BST = BST;
+exports.validateBst = validateBst;
