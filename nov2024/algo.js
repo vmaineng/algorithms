@@ -1285,3 +1285,48 @@ function validateBst(tree, min = -Infinity, max = Infinity) {
 // Do not edit the line below.
 exports.BST = BST;
 exports.validateBst = validateBst;
+
+var RandomizedSet = function () {
+  this.map = new Map();
+};
+
+/**
+ * @param {number} val
+ * @return {boolean}
+ */
+RandomizedSet.prototype.insert = function (val) {
+  if (!val) {
+    return false;
+  } else {
+    this.map.add(val);
+    return true;
+  }
+};
+
+/**
+ * @param {number} val
+ * @return {boolean}
+ */
+RandomizedSet.prototype.remove = function (val) {
+  if (!val) {
+    return false;
+  } else {
+    this.map.delete(val);
+    return true;
+  }
+};
+
+/**
+ * @return {number}
+ */
+RandomizedSet.prototype.getRandom = function () {
+  return Math.random();
+};
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * var obj = new RandomizedSet()
+ * var param_1 = obj.insert(val)
+ * var param_2 = obj.remove(val)
+ * var param_3 = obj.getRandom()
+ */
