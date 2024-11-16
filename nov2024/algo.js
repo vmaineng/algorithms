@@ -1366,3 +1366,34 @@ function findKthLargestValueInBst(tree, k) {
 // Do not edit the lines below.
 exports.BST = BST;
 exports.findKthLargestValueInBst = findKthLargestValueInBst;
+
+function cycleInGraph(edges) {
+  //receive an array of integers
+  //return true if cycle detected, else return false
+
+  const visited = new Set(); //nodes that have been fully explored
+  const inStack = new Set(); //nodes that are currently in the recurstion stack
+
+  function dfs(node) {
+    if (inStack.has(node)) return true;
+    if (visited.has(node)) return false;
+
+    visited.add(node);
+    inStack.add(node);
+
+    for (const neighbor of edges[node]) {
+      if (dfs(neighbor)) return true;
+    }
+    inStack.delete(node);
+    return false;
+    //if node is found in the instack stack, then it's a cycle
+  }
+
+  for (let node = 0; node < edges.length; node++) {
+    if (!visited.has(node) && dfs(node)) return true;
+  }
+  return false;
+}
+
+// Do not edit the line below.
+exports.cycleInGraph = cycleInGraph;
