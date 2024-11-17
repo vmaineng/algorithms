@@ -1908,3 +1908,111 @@ var findMaxAverage = function (nums, k) {
 
   return maxAverage;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findMaxAverage = function (nums, k) {
+  //receive an array of integers and an integer k of elements to check
+  //return the max average value and return the max average value from k elements in array
+
+  //[2, 3, 4, -4,] k= 2 =[5/2, 7/2, 0/2] =>
+
+  //if array is empty or less than k, then can't find max average value
+  //intialize a max average value to 0
+  //iterate array starting from first index up to k
+  //calc the total average of both
+  //then increment by 1 to capture the next 4 newest elements
+  //calc the average
+  //return average found
+
+  // let maxAverage = -Infinity;
+
+  // for (let i = 0; i<= nums.length - k; i++) {
+  //     let sum = 0
+  //     for(let j = i; j < i + k;j ++) {
+  //        sum += nums[j]
+  //     }
+  //      let average = sum/k
+  //         maxAverage = Math.max(average, maxAverage)
+  // }
+  // return maxAverage
+
+  //time complexity is O(n * k)
+
+  //sliding window technique:
+  //create two pointers of left and right starting at index 0
+  //right increments until it hits k amount
+  //calc the average
+  //update the average
+  //return average
+
+  let maxAverage = -Infinity;
+
+  let left = 0;
+  let right = 0;
+  let sum = 0;
+
+  while (right < nums.length) {
+    sum += nums[right];
+    let average = sum / k;
+
+    if (right - left + 1 >= k) {
+      maxAverage = Math.max(average, maxAverage);
+      sum -= nums[left];
+      left++;
+    }
+
+    right++;
+  }
+  return maxAverage;
+};
+
+//sliding window starts at same index
+//then right window moves until it reaches window size
+//then it move left pointer up and decrement left pointer away
+//then move right pointer to start a new window
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+var maxVowels = function (s, k) {
+  //within the window of k, count how many vowels exist
+  //initialize what vowles are
+  //initialize a total
+  //if s.length is empty, return
+  //check if it is a vowel, then add to the sum
+  //return max vowels
+
+  let vowels = ["a", "e", "i", "o", "u"];
+
+  if (!s) return;
+
+  let maxSum = 0;
+  let sum = 0;
+
+  //calc for the first window
+  for (let i = 0; i < k; i++) {
+    if (vowels.includes(s[i])) {
+      sum++;
+      maxSum = sum;
+    }
+  }
+
+  //calc for the rest
+  for (let i = k; i < s.length; i++) {
+    if (vowels.includes(s[i])) {
+      sum++;
+    }
+    //subtract out k's if it was a vowel so we do not double count
+    if (vowels.includes(s[i - k])) {
+      sum--;
+    }
+    maxSum = Math.max(maxSum, sum);
+  }
+  return maxSum;
+};
