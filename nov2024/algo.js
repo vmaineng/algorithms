@@ -1566,3 +1566,76 @@ function getUnvisitedNeighbors(i, j, matrix, visited) {
 
 // Do not edit the line below.
 exports.riverSizes = riverSizes;
+
+function riverSizes(matrix) {
+  const sizeArray = [];
+
+  for (let row = 0; row < matrix.length; row++) {
+    for (let col = 0; col < matrix[row].length; col++) {
+      if (matrix[row][col] === 1) {
+        const size = dfs(row, col, matrix);
+        sizeArray.push(size);
+      }
+    }
+  }
+  return sizeArray;
+}
+
+function dfs(row, col, matrix) {
+  if (
+    row < 0 ||
+    row >= matrix.length ||
+    col < 0 ||
+    col >= matrix[row].length ||
+    matrix[row][col] !== 1
+  ) {
+    return 0;
+  }
+
+  matrix[row][col] = -1; //mark as visisted
+
+  let size = 1;
+
+  const directions = [
+    [0, 1],
+    [1, 0],
+    [0, -1],
+    [-1, 0],
+  ];
+
+  for (const [dx, dy] of directions) {
+    const newRow = row + dx;
+    const newCol = col + dy;
+    size += dfs(newRow, newCol, matrix);
+  }
+  return size;
+}
+
+// Do not edit the line below.
+exports.riverSizes = riverSizes;
+
+function printerError(s) {
+  //receive a string of lowercase letters
+  //return the string of errors/length of string
+
+  //'aabcccdddqrs' => "3/18"
+
+  //initialize a count
+  //capture the length of string
+  //iterate through text of string
+  //check if it's not a-m
+  //increment count
+  //return count / length
+
+  let stringLength = s.length;
+  let count = 0;
+
+  let chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"];
+
+  for (let i = 0; i < s.length; i++) {
+    if (!chars.includes(s[i])) {
+      count++;
+    }
+  }
+  return `${count}/${stringLength}`;
+}
