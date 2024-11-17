@@ -1639,3 +1639,38 @@ function printerError(s) {
   }
   return `${count}/${stringLength}`;
 }
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+  //optimzed method = using two pointers
+  //sort the array
+  //create a pointer on the first value
+  //create a left pointer after the first value, then create a pointer at the end
+
+  //keep incrementing pointers if total > 0, right moves down, else left moves up
+
+  let answer = [];
+  nums.sort((a, b) => a - b);
+
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue; // Skip duplicates
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left < right) {
+      if (nums[i] + nums[left] + nums[right] === 0) {
+        answer.push([nums[i], nums[left], nums[right]]);
+        left++;
+        right--;
+      } else if (nums[i] + nums[left] + nums[right] > 0) {
+        right--;
+      } else {
+        left++;
+      }
+    }
+  }
+  return answer;
+};
