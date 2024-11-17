@@ -2082,3 +2082,127 @@ var maxVowels = function (s, k) {
   }
   return maxCount;
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function (head) {
+  //input: head of SLL;
+  //return the middle node;
+
+  //test cases: 1 -> null => 1->
+  // 1 -> 2 -> 3 -> null => 3->
+  //1 -> 2 -> 3 ->4 -> null => 3 ->
+
+  //edge case: if the SLL has only one node, return the node
+
+  //brute force:
+  //keep count to iterate through SLL
+  //after udpating count, traverse through SLL up to what count stated, return the middle node
+
+  // if (!head) return null;
+
+  // let count = 0;
+  // let current = head;
+
+  // while (current !== null) {
+  //     current = current.next;
+  //     count++
+  // }
+
+  // let middleNode = head;
+  // for (let i = 0; i < Math.floor(count/2); i++) {
+  //     middleNode = middleNode.next;
+  // }
+  // return middleNode
+
+  //cleaner code - fast and slow pointer
+
+  //create two pointers - one called slow and fast
+
+  //traverse through the SLL until it reaches null
+  //slow is going to move by one node
+  //fast is going to move by two nodes
+
+  //1 -> 2 -> 3 ->4 -> null => 3 ->
+  //slow
+  //.        fast
+
+  //   slow
+  //                  fast
+
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
+};
+
+//time: O(n);
+//space: O(1);
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function (list1, list2) {
+  //receive the head of two linked lists that are sorted
+  //return head of one linked lists sorted
+  //1 -> 3 -> null
+  //1 -> 2 -> null
+  // => 1 -> 1 -> 2 -> 3 -> null
+
+  //if linked list1 empty, return list 2
+  //if list2 empty, return ll1
+  //if both empty, return null
+
+  //create a dummy node
+  //then check the value of both first nodes
+  //check which one is smaller
+  //have dummy's node point to the next node
+  //else add in the the other node
+  //return list
+
+  if (!list1) return list2;
+  if (!list2) return list1;
+  if (!list1 && !list2) return null;
+
+  let dummy = new ListNode();
+  let tail = dummy;
+  let current1 = list1;
+  let current2 = list2;
+
+  while (current1 !== null && current2 !== null) {
+    if (current1.val < current2.val) {
+      tail.next = current1;
+      current1 = current1.next;
+    } else {
+      tail.next = current2;
+      current2 = current2.next;
+    }
+    tail = tail.next;
+
+    if (current1) tail.next = current1;
+    if (current2) tail.next = current2;
+  }
+  return dummy.next;
+};
