@@ -1752,3 +1752,88 @@ var threeSum = function (nums) {
   }
   return answer;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+  //receive an array of integers
+  //return an array of arrays of triplets that total up to 0
+
+  //brute force:
+  //initialize an empty array that will hold all the triplets combinations
+  //3 nested for loops
+  //in the nested for loops, we will sort the values
+  //verify if the values have already been found in the answer array
+  //skip it, else we will add in new values
+  //return answer
+
+  // let answer = [];
+
+  // for (let i = 0; i < nums.length - 2; i++) {
+  //     for (let j = i + 1; j < nums.length - 1; j++) {
+  //         for (let k = j + 1; k < nums.length; k++) {
+
+  //             if (nums[i] + nums[j] + nums[k] === 0) {
+  //                 let isDuplicate = false
+  //                 let sum = [nums[i], nums[j], nums[k]].sort((a,b) => a - b)
+
+  //                 for (const arr of answer) {
+  //                     if (arr[0] === sum[0] && arr[1] === sum[1] && arr[2] === sum[2]) {
+  //                        isDuplicate= true;
+  //                         break;
+  //                     }
+  //                     }
+  //                     if (!isDuplicate) {
+  //                     answer.push(sum)
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+  // return answer
+
+  //time: O(n^3); space: O(n)
+
+  //optimized = using a while loop with left and right pointer
+  //sort the array by smallest to biggest
+  //initialize an answer array
+  //create a pointer on the first value of the array
+  //then create a left pointer next to it
+  //then create a righ tpointer to the right of the array
+  //while left < right
+  //if the values at all 3 pointers === 0
+  //add to the answer array
+  //else check if the next value is a duplicate of left, then increment left poitner
+  //also check if the next value is a duplicate of right, then decrement right pointer
+  //check if the sum < 0 , left++
+  //else right++
+  //return answer
+
+  nums.sort((a, b) => a - b);
+  let answer = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue; // ! remember this
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left < right) {
+      let total = nums[i] + nums[left] + nums[right];
+      if (total === 0) {
+        answer.push([nums[i], nums[left], nums[right]]);
+
+        while (left < right && nums[left] === nums[left + 1]) left++;
+        while (left < right && nums[right] === nums[right - 1]) right--;
+        left++;
+        right--; // ! still need to incrmeent to find other triplets
+      } else if (total < 0) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return answer;
+};
