@@ -2016,3 +2016,69 @@ var maxVowels = function (s, k) {
   }
   return maxSum;
 };
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+var maxVowels = function (s, k) {
+  //receive  a string of lowercase letters, and k integers
+  //return the max # of vowel letters in an any substring of s with length k
+  //'aeiou', k= 2 => 'ae', 'ei'
+  //'asassiou', k=3 => 'asa', 'sas', 'ass', 'sio', 'iou' => 3
+
+  //edge case: if k > s.length, return 0
+
+  //create an array of lowercase vowels
+  //intialize a count to 0
+  //iterate through each char of s up to k amount
+  //check to see if window includes
+  //increment a count ofvowels
+  //return vowels
+
+  //     let vowels = ['a','e','i','o','u']
+  //     let maxCount = 0;
+
+  //     for (let i = 0;i <= s.length - k; i++) {
+  //         let count = 0
+  //         for (let j = i; j < i + k; j++) {
+  //             if (vowels.includes(s[j])) {
+  //                 count++
+  //             }
+  //         }
+  //         maxCount = Math.max(maxCount, count)
+  //     }
+  // return maxCount
+
+  //time: O(n * k) space: O(1)
+
+  //optimized: sliding window:
+  //create a count, left and right pointer
+  //increment right pointer until it hits the length of the array
+  //check if the vowels exist,increment count
+  //if j reaches the window size
+  //take the windown count there
+
+  let left = 0;
+  let right = 0;
+  let maxCount = 0;
+  let count = 0;
+
+  let vowels = ["a", "e", "i", "o", "u"];
+
+  while (right < s.length) {
+    if (vowels.includes(s[right])) {
+      count++;
+    }
+    if (right - left + 1 > k) {
+      if (vowels.includes(s[left])) {
+        count--;
+      }
+      left++;
+    }
+    maxCount = Math.max(maxCount, count);
+    right++;
+  }
+  return maxCount;
+};
