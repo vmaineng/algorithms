@@ -2248,3 +2248,64 @@ var swapNodes = function (head, k) {
   right.val = temp;
   return head;
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function (headA, headB) {
+  //receive two head of linked lists
+  //return the node they are intersected at (where they share)
+  //1 -> 2 -> 3 -> null
+  //2 -> 4 -> null
+  //=> 2
+
+  //if headA empty or headB empty, return no intersection
+
+  //iterate through both lists at the same time
+  //then iterate through the other lists when done traversing with their own lists
+
+  // if (!headA || !headB) return null;
+
+  // let current1 = headA
+
+  // while(current1 !== null) {
+  //     let current2 = headB
+  //     while (current2 !== null) {
+  //         if (current1 === current2) {
+  //             return current1
+  //         }
+  //         current2 = current2.next
+  //     }
+  //     current1 = current1.next
+  // }
+  // return null
+
+  //time: O(m*n) ; space: O(1)
+
+  //two pointers -
+  //create pointers for headA and headB
+  //iterate while both pointers are not null
+  //if they are null: switch to the other linked lists to look at, else iterate to the next node
+  //return current 1
+
+  if (!headA || !headB) return null;
+
+  let current1 = headA;
+  let current2 = headB;
+
+  while (current1 !== current2) {
+    current1 = current1 === null ? headB : current1.next;
+    current2 = current2 === null ? headA : current2.next;
+  }
+  return current1;
+};
