@@ -1866,3 +1866,45 @@ var intersection = function (nums1, nums2) {
   }
   return newResults;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findMaxAverage = function (nums, k) {
+  //receive an array of integers of pos and neg, k amount of integer
+  //return the max average value
+
+  //[3, 5, 2, 5], 2 => 4
+
+  //start at the first pointer
+  //add all the numbers up to k index
+  //then divide by k
+
+  let maxAverage = -Infinity;
+
+  //let left = 0;
+  //let right start at first value;
+  //iterate up to k amount, add all the values together
+  //divide by k to find maxAverage
+  //then update max average if it exceeds
+
+  let left = 0;
+  let right = 0;
+  let sum = 0;
+
+  while (right < nums.length) {
+    sum += nums[right];
+    let average = sum / k;
+
+    if (right - left + 1 >= k) {
+      maxAverage = Math.max(average, maxAverage);
+      sum -= nums[left];
+      left++;
+    }
+    right++;
+  }
+
+  return maxAverage;
+};
