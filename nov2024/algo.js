@@ -1397,3 +1397,106 @@ function cycleInGraph(edges) {
 
 // Do not edit the line below.
 exports.cycleInGraph = cycleInGraph;
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var isPalindrome = function (head) {
+  //start fast and slow pointer at head
+  let fast = head;
+  let slow = head;
+  let tmp;
+  let prev;
+
+  //keep iterating and move fast 2x and slow by 1
+  while (fast && fast.next) {
+    fast = fast.next.next;
+    slow = slow.next;
+  }
+
+  //while slow is traversing
+  //move pointer to the previous pointer
+  while (slow) {
+    tmp = slow.next;
+    slow.next = prev;
+    prev = slow;
+    slow = tmp;
+  }
+
+  //fast will start at head
+  //slow will start at node
+  fast = head;
+  slow = prev;
+
+  while (slow) {
+    //if values don't equal eacho ther return false, otherwise check next nodes?
+    if (fast.val !== slow.val) return false;
+    fast = fast.next;
+    slow = slow.next;
+  }
+  return true;
+};
+
+function removeIslands(matrix) {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+
+  // Step 1: Use DFS to mark safe land cells
+  function dfs(row, col) {
+    // Boundary check
+    if (
+      row < 0 ||
+      row >= rows ||
+      col < 0 ||
+      col >= cols ||
+      matrix[row][col] !== 1
+    ) {
+      return;
+    }
+    matrix[row][col] = -1; // Mark as safe (land connected to border)
+
+    // Explore all four directions (up, down, left, right)
+    dfs(row + 1, col);
+    dfs(row - 1, col);
+    dfs(row, col + 1);
+    dfs(row, col - 1);
+  }
+
+  // Apply DFS from all border land cells
+  for (let i = 0; i < rows; i++) {
+    if (matrix[i][0] === 1) dfs(i, 0); // Left column
+    if (matrix[i][cols - 1] === 1) dfs(i, cols - 1); // Right column
+  }
+  for (let j = 0; j < cols; j++) {
+    if (matrix[0][j] === 1) dfs(0, j); // Top row
+    if (matrix[rows - 1][j] === 1) dfs(rows - 1, j); // Bottom row
+  }
+
+  // Step 2: Remove isolated islands (turn remaining 1s to 0s)
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (matrix[i][j] === 1) {
+        matrix[i][j] = 0; // Convert isolated land to water
+      }
+    }
+  }
+
+  // Step 3: Restore safe land cells (turn -1s back to 1s)
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (matrix[i][j] === -1) {
+        matrix[i][j] = 1; // Restore safe land back to 1
+      }
+    }
+  }
+
+  return matrix;
+}
