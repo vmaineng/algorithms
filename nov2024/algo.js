@@ -2206,3 +2206,45 @@ var mergeTwoLists = function (list1, list2) {
   }
   return dummy.next;
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+var swapNodes = function (head, k) {
+  if (!head) return null;
+
+  //use two pointers
+  let current = head;
+
+  //keep iterating up to k index
+  for (i = 1; i < k; i++) {
+    //move current to the right by 1
+    current = current.next;
+  }
+
+  //current holds the left node
+  let left = current;
+  let right = head;
+
+  //while current is not null
+  while (current.next) {
+    //move it by one
+    current = current.next;
+    right = right.next;
+  }
+  //swap the values
+  let temp = left.val;
+  //swap left value with right value
+  left.val = right.val;
+  right.val = temp;
+  return head;
+};
