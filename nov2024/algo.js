@@ -1674,3 +1674,81 @@ var threeSum = function (nums) {
   }
   return answer;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+  //receive an array of integers (pos and negtiaves - whole numbers)
+  //return an array of arrays of integers that sum up to 0;
+
+  //[-1, 4, -3, 8, 2, 0]
+  //return [[-1, 4, -3]]
+
+  //On^3
+
+  //iterate through the entire array with 3 pointers
+  //if the total of each === 0 and the values are not the same, add into the answer array
+  //return array
+
+  //edge case: if the array is empty, return []
+
+  // let answer = [];
+
+  // for (let i =0; i < nums.length - 2; i++) {
+  //     for (let j = i + 1; j < nums.length - 1; j++) {
+  //         for (let k = j + 1; k < nums.length; k++) {
+  //             if (nums[i] + nums[j] + nums[k] === 0) {
+  //                 const triplet = [nums[i], nums[j], nums[k]].sort((a,b) => a -b);
+
+  //                 let isDuplicate = false;
+  //                 for (const arr of answer) {
+  //                    if (arr[0] === triplet[0] && arr[1] === triplet[1] && arr[2] === triplet[2]) {
+  //                     isDuplicate = true;
+  //                     break;
+  //                    }
+  //                 }
+  //                 if (!isDuplicate) {
+  //                     answer.push(triplet)
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+  // return answer
+
+  //optimized: sort the values in the array
+  //create one pointer
+  //do a left pointer and right pointer
+  //check if the sums of all 3 are close to 0
+  //if amount > 0 , right-- or else left++
+  //add in the 3 numbers into the answer array if found total to 0
+
+  let answer = [];
+
+  nums.sort((a, b) => a - b);
+
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left < right) {
+      let total = nums[i] + nums[left] + nums[right];
+      if (total === 0) {
+        answer.push([nums[i], nums[left], nums[right]]);
+
+        while (left < right && nums[left] === nums[left + 1]) left++;
+        while (left < right && nums[right] === nums[right + 1]) right++;
+        left++;
+        right--;
+      } else if (total > 0) {
+        right--;
+      } else {
+        left++;
+      }
+    }
+  }
+  return answer;
+};
