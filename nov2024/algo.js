@@ -2439,3 +2439,37 @@ var mySqrt = function (x) {
   // The loop ends when left > right, and `right` will be the floor of the square root
   return right;
 };
+
+/**
+ * @param {number} k
+ * @param {number[]} nums
+ */
+var KthLargest = function (k, nums) {
+  this.k = k;
+  this.minHeap = new minHeap();
+
+  for (let num of nums) {
+    this.add(num);
+  }
+};
+
+/**
+ * @param {number} val
+ * @return {number}
+ */
+KthLargest.prototype.add = function (val) {
+  //stream - keep adding more to the stream
+  this.minHeap.add(val);
+
+  if (this.minHeap.size() > this.k) {
+    this.minHeap.poll();
+  }
+
+  return this.minHeap.peek();
+};
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * var obj = new KthLargest(k, nums)
+ * var param_1 = obj.add(val)
+ */
