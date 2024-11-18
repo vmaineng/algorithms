@@ -2562,3 +2562,58 @@ function riverSizes(matrix) {
   // Do not edit the line below.
   exports.riverSizes = riverSizes;
   
+  function riverSizes(matrix) {
+    //receive a 2d matrix;
+     //return an array of the sizes of all rivers in the input matrix
+   
+     //iterate through the rows and cols
+     //check if the matrix value is equal to 1's
+     //then perform dfs to check neighbors around it
+     //markthe current cell as visited
+     //increment count
+     //add the count into the result array
+     //return array
+   
+     let answer = []
+   
+     for (let row = 0; row < matrix.length; row++) {
+       for (let col = 0; col < matrix[row].length; col++) {
+         if (matrix[row][col] === 1) {
+           let sizes = dfs(row, col)
+           answer.push(sizes)
+     
+   function dfs(row, col) {
+     if (row < 0 || row >= matrix.length ||
+        col < 0 || col >= matrix[row].length ||
+         matrix[row][col] !== 1
+        ) {
+       return 0;
+        }
+     matrix[row][col] = -1
+   
+     let sizes = 1
+     const directions = [
+       [0,1],
+       [0, -1], 
+       [1, 0],
+       [-1,0]
+     ]
+   
+     for (const [dx, dy] of directions) {
+       const newRow = dx + row;
+       const newCol = dy + col;
+       sizes += dfs(newRow, newCol)
+     }
+     return sizes
+   }
+           
+      
+         }
+       }
+     }
+     return answer
+   }
+   
+   // Do not edit the line below.
+   exports.riverSizes = riverSizes;
+   
