@@ -2507,3 +2507,58 @@ For index 1, assign "Silver Medal".
 For index 2, assign "Bronze Medal".
 For all other indices, assign the rank as a string (index + 1).
 Return the result array.
+
+function riverSizes(matrix) {
+  //receive 2d matrix with 0's as land, and 1's as water
+    //return an array back of the size of the rivers found
+  
+    //intialize an answer array
+    //iterate through the rows and columns of the 2d matrix
+    //if the cell value is 1, perform dfs to get a size of the river found
+    //for dfs function, travel left, right, up down to count for 1's
+    //update river size count
+    //add size to the array
+    //return array
+  
+    let riverCountArray = [];
+  
+    for (let row = 0; row < matrix.length; row++) {
+      for (let col = 0; col < matrix[row].length; col++) {
+        if (matrix[row][col] === 1) {
+          let size = dfs(row, col)
+          riverCountArray.push(size)
+   }
+          function dfs(row, col) {
+            if (row >= matrix.length || row < 0 ||
+               col >= matrix[row].length || col < 0 ||
+              matrix[row][col] !== 1)  {
+              return 0;
+              }
+            matrix[row][col] = -1
+            let size = 1;
+  
+            const directions = [
+              [0, 1],
+              [0, -1],
+              [1, 0],
+              [-1, 0]
+            ]
+  
+            for (const [dx, dy] of directions) {
+              const newRow = row + dx;
+              const newCol = col + dy;
+              size += dfs(newRow, newCol)
+            }
+            return size
+          } 
+      
+       
+      }
+    }
+  
+    return riverCountArray
+  }
+  
+  // Do not edit the line below.
+  exports.riverSizes = riverSizes;
+  
