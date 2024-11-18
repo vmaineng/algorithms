@@ -2333,3 +2333,109 @@ var searchInsert = function (nums, target) {
 
   return left; // Return the insert position (left will be the position to insert the target)
 };
+
+/**
+ * Definition for isBadVersion()
+ *
+ * @param {integer} version number
+ * @return {boolean} whether the version is bad
+ * isBadVersion = function(version) {
+ *     ...
+ * };
+ */
+
+/**
+ * @param {function} isBadVersion()
+ * @return {function}
+ */
+var solution = function (isBadVersion) {
+  /**
+   * @param {integer} n Total versions
+   * @return {integer} The first bad version
+   */
+  return function (n) {
+    //identify a low point
+    //initialize a high point of n
+    //bad occurs before n
+    //find the middle
+    //call the API call
+    //return result
+
+    //10 total
+    //8
+
+    let low = 1;
+    let high = n;
+
+    //know that n is already the bad version and the bad version occured before n
+
+    while (low <= high) {
+      let middle = Math.floor((low + high) / 2);
+      if (!isBadVersion(middle)) {
+        low = middle + 1;
+      } else {
+        high = middle - 1;
+      }
+    }
+    return low;
+  };
+};
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function (x) {
+  //initialize a low
+  //initialize a high
+
+  //brute force:
+  //iterate through to x
+  //look for all the number squared
+
+  let left = 0;
+  let right = x;
+
+  while (left <= right) {
+    let m = Math.floor((left + right) / 2);
+    let sqr = m * m;
+
+    if (sqr === x) {
+      return m;
+    } else if (sqr < x) {
+      // 1 < 3
+      left = m + 1;
+    } else {
+      right = m - 1;
+    }
+  }
+  return right;
+};
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function (x) {
+  // Handle edge case for x = 0
+  if (x === 0) return 0;
+
+  let left = 1;
+  let right = x;
+
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    let sqr = middle * middle; // Calculating middle * middle (square)
+
+    if (sqr === x) {
+      return middle; // If exact square root is found
+    } else if (sqr < x) {
+      left = middle + 1; // The square root is larger, so move the left pointer up
+    } else {
+      right = middle - 1; // The square root is smaller, so move the right pointer down
+    }
+  }
+
+  // The loop ends when left > right, and `right` will be the floor of the square root
+  return right;
+};
