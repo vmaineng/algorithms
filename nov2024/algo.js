@@ -2309,3 +2309,27 @@ var getIntersectionNode = function (headA, headB) {
   }
   return current1;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (nums[middle] === target) {
+      return middle; // Target found, return its index
+    } else if (target < nums[middle]) {
+      // Compare target with value at middle
+      right = middle - 1; // Search left
+    } else {
+      left = middle + 1; // Search right
+    }
+  }
+
+  return left; // Return the insert position (left will be the position to insert the target)
+};
