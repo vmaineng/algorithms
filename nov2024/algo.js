@@ -2473,3 +2473,37 @@ KthLargest.prototype.add = function (val) {
  * var obj = new KthLargest(k, nums)
  * var param_1 = obj.add(val)
  */
+
+/**
+ * @param {number[]} score
+ * @return {string[]}
+ */
+var findRelativeRanks = function(score) {
+  let pairs = score.map((value, index) => [value, index]);
+  pairs.sort((a,b) => b[0] - a[0]);
+  let result = new Array(score.length);
+
+  for (let i = 0; i < pairs.length; i++) {
+      const [value, originalIdx] = pairs[i];
+      if (i === 0) { 
+          result[originalIdx] = "Gold Medal";
+      } else if (i === 1) {
+          result[originalIdx] = "Silver Medal";
+      } else if (i === 2) { 
+          result[originalIdx] = "Bronze Medal"
+      } else { 
+          result[originalIdx] =(i + 1).toString();
+      }
+  }
+  return result
+};
+
+Create an array of tuples pairs where each tuple is [score, index].
+Sort pairs in descending order based on scores.
+Create a result array of the same length as the input to store the ranks.
+Iterate over the sorted pairs:
+For index 0, assign "Gold Medal".
+For index 1, assign "Silver Medal".
+For index 2, assign "Bronze Medal".
+For all other indices, assign the rank as a string (index + 1).
+Return the result array.
