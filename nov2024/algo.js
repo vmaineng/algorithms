@@ -2751,3 +2751,72 @@ while (left < right) {
 }
 return answer
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findMaxAverage = function(nums, k) {
+  //receive an array of integers
+  //return the max average value of all categories
+  
+  //[3, 4, 2, -1], 5
+  //edge case: if k > nums.length return 0
+
+  //create a pointer and iterate at the first value
+  //create a second pointer and iterate at the second value
+  //intialize a sum
+  //iterate up to k amount
+  //calc the max average
+  //then return the max average
+
+// if (k > nums.length) return 0
+
+//     let maxAverage = -Infinity
+
+//     for (let i = 0; i <= nums.length - k; i++) {
+//         let sum = 0;
+//         for (let j = i; j < i + k ;j++) {
+//             sum += nums[j]
+//         }
+//                 let average = sum /k
+//                 maxAverage = Math.max(average, maxAverage)
+//             }
+      
+//     return maxAverage
+//time: O(n * k)
+
+//sliding window technique: 
+//create a left pointer and right pointer starting at the first value
+//right pointer increment
+//initiatlize a maxAverage and a sum
+
+//increment right while it's less than the length of the array
+//add each value
+//then check if the window size is >= k
+//then calc the maxaverage
+//then increment left window up 
+//and remove sum of the left window from max average
+//return maxAverage
+
+let left = 0;
+let right = 0;
+let maxAverage = -Infinity;
+let sum = 0;
+
+while (right < nums.length) {
+  sum+= nums[right]
+  if ((right - left + 1) >= k) {
+      let average = sum/k
+      maxAverage = Math.max(maxAverage, average)
+
+     sum-= nums[left]
+     left++
+  }
+  right++
+  
+}
+return maxAverage
+
+};
