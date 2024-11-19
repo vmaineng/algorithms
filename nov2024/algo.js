@@ -2820,3 +2820,37 @@ while (right < nums.length) {
 return maxAverage
 
 };
+
+function classPhotos(redShirtHeights, blueShirtHeights) {
+  //receive an even length of arrays for redshirts and blueshirts
+    //return true if can take pics where one is not taller than the other and the same color shirts are all in the same row
+    //[1, 2] = red
+    //[3,4 ] = blue
+    //return true; b/c all blue cna go to back 
+  
+    //dictate which color is front row
+    //sort all the heights in each color
+    //iterate through the red array
+    //if the frontrow is red
+    //then check if blue is not greater than red, then return false
+    //likewise if frontrow color was blue
+    //return false
+  
+    //otherwise, return true
+  
+    redShirtHeights.sort((a,b) => a - b);
+    blueShirtHeights.sort((a,b) => a - b);
+  
+  const frontRow = redShirtHeights[0]< blueShirtHeights[0] ? "RED" : "BLUE"
+  
+    for (let i = 0; i < redShirtHeights.length; i++) {
+      if (frontRow === 'RED') {
+        if (redShirtHeights[i] >= blueShirtHeights[i]) return false;
+      } else if (blueShirtHeights[i] >= redShirtHeights[i]) return false;
+    }
+  return true;
+  }
+  
+  // Do not edit the line below.
+  exports.classPhotos = classPhotos;
+  
