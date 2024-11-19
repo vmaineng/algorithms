@@ -3043,3 +3043,74 @@ return leftHasPath || rightHasPath;
 return hasPathSum(root, 0)
 
 };
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, targetSum) {
+  //receive the root node of a tree, and an integer for target
+  //return true if the tree has a root to leaf path
+  
+  //if tree is empty and targetSum === 0, return true;
+
+  //dfs to the left side
+  //add all the values together when there's no more right or left child nodes
+  //check if sum === targetSum, return true
+  //else return false
+
+  if (!root) return false;
+
+  function dfs(node, sum) {
+      sum += node.val
+      if (!node.left && !node.right) {
+      return sum === targetSum
+  }
+  let leftHasPath = node.left ? dfs(node.left, sum) : false;
+  let rightHasPath = node.right ? dfs(node.right, sum) : false;
+  return leftHasPath || rightHasPath
+  }
+
+ return dfs(root, 0)
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, targetSum) {
+  //receive the root node of a tree, and an integer for target
+  //return true if the tree has a root to leaf path
+  
+  //if tree is empty and targetSum === 0, return true;
+
+  //dfs to the left side
+  //add all the values together when there's no more right or left child nodes
+  //check if sum === targetSum, return true
+  //else return false
+
+  if (!root) return false;
+
+      if (!root.left && !root.right) {
+      return root.val === targetSum
+      }
+
+return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
+};
