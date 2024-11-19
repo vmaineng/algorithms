@@ -2854,3 +2854,107 @@ function classPhotos(redShirtHeights, blueShirtHeights) {
   // Do not edit the line below.
   exports.classPhotos = classPhotos;
   
+  function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
+    //receive two arrays of same length for red & blue shirtspeeds
+      //return the maxSpeed if fastest is true, else return minSpeed if fastest is false
+    
+      //[1,2,3]    [3,2,1]   => 7
+      //[2,3,4]    [4,3,2]
+      //fastest = true
+      //return maxspeed
+    
+      //if fastest = true
+      //sort the arrays from biggest to smallest
+      //else sort of the arrays from smallest to biggest
+      //iterate through each speed
+      //add the sum together
+      //return maxSpeed seen
+    
+      if (fastest) ? redShirtSpeeds.sort((a,b))
+      
+    }
+    
+    // Do not edit the line below.
+    exports.tandemBicycle = tandemBicycle;
+    
+
+var RandomizedSet = function() {
+  this.map = new Map()
+};
+
+/** 
+* @param {number} val
+* @return {boolean}
+*/
+RandomizedSet.prototype.insert = function(val) {
+  if (!val) {
+      return false
+  } else {
+      this.map.add(val)
+      return true
+  }
+};
+
+/** 
+* @param {number} val
+* @return {boolean}
+*/
+RandomizedSet.prototype.remove = function(val) {
+  if (!val) {
+      return false
+  } else {
+      this.map.delete(val)
+      return true;
+  }
+};
+
+/**
+* @return {number}
+*/
+RandomizedSet.prototype.getRandom = function() {
+  return Math.random()
+};
+
+/** 
+* Your RandomizedSet object will be instantiated and called as such:
+* var obj = new RandomizedSet()
+* var param_1 = obj.insert(val)
+* var param_2 = obj.remove(val)
+* var param_3 = obj.getRandom()
+*/
+
+/**
+ * @param {number[]} gas
+ * @param {number[]} cost
+ * @return {number}
+ */
+var canCompleteCircuit = function(gas, cost) {
+  let totalGas = 0;
+  let totalCost = 0;
+  let tank = 0;
+  let start = 0;
+  
+      // Step 1: Calculate total gas and total cost
+  for (let i = 0; i < gas.length; i++) {
+      totalGas += gas[i]
+      totalCost += cost[i]
+  }
+  
+      // Step 2: If total gas is less than total cost, return -1
+  if (totalGas < totalCost) {
+      return -1
+  }
+  
+   // Step 3: Find the starting index using a greedy approach
+  for (let i = 0; i < gas.length;i++) {
+      tank += gas[i] - cost[i]
+  
+  // If tank goes negative, move start to i + 1 and reset tank
+      if (tank < 0){
+          start = i + 1;
+          tank = 0;
+      }
+  }
+  
+  return start
+  };
