@@ -2958,3 +2958,88 @@ var canCompleteCircuit = function(gas, cost) {
   
   return start
   };
+
+  /**
+ * @param {number[]} gas
+ * @param {number[]} cost
+ * @return {number}
+ */
+var canCompleteCircuit = function(gas, cost) {
+  let totalGas = 0;
+  let totalCost = 0;
+  let tank = 0
+  let start = 0;
+
+  for (let i = 0; i < gas.length;i++) {
+      totalGas += gas[i]
+      totalCost += cost[i]
+  }
+
+  if (totalGas < totalCost) {
+      return -1;
+  }
+
+  for (let i =0; i < gas.length; i++) {
+      tank += gas[i] - cost[i]
+  
+
+  if (tank < 0) {
+      start = i + 1;
+      tank = 0;
+  }
+}
+  return start
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, targetSum) {
+  //receive the root of a node, and integer
+  //return true if tree has a path, else false
+
+  //check left and right
+  //if total is targetSum, return true
+  //else rturn false
+
+//     if (!root) return false
+
+// if (!root.left && !root.right) {
+//     return root.val === targetSum
+// }
+
+//     return hasPathSum(root.left, targetSum - root.val) ||
+//      hasPathSum(root.right, targetSum - root.val);
+
+ 
+//brute force: initialize a sum
+//create a function called checkPathSum taking in the node and currentSum
+//if it's a leaf node, check if the path sum matches targetSum
+
+if (!root) return false;
+
+const checkPathSum = (node, currentSum) => {
+  currentSum += node.val;
+  if (!node.left && !node.right) {
+      return currentSum === targetSum
+  }
+
+
+let leftHasPath = node.left ? checkPathSum(node.left, currentSum) : false;
+let rightHasPath = noe.right ? checkPathSum(node.right, currentSum): false;
+
+return leftHasPath || rightHasPath;
+}
+return hasPathSum(root, 0)
+
+};
