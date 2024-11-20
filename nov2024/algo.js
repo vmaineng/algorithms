@@ -3114,3 +3114,27 @@ var hasPathSum = function(root, targetSum) {
 
 return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
 };
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+  //receive two arrays of individuals numbers
+  //return an array of their intersection
+  //[1,2,3,4], [3, 5] => [3]
+
+  //iterate through each number in the longest one
+  //check if the array has that value
+  //then return the array back
+
+  let output = [];
+
+  for (let i = 0; i < nums1.length; i++) {
+      if (nums1.includes(nums2[i])) {
+          output.push(nums2[i])
+      }
+  }
+  return output
+};
