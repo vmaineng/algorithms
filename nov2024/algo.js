@@ -3138,3 +3138,110 @@ var intersection = function(nums1, nums2) {
   }
   return output
 };
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+  //receive two integer arrays of nums and nums
+  //return an array of interestection points they have
+  //nums1= [3,4,5] and nums2 = [1, 2] => [ ]
+  //nums1 = [3,4,5] and nums=[3,5] => [3, 5]
+
+  //edge cases: if either one of the array is empty, return an empty []
+
+  //create a new array result
+  //check if nums1's values exist in nums2 values
+  //push in the values into the array result
+
+  if (!nums1 || !nums2) return [ ]
+
+nums1.sort((a,b) => a - b);
+nums2.sort((a,b) => a -b );
+
+let i =0;
+let j = 0;
+
+let result = new Set()
+
+while (i < nums1.length && j < nums2.length) {
+  if (nums1[i] === nums2[j]) {
+      result.add(nums1[i])
+      i++;
+      j++
+  } else if (nums1[i] < nums2[j]){
+      i++
+  } else {
+      j++
+  }
+}
+
+return Array.from(result)
+};
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+  const set1 = new Set(nums1);
+  const set2 = new Set(nums2);
+  let result = []
+
+  for (let nums of set1) {
+      if (set2.has(nums)){
+          result.push(nums)
+      }
+  }
+return result 
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var isPalindrome = function(head) {
+  //start fast and slow pointer at head
+  let fast = head
+  let slow = head
+  let tmp;
+  let prev;
+
+//keep iterating and move fast 2x and slow by 1
+  while (fast && fast.next) {
+      fast = fast.next.next
+      slow = slow.next
+  }
+
+//while slow is traversing
+//move pointer to the previous pointer
+  while (slow) {
+      tmp = slow.next;
+      slow.next = prev;
+      prev = slow
+      slow = tmp
+  }
+
+//fast will start at head
+//slow will start at node
+  fast = head
+  slow = prev
+
+  while (slow) {
+  //if values don't equal eacho ther return false, otherwise check next nodes?
+      if (fast.val !== slow.val) return false
+      fast = fast.next
+      slow = slow.next
+  } 
+  return true
+};
