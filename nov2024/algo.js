@@ -3394,3 +3394,29 @@ for (let i = 0; i < intervals.length;i++) {
 return true
   }
 }
+
+/**
+ * @param {number[][]} firstList
+ * @param {number[][]} secondList
+ * @return {number[][]}
+ */
+var intervalIntersection = function(firstList, secondList) {
+  let i = 0;
+  let j = 0;
+  let result = [];
+
+  while (i < firstList.length && j < secondList.length) { 
+      let [start1, end1] = firstList[i];
+      let [start2, end2] = secondList[j];
+
+      if (end1 >= start2 && end2 >= start1) { 
+          result.push([Math.max(start1, start2), Math.min(end1, end2)])
+      }
+      if (end1 < end2) { 
+          i++
+      } else {
+          j++
+      }
+  }
+  return result
+};
