@@ -3245,3 +3245,45 @@ var isPalindrome = function(head) {
   } 
   return true
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function(nums, k) {
+  //receive an array of integers, k = integer of top amount seen
+  //return top k most frequenet elements
+  //[2, 2, 3, 2, 5, 7]
+
+  //frequency counter pattern
+  //then sort the object.entries by most seen
+  //return top k
+
+//     let obj = {};
+
+// for (let num of nums){
+//     obj[num] = (obj[num] || 0) + 1
+// }
+
+// const array = Object.entries(obj)
+// array.sort((a,b) => b[1] - a[1])
+
+// return array.slice(0, k).map(entry => parseInt(entry[0]))
+
+const freqMap = new Map();
+for (let num of nums) { 
+  freqMap.set(num, (freqMap.get(num) || 0) + 1);
+}
+
+const minHeap = [];
+for (let [num, freq] of freqMap) {
+  minHeap.push({num, freq});
+  minHeap.sort((a,b) => a.freq - b.freq);
+
+  if (minHeap.length > k) { 
+      minHeap.shift();
+  }
+}
+return minHeap.map(item => item.num)
+};
