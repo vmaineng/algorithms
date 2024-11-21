@@ -46,4 +46,12 @@ console.log(
   })
 );
 
-function
+function wallsandWells(matrix) {
+  //receive a 2d matrix
+  //return min directions to get to destination
+  //initialize the row and cols
+  //in the queue, it's holding x, y, and distance
+  //as we traverse along
+  //check it's new neighbors to see if they are 0's and 1s
+  //increment steps
+}
