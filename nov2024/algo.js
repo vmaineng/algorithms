@@ -3287,3 +3287,110 @@ for (let [num, freq] of freqMap) {
 }
 return minHeap.map(item => item.num)
 };
+
+/**
+ * @param {number} k
+ * @param {number[]} nums
+ */
+var KthLargest = function(k, nums) {
+  this.k = k;
+  this.minHeap = new MinPrioritiyQueue();
+
+  for (let num of num) {
+      this.add(num)
+  }
+};
+
+/** 
+* @param {number} val
+* @return {number}
+*/
+KthLargest.prototype.add = function(val) {
+  if (this.minHeap.size() < this.lk) { 
+      this.minHeap.enqueue(val)
+  } else if (val > this.minHeap.front().element) { 
+      this.minHeap.dequeue();
+      this.minHeap.enqueue(val)
+  }
+  return this.minHeap.front().element;
+};
+
+/** 
+* Your KthLargest object will be instantiated and called as such:
+* var obj = new KthLargest(k, nums)
+* var param_1 = obj.add(val)
+*/
+
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+var merge = function(intervals) {
+  //receive an array of arrays
+  //return an array of arrays where all overlapping intervals are merged
+  //[[0,3], [4, 8], [5, 10]] => [[0,3], [4, 10]]
+
+  //brute force:
+  //iterate through each arrays
+  //check if the start2 < end1 && end1 < end2
+  //update the end with the max endtime
+  //add it into the array answer
+
+  let answer = [];
+  for (let i = 0; i < intervals.length;i++) {
+      for (let j = i + 1; j < intervals.length ;j++) {
+       [start1, end1] = intervals[i];
+       [start2, end2] = intervals[j]
+       if (start2 < end1 && end1 < end2) {
+          end = Math.max(end1, end2)
+       }
+  }
+  answer.push(start, end)
+  }
+  
+return answer
+};
+
+import {
+  Interval,
+} from '/opt/node/lib/lintcode/index.js';
+
+/**
+ * Definition of Interval:
+ * class Interval {
+ *   constructor(start, end) {
+ *     this.start = start;
+ *     this.end = end;
+ *   }
+ * }
+ */
+
+export class Solution {
+  /**
+   * @param intervals: an array of meeting time intervals
+   * @return: if a person could attend all meetings
+   */
+  canAttendMeetings(intervals) {
+//receive an array of arrays
+//return true if person can attend all meetings, else false
+
+//[[5, 8], [0, 3], [1, 4]] => false
+
+//sort all intervals by start time
+//check if the end time of the first interval <= start of next interval
+//return false
+//return true
+
+intervals.sort((a,b) => a[0]-b[0])
+
+for (let i = 0; i < intervals.length;i++) {
+  for (let j = i + 1; j < intervals.length;j++) { 
+    const [start1, end1] = intervals[i]
+    const [start2, end2] = intervals[j]
+
+    if (start2 <= end1) return false
+  }
+}
+return true
+  }
+}
