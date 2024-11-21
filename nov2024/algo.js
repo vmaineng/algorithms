@@ -3420,3 +3420,49 @@ var intervalIntersection = function(firstList, secondList) {
   }
   return result
 };
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(x) {
+  //receive an integer
+  //return the squart root of it rounddown
+
+  //81 => output 9
+
+  //left starts 1
+  //right starts at x
+  //while left < right
+  //let's start in the middle to see if you are the sqrt
+  //return middle value
+  //else if square root < x, right moves down
+  //else left moves up
+
+  let left = 1;
+  let right = x
+
+  while (left <= right) { 
+      let middle = Math.floor((left + right) /2)
+      let sqr = middle * middle
+
+      if (sqr === x) { 
+          return middle
+      } else if (sqr < x) {
+             left = middle + 1
+      } else { 
+       
+          right = middle - 1
+      }
+  }
+  return right
+
+//     For x = 8:
+// middle = 4 → sqr = 16
+// sqr > x, so right = middle - 1 = 3
+// middle = 2 → sqr = 4
+// sqr < x, so left = middle + 1 = 3
+// middle = 3 → sqr = 9
+// sqr > x, so right = middle - 1 = 2
+// Now, left > right, so the loop ends and the return value is right = 2.
+};
