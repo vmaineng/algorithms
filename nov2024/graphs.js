@@ -73,3 +73,20 @@ function quadrant(x, y) {
   if (x > 0 && y < 0) return 4;
   if (x < 0 && y > 0) return 2;
 }
+
+function differenceInAges(ages) {
+  //receive an array of ages (positive)
+  //return an array of [youngestAge, oldestAge, difference between ages]
+
+  //ex: [52, 3, 5, 21] => [3, 52, 49]
+
+  //find mind for youngestAge
+  //find old for oldestAge
+  //find the difference between two
+  //slot in between arrays
+
+  let youngestAge = Math.min(...ages);
+  let oldestAge = Math.max(...ages);
+  let difference = oldestAge - youngestAge;
+  return [youngestAge, oldestAge, difference];
+}
