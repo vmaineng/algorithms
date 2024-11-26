@@ -55,3 +55,21 @@ function wallsandWells(matrix) {
   //check it's new neighbors to see if they are 0's and 1s
   //increment steps
 }
+
+function quadrant(x, y) {
+  //receive two integers for x and y
+  //return what qudrant they exist in 1,2,3,4
+
+  //ex: (-3, -4) => 3
+  //ex: (100, 100) => 1
+
+  //check if x and y are both positive, return 1
+  //check if x and y are both negative, return 3
+  //check if x is positive and y is negative, return 4
+  //check if x is negative, and y is positive, return 2
+
+  if (x > 0 && y > 0) return 1;
+  if (x < 0 && y < 0) return 3;
+  if (x > 0 && y < 0) return 4;
+  if (x < 0 && y > 0) return 2;
+}
