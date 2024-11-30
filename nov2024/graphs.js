@@ -90,3 +90,153 @@ function differenceInAges(ages) {
   let difference = oldestAge - youngestAge;
   return [youngestAge, oldestAge, difference];
 }
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+  //receive an array of integers
+  //return an array of arrays of triplets that total 0
+
+  //iterate through nums.length 3 times
+  //check if the sum === 0;
+  //if they do, then sort the tree values
+  //check if isDuplicate true, then break out of the loop and do not add it in
+  //else add in isDuplicate
+  //return output array
+
+  // let output = [];
+  // for (let i = 0; i < nums.length - 2; i++) {
+  //     for (let j = i + 1; j < nums.length - 1; j++) {
+  //         for (k = j + 1; k < nums.length; k++) {
+  //             if (nums[i] + nums[j] + nums[k] === 0) {
+  //                 let isDuplicate = false;
+
+  //                 const triplet = [nums[i], nums[j], nums[k]].sort((a,b) => a - b);
+
+  //                 for (const arr of output) {
+  //                     if (arr[0] === triplet[0] && arr[1] === triplet[1] && arr[2] === triplet[2]){
+  //                         isDuplicate = true;
+  //                         break;
+  //                     }
+  //                 }
+  //                 if (!isDuplicate) {
+  //                     output.push(triplet)
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+  // return output
+  nums.sort((a, b) => a - b);
+  let output = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left < right) {
+      let total = nums[i] + nums[left] + nums[right];
+      if (total === 0) {
+        output.push([nums[i], nums[left], nums[right]]);
+
+        while (left < right && nums[left] === nums[left + 1]) left++;
+        while (left < right && nums[right] === nums[right - 1]) right--;
+        left++;
+        right--;
+      } else if (total < 0) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return output;
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+  //receve an array of integers - including positive and negative numbers
+  //return back an array of array of triplets that sums up to 0;
+
+  //ex: [1,1, -3, -5,8, 20] =>
+  //.          i
+  //.             j
+  ///                k
+
+  //create 3 pointers
+  //check the total to make sure they do add up to 0
+  //sort the triplets answers
+  //check if the triplet answer in our answer array to see if there
+  // is triplet already
+  //if exist, skip it
+  //add it into our answer array
+
+  let answer = [];
+  for (let i = 0; i < nums.length - 2; i++) {
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      for (let k = j + 1; k < nums.length; k++) {
+        if (nums[i] + nums[j] + nums[k] === 0) {
+          const triplet = [nums[i], nums[j], nums[k]].sort((a, b) => a - b);
+          let isDuplicate = false;
+          for (let arr of answer) {
+            if (
+              arr[0] === triplet[i] &&
+              arr[1] === triplet[j] &&
+              arr[2] === triplet[k]
+            ) {
+              isDuplicate = true;
+              break;
+            }
+          }
+          if (!isDupliate) {
+            answer.push(triplet);
+          }
+        }
+      }
+    }
+  }
+  return answer;
+};
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+  //receive an array of integers, and an integer
+  //return the index positions of the first two numbers that adds up to target
+  //[0, 2, 45, 6], 45 => [0, 2]
+
+  //look through each num and see if it adds up to the target
+  // for (let i = 0; i < nums.length; i++) {
+  //     for(let j = i + 1; j < nums.length; j++) {
+  //         if (nums[i] + nums[j] === target) {
+  //             return [i , j]
+  //         }
+  //     }
+  // }
+
+  //optimized
+  //create an object
+  //store the index position as the value as continue through the nums
+  //find the difference between target and current value
+  //if we found it, return the key index position
+
+  let answer = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
+    if (answer.hasOwnProperty(difference)) {
+      return [answer[difference], i];
+    } else {
+      answer[nums[i]] = i;
+    }
+  }
+};
