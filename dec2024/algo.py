@@ -19,3 +19,29 @@ def even_or_odd(number):
     #ex: -5 => '-5'
     
     return str(num)
+
+    def opposite(number):
+  # receive a number
+# return the opposite of the number passed in
+#ex: 14 => -14
+#ex: -280 => 280
+    return (-number)
+
+    def solution(string):
+    #receive a string of lowercase letters
+    #return the string back in reversed
+    
+    #ex: 'yo' => 'oy'
+    #ex: 'apple' => 'elppa'
+    
+    #create a new string
+    #iterate through string starting at the end
+    #add on to the new string
+    #return new string
+    
+    revString = ''
+    for i in range(len(string)-1, -1, -1):
+        revString += string[i]
+    return revString
+
+    #range(start, stop, step)
