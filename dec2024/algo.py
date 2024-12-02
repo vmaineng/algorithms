@@ -44,6 +44,7 @@ def even_or_odd(number):
         revString += string[i]
     return revString
 
+
     #range(start, stop, step)
     return str[::-1]
 
@@ -62,3 +63,10 @@ def even_or_odd(number):
     
       return sum(range(num+1))
 #use python's built in sum function with a range
+def no_space(x):
+    #receive a string of characters with spaces
+    #return a string back with no spaces
+    
+    #ex: 'jum d p j' => 'jumdpj'
+    
+    return x.replace(" ", "")
