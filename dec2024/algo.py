@@ -70,3 +70,12 @@ def no_space(x):
     #ex: 'jum d p j' => 'jumdpj'
     
     return x.replace(" ", "")
+    return "".join(x.split())
+
+    def double_integer(i):
+    #receive an integer
+    #return the double amount of i
+    #ex: 2 => 4
+    #ex: 8 => 16
+    
+    return i * 2
