@@ -49,3 +49,14 @@ def even_or_odd(number):
 
     def bool_to_word(boolean):
     return "Yes" if boolean else "No"
+
+    def summation(num):
+    #receive a number
+    #return the sum of each number up to num
+    #ex: 5 => 1 + 2 + 3 +4 +5 =15
+    
+    sum = 0
+    for i in range(num + 1):
+        sum += i
+    return sum
+    
