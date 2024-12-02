@@ -60,3 +60,5 @@ def even_or_odd(number):
         sum += i
     return sum
     
+      return sum(range(num+1))
+#use python's built in sum function with a range
