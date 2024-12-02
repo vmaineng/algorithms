@@ -45,3 +45,7 @@ def even_or_odd(number):
     return revString
 
     #range(start, stop, step)
+    return str[::-1]
+
+    def bool_to_word(boolean):
+    return "Yes" if boolean else "No"
