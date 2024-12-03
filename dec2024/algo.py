@@ -79,3 +79,19 @@ def no_space(x):
     #ex: 8 => 16
     
     return i * 2
+    def count_sheeps(sheep):
+  # receive an array of true and false
+#return a count of how many true exists in array
+#ex: [T, F , F, F, F] => 1
+
+#initialize a count
+#iterate through sheep
+#check if the value is equal to true
+#increment count
+#return count
+
+    count = 0
+    for s in sheep:
+        if s:
+            count += 1
+    return count
