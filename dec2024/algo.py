@@ -95,3 +95,19 @@ def no_space(x):
         if s:
             count += 1
     return count
+
+    def find_smallest_int(arr):
+    # receive an array of integers
+    # return the smallest number
+    # [33, 5, 62, 1, -3] => -3
+    
+    #using min function on arr
+    #or could keep track of smallest number and iterate through entire array
+    
+    
+    #return min(arr)
+    smallest = arr[0]
+    for ele in arr:
+        if ele < smallest:
+            smallest = ele
+    return smallest
