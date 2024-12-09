@@ -146,3 +146,22 @@ def no_space(x):
 
     return sum(range(1, num +1))
     
+    # Write a function `greet` that returns "hello world!"
+def greet():
+    return 'hello world!'
+    
+    def find_smallest_int(arr):
+    return min(arr)
+def sum_two_smallest_numbers(numbers):
+    #receive a list of integers
+    #return sum of the two lest positive numbers
+    #ex: [3, 32, 6, 7] => [3, 6, 7, 32] => 3 + 6 => 9
+    
+    #sort the numbers list
+    #add sum of first and second number
+    
+    numbers.sort();
+    return numbers[0] + numbers[1]
+
+#time: O(n logn)
+#space: O(1)
