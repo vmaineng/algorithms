@@ -111,3 +111,38 @@ def no_space(x):
         if ele < smallest:
             smallest = ele
     return smallest
+
+    def get_middle(s):
+    #receive a string of letters, uppercase and lowercase
+    #return the middle letter
+    #if odd return only one letter
+    #if even return two letters
+    
+    #ex: 'apple' => 'p'
+    #ex: 'ford' => 'or'
+    
+    #brute force:
+    #calc the length of s string
+    #return the string's slice of middle numbers
+    
+    length = len(s)
+    if length % 2 == 1:
+        return s[length //2]
+    else:
+        return s[length //2 -1 :length //2 + 1]
+
+        def string_to_number(s):
+    return int(s)
+    
+    def summation(num):
+    #receive a number
+    #return total sum from 1 up to num
+    #ex: 4 => 1 + 2 + 3 +4 => 10
+    
+#     sum = 0
+#     for number in range(1, num+1):
+#         sum = sum + number
+#     return sum
+
+    return sum(range(1, num +1))
+    
