@@ -162,6 +162,32 @@ def sum_two_smallest_numbers(numbers):
     
     numbers.sort();
     return numbers[0] + numbers[1]
+    return sum(sorted(numbers)[:2])
 
 #time: O(n logn)
 #space: O(1)
+
+def boolean_to_string(b):
+    #receive a boolean value
+    #return string boolean value
+    #True => 'True'
+    
+    return str(b)
+
+    def friend(x):
+    #receive a list of string of names
+    #return a list of string of names with length of 4
+    
+    #ex: ['joe', 'jerry', 'boby'] => ['boby']
+    
+    #initialize an output of list
+    #iterate through the list of names
+    #check of len is 4
+    #add to list
+    #return list
+    
+    output = []
+    for friend in x:
+        if (len(friend)) == 4:
+            output.append(friend)
+    return output
