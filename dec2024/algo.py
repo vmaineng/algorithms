@@ -264,3 +264,17 @@ class Solution:
                     return [i,j]
         return []
         
+        def twoNumberSum(array, targetSum):
+    #initialize a dictionary
+    #iterate through the array
+    #check if the difference is found in the array's value
+    #if not add it in dictionary
+    #else return the values found
+
+    dict = {}
+    for i,num in enumerate(array):
+        difference = targetSum - num
+        if difference in dict:
+            return [difference, array[i]]
+        dict[num] = i
+    return []
