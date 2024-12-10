@@ -246,3 +246,21 @@ if __name__ == '__main__':
                 return [array[i], array[j]]
     return []
 
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #receive a list of integers and a target number
+        #return the two indices that add up to target
+        #[3, 4, 5, 6, -1], target = 3 => [1, 4]
+
+        #iterate through the list starting at idx 1
+        #then have an inner loop loop through the rest of the array
+        #check if they are equal to the target, then return the list of two indices found
+        #else return a list of [-1, -1]
+
+        for i in range(len(nums) - 1):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+        return []
+        
