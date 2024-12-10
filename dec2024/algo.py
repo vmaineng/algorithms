@@ -228,3 +228,21 @@ if __name__ == '__main__':
     n = int(input().strip())
 
     fizzBuzz(n)
+
+    def twoNumberSum(array, targetSum):
+    #receive an array of integers, and a target integer
+    #return the two values an array back that totals target
+    #ex: [3, 5,1, -1, 3], 6 => [5,1]
+
+    #iterate through with outer loop at i
+    #iterate inner loop at j
+    #if the two values equal targetsum
+    #return in a pair
+    #else return [-1, -1]
+
+    for i in range(len(array) - 1):
+        for j in range(i + 1, len(array)):
+            if array[i] + array[j] == targetSum:
+                return [array[i], array[j]]
+    return []
+
