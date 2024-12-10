@@ -278,3 +278,34 @@ class Solution:
             return [difference, array[i]]
         dict[num] = i
     return []
+
+    def isValidSubsequence(array, sequence):
+    arrIdx = 0
+    seqIdx = 0
+    while arrIdx < len(array) and seqIdx < len(sequence):
+        if array[arrIdx] == sequence[seqIdx]:
+            seqIdx+=1
+        arrIdx+=1
+    return seqIdx == len(sequence)
+
+def isValidSubsequence(array, sequence):
+    # receive a list of numbers, and a list of sequence
+    #return true if each value in sequence is found in array
+    #ex: array= [34, 2, 5, 6, -8], seq = [3, 5, 6, 1]
+    #return false
+
+    #create an i pointer
+    #iterate through the array
+    #if the values are the same
+    #move the i pointer in sequence's list
+    #if pointer reached the end of sequence's list
+    #return true, else return false
+
+    i = 0
+
+    for value in array:
+        if i == len(sequence):
+            break
+        if value == sequence[i]:
+            i+=1
+    return i == len(sequence)
