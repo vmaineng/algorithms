@@ -309,3 +309,34 @@ def isValidSubsequence(array, sequence):
         if value == sequence[i]:
             i+=1
     return i == len(sequence)
+
+
+competitions = [["Team A", "Team B"], ["Team C", "Team D"], ["Team E", "Team F"]]
+results = [1, 0, 1]
+
+#grab value: iterates through competitions list, and compeition holds each value
+#in the list during each iteration
+for competition in competitions:
+
+#grab index: iterates through indices of the competitions list(0 to len(compeitions)-1)
+for idx in range(len(compeitions))
+
+#grab value and index:
+#enumerates the competitions list, returning both the idx and value of each element
+#during the iteration
+for idx,compeition in enumerate(compeitions)
+
+#zip function: pairs element from the compeitions list and the result list at the 
+#same index.
+# The for loop unpacks these pairs into variables compeition and result
+for competition, result in zip(competitions, results):
+
+def paperwork(n, m):
+    # receive an int for classmates and an int for m pages
+    #return how many blank pages needed
+    
+    #ex: 3 people, 3 paperwork => 3 * 3 =9
+    
+    if n < 0 or m < 0:
+        return 0
+    return n * m
