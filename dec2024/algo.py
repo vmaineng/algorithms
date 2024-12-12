@@ -344,3 +344,41 @@ def paperwork(n, m):
     return n * m if n > 0 and m > 0 else 0
 
     return 0 if n < 0 or m < 0 else n *m
+
+    return true if condition else false
+
+    def make_upper_case(s):
+    #receive a lowercase string
+    #return an uppercase String
+    
+    #ex: 'jump' => "JUMP"
+    #ex: 'robot' => 'ROBOT'
+    
+    if len(s) == 0:
+        return ""
+    
+    upperCaseString = s.upper()
+    return upperCaseString
+
+    def abbrev_name(name):
+    #input: two words with one space in between
+    #return uppercase letters of the first two letters in each word
+    #ex: 'santa clause' => 'S.C'
+    #ex: 'Mrs Clause' => 'M.C'
+    
+    #split the name into two words
+    #grab the firstletter in each word
+    #return the firs two letters uppercase
+    
+    output = ''
+    splitNames = name.split() #=> ['santa', 'clause']
+    
+#     for word in splitNames:
+#         firstLetter = word[0]
+#         output += firstLetter
+
+    output = splitNames[0][0].upper() +'.' + splitNames[1][0].upper()
+    return output
+    
+    
+    
