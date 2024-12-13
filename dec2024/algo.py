@@ -399,3 +399,21 @@ def paperwork(n, m):
             if array[i] + array[j] == targetSum:
                 return [array[i], array[j]]
     return []
+
+def twoNumberSum(array, targetSum):
+    #create a dictionary
+    #store the value
+    #find the difference
+    #if difference found, return the difference and the current value
+    #else store the different in the dict
+
+    dict = {}
+
+    for num in array:
+        difference = targetSum - num
+        if difference in dict:
+            return [difference, num]
+        else:
+            dict[num] = num
+    return []
+        
