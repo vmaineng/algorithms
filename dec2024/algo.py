@@ -381,4 +381,21 @@ def paperwork(n, m):
     return output
     
     
+    return [ele*2 for ele in a]
     
+    def twoNumberSum(array, targetSum):
+    # receive a list of integers
+    #return the two values that totals up targetSum
+
+    #ex: [3, -1, -3, 0, 2], 0 => [3, -3]
+
+    #create a nested loop
+    #the inner j will search to see if any of the other values match
+    #if target is found, return the values
+    #else return empty array
+
+    for i in range(len(array) - 1):
+        for j in range(i+1, (len(array))):
+            if array[i] + array[j] == targetSum:
+                return [array[i], array[j]]
+    return []
