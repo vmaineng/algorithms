@@ -416,4 +416,22 @@ def twoNumberSum(array, targetSum):
         else:
             dict[num] = num
     return []
-        
+    
+    def next_item(xs, item):
+    # receive a list of numbers or strings, item we are looking for
+    #return the next item after item
+    #if not found, return None
+    
+    #ex: [1,2,3,5,8], 9 => None
+    #ex: [1,2,3,5,8], 3 => 5
+    
+    #iterate through the list
+    #if found the item
+    #return the next item afterwards
+    #else return None
+    
+    it = iter(xs)
+    for ele in it:
+        if ele == item:
+            return next(it, None)
+    return None
