@@ -510,3 +510,42 @@ def get_nth(node, index):
             raise IndexError("Index out of range")
     return current
   
+  def twoNumberSum(array, targetSum):
+    #create a dictionary
+    #store the value
+    #find the difference
+    #if difference found, return the difference and the current value
+    #else store the different in the dict
+
+    dict = {}
+
+    for num in array:
+        difference = targetSum - num
+        if difference in dict:
+            return [difference, num]
+        else:
+            dict[num] = num
+    return []
+        
+    def isValidSubsequence(array, sequence):
+    # receive a list of integers and a list of integers
+    #return true if sequence exists in list
+
+    #e: array: [3,4,2,5,2,5]
+    #ex: sequence: [4, 2, 5]
+    #=> true
+
+    #create pointers for both arrays
+    #if found value in sequence list
+    #increment pointer
+    #else keep incrementing poitner in array
+    #return true if pointer reached end of sequence's length
+
+    seqIdx = 0
+
+    for arrIdx in range(len(array)):
+        if array[arrIdx] == sequence[seqIdx]:
+            seqIdx +=1
+        if seqIdx == len(sequence):
+            break
+    return seqIdx == len(sequence)
