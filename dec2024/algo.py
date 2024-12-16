@@ -481,3 +481,32 @@ def each_cons(lst, n):
     for i in range(len(lst) - n + 1):
         newList.append(lst[i: i + n])
     return newList
+
+    from preloaded import Node
+
+# class Node(object):
+#     """Node class for reference"""
+#     def __init__(self, data, next=None):
+#         self.data = data
+#         self.next = next
+    
+def get_nth(node, index):
+    #receive a linked list
+    #return the node at the index
+    
+    #ex: 1 -> 2 -> 3 -> null, 2 => node 2
+    
+    #create a current pointer starting at the head
+    #move until node == index
+    #return current
+    
+    if not node or index < 0:
+        raise IndexErorr("Index must be non-negative")
+    
+    current = node
+    for i in range(index):
+        current = current.next
+        if current is None:
+            raise IndexError("Index out of range")
+    return current
+  
