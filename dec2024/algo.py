@@ -585,3 +585,24 @@ def sortedSquaredArray(array):
 
 #time: O(n)
 #space: O(n)
+
+
+def tournamentWinner(competitions, results):
+    scores = {}
+    currentBestTeam = ""
+    maxScore = 0
+
+    for i in range(len(competitions)):
+        homeTeam, awayTeam = competitions[i]
+        result = results[i]
+
+        winner = homeTeam if result == 1 else awayTeam
+
+        if winner not in scores:
+            scores[winner] = 0
+        scores[winner] +=1
+
+        if scores[winner] > maxScore:
+            maxScore = scores[winner]
+            currentBestTeam = winner
+    return currentBestTeam
