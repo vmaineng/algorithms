@@ -568,3 +568,20 @@ def get_nth(node, index):
         squaredList.append(squaredNum)
         squaredList.sort()
     return squaredList
+
+def sortedSquaredArray(array):
+    result = [0] * len(array)
+    left, right = 0, len(array) -1
+    for i in range(len(array)-1, -1, -1):
+        #if absolute value of element at left is > than abs value of right
+        #the square of the left element is placed in result[i]
+        if abs(array[left]) > abs(array[right]):
+            result[i] = array[left] **2
+            left += 1
+        else:
+            result[i] = array[right] **2
+            right -= 1
+    return result
+
+#time: O(n)
+#space: O(n)
