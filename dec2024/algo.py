@@ -460,3 +460,24 @@ def twoNumberSum(array, targetSum):
 
 result = double([1,2])
 print(result)
+
+def each_cons(lst, n):
+    #receive a list of integers and an integer
+    #return the list separated into n
+    
+    #ex: [12,3,4,5,2,3,3], 7 => [[12,3,4,5,2,3,3]]
+    
+    #brute force
+    #create a new list
+    #iterate up to n+1 amount
+    #add it to the new end of the list
+    #return the new list
+    
+    #list comprehension
+    #return n for ele in lst if len(n)
+   #return [lst[ele: ele + n] for ele in range(len(lst) - n + 1)]
+
+    newList = []
+    for i in range(len(lst) - n + 1):
+        newList.append(lst[i: i + n])
+    return newList
