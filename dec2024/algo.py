@@ -549,3 +549,22 @@ def get_nth(node, index):
         if seqIdx == len(sequence):
             break
     return seqIdx == len(sequence)
+
+    def sortedSquaredArray(array):
+    #receive a list of sorted integers
+    #return a list of sorted integers
+
+    #ex: [2,3,5,7] => [4, 9, 25,49]
+
+    #brute force:
+    #create an empty list
+    #iterate through the list
+    #add to the new list
+    #return the new list sorted
+
+    squaredList = []
+    for ele in array:
+        squaredNum = ele * ele
+        squaredList.append(squaredNum)
+        squaredList.sort()
+    return squaredList
