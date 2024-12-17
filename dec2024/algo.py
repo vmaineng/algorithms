@@ -606,3 +606,18 @@ def tournamentWinner(competitions, results):
             maxScore = scores[winner]
             currentBestTeam = winner
     return currentBestTeam
+
+def greet_developers(lst): 
+    # receive a list of objects
+    #return list of objects adding an additional greeting
+    
+    #ex: 
+    
+    #for every item in the list
+    #add the greeting 
+    #add the name and add what do you like most about "programming langue"
+    #use string literals
+    
+    for developer in lst:
+        developer['greeting'] = f"Hi {developer['firstName']}, what do you like the most about {developer['language']}?"
+    return lst    
