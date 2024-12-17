@@ -621,3 +621,11 @@ def greet_developers(lst):
     for developer in lst:
         developer['greeting'] = f"Hi {developer['firstName']}, what do you like the most about {developer['language']}?"
     return lst    
+
+    def greet(s):
+  #receive a string of lowercase letters
+  #return a greeting with string passed in 
+
+  #ex:greet('my') => 'hey my'
+
+  return f"hey {s}"
