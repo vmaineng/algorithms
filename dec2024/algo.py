@@ -629,3 +629,25 @@ def greet_developers(lst):
   #ex:greet('my') => 'hey my'
 
   return f"hey {s}"
+def max_value(nums):
+  #receive a list of numbers
+  #return the max value seen
+
+  #ex: [3,4,5,,2,6] => 6
+
+  return max(nums)
+
+  def max_value(nums):
+  #receive a list of numbers
+  #return the max value seen
+
+  #ex: [3,4,5,,2,6] => 6
+
+  #return max(nums)
+
+  max = float('-inf')
+
+  for num in nums:
+    if num > max:
+      max = num
+  return max
