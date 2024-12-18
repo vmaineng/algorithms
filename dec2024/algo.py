@@ -779,3 +779,23 @@ def max_value(nums):
 
     #time: O(N xM) = for every element in arrayOne, you're looping through all of arrayTwo elements
     #space: O(1)
+
+def smallestDifference(arrayOne, arrayTwo):
+    arrayOne.sort()
+    arrayTwo.sort()
+    smallestDiff = float('inf')
+    pair = []
+    i = 0
+    j = 0
+
+    while i < len(arrayOne) and j < len(arrayTwo):
+        diff = abs(arrayOne[i] - arrayTwo[j])
+        if diff < smallestDiff:
+            smallestDiff = diff
+            pair = [arrayOne[i], arrayTwo[j]]
+                    
+        if arrayOne[i] < arrayTwo[j]:
+            i +=1
+        else:
+            j +=1
+    return pair
