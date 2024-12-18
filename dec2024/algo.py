@@ -752,4 +752,30 @@ def max_value(nums):
                         result.append(answer)
     return result
 
-            
+    def smallestDifference(arrayOne, arrayTwo):
+    # receive two lists of different sizes
+    # return one number from both list that is closest to zero
+
+    #ex: [3, - 3, 1]
+    #    [7, 8, -3]
+    #=> [3, -3]
+
+    #brute force:
+    #iterate through both lists with different pointers
+    #capture each pair
+    #if smallest pair == or close to 0,
+    #return the pair
+
+    smallestAmt = float('inf')
+    closestPair = []
+
+    for i in arrayOne:
+        for j in arrayTwo:
+            diff = abs(i - j)
+            if diff < smallestAmt:
+                smallestAmt = diff
+                closestPair = [i,j]
+    return closestPair
+
+    #time: O(N xM) = for every element in arrayOne, you're looping through all of arrayTwo elements
+    #space: O(1)
