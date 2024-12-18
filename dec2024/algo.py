@@ -682,3 +682,21 @@ def max_value(nums):
     return total
 
     return sum(num for num in arr if num > 0)
+
+    def repeat_str(repeat, string):
+    #receive an integer for repeat and a string for astring
+    #return the string added up to repeat times
+    
+    #ex: 4, 'yo' => 'yoyoyoyo'
+    
+    #intialize an empty string
+    #iterate up to repeat times
+    #add string to the empty string
+    #return the new string
+    
+#     repeatedString = ''
+#     for num in range(repeat):
+#         repeatedString += string
+#     return repeatedString
+
+    return string * repeat
