@@ -651,3 +651,14 @@ def max_value(nums):
     if num > max:
       max = num
   return max
+
+  def make_negative( number ):
+    #receive an integer
+    #return the negative number
+    
+    #ex: 4 => -4
+    #ex: 0 => 0
+    
+    #if num is negative, return num, else make it negative, return num
+    
+    return -number if number > 0 else number
