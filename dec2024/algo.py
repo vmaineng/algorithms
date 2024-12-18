@@ -700,3 +700,32 @@ def max_value(nums):
 #     return repeatedString
 
     return string * repeat
+
+    def transposeMatrix(matrix):
+    # receive 2D matrix
+    # retrun the matrix transpose
+
+    #ex: [
+    # [ 3, 4]
+    # ]
+
+    # => 
+    #[
+    # [4],
+    # [3]
+    # ]
+
+    #initialize a new row
+    #capture the first row
+    #capture the first col in the row
+    #add it in the first row
+    #return the new row
+
+    result = []
+    for col in range(len(matrix[0])):
+        newRow = []
+        for row in range(len(matrix)):
+            newRow.append(matrix[row][col])
+        result.append(newRow)
+    return result
+            
