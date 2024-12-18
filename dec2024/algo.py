@@ -728,4 +728,28 @@ def max_value(nums):
             newRow.append(matrix[row][col])
         result.append(newRow)
     return result
+
+    def threeNumberSum(array, targetSum):
+    #receive a list of int, and an int for targetSum
+    #return the list of triplets that add up to targetSum
+
+    #brute force
+    #do 3 inner nested loops
+    #sort the answer
+    #check if the answer already exists in the results
+    #if not, add it in
+    #if it does exist, move on to to the next
+    #return result
+
+    result = []
+    for i in range(len(array) - 2):
+        for j in range(i + 1, len(array) - 1):
+            for k in range(j + 1, len(array)):
+                if array[i] + array[j] + array[k] == targetSum:
+                    answer = sorted([array[i], array[j], array[k]])
+
+                    if answer not in result:
+                        result.append(answer)
+    return result
+
             
