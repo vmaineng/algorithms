@@ -799,3 +799,15 @@ def smallestDifference(arrayOne, arrayTwo):
         else:
             j +=1
     return pair
+
+    def threeNumberSum(array, targetSum):
+    results = []
+    for i in range(len(array) - 2):
+        for j in range(i + 1, len(array)-1):
+            for k in range(j  + 1, len(array)):
+                if array[i]+ array[j]+ array[k] == targetSum:
+                    triplet = sorted([array[i], array[j], array[k]])
+                    
+                    if triplet not in results:
+                        results.append(triplet)
+    return results
