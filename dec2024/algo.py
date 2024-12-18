@@ -662,3 +662,23 @@ def max_value(nums):
     #if num is negative, return num, else make it negative, return num
     
     return -number if number > 0 else number
+    return -abs(number)
+
+    def positive_sum(arr):
+    # receive a list of integers
+    #return the sum of all positive numbers
+    
+    #ex: [3, -3, 5, 2] => 3 + 5 + 2 => 10
+    
+    #iterate through list
+    #check if the num > 0
+    #add it to the running total
+    #return total
+    
+    total = 0
+    for num in arr:
+        if num > 0:
+            total += num
+    return total
+
+    return sum(num for num in arr if num > 0)
