@@ -811,3 +811,14 @@ def smallestDifference(arrayOne, arrayTwo):
                     if triplet not in results:
                         results.append(triplet)
     return results
+
+
+    def greet(name):
+    #receive a string of name - one word
+    #return hello (name), how are you doing today
+    
+    #ex: greet('my') => 'Hello, my how are you doing today?'
+    #ex: greet('') => 'Hello,   how are you doing today?'
+    
+    #brute force
+    return f'Hello, {name} how are you doing today?'
