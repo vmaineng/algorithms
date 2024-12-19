@@ -822,3 +822,30 @@ def smallestDifference(arrayOne, arrayTwo):
     
     #brute force
     return f'Hello, {name} how are you doing today?'
+
+    class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #initial: use a hashmap
+        #iterate through one string and save; key = letter; value = how many times seen
+        #iterate through second string
+        #if total gets to 0, return true
+
+        #put both strings into hashmap
+        #verify if both strings in hashmap are equal to each other
+
+        #sorting both strings and comparing them
+
+        #edge case: uppercase and lowercase letters, symbols
+        #edge case: if one of the string is empty
+        #edge case: if both strings are empty, return true b/c they are anagram
+
+        #ex: 'car', 'card' => automatically return false
+
+        #brute force: #ex: 'rat', 'car' => 'art' == 'acr' => false ; O(n log n) time
+        #return sorted(s) == sorted(t)
+
+        #optimized - use a hashmap:
+        #print(Counter(s))
+        return Counter(s) == Counter(t)
+        #time: O(n + m) - worst case
+        #space: O(n + m)
