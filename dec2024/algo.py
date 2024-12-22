@@ -849,3 +849,70 @@ def smallestDifference(arrayOne, arrayTwo):
         return Counter(s) == Counter(t)
         #time: O(n + m) - worst case
         #space: O(n + m)
+
+        def lovefunc( flower1, flower2 ):
+    # receive an integer for flower1, flower2
+    #return True if one of the lower has an odd and even number, else False (even & even; odd & odd)
+    
+    #ex: (3, 2) => True
+    #ex: (2, 2) => False
+    
+    #brute force: 
+    #if flower1 is even and flower 2 is odd, return true
+    #if flower2 is odd and flower1 is even, return true
+    #else return False
+    
+    #    flower1 = 0         1 % 2 => 
+#     if flower1 % 2 == 0 and flower2 % 2 != 0:
+#         return True
+#     elif flower2 % 2 == 0 and flower1 % 2 != 0:
+#         return True
+#     else:
+#         return False
+
+    return flower1 % 2 != flower2 % 2
+def hero(bullets, dragons):
+    #receive an integer for bullets, integer for the dragons
+    #return True if enough bullets to kill dragons, else False
+    
+    #ex: hero(4, 3) => False; 3 * 2 = 6
+    
+    #brute force:
+    #if dragons * 2 < bullets, return False, else return true
+    
+    return True if bullets >= dragons * 2 else False
+
+    def better_than_average(class_points, your_points):
+    #receive a list of integers for class points, an integer for my ponts
+    #return True if our score is better than the average score, else False
+    
+    #ex: [30, 50, 15], 20
+    # 30 + 50 + 15/ 3
+    # 95 /3 => ~31
+    # 20 > 31 => False
+    
+    #brute force:
+    #iterate through the class Point to get an average score
+    #compare our points to the average score
+    #return true if our poitns is > than average, else return False
+    
+    lengthOfClass = len(class_points)
+    
+    output = 0
+    averageScore = 0
+    for score in class_points:
+        averageScore += score
+    
+    output = averageScore // lengthOfClass
+    
+    return your_points > output
+
+    def square_sum(numbers):
+    #receive a list of numbers (neg and pos)
+    #return the total sum of every number squared
+    
+    #ex: [2, 2, 4] => 4 + 4 + 8 => 16
+    
+    #for every num in numbers: square it and add it to the total
+    
+    return sum(num**2 for num in numbers)
