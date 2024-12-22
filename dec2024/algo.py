@@ -924,3 +924,12 @@ def hero(bullets, dragons):
     #ex: [3, 5, 2] => 10
     
     return sum(a)
+
+    def find_needle(haystack):
+    # receive a list of words and strings
+    #return the index position of where 'needle' is
+    
+    for idx, word in enumerate(haystack):
+        if word == 'needle':
+            return f"found the needle at position {idx}"
+        
