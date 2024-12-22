@@ -916,3 +916,11 @@ def hero(bullets, dragons):
     #for every num in numbers: square it and add it to the total
     
     return sum(num**2 for num in numbers)
+
+    def sum_array(a):
+    #receive a lis tof integers
+    #return the total sum
+    
+    #ex: [3, 5, 2] => 10
+    
+    return sum(a)
