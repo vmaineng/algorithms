@@ -973,3 +973,27 @@ def hero(bullets, dragons):
         elif x==y:
             totalSum += 1
     return totalSum
+
+    def array_plus_array(arr1,arr2):
+    #receive two lists
+    #return the sum of two lists
+    
+    #ex:[2,3], [3, 4] => [5] + [7]
+    
+    #return sum of both lists added together
+    
+    return sum(arr1) + sum (arr2)
+    return sum(arr1 + arr2)
+
+    def two_sort(array):
+    # receive a list of strings
+    #return the first value from the sorted strings where it has 3*** between each letters
+    
+    #brute force:
+    #sort the array 
+    #grab the first word in array
+    #join the word together with ***
+    
+    array.sort()
+    firstWord = array[0]
+    return '***'.join(firstWord)
