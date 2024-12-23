@@ -933,3 +933,43 @@ def hero(bullets, dragons):
         if word == 'needle':
             return f"found the needle at position {idx}"
         
+    def moveElementToEnd(array, toMove):
+    # receive a list of nums, and an integer to move to the end of nums
+    #return a new list where the toMove integer are all at the end
+
+    #ex: [3,3, 2, 5,5 ],2 => [3,3,5,5,2]
+
+    #iterate through the array
+    #if num == toMove
+    #push to the end
+
+    newArray = [num for num in array if num != toMove]
+    toMoveArray = [num for num in array if num == toMove]
+
+    return newArray + toMoveArray
+    #time:O(2n) => O(N)
+    #spaace: O(n)
+
+    def points(games):
+    #recieve a list of string of integers
+    #return total for team points which is x and not y
+    
+    #ex: ["3:1", "2:4"] => 3points, 0 => 3 points
+    
+    #initialize a total sum
+    #iterate through each game
+    #convert the string into num
+    #if x is > y: add 3 points to sum
+    #if x < y: add no points
+    #if x = y, add 1 point
+    #return total sum
+    
+    totalSum = 0
+    
+    for game in games:
+        x,y = map(int, game.split(":"))
+        if x > y:
+            totalSum += 3
+        elif x==y:
+            totalSum += 1
+    return totalSum
