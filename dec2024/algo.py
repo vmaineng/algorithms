@@ -999,3 +999,27 @@ def hero(bullets, dragons):
     return '***'.join(firstWord)
 
     return '***'.join(min(array))
+
+def smallestDifference(arrayOne, arrayTwo):
+    # receive two lists of integers
+    #return a pair of integers that are closest to 0
+
+    #ex: [4,3], [3] => [3,3]
+
+    #brute force
+    #iterate through each element in arrayOne and arrayTwo
+    #if the difference is smaller than what the currentDiff
+    #update currentDiff
+    #capture current pair
+    #else move pointers
+
+    smallDiff = float('inf')
+    pair = []
+
+    for num in arrayOne:
+        for num2 in arrayTwo:
+            diff = abs(num - num2)
+            if diff < smallDiff:
+                smallDiff = diff
+                pair = [num, num2]
+    return pair
