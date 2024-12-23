@@ -1023,3 +1023,29 @@ def smallestDifference(arrayOne, arrayTwo):
                 smallDiff = diff
                 pair = [num, num2]
     return pair
+
+    def smallestDifference(arrayOne, arrayTwo):
+    # optimized
+    #using a while loop for both
+    #sort both arrays
+    #move i pointer if value is greater than j
+    #return pair
+
+    arrayOne.sort()
+    arrayTwo.sort()
+    i = 0
+    j = 0
+    smallestDiff = float('inf')
+    pair = []
+
+    while i < len(arrayOne) and j < len(arrayTwo):
+        diff = abs(arrayOne[i] - arrayTwo[j])
+        if diff < smallestDiff:
+            smallestDiff = diff
+            pair = [arrayOne[i], arrayTwo[j]]
+
+        if arrayOne[i] < arrayTwo[j]:
+            i += 1
+        else:
+            j+= 1
+    return pair
