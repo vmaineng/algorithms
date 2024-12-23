@@ -997,3 +997,5 @@ def hero(bullets, dragons):
     array.sort()
     firstWord = array[0]
     return '***'.join(firstWord)
+
+    return '***'.join(min(array))
