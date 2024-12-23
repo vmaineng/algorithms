@@ -1049,3 +1049,30 @@ def smallestDifference(arrayOne, arrayTwo):
         else:
             j+= 1
     return pair
+
+    def mergeOverlappingIntervals(intervals):
+    # receive a list of intervals
+    #return a list of lists back where overlapping intervals are merged in
+
+    #ex: [[1,2], [2, 5], [8,9]] => [[1, 5], [8,9]]
+
+    #create a new list and add in the first interval into the list
+    #iterate through each interval
+    #check if the end time is < start time of second
+    #else merge in list to the intervals
+    #return intervals
+
+    intervals.sort(key = lambda x: x[0])
+
+    newInterval = [intervals[0]]
+
+    for interval in intervals[1:]:
+        start, end = newInterval[-1]
+        start2, end2 = interval
+
+        if start2 <= end:
+            newInterval[-1][-1] = max(end, end2)
+        else:
+            newInterval.append(interval)
+    return newInterval
+        
