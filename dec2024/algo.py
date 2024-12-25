@@ -1116,3 +1116,6 @@ def remove_char(s):
         return value1 * value2
     else:
         return value1 /value2
+
+#can use the eval function
+    return eval(str(value1) + operator + str(value2))
