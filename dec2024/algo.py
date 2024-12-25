@@ -1076,3 +1076,22 @@ def smallestDifference(arrayOne, arrayTwo):
             newInterval.append(interval)
     return newInterval
         
+def remove_char(s):
+    #receive a lowercase string word
+    #return a string back of first letter and last letter removed
+    #ex: 'happy' => 'app'
+    
+    #brute force:
+    #intiialize a new string
+    #skip first letter
+    #add each letter until the last letter
+    #return new string
+    
+#     newString = ''
+    
+#     for idx, letter in enumerate(s):
+#         if idx != 0 and idx != len(s) - 1:
+#             newString += letter
+#     return newString
+
+    return s[1:-1]
