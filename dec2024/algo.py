@@ -1119,3 +1119,23 @@ def remove_char(s):
 
 #can use the eval function
     return eval(str(value1) + operator + str(value2))
+
+    def are_you_playing_banjo(name):
+    #receive a name - lowercase and uppercase one word
+    #return "{name} plays banjo" if lowercase or uppercase R, else, "{name} does not play banjo"
+    
+    #ex: 'robby' => 'robby plays banjo'
+    #ex: 'santa' => 'santa does not play banjo'
+    
+    #lowercase the name
+    #check if first letter of name starts with 'r'
+    #return does play banjo
+    #else does not play banjo
+    
+    lowerText = name.lower()
+    
+    if lowerText[0] == 'r':
+        return f"{name} plays banjo"
+    else:
+        return f"{name} does not play banjo"
+    
