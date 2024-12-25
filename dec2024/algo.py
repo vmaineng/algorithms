@@ -1138,4 +1138,9 @@ def remove_char(s):
         return f"{name} plays banjo"
     else:
         return f"{name} does not play banjo"
+
+    if name[0].lower() == 'r':
+        return name + "plays banjo"
+    else:
+        return name + " does not play banjo"
     
