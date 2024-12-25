@@ -1095,3 +1095,24 @@ def remove_char(s):
 #     return newString
 
     return s[1:-1]
+
+    def basic_op(operator, value1, value2):
+    #receive an operator, two integer values
+    #return the sum, product, of the two values based on operator
+    #ex: '*', 3, 4 => 3 * 4 => 12
+    
+    #brute force:
+    #check if the operator is '+'
+    #add the two values together
+    #if '-', subtract two values
+    #if '*', multiply two values
+    #if '/', divide the two values
+    
+    if operator == '+':
+        return value1 + value2
+    elif operator == '-':
+        return value1 - value2
+    elif operator == '*':
+        return value1 * value2
+    else:
+        return value1 /value2
