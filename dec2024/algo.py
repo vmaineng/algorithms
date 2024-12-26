@@ -1182,3 +1182,23 @@ def remove_char(s):
     
     return " ".join(words)
     
+    class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        #receive a list of words
+        #return similar anagrams in a list
+
+        #ex: ['har','arh','hi'] => [['hi],['har','arh]]
+
+        #iterate through the words in the list
+        #sort the strings
+        #add the similar words together
+        #return the list back together
+
+        anagrams = {}
+
+        for word in strs:
+            sortedWord = "".join(sorted(word))
+            if (sortedWord not in anagrams):
+                anagrams[sortedWord] = []
+            anagrams[sortedWord].append(word)
+        return list(anagrams.values())
