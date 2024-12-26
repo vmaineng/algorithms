@@ -1144,3 +1144,20 @@ def remove_char(s):
     else:
         return name + " does not play banjo"
     
+    def simple_multiplication(number) :
+    # receive an integer (pos or neg)
+    # return the product - if even, multiply by 8, else multiply by 9
+    
+    #ex:4 => even, multiply by 8 => 8 * 4 = 32
+    #ex: -3 => odd, multiply by 9 => -3 * 9 = -27
+    
+    #brute force: 
+    #if number is mod by 2 with no reminder, multiply number by 8
+    #else, multiply number by 9
+    
+#     if number % 2 == 0:
+#         return number * 8
+#     else:
+#         return number * 9
+
+    return number * 8 if number % 2 == 0 else number * 9
