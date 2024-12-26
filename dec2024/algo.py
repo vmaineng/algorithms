@@ -1161,3 +1161,15 @@ def remove_char(s):
 #         return number * 9
 
     return number * 8 if number % 2 == 0 else number * 9
+
+    def invert(lst):
+    #receivev a list of integers
+    #return a list of integers back with their values inverse
+    #ex: [3, 0, 4, 2] => [-3, 0, -4, -2]
+    
+    #brute force
+    #iterate through each of the element
+    #flip the signs on them
+    #return them back in the list
+    
+    return [-ele for ele in lst]
