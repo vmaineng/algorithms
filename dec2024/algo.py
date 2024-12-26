@@ -1173,3 +1173,12 @@ def remove_char(s):
     #return them back in the list
     
     return [-ele for ele in lst]
+
+    def smash(words):
+    #receive a list of words
+    #return one string with the list of words
+    
+    #ex: ['hello', 'its', 'Thursday'] => 'hello its Thursday"
+    
+    return " ".join(words)
+    
