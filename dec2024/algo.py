@@ -1222,3 +1222,30 @@ champions_league_goals = 10
 copa_del_rey_goals = 5
 
 total_goals = la_liga_goals + champions_league_goals + copa_del_rey_goals
+
+def greet(language):
+    #receive a list of tuples of (language, greeting)
+    #return the greeting based on the language provided
+    
+    #ex: 'dutch' => 'Welkom'
+    
+    greets = {
+        'english': 'Welcome',
+        'czech': 'Vitejte',
+        'danish': 'Velkomst',
+        'dutch': 'Welkom',
+        'estonian': 'Tere tulemast',
+        'finnish': 'Tervetuloa',
+        'flemish': 'Welgekomen',
+        'french': 'Bienvenue',
+        'german': 'Willkommen',
+        'irish': 'Failte',
+        'italian': 'Benvenuto',
+        'latvian': 'Gaidits',
+        'lithuanian': 'Laukiamas',
+        'polish': 'Witamy',
+        'spanish': 'Bienvenido',
+        'swedish': 'Valkommen',
+        'welsh': 'Croeso'
+    }
+    return greets[language] if language in greets
