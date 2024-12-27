@@ -15,6 +15,9 @@ def traverse_spiral(lst):
         for col in range(startCol, endCol + 1):
             result.append(lst[startRow][col])
         col +=1
+
+        for row in range(startRow +1, endRow + 1):
+            result.append(lst[row][endCol])
     
     
     return result

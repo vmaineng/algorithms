@@ -1294,3 +1294,11 @@ def greet(language):
             startCol += 1
             
     return result
+
+def get_average(marks):
+    #receive a list of scores and the students average,
+    #return the students average
+    
+    #ex: [3, 4,5, 2] / 4 => 17 /4 => 4
+    
+    return sum(marks) // len(marks)
