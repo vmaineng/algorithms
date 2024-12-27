@@ -1202,3 +1202,23 @@ def remove_char(s):
                 anagrams[sortedWord] = []
             anagrams[sortedWord].append(word)
         return list(anagrams.values())
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers and k for an integer
+        #return a list back of the top k elements
+
+        #keep a counter of how many elements seen
+        #sort by frequency
+        #return top k elements
+
+        #bucket sort
+
+        countNums = Counter(nums)
+        return [item[0] for item in countNums.most_common(k)]
+
+        la_liga_goals = 43
+champions_league_goals = 10
+copa_del_rey_goals = 5
+
+total_goals = la_liga_goals + champions_league_goals + copa_del_rey_goals
