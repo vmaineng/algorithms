@@ -1249,3 +1249,48 @@ def greet(language):
         'welsh': 'Croeso'
     }
     return greets[language] if language in greets
+
+    def spiralTraverse(array):
+    # receive a 2D array
+    # return a list of elements going in a spiral traverse method
+
+    #ex: [
+    # [1,2,3],
+    # [4,5,6]
+    # ]
+
+    # => [1,2,3,6,5,4]
+
+    #initialize a list to empty
+    #iterate through the first row on top 
+    # while row has not reach the bottom and col has not reach the end
+    #push in the value 
+    #then incrmeent to the next row
+    #then iterate far right col, go down
+    #add value
+    #return the list
+
+    result = []
+    startRow, endRow = 0, len(array) - 1
+    startCol, endCol = 0, len(array[0]) - 1
+
+    while startRow <= endRow and startCol <= endCol:
+        for col in range(startRow, endCol + 1):
+            result.append(array[startRow][col])
+        startRow += 1
+
+        for row in range(startRow, endRow +1 ):
+            result.append(array[row][endCol])
+        endCol -= 1
+
+        if startRow <= endRow:
+            for col in range(endCol, startCol - 1, -1):
+                result.append(array[endRow][col])
+            endRow -= 1
+            
+        if startCol <= endCol:
+           for row in range(endRow, startRow - 1, -1):
+               result.append(array[row][startCol])
+            startCol += 1
+            
+    return result
