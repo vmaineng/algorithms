@@ -1302,3 +1302,28 @@ def get_average(marks):
     #ex: [3, 4,5, 2] / 4 => 17 /4 => 4
     
     return sum(marks) // len(marks)
+
+def multi_table(number):
+    # Receive an integer and return its multiplication table as a string
+    
+    output = ''
+    for ele in range(1, 10 + 1):
+        product = ele * number
+        output += f'{ele} * {number} = {product}\n'
+    return output.strip()  # Use .strip() to remove the trailing newline
+
+def multi_table(number):
+    #receive a string of an integer
+    #return the multiplication table for integer
+    
+    #ex: 4 => 
+    
+    #for every number 1 - 10
+    #create a n * number, then add in \n
+    #return the string afterwards
+    
+    output = ''
+    for ele in range(1, 10 + 1):
+        product = ele * number
+        output += f'{ele} * {number} = {product}\n'
+    return output.strip()
