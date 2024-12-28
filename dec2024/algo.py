@@ -1327,3 +1327,22 @@ def multi_table(number):
         product = ele * number
         output += f'{ele} * {number} = {product}\n'
     return output.strip()
+
+    return '\n'.join(f'{i} * {number} = {i * number}' for i in range(1, 11))
+
+    class Ball(object):
+    #receive a ball type
+    #return a class Ball with an argument type
+    
+    #ex:Ball() => 'regular'
+    
+    #if ball_object is empty, return "regular"
+    #else return "the object passed in"
+    
+#     if not object:
+#         return "regular"
+#     else:
+#         return "{object}"
+
+    def __init__(self, ball_type = 'regular'):
+        self.ball_type = ball_type
