@@ -1346,3 +1346,12 @@ def multi_table(number):
 
     def __init__(self, ball_type = 'regular'):
         self.ball_type = ball_type
+
+        def to_binary(n):
+    #receive a non-negative integer
+    #return an integer such that binary representation of b is same as decimal 
+    
+    #can convert number into bytes
+    return int(bin(n)[2:])
+
+    return int(f'{n:b}')
