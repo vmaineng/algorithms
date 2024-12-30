@@ -1366,3 +1366,22 @@ def multi_table(number):
     return False
 
   return sorted(s1) == sorted(s2)
+
+  def pair_sum(numbers, target_sum):
+  #receive a list of nums, and integer
+  #return a tuple of index that sums up to target_sum
+
+  #ex: [3, 2, 5, 2, 4, 1], 3 => (1, 5)
+
+  #brute force:
+  #nested loops
+  #check if the value at both index = target_sum
+  #return it in a tuple
+
+  for i in range(0, len(numbers) - 1):
+    for j in range(i + 1, len(numbers)):
+      if numbers[i] + numbers[j] == target_sum:
+        return (i, j)
+
+#Time: O(N ^2)
+#space: O(1)
