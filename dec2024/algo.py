@@ -1355,3 +1355,14 @@ def multi_table(number):
     return int(bin(n)[2:])
 
     return int(f'{n:b}')
+
+    def anagrams(s1, s2):
+  #receive two strings
+  #return true if anagrams, else false
+
+  #ex: 'happy', 'hap' => false
+
+  if len(s1) != len(s2):
+    return False
+
+  return sorted(s1) == sorted(s2)
