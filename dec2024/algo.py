@@ -1385,3 +1385,24 @@ def multi_table(number):
 
 #Time: O(N ^2)
 #space: O(1)
+
+def pair_sum(numbers, target_sum):
+  #receive a list of nums, and integer
+  #return a tuple of index that sums up to target_sum
+
+  #ex: [3, 2, 5, 2, 4, 1], 3 => (1, 5)
+
+  #brute force:
+  #nested loops
+  #check if the value at both index = target_sum
+  #return it in a tuple
+
+  previous_nums = {}
+
+  for idx, num in enumerate(numbers):
+    difference = target_sum - num
+
+    if difference in previous_nums:
+      return (previous_nums[difference], idx)
+    else:
+      previous_nums[num] = idx
