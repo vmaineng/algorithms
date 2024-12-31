@@ -1475,6 +1475,8 @@ def pair_sum(numbers, target_sum):
     
     if len(arr) == 0:
         return []
+
+    if not arr: return []
     
     count = 0
     sum = 0
@@ -1484,3 +1486,7 @@ def pair_sum(numbers, target_sum):
         elif num > 0:
             count += 1
     return [count, sum]
+
+    pos = sum(1 for x in arr if x > 0)
+    neg = sum(x for x in arr if x < 0)
+    return [pos, neg] if len(arr) else []
