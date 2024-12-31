@@ -1406,3 +1406,81 @@ def pair_sum(numbers, target_sum):
       return (previous_nums[difference], idx)
     else:
       previous_nums[num] = idx
+
+      def pair_product(numbers, target_product):
+  #receive a list of numbers, and product sum
+  #return the index of the two indices that multiplies to get product sum
+  #ex: [3,2,5,1], 10 => (1,2)
+
+  #brute force:
+  #nested loops
+  #check if inner value * outervalue = product sum
+  #if so return the indexes in tuple
+
+  # for i in range(0, len(numbers)):
+  #   for j in range(i + 1, len(numbers)):
+  #     if numbers[i] * numbers[j] == target_product:
+  #       return (i,j)
+  # #time: O(n^2)
+  # #space:O(1)
+
+#optimized: using a dictionary
+#initialize a dictionary
+#iterate through numbers
+#check to find the divisor (target/ numbers)
+#return index if ele exists
+
+    previous_nums = {}
+  
+    for idx, ele in enumerate(numbers):
+      complement = target_product / ele
+  
+      if complement in previous_nums:
+        return (previous_nums[complement], idx)
+      
+      previous_nums[complement] = idx
+  
+  def grow(arr):
+    #receive a list of integers
+    #return the product of all values in the list
+    #ex: [3,4, 2] => 3 * 4 * 2 => 24
+    
+    #brute force:
+    #initialize sum to 0
+    #iterate through element in the arr
+    #multiply the value to sum
+    #return sum
+    
+    
+    productsum = 1
+    for ele in arr:
+        productsum *= ele
+    return productsum
+
+    return math.prod(arr)
+
+    return reduce(lamda x, y:)
+
+    def count_positives_sum_negatives(arr):
+    #receive a list of integers (pos and neg)
+    #return [count of pos, sum of negatives]
+    
+    #brute force:
+    #initialize a count and sum 
+    #iterate through each element in the list
+    #check if it is a pos or neg
+    #if pos, increment count
+    #if neg, add to sum
+    #return count and sum in a list
+    
+    if len(arr) == 0:
+        return []
+    
+    count = 0
+    sum = 0
+    for num in arr:
+        if num < 0:
+            sum += num
+        elif num > 0:
+            count += 1
+    return [count, sum]
