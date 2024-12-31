@@ -1490,3 +1490,33 @@ def pair_sum(numbers, target_sum):
     pos = sum(1 for x in arr if x > 0)
     neg = sum(x for x in arr if x < 0)
     return [pos, neg] if len(arr) else []
+
+    def uncompress(s):
+  #receive a string of number followed by char
+  #return the uncompressed version of string
+  #ex: '2c' => 'cc'
+
+  #brute force:
+  #initailize an empty string
+  #iterate through i and j
+  #while j < string's length
+  #check to see if it is in numbers
+  #if so, keep moving
+  #else, add on the char's amount
+
+  i = 0
+  j = 0
+  num = '0123456789'
+  result = ''
+
+  while j < len(s):
+    if s[j] in num:
+      j += 1
+    else:
+      nu = int(s[i:j])
+      result += s[j] * nu
+      j += 1
+      i = j
+  return result
+
+  
