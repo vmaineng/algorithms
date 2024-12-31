@@ -1519,4 +1519,60 @@ def pair_sum(numbers, target_sum):
       i = j
   return result
 
+def uncompress(s):
+  #receive a string of number followed by char
+  #return the uncompressed version of string
+  #ex: '2c' => 'cc'
+
+  #brute force:
+  #initailize an empty string
+  #iterate through i and j
+  #while j < string's length
+  #check to see if it is in numbers
+  #if so, keep moving
+  #else, add on the char's amount
+
+  i = 0
+  j = 0
+  num = '0123456789'
+  result = []
+
+  while j < len(s):
+    if s[j] in num:
+      j += 1
+    else:
+      nu = int(s[i:j])
+      result.append(nu * s[j])
+      j += 1
+      i = j
+  return ''.join(result)
+
+  def compress(s):
+  #receive a string
+  #return the compressed of string
+
+  #ex: 'aaabb' => '3a2b'
+
+  #sort the letters
+  #initalize count
+  #increment count for letters seen
+
+  sortS = sorted(s)
+  count = 0
+  result = ''
+  i = 0
+  j = 0
+
+  while j < len(s):
+    if s[i] == s[j]:
+      count += 1
+      j += 1
+    else:
+      result += f"{count}{s[i]}"
+      count = 0
+      i = j
+  result += f"{count}{s[i]}"
+  return result
+
+  
   
