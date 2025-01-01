@@ -1574,5 +1574,24 @@ def uncompress(s):
   result += f"{count}{s[i]}"
   return result
 
-  
+  def update_light(current):
+    #receive a string for a color
+    #return the next color afterwards
+    #'red' => 'green'
+    
+    #brute force:
+    #3 if loops
+    
+    #create a list
+    #if found the color, return the next color
+    colorList = ['green', 'yellow', 'red']
+    
+#     for color in colorList:
+#         if color == current:
+#             return color + 1
+
+    currentIdx = colorList.index(current)
+    nextIdx = (currentIdx + 1) % len(colorList)
+    return colorList[nextIdx]
+    
   
