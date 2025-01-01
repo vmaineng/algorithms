@@ -1593,5 +1593,39 @@ def uncompress(s):
     currentIdx = colorList.index(current)
     nextIdx = (currentIdx + 1) % len(colorList)
     return colorList[nextIdx]
+
+    transitions = {
+        'green': 'yellow',
+        'yellow': 'red',
+        'red': 'green'
+    }
+
+    return transitions[current]
+
+    def double_char(s):
+    #receive a string of upper, lower, chars, and spaces
+    #return the string double
+    #ex: 'strin ' => 'ssttrriinn. '
+    
+    #create a new string
+    #iterate through the string
+    #multiply it by 2 and add it to the string
+    #then return the string
+    
+#     doubleCharString = ''
+    
+#     for char in s:
+#         doubleCharString += char * 2
+    
+#     return doubleCharString
+
+    doubleCharList = []
+    
+    for char in s:
+        doubleCharList.append(char * 2)
+        
+    return ''.join(doubleCharList)
+
+    return ''.join(c * 2 for c in s)
     
   
