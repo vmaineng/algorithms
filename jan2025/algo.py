@@ -21,3 +21,21 @@ class Solution:
 
         return result
         
+        def check_for_factor(base, factor):
+    # receive two integers (whole numbers && pos) for base and factor
+    # return a boolean - True if the factor is a factor of the base, else False
+    
+    #ex: (25, 8) => 25 % 8 => 3 => 1
+    # => 8 * 3 => 24 => False
+
+    #ex: (25, 5) => 5 * 5 => 25 => 0 => True
+    
+    #brute force:
+    #if base % factor = 0, return true, else return false
+    
+#     if base % factor == 0:
+#         return True
+#     else:
+#         return False
+    return True if base % factor == 0 else False
+    
