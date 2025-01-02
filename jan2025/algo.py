@@ -57,3 +57,56 @@ class Solution:
 
     return "Great, now move on to tricks" if n >= 10 else "Keep at it until you get it"
     
+    def disemvowel(string_):
+    #receive a string of lowercase and uppercase and characters and spaces
+    #return a string back of lowercase and uppercase and space with no vowels
+    
+    #ex: 'happy new year!' => 'hppy nw yr!'
+    
+    #brute force
+    #intialize an empty string
+    #iterate through each char in the string
+    #check to see if it is not a vowel
+    #add it to the empty string
+    #else, we'll skip it if it a vowel
+    #return the string
+    
+#     noVowelString = ''
+#     vowels = 'aeiouAEIOU'
+    
+#     for char in string_:
+#         if char not in vowels:
+#             noVowelString += char
+    
+#     return noVowelString
+    
+    #time: O(N)
+    #space: O(N) - noVowelString 
+    
+#     noVowels = string_.lower().replace(/[aeiou]/g,'')
+#     print(noVowels) #javascript regex
+    import re
+    noVowels = re.sub(r'[aeiouAEIOU]', '', string_)
+    return noVowels
+
+    def square_digits(num):
+    # receive an integer
+    #return an integer - consist of the squared number of each num from the input
+    
+    #ex: 345 => 3^2 = 9, 4 ^2 = 16, 5^2 = 25
+    #output: 91625
+    
+    #brute force:
+    #convert num into a list
+    #iterate through each num in the list
+    #square each num
+    #add the squared number to the list
+    
+    listNum = str(num)  #['9119']
+    
+    squaredNums = ''
+    for num in listNum:
+        product = int(num) * int(num)
+        squaredNums += str(product)
+    return int(squaredNums)
+        
