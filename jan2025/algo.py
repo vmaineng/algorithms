@@ -38,4 +38,22 @@ class Solution:
 #     else:
 #         return False
     return True if base % factor == 0 else False
+
+    return base % factor == 0
+
+    def hoop_count(n):
+    # receive an integer
+    #return a string of "Great, now move on to tricks", else "Keep at it until you get it"
+    
+    #ex: 4 => "Keep at it until you get it"
+    
+    #brute force:
+    #if n >= 10, "Great, now move on to tricks", else "Keep at it until you get it"
+    
+#     if n >= 10:
+#         return "Great, now move on to tricks"
+#     else:
+#         return "Keep at it until you get it"
+
+    return "Great, now move on to tricks" if n >= 10 else "Keep at it until you get it"
     
