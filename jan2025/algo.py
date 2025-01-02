@@ -110,3 +110,69 @@ class Solution:
         squaredNums += str(product)
     return int(squaredNums)
         
+        class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        #receive a list of integers
+        #return a list of integers
+        
+        #ex: [3,4] => [4, 3]
+          #     i
+          #  j
+
+        #brute force:
+        #initialize an empty result list
+        #iterate through each num in nums
+        #if i != j
+        #multiply to get product sum of each value at j
+        #add it the list
+
+        #ex: [1,2,3,4]
+           #. i
+           #.     j
+        
+        # result = []
+
+        # for i in range(len(nums)):
+        #     multiplier = 1
+        #     for j in range(len(nums)):
+        #         if i != j:
+        #             multiplier *= nums[j] #2, 3 * 2 = 6
+        #     result.append(multiplier) #[2, 6]
+        
+        # return result
+
+        #time: O(n ^ 2)
+        #space: O(1)
+
+        #optimized method: time: O(N)
+        #run one loop at a time to grab all the productSum from the left side => O(N) + O(N) => O(2n) => O(n)
+        #run another loop to grab all the productSum from the right side
+
+        #initialize an empty result
+        #multiplier set to 1
+        #iterate through the nums
+        #multiply by the multiplier
+        #then add in the products in the result list
+
+        #create a rightmultiplier and set it to 1
+        #iterate through the right side of th eproduct
+        #multiply each num in the result list
+        #return the result list
+
+        #initialize a list of the same length of nums list, and set it one
+        result = [1] * len(nums)
+
+        leftMultipler = 1
+        for i in range(len(nums)):
+            result[i] *= leftMultipler
+            leftMultipler *= nums[i]
+
+        rightMultiplier = 1
+        for i in range(len(nums)-1, -1, -1):
+            result[i] *= rightMultiplier
+            rightMultiplier *= nums[i]
+
+        return result
+
+        #time: O(n)
+        #space:O(n)
