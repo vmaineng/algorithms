@@ -176,3 +176,34 @@ class Solution:
 
         #time: O(n)
         #space:O(n)
+
+         anagrams = {}
+
+        for word in strs:
+            sortedWord = "".join(sorted(word))
+            if (sortedWord not in anagrams):
+                anagrams[sortedWord] = []
+            anagrams[sortedWord].append(word)
+        return list(anagrams.values())
+
+        class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        encoded = ''
+        for s in strs:
+            encoded += f"{len(s)}:{s}"
+        return encoded
+
+    def decode(self, s: str) -> List[str]:
+        decoded = []
+        i = 0
+
+        while i < len(str):
+            j = i
+            while str[j] != ':':
+                j += 1
+            length = int(str[i:j])
+            i = j + 1
+            decoded.append(str[i: i+length])
+            i += length
+        return decoded
