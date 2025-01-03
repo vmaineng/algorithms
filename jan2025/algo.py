@@ -250,5 +250,18 @@ class Solution:
         #compares original sLower which is filtered
         #to reverse and filtered sLower
 
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        sLower = ''.join(c.lower() for c in s if c.isalnum())
 
+        return sLower == sLower[::-1]
+        #compares original sLower which is filtered
+        #to reverse and filtered sLower
+
+        sLower = ''.join(c.lower() for c in s if c.isalnum())
+
+        for i in range(len(sLower)):
+            if sLower != sLower[::-1]:
+                return False
+        return True
         
