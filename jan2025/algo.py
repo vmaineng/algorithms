@@ -207,3 +207,40 @@ class Solution:
             decoded.append(str[i: i+length])
             i += length
         return decoded
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #receive a string of words that contains uppercase, lowercase,
+        #return True if palindrome, else False
+
+        #ex: 'race a car' => 'racecar' => true
+
+        #brute force:
+        #modify string to all lowercase and remove the all non-alphanumeric chars
+        #create another string - reverse it
+        #check if the letter is the same
+        #else erturn false immediately
+
+        #optimized: using two pointer
+        #filter string to no space and lowercase it
+        #start one pointer at the start, and one at the end
+        #while the two pointers do not overlap
+        #check if they are the same letter
+        #if not, then return False immediately
+        #else increment both pointers
+        #return true after checking
+
+        s = ''.join(c.lower() for c in s if c.isalnum())
+
+        left, right = 0, len(s) -1
+
+        while left < right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -=1
+                
+        return True
+
+
+        
