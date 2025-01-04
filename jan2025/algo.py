@@ -414,3 +414,36 @@ class Solution:
                 if nums1[i] == nums2[j]:
                     result.add(nums1[i])
         return list(result)
+
+        class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        set1 = set(nums1)
+        set2 = set(nums2)
+        return list(set1 & set2) #using & helps find common elements
+        #using & in python with sets, it performs an intersection operation
+        #using & is shorthand for .intersection()
+        #set1.intersection(set2)
+
+        #time: O(m x n)
+        #space: O(m x n)
+
+        #sort both arrays
+        #then iterate through each arrays
+        #add it to the result set
+
+        result = set()
+        nums1.sort()
+        nums2.sort()
+        i,j = 0, 0
+
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] == nums2[j]:
+                result.add(nums[1])
+                i +=1
+                j +=1
+            elif nums1[i] < nums2[j]:
+                i +=1
+            else:
+                j +=1
+        return list(result)
+        
