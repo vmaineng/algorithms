@@ -342,3 +342,57 @@ class Solution:
                 left += 1
                 right += 1
             return s
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        #receive a string of integers
+        #return a string back with the reversed reversed
+
+        #brute force
+        #for each letter in the strings
+        #if they match a vowel
+        #reverse them
+        
+        vowels = 'aeiouAEIOU'
+        vowel_list = [char for char in s if char in vowels]
+        reverseVowels = vowel_list[::-1]
+
+        result = []
+        vowel_index = 0
+        for char in s:
+            if char in vowels:
+                result.append(reverseVowels[vowel_index])
+                vowel_index += 1
+            else:
+                result.append(char)
+        return ''.join(result)
+
+        #create a list of vowels
+        #check to see if it is a vowel
+        #grab a vowel from the list reversed
+        #keep track of the index of it
+        #then increment index of vowels used
+        #return back in a string
+
+        #time: O(n)
+        #space: O(v) => v # of vowels in string
+
+        #optimized:
+        #two pointers; one at start, one at beginning
+        #if it is a vowel
+        #swap them
+        #else, increment them
+
+        vowels = set('aeiouAEIOU')
+        chars = list(s)
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            if s[left] not in vowels:
+                left +=1
+            elif s[right] not in vowels:
+                right -=1
+            else:
+                s[left], s[right] = s[right], s[left]
+                left +=1
+                right +=1
+        return ''.join(chars)
