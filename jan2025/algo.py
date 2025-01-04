@@ -290,3 +290,55 @@ class Solution:
                     i =j
         return nums + 1
         
+    class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #receive a list of integers in sorted order
+        #return a list back of unique elements in the array
+
+        #ex: [3,4,5,5,5,6] => [3,4,5,6, _, _]
+
+        #brute force:
+        #iterate through the nums list
+        #check to see if the numbers are the same at i and j
+        #if they are not the same
+        #keep moving, else replace i with j
+
+        i = 0 #tracks the last unique element in the array
+        for j in range(1, len(nums)): #j traverses to find the next unique element
+            if nums[i] != nums[j]:
+                i += 1
+                nums[i] = nums[j] #the pointer i will overwrite the previous values
+        return i + 1 #bc i is 0-indexed
+
+        class Solution:
+    def reverseVowels(self, s: str) -> str:
+        #receive a string of uppercase and lowercase string
+        #return the vowels reversed
+
+        #ex: 'apple' => 'eppla'
+
+        #brute force:
+        #nested loop
+        #check to see if there is a vowel
+
+
+        #optimized: use two pointers
+        #one starting at left and one starting at far right
+        #check to see if it is a vowel
+        #if so, swap them
+        #else keep looking
+        #return string
+
+        vowels = set('aeiouAEIOU')
+        s_list = list(s)
+        left =0 
+        right = len(s) -1
+
+        while left < right:
+            if s_list[left] not in vowels and s_list[right] now in vowels:
+                left += 1
+                right += 1
+            else:
+                left += 1
+                right += 1
+            return s
