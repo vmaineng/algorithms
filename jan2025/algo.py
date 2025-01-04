@@ -265,3 +265,28 @@ class Solution:
                 return False
         return True
         
+        class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #receive a list of integers in non-decreasing order
+        #remove duplicates in-place
+
+        #ex: [3,4,4,4,5] => [3,4,5,_,_,_]
+
+        #brute force:
+        #iterate through nums
+        #if i and j are not the same
+        #move i and j pointer
+        #if i an j are the same, then move the value of pointer j
+        #move i to j 
+        #return the nums array again
+
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] !== nums[j]:
+                    i += 1
+                    j += 1
+                else:
+                    j += 1
+                    i =j
+        return nums + 1
+        
