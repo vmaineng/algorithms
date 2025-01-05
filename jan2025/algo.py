@@ -470,3 +470,14 @@ def high_and_low(numbers):
     maxNum = max(listNums)
     minNum = min(listNums)
     return f"{maxNum} {minNum}"
+
+    def high_and_low(numbers):
+    numList = [int(num) for num in numbers.split(" ")]
+    maxNum = max(numList)
+    minNum = min(numList)
+    
+    return f"{maxNum} {minNum}"
+
+     numList = [int(num) for num in numbers.split(" ")]
+    
+    return f"{max(numList)} {min(numList)}"
