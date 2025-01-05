@@ -447,3 +447,26 @@ class Solution:
                 j +=1
         return list(result)
         
+
+
+def high_and_low(numbers):
+    # receive a string of ints
+    #return max and min int in strings
+    #ex: '3 5 3 3' => '5 3'
+    
+    #brute force:
+    #turn numbers into a list
+    #turn nums into ints
+    #find min and max
+    #return as string
+    
+#     minNum = float('inf')
+#     maxNum = float('-inf')
+    
+    listNums = list(map(int,numbers.split()))
+#     for num in listNums:
+#         print(listNums)
+
+    maxNum = max(listNums)
+    minNum = min(listNums)
+    return f"{maxNum} {minNum}"
