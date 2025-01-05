@@ -481,3 +481,9 @@ def high_and_low(numbers):
      numList = [int(num) for num in numbers.split(" ")]
     
     return f"{max(numList)} {min(numList)}"
+
+def filter_list(l):
+    #receive a list of strings and nums
+    #return a list of nums only
+    
+    return [num for num in l if isinstance(num,int)]
