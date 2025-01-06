@@ -538,3 +538,33 @@ def maskify(cc):
 
 #time: O(N^3)
 #space: O(n) n for number of triplets stored
+
+def threeNumberSum(array, targetSum):
+    # iterate through the array with 2 pointers
+    #sort teh array first
+    #have a pointer start atfirst index
+    #i and j moves in between
+    #if they are the same, addto the result array
+    #else increment i or decrement j
+    #return result
+
+    result = []
+    array.sort()
+    
+    for i in range(0, len(array) - 2):
+        j = i + 1
+        k = len(array) - 1
+
+        while j < k:
+             if array[i] + array[j] + array[k] == targetSum:
+                 result.append([array[i], array[j], array[k]])
+                 j += 1
+                 k -= 1
+             elif array[i] + array[j] + array[k] < targetSum:
+                 j += 1
+             else:
+                 k -= 1
+    return result
+       #time: O(n^2)
+       #space:O(N)
+        
