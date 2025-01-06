@@ -567,4 +567,43 @@ def threeNumberSum(array, targetSum):
     return result
        #time: O(n^2)
        #space:O(N)
-        
+        def findClosestValueInBst(tree, target):
+    # receive a BST and a node value
+    #return the node value's that is closest to target
+
+    #ex:
+
+    #brute force: 
+    #if tree has no root node, return None
+    #check if the target's value < or > than root node, so we can see if we go left or right
+    #return the smallest difference
+    #return the node associated with it
+
+    if tree is None:
+        return None
+
+    min_diff = abs(target- tree.value)
+    closeset_value = tree.value
+
+    if target < tree.value:
+        left_closest = findClosestValueInBst(tree.left, target)
+        if left_closest is not None:
+            left_diff = abs(target - left_closest)
+            if left_diff < min_diff:
+                closest_value = left_closest
+                min_diff = left_diff
+    elif target > tree.value:
+        right_closest = findClosestValueInBst(tree.right, target)
+        if right_closest is not None:
+            right_diff = abs(target - right_closest)
+            if right_diff < min_diff:
+                closet_value = right_closest
+                min_diff = right_diff
+    return closest_value
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
