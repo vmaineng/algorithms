@@ -487,3 +487,32 @@ def filter_list(l):
     #return a list of nums only
     
     return [num for num in l if isinstance(num,int)]
+
+    # return masked string
+def maskify(cc):
+    #receive a string of integers
+    #return the string of integers back with the first couple of nums in # with last 4 shown
+    #ex: '2342342' => '###2342'
+    
+    #find the length of the string
+    #turn it all into # and slice out -4
+    
+    #edge case:
+    #if length of cc <4, return the card as is
+    
+    return (len(cc) - 4) * '#' + cc[-4:]
+    def min_max(lst):
+    #receive a list of integers
+    #return the min and max in a list back
+    
+    #ex: [3,2,5,6] => [2, 6]
+    
+    #brute force:
+    #look for min num and max num using min and math functions
+    #return a list of min and max
+    
+    minNum = min(lst)
+    maxNum = max(lst)
+    return [minNum, maxNum]
+
+    return [min(lst), max(lst)]
