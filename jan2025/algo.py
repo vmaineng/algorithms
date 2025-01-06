@@ -516,3 +516,25 @@ def maskify(cc):
     return [minNum, maxNum]
 
     return [min(lst), max(lst)]
+
+    def threeNumberSum(array, targetSum):
+    #receive a list of integers, and a targetSUm integer
+    #return the triplets that matches up to the total
+
+    #brute force:
+    #iterate through array with 3 pointers
+    #add triplet to result array
+    #return result array
+
+    result = []
+    for i in range(0, len(array) -2):
+        for j in range(i + 1, len(array) - 1):
+            for k in range(j + 1, len(array)):
+                if array[i] + array[j] + array[k] == targetSum:
+                    triplet = sorted([array[i], array[j], array[k]])
+                    if triplet not in result:
+                       result.append(triplet)
+    return result
+
+#time: O(N^3)
+#space: O(n) n for number of triplets stored
