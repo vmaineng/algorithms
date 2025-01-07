@@ -641,4 +641,28 @@ class Solution:
                 if count > 1:
                     return False
         return True
+
+        class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        #receive a string of lowercase letters with no spaces
+        #return True if palindrome if removing one letter, else False
+
+        #ex: 'abca' => True
+
+        #brute force
+        #create a new string
+        #check if the reverse string is equal to the other one
+        #return False if they don't
+        #else, checking everything, return True
+
+        def checkPali(string):
+            return string == string[::-1]
+
+        #check all possible single-char removals
+        for i in range(len(s)):
+            modifiedString = s[:i] + s[i + 1:]
+            if checkPali(modifiedString):
+                return True
+        return checkPali(s)
+        
         
