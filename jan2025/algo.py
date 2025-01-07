@@ -607,3 +607,38 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        #receive a string of lowercase letters
+        #return True if can delete at most one char from it, else False
+
+        #ex: 'helpeh' => True
+
+        #brute force:
+        #create a new string
+        #add
+
+        #optimize:
+        #iterate thorugh the strings iwwth left and right pointer
+        #start at 0 and one at the end
+        #if they are equal to each other, move both pointers
+        #else, move one of the pointers to check if the the other letters are the same
+        #increment count
+        #false if more than 2 counts
+        #else return true after searching all
+
+        count = 0
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            if s[left] == s[right]:
+                left +=1
+                right -=1
+            elif if s[left] != s[right]:
+                count += 1
+                left += 1
+                right -= 1
+                if count > 1:
+                    return False
+        return True
+        
