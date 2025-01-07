@@ -708,4 +708,38 @@ class Solution:
         return True
 
         
+        # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        #receive the head of a SLL
+        #return True if palindrome
+        #else False
+
+        #brute force: 
+        #create a track of the values in a list
+        #check if the reversed one is equal to it
+
+        lst_vals = []
+        current = head
+        while current != None:
+            lst_vals.append(current.val)
+            current = current.next
+        
+        left, right = 0, len(lst_vals) - 1
+
+        while left < right:
+            if lst_vals[left] != lst_vals[right]:
+                return False
+            left += 1
+            right -=1
+        return True
+
+    #time:O(n)
+    #space:O(n)
+
+
         
