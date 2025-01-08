@@ -764,6 +764,5 @@ def reverse_words(text):
         revWords.append(revWord)
     return ' '.join(revWords)
         
-
-
+return ''.join([s[::-1] for s in text.split('')])
         
