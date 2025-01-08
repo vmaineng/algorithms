@@ -742,4 +742,28 @@ class Solution:
     #space:O(n)
 
 
+def reverse_words(text):
+    #receive a string of words, spaces, uppercase and lowercase
+    #return the string back in reverse
+    
+    #ex: 'hello world' => 'dlrow olleh'
+    
+    #brute force:
+   #split the words into a list
+#iterate through the strings
+#reverse them
+#add it back to the list
+#join together as strings
+    splitText = text.split(" ")
+    revWords = []
+    
+    for word in splitText:
+        #print(word)
+        revWord = word[::-1]
+#         print(revWord)
+        revWords.append(revWord)
+    return ' '.join(revWords)
+        
+
+
         
