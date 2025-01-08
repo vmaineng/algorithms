@@ -765,4 +765,28 @@ def reverse_words(text):
     return ' '.join(revWords)
         
 return ''.join([s[::-1] for s in text.split('')])
+        class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        #receive a list of integers
+        #return a list of lists of triplets with no duplicate triplets
+
+        #brute force
+        #create a result list
+        #iterate through each num in the nums list
+        #check if all 3 values are equal to 0, if so,
+        #check if all triplets are already in the result lsit
+        #if not, add them in
+        #return result list
+
+        result = []
+
+        for i in range(0, len(nums) - 2):
+            for j in range(i + 1, len(nums) - 1):
+                for k in range(j + 1, len(nums)):
+                    if nums[i] + nums[k] + nums[j] == 0:
+                        triplets = sorted([nums[i], nums[j], nums[k]])
+                        if triplets not in result:
+                            result.append(triplets)
+        return result
+
         
