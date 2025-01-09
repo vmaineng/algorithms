@@ -829,5 +829,27 @@ return ''.join([s[::-1] for s in text.split('')])
         return result
 
    
-        
-        
+from collections import Counter
+
+# write the function is_anagram
+def is_anagram(test, original):
+    #receive two strings of uppercase and lowercase letters
+    #return True if they are anagrams of each other, else False
+    
+    #ex: 'hi','yo' => false
+    #ex: 'alli', 'lila' => True
+    
+    #sort both of the values
+    #compare to each other if they are of same values
+    
+#     sortTest = sorted(list(test.lower()))
+#     sortOriginal = sorted(list(original.lower()))
+    
+#     return sortTest == sortOriginal
+#time: O(n log n)
+#space: O(n)
+
+    return Counter(test.lower()) == Counter(original.lower())
+#time: O(N)
+#space:O(N)
+       
