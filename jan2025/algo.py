@@ -853,3 +853,26 @@ def is_anagram(test, original):
 #time: O(N)
 #space:O(N)
        
+       def sequence_sum(begin_number, end_number, step):
+    #receive integers for being, end, and step
+    #return the sum of begin - end, by the step, else return 0 if begin > end
+    
+    #ex: 4, 3, 1 => 0
+    #ex: 2, 9, 2 => 2 + 4 + 6 + 8 => 20
+    
+    #if begin # > end #, return 0
+    #else inititalize a sum to 0
+    #increment starting at begin #, go up to end #, by step
+    #add to total
+    #return total
+    
+    if begin_number > end_number:
+        return 0
+    
+    sum = 0
+    for val in range(begin_number, end_number + 1, step):
+        sum += val
+    return sum
+
+   # return [sum(val) for val in range(begin_number, end_number + 1, step)]
+    
