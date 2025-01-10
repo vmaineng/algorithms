@@ -875,4 +875,4 @@ def is_anagram(test, original):
     return sum
 
    # return [sum(val) for val in range(begin_number, end_number + 1, step)]
-    
+    return sum(range(begin_number, end_number + 1, step))
