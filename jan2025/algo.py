@@ -908,3 +908,37 @@ def is_anagram(test, original):
             return True
     return False
     
+    class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #receive a string of words letters and chars
+        #return true if string is palidrome, else false
+
+        #ex: 'hello, mary joe' => 'eoj yram ,,olleh' => false
+
+        #brute force:
+        #lowercase the words
+        #create a reversed string of the words
+        #iterate through each char
+        #check if each char is not the same letter
+        #else return false
+
+        #'hello'
+        #'olleh'
+        #'racecar'
+        #'racecar'
+
+        revString = ''
+        for idx in range(len(s)-1, -1, -1):
+            revString += s[idx]
+
+        revLower = revString.lower()
+        newLower = s.lower()
+
+        for idx in range(len(newLower)):
+            
+            if newLower[idx] != revLower[idx]:
+                print(revLower[idx], newLower[idx])
+                return False
+        return True
+        #optimized
+        #
