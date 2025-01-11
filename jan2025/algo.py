@@ -894,5 +894,17 @@ def is_anagram(test, original):
     #add num for each num for x time
     
     return [i*x for i in range(1, n+1)]
+    def check(seq, elem):
+    #receive a sequence and number
+    #return True if elem exists in seq, else False
     
+    #ex: [42, 34, 55, 32], 32 => True
+    
+    #brute force:
+    #iterate through to see if elem = seq, return true, else return false
+    
+    for ele in seq:
+        if ele == elem:
+            return True
+    return False
     
