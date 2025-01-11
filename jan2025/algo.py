@@ -941,4 +941,34 @@ def is_anagram(test, original):
                 return False
         return True
         #optimized
-        #
+        
+        class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #brute force:
+        #remove all alphanumbers and special chars, and lowercase the letters
+        #check if reverse string == string
+        
+       # filterWord = ''.join(c.lower() for c in s if c.isalnum())
+        # print(filterWord)
+       # return filterWord == filterWord[::-1]
+
+        #topimized solution:
+        #lower and filtered out the word
+        #using left and right pointer
+        #check if char is the same as each other
+        #if they are equal to each other, return false
+        #else return True
+
+        filterWord = ''.join(c.lower() for c in s if c.isalnum())
+
+        left, right = 0, len(filterWord) - 1
+
+        while left < right:
+            if filterWord[left] != filterWord[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+       
+
+        
