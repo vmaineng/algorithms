@@ -879,3 +879,20 @@ def is_anagram(test, original):
     
     def find_average(numbers):
     return sum(numbers)/len(numbers) if len(numbers) > 0 else 0
+
+    def count_by(x, n):
+    """
+    Return a sequence of numbers counting by `x` `n` times.
+    """
+    #receive integers for both for x and n
+    #return a list back of numbers up 
+    #return a list of back of numbers x times by n
+    
+    #ex: 3, 3 => [3, 6, 9]
+    
+    #brute force: use list comprehrension
+    #add num for each num for x time
+    
+    return [i*x for i in range(1, n+1)]
+    
+    
