@@ -995,6 +995,22 @@ def count_by(x, n):
     #ex: x = 2, n =3 => [2, 4, 6]
     
     return [i * x for i in range(1, n + 1)]
+
+
+    def reverse_seq(n):
+    #receive an integer
+    #return a list of the intege back in revered
+    
+    #ex: 3 => [3, 2, 1]
+    
+    #brute force:
+#     result = []
+#     for i in range(n, 0, -1):
+#         result.append(i)
+#     return result
+#time: O(N) , space: O(n)
+
+    return [i for i in range(n, 0, -1)]
     
     
     
