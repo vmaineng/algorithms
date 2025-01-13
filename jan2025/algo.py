@@ -1054,7 +1054,19 @@ def count_by(x, n):
             nums[i] = nums[j]
         return i + 1
 
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        result = []
+
+        for ele in nums:
+            if ele not in result:
+                result.append(ele)
+                print(result)
         
+        for i in range(len(result)):
+            nums[i] = result[i]
+        return (len(result))
+
         
     
     
