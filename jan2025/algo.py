@@ -1011,6 +1011,30 @@ def count_by(x, n):
 #time: O(N) , space: O(n)
 
     return [i for i in range(n, 0, -1)]
+
+    class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #remove duplicates in place
+        #override it with the next number
+
+        #two index
+        #iterate thorugh
+        #check if the next value is the same value
+        #then rewrite it with j's value
+        #move i pointer up
+
+        #[1,1,2]
+        # i j
+
+
+        i = 0
+        for j in range(1, len(nums)):
+            if nums[i] != nums[j]:
+                i += 1
+                nums[i] = nums[j]
+           
+        return i + 1
+        
     
     
     
