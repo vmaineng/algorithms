@@ -970,5 +970,32 @@ def is_anagram(test, original):
             right -= 1
         return True
        
+def count_by(x, n):
+    """
+    Return a sequence of numbers counting by `x` `n` times.
+    """
+    #receive integers for both for x and n
+    #return a list back of numbers up 
+    #return a list of back of numbers x times by n
+    
+    #ex: 3, 3 => [3, 6, 9]
+    
+    #brute force: use list comprehrension
+    #add num for each num for x time
+    
+    return [i*x for i in range(1, n+1)]
 
+    def count_by(x, n):
+    """
+    Return a sequence of numbers counting by `x` `n` times.
+    """
+    #receive integers
+    #return a list of n amount by x
+    
+    #ex: x = 2, n =3 => [2, 4, 6]
+    
+    return [i * x for i in range(1, n + 1)]
+    
+    
+    
         
