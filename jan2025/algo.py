@@ -1034,6 +1034,27 @@ def count_by(x, n):
                 nums[i] = nums[j]
            
         return i + 1
+
+        class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #receive a list of sorted nums
+        #return a list of nums where no duplicates
+        #ex: [1,2,2,3] => [1,2,3, _]
+
+        #solution:
+        #iterate through the list with j
+        #if j's value is same as i's value, update i's value to j
+        #increment i pointer
+        #return the array + 1
+
+        i = 0
+        for j in range(1, len(nums)):
+            if nums[i] != nums[j]:
+                i += 1
+            nums[i] = nums[j]
+        return i + 1
+
+        
         
     
     
