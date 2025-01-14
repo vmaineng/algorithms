@@ -1115,4 +1115,23 @@ from math import ceil
     return ceil(month /3)
     
     
-        
+class Solution:
+    def countGoodSubstrings(self, s: str) -> int:
+        #receive a string of lowercase chars
+        #return total of good substrings in length of 3
+
+        #ex: 'hello' => 'hel' => 1
+
+        #solution:
+        #start left and right pointer at the beginning of string
+        #tell right to up to 3
+        #check if it's been seen before in a set
+        #add to set, else keep moving 
+
+        count = 0
+
+        for i in range(len(s) - 2):
+            substring = s[i:i + 3]
+            if (len(set(substring)) == 3):
+                count += 1
+        return count
