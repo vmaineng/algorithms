@@ -1162,3 +1162,54 @@ class Solution:
             currentSum += nums[i] - nums[i - k]
             maxSum = max(maxSum, currentSum)
         return maxSum/k
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        #receive a string of chars
+        #return max # vowels seen in s with k size
+
+        #ex: 'hello', 2 => 1 'he', 'lo'
+
+        #brute force:
+        #keep count
+        #iterate through strings
+        #check if strings contains vowels
+        #increment vowel count
+        #if vowel count exceeds max count, max count = vowel Count
+        #return maxCount
+
+        maxCount = 0
+        vowelCount = 0
+        vowels = ['a','e','i','o','u']
+
+        for i in range(len(s) - k + 1): 
+            subStr = s[i:i+k]
+            vowelCount = 0
+            for char in subStr:
+                if char in vowels:
+                    vowelCount += 1
+            maxCount = max(maxCount, vowelCount)
+        return maxCount
+
+        #time:O(n x k)
+        #space:O(1)
+        
+        #optimized: 
+        vowels = {'a', 'e', 'i','o','u'}
+        maxCount = 0
+        currentCount = 0
+
+        for i in range(k):
+            if s[i] in vowels:
+                currentCount += 1
+
+        maxCount = currentCount
+
+        for i in range(k, len(s)):
+            if s[i - k] in vowels:
+                currentCount -=1
+            if s[i] in vowels:
+                currentCount += 1
+        maxCount = max(maxCount, currentCount)
+
+        return maxCount
+
