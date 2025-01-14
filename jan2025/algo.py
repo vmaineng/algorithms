@@ -1194,7 +1194,7 @@ class Solution:
         #space:O(1)
         
         #optimized: 
-        vowels = {'a', 'e', 'i','o','u'}
+        vowels = {'a', 'e', 'i','o','u'} #set
         maxCount = 0
         currentCount = 0
 
@@ -1212,4 +1212,39 @@ class Solution:
         maxCount = max(maxCount, currentCount)
 
         return maxCount
+
+        class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        #receive a list of integers
+        #return min size array whose sum = target
+        #ex: [3,4,5,11, 3], 9 => [4,5]
+
+        #keep track of size
+        #iterate through the array
+        #if total > target, reduce window size, else expand window size
+        #return min size window seen
+
+        minWindow = 0
+        for i in range(0, len(nums) - 1):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    minWindow = [nums[i], nums[j]]
+                elif nums[i] + nums[j] < target:
+                    j += 1
+                else:
+                    i +=1
+        return len(minWindow)
+
+        minWindow = float('inf')
+        current = 0
+        currentSum = 0 
+
+        for end in range(len(nums)):
+            currentSum += nums[end]
+
+            while currentSum >= target:
+                minWindow = min(minWindow, end - current + 1)
+                currentSum -= nums[current]
+                current += 1
+        return minWindow if minWindow != float('inf') else 0
 
