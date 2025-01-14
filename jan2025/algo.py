@@ -1135,3 +1135,30 @@ class Solution:
             if (len(set(substring)) == 3):
                 count += 1
         return count
+
+        class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        #receive an array of integers
+        #return the max average
+        #ex:
+
+        #kadane's algo
+        #slice up to k amount + 1
+
+        maxAverage = float(-inf)
+
+        for i in range(len(nums) - k + 1):
+            subAmt = nums[i: i + k] #[1, 12, -5, -6]
+            subAvg = sum(subAmt)/k
+            if subAvg > maxAverage:
+                maxAverage = subAvg
+        return maxAverage
+
+        #optimized solution
+        currentSum = sum(nums[:k])
+        maxSum = currentSum
+
+        for i in range(k, len(nums)):
+            currentSum += nums[i] - nums[i - k]
+            maxSum = max(maxSum, currentSum)
+        return maxSum/k
