@@ -1067,7 +1067,24 @@ class Solution:
             nums[i] = result[i]
         return (len(result))
 
-        
+   def remove_exclamation_marks(s):
+    #receive a string of words
+    #return a new string with no '!'
+    
+    #ex: 'H!i!'=> 'Hi'
+    
+    #brute force:
+    #create a new string
+    #check each char to see if it is not a !
+    #add to string
+    
+    #list comprehension
+    #join back
+    
+    noMarks = [char for char in s if char != '!']
+    return ''.join(noMarks)
+
+    return s.replace('!', '')     
     
     
     
