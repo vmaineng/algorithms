@@ -1086,6 +1086,33 @@ class Solution:
 
     return s.replace('!', '')     
     
+    def quarter_of(month):
+    #receive a month
+    #return what quarter the month is in
+    
+    #ex: 3 => 1st
+    #ex: 6 => 2
+    
+    #brute force:
+    # 1 - 3 = 1
+    # 4 - 6 = 2
+    #7 - 9 = 3
+    #10 - 12 = 4
+
+    #if statements
+
+    if month < 4:
+        return 1
+    elif month >= 4 and month < 7:
+        return 2
+    elif month >= 7 and month < 10:
+        return 3
+    else:
+        return 4
+
+from math import ceil
+
+    return ceil(month /3)
     
     
         
