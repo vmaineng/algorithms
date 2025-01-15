@@ -1248,3 +1248,29 @@ class Solution:
                 current += 1
         return minWindow if minWindow != float('inf') else 0
 
+def get_grade(s1, s2, s3):
+    #receive 3 integers
+    #return the letter grade of the average of the 3 integers
+    
+    #ex: (100,100,100) => 100
+    
+    # calc average
+    #dictate where average exists
+    #then return the letter grade
+    
+    total = s1 + s2 + s3
+    
+    avg = total/3
+    print(avg)
+    
+    if avg >=90 and avg <= 100:
+        return 'A'
+    elif avg >= 80 and avg < 90:
+        return 'B'
+    elif avg >= 70 and avg <80:
+        return 'C'
+    elif avg >= 60 and avg < 70:
+        return 'D'
+    else:
+        return 'F'
+    
