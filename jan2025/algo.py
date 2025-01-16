@@ -1297,3 +1297,17 @@ def get_grade(s1, s2, s3):
 
 return employed and not vacation
 #return True and opposite of what vacation is
+
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return a list back of integers that occurs most frequent
+
+        numsFreq = Counter(nums)
+
+        return [item for item,count in numsFreq.most_common(k)]
+
+#Time: O(n + logk)
+#space: O(N)
