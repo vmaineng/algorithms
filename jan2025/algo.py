@@ -1281,3 +1281,19 @@ def get_grade(s1, s2, s3):
     #return the sum as nums and strings
     
     return sum([int(num) for num in arr])
+    return sum(map(int, num))
+
+    def set_alarm(employed, vacation):
+    #receive booleans
+    #return True if both inputs do not match each other
+    
+    #if employed is True and vacation is True, return false
+    #if employed is False and vacation is True, return False
+    
+    if employed == True and vacation == False:
+        return True
+    else:
+        return False
+
+return employed and not vacation
+#return True and opposite of what vacation is
