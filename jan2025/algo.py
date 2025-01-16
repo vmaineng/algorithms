@@ -1262,6 +1262,8 @@ def get_grade(s1, s2, s3):
     
     avg = total/3
     print(avg)
+
+    avg = sum([s1,s2,s3])/3
     
     if avg >=90 and avg <= 100:
         return 'A'
@@ -1274,3 +1276,8 @@ def get_grade(s1, s2, s3):
     else:
         return 'F'
     
+    def sum_mix(arr):
+    #receive a list of nums and strings
+    #return the sum as nums and strings
+    
+    return sum([int(num) for num in arr])
