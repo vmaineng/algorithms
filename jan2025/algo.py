@@ -1367,4 +1367,9 @@ def greet(language):
         'welsh': 'Croeso',
     }.get(language, 'Welcome')
 
-    
+    def get_char(c):
+    #input: ascII number
+    #return the corresponding letter with it
+  # {65, 'A'}
+    return chr(c)
+    #will return the letter back from integers
