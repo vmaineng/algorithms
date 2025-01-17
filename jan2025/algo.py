@@ -1373,3 +1373,45 @@ def greet(language):
   # {65, 'A'}
     return chr(c)
     #will return the letter back from integers
+
+    class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #palindrome => 'racecar'
+        #receive a string of uppercase, lowercase, spaces, and special chars
+        #return True if valid palindrome, else False
+
+        #ex: 'apples are Fall1ng' => 'applesarefall1ng' => False
+        #ex: 'rumpp mur' => 'rumppmur' = True
+
+        #brute force:
+        #remove all white spaces and non-alphnumeric characters
+        #joinit all together into one big word
+        #check if the reversed word = the same word
+
+        # reversedString = ''.join([char.lower() for char in s if char.isalnum()])
+        # return reversedString == reversedString[::-1]
+
+        #time: O(n)
+        #space: O(n)
+
+        #optimized: using left and right pointers
+        #modified input string
+        #left and right pointers (left starts at beginning, right starts at the end)
+        #check to see if the letters are the same, 
+        #if they are, move pointers down
+        #else return false
+        #after checking everything, return True
+
+        modifiedString = ''.join([char.lower() for char in s if char.isalnum()])
+        left, right = 0, len(modifiedString) - 1
+
+        while left < right:
+            if modifiedString[left] == modifiedString[right]:
+                left += 1
+                right-=1
+            else: 
+                return False
+        return True
+
+        #time:O(n)
+        #space:O(n)
