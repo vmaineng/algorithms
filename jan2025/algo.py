@@ -1497,6 +1497,43 @@ class Solution:
                 return isValid(self, left + 1, right, s) or isValid(self, left, right - 1, s)
         return True
 
+def declare_winner(fighter1, fighter2, first_attacker):
+    # fighter 1 and fighter 2 are objects, who attacks first
+    #within the fighter objects, "name", int (health), int(damage)
+    
+    #return: string of the winner
+    
+    #ex: Lew 10.    Harry 5
+        #1st             -2
+        #                 3
+        #2nd -4
+        #.    6
+        #3rd             -2
+        #                 1
+        #4th  -4
+        #     2
+        #5th              -2
+        #                  -1
+        #Lew is still alive
+        
+        #let's figure out who goes first
+        #deduct damage_per_attack from other person's health
+        #the other fighter attacks, deducts attack from their person's health
+        #check if the health <=0, return the other fighter's name
+        
+        if first_attacker == fighter1.name:
+            while fighter1.health > 0 and fighter2.health >0:
+                fighter2.health -= fighter1.damage_per_attack
+                fighter1.health -= fighter2.damage_per_attack
 
+                return fighter1.name if fighter1.health >0 else fighter2.name
+
+        else: #fighter2's turn
+            while fighter1.health > 0 and fighter2.health >0:
+                fighter1.health -= fighter2.damage_per_attack
+                fighter2.health -= fighter1.damage_per_attack
+                
+                return fighter2.name if fighter2.health >0 else fighter1.name
+    
 
         
