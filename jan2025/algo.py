@@ -1311,3 +1311,38 @@ class Solution:
 
 #Time: O(n + logk)
 #space: O(N)
+
+def greet(language):
+    #receive a language
+    #return the 'welcome' of that specific language
+    #ex: 'english' => 'Welcome'
+    #ex: 'polish' => 'Witamy'
+    
+    #ex: 'EngliSH' => 
+    
+    languageLower = str(language).lower()
+    
+    greets = {
+        'english': 'Welcome',
+        'czech': 'Vitejte',
+        'danish': 'Velkomst',
+        'dutch': 'Welkom',
+        'estonian': 'Tere tulemast',
+        'finnish': 'Tervetuloa',
+        'flemish': 'Welgekomen',
+        'french': 'Bienvenue',
+        'german': 'Willkommen',
+        'irish': 'Failte',
+        'italian': 'Benvenuto',
+        'latvian': 'Gaidits',
+        'lithuanian': 'Laukiamas',
+        'polish': 'Witamy',
+        'spanish': 'Bienvenido',
+        'swedish': 'Valkommen',
+        'welsh': 'Croeso',
+    }
+    
+    return greets[languageLower] if languageLower in greets else 'Welcome'
+   
+    #time: O(1)
+    #space: O(1)
