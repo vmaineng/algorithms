@@ -1539,3 +1539,13 @@ def declare_winner(fighter1, fighter2, first_attacker):
         def mystery():
     results = {'sanity': 'Hello'}
     return results
+
+    def two_decimal_places(n):
+#     raise NotImplementedError("TODO: two_decimal_places")
+    #receive an floating number
+    #return the number rounded to decimal places
+    
+    #ex: 3.2349723987 => 3.23
+    #ex: -38427.9827 => -38427.99
+    
+    return round(n, 2)
