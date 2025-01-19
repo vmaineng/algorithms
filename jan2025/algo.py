@@ -1595,3 +1595,12 @@ def declare_winner(fighter1, fighter2, first_attacker):
 #         return func2()
     
     return func1() if bool else func2()
+
+    def same_case(a, b): 
+    if a.isupper() and b.isupper():
+        return 1
+    elif a.islower() and b.islower():
+        return 1
+    elif not a.isalpha() or not b.isalpha():
+        return -1
+    return 0
