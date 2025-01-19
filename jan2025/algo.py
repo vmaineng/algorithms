@@ -1536,4 +1536,6 @@ def declare_winner(fighter1, fighter2, first_attacker):
                 return fighter2.name if fighter2.health >0 else fighter1.name
     
 
-        
+        def mystery():
+    results = {'sanity': 'Hello'}
+    return results
