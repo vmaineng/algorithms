@@ -1549,3 +1549,36 @@ def declare_winner(fighter1, fighter2, first_attacker):
     #ex: -38427.9827 => -38427.99
     
     return round(n, 2)
+
+    def multiple_of_index(arr):
+    #receive a list of integers
+    #return a list back where the element is a multiple of their own index
+    
+    #ex: [22, -6, 32, 82]
+    #.    0.   1.  2   3
+    #.    0.  -1.  16. 27.3
+    
+    #return [num for nums,idx in enumerate(arr) if num % idx == 0]
+
+    #brute force:
+    #create a result list set to empty
+    #iterate through the nums in the array
+    # if the nums / idx % 0
+    #add num to the result list
+    #return result
+    
+    #return n / d if d else 0
+    
+    result = []
+
+    if arr[0] == 0:
+        result.append(arr[0])
+            
+    for idx in range(1, len(arr)):
+
+        multipleVal = arr[idx]/idx
+#         print(multipleVal)
+      
+        if multipleVal.is_integer():
+            result.append(arr[idx])
+    return result
