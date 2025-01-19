@@ -1582,3 +1582,16 @@ def declare_winner(fighter1, fighter2, first_attacker):
         if multipleVal.is_integer():
             result.append(arr[idx])
     return result
+
+    def _if(bool, func1, func2):
+    #receive a boolean, function, and a function
+    #if bool == True, call func1, else call func2
+    
+    #False, eatApples(), eatBananas() => eatBananas()
+    
+#     if bool == True:
+#         return func1()
+#     else:
+#         return func2()
+    
+    return func1() if bool else func2()
