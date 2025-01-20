@@ -1604,3 +1604,29 @@ def declare_winner(fighter1, fighter2, first_attacker):
     elif not a.isalpha() or not b.isalpha():
         return -1
     return 0
+
+    def sum_array(arr):
+    #receive a list of integers
+    #return sum of all elements where it's not the highest and the lowest
+    
+    #ex: [2,3,5,6,1] => [2,3,5] => 10
+    
+    #if elements are less than 3, return 0
+    
+    #brute force: sort the elements
+    #add sum all the way from idx 1 to idx - 2
+    #return sum
+    
+    if not arr:
+        return 0
+    
+    arr.sort()
+    
+    total = 0
+    
+    for num in range(1, len(arr) -1):
+        total += arr[num]
+    return total
+
+#time: O (n log n) => sorting
+#space: O(1) for total
