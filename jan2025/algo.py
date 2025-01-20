@@ -1687,3 +1687,33 @@ class Solution:
             if len(even_pali) > len(longest):
                 longest = even_pali
         return longest
+
+        class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        #optimized: 
+        #keep track of the longest palindromic string
+        #use left and right pointer
+        #iterate starting at the first char
+        #expand to the left and expand to the right
+        #while left pointer has not reached the beginning of the string
+        #and right has not reached the end of the string 
+        #and the chars are equal to each other
+        #return the longest
+
+        def expandAroundCenter(s, left, right):
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -=1
+                right += 1
+            return len(s[left + 1: right])
+
+        longest = 0
+        for i in range(len(s)):
+            odd_pali = expandAroundCenter(s, i, i)
+            if odd_pali > longest:
+                longest = odd_pali
+
+            even_pali = expandAroundCenter(s, i, i+1)
+            if even_pali > longest:
+                longest = even_pali
+        return longest
+        
