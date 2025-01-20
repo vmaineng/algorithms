@@ -1630,3 +1630,8 @@ def declare_winner(fighter1, fighter2, first_attacker):
 
 #time: O (n log n) => sorting
 #space: O(1) for total
+
+if not arr or len(arr) < 3:
+    return 0
+
+return sum (arr) - max(arr) - min(arr)
