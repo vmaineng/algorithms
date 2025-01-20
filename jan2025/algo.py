@@ -1635,3 +1635,55 @@ if not arr or len(arr) < 3:
     return 0
 
 return sum (arr) - max(arr) - min(arr)
+
+Additionally, have you ever wondered how the string perfect returns the correct word back? 
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        #receive a string
+        #return the longest palindromic string
+        #ex: 'abcecbfa' => 'bcecb'
+
+        #brute force: 
+        #keep track of the longest string of palindrome
+        #iterate with an i and j pointers starting at the beginning
+        #j will check every substring
+        #then check if it is palindrome and if the length is longer than the current one, uupdate the longest one
+        #return the longest
+        # def checkPali(substring):
+        #     return substring == substring[::-1]
+
+        # longestPali = ''
+        # for i in range(len(s)):
+        #     for j in range(i, len(s)):
+        #         substring = s[i: j+1]
+        #         if checkPali(substring) and len(substring) > len(longestPali):
+        #             longestPali = substring
+        # return longestPali
+        
+
+        #optimized: using two pointers
+        #start in the middle of the pali
+        #check if the left and right letters are equal to each other
+        #check odd and even lengths
+        #keep track of length of pali
+
+        #i is our center and we want to test the center frome very index
+
+        def expandAroundCenter(s, left, right):
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -=1
+                right += 1
+            return s[left + 1:right]
+
+        longest = ""
+
+        for i in range(len(s)):
+            odd_pali = expandAroundCenter(s, i, i)
+            if len(odd_pali) > len(longest):
+                longest = odd_pali
+            
+            even_pali = expandAroundCenter(s, i, i + 1)
+            if len(even_pali) > len(longest):
+                longest = even_pali
+        return longest
