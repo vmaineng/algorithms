@@ -1779,4 +1779,75 @@ class Solution:
         return self.reverseList(nextLL, head)
       
         
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        #receive a linked list
+        #return the middle node with the last nodes attached as well
 
+        #ex: 1 -> 3 > 1 -> 4 -> None => 1 -> 4 -> None
+
+        #initialize a middleNode to None
+        #iterate through the LL
+        #keep track of the length
+        #iterate through LL again up to /2
+        #return the node
+
+        lengthLL = 0
+        current = head
+
+        while current:
+            lengthLL += 1
+            current = current.next
+            
+        middleIdx = lengthLL // 2
+        current=head
+        for i in range(middleIdx):
+            current = current.next
+        return current
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        #receive a linked list
+        #return the middle node with the last nodes attached as well
+
+        #ex: 1 -> 3 > 1 -> 4 -> None => 1 -> 4 -> None
+
+        #initialize a middleNode to None
+        #iterate through the LL
+        #keep track of the length
+        #iterate through LL again up to /2
+        #return the node
+
+        # lengthLL = 0
+        # current = head
+
+        # while current:
+        #     lengthLL += 1
+        #     current = current.next
+            
+        # middleIdx = lengthLL // 2
+        # current=head
+        # for i in range(middleIdx):
+        #     current = current.next
+        # return current
+
+        #use fast and slow pointer
+        #fast goes twice as fast
+        #return the slow pointer when the fast reaches the end of the LL
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
