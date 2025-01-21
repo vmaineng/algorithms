@@ -1851,3 +1851,39 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         return slow
+
+        # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        #receive a head of LL
+        #return true if cycle exists
+        #else return false
+
+        #fast and slow pointers
+        #if fast and slow meets, there is a cycle, else False
+
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+        return False
+        
+        visited = set()
+        current = head
+
+        while current:
+            if current in visited:
+                return True
+            visited.add(current)
+            current = current.next
+        return False
