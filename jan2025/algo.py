@@ -1731,3 +1731,36 @@ class Solution:
     #slice?
     splitDate = long_date.split(',')
     return ' '.join(splitDate[:-1])
+
+    return long_date.split(',')[0] #['Monday February 2', ' 8pm']
+
+    # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        #receive a head for LL
+        #return a reverse LL
+
+        #create a node set to null
+        #capture the head
+        #have head point back to prev
+        #iterate the next poitners
+        #iterate the head pointers
+        #return prev
+
+        prev = None
+        current = head
+
+        if not head:
+            return None
+        
+        while current != None:
+            nextLL = current.next
+            current.next = prev
+            prev = current
+            current = nextLL
+        
+        return prev
