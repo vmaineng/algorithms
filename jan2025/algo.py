@@ -1723,3 +1723,11 @@ class Solution:
     #ex: [3, '2', 'a'], 'A' => False
     
     return x in a
+
+    def shorten_to_date(long_date):
+    #receive a long_date
+    #return only weekday month day with no time
+    
+    #slice?
+    splitDate = long_date.split(',')
+    return ' '.join(splitDate[:-1])
