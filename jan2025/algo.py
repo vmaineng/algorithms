@@ -1717,3 +1717,9 @@ class Solution:
                 longest = even_pali
         return longest
         
+        def check(a, x): 
+    #receive an array and a value
+    #return True if x exists in array, else return false
+    #ex: [3, '2', 'a'], 'A' => False
+    
+    return x in a
