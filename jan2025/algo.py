@@ -1887,3 +1887,30 @@ class Solution:
             visited.add(current)
             current = current.next
         return False
+
+        def solution(number):
+    #receive an integer
+    #return the sum of natural numbers below num which are multiples of 3 or 5
+    #ex: 9 => 3, 5, 6, 9 => 23
+    
+    #intiialize a total to 0
+    #increment through number
+    #check if the number is a mutilple of 3 and 5, add to total
+    #check if num is a multiple of 3, add to total
+    #check if num is a multiple of 5, add to total
+    #return total
+    
+    if number < 0:
+        return 0
+    
+    total = 0
+    for i in range(1, number ):
+        if i % 3 == 0 and i % 5 == 0:
+            total += i
+        elif i % 5 == 0:
+            total += i
+        elif i % 3 == 0:
+            total += i
+    return total
+    
+  
