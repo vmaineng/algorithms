@@ -1913,4 +1913,38 @@ class Solution:
             total += i
     return total
     
+    return sum(i in range(1, number) if i % 5 == 0 or i %3 == 0)
   
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        #receive a head of linked list
+        #keep track of the entire length of LL
+        #iterate up to k
+        #have another pointer iterate up to k
+        #then swap the values
+        #return the head
+
+        length = 0
+        current = head
+        while current:
+            length += 1
+            current = current.next
+
+
+        first, second = head, head
+
+        for i in range(k - 1): # moves from the beginning
+            first = first.next
+        
+        for i in range(length - k): #moves from the end
+            second = second.next
+        
+        first.val, second.val = second.val, first.val
+
+        return head
+        
