@@ -1955,3 +1955,5 @@ class Solution:
     #ex: (50, 25, 2) => 25 * 2 = 50 = 50 = True
     
     return (mpg* fuel_left) >= distance_to_pump 
+
+    return int(''.join(sorted(digit for digit in str(num), reverse=True)))
