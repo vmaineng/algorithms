@@ -1948,3 +1948,10 @@ class Solution:
 
         return head
         
+
+        def zero_fuel(distance_to_pump, mpg, fuel_left):
+    #receive distance to pump, mpg, gallons (integers)
+    #return true if you can make it to next gas station, else false
+    #ex: (50, 25, 2) => 25 * 2 = 50 = 50 = True
+    
+    return (mpg* fuel_left) >= distance_to_pump 
