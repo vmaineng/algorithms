@@ -1968,3 +1968,26 @@ class Solution:
     return [num for num in range(a, b+1)]
 #time: O(N) 
 #space: O(n)
+return list(range(a, b+1))
+
+# from collections import Counter
+
+def is_isogram(string):
+    #receive a string of uppercase and lowercase letters
+    #return True if it is an isogram, else False
+    
+    #initialize a object that will hold key(char): value (how many times we have seen)
+    #after creating counter object
+    #check if the value > 1, return False
+    #return True
+    
+    freqDict = {}
+    for char in string.lower():
+        freqDict[char] = freqDict.get(char, 0) + 1
+    
+    for chars in freqDict:
+        if freqDict[chars] > 1:
+            return False
+    return True
+
+#     return Counter(string) > 1
