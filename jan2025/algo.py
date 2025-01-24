@@ -1957,3 +1957,14 @@ class Solution:
     return (mpg* fuel_left) >= distance_to_pump 
 
     return int(''.join(sorted(digit for digit in str(num), reverse=True)))
+
+    def between(a,b):
+    #receive two numbers where a < b
+    #return a list back of all the integers between a&b including, a & b
+    
+    #ex: 3, 4 => [3, 4]
+    
+    #return every nums between a and b
+    return [num for num in range(a, b+1)]
+#time: O(N) 
+#space: O(n)
