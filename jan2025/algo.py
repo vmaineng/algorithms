@@ -2005,3 +2005,6 @@ def is_isogram(string):
         return f"{names[0]}, {names[1]} and {names[2]} like this"
     else:
         return f"{names[0]}, {names[1]} and {len(names) - 2} others like this"
+
+def say_hello(name):
+    return f"Hello, {name}"
