@@ -2028,3 +2028,31 @@ def say_hello(name):
 
 #time: O(n)
 #space: O(n)
+
+return min(len(char) for char in s.split())
+
+def find_it(seq):
+    #receive a list of integers
+    #return the numbers that occurs odd number of times
+    #ex: [3,3,3, 1,1,1, 4,4] => [3, 1]
+    
+    #brute force:
+    #keep track of the numbers seen in the dictionary
+    #increment the count of the key we have seen
+    #iterate through the keys in dictionary and check their values
+    #if odd, push in key to list, else let's not push in even
+    
+    if not seq:
+        return 0
+    
+    freqDict = {}
+    
+    for num in seq:
+        freqDict[num] = freqDict.get(num, 0) + 1
+    print(freqDict)
+
+    for num in freqDict:
+        if freqDict[num] % 2 != 0:
+            return num
+    
+            
