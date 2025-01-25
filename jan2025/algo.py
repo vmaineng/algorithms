@@ -2008,3 +2008,23 @@ def is_isogram(string):
 
 def say_hello(name):
     return f"Hello, {name}"
+
+    def find_short(s):
+    #receuve a string of words
+    #return integer of the smallest word
+    #ex: 'hi my name is Mai' => 2
+    
+    #split strings
+    #iterate through each word
+    #find the min
+    #return the len of min word
+    
+    arr = s.split()
+    minWord = float('inf')
+    for word in arr:
+        if len(word) < minWord:
+            minWord = len(word)
+    return minWord
+
+#time: O(n)
+#space: O(n)
