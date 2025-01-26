@@ -2054,5 +2054,79 @@ def find_it(seq):
     for num in freqDict:
         if freqDict[num] % 2 != 0:
             return num
+
+    for num in seq:
+        if seq.count(num) %2 != 0:
+            print num
     
             
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        #receive two words of different lengths
+        #return one word which alternates letters from two different strings
+        #ex: 'hi', 'bye' => 'hbiye'
+
+        #brute force
+        #initialize an empty string, which will be our output
+        #iterate through the longest string (max of word1, word2)
+        #adding in char from word1, adding in char from word2
+        #add in the rest of letters if there are no more from the other strings
+        #return output
+
+     
+        # maxWord = max(len(word1), len(word2))
+        # minWord = min(len(word1), len(word2))
+        # print(maxWord)
+        # for i in range(maxWord): 
+        #     outputString += word1[i]
+        #     outputString += word2[i]
+        #     #if we reached the minWord, then add everything from the maxWord to the end of sentence
+        #     print(outputString)
+        #return outputString
+
+        outputString = ''
+        i = 0
+       
+        while i < len(word1) and i < len(word2):
+            outputString += word1[i]
+            outputString += word2[i]
+            i += 1
+   
+        outputString += word1[i:]
+        outputString += word2[i:]
+        return outputString
+
+        #time: O(n^2) b/c of string
+        #space: O(n)
+    
+        #intialize an empty list
+        #split out word1 and word2 => ['a','b','c']
+        #create an i pointer
+        #while i < len word1 and len of word2
+        #alternate adding chars to the empty list
+        #slice the string and append to end of string
+        #return the list, joined back together with strings
+
+        result = []
+        lstWord1 = list(word1)
+        lstWord2 = list(word2)
+        
+        i = 0
+      
+        while i < len(lstWord1) and i < len(lstWord2):
+            result.append(lstWord1[i])
+            result.append(lstWord2[i])
+            i += 1
+
+        #for loop - to grab the remaining characters
+        #range(start (inclu), stop (exclusive), step)
+        for j in range(i, len(word1), 1):
+            result.append(word1[j])
+        
+        for k in range(i, len(word2), 1):
+            result.append(word2[k])
+    
+        return ''.join(result)
+
+        #time: O(n + m)
+        #Space: O(N)
