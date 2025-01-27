@@ -2130,3 +2130,9 @@ class Solution:
 
         #time: O(n + m)
         #Space: O(N)
+
+def spread(func, args):
+    #receive a function and arguments from the funciton
+    #return the output of what he function is doing
+    
+    return func(*args)
