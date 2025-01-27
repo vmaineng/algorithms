@@ -2136,3 +2136,47 @@ def spread(func, args):
     #return the output of what he function is doing
     
     return func(*args)
+
+    from typing import (
+    List,
+)
+from lintcode import (
+    Interval,
+)
+
+"""
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    """
+    @param intervals: an array of meeting time intervals
+    @return: if a person could attend all meetings
+    """
+    def can_attend_meetings(self, intervals: List[Interval]) -> bool:
+        #receive a a list of tuples
+        #return true if person can attend all meetings
+        #else return False
+
+        #ex: [(1, 3), (2,5)] => False
+
+        #sort the tuples by starting and ending
+        #iterate through and check if end time <= start of first
+        #or if start of 1 >= end time 
+        #return False
+        #else returnTrue
+
+        if len(intervals) <= 1:
+          return True
+
+        intervals.sort(key=lambda x:x.start)
+
+        for i in range(len(intervals) - 1):
+          if intervals[i].end < intervals[i + 1].start:
+            return False
+        
+        return True
