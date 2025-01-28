@@ -74,4 +74,33 @@ class Solution:
             else:
                 result.append(intervals[i]) 
         return result
+    
+    class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive a list of lists
+        #return the list where the lists are merged in
+
+        #ex: [[1,3], [7,8]] => [[1,3], [7,8]]
+
+        #sort the lists by start time
+        #initialize a result list to with the first interval from intervals
+        #iterate through the intervals
+        #check if the start time of current interval <= end time
+        #if so, update the the end time to max end time
+        #else
+        #add in the interval b/c no cnflict
+        #return results
+
+        intervals.sort(key=lambda x:x[0])
+
+        results = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            currentStart, currentEnd = intervals[i]
+            prevStart, prevEnd = results[-1]
+            if currentStart <= prevEnd:
+                results[-1][1]= max(currentEnd, prevEnd)
+            else:
+                results.append(intervals[i])
+        return results
         
