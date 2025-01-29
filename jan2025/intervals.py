@@ -124,3 +124,67 @@ class Solution:
                 result.append(intervals[i])
                 i += 1
             return result
+
+            class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of lists
+        #return a new list inserting in the newInterval
+        #ex: [[3,5], [1,3]], [6,8] => [[1,5], [6,8]]
+
+        #sort the intervals based on start time
+        #iterate through the list
+        #have an i pointer
+        #iterate through the intervals
+        #check if the interval is less than the new interval start
+        #update the start and end time of new interval
+        #return the new list
+
+        # result = []
+        # i = 0
+
+        # while i < len(intervals) and intervals[i][1] < newInterval[0]:
+        #     result.append(intervals[i])
+        #     i += 1
+        
+        # while i < len(intervals) and intervals[i][0] <= newInterval[1]:
+        #     newInterval[0] = min(intervals[i][0], newInterval[0])
+        #     newInterval[1] = max(intervals[i][1], newInterval[1])
+        #     i += 1
+        # result.append(newInterval)
+
+        # while i < len(intervals):
+        #     result.append(intervals[i])
+        #     i += 1
+
+        # return result
+
+        
+        intervals.append(newInterval)
+        intervals.sort()
+
+        res = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            if intervals[i][0] <= res[-1][1]:
+                res[-1][1] = max(res[-1][1], intervals[i][1])
+            else:
+                res.append(intervals[i])
+        return res
+
+        
+
+import heapq
+
+def min_meeting_rooms(interval):
+    if not intervals:
+        return 0
+    
+    intervals.sort(key = lambda x:x[0])
+    heap = []
+    heapq.heappush(heap, intervals[0][1])
+
+    for interval in intervals[1:]:
+        if interval[0] >= heap[0]:
+            heapq.heappop(heap)
+        heapq.heappush(heap, interval[1])
+    return len(heap)
