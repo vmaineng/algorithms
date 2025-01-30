@@ -188,3 +188,4 @@ def min_meeting_rooms(interval):
             heapq.heappop(heap)
         heapq.heappush(heap, interval[1])
     return len(heap)
+
