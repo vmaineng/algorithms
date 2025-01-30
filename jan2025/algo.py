@@ -2180,3 +2180,56 @@ class Solution:
             return False
         
         return True
+
+    def minimum(arr):
+    #receive a list of integers (pos and neg)
+    #return the min value from the list
+    #ex: [32, 4, 5, -3, 57] => -3
+    
+    #method1: 
+    #sort the array
+    #return the first value
+    #time: O(n log n)
+    #space: O(1)
+    
+#     arr.sort()
+#     return arr[0]
+
+#method:
+#intialize a value and set it to infinity
+#iterate through each. num in arr
+#check if num < minValue
+#if so, minValue = num
+#return num
+
+#     minValue = float('inf')
+#     for num in arr:
+#         if num<minValue:
+#             minValue = num
+#     return minValue
+
+    return min(arr)
+
+def maximum(arr):
+    #receive a list of integers (pos and neg)
+    #return the max value from the list
+    #ex: [32, 4, 5, -3, 57] => 57
+    
+    #-numbers, 0, postive numbers
+
+    #method1:
+    #sort the array
+    #return the last value
+    #Time: O(n log n)
+    #space: O(1)
+
+#     arr.sort()
+#     return arr[-1]
+
+#     maxValue = float('-inf')
+#     for num in arr:
+#         if num > maxValue:
+#             maxValue = num
+#     return maxValue
+    return max(arr)
+    
