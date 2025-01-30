@@ -2232,4 +2232,63 @@ def maximum(arr):
 #             maxValue = num
 #     return maxValue
     return max(arr)
+
+    import math
+
+def is_square(n):    
+    #receive an integer
+    #return boolean - true if it is a square integer, else false
+    #ex: 49 => 7 * 7 => True
+    #ex: 26 => 5 * 5, 1 remainder left over, => return False
+    
+    #find the sq root of n and see if it has any remainder, Return False, else return True
+    
+    if n < 0:
+        return False
+    
+    return True if math.sqrt(n).is_integer() else False
+    
+    class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive a list of lists
+        #return a list back of lists
+
+        #ex: [[5, 8], [3, 4], [10, 12], [1, 3]] => 
+        #[[1,3], [3,4], [5, 8], [10, 12]]
+
+        #                                        ----------------
+        #                   ----------------
+        #          ------
+        # ----------
+        # 1.   2.   3.   4.  5.   6.   7.   8.  9   10.   11.    12
+
+        #[[1, 4], [ 5, 8], [10, 12] ]
+
+        #sort the interval
+        #initialize a result list with the first interval from the sorted interval
+        #iterate through the list of intervals
+        #check if the start time <= end time of the previous interval
+        #if so, let's merge them together by taking the max of end time of the 
+        #first interval, or previous interval
+        #else, add interval to the list
+        #return the result interval
+
+        intervals.sort(key=lambda x:x[0])
+        results = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            start, end = intervals[i] #[4,5]
+            prevStart, prevEnd = results[-1] #[1,3]
+            if start <= prevEnd: #
+                results[-1][1] = max(prevEnd, end)
+            else:
+                results.append(intervals[i])
+        return results
+
+#time: O(n log n)
+#space: O(n)
+
+
+
+
     
