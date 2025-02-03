@@ -2289,6 +2289,30 @@ def is_square(n):
 #space: O(n)
 
 
+def fake_bin(x):
+    #receive a string of integers
+    #return 0 if digit is < 5 else, 5 >= return '1'
+    #ex: '345' => '001'
+    
+    #initialize an empty string
+    #iterate through x
+    #check if the int(x) < 5, add 0 to string
+    #else add 1 to string
+    #return string
+    
+#     output = ''
+    
+#     for char in x:
+#         if int(char)< 5:
+#             output += '0'
+#         else:
+#             output += '1'
+#     return output
+    
+    #time: O(n)
+    #space:O(n)
+    
+#     return ''.join(['0' if int(char) in x < 5 else '1'])
 
 
     
