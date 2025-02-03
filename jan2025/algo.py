@@ -2313,6 +2313,25 @@ def fake_bin(x):
     #space:O(n)
     
 #     return ''.join(['0' if int(char) in x < 5 else '1'])
+    return ''.join('0' if c < '5' else '1' for c in x)
+
+    def xo(s):
+    #receive a string of x's and o's - lowercase
+    #return true if same amount of x and o, else return False
+    
+    #keep count of x's and o
+    #compare their value from dict
+    #return True if equal else return False
+    
+    if not s:
+        return True
+    
+    s = s.lower()
+    
+    x_count = s.count('x')
+    o_count = s.count('o')
+    
+    return x_count == o_count
 
 
     
