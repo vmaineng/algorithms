@@ -2333,5 +2333,38 @@ def fake_bin(x):
     
     return x_count == o_count
 
+class Solution:
+    def longestSubstring(self, s: str, k: int) -> int:
+        #receive a string
+        #return integer of longest substring of s that are same char
+        #ex: 'aabba' => k=3
+        #ex: 'aaaba' => 3
+
+        #intiialize a count
+        #slice up to k amount
+        #check if the string is the same char as k
+        #update maxLength
+        #return maxLength
+
+        maxLength = 0
+        for char in range(len(s)):
+            currentChar = s[char]
+            currentLength = 1
+
+            if char+ k-1 < len(s):
+                isValid = True
+                for j in range(1, k):
+                    if s[char + j] != currentChar:
+                        isValid = False
+                        break
+                if isValid:
+                    currentLength = k
+                    j = char + k
+                    while j < len(s) and s[j] == currentChar:
+                        currentLength += 1
+                        j += 1
+                    if currentLength > maxLength:
+                        maxLength = currentLength
+        return maxLength
 
     
