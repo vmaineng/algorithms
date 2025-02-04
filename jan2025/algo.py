@@ -2385,4 +2385,44 @@ class Solution:
             if isBadVersion(num) == True:
                 return num
 
-    
+    # The isBadVersion API is already defined for you.
+# def isBadVersion(version: int) -> bool:
+
+class Solution:
+    def firstBadVersion(self, n: int) -> int:
+        #receive an integer
+        #return the first bad first (an integer)
+        #ex: isBadVersion (2) =>. false
+        #ex: isBadVersion (3) => True => 3
+
+
+        # if not n:
+        #     return 0
+        
+        # for num in range(1,n + 1):
+        #     if isBadVersion(num) == True:
+        #         return num
+
+        #time: O(n)
+        #space: O(1)
+
+        #binary search = optimized
+        #create left and right pointer
+        #while the pointers do not meet
+        #check if middle index is true 
+        #then check left side,
+        #else check rightside
+
+        left, right = 1, n
+        bad_version = -1
+
+        while left <= right:
+            middle = left + (right - left) // 2
+            print(middle)
+
+            if isBadVersion(middle):
+                bad_version = middle
+                right = middle - 1
+            else:
+                left = middle + 1
+        return bad_version 
