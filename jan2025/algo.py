@@ -2367,4 +2367,22 @@ class Solution:
                         maxLength = currentLength
         return maxLength
 
+        # The isBadVersion API is already defined for you.
+# def isBadVersion(version: int) -> bool:
+
+class Solution:
+    def firstBadVersion(self, n: int) -> int:
+        #receive an integer
+        #return the first bad first (an integer)
+        #ex: isBadVersion (2) =>. false
+        #ex: isBadVersion (3) => True => 3
+
+
+        if not n:
+            return 0
+        
+        for num in range(1,n + 1):
+            if isBadVersion(num) == True:
+                return num
+
     
