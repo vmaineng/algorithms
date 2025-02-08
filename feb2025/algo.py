@@ -77,3 +77,10 @@ class Solution:
         return left
         
             
+    def string_to_array(s):
+    # receive a string of upper and lowecases and spaces
+    #return a list of strings splut
+    
+    #ex: 'Hello world' => ['Hello', 'world']
+    
+    return list(s.split()) if len(s) > 0 else ['']
