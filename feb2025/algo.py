@@ -84,3 +84,31 @@ class Solution:
     #ex: 'Hello world' => ['Hello', 'world']
     
     return list(s.split()) if len(s) > 0 else ['']
+    return s.spit(" ")def to_jaden_case(string):
+    #receive a string of words with no punctuations
+    #return the string back with the first letter of every word uppercase
+    
+    #ex: 'hello world' => 'Hello World'
+    
+    #brute force: 
+    #initialize a new string
+    #iterate through each word
+    #captilize the first letter + all of the remaining chars
+    #add it to the new string
+    #return the string
+
+    outputArr = []
+    for word in string.split(" "):
+        word = word[0].upper() + word[1:]
+        outputArr.append(word)
+    return ' '.join(outputArr)
+
+#time: O(N) for words in string
+#space: O(n) for creating space for output arr
+
+
+
+#     arrayString = string.split(" ")
+#     return ''.join(word.captialize() for word in arrayString)
+    
+    
