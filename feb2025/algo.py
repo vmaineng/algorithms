@@ -110,5 +110,14 @@ class Solution:
 
 #     arrayString = string.split(" ")
 #     return ''.join(word.captialize() for word in arrayString)
+
+def solution(text, ending):
+    # receive a string of lowercase letters, and a string for end
+    #return true if ending is the true ending for text
+    #else, return false
+    
+    #ex: 'jump','p' => true
+    
+    return text.endswith(ending)
     
     
