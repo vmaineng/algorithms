@@ -119,5 +119,45 @@ def solution(text, ending):
     #ex: 'jump','p' => true
     
     return text.endswith(ending)
+
+    class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        #receive a list of integers, and an integer for target
+        #return the index position of target if found, else -1
+
+        #brute force:
+        #iterate through each num
+        #check if num is target
+        #return index
+        #time;O(n) n for num in nums
+        #space: O(1) returning idx only
+
+        #optimized: binary search
+        #set up left and right pointers
+        #while they do not cross
+        #find the middle
+        #if middle idx == target, return middle idx
+        #else check if the target is <= middle value, 
+        #look on left
+        #else look on right
+
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            middle = left + (right-left) // 2
+            if nums[middle] == target:
+                return middle
+            if nums[left] <= nums[middle]:
+                if nums[left] <= target <= nums[middle]:
+                    right = middle - 1
+                else:
+                    left = middle + 1
+            if nums[middle] <= nums[right]:
+                if nums[middle] <= target <= nums[right]:
+                    left = middle + 1
+                else:
+                    right = middle -1
+        return -1
+
+        
     
     
