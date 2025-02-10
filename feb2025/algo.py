@@ -180,4 +180,63 @@ def solution(text, ending):
                 return cap
         return -1
 
-    
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        #receive a list of weights, days = integer
+        #return smallest weight capacity
+
+        # minCap = max(weights)
+        # maxCap = sum(weights)
+
+        # for cap in range(minCap, maxCap + 1):
+        #     current_days = 1
+        #     current_wgt = 0
+
+        #     for weight in weights:
+        #         current_wgt += weight
+        #         if current_wgt > cap:
+        #             current_days += 1
+        #             current_wgt = weight
+        #     if current_days <= days:
+        #         return cap
+        # return -1
+
+        left = max(weights)
+        right = sum(weights)
+
+        while left < right:
+            mid = left + (right - left) //2
+            current_days = 1
+            current_weight = 0
+
+            for weight in weights:
+                current_weight += weight
+                if current_weight > mid:
+                    current_days += 1
+                    current_weight = weight
+            if current_days <= days:
+                right = mid
+            else:
+                left = mid + 1
+        return left
+                
+
+    def searchInSortedMatrix(matrix, target):
+    #receive a 2D matrix, and an integer number
+    #return the 2D location if target found
+    #ex:
+
+    #iterate thorugh rows and cols
+    #find the middle
+    #chceck if target is <= middle value
+    #, then checkother half, else check right half
+
+    row, col = 0, len(matrix[0]) - 1
+    while row < len(matrix) and col >= 0:
+        if matrix[row][col]> target:
+            col -=1
+        elif matrix[row][col] < target:
+            row += 1
+        else:
+            return [row, col]
+    return [-1,-1]
