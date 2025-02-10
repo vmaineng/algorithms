@@ -159,5 +159,25 @@ def solution(text, ending):
         return -1
 
         
-    
+    class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        #receive a list of weights, days = integer
+        #return smallest weight capacity
+
+        minCap = max(weights)
+        maxCap = sum(weights)
+
+        for cap in range(minCap, maxCap + 1):
+            current_days = 1
+            current_wgt = 0
+
+            for weight in weights:
+                current_wgt += weight
+                if current_wgt > cap:
+                    current_days += 1
+                    current_wgt = weight
+            if current_days <= days:
+                return cap
+        return -1
+
     
