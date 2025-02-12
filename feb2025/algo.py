@@ -240,3 +240,25 @@ class Solution:
         else:
             return [row, col]
     return [-1,-1]
+
+    def compress(s):
+  #receive a string of lower and upper letters
+  #return the compressed vversion of a string
+  #ex: 'aaabba' => '4a2b'
+
+
+  #create a list
+  #push in count of letters seen
+  #else start new and refresh count
+
+  result = []
+  count = 1
+  
+  for i in range(len(s)):
+
+    if s[i] == s[i+1]:
+      count += 1
+    else:
+      result.append({count}s[i])
+  return ''.join(result)
+    
