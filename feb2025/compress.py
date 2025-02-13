@@ -46,3 +46,31 @@ def compress(s):
 
 
 print(compress('aaabb'))
+
+class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        #shorter version of the string
+        #"neet#code#love#you"
+        #'4neet4code4love3you'
+        
+        #ex: ['hi', '3hi', 'bye']
+        #=> '2hi33hi3bye'
+        #=> '2hi#33hi#3bye'
+        #.   i 
+        #.      j
+        # => ['hi',]
+        #.      j
+        #        i
+        #            j
+        #use substring from i to j ; (j - i) + 1 = length of what we need
+
+    def decode(self, s: str) -> List[str]:
+        #take shorter version and expand
+        #['neet', 'code','love','you']
+        #create a result array
+        #iterate through string until reach '#'
+        #everything before #, add to the array
+
+        #
+
