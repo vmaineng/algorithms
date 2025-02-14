@@ -126,3 +126,12 @@ def DNA_strand(dna):
             result.append(char)
     
     return ''.join(result)
+
+    pairs = { 
+        'A': 'T',
+        'T': 'A',
+        'G': 'C',
+        'C':'G'
+    }
+
+    return ''.join([pairs[x] for x in dna])
