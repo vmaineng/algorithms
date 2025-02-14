@@ -83,3 +83,22 @@ def dna_to_rna(dna):
     
     return dna.replace('T', 'U')
 
+    def bmi(weight, height):
+    #receive two integers
+    #return an output of word based on bmi
+    
+    #calc the bmi of weight / height^2
+    #check if bmi is <= 18.5, return 'Underweight'
+    #if bmi <= 18.5 and bmi <= 25, return "Normal"
+    
+    bmi = weight/height**2
+    
+    if bmi <= 18.5:
+        return 'Underweight'
+    elif bmi > 18.5 and bmi <= 25:
+        return 'Normal'
+    elif bmi >25 and bmi <= 30:
+        return 'Overweight'
+    else:
+        return "Obese"
+
