@@ -102,3 +102,27 @@ def dna_to_rna(dna):
     else:
         return "Obese"
 
+def DNA_strand(dna):
+    # receive strings
+    #return a new string where A have converted to T and C are converted to G
+    
+    #ex: 'GGG' => 'CCC'
+    
+    #check each char if it is G => turn to a C
+    #check if each char is aT => turn to a A
+    
+    result = []
+    
+    for char in dna:
+        if char == 'A':
+            result.append('T')
+        elif char == 'T':
+            result.append('A')
+        elif char == 'G':
+            result.append('C')
+        elif char == 'C':
+            result.append('G')
+        else:
+            result.append(char)
+    
+    return ''.join(result)
