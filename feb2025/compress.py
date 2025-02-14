@@ -72,5 +72,14 @@ class Solution:
         #iterate through string until reach '#'
         #everything before #, add to the array
 
-        #
+def dna_to_rna(dna):
+    #receive a string of chars
+    #return a string where the T turns into a U
+    
+    #ex: 'CGTA' => 'CGUA'
+    
+    #for each letter, check if T
+    #replace letter T for U
+    
+    return dna.replace('T', 'U')
 
