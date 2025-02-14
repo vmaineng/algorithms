@@ -135,3 +135,49 @@ def DNA_strand(dna):
     }
 
     return ''.join([pairs[x] for x in dna])
+
+    def rps(p1, p2):
+    #receive a string of 'scisssors', 'paper', and 'rock'
+    #return which player won or a draw
+    #ex: rps('paper', 'paper') => draw
+    #ex: rps('paper', 'rock') => 'paper'
+    
+    #brute force:
+    #conditional checks:
+    #if p1 == 'scissors' && p2 == 'paper'
+    #return "Player 1 won!"
+    
+    #scissors > paper
+    #paper > rock
+    #rock > scissors
+    
+    if p1 == 'scissors' and p2 == 'paper':
+        return 'Player 1 won!'
+    elif p1 == 'paper' and p2 == 'rock':
+        return 'Player 1 won!'
+    elif p1 == 'rock' and p2 == 'scissors':
+        return 'Player 1 won!'
+    elif p2 == 'rock' and p1 == 'scissors':
+        return 'Player 2 won!'
+    elif p2 == 'paper' and p1 == 'rock':
+        return 'Player 2 won!'
+    elif p2 == 'scissors' and p1 == 'paper':
+        return 'Player 2 won!'
+    else:
+        return 'Draw!'
+    
+#     if p1 == 'scissors'and p2 =='paper':
+#         return 'Player 1 won!'
+#     elif p1 == 'rock' and p2 == 'scissors':
+#         return 'Player 1 won!'
+#     elif p1 == 'scissors' and p2 == 'rock':
+#         return 'Player 2 won!'
+#     elif p1 == 'paper' and p2 == 'rock':
+#         return 'Player 1 won!'
+#     else:
+#         return 'Draw!'
+    
+#     pairs = {
+#         'scissors':'paper'
+        
+#     }
