@@ -261,4 +261,31 @@ class Solution:
     else:
       result.append({count}s[i])
   return ''.join(result)
+    def is_divisible(n,x,y):
+    #receive all 3 integers
+    #return a boolean - True if x and y // n
     
+    #ex: 12, 6, 2; 2 * x = 12, 6 * y. = 12
+    #return True
+    
+    #12/6 => 2 => True => 0
+    # 6 in to 12 with how many remainders left over which is 0 => True
+    #12/5 => 10 => 2 => False
+    #5 * 2 = 10
+    #12 - 10 = 2
+    
+    #brute force:
+    #check if x % n == 0 and if y % n == 0: return True
+    #else return False
+    
+#     if n % x == 0 and n % y == 0:
+#         return True
+#     else:
+#         return False
+
+    return n % x == 0 and n% y == 0
+
+#time: O(1)
+#space: O(1)
+
+
