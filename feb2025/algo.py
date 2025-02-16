@@ -284,8 +284,26 @@ class Solution:
 #         return False
 
     return n % x == 0 and n% y == 0
-
+ 
 #time: O(1)
 #space: O(1)
 
+def stairs_in_20(stairs):
+    #receive an array for each day in the week in an array (2D array)
+    #return total sum amount of stairs climbed in 20
+    
+    #ex: [[12,35], [35,42], [34], [23,12], [23,65], [343,52], [23,52], [3]]
+    
+    #edge cases: will there be any days where the array are empty? => 0
+    
+    #initialize a sum
+    #iterate through the stairs
+    #take the sum of each inner arrays
+    #add the total to the top sum
+    #return sum
 
+    
+    total = 0
+    for weekday in stairs:
+        total += sum(weekday)
+    return total * 20
