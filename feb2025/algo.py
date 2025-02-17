@@ -307,3 +307,105 @@ def stairs_in_20(stairs):
     for weekday in stairs:
         total += sum(weekday)
     return total * 20
+
+return sum(sum(day)for day in stairs) * 20
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        #receive a list of integers - positive numbers and all numbers are unique
+        #return the integer that's missing
+
+        #ex: [5,3,4]
+        #[3,4,5] => 6 that's missing
+        #length = n = 3
+        #invalid because it is not [0, n]
+
+        #[0,1] => 2
+        #length = [0,2]
+
+        #ex: [0,3,2]
+        #length = 3
+        #return 1
+        
+        #brute force:
+        #sort the array
+        #check the number starting at idx 1
+        #check the number before to see if it is num - 1
+        #if it isn't, return the specific num
+
+
+        #[3,0,1]
+        # nums.sort() #[0,1,3]
+
+        # for i in range(1, len(nums)): #3
+        #     if nums[i] -1 != nums[i - 1]: #3 -1 = 2 != 1
+        #         return nums[i] -1
+            
+        # return nums[i] + 1
+
+        #time: O(n log n ) due to sorting all the nums
+        #space: O(1)
+
+        #optimized: on time: use a Set
+        #create a new set
+        #iterate through nums list
+        #check if set has previous number
+        #if it does, then return the num - 1
+        #else add it to the set
+
+        # numSet = set() # { }
+        # for i in range(len(nums)): #0
+        #     if not nums[i] - 1 in numSet and nums[i] != 0: #0 - 1 = -1
+        #         return nums[i] - 1 # -1
+        #     else:
+        #         numSet.add(nums[i])
+        # return nums[i] + 1
+
+        numSet = set(nums) # { 0,3,2}
+        for i in range(len(nums)):
+            if not nums[i] - 1 in numSet and nums[i] != 0:
+                return nums[i] -1
+            
+        return nums[i] + 1
+
+#time: O(n) => for each num in nums
+#space: O(1) => returning a number back
+        
+        numSet = set(nums)
+        missingNum = 0
+
+        while missingNum in numSet:
+            missingNum += 1
+        return missingNum
+    class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive an array of integers
+        #return the top k elements
+
+        #create an object
+        #keep count of values
+        #create buckets for the counts
+
+        #iterate through the buckets
+        #add in the key into the value buckets
+
+        #iterate through buckets starting from right to left
+        #pull out K size
+
+        count = {}
+
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+        
+        buckets = [[] for num in range(len(nums) + 1)]
+        
+        for key,value in count.items():
+            buckets[value].append(key)
+
+        result = []
+
+        for i in range(len(buckets) - 1, -1, -1):
+            for i in buckets[i]:
+                result.append(i)
+                if len(result) ==k:
+                    return result
