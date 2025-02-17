@@ -450,3 +450,44 @@ class KthLargest:
 # Your KthLargest object will be instantiated and called as such:
 # obj = KthLargest(k, nums)
 # param_1 = obj.add(val)
+
+import heapq
+
+# Do not edit the class below except for
+# the insert method. Feel free to add new
+# properties and methods to the class.
+class ContinuousMedianHandler:
+    def __init__(self):
+        # Write your code here.
+        self.median = None
+        self.lower = []
+        self.upper = []
+        heapq.heapify(self.lower)
+        heapq.heapify(self.upper)
+
+    def insert(self, number):
+        # if the length of one is greater than the other, I'd insert from lower to upper
+        #or have upper go to lower
+        #then rebalance
+        #get updated Median
+        if not self.lower or number < -self.lower[0]:
+            heapq.heappush(self.lower, -number)
+        else:
+            heapq.heappush(self.upper,number)
+        self.rebalance()
+        self.updateMedian()
+
+    def rebalance(self):
+        if len(self.lower) > len(self.upper) + 1:
+            heapq.heappush(self.upper, -heapq.heappop(self.lower))
+        elif len(self.upper) > len(self.lower):
+            heapq.heappush(self.lower, -heapq.heappop(self.upper))
+
+    def updateMedian(self):
+        if len(self.lower) == len(self.upper):
+            self.median = (-self.lower[0] + self.upper[0]) /2
+        else:
+            self.median = -self.lower[0]
+
+    def getMedian(self):
+        return self.median
