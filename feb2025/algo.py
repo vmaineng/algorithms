@@ -491,3 +491,32 @@ class ContinuousMedianHandler:
 
     def getMedian(self):
         return self.median
+    
+    class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        #receive a list of integers
+        #return a list of strings with outputs based on their ranks
+
+        #ex: [3,4,1,2] => ['Bronze Medal', '4', 'Gold Medal', 'Silver Medal']
+
+        #brute force:
+        #sort the score from highest to smallest
+        #if the ranking is placed first in the sorted arrays, we are going to find the original idx
+        #from original array and update it accordingly
+        #else update the value after 4th place
+
+        result = [''] * len(score)
+
+        sortedScores = sorted(score, reverse = True)
+
+        for idx, val in enumerate(sortedScores):
+            orgIdx = score.index(val)
+            if idx == 0:
+                result[orgIdx] = 'Gold Medal'
+            elif idx == 1:
+                result[orgIdx] = 'Silver Medal'
+            elif idx == 2:
+                result[orgIdx] = 'Bronze Medal'
+            else:
+                result[orgIdx] = str(idx + 1)
+        return result
