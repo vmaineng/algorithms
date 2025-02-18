@@ -520,3 +520,23 @@ class ContinuousMedianHandler:
             else:
                 result[orgIdx] = str(idx + 1)
         return result
+
+        import heapq
+
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        heap = [(-s, i) for i, s in enumerate(score)]
+        heapq.heapify(heap)
+        
+        result = [""] * len(score)
+        rank_names = ['Gold Medal', 'Silver Medal', 'Bronze Medal']
+
+        rank = 1
+        while heap:
+            val, idx = heapq.heappop(heap)
+            if rank <= 3:
+                result[idx] = rank_names[rank - 1]
+            else:
+                result[idx] = str(rank)
+            rank += 1
+        return result
