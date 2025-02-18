@@ -540,3 +540,20 @@ class Solution:
                 result[idx] = str(rank)
             rank += 1
         return result
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return top k elements
+
+        #brute force: create a frequency counter
+        #sort by values
+        #return top k keys
+
+        numsCount = {}
+        for num in nums:
+            numsCount[num] = numsCount.get(num, 0) + 1
+        
+        sorted_counts = sorted(numsCount.items(), key=lambda x:x[1])
+
+        return sorted_counts[0][:k]
+  
