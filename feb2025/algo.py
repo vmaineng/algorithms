@@ -574,3 +574,31 @@ class Solution:
             res.append(heapq.heappop(heap)[1])
         return res
   
+  
+  class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #intiialize counter
+        #keep track of count
+        #create buckets
+        #add in the key into the buckets of their values
+        #iterate through buckets from right to left
+        #add in value into results array
+        #return result if length == k
+
+        counter = {}
+        for num in nums:
+            counter[num] = counter.get(num, 0) + 1
+        
+        buckets = [[] for num in range(len(nums) + 1)]
+
+        for key, value in counter.items():
+            buckets[value].append(key)
+        
+        res = []
+        for i in range(len(buckets) - 1, -1, -1):
+            for i in buckets[i]:
+                res.append(i)
+                if len(res) == k:
+                    return res
+
+  
