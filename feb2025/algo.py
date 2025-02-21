@@ -638,3 +638,38 @@ class KthLargest:
 # Your KthLargest object will be instantiated and called as such:
 # obj = KthLargest(k, nums)
 # param_1 = obj.add(val)
+
+def count_sheep(n):
+    #receive an for integers
+    #return a string of up to n sheep
+    #ex: 0 => ''
+    
+    #ex: 5 => '1 sheep...2 sheep...3 sheep...4 sheep...5 sheep...'
+    
+    #edge case:
+    #if n == 0, return ''
+    
+    #initialize an empty string
+    #iterate up to n:
+    #for every number, return the number + sheep...
+    #return the string back
+    
+    if n == 0:
+        return ''
+    
+#     output = ''
+#     for num in range(1, n+ 1):
+#         output += f"{num} sheep..." #'1 sheep...2 sheep...'
+#     return output
+
+#time: O(n^2) for each num in n
+#space: O(n) create output string
+
+    output = [f"{num} sheep..." for num in range(1, n+1)]
+    return ''.join(output)
+
+#time: O(n)
+#space: O(n)
+
+    
+    
