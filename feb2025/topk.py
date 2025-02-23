@@ -26,3 +26,16 @@ def greet(name, owner):
     #return 'hello boss' if name == owner, else 'hello guest'
     
     return 'Hello boss' if name.lower() == owner.lower() else 'Hello guest'
+
+    def get_sum(a,b):
+    #receive two integers
+    #return the sum between a and b
+    
+    #sort the integers from smallest to biggest
+    #add the sum in between
+    #return sum
+    
+    if a < b:
+        return sum(range(a, b+1))
+    else:
+        return sum(range(b, a+1))
