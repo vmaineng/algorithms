@@ -39,3 +39,45 @@ def greet(name, owner):
         return sum(range(a, b+1))
     else:
         return sum(range(b, a+1))
+    return sum(range(min(a,b), max(a,b) + 1))
+
+    def add_binary(a,b):
+    #receive two numbers
+    #return the sum of ttwo numbers in a string of binary
+    
+    #ex: 3,4 =>7 in decimal => '111'
+    
+    #add a + b together to get the decimal sum
+    #apply the bin function on the decimal sum
+    #return the number converted from bin
+    
+    total = a + b
+    return bin(total)[2:]
+
+    #time: O(n)???
+    #space: O(1) => only dealing with 2 numbers
+
+    class MyStack:
+
+    def __init__(self):
+        self.stack = []
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+
+    def pop(self) -> int:
+        return self.stack.pop() if not self.empty() else None
+
+    def top(self) -> int:
+        return self.stack[-1] if not self.empty() else None
+
+    def empty(self) -> bool:
+        return len(self.stack) == 0
+
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()
