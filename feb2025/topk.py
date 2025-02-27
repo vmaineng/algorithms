@@ -276,3 +276,31 @@ def area_or_perimeter(l , w):
 #Space: O(1)
 
 return l * w if l == w else (l + w) * 2
+
+def is_triangle(a, b, c):
+    #receive 3 integers (can be pos and neg)
+    #return boolean; true if can make a triangle, else False
+    
+    #ex: 
+
+    #edge case:
+    #if any of the numbers are negative, return False immediately
+    
+    #.  a /\b
+    #   c _
+    
+    #(5,1,2)
+    
+    #if a > b * c, return False
+    #else return True
+    
+    
+#     if a + b <= c or a + c <= b or b + c <= a:
+#         return False
+#     else:
+#         return True
+
+    return False if a + b <= c or a + c <= b or b + c <= a else True
+
+#time: O(1)
+#space: O(1)
