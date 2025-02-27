@@ -247,3 +247,32 @@ class RandomizedSet:
 # param_1 = obj.insert(val)
 # param_2 = obj.remove(val)
 # param_3 = obj.getRandom()
+
+def area_or_perimeter(l , w):
+    # receive two integers
+    #return the area if it's a square, else return its perimeter if it is a rectangle
+    
+    #ex: (3,3) => 3 * 3 => 9
+    #ex: (2, 3) => 2 + 2+ 3 + 3 => 
+    #ex: (6, 10) => 6 + 6 + 10 + 10 => 32
+    
+    
+    #could have l or w as 0?
+    #no possibility of negative numbers => area or perimeter would be 0
+
+    #brute force:
+    #if l and 2 are the same numbers, 
+    #calculate the area (l *w)
+    #else, calcualte the perimeter ( l + l + w + w)
+    
+    if l == w:
+        area = l * w
+        return area
+    else:
+        perimeter = (l * 2) + (w * 2)
+        return perimeter
+
+#time: O(1)
+#Space: O(1)
+
+return l * w if l == w else (l + w) * 2
