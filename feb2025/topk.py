@@ -302,5 +302,36 @@ def is_triangle(a, b, c):
 
     return False if a + b <= c or a + c <= b or b + c <= a else True
 
+return a + b <= c or a + c <= b or b + c <= a
+
 #time: O(1)
 #space: O(1)
+
+import random
+
+class RandomizedSet:
+
+    def __init__(self):
+        self.list = []
+
+    def insert(self, val: int) -> bool: #O(n)
+        if val in self.list:
+            return False
+        self.list.append(val)
+        return True
+
+    def remove(self, val: int) -> bool: #O(n)
+        if not val in self.list:
+            return False
+        self.list.append(val)
+        return True
+
+    def getRandom(self) -> int:
+        return random.choice(self.list)
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
