@@ -335,3 +335,11 @@ class RandomizedSet:
 # param_1 = obj.insert(val)
 # param_2 = obj.remove(val)
 # param_3 = obj.getRandom()
+
+def goals(laLiga, copaDelRey, championsLeague):
+    #receive 3 integers
+    #return the sum of all 3 points
+    
+    #ex: (4, 3, 2) => 9
+    
+    return laLiga + copaDelRey + championsLeague
