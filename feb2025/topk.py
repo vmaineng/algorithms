@@ -341,5 +341,23 @@ def goals(laLiga, copaDelRey, championsLeague):
     #return the sum of all 3 points
     
     #ex: (4, 3, 2) => 9
-    
+
+    #add each integer to get the total
+
+    #handles fixed number of arguments
+    #raises error if args don't match
     return laLiga + copaDelRey + championsLeague
+
+    #using args is more dynamic and flexible
+    #assuming any number of arguments
+    #no error raised if more or less args are passed.
+    return sum(*a)
+
+    def get_age(age):
+    #receive a string of 'x years old'
+    #return the x in an integer
+    
+    #ex: '3 years old' => return 3
+    
+    #return the first char and convert into a num
+    return int(age[0:1])
