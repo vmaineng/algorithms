@@ -361,3 +361,39 @@ def goals(laLiga, copaDelRey, championsLeague):
     
     #return the first char and convert into a num
     return int(age[0:1])
+    return int(age[0])
+
+    import random
+
+class RandomizedSet:
+
+    def __init__(self):
+        self.random_list = []
+
+    def insert(self, val: int) -> bool:
+        #if item is in the list, return False
+        #else add it to the list, return True
+        if val in self.random_list:
+            return False
+        self.random_list.append(val)
+        return True
+
+    def remove(self, val: int) -> bool:
+        #if item is not in the set, return False
+        #else remove the item from the list
+        #return True
+
+        if val not in self.random_list:
+            return False
+        self.random_list.remove(val)
+        return True
+
+    def getRandom(self) -> int:
+        #from random library, add in random.choice of the intgeters in the list
+        return random.choice(self.random_list)
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
