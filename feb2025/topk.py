@@ -423,3 +423,13 @@ class BrowserHistory:
 # obj.visit(url)
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
+
+def feast(beast, dish):
+    # receive a string of lowercase letters for beast and dish
+    #return True if first letter and last name letters are the same as food
+    #ex: 'blue jay', 'belly ray' => true
+    
+#     print(dish[-1:], beast[-1:])
+    
+    return beast[0] == dish[0] and beast[-1:] == dish[-1:]
+    
