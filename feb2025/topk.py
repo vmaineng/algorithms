@@ -432,4 +432,27 @@ def feast(beast, dish):
 #     print(dish[-1:], beast[-1:])
     
     return beast[0] == dish[0] and beast[-1:] == dish[-1:]
+
+    def array_diff(a, b):
+    #receive two lists of elements
+    #return a list back of where an element of 2 does not exist in element of 1
+    
+    
+    #ex: [3,4,5,2], [3] => [4,5,2]
+    
+    #create an empty list
+    #create pointers starting from first index of each list
+    #sort the elements
+    #check the first value if it equals the same
+    #then move the pointer
+    #else add it in the list
+    
+    output = []
+    for num in a:
+        if num not in b:
+            output.append(num)
+    return output
+
+#time: O(n * m)
+#space: O(n)
     
