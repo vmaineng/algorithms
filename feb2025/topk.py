@@ -485,6 +485,33 @@ def reverse_words(s):
     
     #time: O(n) n amoutn of words in s
     #space: O(n) n amoutn for list in memory
+
+    return ' '.join(reversed(s.split(' ')))
+    
+    def longest(a1, a2):
+    #receive two strings of lowercase letters with no spaces
+    #return a new sorted string containing unique characters
+    
+    #ex: 'aaaabcdbbe', 'bbbiiilel' => 'ab
+    
+    #brute force:
+    #create a pointer in the first char of each string
+    #compare if the characters are the same
+    #if not, add to the output string
+    #else, increment
+    #return the output string
+    
+    #optimize:
+    #create sets for both string a and b
+    
+    set1 = set(a1)
+    set2 = set(a2)
+    
+    return ''.join(sorted(set1.union(set2)))
+
+    #time: O(n log n) #sort
+    #space: O(n) for n amount of chars we have to iterate through
+    
     
     
     
