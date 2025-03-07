@@ -634,6 +634,55 @@ class RandomizedSet:
 # param_3 = obj.getRandom()
     
     
+    # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        #receive two sorted list1 and list2
+        #return back one sorted LL
+
+        #ex: list1: 1 -> 2 -> 3 -> null
+        #list2: 2 -> 5 -> null
+
+        #output: 1 -> 2 -> 2 -> 3 -> 5 -> null
+
+        #edge cases: if list1 and list2 are empty, return []
+
+            #ex: list1: 1 -> 2 -> 3 -> null
+              #.           c1
+        #list2: 2 -> 5 -> null
+        #.     c2
+
+        #head: None -> 1 -> 
+
+        if not list1 and not list2:
+            return None
+        
+        current1 = list1
+        current2 = list2
+        head = ListNode() #0
+        tail = head
+
+        while current1 and current2:
+            if current1.val < current2.val:
+                tail.next = current1
+                current1 = current1.next
+            else:
+                tail.next = current2
+                current2 = current2.next
+            
+            tail = tail.next
+            
+        if current1:
+            tail.next = current1
+        else:
+            tail.next = current2
+        
+        return head.next
+
     
     
     
