@@ -455,4 +455,37 @@ def feast(beast, dish):
 
 #time: O(n * m)
 #space: O(n)
+
+def reverse_words(s):
+    #receive a string of words and spaces, upper and lower cases, 
+    #return a string back by reversing the string by words
+    
+    #ex: 'hello world' => 'world hello'
+    #ex: 'The dog jumped' => 'jumped dog The'
+    
+    #brute force:
+    #initialize an empty string
+    #iterate starting from the end
+    #check if it is an empty space, add the word to the empty string
+    #return the string back
+    
+    #time: O(n^2)
+    #space: O(n) #n amount of words
+    
+    #split the string by spaces
+    #intiialize an empty array
+    #iterate from the end of the string, add to the end of an array
+    #return by join back by strings
+
+    #time: O(n) n amount of words in s
+    #space: O(n) n amount of words
+    
+    #split the string, use the slicing method and reverse
+    return ' '.join(s.split(" ")[::-1])
+    
+    #time: O(n) n amoutn of words in s
+    #space: O(n) n amoutn for list in memory
+    
+    
+    
     
