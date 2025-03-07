@@ -511,6 +511,47 @@ def reverse_words(s):
 
     #time: O(n log n) #sort
     #space: O(n) for n amount of chars we have to iterate through
+
+    import random
+
+class RandomizedSet:
+
+    def __init__(self):
+        #initialized the object
+        self.randomList = []
+
+    def insert(self, val: int) -> bool:
+        #if val is present, return False immediately
+        #add the value, return True
+
+        if val in self.randomList:
+            return False
+        self.randomList.append(val)
+        return True
+
+        #O(1) operation
+
+    def remove(self, val: int) -> bool:
+        #if the value does not exist, return false
+        #else, delete the item, return true
+
+        if val not in self.randomList:
+            return False
+        self.randomList.remove(val)
+        return True
+
+        #O(N)
+
+    def getRandom(self) -> int:
+        #random library and use the .choice method to obtain a number from the elements
+        return random.choice(self.randomList)
+        
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
     
     
     
