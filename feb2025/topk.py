@@ -683,6 +683,26 @@ class Solution:
         
         return head.next
 
+        class Solution:
+    def fib(self, n: int) -> int:
+        #receive an integer
+        #return the total of adding numbers from each integers up to n
+
+        #ex: could iterate up to n amount
+        #add to total
+
+        #optimize force:
+        #call the function until it hits n
+        #base case if num == n, then return sum
+        #else add up total
+
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        return self.fib(n-1) + self.fib(n-2)
+        
+
     
     
     
