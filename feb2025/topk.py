@@ -715,4 +715,12 @@ class Solution:
 
     
     
+def usdcny(usd):
+    #receive a whole integer
+    #return the chinese yuan equivalent of usd
+    #ex: 1usd => 6.75
     
+    #calc amt by taking usd x 6.75
+    #return amount with two decimal places
+    amount = usd * 6.75
+    return f"{amount:.2f} Chinese Yuan"
