@@ -734,3 +734,18 @@ def usdcny(usd):
     #take num - 6 and return the number
     
     return abs(num - 6)
+
+    def sum_str(a, b):
+    #receive string of integers or empty spaces
+    #return the total of two integers back as a string
+    
+    #ex: '3', '' => '3'
+    
+    #if string is empty, return 0
+    #else convert them to int
+    #return it back as string
+    
+    a = a if a else '0'
+    b = b if b else '0'
+    return str(int(a) + int(b))
+    
