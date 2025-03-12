@@ -724,3 +724,13 @@ def usdcny(usd):
     #return amount with two decimal places
     amount = usd * 6.75
     return f"{amount:.2f} Chinese Yuan"
+
+    def six_toast(num):
+    #receive a whole integer
+    #return the total amount of toast you need to put in or take out
+    #toaster can fit 6 slices
+    #ex: 14 => 14 -6 => 8
+    
+    #take num - 6 and return the number
+    
+    return abs(num - 6)
