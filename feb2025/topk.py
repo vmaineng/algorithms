@@ -748,4 +748,19 @@ def usdcny(usd):
     a = a if a else '0'
     b = b if b else '0'
     return str(int(a) + int(b))
+
+    class Solution:
+    def fib(self, n: int) -> int:
+        #receive an integer
+        #return the sum of the two numbers from before
+        #ex: 3 => 1 + 1 = 2
+
+        #base case: if 1, return 1; if 0, return 0
+        #else keep calling until you hit 1 or 0
+
+        if n == 1:
+            return 1
+        if n == 0:
+            return 0
+        return self.fib(n-1) + self.fib(n-2)
     
