@@ -764,3 +764,31 @@ def usdcny(usd):
             return 0
         return self.fib(n-1) + self.fib(n-2)
     
+    def remove_every_other(my_list):
+    #receive a list of strings or a list of integers
+    #return a list back where the secondn element is removed
+    
+    #ex: [1] => [1]
+    #ex: [ 1, 2, 3] => [1, 3]
+        # 0.  1  2
+    
+    #brute force:
+    #initialize an empty list
+    #iterate through val
+    #if idx position is even: 
+    #add it to the list
+    #return list
+    
+#     evenList = []
+#     for idx,ele in enumerate(my_list):
+#         if idx % 2 == 0:
+#             evenList.append(ele)
+#     return evenList
+
+    #Time: O(n) n for all of the elements in the list
+    #space:O(n) n for all elements in the list
+    
+    return [my_list[ele] for ele in range(len(my_list)) if ele %2 == 0]
+
+    #time:O(n) n for each iterable item in the list
+    #space: O(n) n for each iterable item in the list
