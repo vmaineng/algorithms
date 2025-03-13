@@ -792,3 +792,28 @@ def usdcny(usd):
 
     #time:O(n) n for each iterable item in the list
     #space: O(n) n for each iterable item in the list
+
+    return my_list[::2] => [start, stop, step]
+
+
+    def open_or_senior(data):
+    #receive a list of lists showing [age, handicap level]
+    #return a list back of strings stating if they belong in "Open" or "Senior"
+    
+    #senior => age >= 55 years and handicap > 7
+    
+    #ex: [[34, 8], [72, 12], [89, -2]] => ['Open', 'Senior', 'Open']
+    
+    #use a list comprehension
+    #terinary: 'Senior' age >= 55 and handicap > 7 else 'Open'
+    
+    return ['Senior' if age >= 55 and handicap > 7 else 'Open' for [age, handicap] in data]
+
+#     output = []
+#     for pair in data:
+#         [age, handicap] = pair
+#         if age >= 55 and handicap > 7:
+#             output.append('Senior')
+#         else:
+#             output.append('Open')
+#     return output
