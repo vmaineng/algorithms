@@ -817,3 +817,41 @@ def usdcny(usd):
 #         else:
 #             output.append('Open')
 #     return output
+
+
+class Solution:
+    def fib(self, n: int, memo={}) -> int:
+        #receive an integer
+        #return the total from the sequence
+
+        #ex: fib(2) => fib(1) + fib (0) => 1 + 0 => 1
+
+        #brute force:
+        #base case: hit fib(1), and/or fib(0)
+        #recursively call: fib(n-1) and fib(n-2)
+
+        # if n == 1:
+        #     return 1
+        # if n == 0:
+        #     return 0
+        # return self.fib(n-2) + self.fib(n - 1)
+
+        #time: O(n^2)?
+        #space: O(N)?
+
+        #using memoization
+        #create an object
+        #store the values associated with the key
+        #fib(3) => going to check in our object with the key exists
+        #if key exists of 3, grab and return the value
+
+        if n == 1:
+            return 1
+        if n == 0:
+            return 0
+        if n in memo:
+            return memo[n]
+      
+        memo[n] = self.fib(n-2, memo) + self.fib(n - 1, memo)
+
+        return memo[n]
