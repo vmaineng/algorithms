@@ -855,3 +855,14 @@ class Solution:
         memo[n] = self.fib(n-2, memo) + self.fib(n - 1, memo)
 
         return memo[n]
+
+        import math
+
+def litres(time):
+    #receive a time => can be a float, no negatives
+    #return amount of water to drink / hour
+    #ex: 1 => 0.5 litres
+    #ex: 2 => 1 litres
+    #ex: 3 => 3/0.5 => 1.5 => round down to 1 litres
+    
+    return math.floor(time * 0.5)
