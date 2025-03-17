@@ -866,3 +866,28 @@ def litres(time):
     #ex: 3 => 3/0.5 => 1.5 => round down to 1 litres
     
     return math.floor(time * 0.5)
+
+    class RecentCounter:
+
+    def __init__(self):
+        #intialize a counter with zero recent requests pushed to it
+
+        self.requests = []
+
+
+    def ping(self, t: int) -> int:
+        #adds a new request at the time t
+        #returns numbers of requesets that occured in t-3000, t times
+
+        self.requests.append(t)
+        lower_bound = t- 3000
+        count = 0
+        for request in self.requests:
+            if request >= lower_bound:
+                count+= 1
+        return count 
+
+
+# Your RecentCounter object will be instantiated and called as such:
+# obj = RecentCounter()
+# param_1 = obj.ping(t)
