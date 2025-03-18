@@ -891,3 +891,70 @@ def litres(time):
 # Your RecentCounter object will be instantiated and called as such:
 # obj = RecentCounter()
 # param_1 = obj.ping(t)
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid with 0s (water) and 1s (island)
+        #return the longest count of island
+
+        #iterate through rows and iterate through cols
+        #keep track of max island seen
+        #if island (1s) been spotted, iterate up, down, left, right
+        #add to island total
+        #return max island size seen
+
+        rows = len(grid)
+        cols = len(grid[0])
+        max_island = 0
+
+        for row in rows:
+            for col in cols:
+                size = dfs(row, col)
+                max_island = max(max_island, size)
+        return size
+
+    def dfs(row, col):
+        size = 0
+        if grid[row][col] == 1:
+            dfs(row + 1, col)
+            dfs(row - 1, col)
+            dfs(row, col + 1)
+            dfs(row, col - 1)
+            size += 1
+        grid[row][col] = 0
+        return size
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid with 0s (water) and 1s (island)
+        #return the longest count of island
+
+        #iterate through rows and iterate through cols
+        #keep track of max island seen
+        #if island (1s) been spotted, iterate up, down, left, right
+        #add to island total
+        #return max island size seen
+
+        rows = len(grid)
+        cols = len(grid[0])
+        max_island = 0
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 1:
+                    size = self.dfs(row, col, grid)
+                    max_island = max(max_island, size)
+        return max_island
+
+    def dfs(self, row: int, col: int, grid: List[List[int]]) -> int:
+        if row < 0 or row >= len(grid) or col <0 or col >= len(grid[0] or grid[row][col] == 0):
+            return 0
+        grid[row][col] = 0
+        size = 1
+      
+        size += self.dfs(row + 1, col, grid)
+        size += self.dfs(row - 1, col, grid)
+        size += self.dfs(row, col + 1, grid)
+        size += self.dfs(row, col - 1, grid)
+      
+        return size
