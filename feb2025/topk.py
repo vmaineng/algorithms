@@ -989,3 +989,35 @@ class Solution:
                     size = dfs(row, col)
                     max_count = max(max_count, size)
         return max_count
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid
+        #return the max island available
+
+        #iterate through rows and cols
+        #check if the cell is a 1
+        #then perform dfs
+        #return max count seen from dfs
+
+        def dfs(row: int, col: int) -> int: 
+            if row < 0 or row>= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 0:
+                return 0
+            grid[row][col] = 0
+            size = 1
+            size += dfs(row + 1, col)
+            size += dfs(row - 1, col)
+            size += dfs(row, col + 1)
+            size += dfs(row, col - 1)
+            return size
+
+        rows = len(grid)
+        cols = len(grid[0])
+        max_count = 0
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 1:
+                    size = dfs(row, col)
+                    max_count = max(max_count, size)
+        return max_count
