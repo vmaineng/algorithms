@@ -958,3 +958,34 @@ class Solution:
         size += self.dfs(row, col - 1, grid)
       
         return size
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        #brute force psuedocode
+        #iterate through rows and cols
+        #check value if it is a 1,
+        #perform dfs, check if is a 1
+        #keep track of max count of island seen
+
+        rows = len(grid)
+        cols = len(grid[0])
+        max_count = 0
+
+        def dfs(row: int, col:int):
+            if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 0:
+                return 0
+            grid[row][col] = 0 # mark as visited
+            size = 1
+            size += dfs(row + 1, col)
+            size += dfs(row -1, col)
+            size += dfs(row, col + 1)
+            size += dfs(row, col - 1)
+            return size
+
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 1:
+                    size = dfs(row, col)
+                    max_count = max(max_count, size)
+        return max_count
