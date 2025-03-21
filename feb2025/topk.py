@@ -1021,3 +1021,56 @@ class Solution:
                     size = dfs(row, col)
                     max_count = max(max_count, size)
         return max_count
+
+        class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid
+        #return the max island available
+
+        #iterate through rows and cols
+        #check if the cell is a 1
+        #then perform dfs
+        #return max count seen from dfs
+
+        rows = len(grid)
+        cols = len(grid[0])
+        max_count = 0
+        visited_set = set()
+
+        def dfs(row: int, col: int) -> int: 
+            if row < 0 or row>= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 0 or (row, col) in visited_set:
+                return 0
+            visited_set.add((row, col))
+            size = 1
+            size += dfs(row + 1, col)
+            size += dfs(row - 1, col)
+            size += dfs(row, col + 1)
+            size += dfs(row, col - 1)
+            return size
+
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 1:
+                    size = dfs(row, col)
+                    max_count = max(max_count, size)
+        return max_count
+
+        import math
+
+def cockroach_speed(s):
+    # receive an integer => could be whole number or floating
+    # return an integer (whole) where it is floored
+    
+    #ex: 1 km/hour => 27.78 => floor it down and this is 30
+    
+    #ex: 2 => 27.78*2 => 55.56 => 60
+    
+    
+    #take the input integer * 27.78 and round it down
+    
+    conversion_rate = 27.78
+    
+    return math.floor(s * conversion_rate)
+
+ 
