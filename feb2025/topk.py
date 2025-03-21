@@ -1114,3 +1114,36 @@ def cockroach_speed(s):
             return 'Nine'
         case _:
             return 'Please enter valid numbers from 0-9'
+
+            def switch_it_up(number):
+    #receive an integer - whole number from 0-9
+    #return the string statement
+    
+    #ex: 3 => 'Three'
+    
+    #edge cases: if they pass in a string
+    #return, please pass an integer
+    
+    #edge case: if they pass in a number greater than 9 or even less 0,
+    #, please refer to numbers in 0 - 9 only
+    
+    if not isinstance(number, int):
+        return f"Please enter valid numbers from 0-9"
+    
+    if number < 0 or number > 9: 
+        return f'Please enter valid numbers from 0-9'
+    
+    int_to_english_word = {
+        0: 'Zero',
+        1: "One",
+        2: "Two",
+        3: 'Three',
+        4: 'Four',
+        5: 'Five',
+        6: 'Six',
+        7: 'Seven',
+        8: 'Eight',
+        9:'Nine'
+    }
+    
+    return int_to_english_word[number]
