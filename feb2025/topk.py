@@ -1147,3 +1147,31 @@ def cockroach_speed(s):
     }
     
     return int_to_english_word[number]
+
+    class MyStack:
+
+    def __init__(self):
+        #intialize a deque
+        self.stack = deque()
+
+    def push(self, x: int) -> None:
+        self.stack.push(x)
+        
+
+    def pop(self) -> int:
+        self.stack.popleft()
+        
+
+    def top(self) -> int:
+        self.stack.peek()
+
+    def empty(self) -> bool:
+        return len(self.stack)
+
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()
