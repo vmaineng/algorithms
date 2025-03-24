@@ -1175,3 +1175,29 @@ def cockroach_speed(s):
 # param_2 = obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.empty()
+
+def firstNonRepeatingCharacter(string):
+    # receive a string of lowercase chars
+    #return the index of the string's first non-repeating char
+
+    #ex: 'abcba' => c
+
+    #brute force:
+    #frequency counter
+    #while keeping track of the counter
+    #if only seen once, return the index of it
+
+    #iterate through each char
+    #increment count of char
+    #if char == 1
+    #return the index
+
+    objCount = {}
+
+    for char in string:
+        objCount[char] = objCount.get(char, 0) + 1
+
+    for idx in range(len(string)):
+        if objCount[string[idx]] == 1:
+            return idx
+    return -1
