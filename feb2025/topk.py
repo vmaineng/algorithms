@@ -1232,3 +1232,41 @@ class BrowserHistory:
 # obj.visit(url)
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
+
+class BrowserHistory:
+
+    def __init__(self, homepage: str):
+        #intiialize a homepage of a list
+        #initialize a current idx
+
+        self.history = [homepage]
+        self.currentIdx = 0
+
+    def visit(self, url: str) -> None:
+        #everytime we visit a url, add it to the list
+        #update our current idx
+
+        self.history = self.history[:self.currentIdx + 1]
+        self.history.append(url)
+        self.currentIdx += 1
+
+    def back(self, steps: int) -> str:
+        #if going back, we can only up to max of idx 0, or what the current idx is - steps
+        #return the current idx position
+
+        self.currentIdx = max(0, self.currentIdx - steps)
+        return self.history[self.currentIdx]
+
+    def forward(self, steps: int) -> str:
+        #to go forward, it's achieved only by going to end of list, or whatever the current idx + steps
+        #return the current idx position
+
+        self.currentIdx = min(len(self.history) - 1, self.currentIdx + steps)
+        return self.history[self.currentIdx]
+
+
+# Your BrowserHistory object will be instantiated and called as such:
+# obj = BrowserHistory(homepage)
+# obj.visit(url)
+# param_2 = obj.back(steps)
+# param_3 = obj.forward(steps)
