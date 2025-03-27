@@ -1270,3 +1270,27 @@ class BrowserHistory:
 # obj.visit(url)
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
+
+def move(position, roll):
+    # receive two integers
+    #return back one integer of the current position
+    
+    #ex: (3, 6) => 
+    #starting out in position 3, 6 * 2 = 12 => 15
+    
+    #ex: (-1) => any position that starts with negative, => out of bounds
+    #assume roll for the dice will always be between 1 - 6
+    
+    #ex: (2, 4) => position 2 => 4 * 2 = 8 => 10
+    
+    #brute force:
+    
+    #edge cases: position is negative, return 0
+    #take roll * 2 = movesToMake
+    #movesToMake + position = new output
+    
+    if position < 0:
+        return 'Outside of bounds and cannot compute'
+    
+    movesToMake = 2 * roll
+    return position + movesToMake
