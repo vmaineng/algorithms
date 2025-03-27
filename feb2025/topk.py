@@ -1294,3 +1294,31 @@ def move(position, roll):
     
     movesToMake = 2 * roll
     return position + movesToMake
+
+    def printer_error(s):
+    #receive a string of lowercase characters
+    #return a string of how many errors occur out of the length of the string
+    
+    #ex: 
+    #anything from 'a - m' is good, but if you have any numbers outside of a-m, consider them bad
+    #increment the count of how many bad letters encounter
+    #ex: 'aaabqr' => '2/6'
+    
+    #brute force:
+    #create a list 'n-z'
+    #iterate through each char lettr in s
+    #if you are in there
+    #increment count
+    #return the count/len of string in a string format
+    
+    badLetters = ['n','o','p','q','r','s','t','u','v','w','x','y','z']
+    
+    strLength = len(s)
+    count = 0
+    for char in s:
+        if char in badLetters:
+            count +=1
+    return f"{count}/{strLength}"
+    
+#time: O(n) for n amount of char in s
+#space:O(1)
