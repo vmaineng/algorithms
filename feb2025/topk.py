@@ -1359,3 +1359,20 @@ class BrowserHistory:
 # obj.visit(url)
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
+
+class Solution:
+    def fib(self, n: int) -> int:
+        #receive an n integer
+        #return the the sum of the two preceeding ones
+        #ex: n = 3 => F(2), F(1) => 1 + 1 =2
+
+        #base cases: if f(1) or F(0) =return 1, o
+
+        #else keep calling the last two integers
+        if n == 1:
+            return 1
+        
+        if n == 0:
+            return 0
+
+        return self.fib(n-1) + self.fib(n-2)
