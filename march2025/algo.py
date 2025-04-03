@@ -49,3 +49,11 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
+
+class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        return '#'.join(strs)
+        
+    def decode(self, s: str) -> List[str]:
+        return s.split('#')
