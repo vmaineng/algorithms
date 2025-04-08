@@ -83,3 +83,67 @@ def postOrderTraverse(tree, array):
         postOrderTraverse(tree.right, array)
         array.append(tree.value)
     return array
+
+def inOrderTraverse(tree, array):
+    #create a stack
+    #check if the tree not empty
+    #set the node to current tree node
+    # while the stack or the current is not empty:
+    #while current is not empty:
+    #add the curr node to the stack
+    #then go left, and capture all nodes
+    #pop it off 
+    #add to the array
+    #then repeat with items on right side
+    stack = []
+    if tree is not None:
+        curr = tree
+    while stack or curr is not None:
+        while curr is not None:
+            stack.append(curr)
+            curr = curr.left
+        curr = stack.pop()
+        array.append(curr.value)
+        curr = curr.right
+    return array
+
+
+def preOrderTraverse(tree, array):
+    # initialize a stack
+    #if tree is not empty, add in top root node's value
+    #while stack still has items to go through
+    #pop off of current node
+    #add to the array
+    #go right, then go left, then pop off stack (b/c can only pop off from the end)
+    #then add to the array
+    #return array
+
+    stack =[]
+    if tree is not None:
+        stack.append(tree)
+    while stack:
+        curr = stack.pop()
+        array.append(curr.value)
+        if curr.right is not None:
+            stack.append(curr.right)
+        if curr.left is not None:
+            stack.append(curr.left)
+    return array
+        
+
+
+def postOrderTraverse(tree, array):
+    #initialize a stack
+    #go 
+
+    stack = []
+    if tree is not None:
+        stack.append(tree)
+    while stack:
+        curr = stack.pop()
+        array.append(curr.value)
+        if curr.left is not None:
+            stack.append(curr.left)
+        if curr.right is not None:
+            stack.append(curr.right)
+    return array[::-1]
