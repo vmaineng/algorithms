@@ -160,3 +160,19 @@ def other_angle(a, b):
     
     thirdAngle = 180 - (a + b)
     return thirdAngle
+
+
+
+def twice_as_old(dad_years_old, son_years_old):
+    #receive two whole positive integers
+    #return the years the father was twice as old as son
+    
+    #ex: (42, 0) => 42
+    
+    #ex: (24, 12) => 0
+    
+    #brute force, take dad's year / son's year anad float it donw
+    
+    #take son's age * 2 and subtract from dad's age
+    
+    return abs(dad_years_old - (son_years_old * 2))
