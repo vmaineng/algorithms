@@ -176,3 +176,26 @@ def twice_as_old(dad_years_old, son_years_old):
     #take son's age * 2 and subtract from dad's age
     
     return abs(dad_years_old - (son_years_old * 2))
+
+    def inOrderTraverse(tree, array):
+    if tree is not None:
+        inOrderTraverse(tree.left, array)
+        array.append(tree.value)
+        inOrderTraverse(tree.right, array)
+    return array
+
+
+def preOrderTraverse(tree, array):
+    if tree is not None:
+        array.append(tree.value)
+        preOrderTraverse(tree.left, array)
+        preOrderTraverse(tree.right, array)
+    return array
+
+
+def postOrderTraverse(tree, array):
+    if tree is not None:
+        postOrderTraverse(tree.left, array)
+        postOrderTraverse(tree.right, array)
+        array.append(tree.value)
+    return array
