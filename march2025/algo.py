@@ -199,3 +199,41 @@ def postOrderTraverse(tree, array):
         postOrderTraverse(tree.right, array)
         array.append(tree.value)
     return array
+
+def findClosestValueInBst(tree, target):
+    #receive a root node of a tree, and target of node's value
+    #return the node's value that is closest to target's
+
+    #
+    #keep track of the node that's closest to target
+    #keep track of min diff
+
+    #check if target is < root's node 
+    #then traverse the left side
+    #else traverse through the right side
+
+    closestNode = None
+    minDiff = float('inf')
+
+    if tree.value < target:
+        findClosestValueInBst(tree.left, target)
+        nodeDiff = tree.left - target
+        node = tree.left
+        if nodeDiff < minDiff:
+            minDiff = nodeDiff
+            closestNode = node
+    else: 
+        findClosestValueInBst(tree.right, target)
+        nodeDiff = tree.right - target
+        node = tree.right
+        if nodeDiff < minDiff:
+            minDiff = nodeDiff
+            closestNode = node
+    return closesetNode
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
