@@ -147,3 +147,16 @@ def postOrderTraverse(tree, array):
         if curr.right is not None:
             stack.append(curr.right)
     return array[::-1]
+
+def other_angle(a, b):
+    #receive two integers, positive and whole numbers
+    #return the 3rd angle
+    #ex: 30, 60 => 90
+    #ex: 40, 50 => 180 - 90 => 90
+    
+    #brute force:
+    #calculate the total of a + b - 180
+    #return the third angle
+    
+    thirdAngle = 180 - (a + b)
+    return thirdAngle
