@@ -308,3 +308,27 @@ def str_count(strng, letter):
         if char == letter:
             count += 1
     return count
+
+    import re
+
+def validate_pin(pin):
+    # received a string - contain letters, numbers, chars
+    #return true if valid pin, else false
+    #valid pin= 4 or 6 digits of numbers only
+    
+    #ex: '#345' => False
+    #ex: '345' => False
+    #ex: 'A1B2C3' => False
+    #ex: '567899' => True
+    
+    #brute force:
+    #check to see if the length properties are equal to 4 and 6, return false
+    
+    
+    #check to see if string does not matches only 0-9 chars, return false, else return true
+    
+    regex = "^\d*$" #"^\d*$"
+    return re.match(regex, pin) and (len(pin) == 4 or len(pin) == 6)
+#         return True
+#     else:
+#         return False
