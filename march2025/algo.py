@@ -284,3 +284,27 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
+
+def str_count(strng, letter):
+    # receive a string of lowercase and uppercase chars
+    #return back an integer how many times the letter occurs in the string
+    
+    #ex: 'hello', 'l' => 2
+    #.          i
+    #count = 2
+    
+    #ex: 'zerbra', 'q' => 0
+    
+    #brute force:
+    #initialize a count variable, set it 0 
+    #iterate through each individual char
+    #check to see if letter is equal the current letter we are at in string
+    #if they are, increment count
+    #else, move on to the next char in strin
+    #return count
+    
+    count = 0
+    for char in strng:
+        if char == letter:
+            count += 1
+    return count
