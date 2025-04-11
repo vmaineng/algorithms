@@ -438,3 +438,48 @@ class BST:
                 self.right = BST(value)
             else:
                 self.right.insert(value)
+
+def minHeightBst(array):
+    #receive an array of sorted distinct integers
+    #return the root of the bst
+
+    #find the middle of array
+    #make it the root of bst
+    #traverse through left side of middle and create left tree
+    #traverse through right side of middle and create the right tree
+    #return the tree
+
+    return minHeight(array,None, 0, len(array) - 1)
+
+def minHeight(array, bst, start, end):
+    if start > end:
+        return None
+
+    midIdx = (start + end) // 2
+    if bst is None:
+        bst = BST(array[midIdx])
+    else:
+        bst.insert(array[midIdx])
+
+    minHeight(array, bst, start, midIdx - 1)
+    minHeight(array, bst, midIdx + 1, end)
+    return bst
+
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+            else:
+                self.left.insert(value)
+        else:
+            if self.right is None:
+                self.right = BST(value)
+            else:
+                self.right.insert(value)
