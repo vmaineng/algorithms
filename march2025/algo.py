@@ -346,3 +346,38 @@ def get_planet_name(id):
         case 7: name = "Uranus"  
         case 8: name = "Neptune"
     return name
+
+    def findClosestValueInBst(tree, target):
+    #receive a tree and an integer target
+    #return the closest value to the target's value
+
+    #create a helper function that will traverse
+    #keep track of the target- closet
+    #if the target's closest - current node < target-closes,t update it
+    #else traverse left , else traverse right
+    #return closest
+
+    return findClosest(tree, target, tree.value)
+
+def findClosest(tree, target, closest):
+    if tree is None:
+        return closest
+    if abs(target - closest) > abs(target - tree.value):
+        closest = tree.value
+        
+    if target < tree.value:
+        return findClosest(tree.left, target, closest)
+    elif target > tree.value:
+        return findClosest(tree.right, target, closest)
+    else:
+        return closest
+        
+    
+
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
