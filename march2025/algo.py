@@ -548,3 +548,47 @@ class BST:
 
 #the other one is done recursively = which uses function call stack
 #the other one is done itertively = saves more on spaces
+
+def minHeightBst(array):
+    #receive an array of sorted distinct integers
+    #return a BST of min height
+
+    #calc the middle of array
+    #insert into BST
+    #then calc the middle of the left side of array, insert into bst
+    #calc the middle of right side, insert into bst
+    #return bst
+
+    return minHeightHelper(array, None, 0, len(array) - 1)
+
+def minHeightHelper(array, bst, start, end):
+    if end < start:
+        return None
+
+    middle = (start + end) // 2
+    if bst is None:
+        bst = BST(array[middle])
+    else:
+        bst.insert(array[middle])
+    leftNode = minHeightHelper(array, bst, start, middle - 1)
+    rightNode = minHeightHelper(array, bst, middle + 1, end)
+    return bst
+
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = BST(value)
+            else:
+                self.left.insert(value)
+        else:
+            if self.right is None:
+                self.right = BST(value)
+            else:
+                self.right.insert(value)
