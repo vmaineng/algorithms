@@ -483,3 +483,38 @@ class BST:
                 self.right = BST(value)
             else:
                 self.right.insert(value)
+
+def findClosestValueInBst(tree, target):
+    #receive a tree and target's value
+    #return the closest Node that either matches target or is the closest to the target
+
+    #initialize a helper function that will traverse
+    #if tree is empty, return the closest node found
+    #if the target's value - closest's value is bigger than the target's value - current node's value
+    #update the node to the closest
+    #check if the target's node is less than tree's node, then traverse left
+    #else traverse right
+    #return the node
+
+    return closestHelper(tree, target, tree.value)
+
+def closestHelper(tree, target, closest):
+    if tree is None:
+        return closest
+    if abs(target - closest) > abs(target - tree.value):
+        closest = tree.value
+
+    if target < tree.value:
+        return closestHelper(tree.left, target, closest)
+    elif target > tree.value:
+        return closestHelper(tree.right, target, closest)
+    else:
+        return closest
+
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
