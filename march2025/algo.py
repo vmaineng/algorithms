@@ -518,3 +518,33 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
+
+        def findClosestValueInBst(tree, target):
+    return findClosest(tree, target, tree.value)
+
+def findClosest(tree, target, closest):
+    currentNode = tree
+
+    while currentNode is not None:
+
+        if abs(target-closest) > abs(target - currentNode.value):
+            closest = currentNode.value
+    
+        if target < currentNode.value:
+            currentNode = currentNode.left
+        elif target > currentNode.value:
+            currentNode = currentNode.right
+        else:
+            break
+    return closest
+
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+#the other one is done recursively = which uses function call stack
+#the other one is done itertively = saves more on spaces
