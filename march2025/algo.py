@@ -733,3 +733,10 @@ class Solution:
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
         
+def is_even(n): 
+    #receive an integer of floats, negative or positive
+    #return boolean of true or false
+    #ex: 0.342 => False
+    #ex: -100 => True
+    
+    return n %2 == 0
