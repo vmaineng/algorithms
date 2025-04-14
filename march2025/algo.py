@@ -740,3 +740,18 @@ def is_even(n):
     #ex: -100 => True
     
     return n %2 == 0
+
+    def nb_year(p0, percent, aug, p):
+    #receive integers for all
+    #return the years to get a population >= p
+    
+    #add up p0, percent * aug, and see if >= p
+    #increment count
+    #return count when >= p
+    
+    total = p0
+    years = 0
+    while total < p:
+        total = total + (total * percent/100) + aug
+        years += 1
+    return years
