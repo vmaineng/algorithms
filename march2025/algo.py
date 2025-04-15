@@ -784,3 +784,11 @@ def is_even(n):
 
     return inp.upper() == inp
     #check if the uppercase version of the string matches the current version of the string
+
+    def monkey_count(n):
+    #receive an integer
+    #return a list starting from 1 to n
+    
+    #ex: 3 => [1, 2, 3]
+    
+    return [n for n in range(1, n + 1) if n > 0]
