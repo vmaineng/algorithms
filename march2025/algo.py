@@ -755,3 +755,32 @@ def is_even(n):
         total = total + (total * percent/100) + aug
         years += 1
     return years
+
+    def is_uppercase(inp):
+    #receive an input of letters - lowercase or upperase with spaces
+    #check to see if all letters are all caps
+    
+    #ex: 'HElLO' => FALSE
+    
+    #itereate through each characters
+    #check if letter is uppercase
+    #if at any time it's lowercas,e return false immediately
+    #else return true
+    
+    return inp.isupper()
+
+    def is_uppercase(inp):
+    #receive an input of letters - lowercase or upperase with spaces
+    #check to see if all letters are all caps
+    
+    #ex: 'HElLO' => FALSE
+    
+    #itereate through each characters
+    #check if letter is uppercase
+    #if at any time it's lowercas,e return false immediately
+    #else return true
+
+    return not any(c.islower() for c in inp)
+
+    return inp.upper() == inp
+    #check if the uppercase version of the string matches the current version of the string
