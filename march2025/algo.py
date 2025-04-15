@@ -792,3 +792,37 @@ def is_even(n):
     #ex: 3 => [1, 2, 3]
     
     return [n for n in range(1, n + 1) if n > 0]
+
+    return list(range(1, n + 1))
+
+    def hasSingleCycle(array):
+    # receive an array of integers  - pos and neg
+    # return True if single cycle, else false
+
+    #create a list
+    #iterate through the array
+    #if you have landed in the same value before, return False
+    #else, flip it to true
+
+    visited = [False] * len(array)
+    currentIdx = 0
+    steps = 0
+
+    while steps < len(array):
+        if steps > 0 and currentIdx == 0:
+            return False
+            
+        if visited[currentIdx]: 
+            return False
+            
+        visited[currentIdx] = True
+        steps += 1
+
+        jump = array[currentIdx]
+        nextIdx = (currentIdx + jump) % len(array)
+        if nextIdx < 0:
+            nextIdx += len(array)
+
+        currentIdx = nextIdx
+    return currentIdx == 0
+        
