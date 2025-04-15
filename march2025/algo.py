@@ -826,3 +826,43 @@ def is_even(n):
         currentIdx = nextIdx
     return currentIdx == 0
         
+def hasSingleCycle(array):
+    # receive an array of integers - pos and neg
+    # return True if visited, else return False
+
+    #create an output list that keeps track if value has been visited
+    #intiialize it with False
+
+    #while steps < len(array)
+    #check if steps > 0 and we are back at currentidx, return False
+    #check if the idx is already visited, return false
+    #if the value is 0, return false
+
+    #find the next idx
+    #find the current idx
+    #add together, if next idx is negative, loop around the other way
+    #return if currentIdx == 0 we are back at the same spot
+
+    currentIdx = 0
+    steps = 0
+    output = [False] * len(array)
+
+    while steps < len(array):
+        if steps > 0 and currentIdx == 0:
+            return False
+        if output[currentIdx] == True:
+            return False
+        if array[currentIdx] == 0:
+            return False
+
+        #change the value in array
+        #increment steps
+        output[currentIdx] = True
+        steps += 1
+
+        jump = array[currentIdx]
+        next = (currentIdx + jump) % len(array)
+        if next < 0:
+            next += len(array)
+        currentIdx = next
+    return currentIdx == 0
