@@ -866,3 +866,15 @@ def hasSingleCycle(array):
             next += len(array)
         currentIdx = next
     return currentIdx == 0
+
+
+
+def powers_of_two(n):
+    #receive an integer
+    #return a list of the all powers of 2
+    #ex: 3 => [2^0, 2^1, 2^2, 2 ^ 3] => [ 1, 2, 4, 8]
+    
+    #list comprehension
+    #take 2 * every num from 0 to n 
+    
+    return [2**num for num in range(n + 1)]
