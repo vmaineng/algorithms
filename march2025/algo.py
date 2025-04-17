@@ -878,3 +878,51 @@ def powers_of_two(n):
     #take 2 * every num from 0 to n 
     
     return [2**num for num in range(n + 1)]
+
+
+
+def create_phone_number(n):
+    #receive a list of integers
+    #return the string format of a phone number
+    
+    #grab first 3 numbers, add a - between, then 3 more numbers with a dash between
+    
+    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+
+    def hasSingleCycle(array):
+    #receive an array of integers - pos and neg
+    #return True if jumps in array form a single cycle, else False
+
+    #keep track of currentIdx and steps
+    #while steps < array's length
+    #check if steps have been moved and we came back to currentidx
+    #return false
+    #if any of the values of array is 0, return False
+    #otherwise, move currentIdx to new value
+    #jump = currentIdx
+    #if jump is negative value, add array's length 
+    #move idx to next idx
+    #return currentIdx == 0
+
+    currentIdx = 0
+    steps = 0
+    visited = [False] * len(array)
+    
+    while steps < len(array):
+        if steps > 0 and currentIdx == 0:
+            return False
+        if array[currentIdx] == 0:
+            return False
+        if visited[currentIdx] == True:
+            return False
+            
+        visited[currentIdx] = True
+        steps += 1
+
+        nextIdx = array[currentIdx]
+        jump = (currentIdx + next) % len(array)
+        if jump < 0:
+            jump += len(array)
+        currentIdx = nextIdx
+    return currentIdx == 0
+            
