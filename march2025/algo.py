@@ -942,4 +942,66 @@ def create_phone_number(n):
 
     return currentIdx == 0
 
-            
+    class Solution:
+
+
+    def encode(self, strs: List[str]) -> str:
+        #old way = used '#' in between strings
+        #grab length of string, add it to the string result
+        #grap the word, then grab the # 
+        #ex: "4neet#"
+        result = ''
+        for char in strs:
+            result += str(len(char)) + '#' + char
+        # print (result)
+        return result    
+
+        #4neet#4code#4love#3you#  
+        #4#neet4#code4#love3#you  
+        #.     l
+        #.          r  
+        #answer = []
+
+    def decode(self, s: str) -> List[str]:
+        # print('is this tuple',s)
+        #initialize an output list
+        #two pointers approach - initialize left and right at 0
+        #while r < len(str):
+        #while r != '#':
+        #r += 1; move r by 1
+        #if r == "#":
+        #substring(l, r - l - 1) (capture the substring)
+        #add it output list
+        #update l pointer = l = r + 1
+        output = []
+        # substring=''
+        l = 0
+        r = 0
+        while r < len(s):
+            while s[r] != '#':
+                r += 1
+           
+            num = int(s[l])
+            substring = s[l+1: num+1]
+            output.append(substring)
+            l = r + 1
+            r += 1
+            print(s[l], s[r])
+        # while s[r] != '#':
+        #     r += 1
+
+        # substring = s[l + 1: r]
+        # # print(substring)
+        # output.append(substring)
+        # l = r + 1
+            # print(s[l], s[r])
+            # l = r + 1
+            # if s[r] == '#':
+            #     substring = s[l: r - l +1]
+            #     print(substring)
+        return output
+
+
+
+
+
