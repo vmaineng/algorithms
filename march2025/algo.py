@@ -925,4 +925,21 @@ def create_phone_number(n):
             jump += len(array)
         currentIdx = nextIdx
     return currentIdx == 0
+
+    def hasSingleCycle(array):
+    currentIdx = 0
+    steps = 0
+
+    while steps < len(array):
+        if steps > 0 and currentIdx == 0:
+            return False  # came back too early
+        
+        steps += 1
+        jump = (currentIdx + array[currentIdx]) % len(array)
+        if jump < 0:
+            jump += len(array)
+        currentIdx = jump
+
+    return currentIdx == 0
+
             
