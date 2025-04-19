@@ -1065,3 +1065,37 @@ class Node:
             for child in current.children:
                 queue.append(child)
         return array
+
+    def hasSingleCycle(array):
+    #receive an array of integers
+    #return True if single cycle, else return False
+
+    #currentIdx and steps
+    #calc next jump by adding current Idx
+    #if jump is negative, then add in entire length of array
+    #return true if current idx is back at same idx started
+
+    currentIdx = 0
+    steps = 0
+    visited = [False] * len(array)
+
+    while steps < len(array):
+        if steps > 0 and currentIdx == 0:
+            return False
+        if array[currentIdx] == 0:
+            return False
+        if visited[currentIdx] == True:
+            return False
+
+        visited[currentIdx] = True
+        steps += 1
+
+        jump = array[currentIdx]
+        next = (jump + currentIdx) % len(array)
+        if next < 0:
+            next += len(array)
+        currentIdx = next
+    return currentIdx == 0
+        
+    
+
