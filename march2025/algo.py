@@ -1024,5 +1024,19 @@ def human_years_cat_years_dog_years(human_years):
     
     return [human_years, cat_years, dog_years]
 
+def first_non_consecutive(arr):
+    #receive a list of elements of integers
+    #return the element that is not in sorted order
+    #ex: [1, 3, 4,5 ] => 3
+    
+    #sort the elements in the array
+    #iterate through checking if next value is +1 from first value
+    
+    arr.sort()
+    for idx in range(1, len(arr)):
+        print(arr[idx], arr[idx - 1])
+        if arr[idx - 1] != arr[idx] - 1:
+            return arr[idx]
+    return None
 
 
