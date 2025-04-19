@@ -1001,7 +1001,28 @@ def create_phone_number(n):
             #     print(substring)
         return output
 
+def human_years_cat_years_dog_years(human_years):
+   #receive a whole number integer for human years
+#return a list back in [human years, catyears, dogyears]
+#ex: [0,0, 0]
+#ex: 4: [4, ]
+#cat: 15, +9, +4, +4 => 32
+#dog: 15, 9, +5 , +5 => 34
 
+#calc separate for dog and cat years
+    cat_years = 0
+    dog_years = 0
+    if human_years == 1:
+        cat_years = 15
+        dog_years = 15
+    if human_years == 2:
+        cat_years =24
+        dog_years = 24
+    elif human_years >2:
+        cat_years = 15 + 9 + (human_years - 2) * 4
+        dog_years = 15 + 9 + (human_years -2)* 5
+    
+    return [human_years, cat_years, dog_years]
 
 
 
