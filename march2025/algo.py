@@ -1097,5 +1097,68 @@ class Node:
         currentIdx = next
     return currentIdx == 0
         
+    def to_alternating_case(string):
+    #receive letters and spaces - uppercase and lowercase, numbers
+    #return a string back where it is the opposite of the input
     
+    #ex: 'hello' => 'HELLO'
+    #ex: 'F1$H' => 'f1Sh'
+    
+    #if empty string, return back an empty string ""
+    #ex: '' => ''
+    
+    #inittialize an empty list
+    #iterate through each char in string
+    #check to see if the char is alphanumerica, 
+    #check to see if it is lowercase, 
+    #add to our empty list, add the uppercase version
+    #uppercase => add the lowercase version
+    
+    if not string:
+        return ''
+    
+#     wordList = []
+    
+#     for char in string:
+#         if char.isalpha():
+#             if char == char.lower():
+#                 wordList.append(char.upper())
+#             elif char == char.upper():
+#                 wordList.append(char.lower())
+#             elif char == ' ':
+#                 wordList.append(' ')
+#         else:
+#             wordList.append(char)
+#     return ''.join(wordList)
 
+    #using list comprehension
+    #[char.lower if char is upper else char.upper if char is alpha]
+    return ''.join([char.lower() if char == char.upper() else char.upper() for char in string])
+    
+def correct(s):
+    #receive a string of uppercase letters and numbers
+    #return a string back of uppercase letters only
+    
+    #ex: '5EOUL' => 'SEOUL'
+    #ex: '' => ''
+    
+    #intialize an empty list
+    #check each char to see if it is a 5, 0, 1
+    #convert each char to it's string
+    #return the list joined back together as a string
+    
+    if not s:
+        return ''
+    
+    correctedText = []
+    
+    for char in s:
+        if char == '5':
+            correctedText.append('S')
+        elif char == '0':
+            correctedText.append('O')
+        elif char == '1':
+            correctedText.append('I')
+        else:
+            correctedText.append(char)
+    return ''.join(correctedText)
