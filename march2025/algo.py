@@ -1162,3 +1162,11 @@ def correct(s):
         else:
             correctedText.append(char)
     return ''.join(correctedText)
+
+def is_palindrome(s):
+    #receive a string of lower and uppercase chars
+    #return true if pali, else false
+    #ex: 'hEleH' => True
+    #ex: 'hfsef' => False
+    
+    return s.lower() == s[::-1].lower()
