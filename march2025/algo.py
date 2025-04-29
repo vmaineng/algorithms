@@ -1182,3 +1182,5 @@ def bonus_time(salary, bonus):
     
     newSalary = salary * 10
     return f"${newSalary}" if bonus == True else f"${salary}"
+
+    return f"${salary * 10 if bonus == True else salary}"
