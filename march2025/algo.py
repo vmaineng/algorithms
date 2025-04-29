@@ -1170,3 +1170,15 @@ def is_palindrome(s):
     #ex: 'hfsef' => False
     
     return s.lower() == s[::-1].lower()
+
+def bonus_time(salary, bonus):
+    #receive an integer, and a boolean
+    #return a string back of salary * 10 if boolean == True, else return salary only
+    #ex: (100, True) => 100 * 10 => 1000
+    #ex: (100, False) => 100
+    
+    #check if bonus == True, then calculate salary * 100
+    #else return salary amount
+    
+    newSalary = salary * 10
+    return f"${newSalary}" if bonus == True else f"${salary}"
