@@ -1184,3 +1184,22 @@ def bonus_time(salary, bonus):
     return f"${newSalary}" if bonus == True else f"${salary}"
 
     return f"${salary * 10 if bonus == True else salary}"
+
+    def final_grade(exam, projects):
+    #receive integers for exam and projects
+    #return final grade of student depending on two parameters
+    #ex: (50, 5) => 75
+    
+    #if the exam > 90 and projects > 10 => 100
+    #else if the exam > 75 < 90 and projects > 5 => 90
+    #else if the exam > 50 < 75 and projects is > 2 => 75
+    #else return 0
+    
+    if exam > 90 or projects > 10:
+        return 100
+    elif exam > 75 and projects >= 5:
+        return 90
+    elif exam > 50 and projects >= 2:
+        return 75
+    else:
+        return 0
