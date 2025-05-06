@@ -1203,3 +1203,26 @@ def bonus_time(salary, bonus):
         return 75
     else:
         return 0
+
+def expression_matter(a, b, c):
+    #receive whole integers
+    #return the maximum value that's been computed by adding a + b + c
+    #ex: (1, 1, 1) => 1 + 1 +1 = 3
+    #1 * 1 *1 =1
+    #(1+1) * 1 => 2
+    #1 + (1 *1) => 2
+    
+    #edge cases: empty values, or if the values are 0
+    
+    #initialize a variable to hold the max value seen
+    #compute different operators with the operands
+    #indicate if the product/sum > max value
+    #if so, update the max value seen
+    
+    total = a + b + c
+    total1 = a * (b + c)
+    total2 = a * b * c
+    total3 = a + b * c
+    total4 = (a + b) * c
+    
+    return max(total, total1, total2, total3, total4) 
