@@ -8,6 +8,15 @@ const breadthFirstSearch = (graph, source) => {
   }
 };
 
+const dfsRecursive = (graph, source) => {
+  //base cases: if neighbors are empty
+  //otherwise recursively call
+
+  for (let neighbor of graph[source]) {
+    dfsRecursive(graph, neighbor);
+  }
+};
+
 const depthFirstSearch = (graph, source) => {
   const stack = [source];
   while (stack.length > 0) {
