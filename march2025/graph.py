@@ -17,3 +17,14 @@ print("\nConnections:")
 for i in range(len(matrix)):
     connections = [j for j in range(len(matrix[i])) if matrix[i][j] == 1]
     print(f"Node {i} connects to: {connections}")
+
+const breadthFirstSearch = (graph, startNode) => {
+  const queue = [startNode]
+  while queue.length > 0 { 
+    const current = queue.shift()
+    console.log(current)
+    for (const neighbor of graph[current]) {
+      queue.push(neighbor)
+    }   
+  }
+}
