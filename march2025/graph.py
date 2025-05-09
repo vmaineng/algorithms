@@ -29,4 +29,40 @@ const breadthFirstSearch = (graph, startNode) => {
   }
 }
 
-const 
+def has_path(graph, src, dst):
+  #dfs
+  #receives a graph, node, and distance
+  #return True if path from src to destination nodes
+  #ex: graph = { 
+  #  'f': ['g']
+  #   'h': []
+  #}
+
+  #graph, 'f', 'g' => True
+  #graph, 'f', 'h' => False
+
+  #base case: 
+  #if src == dist, return True
+  #else recursively call to it's next neighbors
+
+  # if src == dist:
+  #   return True
+  # for neighbor in graph[src]:
+  #  if(has_path(graph, neighbor, dist) == True):
+  #    return True
+  # return False
+
+  #bfs
+  from collections import dequeue
+
+  dequeue = [src]
+  while dequeue.length > 0:
+    current = dequeue.popleft()
+
+    if current == dst:
+      return True
+      
+    for neighbor in graph[current]:
+      queue.push(neighbor)
+    return False
+       
