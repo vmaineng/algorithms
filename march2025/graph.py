@@ -66,3 +66,16 @@ def has_path(graph, src, dst):
       queue.push(neighbor)
     return False
        
+       def how_much_i_love_you(nb_petals):
+    #receive a flower of x amount of petals
+    #return the saying that the last petal struck on 
+    #ex: '3' => 'a lot'
+    #ex: '10' => 'madly'
+    
+    #edge cases: if flower with no petal
+    
+    #take the # of petals % length of array
+    
+    sayings= ["I love you", 'a little', 'a lot', 'passionately', 'madly', 'not at all']
+    
+    return sayings[nb_petals % (len(sayings)) - 1]
