@@ -156,3 +156,58 @@ class Solution:
 
         maxCandy = max(candies)
         return [candy + extraCandies >= maxCandy for candy in candies]
+
+        class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        #receive a list of nums ranging from postive to negative
+        #return max average from nums list that is equal to k
+        #ex: [3, 5, 6, -3, 2], k = 3 
+        #.   [3, 5, 6]         sum(of 3)/3  14/3 = 4.66667 max = 4.66667
+        #       [5, ,6, -3].     8/3 =2.66667
+        #          [ 6, -3, 2]   5/3 =1.66667
+
+        #initialize a max variable -inf
+        #iterate through nums list, starting at the first index, iterate up to k amount
+        #find the average
+        #check if the average > max
+        #update max
+        #else, move on to the next set
+
+        if len(nums) < 2:
+            return nums[0]
+
+        maxAvg = float("-inf")
+        average = 0
+        avg = 0
+
+        # left = 0
+        # right = k
+
+        # while (right < len(nums)): 
+        #     average += nums[left]
+        #     print(average)
+        #     if average/k > max:
+        #         max = average/k
+        #     left = right
+        #     right += 1
+        # return max
+
+        left = 0
+        right = 0
+
+        while (right < len(nums)):
+            average += nums[right]
+            right += 1
+            # print(average)
+
+            # print(right - left)
+
+            if (right - left) == k:
+                
+                avg = average/k
+                # print(avg)
+                if avg > maxAvg:
+                    maxAvg = avg
+                average -= nums[left]
+                left += 1
+        return maxAvg
