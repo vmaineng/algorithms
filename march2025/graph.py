@@ -79,3 +79,28 @@ def has_path(graph, src, dst):
     sayings= ["I love you", 'a little', 'a lot', 'passionately', 'madly', 'not at all']
     
     return sayings[nb_petals % (len(sayings)) - 1]
+
+    def reverse_list(l):
+    #receive a list of integers
+    #return the the lists of the elemnts in reversed
+    #ex: [0,2,3,4] => [4, 3, 2,0]
+    #ex: [1] => [1]
+    #ex: [] => []
+    
+    #initialize an empty list
+    #iterate through element, starting from the end to the first index number
+    #push it into the empty list
+    #return the list
+    
+#     reversedList = []
+#     for ele in range(len(l) - 1, -1, -1):
+#         reversedList.append(l[ele])
+#     return reversedList
+        
+
+    #time: O(n) n for each ele in list
+    #space: O(n) n for each ele in list
+    
+    return l[::-1]
+#time:O(n) for n amount of ele in list
+#space:O(1)
