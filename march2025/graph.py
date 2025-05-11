@@ -104,3 +104,55 @@ def has_path(graph, src, dst):
     return l[::-1]
 #time:O(n) for n amount of ele in list
 #space:O(1)
+
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        #receive a list a of integers, and an integer for extra candies
+        #return back a list of boolean where if the kid has more candy than the max, return true, else return False
+
+        #ex: [2, 3, 5, 1, 3] , extracandies = 3
+        #maxCandy = 5
+
+        #adding 3 = [5, 6, 8, 4, 6]
+        #ex:        [True, True, True, False, True]
+
+        #find the current maxCandy
+
+        #ex: [4, 2, 1, 1,2], extracandies = 1
+        #maxCandy: 4
+
+        #add the extraCandies of 1
+        #new [ 5, 3, 2, 2, 3]
+        #answer = [True, False, False, False, False]
+
+        #find the maxcandy in the candies list
+        #initialize a newTotal List
+        #iterate through the candies list, add extraCandies to the new total
+        #add the new total into the newTotal list
+        #iterate through each ele in the newTotal
+        #check if newTotal >= maxCandy
+        #if it is, return True, else Return False
+
+        # newTotal = []
+        # result = []
+        # maxCandy = max(candies)
+
+        # for value in candies:
+        #     value += extraCandies
+        #     newTotal.append(value)
+
+        
+        # for value in newTotal:
+        #     if value >= maxCandy:
+        #         result.append(True)
+        #     else:
+        #         result.append(False)
+        # return result
+
+        # return [True if value >= maxCandy else False for value in newTotal]
+
+        #time: O(2n) => O(n) n how many kids in list
+        #space: O(n) => n how many kids in list
+
+        maxCandy = max(candies)
+        return [candy + extraCandies >= maxCandy for candy in candies]
