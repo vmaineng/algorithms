@@ -211,3 +211,19 @@ class Solution:
                 average -= nums[left]
                 left += 1
         return maxAvg
+    
+    def has_path(graph, src, dst):
+  #receive a adj matrix
+  #return True if src node connects to dst, else False
+
+  #dfs recursive:
+  #base case: if src == dst, return True
+  #else call it on neighbor node in src
+  #else return False
+  if src==dst:
+    return True
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst):
+      return True
+  return False
+  
