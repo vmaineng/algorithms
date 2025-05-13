@@ -285,3 +285,39 @@ def build_graph(edges):
     graph[b].append(a)
   return graph
   
+
+def undirected_path(edges, node_A, node_B):
+  #receive an edges graph, a node, and another node
+  #return boolean of path between A and between
+
+  #undirected path = needs a Set() to keep track of nodes visited
+  #initialize a Set
+  #iterate through edges to see if has path
+  #create edges into a matrix - easier to traverse through
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, set())
+
+def build_graph(edges):
+  graph = {}
+  for edge in edges:
+    a,b = edge
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+  if src in visited:
+    return False
+  visited.add(src)
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited):
+      return True
+  return False
+  
