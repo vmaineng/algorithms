@@ -254,4 +254,34 @@ def has_path(graph, src, dst):
       queue.append(currentNode)
   return False
       
+  def undirected_path(edges, node_A, node_B):
+  #receive an edges adj list, two sep nodes
+  #returnn True if path exists between the two nodes, else False
+
+  #convert into adj matrix
+  #then dfs, check if it's neighbors exists
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B)
+
+def has_path(graph, src, dst):
+  if src==dst:
+    return True
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst):
+      return True
+  return False
+  
+def build_graph(edges):
+  graph = {}
+ 
+  for edge in edges: 
+    a,b = edge
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
   
