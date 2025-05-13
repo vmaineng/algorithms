@@ -227,3 +227,31 @@ class Solution:
       return True
   return False
   
+
+from collections import deque
+
+def has_path(graph, src, dst):
+  #recieve a graph, src, and dst
+  #return True if path between src, dst, else False
+
+  #bfs:
+  #initialize graph into a queue
+  #while queue's length > 0
+  #pop off currentNode
+  #then iterate through it's children
+  #add to queue
+  #if currentNode = dst, return True
+  #else return False
+
+  # if not graph:
+  #   return False
+  queue = deque([src])
+  while queue:
+    currentNode = queue.popleft()
+    if currentNode == dst:
+      return True
+    for neighbor in graph[currentNode]:
+      queue.append(currentNode)
+  return False
+      
+  
