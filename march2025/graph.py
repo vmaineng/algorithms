@@ -372,3 +372,28 @@ def explore(graph, current, visited):
   for neighbor in graph[current]:
     explore(graph, neighbor, visited)
   return True
+
+def largest_component(graph):
+  #receive a graph
+  #return largest component seen
+
+  #iterate through the graphs
+  #keep track of largest seen, and visitedNodes
+
+  visited = set()
+  largest = 0
+
+  for node in graph:
+    size = explore(graph, node, visited)
+    if size > largest:
+      largest = size
+  return largest
+
+def explore(graph, current, visited):
+  if current in visited:
+    return 0
+  visited.add(current)
+  size = 1
+  for neighbor in graph[current]:
+    size += explore(graph, neighbor, visited)
+  return size
