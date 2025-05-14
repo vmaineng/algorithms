@@ -321,3 +321,29 @@ def has_path(graph, src, dst, visited):
       return True
   return False
   
+  def connected_components_count(graph):
+  #receive a graph that's undirected
+  #return the # of connected components in graph
+
+  #iterate through the graph
+  #check if they have a direct path
+  #increment connected_components_count
+  #return count
+  visited = set()
+  count = 0
+    
+  for node in graph:
+    if explore(graph, node, visited):
+      count += 1
+  return count
+
+def explore(graph, current, visited):
+  if current in visited:
+    return False
+  visited.add(current)
+    
+  for neighbor in graph[current]:
+    explore(graph, neighbor, visited)
+  return True
+    
+    
