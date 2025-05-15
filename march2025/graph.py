@@ -397,3 +397,41 @@ def explore(graph, current, visited):
   for neighbor in graph[current]:
     size += explore(graph, neighbor, visited)
   return size
+
+def shortest_path(edges, node_A, node_B):
+  #receive a list of edges
+  #return a count of shortest path between a and b
+
+  #turn list of edges into adj matrix
+
+  #iterate through the matrix
+  #intiialize a count of postitive infinity
+  #if path is smaller, update count
+
+  graph = build_graph(edges)
+  return has_size(graph, node_A, node_B, set())
+
+def build_graph(edges):
+  graph = {}
+  for edge in edges:
+    a,b = edge
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_size(graph, current, dst, visited):
+  if current in visited:
+    return 0
+  visited.add(current)
+  size = 1
+  if current == dst:
+    return size
+  for neighbor in graph[current]:
+    size += has_size(graph, neighbor, dst, visited)
+  return size
+    
+  
