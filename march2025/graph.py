@@ -470,3 +470,22 @@ def build_graph(edges):
     graph[b].append(a)
   return graph
   
+  def has_path(graph, src, dst):
+  #receive a graph and src and dst node
+  #return True if src can reach dst,e lse False
+
+  #iterative dfs:
+  #create a stack
+  #push src in it
+  #check if src == dst, return True
+  #else add neighbor to top of stack
+  #return False after searching
+
+  stack = [src]
+  while stack:
+    current = stack.pop()
+    if current == dst:
+      return True
+    for neighbor in graph[current]:
+      stack.append(neighbor)
+  return False
