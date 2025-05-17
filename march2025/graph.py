@@ -489,3 +489,25 @@ def build_graph(edges):
     for neighbor in graph[current]:
       stack.append(neighbor)
   return False
+
+def odd_count(n):
+    #receive an odd integer - whole number and positive
+    #return the count of odd numbers below n
+    
+    #ex: 3 => [1] => 1
+    
+    #ex: 9 => [1,3, 5, 7] => 4
+    
+    #iterate up to n:
+    #determine if it is an odd number
+    #odd number % 2 => remainder of 1, that means the number is odd
+    #increment the count
+    count = 0
+    
+    for num in range(0, n):
+        if num % 2 == 1:
+            count += 1
+    return count
+
+#time: O(n)iterate up to n amount that's passed
+#space: O(1)
