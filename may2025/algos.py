@@ -50,3 +50,11 @@ def most_frequent_char(s):
       maxSeen = value
       letter = key
   return letter
+
+def pair_product(numbers, target_product):
+  dict = {}
+  for idx, num in enumerate(numbers):
+    divisor = target_product// num
+    if divisor in dict:
+      return (idx, dict[divisor])
+    dict[num] = idx
