@@ -118,3 +118,27 @@ class Solution:
                 maxCount += 1
         return maxCount
       
+      class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        result = []
+
+        def binary_search(result, n):
+            left = 0
+            right = len(result) - 1
+            while left <= right:
+                middle = (left + right) // 2
+                if result[middle] == n:
+                    return middle
+                elif result[middle] > n:
+                    right = middle - 1
+                else:
+                    left = middle + 1
+            return left
+            
+        for n in nums:
+            if not result or result[-1] < n:
+                result.append(n)
+            else:
+                idx = binary_search(result, n)
+                result[idx] = n
+        return len(result)
