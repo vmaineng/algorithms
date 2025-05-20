@@ -97,4 +97,24 @@ def intersection(a, b):
     if num in a_set:
       result.append(num)
   return result
+
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the length of longest increasing subsequence
+
+        #ex: [0, 3, 4,6,7,8,] => [3,4,6,7,8]
+
+        #sort the list of array
+        #initialize a count
+        #iterate through the second numbs
+        #check if prev nums = -1
+        
+        maxCount = 0
+        sortList = sorted(nums)
+
+        for i in range(1, len(nums) -1):
+            if nums[i - 1] == nums[i] + 1:
+                maxCount += 1
+        return maxCount
       
