@@ -58,3 +58,31 @@ def pair_product(numbers, target_product):
     if divisor in dict:
       return (idx, dict[divisor])
     dict[num] = idx
+
+    def intersection(a, b):
+  #receive two lists
+  #return a list that contain elements that exits in both lists
+  #ex: [3,4,5,2], [6,7,2,1] => [2]
+
+  #sort the elements in the lists
+  #then have two pointers
+  #time: O n log n
+  #space: O(n)
+
+  #create a dictionary
+  #iterate through first list
+  #add to dictionary
+  #iterate through second list
+  #check if it exists
+  #add to list
+  #then return the list
+
+  dict = {}
+  for char in a:
+    dict[char] = dict.get(char, 0)
+
+  result = []
+  for char in b:
+    if char in dict:
+      result.append(char)
+  return result
