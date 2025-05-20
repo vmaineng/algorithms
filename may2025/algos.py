@@ -86,3 +86,15 @@ def pair_product(numbers, target_product):
     if char in dict:
       result.append(char)
   return result
+
+def intersection(a, b):
+  #create a set for a
+  #then check if the num exists in b
+  result = []
+  a_set = set(a)
+  
+  for num in b:
+    if num in a_set:
+      result.append(num)
+  return result
+      
