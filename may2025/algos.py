@@ -142,3 +142,18 @@ class Solution:
                 idx = binary_search(result, n)
                 result[idx] = n
         return len(result)
+    
+    def people_with_age_drink(age):
+    #receive an integer
+    #return a string of what they can drink
+    #ex: 3 => "drink toddy"
+    #ex: 14 => "drink coke"
+    
+    if age < 14:
+        return "drink toddy"
+    elif age >= 14 and age < 18:
+        return "drink coke"
+    elif age >= 18 and age < 21:
+        return "drink beer"
+    else:
+        return "drink whisky"
