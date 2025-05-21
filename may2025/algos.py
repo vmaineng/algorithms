@@ -157,3 +157,15 @@ class Solution:
         return "drink beer"
     else:
         return "drink whisky"
+    
+    def binary_array_to_number(arr):
+  #receive an array of integers
+#return the binary number of number
+
+#ex join the digits together
+#convert it using bin function
+
+    binNum = [str(ele) for ele in arr]
+    binStr = ''.join(binNum)
+#     print(binStr)
+    return int(binStr, 2)
