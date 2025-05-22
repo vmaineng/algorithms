@@ -169,3 +169,18 @@ class Solution:
     binStr = ''.join(binNum)
 #     print(binStr)
     return int(binStr, 2)
+
+def solution(a, b):
+    #receive two strings of upper, lower, and numbers, and chars
+    #return a string - that holds short form and long form
+    #ex: 'yo', 'sa8' => 'yosa8yo'
+    
+    #find the smaller length of a and b
+    #add it to the result array
+    #then add in the other string
+    # or vice versa
+    
+    if len(a) < len(b):
+        return a + b + a
+    else:
+        return b + a + b
