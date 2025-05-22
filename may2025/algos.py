@@ -200,3 +200,28 @@ def number(bus_stops):
         count-= peopleOff
     return count
     
+    return sum([stop[0] - stop[1] for stop in bus_stops])
+
+def spin_words(sentence):
+    #receive a sentence of uppercase and lowercase chars
+    #return a string back that if the word has 5 or more letters, it needs to be reversed back in string
+    #ex: 'apples are my favorite' => 'selppa are my etirovaf'
+    
+    #initialize an array
+    #split the sentence by words
+    #check the length of the word
+    #if len > 5, reverse it, then add it to the array
+    #else add word to the array
+    #join it back
+    
+    result = []
+    splitWords = sentence.split(" ")
+    for word in splitWords:
+        if len(word) >4:
+            result.append(word[::-1])
+        else:
+            result.append(word)
+    return ' '.join(result)
+
+#time: O(n)
+#space:O(n)
