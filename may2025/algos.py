@@ -184,3 +184,19 @@ def solution(a, b):
         return a + b + a
     else:
         return b + a + b
+
+def number(bus_stops):
+    # receive a list of lists of [get on bus, get off bus]
+    #return num of people who left on bus
+    
+    #initialize a count
+    #destructure out people who get on and people who get off bus
+    #subtract and add from total
+    #return total
+    count = 0
+    for stop in bus_stops:
+        peopleOn, peopleOff = stop
+        count += peopleOn
+        count-= peopleOff
+    return count
+    
