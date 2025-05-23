@@ -252,3 +252,42 @@ def odd_or_even(arr):
     #check if total % 2 == 0, return even, else odd
     
     return 'odd' if sum(arr) % 2 == 1 else 'even'
+
+def move_zeros(lst):
+    #receive a list of integers
+    #return the same list back with 0's move to the end of the array
+    #ex: [1,0, 2, 3,0] => [1,2,3,0,0]
+         #l
+           #r
+    
+    
+    #[1, 2, 1, 1, 0, 1, 0, 3, 0, 0]
+                            # l
+                         #.r
+    #two pointers
+    #start on first one
+    #start on second, check if they are a 0
+    #return list
+    
+#     left = len(lst) - 1
+#     right = len(lst) - 1
+    
+#     while right >= 0:
+#         if lst[right] != 0:
+#             right -= 1
+#         else:
+#             lst[left], lst[right] = lst[right], lst[left]
+#             left = right
+#             right -= 1
+#     return lst
+
+#     left = 0
+#     right = len(lst) -1
+    
+#     while left < right:
+#         while left < right and lst[right] == 0:
+#             right -= 1
+#         if lst[left] == 0:
+#             lst[left], lst[right] = lst[right], lst[left]
+#         left += 1
+#     return lst
