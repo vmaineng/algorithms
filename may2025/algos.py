@@ -242,3 +242,13 @@ def find_multiples(integer, limit):
     return [num for num in range(integer, limit + 1) if num % integer == 0]
 
 #find the next multiple
+
+def odd_or_even(arr):
+    #receive a list of integers
+    #return string of 'odd' if total is odd, or 'even'
+    #ex: [0,2,3] => 5 => 'odd'
+    
+    #add up the total of integers
+    #check if total % 2 == 0, return even, else odd
+    
+    return 'odd' if sum(arr) % 2 == 1 else 'even'
