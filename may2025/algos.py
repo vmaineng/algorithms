@@ -227,3 +227,18 @@ def spin_words(sentence):
 #space:O(n)
 
     return ' '.join([word[::-1] if len(word) >4 else word for word in sentence.split("")])
+
+return list(range(integer, limit+1, integer))
+
+def find_multiples(integer, limit):
+    #receive an integer, and another integer
+    #return a list of multiples up to limit
+    #ex: 3, 6 => [3, 6]
+    
+    #initialize an empty list
+    #iterate up to limit, starting at n
+    #check if the currentNum mod integer == 0, add it the list
+    
+    return [num for num in range(integer, limit + 1) if num % integer == 0]
+
+#find the next multiple
