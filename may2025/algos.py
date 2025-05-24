@@ -335,3 +335,33 @@ def count_bits(n):
         if num == '1':
             count += 1
     return count
+
+'Oay emporatay oay oresmay !ay' should equal 
+'Oay emporatay oay oresmay !'
+
+def pig_it(text):
+    ##receive a string of texts with uppper and lowercase chars
+    #return the pig lating version of the words
+    
+    #ex: 'hello world' => 'ellohay orldway'
+    
+    #split on spaces of the word
+    #take each word
+    #split out starting from first index
+    #add the first letter at the end of word + 'ay'
+    #add it back together in an list
+    #return the list back join
+    
+    output = []
+    newWord = ""
+    
+    splitStrings = text.split(" ")
+    for word in splitStrings:
+        if word.isalpha():
+            newWord = word[1:] + word[0] + 'ay'
+            output.append(newWord)
+        else:
+            output.append(word)
+    return ' '.join(output)
+
+    
