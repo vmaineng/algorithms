@@ -365,3 +365,49 @@ def pig_it(text):
     return ' '.join(output)
 
     
+    def spiralTraverse(array):
+    #receive a 2D list
+    #return the spiral shape of the 2D
+
+    #initialize an output array
+    #iterate through rows, right, bottom, left
+
+    output = []
+    rows, endRows = 0, len(array) -1
+    cols, endCols = 0, len(array[0]) -1
+
+    while endRows <= endCols and rows < cols:
+        for col in range(row, array[cols]):
+            output.append(array[row][col])
+        rows +=1
+
+        for row in range(cols, endCols):
+            output.append(array[row][col])
+        endCols -=1
+
+        for row in range(endCols, cols, -1):
+            output.append(array[row][col])
+        endRows += 1
+
+        for row in range(col, rows):
+            output.append(array[row][cols])
+        col += 1
+
+     
+def caesarCipherEncryptor(string, key):
+    # receive a string of lowercase letters, and an integer
+    #return a new string for the new letter
+    #ex: 'abc', 3 => 'def'
+
+    #create a string of lowercase abc's
+    #iterate through to find the index
+    #add the key to the char
+    #return new string
+
+    alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    output = []
+
+    for char in string:
+        newIdx = (alpha.index(char) + key) %26
+        output.append(alpha[newIdx])
+    return ''.join(output)
