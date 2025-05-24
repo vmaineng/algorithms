@@ -291,3 +291,8 @@ def move_zeros(lst):
 #             lst[left], lst[right] = lst[right], lst[left]
 #         left += 1
 #     return lst
+
+def fix_the_meerkat(arr):
+    #receive a list of of values of tail, body, and head
+    #return the correct order of head, body, and tail back in list
+    return arr[::-1]
