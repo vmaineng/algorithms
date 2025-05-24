@@ -296,3 +296,24 @@ def fix_the_meerkat(arr):
     #receive a list of of values of tail, body, and head
     #return the correct order of head, body, and tail back in list
     return arr[::-1]
+
+def series_sum(n):
+    # receive an integer
+    # return the n-th term of the seequence added
+    
+    #series: 1/7 = .14 + the previous number
+    #recursively
+    #if n: return couunt
+    #keep adding 1/7 + 1/10
+    
+    if n == 0:
+        return "0.00"
+    
+    
+    total = 0.00
+    denominator = 1
+    
+    for i in range(1, n + 1):
+        total += 1 / denominator
+        denominator += 3
+    return f"{total:.2f}"
