@@ -317,3 +317,21 @@ def series_sum(n):
         total += 1 / denominator
         denominator += 3
     return f"{total:.2f}"
+
+def count_bits(n):
+    #receive an integer
+    #return the 1's in the binary #
+    
+    #convert the n to a binary number
+    #iterate through the binary number
+    #check if it is a 1
+    #return count
+    
+    binNum = bin(n)[2:]
+    lstNum = list(binNum)
+    count= 0
+    
+    for num in lstNum:
+        if num == '1':
+            count += 1
+    return count
