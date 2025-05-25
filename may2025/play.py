@@ -36,4 +36,38 @@ def divisors(integer):
         return f"{integer} is prime"
     return output
 
+        def duplicate_encode(word):
+    #receive a string of lower and uppercase letters
+    #return a string with '(' if new char else ')' for dupes
+    #ex: 'new' => '((('
+    
+    #initialize a list
+    #create a set
+    #iterate through each char
+    #check if set has it
+    #if so, add a ')' else, add a '('
+    #then add char to set
+    #return the string back
+    
+#     output = []
+#     uniqueChar = set(word.lower())
+
+#     for char in word.lower():
+#         if char not in uniqueChar:
+#             output.append(')') #duplicate
+#         else:
+#             output.append('(') #unique
+#         print(char, output, uniqueChar)
+#     return ''.join(output)
+    output = []
+    dict = {}
+    
+    for char in word.lower():
+        dict[char] = dict.get(char, 0) + 1
         
+    for char in word.lower():
+        if dict[char] > 1:
+            output.append(')')
+        else:
+            output.append("(")
+    return ''.join(output)
