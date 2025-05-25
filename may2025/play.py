@@ -16,4 +16,24 @@ def caesarCipherEncryptor(string, key):
         output.append(alpha[newIdx])
     return output
 print(caesarCipherEncryptor('abc', 3))
+
+def divisors(integer):
+    #receive an integer
+    #return the divisors that can get to the integer
+    #ex: 9 => [3,3]
+    
+    #initialize a list output
+    #take the integer mod every num up to it
+    #starting at 2, since we can't include 1
+    #if it has no remainder, add to the list
+    #return list
+    
+    output = []
+    for num in range(2, integer):
+        if integer % num == 0:
+            output.append(num)
+    if not output:    
+        return f"{integer} is prime"
+    return output
+
         
