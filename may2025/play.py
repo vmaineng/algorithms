@@ -71,3 +71,32 @@ def divisors(integer):
         else:
             output.append("(")
     return ''.join(output)
+
+def remove_smallest(numbers):
+    #receive a list of postivie integers
+    #return a list back where the min element has been removed from earliest index
+    #ex: [3, 2, 4, 5, 2] => [3, 4, 5, 2]
+    #.  [ 2, 2,3, 4, 5] =>
+    
+    #initialize an empty list
+    #find the min in numbers list
+    #iterate through numbers to check if it is the number we are looking for
+    #then don't add it to the list
+    #otherwise, add the num into the numbers list
+    #return the list
+    
+    if not numbers:
+        return []
+    
+#     output = []
+#     minNum = min(numbers)
+#     for num in numbers:
+#         if num != minNum:
+#             output.append(num)
+            
+#     return output
+
+    minNum = min(numbers)
+    minIdx = numbers.index(minNum)
+    return numbers[:minIdx] + numbers[minIdx+1:]
+    
