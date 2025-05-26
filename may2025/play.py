@@ -100,3 +100,8 @@ def remove_smallest(numbers):
     minIdx = numbers.index(minNum)
     return numbers[:minIdx] + numbers[minIdx+1:]
     
+    def remove_smallest(numbers):
+    copyNum = numbers[:]
+    if copyNum:
+        copyNum.remove(min(numbers))
+    return copyNum
