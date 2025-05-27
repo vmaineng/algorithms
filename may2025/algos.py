@@ -411,3 +411,16 @@ def caesarCipherEncryptor(string, key):
         newIdx = (alpha.index(char) + key) %26
         output.append(alpha[newIdx])
     return ''.join(output)
+
+def move_zeros(lst):
+    #receive a list of integers
+    #return the list back where all 0's are added at the end 
+    #ex: [2, 0, 4, 3] => [2, 4, 3, 0]
+    
+    left = 0
+    
+    for right in range(len(lst)):
+        if lst[right] != 0:
+            lst[left], lst[right] = lst[right], lst[left]
+            left += 1
+    return lst
