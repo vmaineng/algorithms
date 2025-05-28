@@ -105,3 +105,26 @@ def remove_smallest(numbers):
     if copyNum:
         copyNum.remove(min(numbers))
     return copyNum
+
+def sortStack(stack):
+    # receive a list of elements
+    #return a list of elements where it's sorted
+
+    #create an empty list
+    #iterate through the stack
+    #add to list, sort it
+    #then add it back to the empty list
+
+    output = []
+    for ele in stack:
+        output.append(ele)
+
+    output.sort()
+
+    sorted_ele = []
+    for ele in output:
+        sorted_ele.append(ele)
+    return sorted_ele
+
+#time: O(n log n)
+#space: O(n)
