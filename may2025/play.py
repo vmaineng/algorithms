@@ -128,3 +128,32 @@ def sortStack(stack):
 
 #time: O(n log n)
 #space: O(n)
+
+def sunsetViews(buildings, direction):
+    # receive a list of integers of height and a string of uppercase letters
+    #return the list of buildings that can see the sunset
+
+    #if east, it can look right to see if sunset
+    #else if west, it can look left to see if sunset
+
+    #for east, start at the end, and look at next one below
+    #check if it's greater than current one
+    #if yes, append value
+    #reverse it
+
+    output = []
+    maxApt = 0
+
+    if direction == "EAST":
+        for apt in range(len(buildings) -1, -1, -1):
+            if buildings[apt] > maxApt:
+                maxApt = buildings[apt]
+                output.append(apt)
+        return output[::-1]
+    elif direction == "WEST":
+        for apt in range(len(buildings)):
+            if buildings[apt] > maxApt:
+                maxApt = buildings[apt]
+                output.append(apt)
+        return output
+    
