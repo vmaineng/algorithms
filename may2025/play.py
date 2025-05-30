@@ -157,3 +157,18 @@ def sunsetViews(buildings, direction):
                 output.append(apt)
         return output
     
+def xor(a,b):
+    #receive booleans
+    #return True if one of the two expressions are true, else return False
+    
+    #ex: 'false', 'true' => 'true'
+    #ex: 'true', 'true' => 'false'
+    
+#     if a == True and b == False:
+#         return True
+#     elif a == False and b ==True:
+#         return True
+#     else:
+#         return False
+
+    return False if a == b else True
