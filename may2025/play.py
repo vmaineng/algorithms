@@ -172,3 +172,16 @@ def xor(a,b):
 #         return False
 
     return False if a == b else True
+return a !== b
+
+def number(lines):
+    #receive a list of items
+    #return a list back wehre it's numbered
+    
+    #ex: [4,3, 2] => [1:4, 2: 3, 3: 2]
+    
+    #list comprehension
+    #iterate through each element and add a to the index and the value 
+    #return the list
+    
+    return [f"{idx + 1}: {ele}" for idx, ele in enumerate(lines)]
