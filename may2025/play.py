@@ -206,4 +206,31 @@ def alphabet_position(text):
     return ' '.join([str(alphabet.index(char) + 1) for char in text.lower() if char.isalpha()])
 
         
+    def get_real_floor(n):
+    # receive an integer (positive)
+    #return an integer that represents the floor in the european system
+    
+    #ex: 1 => 0
+    #ex: 2 => 2
+    
+    #ex:14 => 12
+    #floors that are omitted = 1st, and 13th floor
+    
+    #anything less than 13 and greater than 0: floor - 1
+    #6th -1 => 5th 
+    #n > 13, take the total of n - 2
+    
+    #n = 8 => 7
+    
+    if n == 0:
+        return 0
+    elif n >= 1 and n < 13:
+        return n -1
+    elif n > 13:
+        return n - 2
+    
+    #time: O(1)
+    #space: O(1)
+    
+    
     
