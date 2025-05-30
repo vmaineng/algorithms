@@ -185,3 +185,25 @@ def number(lines):
     #return the list
     
     return [f"{idx + 1}: {ele}" for idx, ele in enumerate(lines)]
+
+def alphabet_position(text):
+    #receive a text of chars and symbols
+    #return the position of alphabet n the char
+    #ex: 'hello' => 
+    
+    #initialize an alphabet
+    #lowercase the text
+    #if text exists, add in the index value
+    
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m', 'n', 'o','p','q','r','s','t','u','v','w','x','y','z']
+    
+#     output = []
+#     for char in text.lower():
+#         if char.isalpha():
+#             output.append(str(alphabet.index(char) + 1))
+#     return ' '.join(output)
+
+    return ' '.join([str(alphabet.index(char) + 1) for char in text.lower() if char.isalpha()])
+
+        
+    
