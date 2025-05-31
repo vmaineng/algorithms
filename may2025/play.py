@@ -262,3 +262,48 @@ def alphabet_position(text):
     #ex: sqroot of 4 = 2
     #ex: 12 => 
     #closest sqroot is 9, 3 (anything after 3 counts)
+
+    def is_valid_walk(walk):
+    #receive a list of lowercase letters representing directions
+    #return boolean to see if we can walk in the meantime and return back to original position
+    
+    #ex: ['n','s','n','s','n','s','n','s','n','s'] = 0
+    #1 letter= 1 min
+    #return back to your original position
+    
+   #ex: ['w','e','w','e','w','e','w','e','w','e','w','e'] = 0
+  #count:1.  -1  1   -1   1
+    #total.  0    1    0
+    
+    #keep count of blocks ; initialize it to 0
+    #once we move away, we add to count
+    #if we come back, we minus from count
+    #if we go N, add one
+    #if we come back down south, - one
+    #if we east, add one, if we go west -one
+    
+    if len(walk) > 10:
+        return False
+    
+#     blocks = 0
+#     currentPosition = 0
+    
+#     direction = { 
+#         'n': 1,
+#         's': -1, #n and s are opposite, 
+#         'e': 1, #e and w are opposite
+#         'w': -1
+#     }
+    
+#     for char in walk:
+#         if direction[char]:
+#             blocks += direction[char]
+#             print(blocks)
+#     return blocks == currentPosition
+
+    if walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w') and len(walk) == 10:
+        return True
+    else:
+        return False
+    
+    
