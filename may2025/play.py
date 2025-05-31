@@ -233,4 +233,32 @@ def alphabet_position(text):
     #space: O(1)
     
     
+    def divisors(n):
+    #receive an integer (represents the total)
+    #return the count of how many numbers can divide into this integer 
     
+    #ex: 3 => 2 => 1 and 3
+    
+    #initialize a count to 0
+    #iterate up to n
+    #check if each num % total is equal to 0
+    #increment the count
+    #return count
+    
+    if n == 0:
+        return 0
+    
+    count = 0
+    for num in range(1, n+1):
+        if n % num == 0:
+            count +=1
+    return count
+    
+    #time:O(n)
+    #space:O(1)
+    
+    #optimized solution: O(sqrt(n))
+    #ex: 4
+    #ex: sqroot of 4 = 2
+    #ex: 12 => 
+    #closest sqroot is 9, 3 (anything after 3 counts)
