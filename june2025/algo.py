@@ -16,3 +16,28 @@ def goose_filter(birds):
 
 #time: O(n)
 #space: O(n)    
+
+def stray(arr):
+    #receive a list of integers
+    #return an integer that is the odd one out
+    #ex: [3,3,3,3, 2] => 2
+    
+    #initialize an empty dictionary
+    #iterate through all the numbers in the list
+    #increment the count that we see for each value
+    #check which value has a count of 1 - it showed up once
+    #return the num
+    
+    dictionary = {}
+    
+    for num in arr: 
+        dictionary[num] = dictionary.get(num, 0) + 1
+    
+    for [key, value] in dictionary.items():
+        if dictionary[key] == 1:
+            return key
+        
+    #time: O(n) => n amount in list to traverse through
+    #space: O(n) => n integers to be stored in the dictionary
+    
+    
