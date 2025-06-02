@@ -134,3 +134,62 @@ def persistence(n, count = 0):
     
     
 
+def name_shuffler(str_):
+    #receive a string of of two words
+    #return the name swapped
+    #ex: 'mary joe' => 'joe mary'
+    
+    splitName = str_.split(" ")
+    return ' '.join(splitName[::-1])
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        brackets = {
+            ')': '(',
+            '}': '{',
+            ']': '['
+        }
+
+        stack = []
+        for char in s: #closing bracket
+            if char in brackets:
+                if stack and stack[-1] == brackets[char]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(char)
+        return not stack
+
+     class Solution:
+    def isValid(self, s: str) -> bool:
+        #receive a string of opening and closing parens
+        #return True if matching, else False
+        #ex: ')()' => False
+
+        #initialize an empty stack
+        #iterate through char
+        #check to see if it is a closing bracket
+        #then check if stack's not empty and the last one is an opening that matches
+        #then pop it off
+        #else return False
+        #else it is an opening, add to stack
+        #return if stack's empty
+
+        stack = []
+
+        brackets = {
+            ')': '(',
+            ']': '[',
+            '}': '{'
+        }
+
+        for char in s:
+            if char in brackets:
+                if stack and stack[-1] == brackets[char]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(char)
+        return not stack
