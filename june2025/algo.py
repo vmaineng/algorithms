@@ -217,3 +217,29 @@ class Solution:
         numDigits -=1
         stack.pop()
     return ''.join(stack)
+def spiralTraverse(array):
+    output = []
+
+    startRows, endRows= 0, len(array)-1
+    startCols, endCols = 0, len(array[0]) -1
+
+    while startRows <= endRows and startCols <= endCols:
+        for col in range(startCols, endCols + 1):
+            output.append(array[startRows][col])
+        startRows += 1
+
+        for row in range(startRows, endRows + 1):
+            output.append(array[row][endCols])
+        endCols -= 1
+
+        if startRows <= endRows:
+            for col in range(endCols, startCols -1, -1):
+                output.append(array[endRows][col])
+            endRows -= 1
+
+        if startCols <= endCols:
+            for row in range(endRows, startRows -1, -1):
+                output.append(array[row][startCols])
+            startCols += 1
+
+    return output
