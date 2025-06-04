@@ -243,3 +243,27 @@ def spiralTraverse(array):
             startCols += 1
 
     return output
+
+def sortStack(stack):
+    # receive a list of integers
+    #return the integers sorted using a stack
+
+    #look at the top number
+    #compare to the num i popped off
+    #check if it's less
+
+    #initialize a helperStack to hold values
+    #stack keeps original sorted list
+
+    helperStack = []
+
+    while len(stack) > 0:
+        temp = stack.pop()
+        # helperStack.append(temp)
+
+        while len(helperStack) > 0 and temp > helperStack[len(helperStack) -1]:
+            stack.append(helperStack.pop())
+    while len(helperStack) > 0:
+        stack.append(helperStack.pop())
+    return stack
+    
