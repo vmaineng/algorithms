@@ -193,3 +193,27 @@ class Solution:
             else:
                 stack.append(char)
         return not stack
+    def bestDigits(number, numDigits):
+    # receive a string of integers
+    #return the biggest number from the string of integers
+
+    #ex: '342', 1 => '42'
+
+    #iterate each num
+    ##initialize a stack
+    #check if the stack is not empty
+    #and that the new number is greaterthan previous
+
+
+    stack = []
+    for num in number:
+        while numDigits > 0 and len(stack) >0 and num > stack[len(stack) - 1]:
+            numDigits -=1
+            stack.pop()
+        
+        stack.append(num)
+
+     while numDigits > 0:
+        numDigits -=1
+        stack.pop()
+    return ''.join(stack)
