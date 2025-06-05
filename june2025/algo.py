@@ -272,3 +272,9 @@ def divisible_by(numbers, divisor):
     #return a list where the num is divisible by the numbers in the list
     
     return [num for num in numbers if num % divisor == 0]
+
+def solution(nums):
+    #receive a list of integers
+    #return the nums sorted in the list
+    
+    return sorted(nums) if nums else []
