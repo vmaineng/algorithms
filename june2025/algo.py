@@ -267,3 +267,8 @@ def sortStack(stack):
         stack.append(helperStack.pop())
     return stack
     
+def divisible_by(numbers, divisor):
+    #receive a list of integers, and an integer
+    #return a list where the num is divisible by the numbers in the list
+    
+    return [num for num in numbers if num % divisor == 0]
