@@ -284,3 +284,16 @@ def pipe_fix(nums):
     #return a list where every num is included 
     
     return [num for num in range(nums[0], nums[-1] + 1)]
+
+def arithmetic(a, b, operator):
+    #receive integers
+    #return the operation of a and b contingent on operator
+    
+    if operator == 'add':
+        return a + b
+    elif operator == 'subtract':
+        return a- b
+    elif operator == 'multiply':
+        return a * b
+    else:
+        return a/b
