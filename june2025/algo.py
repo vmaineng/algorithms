@@ -297,3 +297,23 @@ def arithmetic(a, b, operator):
         return a * b
     else:
         return a/b
+    
+    def unique_in_order(sequence):
+    #receive a string of integers or chars
+    #return a list back where the same values are not next to it
+    
+    #intiialize an empty list
+    #iterate through the sequence to check if the values are the same
+    #then move the pointer if they are the same
+    
+    if not sequence:
+        return []
+    
+    output = [sequence[0]]
+    i = 0
+    
+    for item in range(1, len(sequence)):
+        if sequence[item] != sequence[i]:
+            output.append(sequence[item])
+        i = item
+    return output
