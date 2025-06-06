@@ -317,3 +317,37 @@ def arithmetic(a, b, operator):
             output.append(sequence[item])
         i = item
     return output
+
+def firstNonRepeatingCharacter(string):
+    # receive a string of lowercase letters
+    #return the index of first non-repeating char
+
+    #ex: 'hello' => 0 'h'
+
+    #iterate through the chars
+    #kept track of how many chars seen
+    #check to see if char has an occurence of 0
+
+    dict = {}
+    for char in string:
+        dict[char] = dict.get(char, 0) + 1
+
+    for i, char in enumerate(string):
+        if dict[char] == 1:
+            return i
+    return -1
+
+    # #set
+    # #iterate through the string
+    # #check if set already has char, 
+    # #if so, delete, else add
+    # #return the index position of what set has left
+
+    # uniqueChar = set()
+    # for char in string:
+    #     if char not in uniqueChar:
+    #         uniqueChar.add(char)
+    #     else:
+    #         uniqueChar.remove(char)
+    # uniqueItem = string.index(uniqueChar[char])
+    
