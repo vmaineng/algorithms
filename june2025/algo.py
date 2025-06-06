@@ -278,3 +278,9 @@ def solution(nums):
     #return the nums sorted in the list
     
     return sorted(nums) if nums else []
+
+def pipe_fix(nums):
+    #receive a list of integers
+    #return a list where every num is included 
+    
+    return [num for num in range(nums[0], nums[-1] + 1)]
