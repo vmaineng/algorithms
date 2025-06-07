@@ -351,3 +351,13 @@ def firstNonRepeatingCharacter(string):
     #         uniqueChar.remove(char)
     # uniqueItem = string.index(uniqueChar[char])
     
+def sum_numbers_recursive(numbers):
+  #receive a list of integers
+  #return the total recursively
+
+  #ex: [3, 2, 1] => 3 + 2 = 5 + 1 =6
+  if len(numbers) == 0:
+    return 0
+  for num in numbers:
+    return numbers[0] + sum_numbers_recursive(numbers[1:])
+  
