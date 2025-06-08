@@ -389,4 +389,36 @@ def break_chocolate(n, m):
     #2*2 => 4 - 1 = 3
     
     return (n * m) - 1 if n > 0 and m > 0 else 0
+
+def narcissistic( value ):
+    #receive an integer (postive and >0)
+    #return True if narcisstic number else return False
+    
+    #ex: 7 ; 7 ^1 => 7 => True
+    #ex: 122 ; length of 3
+    #.  1 ^3 + 2 ^3 + 2^3 => 1 + 8 + 8 => 17 => False
+    
+    #edge cases: if value is 0
+    
+    #find the length of the integer
+    #convert value into a string to find length of integer
+    #calculate each num to the length of the integer
+    #check the total to see if it's equal to the value
+    #return True
+    #else return False
+    
+    lengthNum = len(str(value))
+    total = 0
+    
+    for num in str(value):
+        total += int(num) ** lengthNum
+#     if total == value:
+#         return True
+#     else:
+#         return False
+    return total == value
+
+#time and space complexity:
+#time: O(1) 
+#space:O(1)
     
