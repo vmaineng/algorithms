@@ -378,3 +378,15 @@ def sum_numbers_recursive(numbers):
 #         return True
     return False if n == 1 else True
   
+def break_chocolate(n, m):
+    #receive integers for n and m
+    #return the min number of breaks needed
+    #ex: 2, 1 => 1 [] []
+    #ex: 2, 2 => [] []
+     #           [] [] => 3
+        
+    #chocolate is 0,0, 1,1 => 0
+    #2*2 => 4 - 1 = 3
+    
+    return (n * m) - 1 if n > 0 and m > 0 else 0
+    
