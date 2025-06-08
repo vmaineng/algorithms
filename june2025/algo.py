@@ -422,3 +422,38 @@ def narcissistic( value ):
 #time: O(1) 
 #space:O(1)
     
+    class Solution:
+    def reverseVowels(self, s: str) -> str:
+        #receive a word of lowercase and uppercase
+        #return a new string where the vowels are reversed
+        #ex: 'hello' => 'holle'
+
+        #initialize a new list
+        #iterate through the list
+        #check to see if it is a vowel
+        #if it's not, we can append the char to list
+        #
+
+        #initialize a list of vowels that consist of uppercase and lowercase
+        #iterate through each char
+        #check if it is a vowel
+        #then swap it
+        #return the new string
+
+        vowels = ['a','e','i','o','u', 'A', 'E', 'I', 'O','U']
+        s= list(s)
+        # print(s)
+        left = 0
+        right = len(s) -1
+
+        while left <= right:
+            if s[left] in vowels and s[right] in vowels:
+                s[left], s[right] = s[right], s[left]
+                left += 1
+                right -=1
+            elif s[left] not in vowels:
+                left += 1
+            else:
+                right -=1
+        return ''.join(s)
+
