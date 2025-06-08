@@ -361,3 +361,20 @@ def sum_numbers_recursive(numbers):
   for num in numbers:
     return numbers[0] + sum_numbers_recursive(numbers[1:])
   
+  def plural(n):
+    #receive an integer (pos, 0)
+    #return a boolean - true if plural, else False if it's singular
+    #ex: 4 => pluarl True
+    
+    #1 => False
+    #2 => True
+    
+    #if n == 1: return False
+    #else return True
+    
+#     if n == 1:
+#         return False
+#     else:
+#         return True
+    return False if n == 1 else True
+  
