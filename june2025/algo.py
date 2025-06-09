@@ -457,3 +457,10 @@ def narcissistic( value ):
                 right -=1
         return ''.join(s)
 
+def sale_hotdogs(n):
+    #receive an integer
+    #return terinary expression
+    #ex: 4 => 100
+    #ex: 8 => 95
+    
+    return n * 100 if n < 5 else ( n * 95 if n >=5 and n < 10 else n * 90)
