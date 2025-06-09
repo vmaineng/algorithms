@@ -464,3 +464,49 @@ def sale_hotdogs(n):
     #ex: 8 => 95
     
     return n * 100 if n < 5 else ( n * 95 if n >=5 and n < 10 else n * 90)
+
+def spiralTraverse(array):
+    # receive a 2d array
+
+    #iterate through top col and capture each item from row
+    #then right
+    #then bottom
+    #thenleft
+
+    output = []
+    startRows, endRows = 0, len(array) -1
+    startCols, endCols = 0, len(array[0]) - 1
+
+    while startRows <= endRows and startCols <= endCols:
+        for col in range(startCols, endCols + 1):
+            output.append(array[startRows][col])
+        startRows += 1
+
+        for row in range(startRows, endRows +1):
+            output.append(array[row][endCols])
+        endCols -=1
+
+        if startRows <= endRows:
+            for col in range(endCols, startCols-1, -1):
+                output.append(array[endRows][col])
+            endRows -= 1
+
+        if startCols <= endCols:
+            for row in range(endRows, startRows -1, -1):
+                output.append(array[row][startCols])
+            startCols += 1
+    return output
+
+def firstNonRepeatingCharacter(string):
+    # receive a string of lowercase chars
+    #return the index of which value is 1
+
+    dict = {}
+    for char in string:
+        dict[char] = dict.get(char,0) +1
+
+    for idx, char in enumerate(string):
+        if dict[char] == 1:
+            return idx
+    return -1
+
