@@ -510,3 +510,10 @@ def firstNonRepeatingCharacter(string):
             return idx
     return -1
 
+def problem(a):
+    #receive a number
+    #return the total
+    #ex: 'yo' => 'Error'
+    #return n * 50 + 6
+    
+    return 'Error' if a == str(a) else a * 50 +6
