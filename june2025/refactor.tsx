@@ -128,3 +128,14 @@ import { name } from "./NameChange";
 function greetUser() {
   return <div>if (name) return 'Hello {name}' else "Hello!"</div>;
 }
+
+interface GreetUserProps {
+  name?: string;
+}
+
+export function GreetUser({ name }: GreetUserProps) {
+  const knownNames = new Set(["Alice", "Bob", "Charlie"]);
+  const greeting = name && knownNames.has(name) ? "Hello ${name}!" : "Hello!";
+
+  return <div> {greeting}</div>;
+}
