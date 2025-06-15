@@ -113,3 +113,18 @@ const TaskManager = () => {
 };
 
 export default TaskManager;
+
+//Name Component
+interface NameProps {
+  name: string;
+}
+
+function NameChange({ name }: NameProps) {
+  return <div>"Hello {name}"</div>;
+}
+
+import { name } from "./NameChange";
+
+function greetUser() {
+  return <div>if (name) return 'Hello {name}' else "Hello!"</div>;
+}
