@@ -517,3 +517,8 @@ def problem(a):
     #return n * 50 + 6
     
     return 'Error' if a == str(a) else a * 50 +6
+
+ try:
+        return a * 50 + 6
+    except TypeError:
+        return "Error"
