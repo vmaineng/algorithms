@@ -128,3 +128,35 @@ const Counter = () => {
 };
 
 export default Counter;
+
+
+//Button component
+
+interface ButtonProps {
+    text: string,
+    onClick: () => void;
+}
+
+function Button ({text, onClick}: ButtonProps) {
+    return (
+        <button onClick={onClick}>
+            {text}
+        </button>
+    )
+}
+
+export Button
+
+import {useState} from 'react';
+import Button from './Button';
+
+function Greeting() {
+    const [isHello, setIsHello] = useState<string>('Hello, User');
+
+  return (
+    <div>
+      <h1>Hello, User!</h1>
+      <Button>Say Goodbye</Button>
+    </div>
+  );
+}
