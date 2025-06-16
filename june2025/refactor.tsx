@@ -139,3 +139,7 @@ export function GreetUser({ name }: GreetUserProps) {
 
   return <div> {greeting}</div>;
 }
+
+function doubleNumbers(numbers: number[]): number[] {
+  return numbers.map((num) => num * 2);
+}
