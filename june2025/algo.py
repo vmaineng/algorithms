@@ -529,3 +529,17 @@ def check_alive(health):
 #     else:
 #         return True
     return False if health <= 0 else True
+
+def sort_by_length(arr):
+    #receive a list of string in lowercase and uppercase letters
+    #return the a list back where strings are ordered from shortest to longest
+    
+    #ex: ['hello', 'four', 'hi'] => ['hi', 'four', 'hello']
+    
+    #initialize an empty list
+    #iterate through each word
+    #check the length of each word
+    #add it into the string
+    
+    #sort by string length
+    return sorted(arr, key= lambda word: len(word))
