@@ -543,3 +543,25 @@ def sort_by_length(arr):
     
     #sort by string length
     return sorted(arr, key= lambda word: len(word))
+
+def order(sentence):
+  # receive a string of words with a number in it
+#return the string back in order based on the number in it
+    #ex: "Happy2 Monday1"
+    
+    #intiialize an empty list
+    #iterate through each word
+    #check for 1, then for 2, and add to the list
+    #return it as a string
+
+    
+    stringWords = []
+    
+    words = list(sentence.split()) #['is2', 'Thi1s', 'T4est', '3a']
+    
+    for word in words: 
+        if word.isdigit():
+            if char == str(count):
+                stringWords.append(sentence[word])
+                count += 1
+    return ' '.join(stringWords)
