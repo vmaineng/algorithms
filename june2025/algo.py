@@ -595,3 +595,11 @@ def productSum(array, multiplier = 1):
             total += element
     return total * multiplier
     
+    def combat(health, damage):
+    #receive integers for health and damage
+    #return the player's new health
+    
+    #ex: 25, 10 => 25 - 10 = 15
+    #ex: 25, 50 => 25- 50 = -25 , but we will return 0
+    
+    return 0 if health - damage < 0 else health - damage
