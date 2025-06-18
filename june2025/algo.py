@@ -603,3 +603,31 @@ def productSum(array, multiplier = 1):
     #ex: 25, 50 => 25- 50 = -25 , but we will return 0
     
     return 0 if health - damage < 0 else health - damage
+
+def capitalize_word (word : str) -> str:
+    #'hello'
+    # 0,1,2,3,4,5
+    word = word[0].upper() + word[1:] # 'a' , 'b' => 'ab'
+    return word
+
+    #receive a string of letters
+    #return the first letter uppercase
+    
+    #ex: 'h' => 'H'
+    #ex: 'hello' => 'Hello'
+    
+    #edge case: if length of the string is 1, captialize the letter
+    #return the letter
+    
+    #intialize an empty list
+    #iterate through each letter of the string
+    #captialize the first letter of the word, add it in the list
+    #add in the rest of the words into the list
+    #join the list back together as a string
+    
+#     if len(word) == 1:
+#         return word[0].upper()
+
+#time: O(N)
+#space: O(n)
+    
