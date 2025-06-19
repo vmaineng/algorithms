@@ -631,3 +631,10 @@ def capitalize_word (word : str) -> str:
 #time: O(N)
 #space: O(n)
     
+def how_many_light_sabers_do_you_own(name=""):
+    #receive a name
+    #return total amount
+    
+  
+    
+    return 18 if name == 'Zach' else 0
