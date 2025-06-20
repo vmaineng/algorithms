@@ -661,3 +661,34 @@ def stringy(size):
         else:
             numList.append('1')
     return ''.join(numList)
+
+def distinct(seq):
+#     return list(set(seq))
+
+    #receive a list of integers
+    #return a list where it removes duplicates
+    #ex: [1,1, 2] => [1,2]
+    
+    #initialize a new list
+    #sort the seq list
+    #iterate through it
+    #check if the next value is same value as last's
+    #if it is, keep going forward
+    #return new list
+    
+    
+    
+    
+    seq = sorted(seq)
+#     print(seq)
+    
+    uniqueList = [seq[0]]
+    
+    i = 0
+    
+    for idx,num in enumerate(seq):
+        if seq[i] != num:
+            uniqueList.append(num)
+        i = idx
+        print(seq[i], num)
+    return uniqueLists
