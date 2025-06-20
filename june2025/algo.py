@@ -637,4 +637,27 @@ def how_many_light_sabers_do_you_own(name=""):
     
   
     
+    
     return 18 if name == 'Zach' else 0
+
+def stringy(size):
+    # receive an integer
+    #return a string of 10
+    
+    #ex: 4, => '1010'
+    
+    #initialize an empty list
+    #iterate up to size
+    #add one 1 for odd position
+    #add 0 for even position
+    #return string back joined together
+    
+    numList = []
+    
+    for num in range(size):
+        print(num)
+        if num % 2 != 0:
+            numList.append('0')
+        else:
+            numList.append('1')
+    return ''.join(numList)
