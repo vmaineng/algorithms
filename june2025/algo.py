@@ -723,3 +723,38 @@ def distinct(seq):
             i = num
 #         print(seq[i], num)
     return uniqueList
+
+def distinct(seq):
+    #a list of integers positive
+    #return the result of unique number
+    #ex: [2, 3, 4,4, 5] => [2,3,4, 5]
+    
+    #.   i 
+        #    j
+    
+    #initialize an empty list
+    #have a pointer starting at the first number in the list
+    #second pointer starting at the number next to the first pointer
+    #check to see if they are the same numbers
+    #if not, add in the number from the first pointer into the list
+    #return the list
+    
+#     if not seq:
+#         return []
+    
+#     uniqueList = []
+#     i = 0
+    
+#     for j in range(len(seq)):
+#         print(i, j)
+# #         print(seq[i], seq[j])
+#         if seq[i] != seq[j]: #if 2 != 3
+#             uniqueList.append(seq[i])
+#         i = j
+#     return uniqueList
+
+    uniqueList = []
+    for num in seq:
+        if num not in uniqueList:
+            uniqueList.append(num)
+    return uniqueList
