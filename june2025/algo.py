@@ -758,3 +758,42 @@ def distinct(seq):
         if num not in uniqueList:
             uniqueList.append(num)
     return uniqueList
+
+def merge_arrays(arr1, arr2):
+    #receive two lists of integers
+    #return one list combined from the two lists - remove duplicates, and sorted in asecending order
+    
+    #ex: [1,2], [1] => [1, 2]
+    #ex: [1], [] => [1]
+    
+    #ex: [], [2,3] => [2,3]
+    
+    #edge case: if both lists are empty, return []
+    if not arr1 and not arr2:
+        return []
+    
+    #if one list is empty, return the other list
+    if not arr1:
+        return arr2
+    
+    if not arr2:
+        return arr1
+    
+    #initialize an empty list 
+    #sort both lists
+    
+    #have a pointer in the first value in first array
+    #have another pointer in the first value in second array
+    #check to see which number is smaller
+    #add in the number from the list
+    #move pointers
+    #else, move pointers if they are duplicates
+    
+    uniqueSet = set(arr1) | set(arr2)
+    
+    return sorted(list(uniqueSet))
+#time: O(n)
+#space: O(n)
+
+def mouth_size(animal): 
+    return 'small' if animal.lower() == 'alligator' else 'wide'
