@@ -797,3 +797,24 @@ def merge_arrays(arr1, arr2):
 
 def mouth_size(animal): 
     return 'small' if animal.lower() == 'alligator' else 'wide'
+
+def replace_exclamation(st):
+    #receive a string of characters
+    #return a new string wehre vowels are replaced with '!'
+    
+    #ex: 'Yo' => 'Y!'
+    
+    #initialize a string with vowels
+    #if char == vowels
+    #replace with !
+    #join back together as string
+    
+    word = []
+    vowels = 'aeiouAEIOU'
+    
+    for char in st:
+        if char in vowels:
+            word.append('!')
+        else:
+            word.append(char)
+    return ''.join(word)
