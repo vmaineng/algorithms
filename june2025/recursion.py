@@ -23,3 +23,17 @@ def productSum(array, multiplier = 1):
             total += element
     return total * multiplier
     
+def staircaseTraversal(height, maxSteps):
+    # receive integers for height and maxsteps
+    #return max steps
+
+    if height == 0:
+        return 1
+
+    numberOfWays = 0
+    for step in range(1, min(maxSteps, height) + 1):
+        if step <= height:
+            numberOfWays += staircaseTraversal(height-step, maxSteps)
+    return numberOfWays
+
+        
