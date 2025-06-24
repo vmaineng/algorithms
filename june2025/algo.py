@@ -818,3 +818,17 @@ def replace_exclamation(st):
         else:
             word.append(char)
     return ''.join(word)
+
+def nb_dig(n, d):
+    #receive integers for integer
+    #return count of all squared nums that contains d
+    
+    count = 0
+    
+    for num in range (0, n + 1):
+        squaredNum = num * num
+        print(squaredNum)
+        count += str(squaredNum).count(str(d))
+    return count
+
+  
