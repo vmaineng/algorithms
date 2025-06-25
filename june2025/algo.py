@@ -852,3 +852,20 @@ def nb_dig(n, d):
     for num in range(0, n-1):
         total += 2
     return total
+
+def add_length(str_):
+    #receive a string of lowercase words
+    #return a list back with the word and length after it in one string
+    #ex: 'hello world' => ['hello 5', 'world 5']
+    
+    #initialize an empty list
+    #iterate through the string
+    #calculate the length
+    #add it to the list
+    #return list back
+    
+    lengthList = []
+    for word in str_.split():
+        lengthOfWord = word +' ' + str(len(word))
+        lengthList.append(lengthOfWord)
+    return lengthList
