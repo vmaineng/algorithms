@@ -831,4 +831,24 @@ def nb_dig(n, d):
         count += str(squaredNum).count(str(d))
     return count
 
-  
+  def nth_even(n):
+    #receive an integer
+    #return the even number of the 3rd
+    
+    #ex: 0 => 0
+    #ex: 1 => 0
+    #ex: 2=> 2
+    #ex: 3 => 0, 2, 4
+    
+    #[0, 2, 4, 6,8]
+    # 0 1   2. 3. 4
+    
+    #initialize a total to 0
+    #iterate up to n
+    #and add even number
+    #return total
+    
+    total = 0
+    for num in range(0, n-1):
+        total += 2
+    return total

@@ -27,6 +27,7 @@ def staircaseTraversal(height, maxSteps):
     # receive integers for height and maxsteps
     #return max steps
 
+    
     if height == 0:
         return 1
 
