@@ -869,3 +869,9 @@ def add_length(str_):
         lengthOfWord = word +' ' + str(len(word))
         lengthList.append(lengthOfWord)
     return lengthList
+
+    return ["{} {}".format(i, len(i)) for i in str_.split(' ')]
+
+def unusual_five():
+    strLen = 'abcde'
+    return len(strLen)

@@ -37,4 +37,24 @@ def staircaseTraversal(height, maxSteps):
             numberOfWays += staircaseTraversal(height-step, maxSteps)
     return numberOfWays
 
+# Tip: You can use the type(element) function to check whether an item
+# is a list or an integer.
+def productSum(array, depth = 1):
+    # receive a list of integers
+    #return the productSum from the special array
+
+    #intiailize a total to 0
+    #iterate through each num
+    #check if it is an array
+    #then iterate through it
+
+    total = 0
+    for num in array:
+        if type(num) == list:
+            total += productSum(num, depth + 1)
+        else:
+            total += num
+    return total * depth
+            
+
         
