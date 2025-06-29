@@ -902,4 +902,14 @@ def warn_the_sheep(queue):
         return 'Publish!'
     else:
         return 'I smell a series!'
+    def remove_url_anchor(url):
+    # receive a string of a url
+    #return anything before #
     
+    #slice it out
+    
+    if '#' not in url:
+        return url
+    
+    after = url.index('#')
+    return url[:after] if url.index('#') else url
