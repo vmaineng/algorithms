@@ -56,5 +56,9 @@ def productSum(array, depth = 1):
             total += num
     return total * depth
             
+def practiceRecursive(brain)
+        if (brain == 'fried) {
+  return 'Eat and rest'
+}
 
-        
+return brain try again

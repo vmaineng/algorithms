@@ -875,3 +875,31 @@ def add_length(str_):
 def unusual_five():
     strLen = 'abcde'
     return len(strLen)
+
+def warn_the_sheep(queue):
+    #receive a list of strings of wolf and sheep
+    #return 'pls go ' if wolf is closest animal
+    #else return 'oi'sheep number n
+    
+    #ex: 
+    
+    count = 0
+    for sheep in range(len(queue) -1, -1, -1):
+        if queue[sheep] == 'wolf':
+            return 'Pls go away and stop eating my sheep'
+        elif queue[sheep] == 'sheep':
+            count +=1
+    return f"Oi! Sheep number {count}! You are about to be eaten by a wolf!"
+            
+    def well(x):
+    #receive a list of strings of 'good' and 'bad'
+    #return 'publish' on one or two good ideas, 'i smell a series', else 'fail'
+    
+#     for char in x:
+    if x.count('good') == 0:
+        return 'Fail!'
+    elif x.count('good') <2 :
+        return 'Publish!'
+    else:
+        return 'I smell a series!'
+    
