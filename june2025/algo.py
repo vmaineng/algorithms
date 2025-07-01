@@ -955,3 +955,25 @@ def hello(name=""):
     
     #time: O(1)
     #space: O(1) for only one name display
+
+    def calculate_years(principal, interest, tax, desired):
+    #receive all integers - floating nubmers
+    #return the years it will take to turn principal amount into desired amount
+    
+    #ex: 100, 10%, 10%, 500 => 
+    #initialize a years variable
+    #while loop while principal < desired amount
+    #add 1 to our years
+    #calculate the interest accrued, and tax owed on the money
+    #return years
+    
+    years = 0
+    
+    while principal < desired:
+        years += 1
+        #             1000 + 50 - 9
+        principal = principal+ ((principal*interest) - (principal *interest*tax))
+    return years
+
+#time: O(n)
+#space: O(1)
