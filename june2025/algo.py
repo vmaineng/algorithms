@@ -934,3 +934,24 @@ def calculate_years(principal, interest, tax, desired):
         years += 1
         principal = principal + ((principal* interest) - principal*interest*tax)
     return years    
+
+def hello(name=""):
+    #receive a string of letters
+    #return "Hello (name)" else return 'Hello, world'
+    
+    #ex: 'mark' => "Hello, Mark"
+    #ex: 1234 => 'Hello, world'
+    
+    #check to see if name is a string
+    #return 'Hello name'
+    #else return 'Hello, World'
+    
+    if not name:
+        return f"Hello, World!"
+    
+    if type(name) == str:
+        name = name.capitalize()
+        return f'Hello, {name}!'
+    
+    #time: O(1)
+    #space: O(1) for only one name display
