@@ -977,3 +977,37 @@ def hello(name=""):
 
 #time: O(n)
 #space: O(1)
+
+def no_boring_zeros(n):
+    #receive an integer - pos or neg
+    #return a new integer if a 0 is at the end
+    
+    #ex: 100 => 1
+    
+    #convert num to string
+    #if the last num is 0 and length is > 1
+    #slice it off? 
+    #return num back as an integer
+    
+    
+    stringNum = str(n)
+    newString = ''
+    
+    if len(stringNum) == 1 and stringNum[0] == '0':
+        return 0
+    
+#     for num in range(len(stringNum) -1, -1, -1):
+# #         print('stringNum:', stringNum[num])
+#         if stringNum[num] == '0':
+# #             print('stringNum:', stringNum)
+#             newString = stringNum[:num]
+# #             print(newString)
+#         else:
+#             newString = stringNum[:num]
+#     return int(newString)
+    else:
+        while stringNum[-1] == '0':
+            stringNum = stringNum[:-1]
+    return int(stringNum)
+        
+    
