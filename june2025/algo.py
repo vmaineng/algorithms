@@ -916,3 +916,21 @@ def warn_the_sheep(queue):
 
 def chromosome_check(chromosome):
     return 'Congratulations! You\'re going to have a son.' if chromosome == 'XY' else 'Congratulations! You\'re going to have a daughter.'
+
+def calculate_years(principal, interest, tax, desired):
+#     raise NotImplementedError("TODO: calculate_years")
+    #receive integers for all
+    #return amount of years to wait for to achieve goals
+    
+    #initialize a count of years
+    #iterate up to 100 years
+    #if principal == desired
+    #return years
+    #else, add another year
+    
+    years = 0;
+    
+    while principal < desired:
+        years += 1
+        principal = principal + ((principal* interest) - principal*interest*tax)
+    return years    
