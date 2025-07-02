@@ -1049,3 +1049,6 @@ def no_boring_zeros(n):
     #ex: ['Mary', 'the', 'Joseph'], 'SF', 'CA'
     
     return 'Hello, {}! Welcome to {}, {}!'.format(' '.join(name), city, state)
+import re
+def replace_dots(s):
+    return re.sub(r"\.", "-", s)
