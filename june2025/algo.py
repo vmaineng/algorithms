@@ -1043,4 +1043,9 @@ def no_boring_zeros(n):
 #             stringNum = stringNum[:-1]
 #     return int(stringNum)
         
+    def say_hello(name, city, state):
+    #receive a string of [first name, last name] in a list, city, state
+    #return string back
+    #ex: ['Mary', 'the', 'Joseph'], 'SF', 'CA'
     
+    return 'Hello, {}! Welcome to {}, {}!'.format(' '.join(name), city, state)
