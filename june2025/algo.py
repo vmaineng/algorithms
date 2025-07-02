@@ -1052,3 +1052,15 @@ def no_boring_zeros(n):
 import re
 def replace_dots(s):
     return re.sub(r"\.", "-", s)
+
+def mango(quantity, price):
+    #receive integers for quantity and price
+    #return price
+    #every 3rd mango is free
+    
+    #for every multiple of 3rds, subtract - 1
+    #caclulcate price
+    
+    free = quantity // 3
+    quantity = quantity - free
+    return quantity * price
