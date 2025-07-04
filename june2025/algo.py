@@ -1064,3 +1064,18 @@ def mango(quantity, price):
     free = quantity // 3
     quantity = quantity - free
     return quantity * price
+
+def remove(s):
+    #receive a string of words
+    #return words where '!' is removed at the end of the word
+    #ex: 'Yo!' => "Yo"
+    
+    #check if last char is '!'
+    #if so, slice off the ending
+    
+    if not s:
+        return s
+    if s[-1] == '!':
+        return s[:-1]
+    else:
+        return s
