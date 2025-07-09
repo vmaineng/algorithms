@@ -1079,3 +1079,11 @@ def remove(s):
         return s[:-1]
     else:
         return s
+    
+    def get_size(w,h,d):
+    #receive integers for w, h and d
+    #return [area, volume]
+    
+    volume = w * h * d
+    area = 2*((d* w) + (d*h) + (w*h))
+    return [area, volume]
