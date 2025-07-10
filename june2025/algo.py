@@ -1087,3 +1087,18 @@ def remove(s):
     volume = w * h * d
     area = 2*((d* w) + (d*h) + (w*h))
     return [area, volume]
+
+def capitals(word):
+    #receive a string of words
+    #return a list of index of where char is uppercase
+    #ex: "hElLO" => [1, 3, 4]
+    
+    #check if char is uppercase
+    #add index to list
+    #return list
+    return [idx for idx in range(len(word)) if word[idx] == word[idx].upper()]
+#     output = []
+#     for idx in range(len(word)):
+#         if word[idx] == word[idx].upper():
+#             output.append(idx)
+#     return output
