@@ -1102,3 +1102,16 @@ def capitals(word):
 #         if word[idx] == word[idx].upper():
 #             output.append(idx)
 #     return output
+
+def small_enough(array, limit):
+    #receive a list of integers and an integer for limit
+    #return True if numbers in list is <= limit, else return False
+    
+    #iterate through each one of them
+    #check if value is <= limit, return True, else return false
+    
+    for num in array:
+        if num > limit:
+            return False
+    return True
+#     return False if num > limit else True for num in array
