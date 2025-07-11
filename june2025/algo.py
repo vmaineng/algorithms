@@ -1134,4 +1134,47 @@ def position(letter):
     
     return f"Position of alphabet: {alphabet.index(letter) + 1}"
     
+    def factorial(n, total = 1):
+    #receive an integer
+    #return a string that states the facorial and the total
     
+    #ex: 1! 1 *0! 1 => 1 * 1 => 1
+    
+    #ex: 3! => 3*2*1 => 6
+    
+    #initialize a total to 0
+    
+    #edge case: if n == 0, return 1
+    
+    #iterate up to n
+    #multiply each number
+    #return the total
+    
+#     if n == 0:
+#         return 1
+    
+#     total = 1;
+#     for num in range(1, n + 1):
+#         total *= num
+#     return total
+
+#time: O(n)
+#space: O(1)
+
+#base case: if the num reaches 0, it's 1; if the num reaches 1, it is 1
+#recursive case: decrement n down by 1, add to the total
+#     if n == 0:
+#         return 1
+#     if n == 1:
+#         return 1
+#     return n * factorial(n -1)
+
+    if n == 0:
+        return 1
+    if n == 1:
+        return total
+    total *= n # 1 *= 3 => total = 3
+    return factorial(n -1, total ) #factorial (2, 3)
+
+#time: O(n) for number we have to visit up to n
+#space: O(n) for the function call stack
