@@ -1115,3 +1115,23 @@ def small_enough(array, limit):
             return False
     return True
 #     return False if num > limit else True for num in array
+
+    return all(num > limit for num in array)
+
+def position(letter):
+    #receive lowercase letter
+    #return position of the alphabet
+    
+    #ex: 'a' => 1
+    #ex: 'b' => 2
+    
+    #write out the entire alphabet in a string
+    #find the index position in the string
+    #return the index position plus 1
+    
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#     alphabet1= ['a','b','c']
+    
+    return f"Position of alphabet: {alphabet.index(letter) + 1}"
+    
+    
