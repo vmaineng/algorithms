@@ -1178,3 +1178,109 @@ def position(letter):
 
 #time: O(n) for number we have to visit up to n
 #space: O(n) for the function call stack
+
+def factorial(n, total = 1):
+    #receive an integer
+    #return a string that states the facorial and the total
+    
+    #ex: 1! 1 *0! 1 => 1 * 1 => 1
+    
+    #ex: 3! => 3*2*1 => 6
+    
+    #initialize a total to 0
+    
+    #edge case: if n == 0, return 1
+    
+    #iterate up to n
+    #multiply each number
+    #return the total
+    
+#     if n == 0:
+#         return 1
+    
+#     total = 1;
+#     for num in range(1, n + 1):
+#         total *= num
+#     return total
+
+#time: O(n)
+#space: O(1)
+
+#base case: if the num reaches 0, it's 1; if the num reaches 1, it is 1
+#recursive case: decrement n down by 1, add to the total
+#     if n == 0:
+#         return 1
+#     if n == 1:
+#         return 1
+#     return n * factorial(n -1)
+
+    if n < 0 or n > 12:
+        raise ValueError("This is an invalid error")
+
+    if n == 0:
+        return 1
+    if n == 1:
+        return total
+    total *= n # 1 *= 3 => total = 3
+    return factorial(n -1, total ) #factorial (2, 3)
+
+    total *= n
+    return 1 if n <= 1 else factorial(n-1, total)
+
+#time: O(n) for number we have to visit up to n
+#space: O(n) for the function call stack
+
+def factorial(n, total = 1):
+    if n < 0 or n > 12:
+        raise ValueError("This is invalid number.")
+        
+    if n == 0:
+        return 1
+    
+    total *= n
+    return total if n <=1 else factorial(n -1, total)
+
+import re
+
+def solution(s):
+    #receive a string of lowercase characters
+    #return a list of two characters in a string
+    
+    #ex: 'hello' => ['he', 'll', 'o_']
+
+    ##initialize an empty list
+    #iterate through string
+    #with two pointers
+    #one pointer moves - capturing window of two characters
+    #add it the list
+    #if character at the end is odd, add '_' afterwards
+    #return the list
+    
+    return re.findall(r'.{2}', s + '_')
+    
+#     output = []
+    
+#     left = 0
+#     right = 0
+#     pairString = ''
+    
+#     while right < len(s):
+#         rightChar = s[right]
+#         pairString += rightChar
+#         right += 1
+        
+#         while (right - left + 1) > 2:
+# #             print(left, right)
+#             output.append(pairString)
+#             print(output)
+#             leftChar = s[left]
+#             left = right
+#             pairString = ''
+            
+# #         else:
+# #             if len(pairString) == 1:
+# #                 pairString += '_'
+# #                 output.append(pairString)
+
+#     return output
+
