@@ -1322,3 +1322,8 @@ def dont_give_me_five(start,end):
         if '5' not in str(num):
             count += 1
     return count
+
+    return sum('5' not in str(num) for)
+
+def dont_give_me_five(start,end):
+    return sum('5' not in str(num) for num in range(start, end + 1))
