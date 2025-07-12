@@ -1303,3 +1303,22 @@ def take(arr,n):
     #return the list back
     
     return arr[:n]
+
+def dont_give_me_five(start,end):
+    # receive two integers (pos or negative)
+    #return the count of elements between start and end where it does not have a 5 in it
+    
+    #ex: 4, 10 => 4, 6, 7, 8, 9, 10 => 6
+    
+    #initialize a count
+    #increment starting from start all the way to end,
+    #if the number does not include a 5
+    #count will increment by 1
+    #return the count
+    
+    count = 0
+    skipNumber = 5
+    for num in range(start, end + 1):
+        if '5' not in str(num):
+            count += 1
+    return count
