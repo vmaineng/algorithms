@@ -1284,3 +1284,22 @@ def solution(s):
 
 #     return output
 
+output = []
+if len(s) % 2:
+    s + "_"
+
+for i in range(0, len(s), 2):
+    output.append(s[i: i+2])
+return output
+
+def take(arr,n):
+    #receive a list of integers (pos and negative), n 
+    #return a list back of the first n elements
+    
+    #ex: [-3, 5, 2, 8, 9] , 2 => [-3, 5]
+    
+    #initialize an empty list
+    #iterate through the list up to n
+    #return the list back
+    
+    return arr[:n]
