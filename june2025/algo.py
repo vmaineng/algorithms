@@ -1327,3 +1327,26 @@ def dont_give_me_five(start,end):
 
 def dont_give_me_five(start,end):
     return sum('5' not in str(num) for num in range(start, end + 1))
+
+def find_uniq(arr):
+    #receive a list of integers
+    #return the number that is unique
+    #ex: [4,4,4,4,1, 4] => 1
+    
+    #brute force:
+    #iterate through the list
+    #check if the num next to it is the same num
+    #else, return the num
+    
+    #optimized:
+    #use a set to see if the num is different
+    #return the num in the set
+    
+    uniqueNumbers = {}
+    
+    for num in arr:
+        uniqueNumbers[num] = uniqueNumbers.get(num, 0) + 1
+    
+    for key,value in uniqueNumbers.items():
+        if value == 1:
+            return key
