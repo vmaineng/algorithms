@@ -1450,5 +1450,23 @@ def reverse_letter(st):
 #time: O(n)
 #space: O(n)
             
+    def dig_pow(n, p):
+    # receive two integers
+    #return an integer ; return k if n * k == taking each integer from n^1 + n^, else -1
     
+    #ex: 8, 3 => 64
+    #8^3 => 8 * 8 * 8 = 512
+    #512/8 =64
+    
+    #calculate our total for n^p, n^p+1
+    
+    #the total of all the numbers powered, check if it is divisble by n, return -1
+    
+    total = 0
+    for num in str(n):
+        total += int(num) ** p
+        p += 1
+    return total /n if total /n % 1 == 0 else -1
+
+
     
