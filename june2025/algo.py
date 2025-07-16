@@ -1350,3 +1350,14 @@ def find_uniq(arr):
     for key,value in uniqueNumbers.items():
         if value == 1:
             return key
+        
+        def find_average(nums):
+    #receive a list of integers
+    #return the mean of a list of numbers in an array
+    
+    #ex: [3]=> 3
+    #ex: [3,5] =8/2 => 4
+
+    #find the sum of nums / len of nums
+    
+    return sum(nums)/len(nums)
