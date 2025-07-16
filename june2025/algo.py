@@ -1416,5 +1416,39 @@ def whatday(num):
 
     return date[num] if num > 0 and num < 8 else 'Wrong, please enter a number between 1 and 7'
 
+
+ #another way to get this is:
+ return date.get(num,'Wrong, please enter a number between 1 and 7' )
+
+
 #time: O(1)
 #space: O(1)
+
+def reverse_letter(st):
+    #receive a string of lowercase letters, digits and symbols
+    #return a reversed string of the input excluding digits and symbols (! , 55)
+    
+    #ex: 'h35ell0o' => 'olleh'
+    
+    #initialize a list
+    #iterate starting from the end all the wayt to the beginning
+    #check the char to see if it is letter (char)
+    #add it the list
+    #return the list joined back as together as a string
+    
+    #built in function: isalpha() - check to see if it is alpha
+    #reverse with slicing : [:: -1]
+    #return it
+    
+    output = []
+    
+    for idx in range(len(st) -1, -1, -1):
+        if st[idx].isalpha():
+            output.append(st[idx])
+    return ''.join(output)
+
+#time: O(n)
+#space: O(n)
+            
+    
+    
