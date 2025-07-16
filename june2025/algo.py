@@ -1360,4 +1360,61 @@ def find_uniq(arr):
 
     #find the sum of nums / len of nums
     
-    return sum(nums)/len(nums)
+    return sum(nums)/len(nums) if nums else 0
+
+const sumTree(root, total = 0) { 
+    if (!root) return total
+        
+    if (root.left) { 
+        total += root.val
+    }
+    if (root.right) { 
+        total += root.val
+    }
+    return total
+}
+
+def whatday(num):
+  #receive an integer
+#return back what day of the week it is, else return "Wrong, please enter a number between 1 and 7"
+#ex: 4 => ' Wednesday'
+
+    #brute force: 
+    #if else statements
+    #check if num pass in is 1, return 'SUnday'
+    #'else': "Wrong, please enter a number between 1 and 7"
+    
+#     if num == 1:
+#         return 'Sunday'
+#     elif num == 2:
+#         return 'Monday'
+#     elif num == 3:
+#         return 'Tuesday'
+#     elif num == 4:
+#         return 'Wednesday'
+#     elif num == 5:
+#         return 'Thursday'
+#     elif num == 6:
+#         return 'Friday'
+#     elif num == 7:
+#         return 'Saturday'
+#     else: 
+#         return "Wrong, please enter a number between 1 and 7"
+
+#time: O(n)
+#space:O(1)
+
+    date = { 
+    1 : 'Sunday',
+    2 : 'Monday',
+    3 : 'Tuesday',
+    4 : 'Wednesday',
+    5 : 'Thursday',
+    6 : 'Friday',
+    7 : 'Saturday'
+    }
+
+    return date[num] if num > 0 and num < 8 else 'Wrong, please enter a number between 1 and 7'
+
+#time: O(1)
+#space: O(1)
