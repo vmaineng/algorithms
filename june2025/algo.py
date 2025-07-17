@@ -1469,4 +1469,19 @@ def reverse_letter(st):
     return total /n if total /n % 1 == 0 else -1
 
 
+    def remainder(a,b):
+    #receive an integer of a and b
+    #return the remainder
+
+    
+    larger = max(a,b)
+    smaller = min(a,b)
+    
+    if smaller == 0:
+        return None
+    
+    return larger % smaller
+
+    
+    
     
