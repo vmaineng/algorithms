@@ -1522,7 +1522,38 @@ def reverse_letter(st):
             left +=1
             
         return count
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        #receive a string of lowercase chars, and an integer for k
+        #return an integer of max vowels seen
 
+        #ex: 'hiijilwo', 4 => 3 b/c of 'iiji'
+
+        #create left and right pointer
+        #iterate through strings
+        #capture window of k size
+        #check to see if a vowel exists
+        #increment count
+        #then decrement left side window
+        #return count
+
+        maxCount = 0
+        left = 0
+        vowels = ['a', 'u','i','e', 'o']
+        count = 0
+
+        for right in range(len(s)):
+            if s[right] in vowels:
+                count += 1
+
+            if (right - left + 1) == k:
+
+                maxCount = max(maxCount, count)
+                if s[left] in vowels:
+                    count -= 1
+                left += 1
+
+        return maxCount
         
         
 
