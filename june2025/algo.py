@@ -1482,6 +1482,49 @@ def reverse_letter(st):
     
     return larger % smaller
 
-    
+    class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        #receive a string of lowercase letters
+        #return the maxCount of vowel letters in the substring of s with the length of k
+
+        #ex: 'hello', 2
+        #'he' => 1
+        #'el' => 1
+        #'ll' => 0
+        #'lo' => 1
+        #return a 1
+
+        #intialize a max count, set it 0
+        #iterate through each letter in string, up to k size
+        #check to see if the vowels exists in substring
+        #if so, count the vowels in substring
+        #if the count > max
+        #update max to the current count
+        #otherwise, keep looking
+        #return the maxCount
+
+        maxCount = 0
+        vowels = 'aeiou'
+
+        left = 0
+
+        for idx in range(len(s)):
+            right = s[idx]
+            right += 1
+
+            if (right - left + 1) >k:
+                for char in word:
+                    if char in vowels:
+                        count += 1
+                    if count > maxCount:
+                        maxCount = count
+            s[left] = -= 1
+            left +=1
+            
+        return count
+
+        
+        
+
     
     

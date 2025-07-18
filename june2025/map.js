@@ -28,3 +28,23 @@ const fiveSort = (nums) => {
 };
 
 console.log(fiveSort([5, 5, 6, 5, 5, 5, 5]));
+
+//thought -> act -> observe
+
+//User: What to make for dinner tonight that is Italian?
+
+//Thought
+//Agent: User need Italian recipes so I will access a tool that fetches Italian recipes
+
+//Action:
+//Agent: I will use get_recipe tool
+
+// {
+// 'action': 'get_recipes',
+// 'action_input: {
+//    'type': 'Italian'
+//}
+//}
+
+//Observation:
+//Agent: "Here is a list of Italian recipes that might fit your liking"
