@@ -1564,5 +1564,34 @@ class Solution:
 #         return False
     return True if body[-1:] == tail else False
 
+    return body[-1:] == tail
+
+    def angle(n):
+    #receive an integer
+    #return sum of internal angels in degrees in a polygon
+    #180/3 = 60 => 60 + 60 + 60
+    #ex: 360/4 => 90
+    
+    #ex: 2 => 30 ; + 30
+    #ex: 3 => 60
+    #ex: 4=> 90 
+    #ex: 5=> 120 ; 540 / 5 => 108
+    #ex: 6: => 150
+    #ex: 7
+    
+    
+    #ex: 3
+    #formula - (n-2) *180
+    #3- 2 => 1 * 180 =180
+    
+    #iterate up to n
+    #keep adding 30 to the total
+    #return the total * n
+    
+    return (n-2) * 180
+    
+    
+    
+
     
     
