@@ -1626,4 +1626,24 @@ class Solution:
             maxAltitude = max(maxAltitude, currentAlt)
         return maxAltitude
     
-    
+    class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the pivot index where everything to the left of the index == everything to the right of the index
+        #ex: []
+
+        #binary search
+        #start with index in the middle
+        #add everything from left until middle point
+        #add everything from right until middle point
+        #check to see if they equal each other
+
+        total = sum(nums)
+        leftSum = 0
+
+        for idx in range(len(nums)):
+            rightSum = total - leftSum - nums[idx]
+            if leftSum == rightSum:
+                return idx
+            leftSum += nums[idx]
+        return -1
