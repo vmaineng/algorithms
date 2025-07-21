@@ -1604,5 +1604,26 @@ def cube_checker(volume, side):
     
     
     return side * side * side == volume
+class Solution:
+    def largestAltitude(self, gain: List[int]) -> int:
+        #receive a list of integers of net gain in altitude
+        #return the highest altitude of point reached
+
+        #ex: [-5, 1, 5, 0 , - 7]
+#output = [0, -5, -4, 1, 1, -6] => max seen is 1
+
+        #iterate through the list of gains
+        #keep track of max altitude seen
+        #keep adding from the previous number
+        #add num to the list
+        #return max seen
+
+        maxAltitude = 0
+        currentAlt = 0
+
+        for num in gain:
+            currentAlt += num
+            maxAltitude = max(maxAltitude, currentAlt)
+        return maxAltitude
     
     
