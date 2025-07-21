@@ -1592,6 +1592,17 @@ class Solution:
     
     
     
-
+def cube_checker(volume, side):
+    #receive two integers (pos or neg)
+    #return True if equal sides, else False
+    
+    #ex: 8,2 => 2 * 2 *2 == 8 ==> True
+    #ex: 10, 2 => 2 * 2 *2  == 10 => False
+    
+    if volume == 0 or side * side *side <= 0:
+        return False
+    
+    
+    return side * side * side == volume
     
     
