@@ -1647,3 +1647,21 @@ class Solution:
                 return idx
             leftSum += nums[idx]
         return -1
+
+        def sum_of_differences(arr):
+    #receive a list of integers
+    #return the sum of list of integers in descending order
+    #ex: [4, 2, 8] => [8, 4, 2] => (8-1) + (4 - 1)  + 2 = 12
+    
+    #initialize a total
+    #sort list by biggest to smallest
+    #iterate through until last integer
+    #subtract it
+    
+    arr.sort(reverse=True)
+    total = 0
+    
+    for idx in range(1, len(arr)):
+        newTotal = (arr[idx - 1] - arr[idx] )
+        total += newTotal
+    return total
