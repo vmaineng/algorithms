@@ -1738,3 +1738,38 @@ def string_clean(s):
     return ''.join(char for char in s if not char.isdigit())
     def apple(x):
     return f"It's hotter than the sun!!" if int(x)**2 > 1000 else "Help yourself to a honeycomb Yorkie for the glovebox."
+
+    class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        #receive a list of integers
+        #return a list of integers where the nums are overlapped
+
+        #ex: 
+
+        #sort the intervals by starting index
+        #intiitalize a count
+        #create a list starting with first pair of intervals
+        #check if start time of next interval <= end time of previous interval
+        #if so, merged, increment count
+        #else, add in intervals
+        #return count
+
+        if not intervals:
+            return 0
+
+        count = 0
+
+        intervals.sort(key=lambda x:x[1])
+        prev_end = intervals[0][1]
+
+        for idx in range(1, len(intervals)):
+            start, end = intervals[idx]
+            if start < prev_end:
+                count += 1
+            else:
+                prev_end = intervals[idx][1]
+
+        return count
+
+
+        
