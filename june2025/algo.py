@@ -1705,3 +1705,34 @@ class Solution:
     dogs = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIONS!!!"];
     
     return dogs[0] if number <= 10 else (dogs[1] if number <= 50 else (dogs[3] if number == 101 else dogs[2]))
+
+    Intervals:
+
+    Overlapping vs Merging
+
+    A = [1,3]
+    B = [2,5]
+
+    overlapping = occuring at same or current time
+    overlapping = max(a1, b1) <= min(a2, b2)
+    overlapping = max(1,2) <= min(3, 5) => do NOT overLAP
+
+    merging = if two intervals overlap, you can "merge" them together
+    new_start = min(a1, b1) => min(1,2) => 1
+    new_end = max(a2, b2) => max(3, 5) => 5
+    mergedInterval = [1, 5]
+def string_clean(s):
+    """
+    Function will return the cleaned string
+    """
+    #receive a string of upper and lowercase chars
+    #return words back where no chars are added
+    #ex: 'h3ello0' => 'hello'
+    
+    
+#     letters = []
+#     for char in s:
+#         if char.isalpha():
+#             letters.append(char)
+#     return ''.join(letters)
+    return ''.join(char for char in s if not char.isdigit())
