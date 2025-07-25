@@ -1736,3 +1736,5 @@ def string_clean(s):
 #             letters.append(char)
 #     return ''.join(letters)
     return ''.join(char for char in s if not char.isdigit())
+    def apple(x):
+    return f"It's hotter than the sun!!" if int(x)**2 > 1000 else "Help yourself to a honeycomb Yorkie for the glovebox."
