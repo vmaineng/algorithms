@@ -1772,4 +1772,22 @@ def string_clean(s):
         return count
 
 
-        
+        class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        #receive a list of intervals
+        #return count of how many intervals to be removed so they do not overlap
+
+      
+        intervals.sort(key=lambda x:x[1])
+        count = 0
+
+        prevInterval = intervals[0][1]
+        print(prevInterval)
+
+        for idx in range(1, len(intervals)):
+            start, end = intervals[idx]
+            if start < prevInterval:
+                count += 1
+            else:
+                prevInterval = max(end, prevInterval)
+        return count
