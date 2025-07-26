@@ -1827,4 +1827,79 @@ def round_to_next5(n):
     #ex:   2
     
     return math.ceil(n /5 ) * 5
+
+    def find_even_index(arr):
     
+    for idx in range(len(arr)):
+        if sum(arr[:idx]) == sum(arr[idx + 1:]):
+            return idx
+    return -1
+    
+    #receive a list of integers - pos and neg
+    #return the index position where sum of all left and sum of all right == each other
+    #else return -1
+    
+    #ex: [1,2,3,4,3,2,1] => idx 3 (4)
+    #           x
+    #.          i
+    #ex: first round = 1 == 16
+    #ex: 2nd = 3 == 13
+    #ex: 3rd = 6 = 10
+    #ex 4th = 10 = 6
+    
+    #ex: [1,2,3,4,3,2,1] => idx 3 (4)
+    #ex:  x
+    #ex:1st = 1 = ,2,3,4,3,2,1
+    #ex: 2nd = 1,2 = 3,4,3,2,1
+    #ex: 3rd = 1,2,3, = 4,3,2,1]
+    #ex: 4th = 1,2,3,4 = 3,2,1
+    
+    
+    #totalList = sum = 16
+    #16 - 1 = 15 == sum([idx))
+    #return that idx
+    #return -1
+
+
+    #initialize a total of 0
+    #capture the total sum of list
+    #iterate from the beginning
+    #total - num = sumin the list of array
+    #if so, return idx
+    #else, add to total
+    #after looking through the entire list, return -1
+    
+#     total = 0
+#     arrSum = sum(arr)
+    
+#     for idx in range(len(arr)):
+#         total = arrSum - arr[idx]
+#         if total == arrSum:
+#             return idx
+#         else:
+#             total += arr[idx]
+#     return -1
+    
+    #currentSum
+    #iterate through the list of integers
+    #check if sum of slicing up to idx == sum of slicing after idx:
+    #return idx if true
+    #else return -1
+    
+    
+    def find_even_index(arr):
+    totalSum = sum(arr)
+    currSum = 0
+    
+    for idx in range(len(arr)):
+        rightSum = totalSum - currSum - arr[idx]
+        if rightSum == currSum:
+            return idx
+        currSum += arr[idx]
+            
+    return -1
+
+#     for idx in range(len(arr)):
+#         if sum(arr[:idx]) == sum(arr[idx+1:]):
+#             return idx
+#     return -1
