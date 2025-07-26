@@ -1791,3 +1791,25 @@ def string_clean(s):
             else:
                 prevInterval = max(end, prevInterval)
         return count
+
+        def sum_mul(n, m):
+    #receive two positive integers
+    #return sum of all the multiples from n to m
+    
+    #ex: (3, 9) => 3 + 6 => 9
+
+    #initialize a total to 0
+    #iterate up to m, increment by n
+    #add each number to the total
+    #return the total
+
+    #edge cases if n == 0 or m == 0 or m is negative number
+    if n < 1 or m < 1:
+        return 'INVALID'
+    
+#     total = 0
+    
+#     for num in range(n, m, n):
+#         total += num
+#     return total
+    return sum(range(n, m, n)) 
