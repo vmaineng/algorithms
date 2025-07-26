@@ -1813,3 +1813,18 @@ def string_clean(s):
 #         total += num
 #     return total
     return sum(range(n, m, n)) 
+
+    import math
+
+def round_to_next5(n):
+    #receive a n integer - pos or neg or 0
+    #return the next multiple of 5
+    
+    #ex: -1 => 0
+    #ex: -8 => -10
+    
+    #ex:0    5 10 15 20
+    #ex:   2
+    
+    return math.ceil(n /5 ) * 5
+    
