@@ -1914,3 +1914,45 @@ def generate_range(start, stop, step):
     for i in range(start, stop + 1, step):
         output.append(i)
     return output
+
+    def generate_range(start, stop, step):
+    return [num for num in range(start, stop + 1, step)]
+
+    def two_oldest_ages(ages):
+    #receive two integers
+    #return the two max nums in a list = [second oldest, oldest]
+    #ex: [4, -5, 52, 8, ] => [8, 52]
+    
+    #ex: brute force:
+    #sort list by smallest to biggest
+    #grab the last two nums as output
+    
+#     ages.sort()
+#     return [ages[-2], ages[-1]]
+
+#time: O(n log n) -> sorting
+#space: O(1) due to two nums being returned only
+    
+    
+    #initialize an output list to empty
+    #iterate through the list
+    #look for max
+    #insert into the list
+    #look for max again, insert into the list
+    #return list
+    
+#     output = []
+    max1 = float('-inf')
+    max2 = float('-inf')
+    for num in ages:
+        if num > max1:
+            max2 = max1
+            max1 = num
+        elif num > max2:
+            max2 = num
+        
+    return [max2, max1]
+    
+    #time:O(n)
+    #space: O(1)
+    
