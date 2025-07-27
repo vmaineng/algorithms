@@ -1903,3 +1903,14 @@ def round_to_next5(n):
 #         if sum(arr[:idx]) == sum(arr[idx+1:]):
 #             return idx
 #     return -1
+
+def generate_range(start, stop, step):
+    #receive integers
+    #return a list of nums from start, stop, with step
+    
+    
+    output = []
+    
+    for i in range(start, stop + 1, step):
+        output.append(i)
+    return output
