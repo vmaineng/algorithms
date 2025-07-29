@@ -1965,3 +1965,8 @@ def generate_range(start, stop, step):
     
     
     return ' '.join(string.split(',')[1:-1]) if len(string.split(',')) > 2 else None
+
+
+    def swap_values(args): 
+    args[0], args[1] = args[1], args[0]
+    
