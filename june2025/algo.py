@@ -1956,3 +1956,12 @@ def generate_range(start, stop, step):
     #time:O(n)
     #space: O(1)
     
+    def array(string):
+    #receive a string of integers
+    #remove the first and last one
+    
+    #if length is less < 2 return null
+    #return the string back removing first and last element and join by spaces and no commas
+    
+    
+    return ' '.join(string.split(',')[1:-1]) if len(string.split(',')) > 2 else None
