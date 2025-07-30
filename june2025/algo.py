@@ -1991,3 +1991,35 @@ def generate_range(start, stop, step):
 #         else:
 #             output.append(char.lower())
 #     return ''.join(output)
+
+# The guess API is already defined for you.
+# @param num, your guess
+# @return -1 if num is higher than the picked number
+#          1 if num is lower than the picked number
+#          otherwise return 0
+# def guess(num: int) -> int:
+
+class Solution:
+    def guessNumber(self, n: int) -> int:
+        #receive an integer
+        #return the num they picked
+
+        #initialize left and right
+        #find the middle
+        #check if middle is == 0, return middle
+        #else if number is -1, move right pointer down
+        #else, move left pointer up
+
+        left = 1
+        right = n
+
+        while left < right:
+            middle = (left + right) // 2
+            if guess(middle) == 0:
+                return middle
+            elif guess(middle) == -1:
+                right = middle - 1
+            else:
+                left = middle + 1
+        return left
+        
