@@ -1970,3 +1970,24 @@ def generate_range(start, stop, step):
     def swap_values(args): 
     args[0], args[1] = args[1], args[0]
     
+    def capitalize(s):
+    #receive a lowercase string
+    #return a list of string with every other letter uppercase
+    
+    #ex: 'hello' => ['hElLO', 'HeLlO']
+    
+    #initialize an output
+    #iterate through every other letter
+    #capitalize
+    #add to the output list
+    
+#     output = []
+    evenWord = ''.join(char.upper() if idx % 2 == 0 else char.lower() for idx,char in enumerate(s))
+    oddWord = ''.join(char.upper() if idx % 2 != 0 else char.lower() for idx,char in enumerate(s))
+    return [evenWord, oddWord]
+#     for idx, char in enumerate(s):
+#         if idx % 2 == 0:
+#             output.append(char.upper())
+#         else:
+#             output.append(char.lower())
+#     return ''.join(output)
