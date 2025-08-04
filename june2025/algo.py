@@ -2053,3 +2053,21 @@ def no_odds(values):
     
     return [num for num in values if num % 2 == 0]
     
+    def solution(s):
+    #receive a string of words
+    #add a space between words
+    #ex: 'helloWorld' => 'hello World'
+    
+    #iterate through the string of words
+    #check to see if the next letter is an upper case letter
+    #add as pace
+    #return the words join back together
+    
+    newString = []
+    
+    for char in s:
+        if char == char.upper():
+            newString.append(" " + char)
+        else:
+            newString.append(char)
+    return ''.join(newString)
