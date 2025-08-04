@@ -2030,3 +2030,14 @@ class Solution:
 #     else:
 #         return False
     return True if item in arr else False
+    return item in arr 
+
+    def derive(coefficient, exponent): 
+    # receive two integers
+    #return the numbers multiplied to the power of exponent - 1
+    
+    product = coefficient * exponent
+    lessExponent = exponent - 1
+    
+    return f"{product}x^{lessExponent}"
+
