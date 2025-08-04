@@ -2071,3 +2071,22 @@ def no_odds(values):
         else:
             newString.append(char)
     return ''.join(newString)
+
+    class Solution:
+    def countPairs(self, nums: List[int], target: int) -> int:
+        #receive a list of integers, and a num
+        #return the pairs of where i + j < target and i < j
+
+        #initialize a count of pairs to 0
+        #iterate through the nums
+        #check to see which pair total is < target and if i < j
+        #increment pairs
+        #return pairs
+
+        pairs = 0
+
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if i < j and nums[i] + nums[j] < target:
+                    pairs += 1
+        return pairs
