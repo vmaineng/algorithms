@@ -2041,3 +2041,15 @@ class Solution:
     
     return f"{product}x^{lessExponent}"
 
+def no_odds(values):
+    # receive a list of integers, pos or neg
+    #return a list of output
+    #ex: [0, 1, 3, 4] => [0, 4]
+    
+    #initialize an empty list
+    #iterate through the values to see if it is even
+    #add value to list
+    #return list
+    
+    return [num for num in values if num % 2 == 0]
+    
