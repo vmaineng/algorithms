@@ -2024,4 +2024,9 @@ class Solution:
         return left
         
 
-        
+        def include(arr, item):
+#     if item in arr:
+#         return True
+#     else:
+#         return False
+    return True if item in arr else False
