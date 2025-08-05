@@ -2090,3 +2090,29 @@ def no_odds(values):
                 if i < j and nums[i] + nums[j] < target:
                     pairs += 1
         return pairs
+
+        class Solution:
+    def countPairs(self, nums: List[int], target: int) -> int:
+        nums.sort()
+        pairs = 0
+        left = 0
+        right = len(nums) -1
+
+        while left < right:
+            if nums[left] + nums[right] < target:
+                pairs += right - left
+                left += 1
+            else:
+                right -=1
+        return pairs
+
+def weather_info (temp):
+    c = convert_to_celsius(temp)
+    if (c < 0):
+        return (f"{c}" + " is freezing temperature")
+    else:
+        return (f"{c}" + " is above freezing temperature")
+    
+def convert_to_celsius (temp):
+    celsius = (temp - 32) * (5/9)
+    return celsius
