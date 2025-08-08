@@ -40,3 +40,27 @@ def nearest_sq(n):
     
 #     return drinks[param.lower()] if drinks[param.lower()] else "Beer"
     return drinks.get(param.lower(), "Beer")
+
+class RecentCounter:
+
+    def __init__(self):
+        self.requests = []
+
+    def ping(self, t: int) -> int:
+        self.requests.append(t)
+        count = 0
+        left = t - 3000
+
+        for request in self.requests:
+            if request >= left:
+                count += 1
+        return count
+
+
+# Your RecentCounter object will be instantiated and called as such:
+# obj = RecentCounter()
+# param_1 = obj.ping(t)
+
+#receive recent requests
+#intiailize a counter with 0 recent requests
+#
