@@ -103,6 +103,71 @@ def seats_in_theater(tot_cols, tot_rows, col, row):
     remainingRows = tot_rows - row
     
     return remainingCols * remainingRows
+
+def check_exam(arr1,arr2):
+    #receive two list of same equal length and not empty of lowercase string letters
+    #return the score, integer, of each student's answer
     
+    #first list = answer
+    #second list = student's answer
+    
+    #iterate through each student's answer, 
+    #compare it to the answer list
+    #if same letter, +4 b/c it's correct
+    #if not the same letter, -1,
+    #if it is blank, +0
+    #check the final score, if it is less than 0, return 0
+    
+    score = 0
+    firstIdx = 0
+    
+    for idx,char in enumerate(arr2):
+        if arr1[firstIdx] == char:
+            score += 4
+        elif char == "":
+            score += 0
+        elif arr1[firstIdx] != char:
+            score -= 1
+#         print(score, firstIdx, idx)
+        firstIdx += 1
+    return 0 if score < 0 else score
+
+#time: O(n)
+#space: O(1)
+  
+
+    
+    def check_exam(arr1,arr2):
+    #receive two list of same equal length and not empty of lowercase string letters
+    #return the score, integer, of each student's answer
+    
+    #first list = answer
+    #second list = student's answer
+    
+    #iterate through each student's answer, 
+    #compare it to the answer list
+    #if same letter, +4 b/c it's correct
+    #if not the same letter, -1,
+    #if it is blank, +0
+    #check the final score, if it is less than 0, return 0
+    
+    score = 0
+    firstIdx = 0
+    
+    for char in arr2:
+        if arr1[firstIdx] == char:
+            score += 4
+        elif char == "":
+            score += 0
+        elif arr1[firstIdx] != char:
+            score -= 1
+#         print(score, firstIdx, idx)
+        firstIdx += 1
+    return 0 if score < 0 else score
+
+#time: O(n)
+#space: O(1)
+  
+
     
     
