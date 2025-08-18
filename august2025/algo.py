@@ -87,3 +87,22 @@ class RecentCounter:
 #receive recent requests
 #intiailize a counter with 0 recent requests
 #
+
+def seats_in_theater(tot_cols, tot_rows, col, row):
+    #receive positive integers
+    #return the amount of seats available behind you and in your col or the left
+    
+    #ex:
+    #sitting in col 5 and row 3
+    #total cols =16-5 + 1 = 12 - inclusive of the cols
+    #total rows = 11 -3 = 8 - exclusive
+    
+    # 12 * 8 = 96
+    
+    remainingCols = tot_cols - col + 1
+    remainingRows = tot_rows - row
+    
+    return remainingCols * remainingRows
+    
+    
+    
