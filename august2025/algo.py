@@ -187,5 +187,27 @@ def exponent(a, b):
 def subt(a, b):
     return a - b
 
+    def solve(s):
+    #receive a string of characters - lower and upper
+    #return the word either lowercase or uppercase back
+    #ex: 'COde' => 'code'
+    #ex: 'CODe' => 'CODE'
+    
+    #keep track of uppercase and lowercase letters in the string
+    #if uppercase > lowercase,
+    #return the word as upppercase
+    #else if uppercase < lowercase,
+    #return the word as lowercase
+    #else ==, return the word as lowercase
+    
+    lowercaseChars = 0
+    uppercaseChars = 0
+    
+    for char in s:
+        if char == char.upper():
+            uppercaseChars += 1
+        else:
+            lowercaseChars += 1
+    return s.upper() if uppercaseChars > lowercaseChars else s.lower()
     
     
