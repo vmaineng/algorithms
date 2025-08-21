@@ -210,4 +210,8 @@ def subt(a, b):
             lowercaseChars += 1
     return s.upper() if uppercaseChars > lowercaseChars else s.lower()
     
-    
+    # Create the combine_names function here
+def combine_names(firstName, lastName):
+    return f"{firstName} {lastName}"
+
+    return ' '.join(args)
