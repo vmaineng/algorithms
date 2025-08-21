@@ -232,5 +232,63 @@ def max_multiple(divisor, bound):
     
     return bound - (bound % divisor)
     
+    def sort_array(source_array):
+    #receive a list of integers - pos and neg
+    #return the list with only odds sorted
+    #ex: [3,2,8,9,5] => [2, 3,5, 8,9]
     
+    #brute force: 
+    #initialize an empty list
+    #do two pointers with a nested loop
+    #check to see if the integer is an odd,
+    #if so, check the integer before if it is odd 
+    #if it is, check to see if their order is correct
+    #else, it is even, then we can leave in place
+    #return the list back
+    
+#     sortedOddList = []
+    
+#     for i in range(len(source_array)):
+#         for j in range(1, len(source_array)):
+#             if source_array[j] % 2 != 0:
+#                 if source_array[i] % 2 != 0:
+#                     if source_array[j] < source_array[i]:
+#                         sortedOddList.append(source_array[j])
+#             else:
+#                 sortedOddList.append(source_array[i])
+#     return sortedOddList
+
+    #optimized with two pointers
+    #intiialize a left pointer at the beginning, and a right pointer at the end of the list
+    #while the two pointers do not meet
+    #check if they are odd nums
+    #if they are odd, check if they are in the right order
+    #if not, swap them, else we can leave as-is
+    #return the list back
+    
+#     left = 0
+#     right = len(source_array) -1
+    
+#     while left < right:
+#         if source_array[left] % 2 != 0 and source_array[right] % 2 != 0:
+#                 if source_array[right] < source_array[left]:
+#                     source_array[left], source_array[right] = source_array[right], source_array[left]
+#                     left += 1
+#                     right -=1
+# #         left += 1
+# #         right -=1
+#     return source_array
+    odds = sorted([x for x in source_array if x % 2 != 0])
+    
+    odd_idx = 0
+    result = []
+    
+    for num in source_array:
+        if num % 2 != 0:
+            result.append(odds[odd_idx])
+            odd_idx += 1
+        else:
+            result.append(num)
+    return result
+            
     
