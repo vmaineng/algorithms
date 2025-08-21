@@ -215,3 +215,22 @@ def combine_names(firstName, lastName):
     return f"{firstName} {lastName}"
 
     return ' '.join(args)
+
+def max_multiple(divisor, bound):
+    #receive two positive integers > 0
+    #return the largest N that is divided by the divisor and <= bound
+    #ex: 2, 24 => 24/2 => 12 => 24
+    
+    #check if bound % divisor has no remainder, return bound, 
+    #floor it down, and multiply it by the divisor
+    
+    if bound % divisor == 0:
+        return bound
+    else:
+        #print((bound // divisor) )
+        return (bound // divisor) * divisor
+    
+    return bound - (bound % divisor)
+    
+    
+    
