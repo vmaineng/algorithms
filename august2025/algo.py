@@ -301,4 +301,11 @@ def max_multiple(divisor, bound):
             return True
         else:
             return False
+    return name == 'Santa Claus' and password == 'Ho Ho Ho!'
+
+def digits(n):
+    # your code here
+    #receive a n integer
+    #return total number in integer
     
+    return len(str(n))
