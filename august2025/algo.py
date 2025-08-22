@@ -309,3 +309,37 @@ def digits(n):
     #return total number in integer
     
     return len(str(n))
+
+from collections import Counter
+
+def comp(array1, array2):
+    #receive two list of integers
+    #return True if b elements are squared products of a
+    
+    #edge case: if length of two lists are different, return False
+    
+    #iterate through list1
+    #check if squared product does not exist, return False
+    #else, increment to the next one
+    #return True after checking everything
+    
+    if array1 is None or array2 is None:
+        return False
+    if len(array1) != len(array2):
+        return False
+    
+    
+#     return sorted([x**2 for x in array1]) == sorted(array2)
+
+#     return Counter([x**2 for x in array1]) == Counter(array2)
+    
+#     i = 0
+    
+#     for num in array2:
+#         if array1[i]**array[
+#     for num in array1:
+#         print(num)
+#         squaredNum = num * num
+#         if squaredNum not in array2:
+#             return False
+#     return True
