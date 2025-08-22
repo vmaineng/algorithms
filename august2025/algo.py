@@ -291,4 +291,14 @@ def max_multiple(divisor, bound):
             result.append(num)
     return result
             
+            class Sleigh(object):
+    def authenticate(self, name, password):
+        #receive a name and a password, 
+        #return true if 'Santa Claus', else false
+        #ex: 'San, 'Ho Ho Ho!' => False
+        
+        if name == 'Santa Claus' and password == "Ho Ho Ho!":
+            return True
+        else:
+            return False
     
