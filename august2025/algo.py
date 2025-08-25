@@ -376,5 +376,62 @@ def in_asc_order(arr):
     #ex: [8, 1,6,3] => 
     #first round: [3, 1,6,8]
     
+    def tower_builder(n_floors):
+    #receive an integer
+    #return a list of strings of stars down by the odd level
+    #ex: 4:
+    #[ '*',
+    # '***',
+    # '*****',
+    # '*******'
+    #]
+    
+    #edge cases: if the integer for floors is negative or even 0, return an empty list
+    
+    if n_floors < 1:
+        return []
+    
+    #initialize an empty list
+    #initialize an empty string to hold stars to the length of n_floors * 2 -1
+    
+    #iterate up to n_floors
+    #if num == 0, add in *, append into the list
+    #else, add in two extra stars, append into the list
+    #return the list
+    
+    towerList = []
+    starStrLen = n_floors * 2 - 1
+    
+    for num in range(n_floors):
+        countStars = (num * 2) + 1
+        num_spaces = (starStrLen - countStars) // 2
+        print(num_spaces)
+        current_floor = " " * num_spaces + "*" * countStars + ' ' * num_spaces
+        towerList.append(current_floor)
+    return towerList
+
+
+            
+    
+    
+    
+    
+    
+    #initialize an empty list
+    #initialize an empty string
+    #iterate up to n_floors,
+    #add two stars to the list
+    
+#     towerStars = []
+#     stringStars = ''
+    
+#     for num in range(1, n_floors):
+#         if num == 1:
+#             stringStars = '*'
+#             towerStars.append(stringStars)
+#         elif num > 1:
+#             stringStars += '**'
+#             towerStars.append(stringStars)
+#     return towerStars
     
     
