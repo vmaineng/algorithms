@@ -356,3 +356,25 @@ def converter(mpg):
     kilo = 1.609344 
     litres = 4.54609188
     return round((kilo/litres) * mpg,2)
+
+def in_asc_order(arr):
+    # random_ is not allowed 
+    #(True or false)
+    #receive a list of postive integers - could start at 0 or 1
+    #return boolean if it is sorted from smallest to biggest
+    
+    #ex: [1,4,5] => [1,4, 5] => True
+    #brute force:
+    #compare the list to a sorted version of it
+#     print(arr, sorted(arr))
+    return arr == sorted(arr)
+
+    #time: O(n log n)
+    #space: O(n)
+    
+    #optimized: 
+    #ex: [8, 1,6,3] => 
+    #first round: [3, 1,6,8]
+    
+    
+    
