@@ -327,7 +327,7 @@ def comp(array1, array2):
         return False
     if len(array1) != len(array2):
         return False
-    
+
     
 #     return sorted([x**2 for x in array1]) == sorted(array2)
 
@@ -343,3 +343,16 @@ def comp(array1, array2):
 #         if squaredNum not in array2:
 #             return False
 #     return True
+
+def converter(mpg):
+    #receive an integer that is postive in mile /imperial gallon
+    #return the km/ liters
+    
+    #ex: 10
+    #miles / imperigal gallon => 10 miles / 
+    
+    #ex: 1 mpg => 1.609344/4.54609188
+    
+    kilo = 1.609344 
+    litres = 4.54609188
+    return round((kilo/litres) * mpg,2)
