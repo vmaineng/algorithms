@@ -434,4 +434,63 @@ def in_asc_order(arr):
 #             towerStars.append(stringStars)
 #     return towerStars
     
+    """Functions used in preparing Guido's gorgeous lasagna.
+
+Learn about Guido, the creator of the Python language:
+https://en.wikipedia.org/wiki/Guido_van_Rossum
+
+This is a module docstring, used to describe the functionality
+of a module and its functions and/or classes.
+"""
+
+
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
+
+def bake_time_remaining(min_in_oven):
+    """Calculate the bake time remaining.
+
+    :param min_in_oven: int - baking time already elapsed.
+    :return: int - remaining bake time (in minutes).
+    """
+    return EXPECTED_BAKE_TIME - min_in_oven
+ 
+
+#TODO: Define the 'preparation_time_in_minutes()' function below.
+# To avoid the use of magic numbers (see: https://en.wikipedia.org/wiki/Magic_number_(programming)), you should define a PREPARATION_TIME constant.
+# You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
+# This will make it easier to do calculations, and make changes to your code.
+def preparation_time_in_minutes(number_of_layers):
+    """Calculate the number of minutes making each layer remaining.
+
+    :param number_of_layers: 2* number_of_layers to make
+    :return: 2 * number of layers 
+
+    Function that takes in the layers needed for the lasagna as
+    an argument and returns how many minutes to make the layers for the entire lasagna
+    based on the `number_of_layers`.
+    """
+
+    MINS_PREPARATION = PREPARATION_TIME * number_of_layers
+    return MINS_PREPARATION
+
+
+#TODO: define the 'elapsed_time_in_minutes()' function below.
+def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     
+    """Calculate the total number of minutes cooking in the kitchen
+
+    :param number_of_layers, elapsed_bake_time:
+    :return: elapsed_bake_time - (number of Layers * 2)
+
+    Function that takes in the layers needed for the lasagna and the number of minutes spent cooking already as
+    an argument and returns total minutes spent layering and baking in the oven
+    based on the `number_of_layers` and `elapsed_bake_time`.
+    """
+    return preparation_time_in_minutes(number_of_layers) + elapsed_bake_time
+    
+
+
+
+# TODO: Remember to go back and add docstrings to all your functions
+#  (you can copy and then alter the one from bake_time_remaining.)
