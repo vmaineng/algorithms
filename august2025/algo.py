@@ -494,3 +494,15 @@ def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
 
 # TODO: Remember to go back and add docstrings to all your functions
 #  (you can copy and then alter the one from bake_time_remaining.)
+
+import re
+
+def validate_usr(username):
+    #receive a string of characters => lowercase and uppercase
+    #return boolean if lowercase numbers and underscore and between len of 4-16
+    pattern = r"^[a-z0-9_]{4,16}$"
+    
+    if re.fullmatch(pattern,username):
+        return True
+    else:
+        return False
