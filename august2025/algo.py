@@ -553,3 +553,22 @@ class Solution:
             else:
                 left = middle + 1
         return -1
+    
+    class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        #receive a list of lowercase letters
+        #return the smallest char in letters that is > than target
+
+        #if target == ' z', return the first character
+        #ex: ['c','q', 'r', 'u'], target = 't' => 'r'
+
+        left = 0
+        right = len(letters) - 1
+
+        while left <= right:
+            middle = (left +right) // 2
+            if letters[middle] <= target:
+                left = middle + 1
+            else:
+                right = middle - 1
+        return letters[left % len(letters)]
