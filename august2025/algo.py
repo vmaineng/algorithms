@@ -506,3 +506,50 @@ def validate_usr(username):
         return True
     else:
         return False
+    
+    <button class="color"> Change color </button>
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        #receive a list of integers
+        #return index of target if it exists, else return -1
+
+        #ensure list is sorted
+
+        #ex: [-2,3,5,7,9], target = 9
+        #return 4
+
+        #binary search - using left and right pointer
+        #calculate the middle
+        #check if middle == target
+        #return index
+        #else if target < middle, move right pointer down to the left of middle
+        #else move left pointer up after middle
+        #return -1 after searching
+
+        #edge case: if len is 1, check if it equals target, else return -1
+        # if len(nums) == 1:
+        #     if nums[0] == target:
+        #         return 0
+        #     else:
+        #         return -1
+
+        # if len(nums) == 2:
+        #     if nums[0] == target:
+        #         return 0
+        #     elif nums[1] == target:
+        #         return 1
+        #     else:
+        #         return -1
+
+        left = 0
+        right = len(nums) -1
+
+        while left <= right: 
+            middle = (left+ right) // 2
+            if nums[middle] == target:
+                return middle
+            elif target < nums[middle]:
+                right = middle - 1
+            else:
+                left = middle + 1
+        return -1

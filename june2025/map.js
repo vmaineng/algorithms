@@ -48,3 +48,18 @@ console.log(fiveSort([5, 5, 6, 5, 5, 5, 5]));
 
 //Observation:
 //Agent: "Here is a list of Italian recipes that might fit your liking"
+
+//jQuery
+$(".color").click(function () {
+  const color = randomRGBA();
+  $("body").css("background", color);
+  alert(color);
+});
+//Vanilla JS
+document.querySelectorAll(".color").forEach((element) => {
+  element.addEventListener("click", () => {
+    const color = randomRGBA();
+    document.body.style.background = color;
+    alert(color);
+  });
+});
