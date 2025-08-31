@@ -572,3 +572,62 @@ class Solution:
             else:
                 right = middle - 1
         return letters[left % len(letters)]
+    
+    """Functions for implementing the rules of the classic arcade game Pac-Man."""
+
+
+def eat_ghost(power_pellet_active, touching_ghost):
+    """Verify that Pac-Man can eat a ghost if he is empowered by a power pellet.
+
+    :param power_pellet_active: bool - does the player have an active power pellet?
+    :param touching_ghost: bool - is the player touching a ghost?
+    :return: bool - can a ghost be eaten?
+    """
+
+    return power_pellet_active and touching_ghost
+
+
+def score(touching_power_pellet, touching_dot):
+    """Verify that Pac-Man has scored when a power pellet or dot has been eaten.
+
+    :param touching_power_pellet: bool - is the player touching a power pellet?
+    :param touching_dot: bool - is the player touching a dot?
+    :return: bool - has the player scored or not?
+    """
+
+    return True if touching_power_pellet or touching_dot else False
+
+
+def lose(power_pellet_active, touching_ghost):
+    """Trigger the game loop to end (GAME OVER) when Pac-Man touches a ghost without his power pellet.
+
+    :param power_pellet_active: bool - does the player have an active power pellet?
+    :param touching_ghost: bool - is the player touching a ghost?
+    :return: bool - has the player lost the game?
+    """
+
+    #if pac-man has a power pellet and if aghost is touching him == True , you lose, else False
+
+    return True if not power_pellet_active and touching_ghost else False
+
+
+def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
+    """Trigger the victory event when all dots have been eaten.
+
+    :param has_eaten_all_dots: bool - has the player "eaten" all the dots?
+    :param power_pellet_active: bool - does the player have an active power pellet?
+    :param touching_ghost: bool - is the player touching a ghost?
+    :return: bool - has the player won the game?
+    """
+    #print(lose(power_pellet_active, touching_ghost))
+
+    #return True if ate all the dots and did not lose, else False
+
+    return has_eaten_all_dots and not lose(power_pellet_active, touching_ghost)
+    #        True                 lose(false, true) True not True = > False
+    
+    # if lose(power_pellet_active, touching_ghost):
+    #     return False
+
+    # if has_eaten_all_dots and lose(power_pellet_active, touching_ghost):
+    #     return True
