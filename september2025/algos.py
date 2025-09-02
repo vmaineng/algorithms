@@ -65,4 +65,58 @@ class Solution:
         
             level += 1
         return maxLevel
+    
+    from collections import deque
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxLevelSum(self, root: Optional[TreeNode]) -> int:
+        #receive a root node
+        #return the smallest level at which the total is the biggest
+        #
+
+        #intiialize a deque with the root
+        #intialize a maxtotal, level, maxLevel
+        #iterate while the deque still has levels
+        #add the current nodes to the queue
+        #add up total
+        #if they have a left or right nodes, to the queue
+        #check if total is greater than max total
+        #update totaland level
+        #increment total
+        #return level
+
+        if not root:
+            return 0
+
+        maxLevel = 0
+        level = 1
+        maxTotal = float('-inf')
+        queue = deque([root])
+
+        while queue:
+            total = 0
+
+            for node in range(len(queue)):
+                current = queue.popleft()
+                total += current.val
+
+                if (current.left):
+                    queue.append(current.left)
+                if(current.right):
+                    queue.append(current.right)
+            if total > maxTotal:
+                maxTotal = total
+                maxLevel = level
+
+            level += 1
+        return maxLevel
+
+
+        
 
