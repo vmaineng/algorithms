@@ -118,5 +118,39 @@ class Solution:
         return maxLevel
 
 
-        
+        from collections import deque
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+
+        #receive a root of a binary tree
+        #return a list back of the right nodes only
+
+        #edge case, if empty, return an empty list
+        #else, traverse only on the right side only
+
+        queue = deque([root])
+        result = []
+        right_node_val = None
+
+        if not root:
+            return result
+
+        while queue:
+            for node in range(len(queue)):
+                current = queue.popleft()
+                right_node_val = current.val
+
+                if current.left:
+                    queue.append(current.left)
+                if current.right:
+                    queue.append(current.right)
+            result.append(right_node_val)
+        return result
 
