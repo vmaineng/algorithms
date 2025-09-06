@@ -354,6 +354,53 @@ class Solution:
         print(left_depth, right_depth)
 
         return 1 + max(left_depth, right_depth)
+    
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+        #receive two root nodes of a binary tree
+        #return boolean - true if all leaf nodes are same values, else False
+
+        #edge cases: if root1 is empty, but root 2 is not, return False 
+        #if root1 is not empty, but root 2 is , return False
+
+        #iterate through the tree
+        #go deep left as possible, 
+        #check if there are no child nodes, add the value into a list
+        #iterate through root2, check if there are no child nodes, add the value into a list
+        #check if the list values are equal to each other, return true if they are, else False
+
+        if root1 and not root2:
+            return False
+        if not root1 and root2:
+            return False
+
+        result1 = []
+        result2 = []
+
+        self.collectLeafNodes(root1, result1)
+        self.collectLeafNodes(root2, result2)
+    
+        return result1 == result2
+
+    def collectLeafNodes(self, node: Optional[TreeNode], result: List) -> list:
+        if not node:
+            return []
+
+        if not node.left and not node.right:
+            result.append(node.val)
+            return
+        
+        self.collectLeafNodes(node.left, result)
+        self.collectLeafNodes(node.right, result)
+
+
+
 
 
         
