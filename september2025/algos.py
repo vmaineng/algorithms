@@ -320,3 +320,40 @@ class Solution:
                     queue.append(current.right)
             result.append(rightNodeVal)
         return result
+    
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        #receive the root node of a tree
+        #return the max depth (the deepest level the farthest node is in) (an integer)
+
+        #ex:     3
+        #       / \
+        #.     2.  4
+        #     / \
+        #  null  5
+
+        #ex: return 3
+
+        #edge cases :if it's empty, return 0
+    
+        #initialize an empty variable called levels
+        #keep traversing through the nodes, add 1 to each level
+        #return level
+
+        if not root:
+            return 0
+
+        left_depth = self.maxDepth(root.left)
+        right_depth = self.maxDepth(root.right)
+        print(left_depth, right_depth)
+
+        return 1 + max(left_depth, right_depth)
+
+
+        
