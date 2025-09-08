@@ -1,12 +1,13 @@
 from collections import deque
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 class Solution:
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+    def leftSideView(self, root):
         #receive a root node of a binary tree
         #return a list of node values for left nodes going from right to left BFS
 
@@ -42,3 +43,4 @@ class Solution:
         
         return result
 
+    print(leftSideView([1,2,3,None,5,None,4]))
