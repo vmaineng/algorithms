@@ -457,4 +457,39 @@ class Solution:
             goodNodes += 1
         
         return goodNodes
+    
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        #receive the root node of a binary tree
+        #return an integer of good nodes that are increasing
+
+        #if not root, return 0
+
+        #initialize good nodes to 0
+
+        #iterate left and iterate right
+        #check if the next node is >= currentnode.val
+        #if it is, increment good nodes val
+        #else, keep going
+        #return goodnodes val
+
+        def dfs(node, max_so_far):
+            if not node:
+                return 0
+            
+            good = 1 if node.val >= max_so_far else 0
+
+            new_max = max(max_so_far, node.val)
+
+            good += dfs(node.left, new_max)
+            good += dfs(node.right, new_max)
+            return good
+        return dfs(root, root.val)
+        
         
