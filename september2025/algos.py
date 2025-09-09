@@ -424,4 +424,37 @@ class Solution:
         return 1 + max(left, right)
 
 
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        #receive the root node of a binary tree
+        #return an integer of good nodes that are increasing
+
+        #if not root, return 0
+
+        #initialize good nodes to 0
+
+        #iterate left and iterate right
+        #check if the next node is >= currentnode.val
+        #if it is, increment good nodes val
+        #else, keep going
+        #return goodnodes val
+
+        goodNodes = 0
+
+        if not root:
+            return goodNodes
+
+        left = self.goodNodes(root.left)
+        right = self.goodNodes(root.right)
+
+        if left > current.val:
+            goodNodes += 1
+        
+        return goodNodes
         
