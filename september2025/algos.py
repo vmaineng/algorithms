@@ -511,3 +511,33 @@ class Solution:
             return good
         return dfs(root, root.val)
         
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def longestZigZag(self, root: Optional[TreeNode]) -> int:
+        #receive a root node
+        #return the longest path of zig zag
+
+        #keep track of longest path made from left to right
+        #start on left, then go right
+        #check right path, then go left
+
+        self.longest_path = 0
+        def dfs(node):
+            if not node:
+                return (-1,-1)
+            
+            left_left, left_right = dfs(node.left)
+            right_left, right_right = dfs(node.right)
+
+            current_left = left_right + 1
+            current_right = right_left + 1 
+
+            self.longest_path = max(current_left, current_right, self.longest_path)
+            return (current_left, current_right)
+        dfs(root)
+        return self.longest_path
