@@ -541,3 +541,40 @@ class Solution:
             return (current_left, current_right)
         dfs(root)
         return self.longest_path
+    
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+        #receive a node of a root tree, and a target sum
+        #return an integer of paths that add up to targetSum
+
+        #inititalize paths to 0
+        #incremenent down from left to right
+        #if total == targetSum, paths += 1
+        #return paths
+
+        if not root:
+            return 0
+
+        def dfs(node, curr_sum):
+            if not node:
+                return 0
+            
+            good = 1 if curr_sum + node.val == targetSum else 0
+
+            good += dfs(node.left, curr_sum + node.val)
+            good += dfs(node.right, curr_sum + node.val)
+            return good
+
+        paths_from_root = dfs(root, 0)
+
+        return (
+            paths_from_root + 
+            self.pathSum(root.left, targetSum) 
+            + self.pathSum(root.right, targetSum)
+        )
