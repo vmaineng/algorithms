@@ -578,3 +578,42 @@ class Solution:
             self.pathSum(root.left, targetSum) 
             + self.pathSum(root.right, targetSum)
         )
+    
+    from collections import deque
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        #receive a root node of a binary tree
+        #return the values of nodes from top to bottom of right side
+        
+        #initialize an empty result list
+        #initialize a rightnodeVal
+        #import the root node into queue
+        #pop off the node's value
+        #add it in the result list
+        #return list
+
+        if not root:
+            return []
+
+        result = []
+        queue = deque([root])
+        rightNodeVal = None
+
+        while queue:
+            for node in range(len(queue)):
+                current = queue.popleft()
+                rightNodeVal = current.val
+
+                if (current.left):
+                    queue.append(current.left)
+                if (current.right):
+                    queue.append(current.right)
+            result.append(rightNodeVal)
+        return result
