@@ -640,3 +640,37 @@ class Solution:
                     visited.add((nr, nc))
                     queue.append((nr, nc, dist+1))
         return -1        
+    
+    from collections import deque
+class Solution:
+    
+    def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
+        #initialize rows, cols
+        #add entrance to the queue and visited set
+        #add directions
+
+        #check if isValid - within boundaries
+        #check if it's been seen before and not the entrance
+        #add to visited set
+
+        rows, cols = len(maze), len(maze[0])
+        queue = deque([(entrance[0], entrance[1], 0)])
+        visited = {(entrance[0], entrance[1])}
+
+        directions = [(1,0), (0,1), (-1,0), (0,-1)]
+
+        while queue:
+            r,c, dist = queue.popleft()
+
+            def isValid(r,c):
+                return 0 <= r < rows and 0 <= c < cols
+
+            for dr,dc in directions:
+                nr,nc = dr+r, dc+c
+                if isValid(nr, nc) and (nr,nc) not in visited and maze[nr][nc] == '.':
+                    if (nr == 0 or nr == rows-1 or nc == 0 or nc== cols-1):
+                        return dist +1
+
+                    visited.add((nr,nc))
+                    queue.append((nr,nc, dist +1))
+        return -1
