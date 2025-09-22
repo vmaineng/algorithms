@@ -774,5 +774,31 @@ class Solution:
                     queue.append((nr, nc, time + 1))
         return mins if fresh_count == 0 else -1
 
+class Solution:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        #receive a list of lists with integers
+        #return a boolean if we can enter all rooms (true) else false
+
+        #if rooms is empty, return true??
+
+        #initialize a set of rooms visited
+        #iterate through the stack
+        #pop off, add to the set that it's been visited
+        #return length of rooms == n
+
+        n = len(rooms)
+        visited = { 0 }
+        stack = [ 0]
+
+        while stack and len(visited) < n:
+            current_room = stack.pop()
+
+            for keys in rooms[current_room]:
+                if keys not in visited:
+                    visited.add(keys)
+                    stack.append(keys)
+            if len(visited) == n:
+                return True
+        return len(visited) == n
 
 
