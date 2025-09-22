@@ -720,3 +720,59 @@ class Solution:
                     fresh_count -=1
                     queue.append((nr, nc, time + 1))
         return minutes if fresh_count == 0 else -1
+    
+    from collections import deque
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid 
+        #return the min amount of time where no fresh oranges are alive
+
+        #if no rows or cols, return 0
+
+        #initialize a queue, fresh_count
+        #iterate through rows and cols
+        #check to see if cell number is 2, add to queue
+        #check to see if cell number is 1, update fresh count
+
+        #if no fresh count, return 0 b/c cells are all rotten
+
+        #iterate through queue
+        #check each directions
+        #if the cell is 1, turn it to a two
+        #add to the queue
+        #return mins
+        #else return -1
+
+        if not grid or not grid[0]:
+            return -1
+        
+        queue = deque()
+        fresh_count = 0
+        mins = 0
+
+        for rows in range(len(grid)):
+            for cols in range(len(grid[0])):
+                if grid[rows][cols]== 2:
+                    queue.append((rows, cols, 0))
+                elif grid[rows][cols] ==1:
+                    fresh_count += 1
+        
+        if fresh_count == 0:
+            return 0
+
+        directions = [(1,0), (0,1), (-1,0), (0,-1)]
+
+        while queue: 
+            r,c, time = queue.popleft()
+            mins = max(mins, time)
+
+            for dr, dc in directions:
+                nr, nc = dr + r, dc + c
+                if (0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 1):
+                    grid[nr][nc] = 2
+                    fresh_count -=1
+                    queue.append((nr, nc, time + 1))
+        return mins if fresh_count == 0 else -1
+
+
+
