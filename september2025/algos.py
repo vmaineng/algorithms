@@ -828,3 +828,34 @@ class Solution:
                 return True
 
         return len(visited) == n
+
+
+from collections import deque
+
+class Solution:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        #receive a list of  lists with integers
+        #return boolean - can visit all rooms is True, if not it is False
+
+        #initialize a set, stack, and len of rooms
+        #iterate through the list
+        #check if the key has been seen before
+        #if not, add it to the set and stack
+        #if length of visited == n, return True
+
+        visited = { 0}
+        queue = deque([0])
+        n = len(rooms)
+
+        while queue and len(visited) < n:
+            current_room = queue.popleft()
+
+            for key in rooms[current_room]:
+                if key not in visited:
+                    visited.add(key)
+                    queue.append(key)
+            
+            if len(visited) == n:
+                return True
+
+        return len(visited) == n
