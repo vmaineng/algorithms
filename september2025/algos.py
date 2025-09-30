@@ -916,3 +916,22 @@ class Solution:
             if row, col = 1:
                 perimeter += 1
             
+class Solution:
+    def findJudge(self, n: int, trust: List[List[int]]) -> int:
+        #receive a list of list; adj list
+        #return the number for town judge, else -1
+
+        #keep track of who i visited and who they trusted
+        # if ur not in visited, you are the judge
+        #else return -1
+
+        outgoing = defaultdict(int)
+        incoming = defaultdict(int)
+
+        for src, dst, in trust:
+            outgoing[src] += 1
+            incoming[dst] += 1
+        for person in range(1, n + 1):
+            if incoming[person] == n- 1 and outgoing[person] == 0:
+                return person
+        return -1
