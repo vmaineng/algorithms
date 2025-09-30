@@ -885,3 +885,34 @@ class Solution:
                     result.append(matrix[i][left])
                 left += 1
         return result
+    
+    class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid, 1 = land, and 0 = water
+        #return the perimeter of the island
+
+        #ex: 1 => 4 b/c it counts each one
+
+        #count the outer edges and not the edges that it touches another land
+        #initialize a perimeter value
+        #iterate through rows and cols
+        #check if it is 1, traverse, and check if the other sides of it are 0, increment 
+        #perimeter count
+        #return count
+
+        perimeter = 0
+        rows = len(grid)
+        cols = len(grid[0])
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 1:
+                    perimeter = dfs(grid[row + 1][col + 1])
+        return perimeter
+
+        def dfs(row, col):
+            if not row,not col: 
+                return 0
+            if row, col = 1:
+                perimeter += 1
+            
