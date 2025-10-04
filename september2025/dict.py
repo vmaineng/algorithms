@@ -111,3 +111,29 @@ class Solution:
                 if grid[row][col] == 1:
                     max_area = max(max_area, dfs(row, col))
         return max_area
+    
+    from collection import deque
+
+class Solution:
+    def islandsAndTreasure(self, grid: List[List[int]]) -> None:
+        if not grid or grid[0]:
+            return
+        
+        rows, cols = len(grid), len(grid[0])
+        queue = deque()
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == 0:
+                    queue.append((row, col))
+        directions = [(1,0), (-1,0), (0,1), (0,-1)]
+
+        while queue: 
+            row, col = queue.popleft()
+
+            for dr, dc in directions:
+                nr, nc = row + dr, dc + col
+
+                if 0 <= nr < rows and 0 <= nc <= cols and grid[nr][nc] == 2147483647:
+                    grid[nr][nc] = grid[r][c] + 1
+                    queue.append((nr, nc))
