@@ -958,3 +958,39 @@ class Solution:
                     if col > 0 and grid[row][col-1] == 1:
                         perimeter -= 2
         return perimeter
+    
+    def dfs(graph, start):
+  #iterate through each neighbor, then if the neighbor's been explored
+  #add them in,e lse keep going
+  stack = [start]
+  while len(stack) > 0:
+    current = stack[-1]
+    print(current)
+    stack.pop()
+    for node in graph[current]:
+      stack.append(node)
+    
+
+def dfsrecursive(graph, current):
+  for neighbor in graph[current]:
+    dfsrecursive(graph, neighbor)
+
+def bfs(graph, start):
+  queue = deque([start])
+  while queue:
+    current = queue.popleft()
+
+    for node in graph[current]:
+      queue.append(node)
+    
+
+graph = {
+  "a": ["b", "c"],
+  "b": ["d"],
+  "c": ["e"],
+  "d": ["f"],
+  "e": [],
+  "f": []
+}
+
+dfs(graph, "a")
