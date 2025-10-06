@@ -1152,3 +1152,29 @@ def has_path(graph, src, dst, visited):
       return True
   return False
     
+    def connected_components_count(graph):
+  #receive a graph
+  #return count of connected componentsjkl
+
+  #have a count, set
+  #iterate through the nodes,
+  #check if the neighbor nodes have been visited
+  #if not, increment count
+  #else keep iterating through neighbors
+  #return count
+
+  visited = set()
+  count = 0
+  for node in graph:
+    if explore(graph, node, visited):
+      count += 1
+  return count
+
+def explore(graph, current, visited):
+  if current in visited:
+    return False
+  visited.add(current)
+
+  for neighbor in graph[current]:
+    explore(graph, neighbor, visited)
+  return True
