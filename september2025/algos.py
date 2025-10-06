@@ -1070,6 +1070,35 @@ def has_path(graph, src, dst, visited):
       return True
   return False
   
+def dfs(graph, start):
+  #receive a graph, Traverse through each node and print them out
+  src = start
+  for neighbor in graph[src]:
+    dfs(graph, neighbor)
+
+def dfs(graph, start):
+  stack = [start]
+  current = stack[-1]
+  while len(stack) > 0:
+    current = stack.pop()
+    for neighbor in graph[current]:
+      stack.append(neighbor)
+
+def bfs(graph, start):
+  queue = deque([start])
+  while len(queue) > 0: 
+    current = queue.popleft()
+    for neighbor in graph[current]:
+      queue.append(neighbor)
+
+graph = {
+  "a": ["b", "c"],
+  "b": ["d"],
+  "c": ["e"],
+  "d": ["f"],
+  "e": [],
+  "f": []
+}
 
 
 
