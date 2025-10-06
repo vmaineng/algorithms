@@ -1102,4 +1102,17 @@ graph = {
 
 
 
-  
+  def has_path(graph, src, dst):
+  #receive a graph, src, and dst nodes
+  #return True if path, else False
+  #edge case, if no graph
+  #base case to exit is src == dst
+  #iterative case: check the neighbor from the src nodes
+
+  if src==dst:
+    return True
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst):
+      return True
+  return False
