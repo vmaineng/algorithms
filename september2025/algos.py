@@ -994,3 +994,39 @@ graph = {
 }
 
 dfs(graph, "a")
+
+def undirected_path(edges, node_A, node_B):
+  #receive a list of edges, a node name, and a node name
+  #return boolean if path exists between A and b
+
+  #modify list into an adj matrix
+  #iterate through the matrix to check if j will connect to m
+  #since undirected graph, use set to track nodes visited
+  #return true if found node
+  #else traverse through it's neighbors
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, set())
+
+def build_graph(edges):
+  graph = {}
+  for edge in edges:
+    a,b = edge
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+  if src in visited:
+    return False
+  visited.add(src)
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited):
+      return True
+  return False
