@@ -1178,3 +1178,23 @@ def explore(graph, current, visited):
   for neighbor in graph[current]:
     explore(graph, neighbor, visited)
   return True
+
+def quadrant(x, y):
+    #receive two integers
+    #return which quadrant the coordinates are located
+    
+    #ex: -10, 100 => 2
+    
+    #if x and y are positive, it is 1
+    #if x is negative, and y positive, it is 2
+    #if x is negative, and y negative, it is 3
+    #if x is positive, y negative, it is 4
+    
+    if x >= 0 and y >= 0:
+        return 1
+    elif x < 0 and y >= 0:
+        return 2
+    elif x < 0 and y < 0:
+        return 3
+    else:
+        return 4
