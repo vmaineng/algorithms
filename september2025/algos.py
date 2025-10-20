@@ -1216,3 +1216,14 @@ def multiply(n):
     length = len(str(abs(n)))
     return n * math.pow(5, length)
     
+
+    class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #receive a list of integers and a target number
+        #return back the index position of the two values that equal target, else [-1, -1]
+
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return [-1, -1]
