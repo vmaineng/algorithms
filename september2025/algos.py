@@ -1203,4 +1203,16 @@ def quadrant(x, y):
 
 
 websites.append("codewars")
+
+import math
+def multiply(n):
+    #receive an integer
+    #return an integer where the num * 5 raised by the length
+    #ex: 4 => 4 * 5**1 => 20
+
+    #find the length of n
+    #return the product of n * 5 by the length
+    
+    length = len(str(abs(n)))
+    return n * math.pow(5, length)
     
