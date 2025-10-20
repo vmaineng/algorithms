@@ -1227,3 +1227,18 @@ def multiply(n):
                 if nums[i] + nums[j] == target:
                     return [i, j]
         return [-1, -1]
+    
+    class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #receive a list of integers and a target number
+        #return back the index position of the two values that equal target, else [-1, -1]
+
+        pairs = { }
+
+        for i,num in enumerate(nums):
+            difference = target - num
+            if difference in pairs:
+                return [pairs[difference], i]
+            pairs[num] = i
+        return [-1, -1]
+        
