@@ -1364,3 +1364,11 @@ class Ship:
     def is_worth_it(self):
         crew_weight = self.crew * 1.5
         return True if self.draft - self.crew > 20 else False
+    
+    import random
+
+class Ghost(object):
+    #receive a color that's random
+    def __init__(self):
+        colors = ['white', 'yellow', 'red', 'purple']
+        self.color = random.choice(colors)
