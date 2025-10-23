@@ -1372,3 +1372,21 @@ class Ghost(object):
     def __init__(self):
         colors = ['white', 'yellow', 'red', 'purple']
         self.color = random.choice(colors)
+
+def difference_in_ages(ages):
+    #receive a list of age
+    #return a tuple back of youngest, oldest, and difference
+    
+    oldest = max(ages)
+    youngest = min(ages)
+    difference = oldest-youngest
+    return (oldest, youngest, difference)
+
+def difference_in_ages(ages):
+    #receive a list of age
+    #return a tuple back of youngest, oldest, and difference
+    
+    oldest = max(ages)
+    youngest = min(ages)
+    difference = oldest-youngest
+    return (youngest, oldest, difference)
