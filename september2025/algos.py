@@ -1356,4 +1356,11 @@ class Solution:
     #return true if english, else false
     
     return 'english' in sentence.lower()
-
+class Ship:
+    def __init__(self, draft, crew):
+        self.draft = draft
+        self.crew = crew
+    
+    def is_worth_it(self):
+        crew_weight = self.crew * 1.5
+        return True if self.draft - self.crew > 20 else False
