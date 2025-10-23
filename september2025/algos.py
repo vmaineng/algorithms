@@ -1348,4 +1348,6 @@ class Solution:
                     dfs(row, col)
                     count += 1
         return count
+    
+    websites = ['codewars'] * 1000
 
