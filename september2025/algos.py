@@ -1351,3 +1351,9 @@ class Solution:
     
     websites = ['codewars'] * 1000
 
+    def sp_eng(sentence): 
+    #receive a string of letters
+    #return true if english, else false
+    
+    return 'english' in sentence.lower()
+
