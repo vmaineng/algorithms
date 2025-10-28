@@ -1475,3 +1475,32 @@ def cat_mouse(map_, moves):
     else:
         return 'Escaped!'
     
+    def cat_mouse(map_,moves):
+        if 'C' not in map_ or 'm' not in map_:
+            return 'boring without two animals'
+        
+        for row, line in enumerate(map_.splitlines()):
+            if 'C' in line:
+                cat = row, line.index('C')
+            if 'm' in line:
+                mouse = row, line.index('m')
+        distance = abs(cat[0] - mouse[0]) +abs(cat[1]- mouse[1])
+        return 'Caguth!' if distance <= moves else 'Escaped1'
+    
+    def triple_trouble(one, two, three):
+    #receive a string for 3 words
+    #return one big string back where all of the letters are added together
+    
+    #'hil', 'yo',' joe' = > 'hyjioele'
+    
+    #start at the beginning of the new index
+    #add in the letters
+    #then iterate through the word
+    #add in letters
+    
+    listWord = []
+    
+    for a,b,c in zip(one, two, three):
+        listWord.extend([a,b,c])
+    
+    return ''.join(listWord) 
