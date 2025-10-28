@@ -1451,3 +1451,27 @@ class Solution:
                 path += 1
     return 'Caught!' if path >= moves else 'Escaped!'
             
+            def find_animal(game_map, animal_char):
+    for r_idx, row in enumerate(game_map):
+        for c_idx, char in enumerate(row):
+            if char == animal_char:
+                return r_idx, c_idx
+    return None, None
+
+def cat_mouse(map_, moves):
+    rows = map_.count('\n') + 1
+    game_map = [list(row) for row in map_.split("\n")]
+    
+    cat_r, cat_c = find_animal(game_map, 'C')
+    mouse_r, mouse_c = find_animal(game_map, 'm')
+    
+    if cat_r is None or mouse_r is None:
+        return "boring without two animals"
+    
+    distance = abs(cat_r-mouse_r) + abs(cat_c - mouse_c)
+    
+    if distance <= moves:
+        return 'Caught!'
+    else:
+        return 'Escaped!'
+    
