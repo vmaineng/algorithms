@@ -1420,3 +1420,34 @@ class Solution:
                     board[r][c] = 'X'
                 elif board[r][c] == 'S':
                     board[r][c] = '0'
+
+                def cat_mouse(map_, moves):
+    #receive a string, and an amount of 5 moves
+    #return Caught if it can be caught in 'Caught' if in moves or less, else Escaped
+    
+    #if no c or m, return boring without two animals
+    
+    #identify rows, cols
+    #if grid's value is C, then start doing dfs until it reaches M
+    #if dfs < moves, do "Caught"
+    #else return escaped
+    
+    rows, cols = len(map_), len(map_[0])
+    path = 0
+    
+    def dfs(row, col):
+        if row < 0 or col < 0 or row >= rows or col >= cols or map_[row][col] != "C":
+            return
+        map_[row][col] = 0
+        dfs(row +1, col)
+        dfs(row -1, col)
+        dfs(row, col + 1)
+        dfs(row, col -1)
+    
+    for row in range(row):
+        for col in range(cols):
+            if map_[row][col] == 'C':
+                dfs(row, col)
+                path += 1
+    return 'Caught!' if path >= moves else 'Escaped!'
+            
