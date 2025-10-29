@@ -1524,3 +1524,9 @@ def billboard(name, price=30):
         total += price
     return total
     return sum(price for char in name)
+
+def triple_trouble(one, two, three):
+    names = []
+    for a,b,c in zip(one, two, three):
+        names.extend([a,b,c])
+    return ''.join(names)
