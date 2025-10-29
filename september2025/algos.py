@@ -1504,3 +1504,23 @@ def cat_mouse(map_, moves):
         listWord.extend([a,b,c])
     
     return ''.join(listWord) 
+
+    def billboard(name, price=30):
+    return len(name) * price
+
+def billboard(name, price=30):
+    #receive a string of names
+    #return the total of length * price
+    
+    #ex: 'name' => 4 * 30
+    
+    #intiailize a total
+    #iterate up to end of name and add the price to it
+    #return total
+    
+    total = 0
+    
+    for char in name:
+        total += price
+    return total
+    return sum(price for char in name)
