@@ -1530,3 +1530,25 @@ def triple_trouble(one, two, three):
     for a,b,c in zip(one, two, three):
         names.extend([a,b,c])
     return ''.join(names)
+
+class Solution:
+    def findJudge(self, n: int, trust: List[List[int]]) -> int:
+        #receive an integer and a list of lists of who they trust (person, they trust)
+        #return the idx of judge who trusts no one and receives the most vote
+
+        #initialize an empty list filled with 0
+        #increment score of index position for who they trust in a
+        #decrement score
+        #return idx of person who has the most vote
+
+        trust_score = [0] * (n + 1)
+
+        for a,b in trust:
+            trust_score[a] -= 1
+            trust_score[b] += 1
+        print(trust_score)
+        
+        for idx in range(1, n+1):
+            if trust_score[idx] == n -1:
+                return idx
+        return -1
