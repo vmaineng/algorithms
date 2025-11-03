@@ -20,3 +20,16 @@ def dfs(graph, source){
     for neighbor in graph[current]:
        dfs(graph, neighbor)
 }
+
+
+from collections import deque 
+def bfs(graph, source) { 
+    #initialize a deque
+    #while the deque is not empty
+    #iterate through each neighbor
+    queue = deque([start])
+    while len(queue) > 0: 
+       current = queue.popleft()
+       for neighbor in graph[current]:
+          queue.append(neighbor)
+}
