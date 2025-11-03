@@ -12,7 +12,11 @@ def dfs(graph, source) {
         current = stack.pop()
         for neighbor in graph[current]:
             stack.append(neighbor)
-
-        
     
+}
+
+def dfs(graph, source){
+    current = source
+    for neighbor in graph[current]:
+       dfs(graph, neighbor)
 }
