@@ -13,3 +13,17 @@ def to_csv_text(array):
     for row in array:
         csv_rows.append(','.join(map(str,row)))
     return '\n'.join(csv_rows)
+
+def to_csv_text(array):
+    #receive an array
+    #return a string back of new items
+    
+    #create a new empty list
+    #iterate through the rows in array
+    #convert them into a string
+    #return it joined back with csv
+    
+    csv_rows = []
+    for row in array:
+        csv_rows.append(','.join(map(str, row)))
+    return '\n'.join(csv_rows)
