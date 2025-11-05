@@ -27,3 +27,19 @@ def to_csv_text(array):
     for row in array:
         csv_rows.append(','.join(map(str, row)))
     return '\n'.join(csv_rows)
+
+    def contamination(text, char):
+    #receive a string of lowercase letters, numbers, and a string char
+    #replace the text with chars
+    
+    #ex: 'hello', 'z' => 'zzzzz'
+    
+    #initialize an empty list
+    #iterate through each char
+    #replace each text with char
+    #return new string
+    
+    new_word = []
+    for letter in text:
+        new_word.append(char)
+    return ''.join(new_word)
