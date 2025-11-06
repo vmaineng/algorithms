@@ -43,3 +43,24 @@ def to_csv_text(array):
     for letter in text:
         new_word.append(char)
     return ''.join(new_word)
+
+def calculator(x, y, op):
+    #receive two numbers and a string of operations
+    #return the output from x & y based off of operations
+    
+    #ex: 4, 2, '+' => 4 + 2 => 6
+    #ex 8,4, '/' => "unknown vaue"
+    
+    if x == str(x) or y == str(y):
+        return "unknown value"
+    
+    if op == '+':
+        return x + y
+    elif op == '-':
+        return x - y
+    elif op == '*':
+        return x * y
+    elif op == '/':
+        return x /y
+    else:
+        return "unknown value"
