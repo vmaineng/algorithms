@@ -195,3 +195,35 @@ def explore(graph, node, visited):
   for neighbor in graph[node]:
     size += explore(graph, neighbor, visited)
   return size
+
+from collections import deque
+
+def shortest_path(edges, node_A, node_B):
+  graph = build_graph(edges)
+  visited = set([node_A])
+  queue = deque([(node_A, 0)])
+
+  while len(queue) > 0:
+    node, distance = queue.popleft()
+
+    if node == node_B:
+      return distance
+
+    for neighbor in graph[node]:
+      if neighbor not in visited:
+        visited.add(neighbor)
+        queue.append(neighbor, distance + 1)
+  return -1
+        
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
