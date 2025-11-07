@@ -227,3 +227,34 @@ def build_graph(edges):
     graph[a].append(b)
     graph[b].append(a)
   return graph
+
+
+def island_count(grid):
+  #receive a grid
+  #return the count of islands on grid
+
+  #isolate rows and cols
+  #iterate through if grid is 'L'
+  #increment island count
+  #return count
+
+  count = 0
+  rows, cols = len(grid), len(grid[0])
+
+  def explore(row, col):
+    if row < 0 or col < 0 or row >= rows or col >= cols or grid[row][col] == 'W':
+      return 0
+    grid[row][col] = "W"
+
+    explore(row + 1, col)
+    explore(row -1, col)
+    explore(row, col + 1)
+    explore(row, col - 1)
+    
+
+  for row in range(rows):
+    for col in range(cols):
+      if grid[row][col] == 'L':
+        explore(row, col)
+        count += 1
+  return count
