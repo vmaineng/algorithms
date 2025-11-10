@@ -282,3 +282,17 @@ def define_suit(card):
         return 'hearts'
     else:
         return 'spades'
+    
+    from preloaded import DECK
+
+def define_suit(card):
+    #create an object
+    #do a search up in O(1)
+    
+    suits = { 
+    'C': 'clubs',
+    'S': 'spades',
+    'D': 'diamonds',
+    'H': 'hearts'}
+    
+    return suits[card[-1]]
