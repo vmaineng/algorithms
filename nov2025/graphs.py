@@ -258,3 +258,27 @@ def island_count(grid):
         explore(row, col)
         count += 1
   return count
+
+from preloaded import DECK
+
+def define_suit(card):
+    #recceive a string starting with a number and a char
+    #return what suite it is 
+    
+    #ex: '3C' => 'clubs'
+    #ex: '4D' => 'diamonds'
+    
+    #capture the last letter int he string
+    #if it is c, clubs
+    #if it is d, it is diamonds
+    #if it is h, it is hearts
+    #if it is s, spades
+    
+    if card[1] == 'C':
+        return 'clubs'
+    elif card[1] == 'D':
+        return 'diamonds'
+    elif card[1] == 'H':
+        return 'hearts'
+    else:
+        return 'spades'
