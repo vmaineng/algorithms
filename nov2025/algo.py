@@ -64,3 +64,10 @@ def calculator(x, y, op):
         return x /y
     else:
         return "unknown value"
+    
+
+    def rain_amount(mm):
+    if (mm < 40):
+         return f"You need to give your plant {abs(mm - 40)}mm of water"
+    else:
+         return "Your plant has had more than enough water for today!"
