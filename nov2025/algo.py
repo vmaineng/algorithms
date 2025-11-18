@@ -71,3 +71,15 @@ def calculator(x, y, op):
          return f"You need to give your plant {abs(mm - 40)}mm of water"
     else:
          return "Your plant has had more than enough water for today!"
+    
+
+    def sakura_fall(v):
+    #receive an integer, ensure it is positive
+    #return total time for petal to reach ground
+    #ex: travels 5 cm/s, and it is 80 secs
+    #ex: 10cm/s, now it's 40 secs
+    
+    new_cm = v /5
+    return 80 / new_cm if v > 0 else 0
+    
+    
