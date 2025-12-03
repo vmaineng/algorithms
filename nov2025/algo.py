@@ -82,4 +82,35 @@ def calculator(x, y, op):
     new_cm = v /5
     return 80 / new_cm if v > 0 else 0
     
-    
+    class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #receive an array of integers and an integer number target
+        #return the position of two numbers
+
+        #ex: [4,3, 1, 0], 1 => [2, 3]
+
+        #iterate through the numbers for one loop
+        #continue a second iteration while having first pointer stay one value
+        #check to see if two values at index positions are equal to target
+        #return the index position
+        #else, return [-1, -1] and not found
+
+        # for i in range(len(nums)):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+        # return [ -1, -1]
+        
+
+        #time: O(n^2) due to using two inner for loops
+        #space: O(n) for n in nums
+
+        obj = {}
+
+        for i in range(len(nums)):
+            difference = target - nums[i]
+            if difference in obj:
+                return [obj[difference], i]
+            else:
+                obj[nums[i]] = i
+        return [ -1, -1]
