@@ -114,3 +114,6 @@ def calculator(x, y, op):
             else:
                 obj[nums[i]] = i
         return [ -1, -1]
+    
+    def divide_numbers(x,y):
+    return x / y
