@@ -117,3 +117,26 @@ def calculator(x, y, op):
     
     def divide_numbers(x,y):
     return x / y
+
+def remove(st):
+    #receive a string
+    #return a strign with no '!' at end
+    #ex: '!hel!' => '!hel'
+    
+    #check if end of string is !
+    #then do not add
+    
+#     newWord = []
+#     revWord = ''.join(reversed(st))
+# #     print(revWord)
+#     for i in range(len(revWord)):
+#         if revWord[i] != '!':
+#             newWord.append(revWord[i])
+#     return ''.join(reversed(newWord))
+
+    newWord = []
+    
+    for i in range(len(st)-1, -1, -1):
+        if st[i] != '!':
+            newWord.append(st[i])
+    return ''.join(newWord)
