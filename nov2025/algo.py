@@ -144,3 +144,22 @@ def remove(st):
 class Person:
     def __init__(self, name,age):
         self.info="{}s age is {}".format(name, age)
+
+
+        # input is an unsorted list of 3 positive integers
+def pythagorean_triple(integers):
+    # return True if it is possible to form a Pythagorean triple with the 3 integers
+    # return False if it is not possible
+    #receive a list of integers
+    
+    #sort the list of integers
+    #check if a^2 + b^2 = c^2, return True, else return False
+    
+    sortList = list(sorted(integers))
+    
+#     if sortList[0]**2 + sortList[1]**2 == sortList[2]**2:
+#         return True
+#     else:
+#         return False
+    
+    return True if sortList[0]**2 + sortList[1]**2 == sortList[2]**2 else False
