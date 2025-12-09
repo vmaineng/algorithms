@@ -140,3 +140,7 @@ def remove(st):
         if st[i] != '!':
             newWord.append(st[i])
     return ''.join(newWord)
+
+class Person:
+    def __init__(self, name,age):
+        self.info="{}s age is {}".format(name, age)
