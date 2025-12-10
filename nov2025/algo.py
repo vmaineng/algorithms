@@ -181,3 +181,26 @@ def shark(pontoon_distance, shark_distance, you_speed, shark_speed, dolphin):
     
     return 'Alive!' if human < shark else 'Shark Bait!'
     
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  #receive the root node of a tree
+  #return the nodes
+
+  #if no nodes, return empty list
+
+  #intialize a list
+  #iterate from left, then iterate on right
+  #return the list
+
+  if root is None:
+    return []
+
+  left_values = depth_first_values(root.left)
+  right_values = depth_first_values(root.right)
+
+  return [root.val, *left_values, *right_values]
