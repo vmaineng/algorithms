@@ -237,3 +237,37 @@ def depth_first_values(root):
       stack.append(current.left)
 
   return values
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def breadth_first_values(root):
+  #receive a root Node
+  #return BFS 
+
+  #initialize a queue
+  #values list
+  #while queue is not empty
+  #iterate through all the nodes
+
+  if not root:
+    return []
+  
+  values = []
+  queue = deque([ root ])
+
+  while queue:
+    current = queue.popleft()
+    values.append(current.val)
+
+    if current.left:
+      queue.append(current.left)
+    if current.right:
+      queue.append(current.right)
+  return values
+  
