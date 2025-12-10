@@ -163,3 +163,21 @@ def pythagorean_triple(integers):
 #         return False
     
     return True if sortList[0]**2 + sortList[1]**2 == sortList[2]**2 else False
+
+def shark(pontoon_distance, shark_distance, you_speed, shark_speed, dolphin):
+    #receive distance, speed and a dolphin
+    #return Alive if can make it to pontoon, else Shark Bait
+    
+    #shark's: 8/4 = 2 b/c dolphin present, 50;  50 /2 = 25
+    #human's: 4 , 12 => 12 /4 = 3
+    
+    #25 > 3 => "Alive"
+    
+    if dolphin:
+        shark_speed = shark_speed /2
+        
+    shark = shark_distance / shark_speed
+    human = pontoon_distance / you_speed
+    
+    return 'Alive!' if human < shark else 'Shark Bait!'
+    
