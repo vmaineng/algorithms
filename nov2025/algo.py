@@ -345,4 +345,59 @@ def tree_sum(root):
 
   #time: O(n) #n of nodes
   #space: O(n) #n of nodes
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_sum(root):
+  #receive a root node of a binary tree
+  #return an integer of total sum 
+ 
+  #base case: if not root, return 0
+  #recursive case: keep calling and adding to the total for left side & right side
+
+  # if not root:
+  #   return 0
+
+  # return root.val + tree_sum(root.left) + tree_sum(root.right)
+
+  #time: O(n) #n of nodes
+  #space: O(n) #n of nodes
+
+  #bfs: uses a queue, (python will use a deque)
+
+  #pop off the current node in the queue
+  #add current's value to the total
+  #if there are any left children, add it to the queue
+  #if there are any right children, add it to the queue
+  #return the total
+
+   #ex:  5
+  #   /  \
+  # -3   null (0)
+
+  #5 + -3 => 2
+
+
+  from collections import deque
+
+  if not root:
+    return 0
+
+  total_sum = 0
+  queue = deque([root]) #5, -3
+  while queue:
+    current = queue.popleft()
+    total_sum += current.val #total_sum = 5 + -3 = 2
+
+    if current.left:
+      queue.append(current.left)
+    if current.right:
+      queue.append(current.right)
+  return total_sum
+
+  #time: O(n) # n of nodes
+  #space: O(n) #n of nodes
   
