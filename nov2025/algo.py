@@ -319,3 +319,30 @@ def tree_includes(root, target):
     if current.right:
       queue.append(current.right)
   return False
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_sum(root):
+  #receive a root node of a binary tree
+  #return an integer of total sum 
+  #ex:  5
+  #   /  \
+  # -3   null (0)
+
+  #5 + -3 => 2
+
+  #base case: if not root, return 0
+  #recursive case: keep calling and adding to the total for left side & right side
+
+  if not root:
+    return 0
+
+  return root.val + tree_sum(root.left) + tree_sum(root.right)
+
+  #time: O(n) #n of nodes
+  #space: O(n) #n of nodes
+  
