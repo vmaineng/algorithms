@@ -271,3 +271,21 @@ def breadth_first_values(root):
       queue.append(current.right)
   return values
   
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_sum(root):
+  #receive the root node of a tree_sum
+  #return the sum of all node values
+
+
+  #intiialize a total
+  #iterate through each node and add to sum 
+
+  if not root:
+    return 0
+
+  return root.val + tree_sum(root.left) + tree_sum(root.right)
