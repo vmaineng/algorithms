@@ -438,4 +438,12 @@ def tree_min_value(root):
     if current.right:
       queue.append(current.right)
   return min_value
+
+def tree_min_value(root):
+  if not root:
+    return float('inf')
+
+  smallest_left = tree_min_value(root.left)
+  smallest_right = tree_min_value(root.right)
+  return min(root.val, smallest_left, smallest_right)
   
