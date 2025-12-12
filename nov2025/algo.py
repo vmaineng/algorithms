@@ -401,3 +401,41 @@ def tree_sum(root):
   #time: O(n) # n of nodes
   #space: O(n) #n of nodes
   
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def tree_min_value(root):
+  #receive root node of a tree 
+  #return the min value seen
+
+  #ex:
+
+  #intialize a variable to float infinity
+  #if the number is smaller than float infinity
+  #then update float infinity
+  #traverse left and right
+  #bfs to check level by level
+
+  if not root:
+    return 0
+
+  queue = deque([root])
+  min_value = float('infinity')
+
+  while queue:
+    current = queue.popleft()
+    if current.val < min_value:
+      min_value = current.val
+
+    if current.left:
+      queue.append(current.left)
+
+    if current.right:
+      queue.append(current.right)
+  return min_value
+  
