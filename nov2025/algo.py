@@ -447,3 +447,20 @@ def tree_min_value(root):
   smallest_right = tree_min_value(root.right)
   return min(root.val, smallest_left, smallest_right)
   
+
+  def shortest_path(edges, node_A, node_B):
+  graph = build_graph(edges)
+  visited = set([node_A])
+  queue = deque(([node_A, 0]))
+
+  while queue:
+    node, distance = queue.popleft()
+
+    if node == node_B:
+      return distance
+
+    for neighbor in graph[node]:
+      if neighbor not in visited:
+        visited.add(neighbor)
+        queue.append((neighbor, distance + 1))
+  return -1
