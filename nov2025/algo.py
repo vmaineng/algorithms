@@ -487,3 +487,16 @@ def has_path(graph, src, dst):
     if has_path(graph, neighbor, dst):
       return True
   return False
+
+ queue = deque([src])
+
+  while queue:
+    current = queue.popleft()
+
+    if current == dst:
+      return True
+      
+    for neighbor in graph[current]:
+      queue.append(neighbor)
+
+  return False
