@@ -474,3 +474,16 @@ def has_path(graph, src, dst):
     if (has_path(graph, neighbor, dst) == True):
       return True
   return False
+
+def has_path(graph, src, dst):
+  #receive a graph as adj matrix, src, and dst
+  #return True if src == dst node, else False
+  #
+
+  if src == dst:
+    return True
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst):
+      return True
+  return False
