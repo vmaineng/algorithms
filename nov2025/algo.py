@@ -464,3 +464,13 @@ def tree_min_value(root):
         visited.add(neighbor)
         queue.append((neighbor, distance + 1))
   return -1
+
+def has_path(graph, src, dst):
+  #receive graph, src node, and dst node
+  #
+  if src==dst:
+    return True
+  for neighbor in graph[src]:
+    if (has_path(graph, neighbor, dst) == True):
+      return True
+  return False
