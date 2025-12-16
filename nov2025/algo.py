@@ -571,3 +571,42 @@ def has_path(graph, src, dst):
     if has_path(graph, neighbor, dst):
       return True
   return False
+
+def undirected_path(edges, node_A, node_B):
+  #receive an adj list, node value, node value
+  #return True if node a reaches node B, else False
+  #ex:
+
+  #create an adj matrix
+  #check if path exits
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, set())
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+
+  if src in visited:
+    return False
+
+  visited.add(src)
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited):
+      return True
+  return False
