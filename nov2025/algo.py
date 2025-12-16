@@ -610,3 +610,32 @@ def has_path(graph, src, dst, visited):
     if has_path(graph, neighbor, dst, visited):
       return True
   return False
+
+def connected_components_count(graph):
+  #receive an adj matrix
+  #return count of how many connected 
+  #ex:
+
+  #initialize a count
+  #iterate through graph
+  #check if node connects
+  #return count
+
+  count = 0
+  visited = set()
+
+  for node in graph:
+    if explore_path(graph, node, visited) == True:
+      count += 1
+  return count
+
+def explore_path(graph, current, visited):
+  if current in visited:
+    return False
+
+  visited.add(current)
+
+  for neighbor in graph[current]:
+    explore_path(graph, neighbor, visited)
+  return True
+    
