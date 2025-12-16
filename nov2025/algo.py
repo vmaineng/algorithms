@@ -500,3 +500,65 @@ def has_path(graph, src, dst):
       queue.append(neighbor)
 
   return False
+
+def undirected_path(edges, node_A, node_B):
+  #receive a list of edges, and two nodes
+  #return True if nodes are connected
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, set())
+
+
+  #build a adj matrix
+  #then iterate through the matrix to see if edges are connected, return True if yes, else False
+
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+
+  if src in visited:
+    return False
+
+  visited.add(src)
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited) == True:
+      return True
+  return False
+
+from collections import deque
+
+def has_path(graph, src, dst):
+  #receive a adj matrix, src node, and dst node
+  #return true if path from src reaches dst, else False
+  #ex: 
+
+  #bfs using queue:
+  #import deque
+  #check if current node == dst, return true
+  #if not, add in its neighbor node
+  #return False after checking everything if it's not it
+
+  queue = deque([src])
+  while queue:
+    current = queue.popleft()
+    if current == dst:
+      return True 
+
+    for neighbor in graph[current]:
+      queue.append(neighbor)
+  return False
