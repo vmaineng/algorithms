@@ -719,3 +719,35 @@ def build_graph(edges):
     graph[a].append(b)
     graph[b].append(a)
   return graph
+
+from collections import deque
+
+def has_path(graph, src, dst):
+  #receive an adj matrix
+  #return True if src reaches dst, else False
+  #ex:
+
+  #dfs:
+  #base case: if src == dst, return True
+  #else traverse through its neighbor, return True if they meet, else return False
+
+  # if src == dst:
+  #   return True
+
+  # for neighbor in graph[src]:
+  #   if has_path(graph, neighbor, dst):
+  #     return True
+  # return False
+
+  #bfs: using queue
+  queue = deque([src])
+
+  while queue:
+    current = queue.popleft()
+    if current == dst:
+      return True
+
+    for neighbor in graph[current]:
+      queue.append(neighbor)
+  return False
+  
