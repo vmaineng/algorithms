@@ -639,3 +639,44 @@ def explore_path(graph, current, visited):
     explore_path(graph, neighbor, visited)
   return True
     
+
+    from collections import queue
+
+def shortest_path(edges, node_A, node_B):
+  #receive a graph list
+  #return shortest path count from node a to b  
+  #ex:
+
+  #create an adj matrix
+  #initialize a count of min steps
+  #traverse through using a queue for bfs
+
+  graph = build_graph(edges)
+  queue = deque([ (node_A, 0) ])
+  visited = set([node_A])
+
+  while queue:
+    node, distance = queue.popleft()
+
+    if node == node_B:
+      return distance
+
+    visited.add(node)
+
+    for neighbor in graph[node]:
+      queue.append(neighbor, distance + 1)
+  return -1
+
+
+def build_graph(edges):
+  graph = { }
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
