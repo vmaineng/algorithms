@@ -751,3 +751,24 @@ def has_path(graph, src, dst):
       queue.append(neighbor)
   return False
   
+  class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        #receive a list of list
+        #return how many min intervals
+        #ex:
+
+        if not intervals:
+            return 0
+
+        count = 0 
+        intervals.sort(key=lambda x:x[0])
+        prev_end= intervals[0][1]
+
+        for i in range(1, len(intervals)):
+            start, end = intervals[i]
+
+            if end <= prev_end:
+                count += 1
+            else:
+                prev_end = end
+        return count
