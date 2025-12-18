@@ -772,3 +772,36 @@ def has_path(graph, src, dst):
             else:
                 prev_end = end
         return count
+    
+def island_count(grid):
+  #receive a grid of m x n
+  #return count of islands spotted
+
+  #ex:
+
+  #iterate through rows and cols
+  #check if value is a L, mark all visited
+  #return count of L
+
+  visited = set()
+  count = 0
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      if explore(grid, row, col, visited):
+        count += 1
+  return count
+
+def explore(grid, row, col, visited):
+  if (row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 'W' or (row, col) in visited):
+    return False
+
+  visited.add((row, col))
+
+  explore(grid, row + 1, col, visited)
+  explore(grid, row - 1, col, visited)
+  explore(grid, row, col + 1, visited)
+  explore(grid, row, col - 1, visited)
+
+  return True
+  
