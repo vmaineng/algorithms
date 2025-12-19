@@ -805,3 +805,64 @@ def explore(grid, row, col, visited):
 
   return True
   
+  from collections import deque
+
+def shortest_path(edges, node_A, node_B):
+  #receive an adj list, node value, and another node value
+  #return an integer of how many edges it takes to get from node to node 
+  #ex: edges: [
+  # ['w', 'x'],
+  #['y','z'],
+  # ['x', 'y']
+  #]
+
+  # w = > y => 2
+
+  #[ {
+  # 'w':  ['x'],
+  #'x': ['y', 'w'],
+  #'y': ['z', 'x'],
+  #'z': ['y']
+  #}]
+
+  #bfs: use a queue, add a distance
+  #create adj matrix
+  #iterate through each node
+  #check to see if the node value == node_B
+  #return distance affilated 
+  #add in its neighbor node to the queue, continue checking
+  #increment count of distance
+  #else return -1
+
+  graph = build_graph(edges)
+  queue = deque([ (node_A, 0) ]) #[  ('w', 2)]
+  visited = set(( node_A )) #('w', 'x', 'y','w')
+
+  while queue:
+    current, distance = queue.popleft() #('y', 2)
+
+    if current == node_B: #'y' => 'y'
+      return distance
+
+    for neighbor in graph[current]:
+      if neighbor not in visited:
+        visited.add((neighbor))
+        queue.append((neighbor, distance + 1))
+  return -1
+      # w => x 
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = [] #'w': ['x']
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  #{'w': ['x', 'v'], 'x': ['w', 'y'], 'y': ['x', 'z'], 'z': ['y', 'v'], 'v': ['z', 'w']} 
+  return graph
+    
+  
