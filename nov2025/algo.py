@@ -896,3 +896,37 @@ def explore(grid, row, col, visited):
   explore(grid, row, col - 1, visited)
   explore(grid, row, col + 1, visited)
   return True
+
+def minimum_island(grid):
+  #receive a grid
+  #return the size of smalleset island count 
+  #ex: 
+
+  #iterate through one
+  #count the size
+  #return size back of smallest one
+
+  min_size = float("inf")
+  visited = set()
+  
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+        size = dfs(grid, row, col, visited)
+        if size < min_size and size > 0:
+          min_size = size
+  return min_size
+
+def dfs(grid, row, col, visited):
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 'W' or (row, col) in visited:
+    return 0
+
+  visited.add((row, col))
+
+  size = 1
+  size += dfs(grid, row -1 , col, visited)
+  size += dfs(grid, row + 1, col, visited)
+  size += dfs(grid, row, col - 1, visited)
+  size += dfs(grid, row, col + 1, visited)
+  
+  return size
+  
