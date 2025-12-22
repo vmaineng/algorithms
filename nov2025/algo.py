@@ -962,3 +962,32 @@ def explore(grid, row, col, visited):
   size += explore(grid, row, col + 1, visited)
   return size
   
+
+  def island_count(grid):
+  #receive a row x cols
+  #return a count of island_count
+  #ex:
+
+  #iterate through rows and cols
+  #through the funciton perform dfs
+  #return a count of islands seen
+
+  count = 0
+  visited = set()
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      count += explore(grid, row, col, visited)
+  return count
+
+def explore(grid, row, col, visited):
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 'W' or (row, col) in visited:
+    return False
+
+  visited.add((row, col))
+
+  explore(grid, row - 1, col, visited)
+  explore(grid, row + 1, col, visited)
+  explore(grid, row, col - 1, visited)
+  explore(grid, row, col + 1, visited)
+  return True
