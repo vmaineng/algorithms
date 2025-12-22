@@ -1013,4 +1013,21 @@ def fizz_buzz(n):
       result.append(num)
   return result
 
+def pairs(elements):
+  #receive a list of strings
+  #return a list of pairs of unique chars
+  #ex: ['h', 'a', 'p'] => [['h','a'], ['h', 'p']]
+
+  #initialize an empty list
+  #iterate through each string
+  #check if they are the same, 
+  #add it to the pairs
+  #return a set of list
+
+  result = []
+  for i in range(0, len(elements)):
+    for j in range(i + 1, len(elements)):
+      result.append([elements[i], elements[j]])
+    
+  return result
   
