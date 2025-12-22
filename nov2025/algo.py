@@ -991,3 +991,26 @@ def explore(grid, row, col, visited):
   explore(grid, row, col - 1, visited)
   explore(grid, row, col + 1, visited)
   return True
+
+def fizz_buzz(n):
+  #receive an integer
+  #return a list of integers 
+  #Fizzbuzz if % 3 and 5 or 3 = fizz and if 5 only = Fizzbuzz
+  #ex: 15 => fizzbuzz, 4 => None
+
+  #iterate up to n
+  #if num % 3 and 5 == fizzbuzz, else, print the num
+
+  result = []
+  for num in range(1, n +1):
+    if num % 3 == 0 and num % 5 == 0:
+      result.append("fizzbuzz")
+    elif num % 3 == 0 :
+      result.append("fizz")
+    elif num % 5 == 0 :
+      result.append("buzz")
+    else:
+      result.append(num)
+  return result
+
+  
