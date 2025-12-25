@@ -19,3 +19,36 @@ def longest_word(sentence):
       longWordLen = len(words[char])
       longWord = words[char]
   return longWord
+
+
+from math import sqrt, floor
+def is_prime(n):
+  #receive an integer
+  #return True if is_prime, else false
+  #ex: 4 => False, b/c 2 and 1 goes in it
+
+  #iterate up to n amount
+  #if n mods by every number, return False
+  #else return True
+
+  # count = 0
+
+  # for num in range(2, n + 1):
+  #   print(num, n, count)
+  #   if n % num == 0:
+  #     print(num, n, count)
+  #     count += 1
+
+  # if count > 1:
+  #   return False
+  # else:
+  #   return True
+
+  if n < 2:
+    return False
+
+  for num in range(2, floor(sqrt(n)) + 1):
+    if n % num == 0:
+      print(n, num)
+      return False
+  return True
