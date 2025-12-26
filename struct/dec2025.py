@@ -52,3 +52,23 @@ def is_prime(n):
       print(n, num)
       return False
   return True
+
+
+def is_prime(n):
+  #receive an integer
+  #return boolean True if it is a prime, else false
+
+  #ex: 4 => false
+
+  #iterate up to n
+  #check if it's divisble by another number, return false
+  #after checking everything, return True
+
+  if n < 2:
+    return False
+
+  for i in range(2, n):
+    if n % i == 0:
+      return False
+
+  return True
