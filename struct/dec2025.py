@@ -161,3 +161,25 @@ def anagrams(s1, s2):
     
   #time: O(n + m)
   #space: O(n + m)
+
+  def most_frequent_char(s):
+  #receive a string of lowercasea chars
+  #return most seen chars
+  #ex: 'hello' => 'l'
+
+  #iterate through the string
+  #keep count of how many letters seen
+  #iterate through object to find most seen chars
+
+  count = 0
+  letter= ''
+  chars = {}
+
+  for char in s:
+    chars[char] = chars.get(char, 0) + 1
+
+  for key in chars:
+    if chars[key] > count:
+      count = chars[key]
+      letter = key
+  return letter
