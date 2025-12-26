@@ -183,3 +183,43 @@ def anagrams(s1, s2):
       count = chars[key]
       letter = key
   return letter
+
+
+def pair_sum(numbers, target_sum):
+  #receive a list of integers and atarget integers
+  #return the index of first two indices found
+
+  #ex: [0, 1,2] , 2 => (0, 2)
+
+  #iterate through numbers in range:
+  #iterate thorugh numbers in range 
+  #check if they add up to target
+  #return indices
+
+  # for i in range(len(numbers) - 1):
+  #   for j in range(i + 1, len(numbers)):
+  #     if numbers[i] + numbers[j] == target_sum:
+  #       return (i, j)
+  # return (-1, -1)
+
+  #time: O(n ^ 2)
+ #space: O(n)
+
+  #keep track of the index found at the element
+
+  integers_map = {}
+
+  for num in range(len(numbers)):
+    difference = target_sum - numbers[num]
+    # print(difference) #5
+    
+    if difference in integers_map:
+      # print(difference, num) #{3: 0}
+      return (integers_map[difference], num) 
+      
+    integers_map[numbers[num]] = num
+    # print(integers_map)
+  return (-1, -1)
+    
+
+  
