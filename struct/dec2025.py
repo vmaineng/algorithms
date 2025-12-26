@@ -222,4 +222,25 @@ def pair_sum(numbers, target_sum):
   return (-1, -1)
     
 
+  def pair_product(numbers, target_product):
+  # for i in range(len(numbers) -1):
+  #   for j in range(i + 1, len(numbers)):
+  #     if numbers[i] * numbers[j] == target_product:
+  #       return (i, j)
+  # return (-1, -1)
+
+  #time:O(n ^2)
+  #space:O(n^2)
+
+  count = {}
+
+  for i in range(len(numbers)):
+    difference = target_product //  numbers[i]
+
+    if difference in count:
+      return (i, count[difference])
+
+    count[numbers[i]] = i
+  return (-1, -1)
+
   
