@@ -99,3 +99,19 @@ def is_prime(n):
     if n % i == 0:
       return False
   return True
+
+def pairs(elements):
+  #receive a list of unique elements
+  #return a pair of elements
+
+  #iterate starting from beginning
+  #iterate next to it
+  #add it to the pair
+
+  result = []
+
+  for i in range(0, len(elements)):
+    for j in range(i + 1, len(elements)):
+      pair = [elements[i], elements[j]]
+      result.append(pair)
+  return result
