@@ -140,3 +140,24 @@ def anagrams(s1, s2):
       chars[char] -= 1
 
   return True if chars.values() == 0 else False #wrong
+
+def anagrams(s1, s2):
+
+  if len(s1) != len(s2):
+    return False
+    
+  chars = {}
+
+  for char in s1:
+    chars[char] = chars.get(char, 0) + 1
+
+  for char in s2:
+    if char not in chars:
+      return False
+    chars[char] -= 1
+    if chars[char] < 0:
+      return False
+  return True
+    
+  #time: O(n + m)
+  #space: O(n + m)
