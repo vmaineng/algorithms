@@ -244,3 +244,21 @@ def pair_sum(numbers, target_sum):
   return (-1, -1)
 
   
+  def intersection(a, b):
+  #receive two list of integers
+  #return a list of matching elements from other list
+  #ex: [0,2,3], [3, 5, 6] => [3]
+
+  #sort both lists and check from beginning and add it to the output
+
+  sorted(a)
+  sorted(b)
+  output = []
+  j = 0
+
+  for num in range(len(a)):
+    if a[num] == b[j]:
+      output.append(num[a])
+      j += 1
+      
+  return output #wrong
