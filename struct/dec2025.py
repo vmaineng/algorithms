@@ -115,3 +115,28 @@ def pairs(elements):
       pair = [elements[i], elements[j]]
       result.append(pair)
   return result
+
+def anagrams(s1, s2):
+  #receive two strings lowercase
+  #return True if same amount of letters are used,e lse False
+
+  #ex: 'happy', 'fish' => False
+
+  # return sorted(s1) == sorted(s2)
+  #time: O(n log n )
+  #space: O(n)
+
+  #use object to count frequency
+
+  chars = {}
+
+  for char in s1:
+    if char not in chars:
+      chars[char] = 1
+    chars[char] += 1
+
+  for char in s2:
+    if char in chars:
+      chars[char] -= 1
+
+  return True if chars.values() == 0 else False #wrong
