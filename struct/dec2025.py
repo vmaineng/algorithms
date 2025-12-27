@@ -277,3 +277,26 @@ def intersection(a, b):
     if num in unique_a:
       result.append(num)
   return result
+
+def all_unique(items):
+  #receive a list of items
+  #return True if all unique, else False
+  #ex: ['h','q','r'] => True
+
+  #check in set
+  unique_items = set(items)
+
+  # if len(unique_items) != len(items):
+  #   return False
+  # else:
+  #   return True
+
+  return len(unique_items) == len(items)
+
+  # for item in items:
+  #   if item in unique_items:
+  #     return False
+  # return True
+
+  # #time: O(n)
+  # #space:O(n)
