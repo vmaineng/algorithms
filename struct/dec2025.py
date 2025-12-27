@@ -262,3 +262,18 @@ def pair_sum(numbers, target_sum):
       j += 1
       
   return output #wrong
+
+def intersection(a, b):
+  #receive two lists of arguments
+  #return a list of matching pairs
+
+  #create a set of list in a
+  #iteratethrough b
+
+  unique_a = set(a)
+  result = []
+
+  for num in b:
+    if num in unique_a:
+      result.append(num)
+  return result
