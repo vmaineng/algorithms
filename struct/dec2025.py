@@ -332,3 +332,17 @@ def countdown(n):
     return
   print(n)
   countdown(n - 1)
+
+def factorial(n):
+  #receive an integer
+  #return the product from integers
+  #ex: 4 => 4 * 3 * 2 * 1 => 24
+
+  #base case: if n == 1: return total
+  #recursive case: call n until it's 1
+
+  total = 0
+
+  if n == 1:
+    return total
+  total *= factorial(n - 1)
