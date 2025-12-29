@@ -346,3 +346,16 @@ def factorial(n):
   if n == 1:
     return total
   total *= factorial(n - 1)
+
+  def sum_of_lengths(strings):
+  #receive a list of strings
+  #return the total sum of all lengths 
+  #ex: 
+
+  #add to the total
+  if len(strings) == 0:
+    return 0
+
+  return len(strings[0]) + sum_of_lengths(strings[1:])
+  
+
