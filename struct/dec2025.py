@@ -300,3 +300,29 @@ def all_unique(items):
 
   # #time: O(n)
   # #space:O(n)
+
+  def intersection_with_dupes(a, b):
+  #receive a list of lowercase chars
+  #return a list of matching letters
+  #ex: ['h','i'], ['i', 'i','j'] => ['i']
+
+  #iterate through each char, add up to the count
+  #then iterate through the second list
+  #grab the letter add to the list
+  #return the letter
+
+  chars = {}
+  result = []
+
+  for char in a:
+    if char not in chars:
+      chars[char] = 1
+    else:
+      chars[char] += 1
+
+  for char in b:
+    if char in chars and chars[char] > 0:
+      result.append(char)
+      chars[char] -= 1
+  
+  return result
