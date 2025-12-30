@@ -357,5 +357,19 @@ def factorial(n):
     return 0
 
   return len(strings[0]) + sum_of_lengths(strings[1:])
+
+
+def sum_numbers_recursive(numbers):
+  #receive a list of integers
+  #return a sum of all integers
+  #ex: [4, 3, 2] => 4 + 3 + 2 => 9
+
+  #slice out the first number and add it to the previous call
+
+  if len(numbers) == 0:
+    return 0
+
+  return numbers[0] + sum_numbers_recursive(numbers[1:])
+
   
 
