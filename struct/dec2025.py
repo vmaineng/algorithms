@@ -425,3 +425,18 @@ def palindrome(s):
   return palindrome(s[1:-1])
   
 
+  def fibonacci(n):
+  #receive an integer
+  #return the nth number for fibonacci
+
+  #ex: 3 => 0, 1, 1, 2 => 3
+
+  if n == 1:
+    return 1
+
+  if n == 0:
+    return 0
+
+  return fibonacci(n - 1) + fibonacci(n-2)
+
+
