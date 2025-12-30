@@ -386,4 +386,17 @@ def factorial(n):
 
   return n * factorial(n - 1)
   
+  def reverse_string(s):
+  #receive a string of lowercase chars
+  #return the words reversed
+  #ex: 'hello' => 'olleh'
+
+  #if the string's length is 0: return ""
+  #take the last letter, add to the string, 
+
+
+  if len(s) == 0:
+    return ""
+  return reverse_string(s[1:]) + s[0]
+
 
