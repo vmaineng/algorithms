@@ -400,3 +400,19 @@ def factorial(n):
   return reverse_string(s[1:]) + s[0]
 
 
+def palindrome(s):
+  #receive a string of lowercase letters
+  #return a boolean if it is True or False if palinddrome 
+  #ex: 'hello' => make a reversed 'olleh' => False
+
+  #create a reversed palindrome
+  #check if s == reversed palindrome
+  
+  return reverse_string(s) == s
+
+def reverse_string(s):
+  if s == "":
+    return ""
+  return reverse_string(s[1:]) + s[0]
+  
+
