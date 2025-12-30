@@ -371,5 +371,19 @@ def sum_numbers_recursive(numbers):
 
   return numbers[0] + sum_numbers_recursive(numbers[1:])
 
+def factorial(n):
+  #receive an integer
+  #return a product of multiple integers
+  #ex: 4 *  3 * 2* 1 => 24
+
+  #if n == 0 : return 1
+  #factorial of O == 1
+
+  #return n * previous call
+
+  if n == 0:
+    return 1
+
+  return n * factorial(n - 1)
   
 
