@@ -465,3 +465,26 @@ print_list(a)
   print(head.val)
   return print_list(head.next)
 print_list(a)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_list_values(head):
+  #receive a head of linked_list_values
+  #return a list of all linked_list_values
+
+  #ex: a -> b -> c => [a, b, c]
+
+  #initialize an empty list
+  #iterate through head as current until null
+  #add each value into list
+
+  result = []
+
+  current = head
+  while current:
+    result.append(current.val)
+    current = current.next
+  return result
