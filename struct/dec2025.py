@@ -524,3 +524,41 @@ def fill_values(head, result):
     return
   result.append(head.val)
   fill_values(head.next, result)
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def sum_list(head):
+  #receive a head of ll
+  #return total of all values
+  #ex: 4 -> 4  -> 3 => 4 + 4 + 3=> 11
+
+  #intialize a total for integer
+  #iterate through while it's None
+  #add each values
+  #return total
+
+  # total = 0
+  # current = head
+  # while current:
+  #   total += current.val
+  #   current = current.next
+
+  # return total
+
+  #time: O(n); space= O(1)
+
+  #recursive
+  #base case: if head is None: return 0
+  #iterate through next value and add to total
+
+  if head is None:
+    return 0
+  return head.val + sum_list(head.next)
+
+
+
+  
+
