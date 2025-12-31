@@ -558,6 +558,33 @@ def sum_list(head):
     return 0
   return head.val + sum_list(head.next)
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_list_find(head, target):
+  #receive a head node and a target value,
+  #return boolean 
+  #ex: a-> b -> c, 'f' => False
+
+  # current = head
+  # while current:
+  #   if current.val == target:
+  #     return True
+  #   current = current.next
+  # return False
+
+  #time: O(n); space: O(1)
+  #recursive:
+
+  if head is None:
+    return False
+
+  if head.val == target:
+    return True
+  return linked_list_find(head.next, target)
+  
 
 
   
