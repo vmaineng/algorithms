@@ -459,3 +459,9 @@ def print_list(head):
     print(current.val)
     current = current.next
 print_list(a)
+
+  if head is None:
+    return 
+  print(head.val)
+  return print_list(head.next)
+print_list(a)
