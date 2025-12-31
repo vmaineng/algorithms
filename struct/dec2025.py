@@ -488,3 +488,39 @@ def linked_list_values(head):
     result.append(current.val)
     current = current.next
   return result
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_list_values(head):
+  #receive a head of linked_list_values
+  #return a list of all linked_list_values
+
+  #ex: a -> b -> c => [a, b, c]
+
+  #initialize an empty list
+  #iterate through head as current until null
+  #add each value into list
+
+  # result = []
+
+  # current = head
+  # while current:
+  #   result.append(current.val)
+  #   current = current.next
+  # return result
+
+  #recursive:
+  #if head is empty, return empty list
+  #iterate through head.next and add head's value into list
+  result = []
+  fill_values(head, result)
+  return result
+
+def fill_values(head, result):
+  if head is None:
+    return
+  result.append(head.val)
+  fill_values(head.next, result)
