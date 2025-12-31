@@ -586,6 +586,40 @@ def linked_list_find(head, target):
   return linked_list_find(head.next, target)
   
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def get_node_value(head, index):
+  #receive a head of LL, and an index num
+  #return the value found at position
+  #ex: a -> b -> c => 1 => 'b'
+
+  #iterate while current is not null
+  #decrement index
+  #if index is 0
+  #return the val
+  #else return None
+
+  # current = head
+  # while current:
+  #   if index == 0:
+  #     return current.val
+  #   index -= 1
+  #   current = current.next
+  # return None
+
+  #recursive: 
+  #base case if head is empty, return None
+  #iterate through and decrement count
+
+  if head is None:
+    return None
+  
+  if index == 0:
+    return head.val
+  return get_node_value(head.next, index - 1)
 
   
 
