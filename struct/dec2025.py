@@ -440,3 +440,22 @@ def palindrome(s):
   return fibonacci(n - 1) + fibonacci(n-2)
 
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+a = Node('A')
+b = Node('B')
+c = Node('C')
+
+
+a.next = b
+b.next = c
+
+def print_list(head):
+  current = head
+  while current is not None:
+    print(current.val)
+    current = current.next
+print_list(a)
