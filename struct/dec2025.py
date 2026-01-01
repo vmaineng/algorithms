@@ -688,3 +688,45 @@ def zipper_lists(head_1, head_2):
     tail.next = current2
 
   return head_1
+
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def merge_lists(head_1, head_2):
+  #receive two head of a linked merge_lists
+  #return one linked list where it's sorted
+
+
+  #ex: 
+
+  #create a dummy Node
+  #iterate through head 1 and head 2
+  #compare values
+  #if extra, return head 1
+  #exlse, return head 2
+
+
+  dummy = Node(None);
+  tail = dummy
+  current1 = head_1
+  current2 = head_2
+
+  while current1 and current2:
+    if current1.val < current2.val:
+      tail.next = current1;
+      current1 = current1.next
+    else:
+      tail.next = current2;
+      current2 = current2.next
+    tail = tail.next
+
+  if current1:
+    tail.next = current1
+
+  if current2:
+    tail.next = current2
+
+  return dummy.next
