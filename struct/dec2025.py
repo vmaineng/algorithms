@@ -655,3 +655,36 @@ def reverse_list(head, prev = None):
   head.next = prev
   return reverse_list(next, head)
   
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def zipper_lists(head_1, head_2):
+  #receive two heads of ll
+  #return one linkedlist with alternating nodes
+
+  #add it the first list; if even , add form second list; if odd, add from first list
+
+  count = 0
+
+  current1 = head_1.next
+  current2 = head_2
+  tail = head_1
+
+  while current1 and current2:
+    if count % 2 == 0:
+      tail.next = current2
+      current2 = current2.next
+    else:
+      tail.next = current1
+      current1 = current1.next
+    tail = tail.next
+    count += 1
+
+  if current1:
+    tail.next = current1
+  else:
+    tail.next = current2
+
+  return head_1
