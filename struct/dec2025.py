@@ -622,4 +622,36 @@ def get_node_value(head, index):
   return get_node_value(head.next, index - 1)
 
   
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
 
+def reverse_list(head, prev = None):
+  #receive the head of LL
+  #return a reversed linked reverse_list
+  #ex: a -> b -> c => c -> b -> a
+
+  #start at the head
+  #capture the next node 
+  #point it to prev
+  #move current pointer up to next
+  #move prev to current
+  #return prev
+
+  # current = head
+  # prev = None
+
+  # while current: 
+  #   next = current.next
+  #   current.next = prev
+  #   prev = current
+  #   current = next
+  # return prev
+
+  if head is None:
+    return prev
+  next = head.next
+  head.next = prev
+  return reverse_list(next, head)
+  
