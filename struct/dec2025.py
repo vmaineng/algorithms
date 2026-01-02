@@ -761,3 +761,45 @@ def is_univalue_list(head):
 
   return is_univalue_list(head.next, head.val)
     
+
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def longest_streak(head):
+  #receive the head of linkedlist
+  #return the streak of longest same num together
+  #ex: 4 -> 4 -> 3 -> 3 -> 3 -> null => 3
+
+  #keep count
+  #keep track of val seen
+  #iterate through each Node
+  #check if same node's seen
+  #increment count
+
+  max_count = 0
+  prev_val = None
+  current = head
+  count = 0
+  
+  while current:
+    
+    if current.val == prev_val:
+      count += 1
+      node_val= current.val
+     
+    else:
+      count = 1
+      
+    prev_val = current.val
+
+    if count > max_count:
+      max_count = count
+    
+    current = current.next
+   
+  return max_count
+      
+      
+
