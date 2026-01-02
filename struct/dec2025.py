@@ -730,3 +730,25 @@ def merge_lists(head_1, head_2):
     tail.next = current2
 
   return dummy.next
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def is_univalue_list(head):
+  #receive the head of a linkedlist
+  #return True if all one value else False
+  #ex: 4 -> 4 -> 3 -> null ; False
+
+  #iterate through each node and check if the node is same as head's val
+  #if not, return False
+  #else return True
+
+  current = head
+  while current:
+    if current.val != head.val:
+      return False
+    current = current.next
+  return True
