@@ -801,5 +801,34 @@ def longest_streak(head):
    
   return max_count
       
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def remove_node(head, target_val):
+  #receive a head of a LL
+  #return the linkedlist remove_node
+  #ex: 
+
+  #iterate until target_val has been found
+  #point to tnext the node after iterate
+
+  if head.val == target_val:
+    return head.next
+
+  current = head
+  prev = None
+  
+  while current:
+    if current.val == target_val:
+      prev.next = current.next
+      break
+
+    prev = current
+    current = current.next
+  return head
+
       
 
