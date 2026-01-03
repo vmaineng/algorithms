@@ -898,4 +898,74 @@ def longest_streak(head):
   return max_count
 
       
+      # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def remove_node(head, target_val):
+  #receive a head a of LL, and target val to remove_node
+  #return the ll back where target_val is remove_node
+  #ex: 2 -> 3 -> 4, 3 => 2 -> 4 
+
+  #initialize current to head
+  #intialize a prev
+
+  #edge case if head is target_val:
+  #return head.next afterwards
+
+  #iterate through until target_val is found
+  #then point to the next next node after
+  #return head
+
+  if head.val == target_val:
+    return head.next
+
+  current = head
+  prev = None
+
+  while current:
+    if current.val == target_val:
+      prev.next = current.next
+      break
+    prev = current
+    current = current.next
+    
+  return head
+
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def insert_node(head, value, index):
+  #receive head of a ll
+  #return a ll where value has been added
+  #ex: 4 -> 3 -> 2; 1, 0 => 1 -> 4 -> 3 -> 2
+
+  #if its the head, add value first and link it to the next of head
+
+  #iterate until index is 0
+  #current.val = value
+  #otherwise decrement index 
+  #return head
+
+  if index == 0:
+    new_head = Node(value)
+    new_head.next = head
+    return new_head
+
+  current = head
+  count = 0
+
+  while current:
+    if count == index- 1:
+      temp = current.next
+      current.next = Node(value)
+      current.next.next = temp
+    count += 1
+    current = current.next
+  return head
+
 
