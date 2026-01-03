@@ -830,5 +830,31 @@ def remove_node(head, target_val):
     current = current.next
   return head
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def is_univalue_list(head):
+  #receive a head of LL
+  #return True if it's all same value 
+  #else: return False
+
+  #ex: 2 -> 3 -> 3 => False
+
+  #iterate through each node until null
+  #check if value is the same as previous
+  #if not, return False
+  #else, we traverse through everything
+  #return True
+
+  current = head
+  
+  while current is not None:
+    if current.val != head.val:
+      return False
+    current = current.next
+  return True
+
       
 
