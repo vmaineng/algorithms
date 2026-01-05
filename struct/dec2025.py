@@ -1100,3 +1100,26 @@ def tree_includes(root, target):
   #     stack.append(current.right)
   # return False
 
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_min_value(root):
+  #receive root node 
+  #return min value seen 
+  #ex: 
+
+  #initialize a min set to infinity
+  #iterate through tree-tree_min_value left and right to find smallest value
+
+  if not root:
+    return float('inf')
+
+  left_val = tree_min_value(root.left) 
+  right_val = tree_min_value(root.right)
+ 
+
+  return min(root.val, left_val, right_val)
