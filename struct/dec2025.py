@@ -1028,3 +1028,42 @@ def depth_first_values(root):
   right_values = depth_first_values(root.right)
   return [root.val, *left_values, *right_values]
 
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def breadth_first_values(root):
+  #receive root Node
+  #return bfs breadth_first_values
+
+  #ex: 
+
+  #import deque
+  #iterate while left node, add left
+  #same for right node
+  #return list
+
+  if not root:
+    return []
+
+  result = []
+
+  queue = deque([root])
+
+  while queue:
+    current = queue.popleft()
+    result.append(current.val)
+
+    if current.left:
+      queue.append(current.left)
+    if current.right:
+      queue.append(current.right)
+  return result
+    
+  
+
