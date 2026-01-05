@@ -969,3 +969,37 @@ def insert_node(head, value, index):
   return head
 
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  #dfs = stack 
+  #receive root Node
+  #return a stack of dfs list
+
+  #intitalize an empty list
+  #start stack with root Node
+  #iterate until stack is empty
+  #if left node, add left node
+  #repeat for right
+  ##return list
+
+  if not root:
+    return []
+
+  stack = [ root ]
+  result = []
+
+  while stack:
+    current = stack.pop()
+    result.append(current.val)
+
+    if current.right:
+      stack.append(current.right)
+    if current.left:
+      stack.append(current.left)
+  return result
+
