@@ -1066,4 +1066,37 @@ def breadth_first_values(root):
   return result
     
   
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_includes(root, target):
+  #receive root node, target value
+  #return boolean, True if right value, else False
+
+  #ex: 
+
+  #search through dfs
+
+  if not root:
+    return False
+
+  if root.val == target:
+    return True
+
+  return tree_includes(root.left, target) or tree_includes(root.right, target)
+
+  # stack = [ root ]
+
+  # while stack:
+  #   current = stack.pop()
+  #   if current.val == target:
+  #     return True
+  #   if current.left:
+  #     stack.append(current.left)
+  #   if current.right:
+  #     stack.append(current.right)
+  # return False
 
