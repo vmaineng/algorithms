@@ -1003,3 +1003,28 @@ def depth_first_values(root):
       stack.append(current.left)
   return result
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  #dfs = stack 
+  #receive root Node
+  #return a stack of dfs list
+
+  #intitalize an empty list
+  #start stack with root Node
+  #iterate until stack is empty
+  #if left node, add left node
+  #repeat for right
+  ##return list
+
+  if not root:
+    return []
+
+  left_values = depth_first_values(root.left)
+  right_values = depth_first_values(root.right)
+  return [root.val, *left_values, *right_values]
+
