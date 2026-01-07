@@ -1211,3 +1211,24 @@ def tree_includes(root, target):
     return True
 
   return tree_includes(root.left, target) or tree_includes(root.right, target)
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_min_value(root):
+  #receive root node of a tree_min_value
+  #return smallest value seen 
+
+  #ex: 
+
+  if not root:
+    return float('inf')
+
+  min_left = tree_min_value(root.left)
+  min_right = tree_min_value(root.right)
+
+  return min(root.val, min_left, min_right)
