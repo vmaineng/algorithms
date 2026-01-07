@@ -1253,3 +1253,56 @@ def max_path_sum(root):
     return root.val
   
   return root.val + max(max_path_sum(root.left), max_path_sum(root.right))
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def path_finder(root, target):
+  #receive a root Node
+  #return a list back of root nodes in a list
+
+  #ex: 
+
+  #base case: if root == target, return [root]
+  #iteratively
+  #keep iterating until node is found
+  #add the node into the list:
+
+  if not root:
+    return None
+
+  if root.val == target:
+    return [root.val]
+
+  left_vals = path_finder(root.left, target)
+
+  if left_vals is not None: 
+    return [ root.val, *left_vals]
+    
+  right_vals = path_finder(root.right, target)
+  if right_vals is not None:
+    return [root.val, *right_vals]
+  
+  return None
+
+
+  # stack = [ root ]
+  # result = []
+
+  # while stack:
+  #   current = stack.pop()
+  #   result.append(current.val)
+    
+  #   if current.val == target:
+  #     return result
+
+  #   if current.right:
+  #     stack.append(current.right)
+  #   if current.left:
+  #     stack.append(current.left)
+  # return result
+    
