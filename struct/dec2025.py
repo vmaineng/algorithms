@@ -1306,3 +1306,22 @@ def path_finder(root, target):
   #     stack.append(current.left)
   # return result
     
+
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_value_count(root, target):
+  #receive the root node of a tree, and a target tree_value_count
+  #return count of target's value in tree 
+
+  #ex: 
+
+  if not root:
+    return 0
+
+  match = 1 if root.val == target else 0
+  return match + tree_value_count(root.left, target) + tree_value_count(root.right, target)
+
