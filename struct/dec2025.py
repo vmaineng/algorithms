@@ -1232,3 +1232,24 @@ def tree_min_value(root):
   min_right = tree_min_value(root.right)
 
   return min(root.val, min_left, min_right)
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def max_path_sum(root):
+  #receive root Node
+  #return max total 
+
+  #ex: 
+
+  if not root:
+    return float("-inf")
+
+  if not root.left and not root.right:
+    return root.val
+  
+  return root.val + max(max_path_sum(root.left), max_path_sum(root.right))
