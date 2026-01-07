@@ -1167,3 +1167,27 @@ def depth_first_values(root):
   left_vals = depth_first_values(root.left)
   right_vals = depth_first_values(root.right)
   return [root.val, *left_vals, *right_vals]
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_sum(root):
+  #receive root node of tree
+  #return total sum of tree nodes
+  #ex: 
+
+  #initialize a sum 
+  #if not root return 0
+
+  ##iterate through left and iterate through right to add values
+
+  if not root:
+    return 0
+
+  left_vals = tree_sum(root.left)
+  right_vals = tree_sum(root.right)
+
+  return root.val + left_vals + right_vals
