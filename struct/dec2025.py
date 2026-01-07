@@ -1153,3 +1153,17 @@ def max_path_sum(root):
   right_total = max_path_sum(root.right)
 
   return root.val + max(left_total, right_total)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  if not root:
+    return []
+
+  left_vals = depth_first_values(root.left)
+  right_vals = depth_first_values(root.right)
+  return [root.val, *left_vals, *right_vals]
