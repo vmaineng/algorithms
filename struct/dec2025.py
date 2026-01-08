@@ -1374,3 +1374,40 @@ def tree_value_count(root, target):
 
   count = 1 if root.val == target else 0
   return count + tree_value_count(root.left, target) + tree_value_count(root.right, target)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def how_high(root):
+  #receive a root node of a binary tree
+  #return the levels
+
+  #ex: 
+
+  #bfs: 
+  #iterate through each node
+  #increment count of level 
+  #return levels
+
+  if not root:
+    return -1
+
+  levels = -1
+  queue = deque([root])
+
+  while queue:
+    level_size = len(queue)
+    levels += 1
+    for node in range(level_size):
+      current = queue.popleft()
+
+      if current.left:
+        queue.append(current.left)
+      if current.right:
+        queue.append(current.right)
+  return levels
