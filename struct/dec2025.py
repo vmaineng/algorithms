@@ -1325,3 +1325,38 @@ def tree_value_count(root, target):
   match = 1 if root.val == target else 0
   return match + tree_value_count(root.left, target) + tree_value_count(root.right, target)
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def path_finder(root, target):
+  #receive a root of a binary tree
+  #return find the path of a target's value
+
+  #ex: 
+
+  #base case: if no root, return None
+  #if root == target, return [ root ]
+  #itereate through left values
+  #iterate through right values
+
+  
+  if not root:
+    return None
+
+  if root.val == target:
+    return [ root.val ]
+
+  left_vals = path_finder(root.left, target)
+  if left_vals is not None:
+    return [root.val, *left_vals]
+    
+  right_vals = path_finder(root.right, target)
+  if right_vals is not None:
+    return [root.val, *right_vals]
+  return None
+  
+
+  
