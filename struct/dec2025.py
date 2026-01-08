@@ -1425,3 +1425,38 @@ def how_high(root):
   left_size = how_high(root.left)
   right_size = how_high(root.right)
   return 1 + max(left_size, right_size)
+
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def bottom_right_value(root):
+  #receive the root node of a tree
+  #return the bottom right bottom_right_value
+
+  #ex: 
+
+  #if not root, return -1
+
+  # if not root:
+  #   return -1
+
+  # right_val = bottom_right_value(root.right)
+  # return right_val
+
+  queue = deque([root])
+  while queue:
+    current = queue.popleft()
+
+    if current.left:
+      queue.append(current.left)
+    if current.right:
+      queue.append(current.right)
+  return current.val
+    
