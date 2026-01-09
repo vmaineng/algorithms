@@ -1484,3 +1484,15 @@ def tree_value_count(root, target):
   right_seen = tree_value_count(root.right, target)
 
   return count + left_seen + right_seen
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def how_high(root):
+  if not root:
+    return -1
+
+  return 1 + max(how_high(root.left), how_high(root.right))
