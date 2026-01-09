@@ -1561,3 +1561,44 @@ def _all_tree_paths(root):
       
   return all_paths
     
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+
+from collections import deque
+
+def tree_levels(root):
+  #receive the root node of a tree_levels
+  #return nodes level by level via bfs
+
+  #ex: 
+
+  #for each node popped off, add them tot he result, then add result to the paths
+
+  if not root:
+    return [ ]
+
+  result = []
+
+  queue = deque([root])
+  while queue:
+    
+    levels = len(queue)
+    current_level = []
+    
+    for node in range(levels):
+      current = queue.popleft()
+      current_level.append(current.val)
+    
+      if current.left:
+        queue.append(current.left)
+      if current.right:
+        queue.append(current.right)
+
+    result.append(current_level)
+
+  return result
+    
