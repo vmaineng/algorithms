@@ -1460,3 +1460,27 @@ def bottom_right_value(root):
       queue.append(current.right)
   return current.val
     
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_value_count(root, target):
+  #receive the root node and a target node
+  #return the count of occurence of target's node
+  #ex: 
+
+  #if root.val == target, increment count
+  #iterate through left and iterate through right
+
+  if not root:
+    return 0
+
+  count = 1 if root.val == target else 0
+
+  left_seen = tree_value_count(root.left, target)
+  right_seen = tree_value_count(root.right, target)
+
+  return count + left_seen + right_seen
