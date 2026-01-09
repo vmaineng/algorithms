@@ -1517,3 +1517,47 @@ def bottom_right_value(root):
     if current.right:
       queue.append(current.right)
   return current.val
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def all_tree_paths(root):
+  paths = _all_tree_paths(root)
+  for path in paths:
+    path.reverse()
+  return paths
+
+def _all_tree_paths(root):
+  #receive the root node of a all_tree_paths
+  #return all paths from it in a 2D list
+
+  #ex: 
+
+  #initalize an empty list
+  #iterate through left, add in root val
+  #iterate through right, add in root val
+  #
+
+  if not root:
+    return []
+
+  if not root.left and not root.right:
+    return [ [root. val] ]
+
+  all_paths = []
+
+  left_paths = all_tree_paths(root.left)
+  for path in left_paths:
+    path.append(root.val)
+    all_paths.append(path)
+
+  right_paths = all_tree_paths(root.right)
+  for path in right_paths:
+    path.append(root.val)
+    all_paths.append(path)
+      
+  return all_paths
+    
