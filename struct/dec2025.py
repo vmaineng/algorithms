@@ -1602,3 +1602,42 @@ def tree_levels(root):
 
   return result
     
+
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def level_averages(root):
+  #receive the root node 
+  #return a list of averages by level_averages
+  #ex: 
+
+  if not root:
+    return []
+
+  queue = deque([root])
+  result = [ ]
+  total = 0
+  while queue: 
+    levels = len(queue)
+    current_level = []
+    
+    for current in range(levels):
+      current = queue.popleft() 
+      current_level.append(current.val)
+      total = sum(current_level)/len(current_level)
+
+      if current.left:
+        queue.append(current.left)
+      if current.right:
+        queue.append(current.right)
+        
+    result.append(total)
+  return result
+      
+
+  
