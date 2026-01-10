@@ -1640,4 +1640,37 @@ def level_averages(root):
   return result
       
 
-  
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def all_tree_paths(root):
+  paths = _all_tree_paths(root)
+  for path in paths:
+    path.reverse()
+  return paths
+
+def _all_tree_paths(root):
+  #receive the root node of a all_tree_paths
+  #return all paths connected in None
+  #ex: 
+
+  if not root:
+    return []
+
+  if not root.left and not root.right:
+    return [ [ root.val] ]
+
+  all_paths = []
+  left_subpaths = _all_tree_paths(root.left)
+  for path in left_subpaths:
+    path.append(root.val)
+    all_paths.append(path)
+
+  right_subpaths = _all_tree_paths(root.right)
+  for path in right_subpaths:
+    path.append(root.val)
+    all_paths.append(path)
+  return all_paths
