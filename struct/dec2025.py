@@ -1707,3 +1707,26 @@ def tree_levels(root):
         
     result.append(nodes_level)
   return result
+
+def is_palindrome(s):
+  #receive a string of lowercase chars
+  #return a boolean if it is a palindrome, else False
+  #ex: 'yo' => 'oy' => False
+
+  #reverse the words and check to see if they are the is_palindrome
+
+  # return s == s[::-1]
+
+  #two pointers with a while loop
+  #one starts at beginning, and the other starts at last one
+  #check to see if they are same letter
+
+  i = 0
+  j = len(s) - 1
+
+  while i < j:
+    if s[i] != s[j]:
+      return False
+    i += 1
+    j-=1
+  return True
