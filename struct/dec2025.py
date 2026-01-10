@@ -1754,3 +1754,26 @@ def uncompress(s):
       i = j
   return result
     
+    def uncompress(s):
+  #receive a case of lower strings
+  #return the uncompress version
+  #ex: '4a2b' => 'aaaabb'
+
+  #keep a pointerfirst number nad a letter
+  #return a string added
+
+  result = []
+  i =0
+  j = 0
+  numbers = '0123456789'
+
+  while j < len(s):
+    if s[j] in numbers:
+      j += 1
+    else:
+      num = int(s[i:j])
+      result.append(s[j] * num)
+      j += 1
+      i = j
+  return ''.join(result)
+    
