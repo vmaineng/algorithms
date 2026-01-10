@@ -1674,3 +1674,36 @@ def _all_tree_paths(root):
     path.append(root.val)
     all_paths.append(path)
   return all_paths
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def tree_levels(root):
+
+  if not root:
+    return []
+    
+  queue = deque([root])
+  result = []
+  
+  while queue:
+    levels  = len(queue)
+    nodes_level = []
+    
+    for node in range(levels):
+      current = queue.popleft()
+      nodes_level.append(current.val)
+
+      if current.left:
+        queue.append(current.left)
+
+      if current.right:
+        queue.append(current.right)
+        
+    result.append(nodes_level)
+  return result
