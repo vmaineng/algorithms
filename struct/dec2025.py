@@ -1776,4 +1776,37 @@ def uncompress(s):
       j += 1
       i = j
   return ''.join(result)
+
+def compress(s):
+  #receive a string of lowercase chars
+  #return a compressed version
+  #ex: 
+
+  #keep count of how many letters seen
+  #j will keep going and you will keep comparing to the value of what i has
+  #then add the count + letter to the string out put
+
+  s += '!'
+
+  result = []
+  i = 0
+  j = 0
+  
+  while j < len(s):
+    if s[i] == s[j]:
+      j += 1
+    else:
+      count = j - i
+
+      if count > 1:
+        result.append(f"{str(count)}{s[i]}")
+      else:
+        result.append(s[i])
+      i = j
+      
+  return ''.join(result)
+      
+    
+  
+    
     
