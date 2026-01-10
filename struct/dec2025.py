@@ -1806,7 +1806,30 @@ def compress(s):
       
   return ''.join(result)
       
-    
+    def five_sort(nums):
+  #receive a list of integers
+  #return lists back where all 5's go to the end
+
+  #i = 0
+  #j = last one
+  #while they do not pass each other
+  #check if i == 5
+  #swap them
+  #return list back
+
+
+  i = 0
+  j = len(nums) - 1
+
+  while i <= j:
+    if nums[j] == 5:
+      j -=1
+    elif nums[i] == 5:
+      nums[i], nums[j] = nums[j], nums[i]
+      i += 1
+    else:
+      i += 1
+  return nums
   
     
     
