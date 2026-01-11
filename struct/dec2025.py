@@ -1831,5 +1831,6 @@ def compress(s):
       i += 1
   return nums
   
+  
     
     
