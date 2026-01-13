@@ -76,7 +76,32 @@ print(compress('aaabbb'))
 #time: O(n)
 #space: O(n)
 
+def uncompress(s):
+  #receive a string of chars
+  #return the the uncompress version
+  #ex: '4ab2c' => 'aaaabcc'
 
+  #two pointers
+  #while j is not a number
+  #then keep going
+  #else, add it the result list
+  #take the value of j * int of i
+
+  numbers = '0123456789'
+  i =0 
+  j = 0 
+  result = []
+
+  while j < len(s):
+    if s[j] in numbers:
+      j += 1
+    else:
+      count = int(s[i:j]) 
+      result.append(count * s[j])
+      j += 1
+      i = j
+  return "".join(result)
+      
 
 
 
