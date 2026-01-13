@@ -141,4 +141,10 @@ def is_subsequence(string_1, string_2):
   return i == len(string_1)
 
 
-
+def has_path(graph, src, dst):
+  if src == dst:
+    return True
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst):
+      return True
+  return False
