@@ -102,6 +102,31 @@ def uncompress(s):
       i = j
   return "".join(result)
       
+      def compress(s):
+  #receive a string
+  #return a compressed version
+  #ex: 'caat' => 'c2at'
+
+  #keep result of a list
+  #j - i => the count
+
+  s += '!'
+  result = []
+  i = 0
+  j = 0
+  while j < len(s):
+    if s[i] == s[j]:
+      j += 1
+    else:
+      count = j - i
+      if count < 2:
+        result.append(s[i])
+      else:
+        result.append(f"{count}")
+        result.append(s[i])
+      i = j
+  return ''.join(result)
+  
 
 
 
