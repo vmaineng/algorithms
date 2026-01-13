@@ -148,3 +148,28 @@ def has_path(graph, src, dst):
     if has_path(graph, neighbor, dst):
       return True
   return False
+
+def undirected_path(edges, node_A, node_B):
+  graph = build_path(edges)
+
+ 
+
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in edges:
+      graph[a] = []
+    if b not in edges:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+
+  
