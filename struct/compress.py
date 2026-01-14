@@ -267,3 +267,44 @@ def tree_levels(root):
         queue.append(current.right)
     result.append(current_level)
   return result
+
+def undirected_path(edges, node_A, node_B):
+  #receive an edge list, two nodes 
+  #return a boolean
+
+  #ex: 
+
+  #modify edges into an adj matrix to traverse easier
+  ##check if the path has been visited
+
+  visited = set()
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, visited)
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, src, dst, visited):
+  if src == dst:
+    return True
+
+  if src in visited:
+    return False
+
+  visited.add(src)
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited) == True:
+      return True
+  return False
