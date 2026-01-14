@@ -363,6 +363,23 @@ def explore(graph, node, visited):
     size += explore(graph, neighbor, visited)
   return size
       
+    def running_sum(numbers):
+  #receive a list of integers
+  #return a list of the running total
+
+  #have an empty list
+  #iterate through each number and add to a running total
+  #then add in the number to the list
+  #return list
+
+  result = []
+  total = 0
+
+  for num in numbers:
+    total += num
+    result.append(total)
+
+  return result
     
       
   
