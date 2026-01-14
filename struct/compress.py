@@ -202,3 +202,26 @@ def sum_of_lengths(strings):
     return 0
 
   return len(strings[0]) + sum_of_lengths(strings[1:])
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def is_univalue_list(head):
+  #receive the head of a linked list 
+  #return boolean if linkedlist contains one value 
+  #ex: 3 -> 2 -> 3 => False
+  #ex: 3 -> 3 -> null => True
+
+  #iterate thorugh while ll is not empty
+  #check if the val is same as head's val
+  #return False if it does not
+  #else iterate through entire had, return True
+
+  current = head
+  while current:
+    if current.val != head.val:
+      return False
+    current = current.next
+  return True
