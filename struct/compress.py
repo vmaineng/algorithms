@@ -225,3 +225,45 @@ def is_univalue_list(head):
       return False
     current = current.next
   return True
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def tree_levels(root):
+  #receive a root Node
+  #return all paths by tree_levels
+  #ex: 
+
+  #bfs
+
+  #while queue is not empty
+  #add in current level to result
+  #add in their children
+  #then add in the current level
+
+  if not root:
+    return []
+
+  result = []
+  queue = deque([root])
+  while queue:
+    levels = len(queue)
+    current_level = []
+
+    for node in range(levels):
+      current = queue.popleft()
+      current_level.append(current.val)
+
+      if current.left:
+        queue.append(current.left)
+
+      if current.right:
+        queue.append(current.right)
+    result.append(current_level)
+  return result
