@@ -189,3 +189,16 @@ def has_path(graph, src, dst, visited):
     if num in unique_a:
       result.append(num)
   return result
+
+def sum_of_lengths(strings):
+  #receive a list of strings
+  #return the total sum of lengths of all strings
+  #ex: 
+
+  #base case: if strings empty, return 0
+  #add up the sum of the first length with the rest of the item
+
+  if len(strings) == 0:
+    return 0
+
+  return len(strings[0]) + sum_of_lengths(strings[1:])
