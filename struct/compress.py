@@ -172,4 +172,20 @@ def has_path(graph, src, dst, visited):
   if src == dst:
     return True
 
-  
+  def intersection(a, b):
+  #receive two lists of integers
+  #return the list where same elements exist
+
+  #ex: [4,2,1], [3, 2, 1] => [ 2, 1]
+
+  #add all the values from first list to intersection
+  #iterate through b and check if num exists in there
+  #if is, then leave, else delete it
+
+  unique_a = set(a)
+  result = []
+
+  for num in b:
+    if num in unique_a:
+      result.append(num)
+  return result
