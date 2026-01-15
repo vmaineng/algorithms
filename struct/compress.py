@@ -411,3 +411,26 @@ def explore(graph, node, visited):
   return True
 
   
+  def remove(st):
+    #receive a string of lowercase and uppercase letters
+    #return the word back with an '!' at the end of the word
+    
+    #ex: 'Yo!'
+    #ex"  'Yo' + '!' => 'Yo!'
+    #ex: "!Yo" => "Yo!"
+    
+    #list out all of the alphabet letters
+    #iterate through the string
+    #if the letter is in the alphabet, add it to our output string
+    #add '!' of the output string
+    
+#     alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '
+#     result = []
+    
+#     for char in st:
+#         if char in alphabet:
+#             result.append(char)
+#     result.append("!")
+        
+#     return "".join(result)
+    return st.replace('!', '') + "!"
