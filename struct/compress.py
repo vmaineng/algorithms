@@ -381,5 +381,33 @@ def explore(graph, node, visited):
 
   return result
     
-      
+      def connected_components_count(graph):
+  #receive a graph
+  #return the # of connected connected_components_count
+
+  #ex: 
+
+  #iterate through each node in the graph
+  #track if it's been visited
+  #mark it as one of the component 
+  #return connected_components_count
+
+  visited = set()
+  count = 0
+
+  for node in graph:
+    if explore(graph, node, visited):
+      count += 1
+  return count
+
+def explore(graph, node, visited):
+  if node in visited:
+    return False
+
+  visited.add(node)
+
+  for neighbor in graph[node]:
+    explore(graph, neighbor, visited)
+  return True
+
   
