@@ -1903,3 +1903,34 @@ def build_graph(edges):
     graph[b].append(a)
   return graph 
   
+  def island_count(grid):
+  #receive a m x n grid
+  #return count of islands by L
+
+  #ex: 
+
+  #iterate through rows and cols
+  #check if it is a L
+  #then traverse and mark it as seen
+  #return count
+
+  size = 0
+  visited = set()
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      if dfs(grid, row, col, visited) == True:
+        size += 1
+  return size
+
+def dfs(grid, row, col, visited):
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 'W' or (row, col) in visited:
+    return False
+
+  visited.add((row, col))
+
+  dfs(grid, row +1, col, visited)
+  dfs(grid, row -1, col, visited)
+  dfs(grid, row, col +1, visited)
+  dfs(grid, row, col -1, visited)
+  return True
