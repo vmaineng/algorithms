@@ -1934,3 +1934,36 @@ def dfs(grid, row, col, visited):
   dfs(grid, row, col +1, visited)
   dfs(grid, row, col -1, visited)
   return True
+
+def minimum_island(grid):
+  #receive a m x n grid
+  #return smallest size seen
+  #ex: 
+
+  smallest = float('inf')
+  visited = set()
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      size = dfs(grid, row, col, visited)
+      if size < smallest and size > 0:
+        smallest = size
+  return smallest
+
+
+def dfs(grid, row, col, visited):
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or (row, col) in visited or grid[row][col] == 'W':
+    return 0
+
+  visited.add((row, col))
+  
+  size = 1
+
+  size += dfs(grid, row -1, col, visited)
+  size += dfs(grid, row + 1, col, visited)
+  size += dfs(grid, row, col - 1, visited)
+  size += dfs(grid, row, col + 1, visited)
+  return size
+
+  
+      
