@@ -2094,3 +2094,58 @@ def closest_carrot(grid, starting_row, starting_col):
         visited.add(pos)
         queue.append((nr, nc, dist + 1))
   return -1
+
+from collections import deque
+
+def best_bridge(grid):
+  main_island = None
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      potential_island = traverse_island(grid, row, col, set())
+      if len(potential_island) > 0:
+        main_island = potential_island
+
+  visited = set(main_island)
+  queue = deque([])
+  for pos in main_island:
+    r,c = pos
+    queue.append((r, c, 0))
+
+  while queue:
+    r,c, dist = queue.popleft()
+    if grid[r][c] == "L" and (r,c) not in main_island:
+      return dist -1 
+
+    directions = [(1,0), (-1,0), (0,1), (0, -1)]
+
+    for dr,dc in directions: 
+      nr,nc = dr+ r, dc + c
+      if is_inbounds(grid, nr, nc) and (nr, nc) not in visited:
+        visited.add((nr,nc))
+        queue.append((nr, nc, dist + 1))
+      
+      
+
+def is_inbounds(grid, row, col):
+  row_inbounds = 0 <= row < len(grid)
+  col_inbounds = 0 <= col < len(grid[0])
+  return row_inbounds and col_inbounds
+      
+def traverse_island(grid, row, col, visited):
+
+  if not is_inbounds(grid, row, col) or grid[row][col] == 'W':
+    return visited
+    
+  pos = (row, col)
+  if pos in visited:
+    return visited
+    
+  visited.add(pos)
+
+  traverse_island(grid, row - 1, col, visited)
+  traverse_island(grid, row + 1, col, visited)
+  traverse_island(grid, row, col - 1, visited)
+  traverse_island(grid, row, col + 1, visited)
+  return visited
+
+  
