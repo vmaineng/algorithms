@@ -2023,3 +2023,40 @@ def _tribonacci(n, memo):
 
   memo[n] = _tribonacci(n- 1, memo) + _tribonacci(n- 2, memo) + _tribonacci(n - 3, memo)
   return memo[n]
+
+def minimum_island(grid):
+  #receive a grid of m x n
+  #return size of smallest minimum_island
+  #ex: 
+
+  #iterate through each row and col
+  #check if size is smaller than what we currently have
+  #update smallest
+
+  smallest = float('inf')
+  visited = set()
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      size = dfs(grid, row, col, visited)
+      if size < smallest and size > 0:
+        smallest = size
+  return smallest
+
+def dfs(grid, row, col, visited):
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 'W':
+    return 0
+  
+  pos = (row, col)
+  if pos in visited:
+    return 0
+
+  visited.add(pos)
+
+  size = 1
+
+  size += dfs(grid, row + 1, col, visited)
+  size += dfs(grid, row - 1, col, visited)
+  size += dfs(grid, row, col + 1, visited)
+  size += dfs(grid, row, col - 1, visited)
+  return size
