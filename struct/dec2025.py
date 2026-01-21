@@ -2060,3 +2060,37 @@ def dfs(grid, row, col, visited):
   size += dfs(grid, row, col + 1, visited)
   size += dfs(grid, row, col - 1, visited)
   return size
+
+
+from collections import deque
+
+def closest_carrot(grid, starting_row, starting_col):
+  #receive a grid , starting position
+  #return the amount of steps taken to reach closest_carrot
+  #ex: 
+
+  #using bfs
+  #iterate through
+
+  visited = set([(starting_row, starting_col)])
+  queue = deque([(starting_row, starting_col, 0)])
+
+  directions = [(1,0), (0, 1), (-1,0), (0, -1)]
+
+  while queue:
+    row, col, dist = queue.popleft()
+
+    if grid[row][col] == 'C':
+      return dist
+
+    for dr, dc, in directions:
+      nr, nc = dr + row, dc + col
+
+      row_inbounds = 0 <= nr < len(grid)
+      col_inbounds = 0 <= nc < len(grid[0])
+      pos = (nr, nc)
+
+      if row_inbounds and col_inbounds and pos not in visited and grid[nr][nc] != 'X':
+        visited.add(pos)
+        queue.append((nr, nc, dist + 1))
+  return -1
