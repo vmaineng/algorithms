@@ -2232,5 +2232,49 @@ def traverse_island(grid, row, col, visited):
         return dfs(0, 0)
         
 
-       
+   from collections import deque
+
+def best_bridge(grid):
+  #receive a m x n grid
+  #return the min steps needed to cross from one land to another land
+  #ex: 
+
+  #iterate through to get all of the islands
+  #then iterate via bfs to get dist
+  #return dist
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      potential_island = dfs(grid, row, col, set())
+      if len(potential_island) > 0:
+        main_island = potential_island
+
+  
+  while queue:
+    
+
+def is_inbound(grid, row, col):
+  row_inbounds = 0 < row <= len(grid)
+  col_inbounds = 0 < col <= len(grid[0])
+  return row_inbounds and col_inbounds
+
+def dfs(grid, row, col, visited):
+  if not is_inbound(grid, row, col) or grid[row][col] == "W":
+    return visited
+
+  pos = (row,col)
+  if pos in visited:
+    return visited
+
+  visited.add(pos)
+
+  dfs(grid, row - 1, col, visited)
+  dfs(grid, row + 1, col, visited)
+  dfs(grid, row, col-1, visited)
+  dfs(grid, row, col+1, visited)
+  return visited
+
+  
+  
+      
        
