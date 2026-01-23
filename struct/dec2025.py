@@ -2148,4 +2148,50 @@ def traverse_island(grid, row, col, visited):
   traverse_island(grid, row, col + 1, visited)
   return visited
 
-  
+  class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        #receive a m x n grid
+        #return the count (int) of the path a robot can take going down and right only
+
+        #ex: 
+        # [[X, 0,0],
+        #  [0, 0,0,]
+        #  [0, 1, 0]]
+        
+        #if it is marked as 1, do not go in that area
+        #if the area is marked as 0, we can go ahead and mark it
+
+        #keep track of path
+        #iterate through the rows and cols
+        #check to see if it is marked as 0,
+        #perform a dfs, go right, and bottom
+        #mark as a path and return true, increment path count
+        #return the path
+
+        path = 0
+
+        for row in range(len(obstacleGrid)):
+            for col in range(len(obstacleGrid[0])):
+                path = self.dfs(obstacleGrid, row, col)
+        return path
+
+    def dfs(self, obstacleGrid, row, col):
+        if row < 0 or row >= len(obstacleGrid) or col < 0 or col >= len(obstacleGrid[0]) or obstacleGrid[row][col] == 1:
+            return 0
+
+        if obstacleGrid[row-1][col-1] == 1:
+            return 1
+            
+        path = 1 
+
+        path += self.dfs(obstacleGrid, row +1 , col)
+        path += self.dfs(obstacleGrid, row, col + 1)
+
+        return path
+
+        #ex: 
+        # [[X, 0,0],
+        #  [0, 0,1,]
+        #  [0, 1, 0]]
+        
+       
