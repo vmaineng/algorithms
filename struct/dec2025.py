@@ -2274,6 +2274,64 @@ def dfs(grid, row, col, visited):
   dfs(grid, row, col+1, visited)
   return visited
 
+  from collections import deque
+
+def best_bridge(grid):
+  #receive a m x n grid
+  #return count of distance
+  #ex: 
+
+  #achieve all of the islands
+  #iterate through the islands and do a bfs to check which one is closest
+
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      potential_island = explore(grid, row, col, set())
+      if len(potential_island) > 0:
+        main_island = potential_island
+
+  visited = set(main_island)
+  queue = deque([ ])
+  for pos in main_island:
+    r, c = pos
+    queue.append((r, c, 0))
+
+  while queue:
+    row, col, distance = queue.popleft()
+    if grid[row][col] == "L" and (row, col) not in main_island:
+      return distance - 1
+
+    directions = [(0,1), (1,0), (-1,0), (0, -1)]
+
+    for dr, dc in directions:
+      nr, nc = dr + row, dc + col
+
+      if is_inbounds(grid, nr, nc) and (nr, nc) not in visited:
+        visited.add((nr, nc))
+        queue.append((nr, nc, distance + 1))
+      
+  
+def is_inbounds(grid, row, col):
+  row_inbounds = 0 <= row < len(grid)
+  col_inbounds = 0 <= col < len(grid[0])
+  return row_inbounds and col_inbounds
+
+def explore(grid, row, col, visited):
+  if not is_inbounds(grid, row, col) or grid[row][col] == 'W':
+    return visited
+
+  pos = (row, col)
+  if pos in visited:
+    return visited
+
+  visited.add(pos)
+
+  explore(grid, row + 1, col, visited)
+  explore(grid, row - 1, col, visited)
+  explore(grid, row, col + 1, visited)
+  explore(grid, row, col - 1, visited)
+  return visited
   
   
       
