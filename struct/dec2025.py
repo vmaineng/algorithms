@@ -2368,6 +2368,35 @@ def cycle_detect(graph, node, visiting, visited):
   visited.add(node)
 
   return False
+
+def reverse_some_chars(s, chars):
+  #receive a string  of lowercase chars, and a list of chars 
+  #return the string reversed if the char is in list
+  #ex: 'apple', ['a', 'e'] => 'eppla'
+
+  #initialize an empty list
+  #iterate through each char to check if it is in chars
+  #add it to a separate list (can add to stack)
+  #return new string
+
+  stack = []
+  result = []
+
+  for char in s:
+    if char in chars:
+      stack.append(char)
+    # print(stack) ['o', 'u', 'e'] 
+
+  for char in s:
+    if char in chars:
+      result.append(stack.pop())
+    else:
+      result.append(char)
+  print(result)
+      
+  return ''.join(result)
+      
+  
   
       
        
