@@ -2405,6 +2405,7 @@ def reverse_some_chars(s, chars):
   #initialize an empty list
   #iterate through each char to check if it is in chars
   #add it to a separate list (can add to stack)
+  #iterate through string again and pop off chars off stack if the char belonged in chars
   #return new string
 
   stack = []
@@ -2423,7 +2424,46 @@ def reverse_some_chars(s, chars):
   print(result)
       
   return ''.join(result)
-      
+    
+    def prereqs_possible(num_courses, prereqs):
+  graph = build_graph(num_courses, prereqs)
+
+  visiting = set()
+  visited = set()
+
+  for node in graph:
+    if has_cycle(graph, node, visited, visiting):
+      return False
+  return True
+
+def has_cycle(graph, node, visited, visiting):
+  if node in visited:
+    return False
+
+  if node in visiting:
+    return True
+
+  visiting.add(node)
+
+  for neighbor in graph[node]:
+    if has_cycle(graph, neighbor, visited, visiting) #node is connected to neighbor
+    return True
+
+  visiting.remove(node)
+  visited.add(node)
+  return False
+
+def build_graph(num_courses, prereqs):
+  graph = {}
+
+  for i in range(0, num_courses):
+    graph[i] = []
+
+    for prereq in prereqs:
+      course_a, course_b = prereq
+      graph[course_a].append(course_b)
+
+  return graph
   
   
   
