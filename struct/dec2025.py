@@ -2333,6 +2333,41 @@ def explore(grid, row, col, visited):
   explore(grid, row, col - 1, visited)
   return visited
   
+
+  def has_cycle(graph):
+  #receive an adj matrix
+  #return boolean if it is connected
+
+  #ex:
+
+  #iterate through each node and check if it's in the phase of visiting
+
+  visited = set()
+  visiting = set()
+
+  for node in graph:
+    if cycle_detect(graph, node, visiting, visited) == True:
+      return True
+  return False
+
+def cycle_detect(graph, node, visiting, visited):
+  if node in visited:
+    return False
+
+  if node in visiting:
+    return True
+
+  visiting.add(node)
+
+  for neighbor in graph[node]:
+    if cycle_detect(graph, neighbor, visiting, visited):
+      return True
+  
+
+  visiting.remove(node)
+  visited.add(node)
+
+  return False
   
       
        
