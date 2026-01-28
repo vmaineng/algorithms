@@ -2572,3 +2572,30 @@ def _sum_possible(amount, numbers, memo):
     memo[amount] = False
 
   return False
+
+def min_change(amount, coins):
+  ans= _min_change(amount, coins, {})
+
+  return -1 if ans == float('inf') else ans
+
+
+def _min_change(amount, coins, memo):
+  if amount in memo:
+    return memo[amount]
+
+  if amount < 0:
+    return float("inf")
+
+  if amount == 0:
+    return 0
+
+  min_coins = float("inf")
+  
+  for coin in coins:
+    num_coins = 1 + _min_change(amount - coin, coins, memo)
+    if num_coins < min_coins:
+      min_coins = num_coins
+
+  memo[amount] = min_coins
+  return min_coins
+      
