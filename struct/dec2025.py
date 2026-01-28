@@ -2464,6 +2464,38 @@ def build_graph(num_courses, prereqs):
       graph[course_a].append(course_b)
 
   return graph
+
+  def has_cycle(graph):
+  #receive an adj matrix
+  #return boolean if has a cycle, else False
+
+  #ex: 
+
+  visiting = set()
+  visited = set()
+
+  for node in graph:
+    if cycle_detect(graph, node, visiting, visited) == True:
+      return True
+  return False
+
+def cycle_detect(graph, node, visiting, visited):
+  if node in visited:
+    return False
+
+  if node in visiting:
+    return True
+
+  visiting.add(node)
+
+  for neighbor in graph[node]:
+    if cycle_detect(graph, neighbor, visiting, visited) == True:
+      return True
+
+  visiting.remove(node)
+  visited.add(node)
+  return False
+  
   
   
   
