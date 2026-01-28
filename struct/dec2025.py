@@ -2497,7 +2497,52 @@ def cycle_detect(graph, node, visiting, visited):
   return False
   
   
-  
+def prereqs_possible(num_courses, prereqs):
+  #receive an adj list
+  #return True if can take all courses, else false
+
+  #ex:
+
+  #create a graph of num courses and preqs to iterate through
+  #check if it's in the visited, return False, else return True
+
+  graph = build_graph(num_courses, prereqs)
+  visited = set()
+  visiting = set()
+
+  for node in graph:
+    if has_cycle(graph, node, visiting, visited):
+      return False
+  return True
+
+def has_cycle(graph, node, visiting, visited):
+  if node in visited:
+    return False
+    
+  if node in visiting:
+    return True
+
+  visiting.add(node)
+
+  for neighbor in graph[node]:
+    if has_cycle(graph, neighbor, visiting, visited):
+      return True
+
+  visiting.remove(node)
+  visited.add(node)
+  return False
+
+def build_graph(num_courses, prereqs):
+  graph = {}
+
+  for i in range(0, num_courses):
+    graph[i]= []
+
+  for prereq in prereqs:
+    a,b = prereq
+    graph[a].append(b)
+
+  return graph  
   
       
        
