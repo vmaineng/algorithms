@@ -2511,7 +2511,7 @@ def prereqs_possible(num_courses, prereqs):
   visiting = set()
 
   for node in graph:
-    if has_cycle(graph, node, visiting, visited):
+    if has_cycle(graph, node, visiting, visited): #found acycle so can't get take all courses
       return False
   return True
 
