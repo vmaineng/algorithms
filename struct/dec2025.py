@@ -2545,4 +2545,30 @@ def build_graph(num_courses, prereqs):
   return graph  
   
       
-       
+       def sum_possible(amount, numbers):
+  return _sum_possible(amount, numbers, {})
+
+
+def _sum_possible(amount, numbers, memo):
+  #receive an int, and a list of integers
+  #return boolean
+
+  #ex:
+
+  if amount in memo:
+    return memo[amount]
+
+  if amount == 0:
+    return True
+
+  if amount < 0:
+    return False
+
+  for num in numbers:
+    if _sum_possible(amount - num, numbers, memo):
+      memo[amount] = True
+      return True
+
+    memo[amount] = False
+
+  return False
