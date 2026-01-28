@@ -2631,4 +2631,34 @@ def _min_change(amount, coins, memo):
   return True
       
       
+def paired_parentheses(string):
+  #receive a string of lowercase chars and paired_parentheses
+  #return boolean, True if equal amount of closing and opening paired_parentheses
+  #ex: '(()' => False
+
+  #initialize a string with paren 
+  #iterate through string
+  #check if it is a paren 
+  #add it to the stack
+  #iterate through stack 
+  #check if it is an openin 
+  #look for closing 
+  #else return False
+  #else after looking everything, return True 
+
+
+  count = 0
+
+  for char in string:
+    if char == '(':
+      count += 1
+    elif char == ')':
+      if count == 0:
+        return False
+      count -= 1
+
+  return count  == 0
+      
+      
+      
 
