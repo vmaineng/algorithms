@@ -2699,6 +2699,16 @@ def _max_path_sum(grid, r, c, memo):
   memo[pos] = grid[r][c] + max(down_paths, right_paths)
   return memo[pos]
 
+def non_adjacent_sum(nums):
+  if len(nums) == 0:
+    return 0
+
+  include = nums[0] + non_adjacent_sum(nums[2:])
+  exclude = non_adjacent_sum(nums[1:])
+  return max(include, exclude)
+
+  
+
   
 
   
