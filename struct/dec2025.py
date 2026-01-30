@@ -2707,7 +2707,70 @@ def non_adjacent_sum(nums):
   exclude = non_adjacent_sum(nums[1:])
   return max(include, exclude)
 
-  
+  class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        #receive an integer for numcourses, and we have a list for prereqs
+        #return a boolean, True if we can take all of the courses, else False
+        #ex: 3, prereqs: [[0,1], [1, 2], [2, 3]] =>
+        #                  a, b
+        #  { [1]: 0, 
+        #.  [2], 1,
+        #. [3]: 2,
+        #} => True
+
+
+        #numCourses = 2, prerequisites = [[0,1],[1,0]]
+        #{ [1]: 0,
+        # [0] : 1
+        #} => False
+
+        #black-white-grey algo => 2 sets to track which node you've visited
+
+        #build out a graph
+        #iterate through the graph and check if there is a cycle
+        #if there is, return False
+        #else, return True that we can go ahead and finsih all
+
+        visited = set()
+        visiting = set()
+
+        graph = build_graph(self, numCourses, prerequisites)
+        for node in graph:
+            if cycle_detect(graph, node, visiting, visited):
+                return False
+        return True
+
+def cycle_detect(graph, node, visiting, visited):
+    if node in visiting:
+        return True
+
+    if node in visited:
+        return False
+    
+    visiting.add(node)
+
+    for neighbor in graph[node]:
+        if cycle_detect(graph, neighbor, visiting, visited) == True:
+            return False
+    
+    visiting.remove(node)
+    visited.add(node)
+
+    return True
+
+def build_graph(self, numCourses: int,prerequisites: List[List[int]]): 
+    graph ={}
+
+    for i in range(0, numCourses):
+        graph[i] = []
+
+    for a,b in prerequisites:
+        graph[a].append(b)
+
+    return graph 
+
+
+
 
   
 
