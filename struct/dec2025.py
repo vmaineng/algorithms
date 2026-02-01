@@ -2921,7 +2921,27 @@ def _can_concat(s, words, memo):
   memo[s] = False
   return False
       
+  def can_concat(s, words):
+  return _can_concat(s, words, 0, {})
+
+def _can_concat(s, words,i, memo):
+  if i in memo:
+    return memo[i]
+    
+  if i == len(s):
+    return True
+
+  for word in words:
+    if s.startswith(word, i):
+      if _can_concat(s, words, i + len(word), memo) == True:
+        memo[i] = True
+        return True
+        
+  memo[i] = False
+  return False
+      
   
+
 
 
 
