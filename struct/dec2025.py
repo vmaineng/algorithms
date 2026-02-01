@@ -2832,6 +2832,31 @@ def _array_stepper(numbers, i, memo):
   memo[i] = False
   return False
     
+def array_stepper(numbers):
+  #receive a list of integers
+  #return a boolean of true or false
+  #ex:
+  #iterate starting at the first index
+  #base case: if we reached the end of the list, return true
+  #iterate through each array_stepper (idx)
+  #if we traverse through all and never reached, return false
+  return _array_stepper(numbers, 0, {})
+
+def _array_stepper(numbers, idx, memo):
+  if idx in memo:
+    return memo[idx]
+    
+  if idx >= len(numbers) - 1:
+    return True
+
+  max_step = numbers[idx]
+  for step in range(1, max_step + 1):
+    if _array_stepper(numbers, step + idx, memo):
+      memo[idx] = True
+      return True
+      
+  memo[idx] = False
+  return False
 
 
 
