@@ -3025,6 +3025,56 @@ def traverse_distance(graph, node, distance):
 
   return distance[node]
     
+
+    def semesters_required(num_courses, prereqs):
+  #receive a num course, and a prereqs
+  #return min number of semesters required to complete all n  num_courses
+  #ex: 
+
+  #convert graph into adj matrix
+  #check terminal node
+  #revert back
+
+  graph = build_graph(num_courses, prereqs)
+
+  distance = {}
+  
+  for course in graph:
+    if len(graph[course]) == 0:
+      distance[course] = 1
+
+  for course in graph:
+    traverse_graph(graph, course, distance)
+
+  return max(distance.values())
+
+def traverse_graph(graph, course, distance):
+  if course in distance:
+    return distance[course]
+
+  max_length = 0
+  for neighbor in graph[course]:
+    attempt = traverse_graph(graph, neighbor, distance)
+    if attempt > max_length:
+      max_length = attempt
+
+  distance[course] = 1 + max_length
+  return distance[course]
+
+
+def build_graph(num_courses, prereqs):
+  graph = {}
+
+  for course in range(0, num_courses):
+    graph[course] = [] #keys
+
+  for prereq in prereqs:
+    a,b = prereq
+    graph[a].append(b)
+
+  return graph
+  
+  
     
 
       
