@@ -2983,6 +2983,24 @@ def _valid_compound(compound, elements, idx, memo):
 
   memo[idx] = False
   return False
+
+def count_compounds(compound, elements):
+  return _count_compunds(compound, elements, 0, {})
+
+def _count_compunds(compound, elements, idx, memo):
+
+  if idx in memo:
+    return memo[idx]
+  if idx == len(compound):
+    return 1
+
+  count = 0
+  for ele in elements:
+    if compound.startswith(ele.lower(), idx):
+      count += _count_compunds(compound, elements, idx + len(ele), memo)
+  memo[idx] = count
+  return count
+
       
 
   
