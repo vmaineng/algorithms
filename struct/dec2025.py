@@ -2965,7 +2965,28 @@ def _quickest_concat(s, words, memo):
   return min_words
       
 
+  def valid_compound(compound, elements):
+  return _valid_compound(compound, elements, 0, {})
+
+def _valid_compound(compound, elements, idx, memo):
+
+  if idx in memo:
+    return memo[idx]
+  if idx == len(compound):
+    return True
+
+  for word in elements:
+    if compound.startswith(word.lower(), idx):
+      if _valid_compound(compound, elements, idx + len(word), memo) == True:
+        memo[idx] = True
+        return True
+
+  memo[idx] = False
+  return False
+      
+
   
+
 
 
 
