@@ -3144,6 +3144,39 @@ def befitting_brackets(string):
         return False
   return len(stack) == 0
 
+def decompress_braces(string):
+  #receive a string
+  #return the decompressed version
+
+  #ex: '3{ft5{i}}' => 'ftftftiiiiii'
+
+  #use a stack
+  #add in stack
+  #if it's a closing paren
+  #then pop off previous until integer
+  #return the string back
+
+  stack = []
+  numbers = '123456789'
+
+  for char in string:
+    if char in numbers:
+      stack.append(int(char))
+    else:
+      if char == '}':
+        segment = ""
+        while not isistance(stack[-1], int):
+          popped = stack.pop()
+          segment = popped + segment
+        num = stack.pop()
+        stack.append(segement * num)
+      elif char != '{':
+        stack.append(char)
+
+  return ''.join(stack)
+    
+
+
     
 
   
