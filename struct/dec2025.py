@@ -3073,6 +3073,31 @@ def build_graph(num_courses, prereqs):
     graph[a].append(b)
 
   return graph
+
+def reverse_some_chars(s, chars):
+  #receive a computer and chars list
+  #return a list of chars with the chars list reversed
+  #ex: 'hello', ['r', 'e', 'o'] => 'holle'
+
+  #iterate through s and add in the char in chars list to a stack
+  #iterate through the s again
+  #add in the chars from the stack
+  #return the result back as a string
+
+  result = []
+  stack = []
+
+  for char in s:
+    if char in chars:
+      stack.append(char)
+
+  for char in s:
+    if char in chars:
+      result.append(stack.pop())
+    else:
+      result.append(char)
+      
+  return ''.join(result)
   
   
     
