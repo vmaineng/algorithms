@@ -3121,6 +3121,29 @@ def paired_parentheses(string):
         count -=1
 
   return count == 0
+
+def befitting_brackets(string):
+  #receive a string of brackets 
+  #return boolean , True if matching brackets, else False
+  #ex: '({}' => False
+
+  brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  }
+
+  stack = []
+  for char in string:
+    if char in brackets:
+      stack.append(brackets[char])
+    else:
+      if stack and stack[-1] == char:
+        stack.pop()
+      else:
+        return False
+  return len(stack) == 0
+
     
 
   
