@@ -3098,6 +3098,31 @@ def reverse_some_chars(s, chars):
       result.append(char)
       
   return ''.join(result)
+
+def paired_parentheses(string):
+  #receive a string of paired_parentheses
+  #return boolean, True if paired (), else false
+  #ex: '(char))'=> false
+
+  #iterate through string
+  #check if it is an opening paren, add 1 to count
+  #else, it's closing, subtract 1 from count
+
+  #return True if count == 0, else false
+
+  count = 0
+  for char in string:
+    if char == "(":
+      count += 1
+    elif char == ')':
+      if count == 0:
+        return False
+      else:
+        count -=1
+
+  return count == 0
+    
+
   
   
     
