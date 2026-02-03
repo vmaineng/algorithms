@@ -3175,6 +3175,32 @@ def decompress_braces(string):
 
   return ''.join(stack)
     
+def nesting_score(string):
+  #receive a string of brackets
+  #return total nesting_score
+  #ex: [[]] => 2 b/c of 1 * 2
+
+
+  #use a stack
+  #if opening bracket, push a 0 to stack
+  #if matching pair, add 1
+  #if closing bracket, check last total to see if not zero, then * 2
+  #return total
+
+  stack = [0]
+
+  for char in string:
+    if char == '[':
+      stack.append(0)
+    else:
+      popped = stack.pop()
+      if popped == 0:
+        stack[-1] += 1
+      else:
+        stack[-1] += popped * 2
+  return stack[0]
+
+  
 
 
     
