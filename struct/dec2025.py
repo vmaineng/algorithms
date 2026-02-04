@@ -3201,6 +3201,14 @@ def nesting_score(string):
   return stack[0]
 
   
+  def has_subarray_sum(numbers, target_sum):
+  for i in range(0, len(numbers)):
+    for j in range(i + 1, len(numbers) + 1):
+      total = sum(numbers[i:j])
+      if total == target_sum:
+        return True
+
+  return False
 
 
     
