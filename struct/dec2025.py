@@ -3250,7 +3250,33 @@ def subarray_sum_count(numbers, target_sum):
     seen[num] += 1
   return count
       
-    
+    from collections import deque
+
+def merge_sort(nums):
+  if len(nums) <= 1:
+    return nums
+
+  mid = len(nums) //2
+  left_list = merge_sort(nums[:mid])
+  right_list = merge_sort(nums[mid:])
+  return merge(left_list, right_list)
+
+
+def merge(list1, list2):
+  deque1 = deque(list1)
+  deque2 = deque(list2)
+  merged = []
+
+  while deque1 and deque2:
+    if deque1[0] < deque2[0]:
+      merged.append(deque1.popleft())
+    else:
+      merged.append(deque2.popleft())
+
+  merged += deque1
+  merged += deque2
+
+  return merged
     
 
 
