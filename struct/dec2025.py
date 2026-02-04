@@ -3211,6 +3211,21 @@ def nesting_score(string):
   return False
 
 
+def has_subarray_sum(numbers, target_sum):
+  prefix_sums = [0]
+  total = 0 
+  for num in numbers:
+    total += num
+    prefix_sums.append(total)
+
+  seen = set()
+  for num in prefix_sums:
+    difference = num - target_sum
+    if difference in seen:
+      return True
+    seen.add(num)
+  return False
+
     
 
   
