@@ -3226,6 +3226,36 @@ def has_subarray_sum(numbers, target_sum):
     seen.add(num)
   return False
 
+from collections import Counter
+
+def subarray_sum_count(numbers, target_sum):
+  #receive a list of integers, and a target_sum
+  #return the count of subarray_sum_count
+  #ex: 
+
+  #iterate through using a prefix sum 
+  #
+
+  prefix_sums = [0]
+  total = 0
+  for num in numbers:
+    total += num
+    prefix_sums.append(total)
+
+  seen = Counter()
+  count = 0
+  for num in prefix_sums:
+    difference = num - target_sum
+    count += seen[difference]
+    seen[num] += 1
+  return count
+      
+    
+    
+
+
+      
+
     
 
   
