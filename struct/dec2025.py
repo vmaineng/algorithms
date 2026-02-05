@@ -3277,6 +3277,27 @@ def merge(list1, list2):
   merged += deque2
 
   return merged
+
+def combine_intervals(intervals):
+  #receive a list of tuple
+  #return a list of intervals back 
+
+  #ex: 
+
+  sorted_intervals = sorted(intervals, key=lambda interval:interval[0])
+
+  result = [ sorted_intervals[0]]
+
+  for interval in sorted_intervals[1:]:
+    start, end = interval
+    last_start, last_end = result[-1]
+    if last_end >= start: #check starts
+      if end >last_end: #check the end
+        result[-1] = (last_start, end)
+    else:
+      result.append(interval)
+  return result
+    
     
 
 
