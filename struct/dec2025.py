@@ -3360,6 +3360,34 @@ def linked_palindrome(head):
 
   return result == result[::-1]
     
+
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def middle_value(head):
+  #receive a head of LL
+  #return middle value of the LL
+  #ex: 
+
+  #initialize a result
+  #add in all the nodes
+  #calc middle
+  #return the middle
+
+
+  result = []
+  current = head
+
+  while current:
+    result.append(current.val)
+    current = current.next
+
+  mid = len(result) // 2
+
+  return result[mid]
+
     
 
       
