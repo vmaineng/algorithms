@@ -3336,6 +3336,32 @@ def lexical_order(word_1, word_2, alphabet):
     elif value_2 < value_1:
       return False
   return True
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_palindrome(head):
+  #receive a head of ll
+  #return boolean if linked list is linked_palindrome
+  #ex: 
+
+  #intialize an empty list to store
+  #iterate through each Node
+  #add to the list
+  #check if rev list == current list
+
+  result = []
+  current = head
+  while current:
+    result.append(current.val)
+    current = current.next
+
+  return result == result[::-1]
+    
+    
+
       
 
     
