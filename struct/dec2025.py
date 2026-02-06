@@ -3427,7 +3427,30 @@ def middle_value(head):
 
   return slow.val
 
-      
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_list_cycle(head):
+  #receive a head of ll 
+  #return True if cycle exists, else False
+  #ex: 
+
+  #using slow and fast
+  #if slow and fast meet, return True, else False
+
+  slow = head
+  fast = head
+  first_iteration = True
+  while not (fast is None or fast.next is None):
+    if slow is fast and not first_iteration:
+      return True
+    slow = slow.next
+    fast = fast.next.next
+    first_iteration = False
+  return False
+
 
     
 
