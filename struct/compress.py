@@ -468,3 +468,54 @@ def dfs(grid, row, col, visited):
   size += dfs(grid, row, col + 1, visited)
   return size
   
+  #!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'bonAppetit' function below.
+#
+# The function accepts following parameters:
+#  1. INTEGER_ARRAY bill
+#  2. INTEGER k
+#  3. INTEGER b
+#
+
+def bonAppetit(bill, k, b):
+    # receive a list of integers, Anna doesn't this one (k), 
+    # b = integer of how much Anna contributed
+    
+    #return 'Bon Appetit' if bill was split correctly else return how much we owe her
+    
+    #ex: [3, 2, 5], Anna doesn't [0], 3, 2 + 5 = 7 /2 => 3.5
+    
+    #Anna, i paid 4 dollars
+    #total of the list - what she didn't eat
+    #check it against how much she paid
+    #return 'Bon Appetit' if this True, else return the change
+    
+    total = sum(bill)
+    
+    if (total - bill[k]) / 2 == b:
+        print('Bon Appetit')
+    else:
+        print((total // 2) - (total - bill[k]) // 2)
+    
+    
+
+if __name__ == '__main__':
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    k = int(first_multiple_input[1])
+
+    bill = list(map(int, input().rstrip().split()))
+
+    b = int(input().strip())
+
+    bonAppetit(bill, k, b)
