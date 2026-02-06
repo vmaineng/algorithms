@@ -3452,6 +3452,36 @@ def linked_list_cycle(head):
   return False
 
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def undupe_sorted_linked_list(head):
+  #receive a head of ll
+  #return a new  ll of no duplicates
+  #ex: 
+
+  #check next Node to see if same val
+  #then point to next next Node
+  #return head
+
+  current = head
+  dummy = Node(None)
+  tail = dummy
+  
+  while current:
+    if current.val != tail.val:
+      tail.next = Node(current.val)
+      tail = tail.next
+    
+    current = current.next #update current every single iteration
+
+  return dummy.next
+  
+
+
+
     
 
   
