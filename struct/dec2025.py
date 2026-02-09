@@ -3479,6 +3479,30 @@ def undupe_sorted_linked_list(head):
 
   return dummy.next
   
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def create_linked_list(values):
+  #receive a list of items
+  #return a LL 
+  #ex: 
+
+  #iterate through each item
+  #create a new node for them
+  #add them to the tail
+  #return head
+
+  dummy = Node(None)
+  tail = dummy
+
+  for item in values:
+    current = Node(item)
+    tail.next = current
+    tail = tail.next
+
+  return dummy.next
 
 
 
