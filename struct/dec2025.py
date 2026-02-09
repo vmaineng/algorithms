@@ -3539,7 +3539,22 @@ class Queue:
     return value
     
       
-  
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def flip_tree(root):
+  if not root:
+    return None
+
+  left_path=flip_tree(root.left)
+  right_path=flip_tree(root.right)
+  root.left = right_path
+  root.right = left_path
+
+  return root
 
 
     
