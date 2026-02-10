@@ -3635,7 +3635,30 @@ def traverse(root, level, values):
   traverse(root.left, level + 1, values)
   traverse(root.right, level + 1, values)
 
- 
+ # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def binary_search_tree_includes(root, target):
+  #receive the root node, check if the target node exists
+  #return boolean
+
+  #ex:
+
+  #traverse through left if target's val < root, else go right
+
+  if root is None:
+    return False
+
+  if root.val == target:
+    return True
+
+  if target < root.val:
+    return binary_search_tree_includes(root.left, target)
+  else:
+    return binary_search_tree_includes(root.right, target)
   
     
 
