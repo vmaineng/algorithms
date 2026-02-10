@@ -3557,6 +3557,42 @@ def flip_tree(root):
   return root
 
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def lowest_common_ancestor(root, val1, val2):
+  #find all the paths
+  #find the same node in __init__
+  left_path = get_path(root, val1)
+  right_path = get_path(root, val2)
+  set2 = set(right_path)
+  
+  for val in left_path:
+    if val in set2:
+      return val
+    
+
+def get_path(root, target_val):
+  if root is None:
+    return []
+
+  if root.val == target_val:
+    return [ root.val ]
+
+  left_path = get_path(root.left, target_val)
+  if left_path:
+    left_path.append(root.val)
+    return left_path
+
+
+  right_path = get_path(root.right, target_val)
+  if right_path:
+    right_path.append(root.val)
+    return right_path
+  return None
     
 
   
