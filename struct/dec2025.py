@@ -3610,6 +3610,32 @@ def flip_tree(root):
   root.right = left_path
   return root
   
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def lefty_nodes(root):
+  if not root:
+    return []
+
+  values = []
+  traverse(root, 0, values)
+  return values
+
+def traverse(root, level, values):
+  if not root:
+    return 0
+
+  if len(values) == level:
+    values.append(root.val)
+
+  traverse(root.left, level + 1, values)
+  traverse(root.right, level + 1, values)
+
+ 
   
     
 
