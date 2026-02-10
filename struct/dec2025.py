@@ -3660,9 +3660,57 @@ def binary_search_tree_includes(root, target):
   else:
     return binary_search_tree_includes(root.right, target)
   
-    
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def is_binary_search_tree(root):
+  values = []
+  in_order_traversal(root, values)
+  return is_sorted(values)
+
+
+def in_order_traversal(root, values):
+  if not root:
+    return
+
+  in_order_traversal(root.left, values)
+  values.append(root.val)
+  in_order_traversal(root.right, values)
+
+def is_sorted(numbers):
+  for i in range(0, len(numbers) - 1):
+    current = numbers[i]
+    next = numbers[i + 1]
+
+    if next < current:
+      return False
+
+  return True
 
       
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def post_order(root):
+  values = []
+  traverse(root, values)
+  return values
+
+
+def traverse(root, values):
+  if not root:
+    return
+
+  traverse(root.left, values)
+  traverse(root.right, values)
+  values.append(root.val)
 
   
 
