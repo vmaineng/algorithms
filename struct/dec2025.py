@@ -3714,7 +3714,36 @@ def traverse(root, values):
 
   
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.left = None
+    self.right = None
 
+def build_tree_in_post(in_order, post_order):
+  #root node is end of post_order
+  #find root node in the in_order
+  #everything to left is added on left side
+  #everythign on right is added on right side
+
+  if len(post_order) == 0:
+    return None
+
+  last_node = post_order[-1]
+  root = Node(last_node)
+
+  #find the index of it in_order
+  mid = in_order.index(last_node)
+  left_side = in_order[:mid]
+  right_side = in_order[mid + 1:]
+
+  left_post=post_order[:len(left_side)]
+  right_post = post_order[len(left_side):-1]
+
+  root.left = build_tree_in_post(left_side,left_post)
+  root.right =build_tree_in_post(right_side, right_post)
+
+  return root
 
 
 
