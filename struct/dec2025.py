@@ -3745,7 +3745,34 @@ def build_tree_in_post(in_order, post_order):
 
   return root
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.left = None
+    self.right = None
 
+def build_tree_in_pre(in_order, pre_order):
+  #grab first node in beginning
+  #find it in in order, left of it isin left 
+  #else everything in right
+
+  if len(in_order) == 0:
+    return None
+
+  val = pre_order[0]
+  root = Node(val)
+
+  mid = in_order.index(val)
+  left_in = in_order[:mid]
+  right_in = in_order[mid + 1:]
+
+  post_left = pre_order[1: 1 + len(left_in)]
+  post_right=pre_order[1 + len(left_in):]
+
+  root.left = build_tree_in_pre(left_in, post_left)
+  root.right = build_tree_in_pre(right_in, post_right)
+
+  return root
 
   
 
