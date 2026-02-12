@@ -3773,7 +3773,35 @@ def build_tree_in_pre(in_order, pre_order):
   root.right = build_tree_in_pre(right_in, post_right)
 
   return root
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
 
+def check_balanced_tree(root):
+  if not root:
+    return 0
+
+  left = check_balanced_tree(root.left)
+  if left == -1:
+    return -1
+
+  right = check_balanced_tree(root.right)
+  if right == -1:
+    return -1
+
+
+  if abs(left - right) > 1:
+    return -1
+  else:
+    return 1 + max(left, right)
+
+def is_tree_balanced(root):
+  return check_balanced_tree(root) > -1
+
+
+    
   
 
   
