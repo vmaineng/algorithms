@@ -3827,6 +3827,10 @@ class MinHeap:
     self.list.append(val)
     self.sift_up(len(self.list) - 1)
     
+
+    def kth_largest(numbers, k):
+  sorted_nums = sorted(numbers)
+  return sorted_nums[-k]
     
   
 
