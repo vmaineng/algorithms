@@ -95,3 +95,49 @@ def get_average(list):
     return score/active_count
 
 
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'reverseArray' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY a as parameter.
+#
+
+def reverseArray(a):
+    #receive a list of integers (pos or neg)
+    #return a list back where integers are reversed
+    #ex: [-1, 3, 6, 2] => [2, 6, 3, -1]
+    
+    # return a[::-1]
+    
+    #initialize an empty list
+    #iterate starting from the end , and go up to the front
+    #add each value into the list
+    #return the list
+    
+    result = []
+    for i in range(len(a)-1, -1, -1):
+        result.append(a[i])
+    return result
+        
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    res = reverseArray(arr)
+
+    fptr.write(' '.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
