@@ -3800,7 +3800,33 @@ def check_balanced_tree(root):
 def is_tree_balanced(root):
   return check_balanced_tree(root) > -1
 
+class MinHeap:
+  def __init__(self):
+    self.list = []
+    
+  def is_empty(self):
+    return len(self.list) == 0
 
+  def size(self):
+    return len(self.list)
+
+  def swap(self, idx1, idx2):
+    self.list[idx1], self.list[idx2] = self.list[idx2],  self.list[idx1]
+
+  def sift_up(self, idx):
+    current_idx = idx
+    while current_idx > 0:
+      parent_idx = (current_idx - 1) // 2
+      if self.list[current_idx] < self.list[parent_idx]:
+        self.swap(current_idx, parent_idx)
+        current_idx = parent_idx #might have to sift up further so update new index
+      else:
+        break;
+      
+  def insert(self, val):
+    self.list.append(val)
+    self.sift_up(len(self.list) - 1)
+    
     
   
 
