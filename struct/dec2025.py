@@ -3832,6 +3832,39 @@ class MinHeap:
   sorted_nums = sorted(numbers)
   return sorted_nums[-k]
     
+
+    import heapq
+
+def k_smallest(nums, k):
+  # result = []
+  # sorted_nums = sorted(nums)
+
+  # for num in sorted_nums:
+  #   if len(result) == k:
+  #     return result
+  #   else:
+  #     result.append(num)
+  # return result
+
+  heap = []
+  for num in nums:
+    item = (-num, num)
+    heapq.heappush(heap, item)
+    if len(heap) > k:
+      heapq.heappop(heap)
+  result = []
+  while len(heap) > 0:
+    item = heapq.heappop(heap)
+    element = item[1]
+    result.append(element)
+
+  return result[::-1]
+      
+
+
+    
+  
+  
   
 
   
