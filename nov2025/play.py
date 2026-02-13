@@ -141,3 +141,15 @@ if __name__ == '__main__':
     fptr.write('\n')
 
     fptr.close()
+  max_count = float('-inf')
+    
+    for row in range(4):
+        for col in range(4):
+            total = (arr[row][col] + arr[row][col+1] + arr[row ][col+2]
+            + arr[row+1][col+1]
+            + arr[row+2][col] + arr[row+2][col+ 1] + arr[row+2][col+2])
+            
+            if total > max_count:
+                max_count = total
+                
+    return max_count
