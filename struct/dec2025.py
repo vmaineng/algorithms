@@ -3880,6 +3880,25 @@ def subsets(elements):
     subsets_with_first.append([first, *sub])
     
   return subsets_with_first + without_first_subsets
+
+def permutations(items):
+  if len(items) == 0:
+    return [ [] ]
+
+
+  first = items[0]
+
+  full_perm = []
+  for perm in permutations(items[1:]):
+    for i in range(len(perm) + 1):
+      full = perm[:i] + [first] + perm[i:]
+      full_perm.append(full)
+  return full_perm
+  
+    
+
+  
+  
     
   
   
