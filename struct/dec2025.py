@@ -3915,6 +3915,30 @@ def permutations(items):
 
   return result + combos_no_first
 
+def grocery_budget(grocery_list, budget):
+  #receive a list and a budget
+
+  if budget < 0:
+    return []
+
+  if not grocery_list:
+    return [[]]
+
+
+  #include first
+  first_item, money = grocery_list[0]
+  result = []
+  for item in grocery_budget(grocery_list[1:], budget - money):
+    item.append(first_item)
+    result.append(item)
+    
+
+  #create without the first one
+  result += grocery_budget(grocery_list[1:], budget)
+
+  return result
+
+  
   
     
 
