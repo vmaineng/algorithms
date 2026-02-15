@@ -3895,6 +3895,27 @@ def permutations(items):
       full_perm.append(full)
   return full_perm
   
+  def create_combinations(items, k):
+  if len(items) < k:
+    return [ ]
+
+  if k == 0:
+    return [[]]
+
+  result = []
+  first = items[0]
+
+  partial_combos = create_combinations(items[1:], k-1)
+
+  for combo in partial_combos:
+    result.append([first, *combo])
+
+
+  combos_no_first = create_combinations(items[1:], k)
+
+  return result + combos_no_first
+
+  
     
 
   
