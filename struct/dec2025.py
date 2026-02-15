@@ -3861,7 +3861,25 @@ def k_smallest(nums, k):
   return result[::-1]
       
 
+def subsets(elements):
+  #receive a list of elements
+  #return a subset of it
 
+  #if list is empty return an empty list
+
+
+  if not elements:
+    return [[]]
+
+  first = elements[0]
+  remaining = elements[1:]
+  without_first_subsets = subsets(remaining)
+
+  subsets_with_first = []
+  for sub in without_first_subsets:
+    subsets_with_first.append([first, *sub])
+    
+  return subsets_with_first + without_first_subsets
     
   
   
