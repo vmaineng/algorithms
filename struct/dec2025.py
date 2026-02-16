@@ -3938,6 +3938,28 @@ def grocery_budget(grocery_list, budget):
 
   return result
 
+
+  def grocery_budget(grocery_list, budget):
+  if budget < 0:
+    return []
+
+  if len(grocery_list) == 0:
+    return [ [] ]
+
+  item, money = grocery_list[0]
+  remaining = grocery_list[1:]
+
+  result = []
+  for grocery in grocery_budget(remaining, budget - money):
+    grocery.append(item)
+    result.append(grocery)
+
+
+  rest_of_items = grocery_budget(remaining, budget)
+
+  return result + rest_of_items
+  
+
   
   
     
