@@ -3960,7 +3960,28 @@ def grocery_budget(grocery_list, budget):
   return result + rest_of_items
   
 
+  def lining_up(people, capacity):
+  if capacity > len(people):
+    return []
+
   
+  if capacity == 0:
+    return [[]]
+
+  first = people[0]
+  remaining = people[1:]
+
+  all_ways = []
+
+  for peep in lining_up(remaining, capacity - 1):
+    for i in range(0, len(peep)+ 1):
+      all_ways.append([*peep[:i], first, *peep[i:]])
+
+
+  all_ways += lining_up(remaining, capacity)
+
+  return all_ways
+      
   
     
 
