@@ -3996,6 +3996,29 @@ def grocery_budget(grocery_list, budget):
 
   return paths
   
+  def parenthetical_possibilities(s):
+  if len(s) == 0:
+    return [""]
+
+  choices, remainder = get_choices(s)
+
+  all_pos = []
+  for choice in choices:
+    reminder_poss = parenthetical_possibilities(remainder)
+    for poss in reminder_poss:
+      all_pos.append(choice + poss) #lets add back the first letter (choice)
+  return all_pos
+
+  
+def get_choices(s):
+  if s[0] == '(':
+    end = s.index(')')
+    choices = s[1:end]
+    remainder = s[end + 1:]
+    return (choices, remainder)
+  else:
+    return (s[0], s[1:])
+  
     
 
   
