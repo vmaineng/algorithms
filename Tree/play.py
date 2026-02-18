@@ -106,7 +106,7 @@ def get_list_authors_book_count(list):
         author = book["author"]["name"]
         if author in author_counts:
             author_counts[author] += 1
-          else:
+        else:
             author_counts[author] = 1
     result = []
     for author, count in author_counts.items():
@@ -127,6 +127,50 @@ def get_total_copies(list):
     for book in library:
         total += book["copies"]
         avaiable += book["available"]
-    return f"{"total_copies:" total, "total_available:"available"}"
+    # return f"{"total_copies:" total, "total_available:"available"}"
               
-def get_highest_rating(list):
+# def get_highest_rating(list):
+    
+# person = {"name": "Alice", "age": 30, "city": "New York"}
+# print(person["name"])
+
+people = [
+    {"name": "Alice", "age": 30},
+    {"name": "Bob", "age": 25},
+    {"name": "Charlie", "age": 35}
+]
+
+# names = []
+# for person in people:
+#     names.append(person["name"])
+# print(names)
+
+# ages = []
+# for person in people:
+#     ages.append(person["age"])
+# (print(ages))
+
+old_names=[]
+for person in people:
+    if person["age"] > 30:
+        old_names.append(person["name"])
+# print(old_names)
+
+students = [
+    {"name": "Emma", "grade": 85, "subjects": ["math", "science"]},
+    {"name": "Liam", "grade": 92, "subjects": ["history", "art"]},
+    {"name": "Sophia", "grade": 78, "subjects": ["math", "english"]}
+]
+
+names=[]
+for person in students:
+    names.append(person['name'])
+
+grades=[]
+for person in students:
+    grades.append(person["grade"])
+
+good_students =[]
+for person in students:
+    if person["grade"] > 90:
+        good_students.append(person["name"])
