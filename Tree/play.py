@@ -69,4 +69,64 @@ def get_all_authors(list):
         output.append(book['author']['name'])
     return output
 
-print(get_all_authors(library))
+# print(get_all_authors(library))
+
+def get_all_books(list):
+    for book in library:
+        return book if book['available'] > 0 else book #check
+    
+def get_unique(list):
+    output = []
+    for book in library:
+        output.append(book['genres'])
+
+    return list(set(output)) #check again
+
+# print(get_unique(library))
+
+def get_average_rating(list):
+    #for every book, calc their own average
+    total = 0
+    for book in library:
+        total =sum([book["ratings"]])
+        avg = total /len(book["ratings"])
+        return book[id], avg
+    
+    averages = {}
+    for book in library:
+        ratings = book["ratings"]
+        avg = sum(ratings) /len(ratings)
+        averages[book["book_id"]] = round(avg,2)
+    return averages
+      
+    
+def get_list_authors_book_count(list):
+    author_counts = {}
+    for book in library:
+        author = book["author"]["name"]
+        if author in author_counts:
+            author_counts[author] += 1
+          else:
+            author_counts[author] = 1
+    result = []
+    for author, count in author_counts.items():
+        result.append({"name": author, "book_count": count})
+    return result
+
+
+def get_thriller_books(list):
+    for book in library:
+        for genre in book['genres']:
+            if genre == 'Thriller':
+                return book["title"]
+            
+def get_total_copies(list):
+    total = 0
+    available = 0
+
+    for book in library:
+        total += book["copies"]
+        avaiable += book["available"]
+    return f"{"total_copies:" total, "total_available:"available"}"
+              
+def get_highest_rating(list):
