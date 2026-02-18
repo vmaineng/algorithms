@@ -3982,6 +3982,19 @@ def grocery_budget(grocery_list, budget):
 
   return all_ways
       
+      def possible_paths(graph, src, dst):
+  if src == dst:
+    return [ [src]]
+
+  paths = []
+  for neighbor in graph[src]:
+    neighbor_paths = possible_paths(graph, neighbor, dst) #grab remaining
+    for neighbor_path in neighbor_paths:
+      neighbor_path.insert(0, src) #then add back in src node
+      paths.append(neighbor_path)
+
+
+  return paths
   
     
 
