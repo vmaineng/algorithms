@@ -4019,6 +4019,40 @@ def get_choices(s):
   else:
     return (s[0], s[1:])
   
+
+  def substitute_synonyms(sentence, synonyms):
+  words = sentence.split(" ")
+  subarrays = generate(words, synonyms)
+  final_result = []
+
+  for subarray in subarrays:
+    final_result.append(' '.join(subarray))
+
+  return final_result
+
+
+
+def generate(words, synonyms):
+  if len(words) == 0:
+    return [[]]
+  
+  first = words[0]
+  remaining = words[1:]
+  subarrays = generate(remaining, synonyms)
+
+  if first in synonyms:
+    result = []
+    for syn in synonyms[first]:
+      for subarray in subarrays:
+        result.append([syn, *subarray])
+    return result
+  else:
+    result = []
+    for subarray in subarrays:
+      result.append([first, *subarray])
+    return result
+    
+      
     
 
   
