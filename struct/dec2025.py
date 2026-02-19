@@ -4125,6 +4125,54 @@ def validate(graph, node, coloring, current_color):
   return True
   
     
+    def tolerant_teams(rivalries):
+  #receive a list of tuples
+  #return boolean if can separate people into two teams 
+  #ex: 
+
+  #build a graph
+  #iterate through it
+  #color it
+
+
+
+  graph = build_graph(rivalries)
+  coloring = {}
+
+  for node in graph:
+    if node not in coloring:
+      if validate(graph, node, coloring, False) == False:
+        return False
+  return True
+
+def validate(graph, node, coloring, current_color):
+  if node in coloring:
+    return coloring[node] == current_color
+
+  coloring[node] = current_color
+    
+  for neighbor in graph[node]:
+    if validate(graph, neighbor, coloring, not current_color) == False:
+      return False
+  return True
+
+
+def build_graph(rivalries):
+  graph = {}
+
+  for edge in rivalries:
+    a,b = edge
+
+    if a not in graph:
+      graph[a] = []
+
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+
+  return graph
 
   
   
