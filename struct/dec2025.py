@@ -4099,6 +4099,32 @@ def get_knight_positions(n, kr, kc):
       valid_positions.append(pos)
   return valid_positions
     
+    def can_color(graph):
+  #receive an adj list
+  #return boolean if can color all nodes of graphs in two colors
+  #ex: 
+
+  coloring = {}
+  for node in graph:
+    if node not in coloring:
+      if validate(graph, node, coloring, False) == False:
+        return False
+  return True
+
+
+def validate(graph, node, coloring, current_color):
+  if node in coloring:
+    return current_color == coloring[node]
+
+  coloring[node] = current_color
+
+  for neighbor in graph[node]:
+    if validate(graph, neighbor, coloring, not current_color) == False:
+      return False
+
+  return True
+  
+    
 
   
   
