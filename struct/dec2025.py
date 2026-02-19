@@ -4053,6 +4053,51 @@ def generate(words, synonyms):
     return result
     
       
+from collections import deque
+
+def knight_attack(n, kr, kc, pr, pc):
+  #receive a n length of board, positions for knight and positions for pawn
+  #return the min moves
+  #ex: 
+
+  #do it via bfs
+  #start with a queue with knights positions
+
+  queue = deque([ (kr, kc, 0) ])
+  visited = set()
+  visited.add((kr, kc))
+  while queue:
+    r,c,step = queue.popleft()
+    if (r,c) == (pr, pc):
+      return step
+
+    neighbor_positions = get_knight_positions(n, r, c)
+
+    for neighbor_pos in neighbor_positions:
+      if neighbor_pos not in visited:
+        neighbor_row, neighbor_col = neighbor_pos
+        visited.add((neighbor_row, neighbor_col))
+        queue.append((neighbor_row, neighbor_col, step + 1))
+  return None
+      
+def get_knight_positions(n, kr, kc):
+  positions = [
+    (kr + 2, kc + 1),
+    (kr-2, kc + 1),
+    (kr + 2, kc -1),
+    (kr-2, kc -1),
+    (kr + 1, kc + 2),
+    (kr +1, kc -2 ),
+    (kr -1, kc + 2 ),
+    (kr -1, kc -2)
+  ]
+
+  valid_positions = []
+  for pos in positions:
+    r,c = pos
+    if 0 <= r < n and 0 <= c < n:
+      valid_positions.append(pos)
+  return valid_positions
     
 
   

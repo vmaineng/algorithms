@@ -174,3 +174,8 @@ good_students =[]
 for person in students:
     if person["grade"] > 90:
         good_students.append(person["name"])
+
+all_subjects = []
+for subject in students:
+    all_subjects.extend(subject["subjects"])
+return list(set(all_subjects))
