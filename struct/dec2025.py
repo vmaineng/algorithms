@@ -4217,6 +4217,41 @@ def build_graph(edges):
 
   return graph
   
+
+  def rare_routing(n, roads):
+  #receive n int, and (list)
+  #return boolean
+
+  graph = build_graph(n, roads)
+
+  visited = set()
+  valid = validate(graph, 0, visited, None)
+  return valid and len(visited) == n
+
+def validate(graph, node, visited, last_node):
+  if node in visited:
+    return False
+
+  visited.add(node)
+
+  for neighbor in graph[node]:
+    if neighbor != last_node and validate(graph, neighbor, visited, node) == False:
+        return False
+  return True
+
+def build_graph(n, roads):
+  graph = {}
+
+  for city in range(0, n):
+    graph[city] = []
+
+  for road in roads:
+    a,b = road
+    graph[a].append(b)
+    graph[b].append(a)
+
+
+  return graph
   
     
   
