@@ -4253,6 +4253,43 @@ def build_graph(n, roads):
 
   return graph
   
+  def topological_order(graph):
+  #receive an adj list
+  #return a list of nodes in order 
+  #ex: 
+
+  #go through and add them into edges
+  #go through the parents value is none
+  #add to a ready nodes
+  #process it
+  #and return the list
+  num_parents = {}
+  for node in graph:
+    num_parents[node] = 0
+
+  for node in graph:
+    for child in graph[node]:
+      num_parents[child] += 1
+
+  ready = [node for node in num_parents if num_parents[node] == 0 ]
+
+  order = []
+  while ready:
+    node = ready.pop()
+    order.append(node)
+
+    for child in graph[node]:
+      num_parents[child] -= 1
+      if num_parents[child] == 0:
+        ready.append(child)
+    
+  return order
+
+  
+      
+
+    
+  
     
   
   
