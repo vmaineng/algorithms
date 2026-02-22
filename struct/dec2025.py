@@ -4363,6 +4363,34 @@ def topological_order(graph):
         ready.append(child)
   return order
   
+def string_search(grid, s):
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      result = dfs(grid, s, row, col, set())
+      if result == True:
+        return True
+  return False
+
+
+def dfs(grid, s, row, col, visited):
+  if s == "":
+    return True
+  if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or (row, col) in visited:
+    return False
+
+  visited.add((row,col))
+
+  if grid[row][col] != s[0]:
+    return False
+
+
+  suffix= s[1:]
+  return dfs(grid, suffix, row + 1, col, visited) or dfs(grid, suffix,row-1, col, visited) or dfs(grid, suffix,row, col + 1, visited) or dfs(grid, suffix,row, col-1, visited) 
+  
+
+  
+      
+  
     
     
   
