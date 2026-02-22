@@ -4319,6 +4319,50 @@ def topological_order(graph):
         ready.append(child)
   print(result)
   return result
+
+  def safe_cracking(hints):
+  #receive a list 
+  #return boolean
+    #ex:
+
+
+  graph = build_graph(hints)
+  return topological_order(graph)
+
+
+def build_graph(hints):
+  graph = {}
+  for hint in hints:
+    a,b = hint
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+  return graph
+
+def topological_order(graph):
+  parents = {}
+  for node in graph:
+    parents[node] = 0
+
+
+  for node in graph:
+    for child in graph[node]:
+      parents[child] += 1
+
+  ready = [node for node in parents if parents[node] == 0]
+  result = ''
+  while ready:
+    node = ready.pop()
+    order += node
+    for child in graph[node]:
+      parents[child] -=1
+      if parents[child] == 0:
+        ready.append(child)
+  return order
+  
     
     
   
