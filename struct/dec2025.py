@@ -4287,7 +4287,41 @@ def build_graph(n, roads):
 
   
       
+def topological_order(graph):
+  #receive an adj list
+  #return the nodes in top order from parents to childs
+  #ex: 
 
+  #create a parent node obj
+  #iterate through ready list with no kids
+  #then pop them off
+  #then decrement their kids
+
+  parents = {}
+  for node in graph:
+    parents[node] = 0
+
+  for node in graph:
+    for child in graph[node]:
+      parents[child] += 1
+
+  ready = [node for node in parents if parents[node] == 0]
+  #who does nobody point to
+
+  result = []
+  while ready:
+    node = ready.pop()
+    result.append(node)
+    for child in graph[node]:
+      print(child, graph[node], parents[child])
+      parents[child] -= 1
+      if parents[child] == 0:
+        ready.append(child)
+  print(result)
+  return result
+    
+    
+  
     
   
     
