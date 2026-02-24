@@ -4528,7 +4528,32 @@ def extra_cable(num_computers, cables):
     if union(roots, sizes, a, b) == False:
       return cable
   
-  
+  def men_from_boys(arr):
+    #receive a list of even and odd int
+    #return a list where even nums come first then the odds
+    #ex: 
+    
+    #create an even list
+    #create an odd list
+    #add them together
+    
+    even = []
+    odd = []
+    
+    
+    for num in arr:
+        if num % 2 == 0:
+            even.append(num)
+        else:
+            odd.append(num)
+            
+    uniqueEven = set(even)
+    uniqueOdd = set(odd)
+    
+    sortedEven = sorted(uniqueEven)
+    reversedOdd = sorted(uniqueOdd, reverse=True)
+
+    return sortedEven + reversedOdd
   
     
   
