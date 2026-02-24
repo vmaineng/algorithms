@@ -4492,6 +4492,43 @@ def province_sizes(n, roads):
 
   return [sizes[i] for i in range(0, n) if roots[i] == i]
     
+
+def find(roots, node):
+  if node == roots[node]:
+    return node
+  found = find(roots, roots[node])
+  return found
+
+def union(roots, sizes, a, b):
+  roots_a = find(roots, a)
+  roots_b = find(roots, b)
+
+  if roots_a == roots_b:
+    return False
+
+  if sizes[roots_a] >= sizes[roots_b]:
+    roots[roots_b] = roots_a
+    sizes[roots_a] += sizes[roots_b]
+  else:
+    roots[roots_a] = roots_b
+    sizes[roots_b] += sizes[roots_a]
+
+  return True
+
+def extra_cable(num_computers, cables):
+  #receive an int and an edge list
+  #return a point where it needs to be removed
+  #ex: 
+
+  roots = [i for i in range(0, num_computers)]
+  sizes = [1 for i in range(0, num_computers)]
+
+  for cable in cables:
+    a, b= cable
+    if union(roots, sizes, a, b) == False:
+      return cable
+  
+  
   
     
   
