@@ -4415,7 +4415,41 @@ def count_components(n, edges):
   return count
   
       
-  
+  def find(roots, node):
+  if roots[node] == node:
+    return node
+  return find(roots, roots[node])
+
+def union(roots, a, b):
+  root_a = find(roots, a)
+  root_b = find(roots, b)
+
+  if root_a == root_b:
+    return
+
+  roots[root_b] = root_a
+
+
+def count_components(n, edges):
+  #receive n amount of nodes, and edges that connect to each other
+  #return count o components
+  #build a list
+  # do union, then do a find
+  #then iterate through roots to find index that exactly at right position
+  #return count
+
+
+  roots = [i for i in range(0, n)]
+
+  for edge in edges:
+    a,b = edge
+    union(roots, a, b)
+
+  count = 0
+  for idx in range(0,n):
+    if roots[idx] == idx:
+      count += 1
+  return count
     
     
   
