@@ -4452,7 +4452,45 @@ def count_components(n, edges):
   return count
     
     
-  
+  def find(roots, node):
+  if roots[node] == node:
+    return node
+  found = find(roots, roots[node])
+  roots[node] = found
+  return found
+
+
+def union(roots,sizes, a, b):
+  root_a = find(roots, a)
+  root_b = find(roots, b)
+
+  if roots[root_a] == roots[root_b]:
+    return 
+
+  if sizes[root_a] >= sizes[root_b]:
+    roots[root_b] = roots[root_a] #point root_b to root_a
+    sizes[root_a] += sizes[root_b]
+  else:
+    roots[root_a] = roots[root_b]
+    sizes[root_b] += sizes[root_a]
+
+def province_sizes(n, roads):
+  #receive a n amount
+  #return a list back of the size of cities
+
+  #ex: 
+
+  #union find:
+  #do path, union, and roads
+
+  roots = [ i for i in range(0, n)]
+  sizes = [ 1 for i in range(0, n)]
+
+  for edge in roads:
+    a, b = edge
+    union(roots, sizes, a, b)
+
+  return [sizes[i] for i in range(0, n) if roots[i] == i]
     
   
     
