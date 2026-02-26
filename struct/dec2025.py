@@ -4609,6 +4609,22 @@ def min_path(graph, start, end, visited):
   visited.remove(start)
   return min_weight
     
+    def prefix_product(numbers):
+  #receive a list of integers
+  #return a list back of integers where the number times previous number
+  #ex: [3, 4] => [3, 12]
+
+  #intiialize an empty list
+  #iterate thorugh numbers
+  #take the current num * prev num
+
+  result = []
+  total = 1
+  for num in numbers:
+    total *= num
+    result.append(total)
+  return result
+    
   
   
   
