@@ -179,3 +179,25 @@ all_subjects = []
 for subject in students:
     all_subjects.extend(subject["subjects"])
 return list(set(all_subjects))
+
+
+import { useState } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0)
+
+  const handleUpClick= () => {
+    setCount(count + 1)
+  }
+
+  const handleDownClick= () => {
+    setCount(count -1)
+  }
+  return <div className="flex justify-center h-screen items-center ">
+    <button className="m-2 px-4 py-2 border border-2 bg-red-100" onClick={handleDownClick}>-</button>
+    <div>{count}</div>
+     <button className="m-2 px-4 py-2 border border-2 bg-green-100" onClick={handleUpClick}>+</button>
+  </div>;
+};
+
+export default App;
