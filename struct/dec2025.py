@@ -4624,6 +4624,53 @@ def min_path(graph, start, end, visited):
     total *= num
     result.append(total)
   return result
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def leaf_layers(root):
+  #receive a root node of a tree
+  #return a 2D list of leaves in the trees by levels
+  #ex: 
+
+  #solve it via bfs and then reverse it?
+
+  #do this via dfs by height
+  #check if it's a leaf node, then add in the node into the list
+
+  # result = []
+  # if root.left is None and root.right is None:
+  #   result.append([root.val])
+
+  # left = leaf_layers(root.left)
+  # right = leaf_layers(root.right)
+  result = []
+  traverse(root, result)
+
+  return result
+
+def traverse(root, result):
+  if root is None:
+    return -1
+
+  left_height = traverse(root.left, result)
+  right_height = traverse(root.right, result)
+
+  height = max(left_height, right_height) + 1
+
+  if len(result) == height:
+    result.append([])
+
+  result[height].append(root.val)
+
+  return height
+    
+  
+  
+
     
   
   
