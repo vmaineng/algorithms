@@ -4576,6 +4576,39 @@ def min_graph(graph, src, dst, visited):
   visited.remove(src)
   return min_weight
       
+
+    def lowest_toll(highway_tolls, start_city, end_city):
+  #receive a list of tuples
+  #return smallest cost found
+  graph = {}
+  for cities in highway_tolls:
+    a,b, weight = cities
+    if a not in graph:
+      graph[a] = {}
+    if b not in graph:
+      graph[b] = {}
+    graph[a][b] = weight
+    graph[b][a] = weight
+  return min_path(graph, start_city, end_city, set())
+
+def min_path(graph, start, end, visited):
+  if start == end:
+    return 0
+
+  if start in visited:
+    return float('inf')
+
+  visited.add(start)
+
+  min_weight = float('inf')
+  for neighbor in graph[start]:
+    weight = graph[start][neighbor]
+    total_weight = weight + min_path(graph, neighbor, end, visited)
+    if total_weight < min_weight:
+      min_weight = total_weight
+  visited.remove(start)
+  return min_weight
+    
   
   
   
