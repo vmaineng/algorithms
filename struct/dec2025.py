@@ -4555,7 +4555,27 @@ def extra_cable(num_computers, cables):
 
     return sortedEven + reversedOdd
   
-    
+    def weighted_graph_min_path(graph, src, dst):
+  return min_graph(graph, src, dst, set())
+
+def min_graph(graph, src, dst, visited):
+  if src == dst:
+    return 0
+
+  if src in visited:
+    return float('inf')
+  visited.add(src)
+
+  min_weight = float('inf')
+  for neighbor in graph[src]:
+    weight = graph[src][neighbor]
+    total_weight = weight + min_graph(graph, neighbor, dst, visited)
+    if total_weight < min_weight:
+      min_weight = total_weight
+
+  visited.remove(src)
+  return min_weight
+      
   
   
   
