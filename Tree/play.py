@@ -222,3 +222,16 @@ def is_vow(inp):
         else:
             result.append(num)
     return result
+
+def prefix_product(numbers):
+  #receive an integer list
+  #return a list back where it's been multiply by previous
+  #ex: [3, 4] => [3, 12]
+
+  result = []
+  total = 1
+  for num in numbers:
+    total *= num
+    result.append(total)
+  return result
+  
