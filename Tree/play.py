@@ -235,3 +235,39 @@ def prefix_product(numbers):
     result.append(total)
   return result
   
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def leaf_layers(root):
+  #receive a root Node
+  #return a list from height
+  #ex: 
+
+  #base case: if root is empty, return
+  #recursive on left and right
+  #keep track of height
+  #then add it in to it's specific level
+
+  result = []
+  traverse(root, result)
+  return result
+
+def traverse(root):
+  if not root:
+    return -1
+
+  left_height = traverse(root.left, result)
+  right_height = traverse(root.right, result)
+
+  max_height = 1 + max(left_height, right_height)
+
+  if len(result) == max_height:
+    result.append([])
+
+  result[height].append(root.val)
+
+  return result
