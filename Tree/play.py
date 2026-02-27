@@ -201,3 +201,24 @@ const App = () => {
 };
 
 export default App;
+
+def is_vow(inp):
+    #receive a list of integers
+    #return a list back filled with integers and lowercase chars if the nubmers matches lowercase vowels
+    #ex: [100, 97] => [100, 'a']
+    
+    #intialize an empty list
+    #iterate through each number
+    #check if the number is chr == any of the lowercase vowels
+    #return the lowercase chars
+    #else, return the integer
+    
+    result = []
+    vowels = ['a', 'e','i','o','u']
+    
+    for num in inp:
+        if chr(num) in vowels:
+            result.append(chr(num))
+        else:
+            result.append(num)
+    return result
