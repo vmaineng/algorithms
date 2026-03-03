@@ -153,3 +153,20 @@ if __name__ == '__main__':
                 max_count = total
                 
     return max_count
+
+def integrate(coefficient, exponent):
+    #receive positive whole integers
+    #return a string with an updated integer x^a new integer
+    #ex: (2, 5) => 5 + 1 => 6
+    #ex: 6 /2 => 3x^6
+    
+    #ex: answer: numx^6
+    
+    #added one to exponent
+    #exponent / coefffiecent => front num 
+    #add x^
+    
+    new_exponent = 1 + exponent
+    new_coefficent =  int(coefficient / new_exponent)
+    return f"{new_coefficent}x^{new_exponent}"
+    
