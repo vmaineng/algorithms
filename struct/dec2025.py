@@ -4683,6 +4683,30 @@ def positioning_plants(costs, pos = 0, last_plant = None):
 
   return min_cost
   
+  def five_sort(nums):
+  #receive a list of  integer
+  #return a list where 5 are pushed in the back
+  #ex: [3,5,4,2] => [3, 4,2,5]
+
+  #create a left and right pointer
+  #check if left is a 5, then push it to the end of the right
+
+  i = 0
+  j = len(nums) -1
+
+  while i < j:
+    if nums[j] == 5:
+      j -= 1
+    elif nums[i] == 5: 
+      nums[i], nums[j] = nums[j], nums[i]
+      i += 1
+      j-= 1
+    else:
+      i += 1
+
+  return nums
+  
+    
 
     
   
