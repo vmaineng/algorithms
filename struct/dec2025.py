@@ -4670,6 +4670,19 @@ def traverse(root, result):
     
   
   
+def positioning_plants(costs, pos = 0, last_plant = None):
+  if pos == len(costs):
+    return 0
+
+  min_cost = float('inf')
+  for plant_type, plant_cost in enumerate(costs[pos]):
+    if plant_type != last_plant:
+      candidate = plant_cost + positioning_plants(costs, pos +1, plant_type) #gives me total cost
+      if candidate < min_cost:
+        min_cost = candidate
+
+  return min_cost
+  
 
     
   
