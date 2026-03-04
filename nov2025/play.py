@@ -170,3 +170,4 @@ def integrate(coefficient, exponent):
     new_coefficent =  int(coefficient / new_exponent)
     return f"{new_coefficent}x^{new_exponent}"
     
+    

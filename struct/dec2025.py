@@ -4706,7 +4706,18 @@ def positioning_plants(costs, pos = 0, last_plant = None):
 
   return nums
   
-    
+    def prefix_product(numbers):
+  #receive a list of integers
+  #return a list back where it's been multiply by preivous numbers
+  #ex: [ 2, 4] => [2, 8]
+
+
+  result = []
+  total = 1
+  for num in numbers:
+    total *= num
+    result.append(total)
+  return result
 
     
   
