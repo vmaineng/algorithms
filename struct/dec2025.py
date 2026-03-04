@@ -4719,6 +4719,40 @@ def positioning_plants(costs, pos = 0, last_plant = None):
     result.append(total)
   return result
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def leaf_layers(root):
+  #receive a root Node
+  #return a 2d list of each sublist of leaf leaf_layers
+  #ex: 
+
+  #check if there's a root node, else return a 2d list
+  #traverse through left and traverse through right
+  #check if the length of the result == height, add a new list
+  #else, add in the node values in the corresponding height
+  #return leaf_layers
+  result = []
+  traverse(root, result)
+  return result
+
+def traverse(root, result):
+  if not root:
+    return -1
+
+  left = traverse(root.left, result)
+  right = traverse(root.right, result)
+  height = 1 + max(left, right)
+
+  if len(result) == height:
+    result.append([])
+
+  result[height].append(root.val)
+  return height
+
     
   
   
