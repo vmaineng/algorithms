@@ -4763,6 +4763,19 @@ def traverse(root, result):
       max_sum = current_sum
   return max_sum
   
+  def max_subarray_product_size_k(nums, k):
+  current_product = 1
+
+  for i in range(0,k):
+    current_product *= nums[i]
+  max_product = current_product
+
+  for i in range(0, len(nums) - k):
+    current_product /= nums[i]
+    current_product *= nums[i + k]#moves window
+    max_product = max(max_product, current_product)
+  return max_product
+
   
   
 
