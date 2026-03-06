@@ -4776,6 +4776,34 @@ def traverse(root, result):
     max_product = max(max_product, current_product)
   return max_product
 
+
+def subarray_target_sum_size_k(nums, target, k):
+  #receive a list of nums
+  #return a count of subarrays of size k
+  #ex: 
+
+  # count = 0
+
+  # for num in range(0, len(nums) - k + 1):
+  #   total = sum(nums[num: num + k])
+  #   if total == target:
+  #     count += 1
+
+  # return count
+
+  count = 0
+  current_total = sum(nums[0:k])
+  if current_total == target:
+    count += 1
+
+  for i in range(0, len(nums) - k):
+    current_total -= nums[i]
+    current_total += nums[i+k]
+    if current_total == target:
+      count += 1
+  return count
+    
+
   
   
 
