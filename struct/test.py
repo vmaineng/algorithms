@@ -44,3 +44,10 @@ def returnSum(array):
     return total
 
 print(returnSum([-3]))
+
+def returnStr(str):
+    #return each letter increasing 1 more time
+    #ex: a - bb- ccc
+
+    #iterate through each number and multiply by their idx + 1
+    #
