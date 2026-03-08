@@ -4815,7 +4815,29 @@ def max_subarray_sum_size_k(nums, k):
       max_sum = current_sum
   return max_sum
 
-  
+  def max_subarray_sum_size_k(nums, k):
+  #receive a list of integers, and an integer of k
+  #return max sum seen
+
+  #ex: 
+
+
+  # max_sum = float('-inf')
+  # for i in range(0, len(nums)- k + 1):
+  #   current_sum = sum(nums[i: i+k])
+  #   max_sum = max(current_sum, max_sum)
+  # return max_sum
+
+  current_sum = sum(nums[0:k])
+  max_sum = current_sum
+
+  for i in range(0, len(nums) -k):
+    current_sum -= nums[i]
+    current_sum += nums[i + k]
+    
+    max_sum = max(current_sum, max_sum)
+  return max_sum
+    
   
 
   
