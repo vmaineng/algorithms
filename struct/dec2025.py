@@ -4839,7 +4839,34 @@ def max_subarray_sum_size_k(nums, k):
   return max_sum
     
   
+def subarray_target_sum_size_k(nums, target, k):
+  #receive a list of integers and a fixed set k
+  #return the count of subarrays that matches target
+  #ex: 
 
+  #keep track of count of subarrays seen
+  #iterate through the list of integers
+  #if the sum of nums == target,
+  #increment count of k
+
+  # count = 0
+  # for i in range(0, len(nums)-k + 1):
+  #   current_sum = sum(nums[i: i+k])
+  #   if current_sum == target:
+  #     count += 1
+  # return count
+
+  count = 0
+  current_sum = sum(nums[0:k])
+  count = 1 if current_sum == target else 0
+  for i in range(0, len(nums)-k):
+    
+    current_sum -= nums[i]
+    current_sum += nums[i + k]
+    if current_sum == target:
+      count += 1
+  return count
+  
   
 
       
