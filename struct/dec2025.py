@@ -4868,6 +4868,33 @@ def subarray_target_sum_size_k(nums, target, k):
   return count
   
   
+def has_substring_anagram(s, anagram):
+  #receive a string of lowercase chars
+  #return a boolean if anagram exists in s
+
+  #ex: 
+
+  #iterate through s
+  #add letters into set
+  #check if the letters in set is the same in anagram, return true
+  #else return False
+
+
+  lengthUsed = len(anagram)
+  anagram_set = set(anagram)
+
+  visited = set(s[:lengthUsed])
+  if visited ==anagram_set:
+    return True
+    
+  for i in range(len(s)-lengthUsed):
+    visited.remove(s[i])
+    visited.add(s[i + lengthUsed])
+
+    if visited == anagram_set:
+      return True
+      
+  return False
 
       
 
