@@ -4896,5 +4896,28 @@ def has_substring_anagram(s, anagram):
       
   return False
 
-      
+      def has_substring_anagram(s, anagram):
+  #receive two lowercase chars
+  #return a boolean if s has an anagram of anagram
+  #ex:
+
+  #iterate through the length of s
+  #check if the first 3 are anagram, return True
+
+  #else keep iterating through the rest of the s
+  k = len(anagram)
+  visited = set(s[:k])
+  anagram_set = set(anagram)
+  if visited == anagram_set:
+    return True
+
+  for i in range(len(s)-k):
+    visited.remove(s[i])
+    visited.add(s[i+k])
+    if visited == anagram_set:
+      return True
+
+  return False
+  
+
 
