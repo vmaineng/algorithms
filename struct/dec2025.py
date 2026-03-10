@@ -4971,3 +4971,36 @@ def uncompress(s):
       i =j
     
   return ''.join(result)
+
+def compress(s):
+  #receive a lowercase char string
+  #return the string compressed
+  #ex: 'aaabbb' => '3a3b'
+
+  #initialize an empty list
+  #iterate through s
+  #check if i != j 
+  #then slice it out
+  #increment count of letter
+  #add it
+  #then move i and j pointer
+
+  result = []
+  s += '!'
+  i = 0
+  j = 0
+  while j < len(s):
+    if s[i] == s[j]:
+      j += 1
+
+    else:
+      count = j - i
+      if count == 1:
+        result.append(s[i])
+      else:
+        result.append(f"{count}")
+        result.append(s[i])
+      i = j
+  return ''.join(result)
+      
+      
