@@ -5029,4 +5029,22 @@ def compress(s):
 
   return nums
       
-  
+  def is_subsequence(string_1, string_2):
+  #receive two lowercase strings
+  #return boolean : check if string_1 is in string_2
+  #ex: 'ioe', 'hitore' =>True
+
+  #iterate through both string at same time
+  #check if letter is in  string_2
+  #return boolean if it reaches string_1
+
+  i = 0
+  j = 0
+
+  while i < len(string_1) and j < len(string_2):
+    if string_1[i] == string_2[j]:
+      i += 1
+      j += 1
+    else:
+      j += 1
+  return len(string_1) == i
