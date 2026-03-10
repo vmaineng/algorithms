@@ -5003,4 +5003,30 @@ def compress(s):
       i = j
   return ''.join(result)
       
+      def five_sort(nums):
+  #receive a list of integers
+  #return the list back of integers where 5 should be end of list
+  #ex: [5] => [5]
+  #ex: [2,5] => [2,5]
+
+
+  #iterate through the nums list
+  #check if beginning of five_sort is 5, then add it to the end of the list
+
+
+  left = 0
+  right = len(nums) - 1
+
+  while left <= right:
+    if nums[right] == 5:
+      right -= 1
+    elif nums[left] == 5:
+      nums[left],nums[right] = nums[right], nums[left]
+      left += 1
+    else:
+      left += 1
+  
+
+  return nums
       
+  
