@@ -4920,4 +4920,27 @@ def has_substring_anagram(s, anagram):
   return False
   
 
+def is_palindrome(s):
+  #receive a string of lowercase letters
+  #creturn booolean if is_palindrome
+  #ex: 'apple' => false
+  #ex: ' ihi' => True
 
+  #reverse the string
+  #check if the reversed string == the string
+
+  #optimized: 
+  #use two pointers one on left and one on right
+  #check to see if they donot equal each other, return false
+  #else, after checking everything, return True
+
+  left = 0
+  right = len(s) - 1
+
+  while left < right:
+    if s[left] != s[right]:
+      return False
+    left += 1
+    right -=1
+  return True
+    
