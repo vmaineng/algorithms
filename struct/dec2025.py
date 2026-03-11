@@ -5123,6 +5123,30 @@ def _sum_possible(amount, numbers, memo):
       return True
   memo[amount] = False
   return False
+
+def min_change(amount, coins):
+  #receive a list of integers, and an amount
+  #return amount of coins needed
+
+  #base case: if amount == 0, return count
+  #if amount < = 0, return -1
+
+  #iterate through each coin, subtract it from the amount
+  #it will return back if it reaches amount
+
+  if amount == 0:
+    return 0
+
+  if amount <= 0:
+    return float('inf')
+
+  count = float('inf')
+  for coin in coins:
+    num_coins = 1 + min_change(amount - coin, coins)
+    if num_coins < count:
+      count = num_coins
+  return count
+
     
   
   
