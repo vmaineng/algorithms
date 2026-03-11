@@ -5072,3 +5072,31 @@ def _fib(n, memo):
 
   memo[n] = _fib(n-2, memo) + _fib(n -1, memo)
   return memo[n]
+
+def tribonacci(n):
+  return _tribonacci(n, {})
+  #receive an integer
+  #return an integer
+
+  #ex: 
+
+  # if n == 1 or n == 0:
+  #   return 0
+
+  # if n == 2:
+  #   return 1
+
+  # return tribonacci(n-3) + tribonacci(n-2) + tribonacci(n-1)
+
+def _tribonacci(n, memo):
+  if n in memo:
+    return memo[n]
+
+  if n == 1 or n == 0:
+    return 0
+
+  if n == 2:
+    return 1
+
+  memo[n] = _tribonacci(n-3, memo) + _tribonacci(n-2, memo) + _tribonacci(n-1, memo)
+  return memo[n]
