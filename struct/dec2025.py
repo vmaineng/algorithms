@@ -5048,3 +5048,27 @@ def compress(s):
     else:
       j += 1
   return len(string_1) == i
+
+  def fib(n):
+  return _fib(n, {})
+  #receive an integer
+  #return the sum of the previous two nums
+  #ex: 1 => 1
+  #ex: 2 => fib(1) + fib(0) => 1 + 0 => 1
+
+  #base cases: 
+  #if n == 1: return 1, if n == 0 return 0
+  #elif return n -1 and n - 2
+
+def _fib(n, memo):
+  if n == 1:
+    return 1
+
+  if n == 0:
+    return 0
+
+  if n in memo:
+    return memo[n]
+
+  memo[n] = _fib(n-2, memo) + _fib(n -1, memo)
+  return memo[n]
