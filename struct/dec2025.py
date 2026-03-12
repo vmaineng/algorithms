@@ -5179,5 +5179,38 @@ def _min_change(amount, coins, memo):
   return count 
 
     
+  def min_change(amount, coins):
+  ans = _min_change(amount, coins, {})
+  return -1 if ans == float('inf') else ans
+  #receive a list of integers and an integers
+  #return amount of coins needed to make the amount
+
+  #ex: 6[2, 4] => 2  of 4 + 2
+
+  #iterate through the coins
+  #add amount of coins to the min coins
+  #base cases if amount is 0 or reached a negative value
+
+def _min_change(amount, coins, memo):
+  if amount in memo:
+    return memo[amount]
   
+  if amount == 0:
+    return 0
+
+  if amount <= 0:
+    return float('inf')
+
+
+  min_coins = float('inf')
+  for coin in coins:
+    new_change = 1 + _min_change(amount- coin, coins, memo)
+    
+    
+    
+    if new_change < min_coins:
+      min_coins = new_change
+      
+    memo[amount] = min_coins
+  return min_coins
   
