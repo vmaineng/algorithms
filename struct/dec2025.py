@@ -5236,3 +5236,33 @@ def _count_paths(grid, r, c, memo):
 
   memo[pos] = down + right
   return memo[pos]
+
+def count_paths(grid):
+  #receive a grid
+  #return an int of paths starting from top left to bottom
+  #ex:
+
+  #base case: if we are already at the bottom: return 1
+
+  #else: recursively call giong bottom and going right
+
+  return _count_paths(grid, 0, 0, {})
+
+def _count_paths(grid, r, c, memo):
+  pos = (r, c)
+
+  if pos in memo:
+    return memo[pos]
+  
+  if r == len(grid) or c == len(grid[0]) or grid[r][c] == 'X':
+    return 0
+
+  if r == len(grid) -1 and c == len(grid[0]) -1 :
+    return 1
+
+  bottom = _count_paths(grid, r + 1, c, memo)
+  right = _count_paths(grid, r, c + 1, memo)
+
+  memo[pos] = bottom + right
+  
+  return memo[pos]
