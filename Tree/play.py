@@ -271,3 +271,62 @@ def traverse(root):
   result[height].append(root.val)
 
   return result
+
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        return self._minOperations(nums, k)
+        #receive a list of integers, and an integer k
+        #return the min # of operations to make the sum divisible by k
+        #ex: return the min # of operations to make a good sum
+
+        #ex: [3,9,7], 5
+
+        #ex: [3, 9, 7] => 19
+        #ex: [2, 9, 7] => 18
+        #ex: [1,9,7] => 17
+
+        #ex: [3, 8, 7] => 18
+        #ex: [3, 7, 7] => 17
+        #ex: [3, 6, 7] => 16
+        #ex: [3, 5, 7] => 15 / 3 => 4
+
+        #for every num - 1, increment a count
+        #check to see if the total % k == 0
+        #return the count
+
+        #base case: if the total sum of list % k ==> 0
+        #recursive case: iterate through each number
+        #decrement it down
+        #increment the count of min_changes
+        #return the min changes
+
+    def _minOperations(self, nums: List[int], k: int) -> int:
+
+        # print(sum(nums))
+
+        if sum(nums) % k == 0:
+            return 0
+
+        if sum(nums) < 0:
+            return float('inf')
+
+
+        min_changes = float('inf')
+
+        for num in nums:
+            new_total = self._minOperations(num -1, k)
+            if new_total % k == 0:
+                min_changes += 1
+            
+            if min_changes < new_total:
+                min_changes = new_total
+
+        return min_changes
+
+
+
+
+
+
+
+        
