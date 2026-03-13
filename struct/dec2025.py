@@ -5300,6 +5300,34 @@ def _max_path_sum(grid, r, c, memo):
   memo[pos] = grid[r][c] + max(bottom, right)
   return memo[pos]
 
+def non_adjacent_sum(nums):
+  return _non_adjacent_sum(nums, 0, {})
+  #receive a list of integers
+  #return the max sum found for non-adjacent numbers
+  #ex:
+
+  #if the list of integers were none, return 0
+  #iterate through each numb, check the index
+  #add them to separate lists
+  #check the max_sum
+  #return max_sum found
+
+def _non_adjacent_sum(nums, i, memo):
+
+  if i in memo:
+    return memo[i]
+
+  if i >= len(nums):
+    return 0
+
+  # if len(nums) == 0:
+  #   return 0
+
+  include = nums[i] + _non_adjacent_sum(nums, i + 2, memo)
+  exclude = _non_adjacent_sum(nums, i + 1, memo)
+
+  memo[i] = max(include, exclude)
+  return memo[i]
   
   
 
