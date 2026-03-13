@@ -43,11 +43,69 @@ def returnSum(array):
             total += num
     return total
 
-print(returnSum([-3]))
+# print(returnSum([-3]))
 
-def returnStr(str):
+# def returnStr(str):
     #return each letter increasing 1 more time
     #ex: a - bb- ccc
 
     #iterate through each number and multiply by their idx + 1
+    
+
+#string is an isogram
+
+def isogram(str):
+    #receive a string of lowercase letters
+    #return boolean?
+
+    #iterate through each str
+    #increment count in an object
+    #if all values are one, return True, else false
+
+    obj = {}
+
+    for char in str.lower():
+        if char not in obj:
+            obj[char] = 1
+        else:
+            obj[char] += 1
+
+    # print(obj)
+    for char in obj:
+        if obj[char] > 1:
+            return False
+        
+    return True
+
+# print(isogram('Ii'))
+
+def multiple(num):
+    #receive a positive integer
+    #return num of times you multiply them unti lyou reach single digit
+    #ex: 1 =. 0
+    #ex: 23 => 2 * 3 = 6 = receive it 1 time
+
+    #if length of num is 0 => return 0
+
     #
+
+    #iterate through each num
+    #keep a running total
+    #if the integer is less than 10,
+    #return the count
+
+    if num < 10:
+        return 0
+    
+    count = 0
+
+    while num >= 10:
+        total = 1
+        for char in str(num):
+            total *= int(char)
+        num = total 
+        count += 1
+    return count
+
+print(multiple(39))
+print(multiple(1))
