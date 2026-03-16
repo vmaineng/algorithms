@@ -5329,5 +5329,37 @@ def _non_adjacent_sum(nums, i, memo):
   memo[i] = max(include, exclude)
   return memo[i]
   
+  def array_stepper(numbers):
+  return _array_stepper(numbers, 0, {})
+  #receive a list of inteegers 
+  #return True if can iterate thorugh all
+  #ex: [2, 0, -1] => False
+
+
+  #base case: if we reached end of numbers last element, return True
+
+  #iterate through each num at the index we are at
+  #check if the recursive call on it will return True
+  #else it will return False
+
+def _array_stepper(numbers, i, memo):
+  if i in memo:
+    return memo[i]
+  
+  if i >= len(numbers)-1:
+    return True
+
+  max_step=numbers[i]
+
+  for step in range(1, max_step + 1):
+    if _array_stepper(numbers, i + step, memo):
+      memo[i] = True
+      return True
+
+  memo[i] = False
+  return False
+
+  
+
   
 
