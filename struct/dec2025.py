@@ -5375,6 +5375,63 @@ def _array_stepper(numbers, i, memo):
         return -1
     else:
         return 1
+    
+    from datetime import datetime
+def check_coupon(entered_code, correct_code, current_date, expiration_date):
+    #receive strings
+    #return boolean if coupon valid and not expired
+    #ex: 
+    
+    #first check if entered code == correct_code
+    #check if current date == expiration date
+    
+    format = "%B %d, %Y"
+    
+    current = datetime.strptime(current_date, format)
+    expiration = datetime.strptime(expiration_date, format)
+    
 
-  
+    
+    return entered_code == correct_code and current <= expiration
 
+  import datetime
+
+def check_coupon(entered_code, correct_code, current_date, expiration_date):
+    if entered_code is correct_code:
+        return (datetime.datetime.strptime(current_date,'%B %d, %Y') <= datetime.datetime.strptime(expiration_date,'%B %d, %Y'))
+    
+    return False
+
+import math
+
+def summing_squares(n):
+  return _summing_squares(n, {})
+  #receive an integer
+  #return the amount of ways to make a perfect summing_squares
+  #ex: 
+
+  #if n == 0: return 0
+
+  #iterate up to the sqrt of a num
+  #find the squares in between
+  #if this is the min num, update min num, and return min num
+
+
+def _summing_squares(n, memo):
+
+  if n in memo:
+    return memo[n]
+  if n == 0:
+    return 0
+
+  min_ways = float('inf')
+
+  for i in range(1, math.floor(math.sqrt(n)) + 1):
+    square = i * i
+    count = 1 + _summing_squares(n - square, memo)
+    if count < min_ways:
+      min_ways = count
+
+    memo[n] = min_ways
+
+  return min_ways
