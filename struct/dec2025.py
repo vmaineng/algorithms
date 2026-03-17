@@ -5359,7 +5359,22 @@ def _array_stepper(numbers, i, memo):
   memo[i] = False
   return False
 
-  
+  def close_compare(a, b, margin=0):
+    #receive two intgers and a distance between the two 
+    #return an integer, 0 if they are within the margin of each other, else, if a < b , return -1
+    #or a > b return 1
+    
+    
+    #ex: (3, 4) 0, => -1 b/c a < b an dthey are not 0 apart
+    
+    
+    
+    if abs(a - b) <= margin:
+        return 0
+    elif a < b:
+        return -1
+    else:
+        return 1
 
   
 
