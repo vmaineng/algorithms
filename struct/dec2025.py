@@ -5457,3 +5457,35 @@ def _array_stepper(numbers, i):
       return True
   return False
   
+import math
+
+def summing_squares(n):
+  return _summing_squares(n, {})
+  
+  #receive an integer
+  #return the amount of ways perfect squares add up tot the target
+  #ex: 
+
+  #if n == 0: return 0
+
+  #take all the squares in the possibility
+  #add them up together to see if they are 0
+  #then add to the one
+
+def _summing_squares(n, memo):
+  if n in memo:
+    return memo[n]
+
+  if n == 0:
+    return 0
+
+
+  min_ways = float('inf')
+  for i in range(1, math.floor(math.sqrt(n)) + 1):
+    square = i * i
+    num_ways = 1 + _summing_squares(n - square, memo)
+    
+    if num_ways < min_ways:
+      min_ways = num_ways
+    memo[n] = min_ways
+  return min_ways
