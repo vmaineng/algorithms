@@ -5543,5 +5543,28 @@ def _array_stepper(numbers, i, memo):
   memo[i] = False
   return False
     
-  
+  def reverse_some_chars(s, chars):
+  #receive a string of chars, and a list of chars
+  # return chars in reversed
+
+  #ex: 
+
+  #iterate through the s first and capture all letters
+  #then iterate through again s and add all letters back in
+
+  stack = []
+  reversedWord = []
+
+  for char in s:
+    if char in chars:
+      stack.append(char)
+
+
+  for char in s:
+    if char in chars:
+      reversedWord.append(stack.pop())
+    else:
+      reversedWord.append(char)
+
+  return ''.join(reversedWord)
 
