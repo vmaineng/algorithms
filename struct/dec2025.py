@@ -5489,3 +5489,32 @@ def _summing_squares(n, memo):
       min_ways = num_ways
     memo[n] = min_ways
   return min_ways
+
+def counting_change(amount, coins):
+  return _counting_change(amount, coins, 0)
+  #receive an int, and a list of integer
+  #return the different ways to make counting_change
+
+  #ex:
+
+
+  #look at the current coins
+  #iterate up to the change of the amount // coin
+  #if amount == 0, erturn 1 way to make it
+
+def _counting_change(amount, coins, i):
+  
+  if amount == 0:
+    return 1
+
+  if i == len(coins):
+    return 0
+
+  coin = coins[i]
+  total_ways = 0
+
+  for qty in range(0, (amount//coin) + 1):
+    remainder = amount - (qty * coin)
+    total_ways += _counting_change(remainder, coins, i + 1)
+
+  return total_ways
