@@ -5568,3 +5568,27 @@ def _array_stepper(numbers, i, memo):
 
   return ''.join(reversedWord)
 
+def paired_parentheses(string):
+  #receive a string of chars and paired_parentheses
+  #return True if all paired else False
+
+  #iterate through and check if previous one is an opening, pop off
+  #check if len(stack) == 0 
+
+
+
+  stack = []
+
+  for char in string:
+    if char == '(':
+      stack.append(char)
+    else:
+      if char == ')':
+        if len(stack) == 0:
+          return False
+        else:
+          stack.pop()
+  return len(stack) == 0
+          
+
+
