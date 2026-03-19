@@ -326,6 +326,50 @@ class Solution:
 
 
 
+      #receive a list of integers
+        #return one int where it's the max money you can steal
+        #ex:[3,4,3] => 4
+
+        #ex: i   j = 1st round
+        #ex:   i.  j  = 2nd round = 4th
+
+        #dp
+        #one that is inclusive (firs tindex of 0 )
+        #second one is inlusive of (inclusive of odds (idx 1, 3,))
+        #iterate thorugh
+        #base case: nums = [], return 0
+        #recursively call
+        #max number we get from either the odds or the evens
+        #return the max we've seen
+
+        #have to consider how to add in first house and last house
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        return max(self._rob(nums[:-1], 0,{}), self._rob(nums[1:], 0, {}))
+  
+
+    def _rob(self, nums: List[int], idx: int, memo:dict) -> int:
+        if idx in memo:
+            return memo[idx]
+
+        if idx >= len(nums):
+            return 0
+
+        take = nums[idx] + self._rob(nums, idx + 2, memo)
+        skip = self._rob(nums, idx + 1, memo)
+        memo[idx] = take
+
+        return max(take, skip)
+
+
+    # time: O(n ^n)
+    # space: O(n ^ n)
+        
+        
+
 
 
 
