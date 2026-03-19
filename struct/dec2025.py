@@ -5610,3 +5610,34 @@ def paired_parentheses(string):
       count -=1
   return True if count == 0 else False
       
+
+def befitting_brackets(string):
+  #receive a string of brackets 
+  #return boolean , True if matching brackets, else False
+  #ex: '({}' => False
+
+  brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  }
+
+  #iterate through the string
+  #if its an opening, add to the stack
+  #if it's a closing, check if stack is not empty first
+  #and that the last one is an opening
+  #pop, else return false immediately
+  #else return True
+
+
+  stack = []
+  for char in string:
+    if char in brackets:
+      stack.append(brackets[char])
+    else:
+      if stack and stack[-1] == char:
+        stack.pop()
+      else:
+        return False
+
+  return len(stack) == 0
