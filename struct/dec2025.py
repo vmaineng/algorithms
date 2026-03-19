@@ -5591,4 +5591,22 @@ def paired_parentheses(string):
   return len(stack) == 0
           
 
+def paired_parentheses(string):
+  #receive a string of parens and chars
+  #return True if no parens left, else return False
+  #iterate through the string
+  #count the chars if opening: add 1, else -1 for closing
+  #return True if count == 0
 
+
+  count = 0
+  for char in string:
+    if char == '(':
+
+      count += 1
+    elif char == ')':
+      if count == 0:
+        return False
+      count -=1
+  return True if count == 0 else False
+      
