@@ -5641,3 +5641,39 @@ def befitting_brackets(string):
         return False
 
   return len(stack) == 0
+
+def decompress_braces(string):
+  #receive a string of brackets, chars and nums
+  #return the string decompressed
+
+  #ex:
+
+
+  #using two pointers
+  #using stack
+  #if we hhave not hit the end of the curly brackets
+  #keep adding on to the stack
+  #if we did, let's unpack the previous until we hit an opening bracket
+
+
+  stack = []
+  numbers = '0123456789'
+
+  for char in string:
+    if char in numbers:
+      stack.append(int(char))
+    else:
+      if char == '}': 
+        segment = ''
+        while not isinstance(stack[-1], int):
+          prev = stack.pop()
+          segment = prev + segment
+        num = stack.pop()
+        stack.append(segment * num)
+      elif char != '{':
+        stack.append(char)
+
+  return ''.join(stack)
+          
+      
+  
