@@ -5675,5 +5675,28 @@ def decompress_braces(string):
 
   return ''.join(stack)
           
+   def nesting_score(string):
+  #receive a string of chars
+  #return count of how much it is
+  #ex: 
+  #iterate through string
+  #if it's an opening, add 0
+  #if it's a closing, add 1
+  #else, *2
+
+
+  stack = [0]
+  for char in string:
+    if char == '[':
+      stack.append(0)
+    else:
+      popped = stack.pop()
+      if popped ==  0:
+        stack[-1] += 1
+      else:
+        stack[-1] += popped * 2
+
+  return stack[0]
       
+   
   
