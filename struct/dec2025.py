@@ -5699,4 +5699,19 @@ def decompress_braces(string):
   return stack[0]
       
    
-  
+  def running_sum(numbers):
+  #receive a list of integers
+  #return a new list where it's been replaced by running total
+  #ex: [3, 4, 5] => [3, 12, 60]
+
+  #initialize an empty list
+  #iterate through the vals
+  #add to the empty list
+  #return list
+
+  result = []
+  total = 0
+  for num in numbers:
+    total += num
+    result.append(total)
+  return result
