@@ -5772,3 +5772,39 @@ def has_subarray_sum(numbers, target_sum):
     seen.add(num)
   return False
     
+
+    def subarray_sum_count(numbers, target_sum):
+  #receive a list of integers and an integer
+  #return the count of subarrays that equal target_sum
+
+  #ex:
+
+  #initialize a count
+  #iterate through all numbers
+  #check if it equals target_sum
+  #increment count if it does 
+  #return count
+
+
+  # count = 0
+  # total = 0
+  # for i in range(0, len(numbers)):
+  #   for j in range(i +1, len(numbers) + 1):
+  #     total = sum(numbers[i:j])
+  #     if total == target_sum:
+  #       count +=1
+  
+  # return count
+
+  count = 0
+  prefix_sums = [0]
+  total = 0
+  for num in numbers:
+    total += num
+    prefix_sums.append(total)
+
+  for i in range(0, len(prefix_sums)):
+    for j in range(i + 1, len(prefix_sums)):
+      if prefix_sums[j] - prefix_sums[i]  == target_sum:
+        count += 1
+  return count
