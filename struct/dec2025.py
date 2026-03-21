@@ -5715,3 +5715,24 @@ def decompress_braces(string):
     total += num
     result.append(total)
   return result
+
+def has_subarray_sum(numbers, target_sum):
+  #receive an integer and al ist
+  #return boolean if subarray has been found
+  #ex: 
+
+  #iterate through, then move left if num is too high
+
+  total = 0
+
+  for i in range(0, len(numbers)):
+    for j in range(i + 1, len(numbers) + 1):
+      total = sum(numbers[i:j])
+      if total == target_sum:
+        return True
+
+  return False
+      
+      
+    #time: O(n^3)
+  #space: O(1)
