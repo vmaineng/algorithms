@@ -5808,3 +5808,32 @@ def has_subarray_sum(numbers, target_sum):
       if prefix_sums[j] - prefix_sums[i]  == target_sum:
         count += 1
   return count
+
+  def merge_sort(nums):
+  #receive a list of integers
+  #return the integers sorted
+  #ex: 
+
+  if len(nums) <= 1:
+    return nums
+
+
+  mid = len(nums) // 2
+  left = merge_sort(nums[:mid])
+  right = merge_sort(nums[mid:])
+
+  return _merge_sort(left, right)
+
+def _merge_sort(l1, l2):
+  merged = []
+
+  while l1 and l2:
+    if l1[0] < l2[0]:
+      merged.append(l1.pop(0))
+    else:
+      merged.append(l2.pop(0))
+
+  merged += l1
+  merged += l2
+  return merged
+    
