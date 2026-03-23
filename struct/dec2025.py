@@ -5856,3 +5856,27 @@ def tree_includes(root, target):
     return True 
 
   return tree_includes(root.left, target) or tree_includes(root.right, target)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def max_path_sum(root):
+  #receive the root Node
+  #return sum of a max max_path_sum
+  #ex:
+
+  #base case: if root node is none: return 0
+
+  if root is None:
+    return float('-inf')
+
+  if root.left is None and root.right is None:
+    return root.val
+
+  left = max_path_sum(root.left)
+  right = max_path_sum(root.right)
+
+  return root.val + max(left, right)
