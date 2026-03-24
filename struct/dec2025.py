@@ -5904,3 +5904,32 @@ def depth_first_values(root):
       stack.append(current.left)
 
   return answer
+
+from collections import deque
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def breadth_first_values(root):
+  #receive a list of nodes
+  #return bfs with queue
+  #ex: 
+
+  if not root:
+    return []
+
+  queue = deque([root])
+  answer = []
+
+  while queue:
+    current = queue.popleft()
+    answer.append(current.val)
+
+    if current.left:
+      queue.append(current.left)
+    if current.right:
+      queue.append(current.right)
+  return answer
