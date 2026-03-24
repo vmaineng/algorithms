@@ -5880,3 +5880,27 @@ def max_path_sum(root):
   right = max_path_sum(root.right)
 
   return root.val + max(left, right)
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  if not root:
+    return []
+  
+  stack = [root]
+  answer = []
+
+  while stack:
+    current = stack.pop()
+    answer.append(current.val)
+
+    if current.right:
+      stack.append(current.right)
+    if current.left: 
+      stack.append(current.left)
+
+  return answer
