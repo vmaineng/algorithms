@@ -5933,3 +5933,26 @@ def breadth_first_values(root):
     if current.right:
       queue.append(current.right)
   return answer
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_sum(root):
+  #receive a root node ofa tree_sum
+  #return sum of total tree nodes
+  #ex: 
+
+  #do it via dfs
+  #iterate through left and iterate through root
+  #if node's null, reutrn 0
+
+  if not root:
+    return 0
+
+  left_sum = tree_sum(root.left)
+  right_sum = tree_sum(root.right)
+
+  return root.val + left_sum + right_sum
