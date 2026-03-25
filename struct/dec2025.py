@@ -6021,3 +6021,36 @@ def how_high(root):
   right = how_high(root.right)
 
   return 1 + max(left, right)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def bottom_right_value(root):
+  #receive root node of tree
+  #return the bottom right node's bottom_right_value
+
+  #ex:
+
+  #to find root's right node's val if there's no left and right
+  #find it via bfs, and last node to leave is the right most node
+
+  if not root:
+    return None
+    
+  queue = deque([root])
+
+  while queue:
+    current = queue.popleft()
+
+    if current.left:
+      queue.append(current.left)
+
+    if current.right:
+      queue.append(current.right)
+
+  return current.val
