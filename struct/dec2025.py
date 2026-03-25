@@ -6001,3 +6001,23 @@ def tree_value_count(root, target):
   match = 1 if root.val == target else 0
   return match + tree_value_count(root.left, target) + tree_value_count(root.right, target)
     
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def how_high(root):
+  #receive root Node
+  #return height of tree
+  #ex: 
+
+  #find hte max height of left or right tree
+
+  if not root:
+    return -1
+
+  left = how_high(root.left)
+  right = how_high(root.right)
+
+  return 1 + max(left, right)
