@@ -5978,3 +5978,26 @@ def tree_value_count(root, target):
   match = 1 if root.val == target else 0
 
   return match + tree_value_count(root.left, target) + tree_value_count(root.right, target)
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_value_count(root, target):
+  #receive a root node,
+  #return count of target node seen
+  #ex: 
+
+  #if root's node value == target, increment count by 1
+
+  #if root's node value is empty = return 0
+  #Iterate through left and iterate through right
+
+  if not root:
+    return 0
+
+  match = 1 if root.val == target else 0
+  return match + tree_value_count(root.left, target) + tree_value_count(root.right, target)
+    
