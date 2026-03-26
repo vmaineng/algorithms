@@ -404,3 +404,33 @@ def factorial(n):
         return 1
     return factorial(n -1) * n
         
+        def mxdiflg(a1, a2):
+    #receive two lists
+    #return the max abs length between the two words
+    #ex: l1 = ['lksjdfls', 'kdls', 'dslk']
+    #ex: l2 = ['hello', 'yo','joe']
+    #ex: 'kdls', 'yo' => 4 -2 => 2
+    
+    #edge case: if l1 or l2 is empty, return None
+    
+    #look at the length of the string in a1, and look at strength of a2
+    #subtract first length from second length
+    #return the difference we see in absolute
+    
+    if a1 is None or a2 is None:
+        return None
+    
+    maxDiff = -1
+    
+    for word1 in a1:
+        diff = -1
+        for word2 in a2:
+            total = len(word1) - len(word2)
+#             print(total)
+            diff = abs(total)
+            if diff > maxDiff:
+                maxDiff = diff
+    return maxDiff
+                
+                
+    
