@@ -6137,4 +6137,48 @@ def tree_levels(root):
 
   return levels
 
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def tree_levels(root):
+  #receive the root node of a binary tree_leve
+  #return a 2D list for all nodes in tree_levels
+
+  #ex: 
+
+  #if there's no more nodes, return an empty list
+
+  #use a queue from collections
+  #iterate through at each level, insert nodes in
+
+  if not root:
+    return [ ]
+
+  queue = deque([root])
+
+  levels = []
+
+  while queue:
+    level = []
+    level_size = len(queue)
+
+    for node in range(level_size):
+      current = queue.popleft()
+      level.append(current.val)
+
+      if current.left:
+        queue.append(current.left)
+  
+      if current.right:
+        queue.append(current.right)
+
+    levels.append(level)
+
+  return levels
   
