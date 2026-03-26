@@ -6094,4 +6094,47 @@ def _all_tree_paths(root):
 
   return all_paths
 
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_levels(root):
+  #receive the root Node
+  #return a 2d list where each sublst represents a tree_levels
+  #ex:
+
+  #iterate through the nodes
+  #check the height of the layer of nodes
+  #add nodes into the layer
+
+  #if not node, return []
+  #if node, enter in the proper layer
+  #if new layer, enter in []
+
+  if not root:
+    return []
+
+  levels = []
+
+  stack = [ (root, 0) ]
+
+  while stack:
+    node, level_num = stack.pop()
+
+    if len(levels) == level_num:
+      levels.append([node.val])
+    else:
+      levels[level_num].append(node.val)
+
+    if node.right is not None:
+      stack.append((node.right, level_num + 1))
+
+    if node.left is not None:
+      stack.append((node.left, level_num + 1))
+
+
+  return levels
+
   
