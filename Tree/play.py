@@ -370,7 +370,19 @@ class Solution:
         
         
 
-
+def flatten_and_sort(array):
+    #received a 2 D array of integers
+    #return back one flattened version of the array with all integers
+    #ex: [[5,3], [2], 1] => [1, 2, 3, 5]
+    
+    #list extends flattens an array
+    #sort it
+    
+    results = sorted([ele for sublist in array for ele in sublist])
+    return results
+    
+    #time:O(n log n)
+    #space: O(n)
 
 
         
