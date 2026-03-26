@@ -384,5 +384,23 @@ def flatten_and_sort(array):
     #time:O(n log n)
     #space: O(n)
 
-
+def factorial(n):
+    #receive an integer
+    #return the factorial number back
+    # 0 * 0 = 1
+    #ex: 1 * 1 = 1
+    #ex: 2 * (1!) = 2
+    #ex: 3 => 3 * 2 * 1  = 6
+    
+    #base case: if int is 1, return 1
+    #if int is 0 , return 1
+    
+    #recursively call n -1
+    
+    if n == 0:
+        return 1
+    
+    if n == 1:
+        return 1
+    return factorial(n -1) * n
         
