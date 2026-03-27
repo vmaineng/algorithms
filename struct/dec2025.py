@@ -6217,3 +6217,29 @@ def level_averages(root):
     avg = total / level_size
     levels.append(avg)
   return levels
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def leaf_list(root):
+  #receive the root node of a tree
+  #return the leaf nodes in a leaf_list
+  #ex: 
+
+  #iterate until no child on left or right
+  #add node to list
+
+  if not root:
+    return []
+
+  if not root.left and not root.right:
+    return [root.val]
+
+  left = leaf_list(root.left)
+  right = leaf_list(root.right)
+
+  return [*left, *right]
+  
