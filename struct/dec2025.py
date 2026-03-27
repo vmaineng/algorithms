@@ -6243,3 +6243,30 @@ def leaf_list(root):
 
   return [*left, *right]
   
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_min_value(root):
+  #receive the root node 
+  #return the smallest value found
+
+  #ex: 
+
+  #itinialize an amount to infinity
+  #iterate through all nodes values
+  #if smaller, then update the min val found
+
+  if not root:
+    return float('inf')
+
+  min_val = float('inf')
+
+  left = tree_min_value(root.left)
+  right = tree_min_value(root.right)
+
+  return min(root.val, left, right)
+
+  
