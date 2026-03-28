@@ -70,3 +70,6 @@ def duck_duck_goose(players, goose):
     
     name = (goose- 1) % len(players) 
     return players[name].name
+
+def if_chuck_says_so():
+    return 'apple' == 'orange'
