@@ -59,3 +59,14 @@ def summation(num):
 
 print(summation(1))
 print(summation(5))
+
+def duck_duck_goose(players, goose):
+    #receive a list of strings, and an integer
+    #return the name of the player where goose lands on
+    #ex: [3, 4, 2], 6 => 2
+    
+    #take len of players
+    #return name 
+    
+    name = (goose- 1) % len(players) 
+    return players[name].name
