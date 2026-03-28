@@ -73,3 +73,30 @@ def duck_duck_goose(players, goose):
 
 def if_chuck_says_so():
     return 'apple' == 'orange'
+def min_value(digits):
+    #receive a list of integers
+    #return smallest number that can be formed from these digits
+    #ex: [3, 25, 1] => 1253
+    
+    #could iterate through every possbilities
+    #that'd take O(n) time with O(n) space
+    
+    #use a set for the digits to get unique numbers and remove duplicates
+    #iterate through every number, 
+    #check if the number is less than the next one
+    #if they aren't, swap them, 
+    #return the number back together
+    
+    unique = set(digits)
+    sortUnique = sorted(unique)
+    total = ''
+    
+    for num in sortUnique:
+        total += str(num)
+    return int(total)
+        
+    
+            
+    
+    
+    
