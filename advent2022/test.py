@@ -95,7 +95,21 @@ def min_value(digits):
         total += str(num)
     return int(total)
         
+    def min_value(digits):
+    #receive a list of integers
+    #return smallest number to be formed with the digits
+    #ex: [3, 5, 2] => 235
     
+    #create a set of digits
+    #sort them from smallest to biggest
+    #add them back together as a string
+    #return an integer
+    
+    uniqueDigits = sorted(set(digits))
+    total = ''
+    for num in uniqueDigits:
+        total += str(num)
+    return int(total)
             
     
     
