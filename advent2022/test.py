@@ -111,6 +111,28 @@ def min_value(digits):
         total += str(num)
     return int(total)
             
+
+            def triangular(n):
+    #receive an integer
+    #return an integer of the stars laid out
+    #ex: if you have 1 star, it's one star
+    
+    #ex: 4 + 3 + 2 + 1
+    
+    if n == 1:
+        return 1
+    if n < 1:
+        return 0
+    
+#     return n + triangular(n - 1)
+
+    #iterate up to n 
+    #add the summation of all previous number together
+    total = 0
+    
+    for num in range(1, n + 1):
+        total += num
+    return total
     
     
     
