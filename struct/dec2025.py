@@ -6314,3 +6314,22 @@ def kth_largest(numbers, k):
     if len(heap) > k:
       heapq.heappop(heap)
   return heapq.heappop(heap)
+
+import heapq
+
+def k_smallest(nums, k):
+  # sortNums = sorted(nums)
+  # return sortNums[:k]
+
+  max_heap = []
+  for num in nums:
+    item = (-num, num)
+    heapq.heappush(max_heap, item)
+    if len(max_heap) > k:
+      heapq.heappop(max_heap)
+
+  result = []
+  while len(max_heap) > 0:
+    item = heapq.heappop(max_heap)
+    result.append(item[1])
+  return result[::-1]
