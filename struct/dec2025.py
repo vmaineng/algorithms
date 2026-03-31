@@ -6295,3 +6295,22 @@ def max_path_sum(root):
 
   return root.val + max(left, right)
   
+import heapq
+
+def kth_largest(numbers, k):
+  #receive a list of integers, and a k integers#
+  #return the largest k number found
+  #ex: [2,3,5] => 2 => 3
+
+
+  #sort the numbers
+  #return the k with slicing
+  # sortNums = sorted(numbers)
+  # return sortNums[-k]
+
+  heap = []
+  for num in numbers:
+    heapq.heappush(heap, num)
+    if len(heap) > k:
+      heapq.heappop(heap)
+  return heapq.heappop(heap)
