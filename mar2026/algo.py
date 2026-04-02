@@ -37,3 +37,58 @@ def fizzbuzz(n):
         else:
             result.append(num)
     return result
+
+def high(x):
+    #receive a string of lowercase chars
+    #return the highest scoring word
+    #ex: 
+    
+    #initialize a max amount to 0
+    #initialize an empty max string
+    #split the words
+    #iterate through the words
+    #check the total of the word
+    #if it's greater than max, update max
+    #return word we'v eseen so far
+    
+    letters = { 
+    'a': 1, 
+    'b': 2,
+    'c':3,
+    'd': 4, 
+    'e': 5, 
+    'f': 6,
+    'g': 7,
+    'h': 8,
+    'i': 9, 
+    'j': 10,
+    'k': 11, 
+    'l': 12,
+    'm': 13,
+    'n':14,
+    'o': 15,
+    'p': 16,
+    'q': 17,
+    'r': 18,
+    's': 19,
+    't': 20,
+    'u': 21,
+    'v': 22,
+    'w': 23,
+    'x': 24,
+    'y': 25,
+    'z': 26    
+    }
+
+    max_total = 0
+    max_word = ""
+    
+    for word in x.split():
+        total = 0
+        for char in word:
+            total += letters[char]
+            
+        if total > max_total:
+            max_total = total
+            max_word = word
+    return max_word
