@@ -139,3 +139,20 @@ class Solution:
             oddTotal += num
     return (evenTotal, oddTotal)
                 
+                def count(s):
+    #receive a string of characters
+    #return back the counting pattern of them
+    #ex: 'hello' => 
+    #{
+    #  'h': 1,
+    #.  'e':1,
+    #.  'l': 2,
+    #    'o': 1
+    #}
+    
+    counter = {}
+    for char in s:
+        counter[char] = counter.get(char, 0) + 1
+    
+    return counter
+    
