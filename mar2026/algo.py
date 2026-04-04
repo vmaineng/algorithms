@@ -118,3 +118,24 @@ class Solution:
             value, item = heapq.heappop(max_heap)
             result.append(item)
         return result
+    
+    def row_weights(array):
+    #receive a list of positive integers
+    #return back to a (sum of weight 1, sum of weight 2)
+    #ex: [ 34, 23, 67, 3] => = (101, 26)
+    #ex: odd = [23, 3]  = 26
+    #ex: even = [34, 67] = 101
+    
+    #iterate through by idx
+    #check if its even, add to the even running total
+    #check if it's odd, add to the odd running total
+    
+    evenTotal = 0
+    oddTotal = 0
+    for idx, num in enumerate(array):
+        if idx % 2 == 0:
+            evenTotal += num
+        else:
+            oddTotal += num
+    return (evenTotal, oddTotal)
+                
