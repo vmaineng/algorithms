@@ -92,3 +92,29 @@ def high(x):
             max_total = total
             max_word = word
     return max_word
+
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        #receive a list of words all lowercase letters
+        #return the the top k words back in a list
+        #ex: ['hello','hi','joee','hi', 'jill'] ,  k = 1 => ['hi']
+
+
+        #iterate through the words and keep count of the occurence of word
+        #initialize a max_heap, enter in the frequent amount and item connected to it
+        #iterate up to k times and push the word into the result
+
+
+        counter= {}
+        for word in words:
+            counter[word] = counter.get(word, 0) + 1
+        
+        max_heap = []
+        for item, value in counter.items():
+            heapq.heappush(max_heap, (-value, item))
+
+        result = []
+        for num in range(k):
+            value, item = heapq.heappop(max_heap)
+            result.append(item)
+        return result

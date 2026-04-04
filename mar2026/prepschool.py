@@ -24,4 +24,12 @@ def findFriends(array):
             result.append(name)
     return result
 
-print(findFriends(['Mai', 'Mark', 'Amanda']))
+# print(findFriends(['Mai', 'Mark', 'Amanda']))
+
+def addList(array): 
+    result = []
+    for idx, item in enumerate(array):
+        result.append(f"{idx + 1}")
+        result.append(":" + item)
+    return result
+print(addList(['a','b','d']))
