@@ -254,3 +254,26 @@ def pair_sum(numbers, target_sum):
     if difference in counter:
       return (counter[difference], idx)
     counter[num] = idx
+
+    def intersection(a, b):
+  #receive two lists of integers
+  #return a list back of existing lists
+  #ex: 
+
+  # result = []
+  # for num in a:
+  #   if num in b:
+  #     result.append(num)
+  # return result
+
+  # result = []
+  uniqueA = set(a)
+  # for num in b:
+  #   if num in uniqueA:
+  #     result.append(num)
+  # return result
+
+  result = [num for num in b if num in uniqueA]
+  return result
+    
+  
