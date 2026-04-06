@@ -237,3 +237,20 @@ def pair_sum(numbers, target_sum):
       return (counter[difference], idx)
     counter[num] = idx
   
+  def pair_product(numbers, target_product):
+  #receive a list of integers
+  #return in tuple
+
+
+  # for i in range(0, len(numbers) -1):
+  #   for j in range(i + 1, len(numbers)):
+  #     if numbers[i] * numbers[j] == target_product:
+  #       return (i, j)
+
+  counter = {}
+
+  for idx, num in enumerate(numbers):
+    difference = target_product / num
+    if difference in counter:
+      return (counter[difference], idx)
+    counter[num] = idx
