@@ -186,3 +186,25 @@ def kth_largest(numbers, k):
   #   result.append(item)
   # return result[0]
   
+  from collections import Counter
+
+def anagrams(s1, s2):
+  #receive two lowercase strings
+  #return boolean if they are using same amount of chars
+  #ex: 'hello', 'fishing' => false
+
+  #edge case: if length are not the same, return false
+
+  #brute force: sort both and check if they are the same
+  #time: Onlogn and space: O(n)
+
+
+  # sorteds1 = sorted(s1)
+  # sorteds2 = sorted(s2)
+  # return sorteds1 == sorteds2
+
+
+  if len(s1) != len(s2):
+    return False
+
+  return Counter(s1) == Counter(s2)
