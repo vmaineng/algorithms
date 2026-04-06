@@ -208,3 +208,32 @@ def anagrams(s1, s2):
     return False
 
   return Counter(s1) == Counter(s2)
+
+def pair_sum(numbers, target_sum):
+  #receive a list of integers
+  #return a tupe of index positions that match up to target
+  #ex: 
+
+  #iterate through the numbers and check if values == 
+  #each other, return the first tuple found
+
+
+
+  for i in range(0, len(numbers)-1):
+    for j in range(i + 1, len(numbers)):
+      if numbers[i] + numbers[j] == target_sum:
+        return (i,j)
+      
+      #time: O(n ^ 2)
+  #space: O(1)
+
+
+  #create an object to store the position of the values we've seen
+
+  counter = {}
+  for idx, num in enumerate(numbers):
+    difference = target_sum - num
+    if difference in counter:
+      return (counter[difference], idx)
+    counter[num] = idx
+  
