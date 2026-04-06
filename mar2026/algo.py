@@ -156,3 +156,33 @@ class Solution:
     
     return counter
     
+    import heapq
+
+def kth_largest(numbers, k):
+  #sort numbers
+  #return the k'th kth_largest
+  # sortedNums = sorted(numbers)
+  # return sortedNums[-k]
+
+
+  #intiitalize a heap
+  #iterate through nums and add in to heap
+  #if length of heap > k: pop off
+  #iterate through heap
+  #add into the result
+
+
+  heap = []
+
+  for num in numbers:
+    heapq.heappush(heap, num)
+    if len(heap) > k:
+      heapq.heappop(heap)
+  return heapq.heappop(heap)
+
+  # result = []
+  # while len(heap) > 0:
+  #   item = heapq.heappop(heap)
+  #   result.append(item)
+  # return result[0]
+  
