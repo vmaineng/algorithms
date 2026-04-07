@@ -84,3 +84,36 @@ def all_unique(items):
     return True
   else:
     return False
+  
+  def intersection_with_dupes(a, b):
+  #receive two list of integers
+  #return a list back of same duplicate amounts found
+
+  #create a pointer in longest list
+  #check if the letters are same, return in result
+
+
+  #keep track of char count
+  #iterate through second list
+  #check if char is the same and how many amounts there are
+  #add the char to the list
+
+
+  charA = {}
+  charB = {}
+
+  for char in a:
+    charA[char] = charA.get(char, 0) + 1
+
+  for char in b:
+    charB[char] = charB.get(char, 0) + 1
+
+  result = []
+
+  for char in charA:
+    if char in charB:
+      count = min(charA[char], charB[char])
+      result.extend([char] * count)
+   
+  return result
+      
