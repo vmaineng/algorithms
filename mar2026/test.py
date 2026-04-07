@@ -72,3 +72,15 @@ def intersection(a, b):
     if num not in uniqueA:
       result.append(num)
   return result
+
+
+def all_unique(items):
+  #create a set
+  #iterate through
+  #check if letters exist in the items
+
+  uniqueA = set(items)
+  if len(uniqueA) == len(items):
+    return True
+  else:
+    return False
