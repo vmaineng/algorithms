@@ -34,3 +34,41 @@ def intersection(a, b):
   return result
 
   #time: O(n +m)
+
+  def exclusive_items(a, b):
+  #receive two list of integers
+  #return a list back of integers that do not exist in other
+
+  #ex: 
+
+  #initialize a result
+  #iterate through a
+  #check if it's not in b
+  #add in list
+
+  # result = []
+  # for item in a:
+  #   if item not in b:
+  #     result.append(item)
+
+  # for item in b:
+  #   if item not in a:
+  #     result.append(item)
+  # return result
+
+  #time: O(n * m)
+  #space:O(n + m)
+
+  #create a set of both
+  uniqueA = set(a)
+  uniqueB = set(b)
+
+  result = []
+  for num in a:
+    if num not in uniqueB:
+      result.append(num)
+
+  for num in b:
+    if num not in uniqueA:
+      result.append(num)
+  return result
