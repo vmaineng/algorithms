@@ -251,3 +251,37 @@ class Solution:
         #     if char in unique1:
         #         result.append(char)
         # return result
+
+        class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        #receive a lowercase string
+        #return boolean if palindrome after deleting at most one char
+
+        #ex: 'abca' 
+
+        #iterate from left and right
+        #check if they are not the same chars
+        #then either go in left or right
+        #and check if they are same chars
+        #if not return False
+        #return True after checking everything
+
+
+        left = 0
+        right = len(s) - 1
+
+        def isPalindrome(left, right):
+            while left < right:
+                if s[left] != s[right]:
+                    return False
+                left += 1
+                right -=1 
+            return True
+
+
+        while left < right:
+            if s[left] != s[right]:
+                return isPalindrome(left +1, right) or isPalindrome(left, right -1)
+            left += 1
+            right -=1
+        return True
