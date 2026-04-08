@@ -222,4 +222,32 @@ class Solution:
             right -=1
         return ''.join(s)
 
-       
+       class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        #receive two list of integers
+        #return a list back of same element in both lists
+        #ex: [2,4,5], [2,3] => [2]
+
+
+        #keep count of one of the list
+        #iterate through second list, check if char is in it
+        #return the char
+
+
+        counter = {}
+        for char in nums1:
+            counter[char] = counter.get(char, 0) + 1
+
+        result = []
+        for char in nums2:
+            if counter.get(char, 0) > 0:
+                result.append(char)
+                counter[char] = 0
+        return result
+
+        # unique1 = set(nums1)
+        # result = []
+        # for char in nums2:
+        #     if char in unique1:
+        #         result.append(char)
+        # return result
