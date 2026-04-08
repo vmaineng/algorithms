@@ -161,3 +161,30 @@ def all_unique(items):
         return k
       
         
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        #receive a string of upper or lowercase
+        #return the string back where vowels are reversed
+        #ex: 'hello' => 'holle'
+
+        #iterate through each char
+        #check if it exists in vowel
+        #add it to the stack
+        #then iterate through string again
+        #add in from the stack
+
+        stack = []
+        vowels='AEIOUaeiou'
+
+        for char in s:
+            if char in vowels:
+                stack.append(char)
+            
+        result = ''
+
+        for char in s:
+            if char in vowels:
+                result += stack.pop()
+            else:
+                result += char
+        return result
