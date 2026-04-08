@@ -136,3 +136,28 @@ def all_unique(items):
             right -= 1
 
         return True
+  
+
+  class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #receive a list of int in non-decreasing order
+        #return the length of the array back where duplicates have been removed
+        #ex: [1,2,3] => 3 
+
+        #initialize a new result
+        #iterate through with i and j
+        #check if the value is same as last value
+        #if not add it to count
+
+        if not nums:
+            return 0
+
+        k = 1 #index pointer to help rewrite
+
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:
+                nums[k] = nums[i]
+                k += 1
+        return k
+      
+        
