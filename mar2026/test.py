@@ -117,3 +117,22 @@ def all_unique(items):
    
   return result
       
+
+      class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        # lowerS = ''.join(char for char in s.lower() if char.isalnum())
+        # return lowerS == lowerS[::-1]
+
+
+        lowerS = ''.join(char for char in s.lower() if char.isalnum())
+
+        left = 0
+        right = len(lowerS) - 1
+
+        while left < right:
+            if lowerS[left] != lowerS[right]:
+                return False
+            left += 1
+            right -= 1
+
+        return True
