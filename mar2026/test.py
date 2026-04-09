@@ -285,3 +285,29 @@ class Solution:
             left += 1
             right -=1
         return True
+
+        class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        #receive a lowercase strings
+        #return boolean
+        #ex: 
+
+
+        left = 0 
+        right = len(s) - 1 
+
+        def checkPalindrome(left, right):
+      
+            while left < right:
+                if s[left] != s[right]:
+                    return False
+                left += 1
+                right -=1
+            return True
+
+        while left < right:
+            if s[left] != s[right]:
+                return checkPalindrome(left + 1, right) or checkPalindrome(left, right - 1)
+            left += 1
+            right -=1
+        return True
