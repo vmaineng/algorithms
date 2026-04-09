@@ -311,3 +311,35 @@ class Solution:
             left += 1
             right -=1
         return True
+    
+    # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        #receive the head of sLL
+        #return true if palin, else false
+
+        #check the node value from left to right
+
+        result = []
+        current = head
+
+        while current is not None:
+            result.append(current.val)
+            current = current.next
+
+        left = 0
+        right = len(result) - 1
+
+        while left < right:
+            if result[left] != result[right]:
+                return False
+            left += 1
+            right -=1
+        return True
+
+
+        
