@@ -341,5 +341,27 @@ class Solution:
             right -=1
         return True
 
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return top k elements of frequent elements
+        #ex: 
 
+        #create a counter and keep track count of values
+        #iterate through counter object
+        #return max k elements
+
+        counter = {}
+        for num in nums:
+            counter[num] = counter.get(num, 0) + 1
+
+        heap = []
+        for key, val in counter.items():
+            heapq.heappush(heap, (-val, key))
+
+        result = []
+        while len(result) <k:
+            val, key = heapq.heappop(heap)
+            result.append(key)
+        return result
         
