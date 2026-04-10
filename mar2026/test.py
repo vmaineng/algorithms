@@ -365,3 +365,20 @@ class Solution:
             result.append(key)
         return result
         
+        def sum_numbers_recursive(numbers):
+  #receive a list of integers
+  #return sum of all numbers in list
+  #ex: [2,3,4,5] => 13
+
+  #base case:
+  #if num is 0, return 0
+  #else iterate through the rest of num + first num
+
+
+  if len(numbers) == 0:
+    return 0
+
+  return numbers[0] + sum_numbers_recursive(numbers[1:])
+
+#time:O(n^2)
+#space:O(n^2)
