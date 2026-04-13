@@ -450,5 +450,23 @@ def binary_search_index(nums, target):
       return mid
   return low
 
+
+def square_root(n):
+  # for num in range(0, n + 1):
+  #   low = 0
+  #   high = n
+  low = 0
+  high = n
+
+  while low <= high:
+    mid = (low + high) // 2
+    if n < mid * mid:
+      high = mid - 1
+    elif n > mid * mid:
+      low = mid + 1
+    else:
+      return mid
+  return high
+
       
       
