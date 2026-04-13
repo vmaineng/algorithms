@@ -415,3 +415,22 @@ class Solution:
             current = nextNode
         return prev
             
+
+            def binary_search(numbers, target):
+  #receive a list of sorted integers
+  #return the index of target
+  #ex: [0,1,2,3] => 3 => idx = 4
+
+  left= 0
+  right = len(numbers) - 1
+
+  while left <= right:
+    middle = (left + right) // 2
+    
+    if target < numbers[middle]:
+      right = middle - 1
+    elif target > numbers[middle]:
+      left = middle + 1
+    else:
+      return middle
+  return -1
