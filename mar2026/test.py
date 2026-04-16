@@ -572,4 +572,46 @@ def square_root(n):
 
     
     
-    
+    def find_min_index(nums, target):
+  low = 0
+  high = len(nums) -1 
+  leftIdx = -1
+
+  while low <= high:
+    mid = (low + high) // 2
+
+    if target < nums[mid]:
+      high = mid - 1
+    elif target > nums[mid]:
+      low = mid + 1
+    else:
+      high = mid -1
+      leftIdx = mid
+  return leftIdx
+
+def find_right_index(nums, target):
+  low = 0
+  high = len(nums) -1 
+  rightIdx = -1
+
+  while low <= high:
+    mid = (low + high) // 2
+
+    if target < nums[mid]:
+      high = mid - 1
+    elif target > nums[mid]:
+      low = mid + 1
+    else:
+      low = mid + 1
+      rightIdx = mid
+  return rightIdx
+
+
+def count_in_sorted_array(nums, target):
+  leftIdx = find_min_index(nums, target)
+  rightIdx = find_right_index(nums, target)
+  
+  if rightIdx == -1:
+    return 0
+  else:
+    return rightIdx - leftIdx + 1
