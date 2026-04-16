@@ -615,3 +615,42 @@ def count_in_sorted_array(nums, target):
     return 0
   else:
     return rightIdx - leftIdx + 1
+  
+
+  def find_row(grid, target):
+  low = 0
+  high = len(grid) - 1
+
+  while low <= high:
+    mid = (low + high) // 2
+    if grid[mid][0] <= target <= grid[mid][-1]:
+      return mid
+    elif target < grid[mid][0]:
+      high = mid - 1
+    else:
+      low = mid + 1
+  return -1
+
+  
+def binary_search(grid, target,row):
+  low = 0
+  high = len(grid[0]) - 1
+
+  while low <= high:
+    mid = (low + high) // 2
+
+    if target < grid[row][mid]:
+      high = mid - 1
+    elif target > grid[row][mid]:
+      low = mid + 1
+    else:
+      return True
+  return False
+
+def search_sorted_grid(grid, target):
+  row = find_row(grid, target)
+
+  if row == -1:
+    return False
+  else:
+    return binary_search(grid, target,row)
