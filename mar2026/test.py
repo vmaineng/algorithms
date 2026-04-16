@@ -530,3 +530,46 @@ def square_root(n):
     else:
       low = mid + 1
   return nums[low]
+
+  def elevator(left, right, call):
+    #receive integers (whole)
+    #return which elever is closest to the call, return a string
+    #ex: (0, 1, 0) => "left"
+    
+    #ex: (2, 1, 1) => 'right'
+    #ex: (2, 0, 1) => "right"
+    
+    #figure out the distance between left - call
+    #right - call
+    #see which one is the smaller difference, return that specific elevator
+    #else return "right"
+    
+    left_distance = abs(call - left) #0 - 1 = -1
+    right_distance = abs(call - right) #0 - 2= -2
+    print(left_distance, right_distance)
+    
+    if left_distance == right_distance:
+        return "right"
+    
+    if right_distance == 0:
+        return "right"
+    if left_distance == 0:
+        return "left"
+    
+    return "left" if left_distance < right_distance else "right"
+        
+
+    
+    
+#     if right_distance == 0:
+#         return "right"
+#     elif left_distance == 0:
+#         return "left"
+#     elif left_distance < right_distance:
+#         return "left"
+#     elif right_distance < left_distance:
+#         return "right"
+
+    
+    
+    
