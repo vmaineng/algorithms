@@ -107,4 +107,25 @@ def findJadenCase(string):
         result.append(" ")
     return ''.join(result)
 
-print(findJadenCase('hello world'))
+# print(findJadenCase('hello world'))
+
+
+def squareNum(n):
+    #receive an integer
+    #returned an integer where it's the squared products from num
+    #ex: 142 => 184
+
+    #intiailize a result array
+    #iterate through string versions of them
+    #flip them into integers and square it
+    #add it to the result
+    #return an int of the result
+
+    result = []
+
+    for num in str(n):
+        squared = int(num) ** 2
+        result.append(str(squared))
+    return int(''.join(result))
+
+print(squareNum(9119))
