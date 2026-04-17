@@ -82,13 +82,29 @@ def findPangram(string):
 
     }
     
-    for char in charCounter:
-        if char not in counter:
-            return False
-    return True
+    # for char in charCounter:
+    #     if char not in counter:
+    #         return False
+    # return True
+
+    return set('abcdefghijklmnopqrstuvwxyz').issubset(set(joinSentence.lower()))
     
     
 
-print(findPangram('hello world'))
-print(findPangram('The quick brown fox jumps over the lazy dog'))
+# print(findPangram('hello world'))
+# print(findPangram('The quick brown fox jumps over the lazy dog'))
 
+def findJadenCase(string):
+    #receive a string
+    #return the first letter of char in every word
+    #ex: 'hello world' => 'Hello World'
+
+    result = []
+
+    for word in string.split():
+        newWord = word[0].capitalize() + word[1:]
+        result.append(newWord)
+        result.append(" ")
+    return ''.join(result)
+
+print(findJadenCase('hello world'))
