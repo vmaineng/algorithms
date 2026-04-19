@@ -654,3 +654,30 @@ def search_sorted_grid(grid, target):
     return False
   else:
     return binary_search(grid, target,row)
+
+
+def find_peak(nums):
+  #receive a list of integers
+  #return the idx of peak where neighbor is higher
+  #ex: [2,3,5,4,1] => 2
+  #    l    m    h
+  #    l m  h
+  #      l  h
+
+  #iterate from left and right
+  #check the middle
+  #check if it's less than thevalue next to it
+  #then search left
+  #else search right
+
+  low = 0
+  high = len(nums) - 1
+
+  while low < high:
+    mid = (low + high) // 2
+
+    if nums[mid] < nums[mid + 1]:
+      low = mid + 1
+    else:
+      high = mid
+  return low
