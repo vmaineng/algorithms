@@ -706,4 +706,23 @@ def undupe_sorted_linked_list(head):
       tail = tail.next
     current = current.next
   return dummy.next
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def create_linked_list(values):
+  #receive a list of values
+  #return a linked list
+  #ex: 
+
+  dummy = Node(None)
+  tail = dummy
+
+  for item in values:
+    tail.next = Node(item)
+    tail = tail.next
+  return dummy.next
+
   
