@@ -681,3 +681,29 @@ def find_peak(nums):
     else:
       high = mid
   return low
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def undupe_sorted_linked_list(head):
+  #receive the head of a ll
+  #return a new linked list of singles
+  #ex: 3-> 3 -> 4 => 3-> 4
+
+  #iterate through ll
+  #check if it's not the same val, link
+  #else move on to the next one 
+
+  dummy = Node(None)
+  tail = dummy
+  current = head
+
+  while current:
+    if current.val != tail.val:
+      tail.next = Node(current.val)
+      tail = tail.next
+    current = current.next
+  return dummy.next
+  
