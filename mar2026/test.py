@@ -725,4 +725,19 @@ def create_linked_list(values):
     tail = tail.next
   return dummy.next
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def create_linked_list(values):
+  dummy = Node(None)
+  tail = dummy
+
+  for item in values:
+    tail.next = Node(item)
+    tail = tail.next
+  return dummy.next
+
+
   
