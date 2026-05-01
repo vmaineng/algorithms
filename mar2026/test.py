@@ -740,4 +740,20 @@ def create_linked_list(values):
   return dummy.next
 
 
+def max_value(nums):
+  #receive a list of integers
+  #return biggest number seen
+  #ex: [3, 5, -1, 7] => 7
+
+  #keep track of biggest number
+  #check if current num is bigger than the biggest num
+  #update it if it is
+
+  biggest_num = nums[0]
+
+  for num in nums:
+    if num > biggest_num:
+      biggest_num = num
+  return biggest_num
+
   
