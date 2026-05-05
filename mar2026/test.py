@@ -756,4 +756,10 @@ def max_value(nums):
       biggest_num = num
   return biggest_num
 
+def get_ascii(ch : str) -> int:
+    #receive a string
+    #return an integer
+    #ex: a => 26
+    
+    return ord(ch)
   
