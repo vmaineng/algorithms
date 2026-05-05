@@ -775,3 +775,24 @@ def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
     squared = math.sqrt(total)
     return squared // 2
     
+
+    def delete_nth(order,max_e):
+    #receive a list of integers
+    #return a list of numbers up to max_e
+    #ex: [1,2,3,1,3,3], 2 => [1,2,3,1,3]
+    
+    #iterate through each num and keep count
+    #then iterate through the num again
+    #check if num > 0, reduce from object
+    #return list back
+    
+    result = []
+    track = {}
+    
+    for num in order:
+        track[num] = track.get(num, 0) + 1
+    
+        if track[num] <= max_e:
+            result.append(num)
+        
+    return result
