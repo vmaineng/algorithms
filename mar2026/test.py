@@ -823,3 +823,12 @@ def max_subarray_sum_size_k(nums, k):
       max_total = current_sum
   return max_total
     
+def greet(name): 
+    #receive a string of characters
+    #return "Hello {name}"
+    #ex: 'rob' => 'Hello Rob!'
+    
+    #modify the name to be uppercase for first and follow by rest of name
+#     return f"Hello {name[0].upper + name[:1]}"
+    new_name = name[0].upper() + name[1:].lower()
+    return f"Hello {new_name}!"
