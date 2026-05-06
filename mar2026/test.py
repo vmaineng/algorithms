@@ -796,3 +796,30 @@ def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
             result.append(num)
         
     return result
+
+def max_subarray_sum_size_k(nums, k):
+  #receive a list of integers
+  #return the max subsize of k 
+  #ex: [4,2,1,5,3], 2 => [5,3]  => 8
+
+  #iterate through the array and go through with a fixed size window
+
+  # max_total = float("-inf")
+
+  # for i in range(0, len(nums)  -k + 1):
+  #   current_sum = sum(nums[i: i + k])
+  #   if current_sum > max_total:
+  #     max_total = current_sum
+
+  # return max_total
+
+  
+  current_sum = sum(nums[:k])
+  max_total = current_sum
+  for i in range(0, len(nums) - k ):
+    current_sum -= nums[i]
+    current_sum += nums[i + k]
+    if current_sum > max_total:
+      max_total = current_sum
+  return max_total
+    
