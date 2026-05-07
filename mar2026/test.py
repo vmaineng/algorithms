@@ -832,3 +832,32 @@ def greet(name):
 #     return f"Hello {name[0].upper + name[:1]}"
     new_name = name[0].upper() + name[1:].lower()
     return f"Hello {new_name}!"
+
+    import math
+def max_subarray_product_size_k(nums, k):
+  #receive a list of integers
+  #return the max product found
+  #ex: 
+
+  #iterate through the list
+  #multiply it into the product
+  #divide it out of th eproduct
+  #return max product seen
+
+  # max_product = float('-inf')
+  # current_product = 1
+  # for i in range(0, len(nums) - k + 1):
+  #   current_product = math.prod(nums[i: i + k])
+  #   if current_product > max_product:
+  #     max_product = current_product
+  # return max_product
+
+  current_product = math.prod(nums[0: k])
+  max_product = current_product
+  for i in range(0, len(nums) - k):
+    current_product /= nums[i]
+    current_product *= nums[i + k]
+    if current_product > max_product:
+      max_product = current_product
+  return max_product
+  
