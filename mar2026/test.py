@@ -861,3 +861,27 @@ def max_subarray_product_size_k(nums, k):
       max_product = current_product
   return max_product
   
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return max length of 1's next to each other
+        #ex: [1,1,1,1,1] => 5
+        #ex: [0] => 0
+
+        #initialize a count
+        #increment count if 1 is next to else, reset to 0
+        #update max count seen
+
+        max_count = 0
+        current_count = 0
+
+        for num in nums:
+            if num == 1:
+                current_count += 1
+            else:
+                current_count = 0
+            if current_count > max_count:
+                    max_count = current_count
+        return max_count
+            
+        
