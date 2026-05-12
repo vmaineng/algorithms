@@ -924,3 +924,16 @@ class Solution:
     if num not in unique_a:
       result.append(num)
   return result
+
+def who_is_paying(name):
+    #receive a string for first name
+    #return a list with the first name in one, and a truncated version next to it of two letters
+    #ex: 'Javier' => ['Javier', 'Ja']
+    #ex: "Mc" => ['Mc', 'Mc']
+    
+    if len(name) < 3:
+        return [name]
+    
+    modified_name = name[:2]
+    
+    return [name, modified_name ]
