@@ -885,3 +885,42 @@ class Solution:
         return max_count
             
         
+        def exclusive_items(a, b):
+  #receive two list of integers
+  #return a list back of items 
+  #ex: [4,2,1], [2, 3, 6] => [4, 1, 3, 6]
+
+
+  #initialize an empty list
+  #iterate through the first array
+  #check if the element exists in the second list, if not add it in
+
+  # difference = []
+  # for item in a:
+  #   if item not in b:
+  #     difference.append(item)
+
+  # for item in b:
+  #   if item not in a:
+  #     difference.append(item)
+  # return difference
+  #time: O(n*m)
+  #space:O(n +m)
+
+  #use a set
+  #iterate through the items
+  #if not in set
+  #then you know that it's unique
+
+  unique_a = set(a)
+  unique_b = set(b)
+  result = []
+
+  for num in a:
+    if num not in unique_b:
+      result.append(num)
+
+  for num in b: 
+    if num not in unique_a:
+      result.append(num)
+  return result
