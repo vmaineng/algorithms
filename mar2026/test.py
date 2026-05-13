@@ -937,3 +937,32 @@ def who_is_paying(name):
     modified_name = name[:2]
     
     return [name, modified_name ]
+
+    import math
+
+def max_subarray_product_size_k(nums, k):
+  #receive a list of integers and an inte
+  #return max product seen 
+
+
+  #ex: 
+
+  #iterate through nums, and check each product 
+  #update max product seen
+
+  # max_product = 0
+  # for i in range(0, len(nums) - k + 1):
+  #   current_product = math.prod(nums[i: i + k])
+  #   if current_product > max_product:
+  #     max_product = current_product
+  # return max_product
+
+
+  current_product = math.prod(nums[:k])
+  max_product = current_product
+  for i in range(0, len(nums) - k):
+    current_product /= nums[i]
+    current_product *= nums[i + k]
+    if current_product > max_product:
+      max_product = current_product
+  return max_product
