@@ -966,3 +966,29 @@ def max_subarray_product_size_k(nums, k):
     if current_product > max_product:
       max_product = current_product
   return max_product
+
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def reverse_list(head):
+  #receive the head of a linked list 
+  #return the list in reversed order
+  #xex: 1-> 2 -> null; 2-> 1 -> null
+
+  #iterate through head
+  #initialize an empty Node
+  #point to the previous node behind me until we hit null
+
+  prev = None
+  current = head
+
+  while current != None:
+    next = current.next
+    current.next = prev
+    prev = current
+    current = next
+
+  return prev
+
