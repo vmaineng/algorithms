@@ -1007,3 +1007,28 @@ def reverse_list(head, prev = None):
   return reverse_list(next, head)
 
 
+
+import math
+
+def calculate_tip(amount, rating):
+    #receive an amount and a rating
+    #return the amount of tip needs to be paid
+    #ex: (30, "excellent") => 30 * .20 => 6
+    
+    
+    #checking what rating is, take amount multiply by tip
+    
+    tip = 0
+    
+    if rating.lower() == "excellent": 
+        return math.ceil(amount * .2)
+    elif rating.lower() == 'great':
+        return math.ceil(amount * .15)
+    elif rating.lower() == 'good':
+        return math.ceil(amount * .1)
+    elif rating.lower() == 'poor':
+        return math.ceil(amount * .05)
+    elif rating.lower() == 'terrible':
+        return 0
+    else:
+        return "Rating not recognised"
