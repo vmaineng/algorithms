@@ -1032,3 +1032,14 @@ def calculate_tip(amount, rating):
         return 0
     else:
         return "Rating not recognised"
+
+def find_missing_letter(chars):
+    #receive a list of uppercase or lowercase letters
+    #return the missing letter betwen them
+    #ex: ''
+    
+    for idx in range(0, len(chars)):
+        if ord(chars[idx + 1])  - ord(chars[idx]) > 1:
+          
+            return chr(ord(chars[idx]) + 1) 
+
