@@ -1043,3 +1043,16 @@ def find_missing_letter(chars):
           
             return chr(ord(chars[idx]) + 1) 
 
+def leo(oscar):
+    #receive an integer
+    #return a specific statement with it
+    #ex: 86 => 
+    
+    if oscar == 88:
+        return "Leo finally won the oscar! Leo is happy"
+    elif oscar == 86:
+        return "Not even for Wolf of wallstreet?!"
+    elif oscar > 88:
+        return "Leo got one already!"
+    else:
+        return "When will you give Leo an Oscar?"
