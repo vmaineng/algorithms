@@ -1056,3 +1056,22 @@ def leo(oscar):
         return "Leo got one already!"
     else:
         return "When will you give Leo an Oscar?"
+    
+    def block_player(a, b):
+    #receive integers as positions
+    #return which number toplace to block them
+    #ex: 
+    
+    #[0,1,2],
+    #[3,4,5],
+    #[6,7,8]
+    
+    winning_lines = [
+        {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, # Rows
+        {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, # Columns
+        {0, 4, 8}, {2, 4, 6}             # Diagonals
+    ]
+    
+    for line in winning_lines:
+        if a in line and b in line:
+            return (line - {a,b}).pop()
