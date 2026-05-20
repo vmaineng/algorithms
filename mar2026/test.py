@@ -1087,3 +1087,21 @@ def leo(oscar):
         if int(total) > max_seen:
             max_seen = int(total)
     return max_seen
+
+def flick_switch(lst):
+    #receive a list of strings
+    #return true, until flick, then return the opposite
+    #ex: ['flick', 'oop','hello'] => [false, false, false]
+    
+    #iterate through the list of words
+    #check if it is flick, flip the words
+    #return the list back
+    
+    result = []
+    flip = True
+    for item in lst:
+        if item == 'flick':
+            flip = not flip
+        result.append(flip)
+        
+    return result 
