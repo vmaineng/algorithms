@@ -1075,3 +1075,15 @@ def leo(oscar):
     for line in winning_lines:
         if a in line and b in line:
             return (line - {a,b}).pop()
+
+
+            def solution(digits):
+    max_seen = float('-inf')
+    strDigits = str(digits)
+    
+    for i in range(len(strDigits) - 4):
+        total = strDigits[i:i + 5]
+        
+        if int(total) > max_seen:
+            max_seen = int(total)
+    return max_seen
