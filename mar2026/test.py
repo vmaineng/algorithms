@@ -1105,3 +1105,38 @@ def flick_switch(lst):
         result.append(flip)
         
     return result 
+
+import heapq
+
+def k_smallest(nums, k):
+  #receive a list of integers
+  #return the k-smallest size asked
+  #ex: [3,5,5,6,2] => 2 => [2,3]
+
+
+  #sort smallest to biggest
+  #return me the first k
+
+  # sortedNums = sorted(nums)
+  # return sortedNums[:k]
+  #time: O(n log n)
+  #space: O(n)
+
+  #add in a min heap
+
+  heap = []
+  result = []
+
+  for num in nums:
+    item = (-num, num)
+    heapq.heappush(heap, item)
+    if len(heap) > k:
+      heapq.heappop(heap)
+
+  while len(heap) > 0:
+    item=heapq.heappop(heap)
+    result.append(item[1])
+  return result[::-1]
+
+  
+  
