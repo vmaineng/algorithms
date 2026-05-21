@@ -1158,3 +1158,18 @@ def k_smallest(nums, k):
         return "Who ate the last cookie? It was Zach!"
     else:
         return "Who ate the last cookie? It was the dog!"
+    
+    def find_missing_letter(chars):
+    #receive a list of letters
+    #return the missing letters
+    #ex: 
+    
+    #iterate through
+    #check if the second letter is not more than 1
+    #if it is, return the missing letter there
+    
+    for idx in range(0, len(chars)):
+        if ord(chars[idx + 1]) - ord(chars[idx]) > 1:
+            print(ord(chars[idx + 1]), ord(chars[idx]))
+            return chr(ord(chars[idx]) + 1)
+
