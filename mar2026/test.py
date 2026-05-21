@@ -1173,3 +1173,11 @@ def k_smallest(nums, k):
             print(ord(chars[idx + 1]), ord(chars[idx]))
             return chr(ord(chars[idx]) + 1)
 
+def has_path(graph, src, dst):
+  if src == dst:
+    return True
+  
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst) == True:
+      return True
+  return False
