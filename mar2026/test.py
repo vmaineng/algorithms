@@ -1140,3 +1140,21 @@ def k_smallest(nums, k):
 
   
   
+  def cookie(x):
+    #receive an input of different types
+    #return a statement based on what the input type is
+    #ex: 3 => "Monica"
+    
+    
+    #check the type
+    #return the name based on it
+
+    if isinstance(x, bool):
+        return "Who ate the last cookie? It was the dog!"
+    elif isinstance(x, (int, float)):
+        return "Who ate the last cookie? It was Monica!"
+    elif isinstance(x, str):
+    
+        return "Who ate the last cookie? It was Zach!"
+    else:
+        return "Who ate the last cookie? It was the dog!"
