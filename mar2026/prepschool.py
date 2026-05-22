@@ -128,4 +128,17 @@ def squareNum(n):
         result.append(str(squared))
     return int(''.join(result))
 
-print(squareNum(9119))
+# print(squareNum(9119))
+
+
+#posting decimal values from 0 to 255
+#outside of range must be rounded to the nearest valid number
+#should be 6 chars long
+
+# 255, 255, 255 --> "FFFFFF"
+# 255, 255, 300 --> "FFFFFF"
+# 0, 0, 0       --> "000000"
+# 148, 0, 211   --> "9400D3"
+
+def rgbToHex(r, g, b):
+        
