@@ -140,5 +140,54 @@ def squareNum(n):
 # 0, 0, 0       --> "000000"
 # 148, 0, 211   --> "9400D3"
 
-def rgbToHex(r, g, b):
+def strogagrammatic(number):
+    #receive an integer
+    #return boolean if it is strobogrammatic (inverse)
+    #ex: 69189 => 96186 =. False
+
+    #iterate through it 
+    #check if the number is the opposite of it
+    #return false if any
+    #otherwise, check all, return true
+
+    inverse = { 
+        '0': '0',
+        '1':'1', 
+        '6':'9',
+        '8':'8',
+        '9':'6'
+    }
+
+    strNum = str(number)
+    left = 0
+    right = len(strNum) - 1
+
+    while left < right:
+        print(inverse[strNum[left]])
+        if inverse[strNum[left]] != strNum[right]:
+            return False
+        left += 1
+        right -=1 
+    return True
+
+    # invStr = []
+
+    # for num in str(number):
+    #     if num in inverse:
+    #         invStr.append(int(inverse[num]))
+    #     else:
+    #         invStr.append(num)
+
+    # left = 0
+    # right = len(invStr) - 1
+
+    # while left < right:
+    #     if invStr[left] != invStr[right]:
+    #         print(invStr[left], invStr[right])
+    #         return False
+    #     left += 1
+    #     right -= 1
+    # return True
+# print(strogagrammatic(69189))
+print(strogagrammatic(6889))
         
