@@ -164,6 +164,8 @@ def strogagrammatic(number):
 
     while left < right:
         print(inverse[strNum[left]])
+        if strNum[left] not in inverse or strNum[right] not in inverse:
+            return False
         if inverse[strNum[left]] != strNum[right]:
             return False
         left += 1
