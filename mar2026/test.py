@@ -1220,3 +1220,25 @@ def valid(graph, src, dst, visited):
     if valid(graph, neighbor, dst, visited) == True:
       return True
   return False
+
+def next_id(arr):
+    #receive a list of itnegers
+    #return the smallest number unused from 0 - the biggest number
+    
+    #ex: [3,2,5] => 0 
+    #[2,3,5]
+    #if 0, else reutrn 0
+    
+    #sort nums
+    #iterate through the list of nums from 0 to the biggest
+    #return num missing
+    
+    sortNums = sorted(set(arr))
+    count = 0
+    
+    for i in range(0, len(sortNums)):
+        if sortNums[i] != count:
+            return count
+        else:
+            count += 1
+    return count
