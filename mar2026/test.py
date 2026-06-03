@@ -1242,3 +1242,41 @@ def next_id(arr):
         else:
             count += 1
     return count
+
+def next_id(arr):t = 0
+while t in arr:
+  t += 1
+return t
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        #receive two list of integers
+        #return one list back with same amount of integers
+
+        #ex: 
+
+        #keep count
+
+        # result = []
+        # for num in nums1:
+        #     if num in nums2:
+        #         result.append(num)
+        # return result
+
+        #time:O(n^2)
+        #space: O(n)
+
+        seen = {}
+
+        for num in nums1:
+            seen[num] = seen.get(num, 0) + 1
+        
+        result = []
+        for num in nums2:
+            if seen.get(num,0) > 0:
+                result.append(num)
+                seen[num] -= 1
+        return result
+
+
+        
