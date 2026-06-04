@@ -344,3 +344,31 @@ def has_path(graph, src, dst, visited):
     if has_path(graph, neighbor, dst, visited):
       return True
   return False
+
+def connected_components_count(graph):
+  #receive an undirected graph
+  #return the amount oc components within graph
+  #ex: 
+
+  #iterate through
+  #check if not visited, add it as 1
+
+  visited = set()
+  count = 0
+  for node in graph:
+    if has_path(graph, node, visited):
+      count += 1
+
+  return count
+
+
+def has_path(graph, node, visited):
+  if node in visited:
+    return False
+
+  visited.add(node)
+
+  for neighbor in graph[node]:
+    has_path(graph, neighbor, visited)
+
+  return True
