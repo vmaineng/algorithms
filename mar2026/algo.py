@@ -372,3 +372,27 @@ def has_path(graph, node, visited):
     has_path(graph, neighbor, visited)
 
   return True
+
+def largest_component(graph):
+  #receive an undirected graph
+  #return largest size
+
+  visited = set()
+  largest = 0
+  for node in graph:
+    count = explore_graph(graph, node, visited)
+    if count > largest:
+      largest = count
+  return largest
+
+
+def explore_graph(graph, node, visited):
+  if node in visited:
+    return 0
+
+  visited.add(node)
+
+  count = 1
+  for neighbor in graph[node]:
+    count += explore_graph(graph, neighbor, visited)
+  return count
