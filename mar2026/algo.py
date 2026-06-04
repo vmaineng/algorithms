@@ -304,3 +304,43 @@ export default function App() {
     )
 }
 
+def undirected_path(edges, node_A, node_B):
+  #receive an edge list 
+  #return the boolean
+
+  #create an edge list into an adj list
+  #iterate through
+
+  graph = build_graph(edges)
+  return has_path(graph, node_A, node_B, set())
+
+
+def build_graph(edges):
+  graph = {}
+
+  for edge in edges:
+    a,b = edge
+
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+    graph[a].append(b)
+    graph[b].append(a)
+
+  return graph
+
+def has_path(graph, src, dst, visited):
+  
+  if src == dst:
+    return True
+
+  if src in visited:
+    return False
+
+  visited.add(src)
+
+  for neighbor in graph[src]:
+    if has_path(graph, neighbor, dst, visited):
+      return True
+  return False
