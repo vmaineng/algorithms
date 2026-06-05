@@ -396,3 +396,16 @@ def explore_graph(graph, node, visited):
   for neighbor in graph[node]:
     count += explore_graph(graph, neighbor, visited)
   return count
+
+  def guess_blue(blue_start, red_start, blue_pulled, red_pulled):
+    #receive integers
+    #return probabilty of a float
+    #ex: 
+    
+    #find remaining
+    #subtract whats left from total
+    
+    blue_remain = blue_start - blue_pulled
+    red_remain = red_start - red_pulled
+    
+    return blue_remain/ (blue_remain + red_remain)
