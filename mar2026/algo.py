@@ -409,3 +409,37 @@ def explore_graph(graph, node, visited):
     red_remain = red_start - red_pulled
     
     return blue_remain/ (blue_remain + red_remain)
+  
+  def is_sorted_and_how(arr):
+    #receive a list of integers
+    #return a string
+    
+    #check if the integers are increasing, return the yes ascending
+    #else check if integers are decreasing, return yes descinding
+    #else, return 'no'
+    
+    descending = True
+    ascending = True
+    
+    for idx in range(0, len(arr) - 1):
+        for j in range(idx + 1, len(arr)):
+            if arr[j] > arr[idx]:
+                descending = False
+            elif arr[j] < arr[idx]:
+                ascending = False
+            
+            
+    if ascending:
+        return 'yes, ascending'
+    elif descending:
+        return 'yes, descending'
+    else:
+        return 'no'
+    
+#     for idx in range(len(arr)):
+#         if arr[idx + 1] > arr[idx]:
+#             return 'yes, ascending'
+#         elif arr[idx - 1] < arr[idx]:
+#             return 'yes, descending'
+#         else:
+#             return 'no'
