@@ -253,4 +253,26 @@ def is_digit(s):
         total += num #0, 1, 3, 6
     return output + str(n) + ' = ' + str(total + n)
         
+    def show_sequence(n):
+    #receive an integer (whole number)
+    #return the sum of all numbers starting from 0 to n (inclusivee)
+    #ex: 3 => 0 + 1 + 2 + 3 => 6
+    #ex: -8 => 0
+    
+    #loop up to n
+    #keep a running total and return the total
+    
+    if n < 0:
+        return f"{n}<0"
+    
+    if n == 0:
+        return "0=0"
+    
+    total = 0
+    output = []
+    for num in range(0, n+ 1):
+        output.append(str(num))
+        total += num #0, 1, 3, 6
+    return '+'.join(output) + ' = ' + str(total)
+        
     
