@@ -191,5 +191,41 @@ def strogagrammatic(number):
     #     right -= 1
     # return True
 # print(strogagrammatic(69189))
-print(strogagrammatic(6889))
+# print(strogagrammatic(6889))
         
+def binSum(num):
+    #receive an integer
+    #return the sum of the binary representation of the number
+    #ex: 10 => 2 (1010 => 1) longest 0
+    binary = bin(num)[2:]
+    max_gap = 0
+    current_gap = 0
+
+    for bit in binary:
+        if bit == '0':
+            current_gap += 1
+        else:
+            max_gap = max(max_gap, current_gap)
+            current_gap = 0
+
+    return max_gap
+
+print(binSum(9))
+print(binSum(529))
+
+def is_digit(s):
+    #receive an input
+    #return a boolean if it is single whole number or a floating number
+    #ex: 'h234' => False
+    #ex: '3' => True
+    #ex: '4.2' => True
+    
+    #convert what we have in S to be an integer
+    #return true if single whole integer or else a floating number,
+    #return False
+    
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
