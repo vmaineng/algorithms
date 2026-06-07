@@ -1344,5 +1344,47 @@ def build_graph(edges):
     graph[b].append(a)
   return graph
 
+def island_count(grid):
+  #receive a m x n grid
+  #return count of islands on grid
+  #ex: 
+
+  #iterate through row and columns
+  #check if it is a L
+  #mark as seen
+  #return mark
+
+  size = 0
+  visited = set()
+
+  for row in range(len(grid)):
+    for col in range(len(grid[0])):
+      if explore(grid, row, col, visited) == True:
+        size += 1
+  return size
+
+def explore(grid, row, col, visited):
+  row_inbounds = 0 <= row < len(grid)
+  col_inbounds = 0 <= col < len(grid[0])
+
+  if not row_inbounds or not col_inbounds:
+    return False
+
+  if grid[row][col] == "W":
+    return False
+  
+  if (row, col) in visited:
+    return False
+
+  visited.add((row,col))
+
+  explore(grid, row + 1, col, visited)
+  explore(grid, row-1, col, visited)
+  explore(grid, row, col + 1, visited)
+  explore(grid, row, col - 1, visited)
+
+  return True
+  
+
 
         
