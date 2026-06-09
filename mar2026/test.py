@@ -1385,6 +1385,38 @@ def explore(grid, row, col, visited):
 
   return True
   
+  from collections import deque
+
+def closest_carrot(grid, starting_row, starting_col):
+  #receive a grid 
+  #return how many steps to get a 'C'
+
+  queue = deque([(starting_row, starting_col, 0) ] )
+  visited = set([(starting_row, starting_col)])
+
+  while queue:
+    row, col, dst = queue.popleft()
+    if grid[row][col] == 'C':
+      return dst
+
+    deltas = [(1,0), (0, 1), (-1,0), (0,-1)]
+
+    for delta in deltas:
+      delta_row, delta_col = delta
+      neighbor_row = row + delta_row
+      neighbor_col = col + delta_col
+      row_inbounds = 0 <= neighbor_row < len(grid)
+      col_inbounds = 0 <= neighbor_col < len(grid[0])
+      pos = (neighbor_row, neighbor_col)
+
+      if row_inbounds and col_inbounds and grid[row][col] != 'X' and pos not in visited:
+        queue.append((neighbor_row, neighbor_col, dst + 1))
+        visited.add(pos)
+
+      
+
+  return -1
+    
 
 
         
