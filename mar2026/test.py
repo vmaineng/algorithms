@@ -1461,5 +1461,38 @@ def build_graph(edges):
   return graph
   
 
+from collections import deque
+
+def knight_attack(n, kr, kc, pr, pc):
+  #receive a n x n
+  #return min moves (int)
+
+  #start from kr, kc, return mvoes of pr and pc
+
+  moves = [
+        (-2, -1), (-2, 1),
+        (-1, -2), (-1, 2),
+        (1, -2), (1, 2),
+        (2, -1), (2, 1)
+    ]
+  visited = set([(kr, kc)])
+  queue = deque([(kr, kc, 0)])
+
+  while queue:
+    row, col, dst = queue.popleft()
+    if (row, col) == (pr, pc):
+      return dst
+
+    for dr, dc in moves:
+      delta_row = row + dr
+      delta_col = col + dc
+      row_inbounds = 0 <= delta_row < n
+      col_inbounds = 0 <= delta_col < n  
+      pos = (delta_row, delta_col)
+      if row_inbounds and col_inbounds and pos not in visited:
+        visited.add(pos)
+        queue.append((delta_row, delta_col, dst + 1))
+        
+  return None
 
         
