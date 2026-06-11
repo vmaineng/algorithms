@@ -1495,4 +1495,35 @@ def knight_attack(n, kr, kc, pr, pc):
         
   return None
 
-        
+        from collections import deque
+
+def knight_attack(n, kr, kc, pr, pc):
+  moves = [
+    (-2, -1), (-2,1),
+    (2, -1), (2, 1), 
+    (1, -2), (-1, 2),
+    (1, 2), (-1, -2)
+  ]
+
+  queue = deque([(kr, kc, 0)])
+  visited = set((kr,kc))
+
+  while queue:
+    row, col, dst = queue.popleft()
+
+    if (row,col) == (pr, pc):
+      return dst
+
+    for nr, nc in moves:
+      new_row = row + nr
+      new_col = col + nc
+      row_inbounds = 0 <= new_row < n
+      col_inbounds = 0  <= new_col < n
+      pos = (new_row, new_col)
+      if row_inbounds and col_inbounds and pos not in visited:
+        visited.add(pos)
+        queue.append((new_row, new_col, dst + 1))
+  return None
+
+
+  
