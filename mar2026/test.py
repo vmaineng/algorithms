@@ -1525,5 +1525,26 @@ def knight_attack(n, kr, kc, pr, pc):
         queue.append((new_row, new_col, dst + 1))
   return None
 
+def can_color(graph):
+  #receive an undirected graph
+  #return boolean
+  coloring = {}
+  for node in graph:
+    if node not in coloring and validate(graph, node, coloring, False) == False:
+      return False
+  return True
 
+
+def validate(graph, node, coloring, current_color):
+  if node in coloring:
+    return current_color == coloring[node]
+
+  coloring[node] = current_color
+
+  for neighbor in graph[node]:
+    if validate(graph, neighbor, coloring, not current_color) == False:
+      return False
+  return True
+    
+  
   
