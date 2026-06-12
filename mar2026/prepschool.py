@@ -210,8 +210,8 @@ def binSum(num):
 
     return max_gap
 
-print(binSum(9))
-print(binSum(529))
+# print(binSum(9))
+# print(binSum(529))
 
 def is_digit(s):
     #receive an input
@@ -276,3 +276,24 @@ def is_digit(s):
     return '+'.join(output) + ' = ' + str(total)
         
     
+def cakeFunction(recipe, ingredients):
+
+    # cakes({flour: 500, sugar: 200, eggs: 1}, 
+    # ingredients: {flour: 1200, sugar: 1200, eggs: 5, milk: 200})
+
+    #receive
+    #return an integer of max number of cakes
+
+    #keep track of count
+    #iterate through ingredients
+    #subtract from cakes
+    #return count
+
+    count = 0
+    for item in ingredients:
+        print(ingredients[item])
+        
+        
+
+print(cakeFunction({flour: 500, sugar: 200, eggs: 1},
+                    {flour: 1200, sugar: 1200, eggs: 5, milk: 200}))
