@@ -1588,4 +1588,43 @@ def build_graph(edges):
     graph[b].append(a)
 
   return graph
+
+def rare_routing(n, roads):
+  #receive n city, and the roads that are connected to each other
+  #return boolean
+  #ex: 
+
+  #iterate through a graph
+  #check if it does not equal the last city seen
+  #and it does not return False, return False
+  #else return True
+
+  graph = build_graph(n, roads)
+  visited = set()
+  valid = validate(graph, 0, visited, None)
+  return valid and len(visited) == n
+
+def validate(graph, node, visited, last_node):
+  if node in visited:
+    return False
+
+  visited.add(node)
+
+  for neighbor in graph[node]:
+    if neighbor != last_node and validate(graph, neighbor, visited, node) == False:
+      return False
+  return True
+
+def build_graph(n, roads):
+  graph = {}
+
+  for city in range(n):
+    graph[city]= []
+
+  for road in roads:
+    a,b = road
+    graph[a].append(b)
+    graph[b].append(a)
+    
+  return graph
   
