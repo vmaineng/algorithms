@@ -1722,3 +1722,20 @@ def intersection_with_dupes(a, b):
       result.append(item)
   return result
       
+      def exclusive_items(a, b):
+  #receive two list of integers
+  #return a list back of list that do not belong in each other
+  #ex: 
+
+  result = []
+  set_a = set(a)
+  set_b = set(b)
+
+  for item in set_a:
+    if item not in set_b:
+      result.append(item)
+
+  for item in set_b:
+    if item not in set_a:
+      result.append(item)
+  return result
