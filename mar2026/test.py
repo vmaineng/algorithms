@@ -1709,3 +1709,16 @@ def dfs(grid, r, c,s):
   grid[r][c] = char
 
   return result
+
+from collections import Counter
+
+def intersection_with_dupes(a, b):
+  count_a = Counter(a)
+  count_b = Counter(b)
+
+  result  =[]
+  for item in count_a:
+    for i in range(0, min(count_a[item], count_b[item])):
+      result.append(item)
+  return result
+      
