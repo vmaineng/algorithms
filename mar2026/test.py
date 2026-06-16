@@ -1739,3 +1739,10 @@ def intersection_with_dupes(a, b):
     if item not in set_a:
       result.append(item)
   return result
+
+def remove(st, n):
+    #receive a string with an integer
+    #return a string back with ! removed by n amount
+    #ex: 'Hi!', 1 => 'Hi'
+    
+    return st.replace('!', '', n)
