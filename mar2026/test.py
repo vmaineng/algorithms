@@ -1753,3 +1753,14 @@ class Cat(Animal):
     def speak(self):
         return f"{self.name} meows."
     
+    def quote(fighter):
+    #receive a string of names
+    #return specific saying associated with string
+    #ex: gEorge sainT Pierre => "I am not impresed"
+    
+    
+    if fighter.lower() == "george saint pierre":
+        return "I am not impressed by your performance."
+    elif fighter.lower() == 'conor mcgregor':
+        return "I'd like to take this chance to apologize.. To absolutely NOBODY!"
+    
