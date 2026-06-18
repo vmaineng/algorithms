@@ -1792,3 +1792,20 @@ def count_red_beads(n):
         return 0
     else:
         return (n * 2) - 2
+    
+    def solution(number):
+    #receive a number
+    #return sum of all number in beween that divisible of 3 or 5
+    #ex: 
+    
+    if number < 0:
+        return 0
+    
+    total = 0
+    for num in range(1, number):
+        if num % 3 == 0:
+            total += num
+        elif num % 5 == 0:
+            total += num
+    return total
+  
