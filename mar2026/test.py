@@ -1764,3 +1764,17 @@ class Cat(Animal):
     elif fighter.lower() == 'conor mcgregor':
         return "I'd like to take this chance to apologize.. To absolutely NOBODY!"
     
+    def even_numbers(arr,n):
+    #receive a list of integers and an int
+    #return a new a list up to n filled with even numbers
+    #ex: 
+    
+    #iterate through arr check if it's % 2 == 0 and decrement from n
+    
+    result = []
+    
+    for i in range(len(arr)-1, -1, -1):
+        if arr[i] % 2 == 0 and n > 0:
+            result.append(arr[i])
+            n -= 1
+    return result[::-1]
