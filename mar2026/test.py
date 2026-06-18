@@ -1809,3 +1809,34 @@ def count_red_beads(n):
             total += num
     return total
   
+  class Solution:
+    def romanToInt(self, s: str) -> int:
+        #receive a string
+        #return total output of string
+        #ex: "IIII" => 4
+
+        #iterate through string
+        #check if it is in map, add to the total
+        #return total
+
+        symbol_map = { 
+            "I": 1,
+            "V": 5, 
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+
+        total = 0 
+
+        for i in range(len(s)):
+            current_char = symbol_map[s[i]]
+
+            if i + 1 < len(s) and current_char < symbol_map[s[i + 1]]:
+                total -= current_char
+            else:
+                total += current_char
+
+        return total
