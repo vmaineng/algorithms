@@ -1746,3 +1746,10 @@ def remove(st, n):
     #ex: 'Hi!', 1 => 'Hi'
     
     return st.replace('!', '', n)
+
+from preloaded import Animal
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} meows."
+    
