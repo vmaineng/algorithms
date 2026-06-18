@@ -1778,3 +1778,17 @@ class Cat(Animal):
             result.append(arr[i])
             n -= 1
     return result[::-1]
+
+def count_red_beads(n):
+    #receive an integer
+    #return the amount of red beads placed between blue beads
+    #ex: brrb => 2 
+    #need 2 blue beads (opening and closing)
+    
+    #brrbrrb => 4
+    #brrbrrbrrbrrb => 8
+    
+    if n < 2:
+        return 0
+    else:
+        return (n * 2) - 2
