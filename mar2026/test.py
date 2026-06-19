@@ -1840,3 +1840,45 @@ def count_red_beads(n):
                 total += current_char
 
         return total
+    
+
+    def find(roots, node):
+  if node == roots[node]:
+    return node
+  return find(roots, roots[node])
+
+
+def union(roots, a, b):
+  root_a = find(roots, a)
+  root_b = find(roots, b)
+
+  if root_a == root_b:
+    return 
+
+  roots[root_b] = a
+
+def count_components(n, edges):
+  #receive a number of nodes, and an edge list
+  #return the number of onnecte compedontes
+  #ex: 
+
+  #create a roots list
+  #iterate through the rotos list
+  #connecting the second node to first node
+  #find the parent's node
+  #return our count
+
+
+  roots = [i for i in range(0, n)]
+
+  for edge in edges:
+    a,b = edge
+    union(roots, a, b)
+
+  count = 0
+  for i in range(0, n):
+    if roots[i] == i:
+      count += 1
+
+  return count
+    
