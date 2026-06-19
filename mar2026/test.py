@@ -1914,4 +1914,21 @@ def province_sizes(n, roads):
 
   return [ sizes[i] for i in range(0, n) if roots[i] == i ]
 
-  
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  #receive a root Node
+  #return the tree in depth_first_values
+
+  if root is None:
+    return []
+
+  left = depth_first_values(root.left)
+  right = depth_first_values(root.right)
+
+  return [root.val, *left, *right]
+  #O(n^2)
