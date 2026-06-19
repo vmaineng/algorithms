@@ -1932,3 +1932,28 @@ def depth_first_values(root):
 
   return [root.val, *left, *right]
   #O(n^2)
+
+def uefa_euro_2016(teams, scores):
+    #receive a list of string of teams (countries) and a list of integers
+    #return a string
+    #ex: ['Madrid', 'Barcelona'], [4, 4]
+   # => # "At match Madrid - Barcelona, teams played draw."
+    #ex: ['Madrid', 'Barcelona'], [2, 4]
+    #=> # "At match Madrid - Barcelona, Barcelona won."
+    
+    
+    #compare the scores of the first one and second
+    #if first one > : return first team won, 
+    #elif second team won
+    #else it's a draw
+    
+#     winner = ""
+    
+    if scores[0] > scores[1]: #0 > 2
+        return f"At match {teams[0]} - {teams[1]}, {teams[0]} won!"
+    elif scores[0] < scores[1]:
+        return f"At match {teams[0]} - {teams[1]}, {teams[1]} won!"
+    else:
+        return f"At match {teams[0]} - {teams[1]}, teams played draw."
+        
+#     return f"At match{teams[0]} - {teams[1]}, {winner}"
