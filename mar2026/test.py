@@ -1980,3 +1980,41 @@ def sort_my_string(s):
             oddChars.append(s[i])
             
     return ''.join(evenChars) + ' ' + ''.join(oddChars)
+
+def two_sum(numbers, target):
+    #receive a list of integers, and an integer for target value
+    #return the index position in a tuple that adds up to target
+    #ex: [3, 4,5, 2], 7 => (0,1)
+    
+    #iterate through the nubmer slst
+    #have another point loop through
+    #add up the sum
+    #check if the sum == target, return the index position
+    
+    
+#     for i in range(0, len(numbers) -1):
+#         for j in range(i + 1, len(numbers)):
+#             if numbers[i] + numbers[j] == target:
+#                 return (i, j)
+    #time: O(n^2)
+    #space:O(1)
+    
+    #find the difference between target and current number
+    #check if number exists in an object, return the idx position
+    
+    pair = {}
+    
+    #{} #1: 0
+     #.  2: 1
+    
+    for i in range(0, len(numbers)): #1, 2, 3
+        difference = target - numbers[i] #4 - 3 =1
+        if difference in pair: #
+            return (i, pair[difference]) #(2, 0)
+        else:
+            pair[numbers[i]] = i
+            
+    #time:O(n)
+    #spaceO(n)
+    
+    
