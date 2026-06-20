@@ -2017,4 +2017,50 @@ def two_sum(numbers, target):
     #time:O(n)
     #spaceO(n)
     
+    class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        #receive a list of integers and the index position represents the days
+        #return the max profit we can make by buying first and then selling
+        #ex:  [7,1,5,3,6,4]
+        #     1 2 3 4 5 6
+        #        i
+        #.              j
+
+        #buy day 2 at $1
+        #sell at the highest day at day 5 which 6
+        #6 - 1 = 5
+
+        #iterate through the list
+        #have another loop check 
+        #take the current $ - the second loop $
+        #update our max total seen
+
+        # maxProfit = 0
+        # for i in range(0, len(prices)-1):
+        #     for j in range(i + 1, len(prices)):
+        #         profit = prices[j] - prices[i]
+        #         if profit > maxProfit:
+        #             maxProfit = profit
+        # return maxProfit
+
+        #start our buy on left side
+        #sell later => sell starts on right side
+        #take sell - buy 
+        #update maxProfit if we've seen
+
+
+        #[1,4,2]
+        #b.   s.  max=2
+
+
+        max_profit = 0 
+        min_price = prices[0]
+
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = price - min_price
+
+            max_profit = max(max_profit, profit)
+        return max_profit
+        
     
