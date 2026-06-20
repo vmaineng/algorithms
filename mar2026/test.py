@@ -1957,3 +1957,26 @@ def uefa_euro_2016(teams, scores):
         return f"At match {teams[0]} - {teams[1]}, teams played draw."
         
 #     return f"At match{teams[0]} - {teams[1]}, {winner}"
+
+def sort_my_string(s):
+    #receive a string
+    #return a string back where the chars at the even index comes first + space + chars at odd index
+    #ex: "Hello" => Hlo el
+    #.    01234
+    
+    #iterate throught the string
+    #look at the index where the chars are located
+    #then add them into the specific even or odd group they belong to
+    #return even + space + odd
+    
+    
+    evenChars = [] #Hlo
+    oddChars = [] #el
+    
+    for i in range(len(s)): #Hello
+        if i %2 == 0:
+            evenChars.append(s[i])
+        else:
+            oddChars.append(s[i])
+            
+    return ''.join(evenChars) + ' ' + ''.join(oddChars)
