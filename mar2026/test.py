@@ -2113,4 +2113,21 @@ def array_diff(a, b):
             result.append(item)
     return result
 
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return same list back where it's sorted
+        #ex: 
+
+        #iterate through the list of integers
+        #check i and j next to oeach other
+        #check if ==, then move i to j 
+
+        i = 0
+        for j in range(1, len(nums)):
+            if nums[i] != nums[j]:
+                i += 1
+                nums[i] = nums[j]
+        return i + 1
+        
   
