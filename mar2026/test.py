@@ -2063,4 +2063,13 @@ def two_sum(numbers, target):
             max_profit = max(max_profit, profit)
         return max_profit
         
-    
+    def solution(number):
+    #receive an integer
+    #return an integer that is the total of the multiples
+    #ex: 5 => 5 
+    total = 0
+    for i in range(1, number):
+        if i % 3 == 0 or i % 5 == 0:
+            total += i
+    return total
+  
