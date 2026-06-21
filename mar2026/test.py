@@ -2093,3 +2093,24 @@ def two_sum(numbers, target):
         if freq_obj[item] % 2 != 0:
             return item
     
+    for item in seq;
+       if seq.count(item) % 2 != 0:
+          return item
+def array_diff(a, b):
+    #receive a list of integers
+    #return the list of integers that don't belong in each others list
+    #ex: [1,2,3,2], [2] => [1,3]
+    
+    #intiialize an empty list
+    #iterate thorugh the numbs
+    #check if b exists in a
+    #don't add to the new list
+    
+    result = []
+    
+    for item in a:
+        if item not in b:
+            result.append(item)
+    return result
+
+  
