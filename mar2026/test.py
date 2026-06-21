@@ -2073,3 +2073,23 @@ def two_sum(numbers, target):
             total += i
     return total
   
+  def find_it(seq):
+    #receive a list of integers
+    #return the integers that occurs odd amount of times
+    #ex: [1,1,1,3] =>1,3
+    
+    #iterate thorugh the list of integers
+    #keep track of frequencies
+    #iterate though the map
+    #check which value is odd
+    #returnt he integer
+    
+    freq_obj = {}
+    
+    for num in seq:
+        freq_obj[num] = freq_obj.get(num, 0) + 1
+        
+    for item in freq_obj:
+        if freq_obj[item] % 2 != 0:
+            return item
+    
