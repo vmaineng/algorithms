@@ -2140,3 +2140,25 @@ class Solution:
             if prices[i] > prices[i - 1]:
                 max_profit += prices[i] - prices[i - 1]
         return max_profit
+    
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def depth_first_values(root):
+  #receive a root Node
+  #return a list of the all the ndoes in depth_first_values
+  #ex: 
+
+  #base case: if it's empty, return an empty list
+  #capture all left and capture all right
+
+  if not root:
+    return [ ]
+
+  left = depth_first_values(root.left)
+  right = depth_first_values(root.right)
+
+  return [root.val, *left, * right]
