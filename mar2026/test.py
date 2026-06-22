@@ -2242,3 +2242,43 @@ class Solution:
 
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
+class Solution:
+    def isValid(self, s: str) -> bool:
+        #receive a string
+        #return a boolean - True is where opening and closing of same kind , else it's False
+
+        #ex: ")" => False
+        #ex: "([)]" => True
+        
+        #iterate thorugh each character
+        #check to see if it's an opening character
+        #add to our stack 
+        #if it is a closing character, check to see if the stack is not empty and if the previous item is an opening bracket
+        #that corresponds with it
+        #if it's not, return False
+        #return True
+
+        pairs = { 
+           '[':  ']',
+           '(':  ')',
+            '{': '}',
+        }
+
+
+        stack = [] 
+
+        for char in s: 
+            if char in pairs:
+                stack.append(char)
+            else:
+                if len(stack) == 0:
+                    return False
+                
+                opening = stack.pop()
+
+                if pairs[opening] != char:
+                    return False
+                
+        return len(stack) == 0
+
+
