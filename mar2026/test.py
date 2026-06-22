@@ -2162,3 +2162,32 @@ def depth_first_values(root):
   right = depth_first_values(root.right)
 
   return [root.val, *left, * right]
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def breadth_first_values(root):
+  #receive a root node
+
+  if not root:
+    return []
+
+  queue = deque([root])
+  result = []
+
+  while queue:
+    current = queue.popleft()
+    result.append(current.val)
+
+    if current.left:
+      queue.append(current.left)
+
+    if current.right:
+      queue.append(current.right)
+  return result
+
