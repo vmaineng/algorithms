@@ -2330,6 +2330,41 @@ def max_path_sum(root):
 
   return root.val + max(big_left, big_right)
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+from collections import deque
+
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -> int:
+        #receive the root node
+        #return an integer of count of nodes in trees
+        #ex: 
+
+        #using bfs
+
+        if not root:
+            return 0
+
+        queue = deque([root])
+        total = 0
+
+        while queue:
+            current = queue.popleft()
+            total += 1
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+        return total
+
+
+        
+
   
 
 
