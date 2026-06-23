@@ -2281,4 +2281,32 @@ class Solution:
                 
         return len(stack) == 0
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+from collections import deque
+
+def tree_min_value(root):
+  #receive the root of a binary tree_min_value
+  #return min value found
+  #ex: 
+
+  queue = deque([root])
+  min_value = float("inf")
+
+  while queue:
+    current = queue.popleft()
+    if current.val < min_value:
+      min_value = current.val
+
+    if current.left:
+      queue.append(current.left)
+
+    if current.right:
+      queue.append(current.right)
+  return min_value
+  
 
