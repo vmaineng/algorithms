@@ -2426,7 +2426,25 @@ def _path_finder(root, target):
 
 
 
+  # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def tree_value_count(root, target):
+
+  if not root:
+    return 0
+    
+  match = 1 if root.val == target else 0
+
+  left = tree_value_count(root.left, target)
+  right = tree_value_count(root.right, target)
   
+
+  return match + left + right
+
 
         
   
