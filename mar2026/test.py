@@ -2501,7 +2501,41 @@ def bottom_right_value(root):
 
   return current.val
       
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
 
+def all_tree_paths(root):
+  paths = _all_tree_paths(root)
+  for path in paths:
+    path.reverse()
+  return paths
+
+def _all_tree_paths(root):
+  #receive the rnode of th eroot
+  #return all tree paths 
+  #ex: 
+
+  if not root:
+    return []
+
+  if not root.left and not root.right:
+    return [ [root.val] ]
+
+  all_paths = []
+  left = _all_tree_paths(root.left)
+  for path in left:
+    path.append(root.val)
+    all_paths.append(path)
+    
+  right = _all_tree_paths(root.right)
+  for path in right:
+    path.append(root.val)
+    all_paths.append(path)
+  return all_paths
+    
   
 
         
