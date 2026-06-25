@@ -2568,6 +2568,49 @@ def tree_levels(root):
     result.append(levels)
   return result
     
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+from collections import deque 
+
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        #receive the root of a binary tree
+        #return a list stating their averages
+        
+        # do it via bfs using queue
+        #iterate through node
+        #add it into the queue
+        #if they have a left and/or right children, add to queue
+        #calculate their average 
+        #add to the result list
+        #return list
+
+        result = [ ]
+        queue = deque([root])
+        while queue:
+           
+            total = 0
+            total_nodes = 0
+            for node in range(len(queue)):
+                current = queue.popleft()
+                total += current.val
+                total_nodes += 1
+                avg = total / total_nodes
+                
+                if current.left:
+                    queue.append(current.left)
+
+                if current.right:
+                    queue.append(current.right)
+            result.append(avg)
+        return result
+
+
     
   
 
