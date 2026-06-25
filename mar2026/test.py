@@ -2610,7 +2610,50 @@ class Solution:
             result.append(avg)
         return result
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        #receive the root node of a binary search tree
+        #return min difference between values of any two different nodes in trees
+        #ex: 
 
+        #traverse through the left and right
+        #find the smallest min found
+        #but smallest nodes can be found on the left and left side - so no go on this
+
+        #bfs? but you're only looking at it from level by level - so no go on this
+
+        #since it is a bst, always look at the left side since the values are less
+
+        #iterate through the left side
+
+        #do via inorder traversal
+
+        result = []
+        def inorder(node):
+            if not node:
+                return
+
+            inorder(node.left)
+            result.append(node.val)
+            inorder(node.right)
+
+        inorder(root)
+        min_value = float("inf")
+
+        for i in range(1, len(result)):
+            diff = result[i] - result[i-1]
+            if diff < min_value:
+                min_value = diff
+        return min_value
+        
+
+        
     
   
 
