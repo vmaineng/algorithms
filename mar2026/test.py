@@ -2672,7 +2672,36 @@ def leaf_list(root):
 
   return [*left, *right]
 
-  
+  def max_subarray_sum_size_k(nums, k):
+  #receive a list of integers
+  #return the k amount max sum seen 
+  #ex: 
+
+  #iterate up to the k amount
+  #check the sum
+  #update max total seen
+  #return max seen
+
+  # max_total = float('-inf')
+
+  # for i in range(0, len(nums) - k + 1):
+  #   current_sum = sum(nums[i:i + k])
+  #   if current_sum > max_total:
+  #     max_total = current_sum
+
+  # return max_total
+
+  current_sum = sum(nums[0: k] )
+  max_total = current_sum
+
+  for i in range(0, len(nums)-k):
+    current_sum -= nums[i]
+    current_sum += nums[i + k]
+    if current_sum > max_total:
+      max_total = current_sum
+  return max_total
+    
+
 
         
     
