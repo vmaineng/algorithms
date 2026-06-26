@@ -2653,6 +2653,27 @@ class Solution:
         return min_value
         
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def leaf_list(root):
+
+  if not root:
+    return [ ]
+
+  if not root.left and not root.right:
+    return [ root.val ]
+
+  left = leaf_list(root.left)
+  right = leaf_list(root.right)
+
+  return [*left, *right]
+
+  
+
         
     
   
