@@ -25,7 +25,17 @@ def friendOrFoe(array):
             result.append(name)
     return result
 
-print(friendOrFoe(['Mai', 'Kyle', 'Eric', 'Amanda']))
-print(friendOrFoe(['Mai', 'Kye', 'Ric', 'Amanda']))
+# print(friendOrFoe(['Mai', 'Kyle', 'Eric', 'Amanda']))
+# print(friendOrFoe(['Mai', 'Kye', 'Ric', 'Amanda']))
+
+def sheepCount(array):
+    # count = 0
+    # for sheep in array:
+    #     if sheep == True:
+    #         count += 1
+    # return count 
+    return sum(sheep is True for sheep in array)
+
+print(sheepCount([True, False, False]))
 
 
