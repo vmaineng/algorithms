@@ -2700,6 +2700,19 @@ def leaf_list(root):
     if current_sum > max_total:
       max_total = current_sum
   return max_total
+
+import math
+
+def max_subarray_product_size_k(nums, k):
+  current_product = math.prod(nums[0: k])
+  max_total = current_product
+  for i in range(0, len(nums) -k ):
+    current_product /= nums[i]
+    current_product *= nums[i + k]
+    if current_product > max_total:
+      max_total = current_product
+  return max_total
+
     
 
 
