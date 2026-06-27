@@ -2731,6 +2731,34 @@ def sum_list(head):
     current = current.next
   return total
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        result = []
+        def inorder(node):
+            if not node:
+                return
+            inorder(node.left)
+            result.append(node.val)
+            inorder(node.right)
+
+        inorder(root)
+
+        min_value = float('inf')
+        i = 0
+
+        for j in range(1, len(result)):
+            diff = result[j] - result[i]
+            if diff < min_value:
+                min_value = diff
+            i += 1
+        return min_value
+
 
 
         
