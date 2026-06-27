@@ -2713,7 +2713,24 @@ def max_subarray_product_size_k(nums, k):
       max_total = current_product
   return max_total
 
-    
+    # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def sum_list(head):
+  #receive head of a LL
+  #return total sum from all values
+  #ex: 
+
+  current = head
+  total = 0
+
+  while current:
+    total += current.val
+    current = current.next
+  return total
+
 
 
         
