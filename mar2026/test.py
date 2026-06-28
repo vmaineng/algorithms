@@ -2785,6 +2785,34 @@ def remove_node(head, target_val):
 
   return head
 
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def insert_node(head, value, index):
+  #increment at node until we reach indexed
+
+  if index == 0:
+    new_head = Node(value)
+    new_head.next = head
+    return new_head
+
+  current = head
+  idx = 0 
+  
+  while current: 
+    next = current.next
+    if idx == index:
+      current.next = Node(value)
+      current.next.next = next
+
+    current = current
+    idx += 1
+
+  return head
+    
+
         
     
   
