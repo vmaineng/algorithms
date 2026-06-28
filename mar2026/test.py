@@ -2760,6 +2760,30 @@ class Solution:
         return min_value
 
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def remove_node(head, target_val):
+  #receive the head of a list
+  #return the list back with node re remove_node
+  #ex: 
+
+  if head.val == target_val:
+    return head.next
+
+  current = head
+  prev = None
+  
+  while current:
+    if current.val == target_val:
+      prev.next = current.next
+      break;
+    prev = current
+    current = current.next
+
+  return head
 
         
     
