@@ -2812,7 +2812,26 @@ def insert_node(head, value, index):
 
   return head
     
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        obj1 = {}
+        obj2 = {}
 
+        for i in range(len(s)):
+            c1 = s[i]
+            c2 = t[i]
+
+            if c1 in obj1 and obj1[c1] != c2:
+                return False
+
+            if c2 in obj2 and obj2[c2] != c1:
+                return False
+
+            obj1[c1] = c2
+            obj2[c2] = c1
+
+        return True
+        
         
     
   
