@@ -2832,7 +2832,21 @@ class Solution:
 
         return True
         
-        
+        # class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_palindrome(head):
+
+  result = []
+  current = head
+  while current:
+    result.append(current.val)
+    current = current.next
+
+  return result == result[::-1]
+
     
   
 
