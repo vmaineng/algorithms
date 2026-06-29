@@ -2847,6 +2847,46 @@ def linked_palindrome(head):
 
   return result == result[::-1]
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def middle_value(head):
+  # result = []
+  # current = head
+  # while current:
+  #   result.append(current.val)
+  #   current = current.next
+
+  # mid = len(result) //2
+  # return result[mid]
+
+
+  # left = 0
+  # right = len(result) - 1
+
+  # while left <= right:
+  #   mid = (left + right) // 2
+  #   if len(result) % 2 == 0:
+  #     return result[mid + 1]
+  #   else:
+  #     return result[mid]
+
+  slow = head
+  fast = head
+
+  while fast and fast.next:
+    slow = slow.next
+    fast = fast.next.next
+
+  return slow.val
+
+
+  
+    
+
+
     
   
 
