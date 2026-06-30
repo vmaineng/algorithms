@@ -2889,6 +2889,44 @@ class Solution:
         total = int_a + int_b
         return bin(total)[2:]
         
+class Solution:
+    def summaryRanges(self, nums: List[int]) -> List[str]:
+        #receive a list of sorted integers
+        #return a list back starting the strings
+        #ex: 
+
+        #iterate thorugh the integers
+        #see if the num is + 1 of it, if not, capture the start and the end 
+        #return list
+
+        if not nums:
+            return []
+
+        result = []
+
+        start = 0
+
+        for end in range(1, len(nums)):
+            if nums[end] != nums[end - 1] + 1:
+                if start == end - 1:
+                    result.append(str(nums[start]))
+                else:
+                    output = f"{nums[start]}->{nums[end - 1]}"
+                    result.append(output)
+                start = end
+            
+        if start == len(nums) - 1:
+            result.append(str(nums[start]))
+        else:
+            output = f"{nums[start]}->{nums[-1]}"
+            result.append(output)
+                
+        return result
+
+        #[0, 1,  2,  4,  5,7]
+        #s
+        #.      e1  e2
+
 
 
   
