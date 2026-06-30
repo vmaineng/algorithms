@@ -2927,6 +2927,43 @@ class Solution:
         #s
         #.      e1  e2
 
+class Solution:
+    def summaryRanges(self, nums: List[int]) -> List[str]:
+        #receive a list of sorted integers
+        #return a list back starting the strings
+        #ex: 
+
+        #iterate thorugh the integers
+        #see if the num is + 1 of it, if not, capture the start and the end 
+        #return list
+
+        if not nums:
+            return []
+
+        result = []
+
+        i = 0
+
+        while i < len(nums):
+            start = nums[i]
+            j = i 
+            while j + 1 < len(nums) and nums[j + 1] == nums[j] + 1:
+                j += 1
+
+            if start == nums[j]:
+                result.append(str(start))
+            else:
+                result.append(f"{start}->{nums[j]}")
+            i = j + 1
+
+                
+        return result
+
+        #[0, 1,  2,  4,  5,7]
+        #s
+        #.      e1  e2
+
+
 
 
   
