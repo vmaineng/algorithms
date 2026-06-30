@@ -3010,6 +3010,24 @@ class Solution:
 
         return result
 
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #sort by start time
+        #iterate throught he interval
+        #check if the start of newInterval <= end of the interval we are looking at
+
+        intervals.append(newInterval)
+        intervals.sort(key=lambda x:x[0])
+        results = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            [start, end] = intervals[i]
+            if results[-1][1] >= start:
+                results[-1][1] = max(end, results[-1][1])
+            else:
+                results.append(intervals[i])
+
+        return results
 
 
   
