@@ -2962,7 +2962,29 @@ class Solution:
         #[0, 1,  2,  4,  5,7]
         #s
         #.      e1  e2
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive a list of integers
+        #return the list bakc
+        #ex:
 
+        #sort by start time
+        #initialize the result list with the currrent start
+        #iterate and check if the next start overlaps with end
+        #update the end and add it in the list
+
+        intervals.sort(key=lambda x:x[0])
+        result = [intervals[0]]
+
+        for j in range(1, len(intervals)):
+            [start, end] = intervals[j]
+            [prevStart, prevEnd] = result[-1]
+            if start <= prevEnd:
+                result[-1][1] = max(prevEnd,end)
+            else:
+                result.append(intervals[j])
+
+        return result
 
 
 
