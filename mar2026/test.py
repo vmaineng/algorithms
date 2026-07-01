@@ -3049,6 +3049,55 @@ class Solution:
 
         return False
 
+
+class Solution:
+    def commonChars(self, words: List[str]) -> List[str]:
+        #receive a list of words (lowercase letters)
+        #return a list back of common characters that are in each word
+        #ex: ['hello', 'app', 'soccer'] => []
+
+        #initalize an empty list
+        #iterate through word and check the character in the other words
+
+
+        #iterate through each word
+        #add them into their own separate obj to keep track of the occurence of the ltter
+        #ex: { 
+        # 'h':1, 
+        # 'e': 1,
+        # 'l': 2, 
+        # 'o' : 1,
+        #}
+        #check each obj and verify if the characters exist in the other strings
+        #if it does exist in all of the other strings, add it our result list
+        #tiime: O(n * m) => n characters if words
+        #space: O (n)
+
+        result = []
+
+        for word in words:
+            freq= {}
+            for char in word:
+                freq[char]= freq.get(char, 0) + 1 #{'h': 1}
+            result.append(freq)
+
+
+        frequen = []
+        for char in result[0]:
+            minum = result[0][char]
+
+            for fre in result[1:]:
+                minum = min(minum, fre.get(char,0))
+
+            frequen.extend([char] * minum)
+
+        return frequen
+
+
+
+
+
+        
   
     
 
