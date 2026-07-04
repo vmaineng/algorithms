@@ -3093,6 +3093,38 @@ class Solution:
 
         return frequen
 
+"""
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def canAttendMeetings(self, intervals: List[Interval]) -> bool:
+        #receive a list of tuples of start and end
+        #return boolean, true if can attend all, else false
+        #ex: [(0, 1), (3, 5), (2, 6)] => false
+        #[(0,1),(2,6),(3,5)]
+
+        #ex: 0 1 2 3 4 5 6
+          #  ---
+          #        ----
+          #      ---------
+
+        #sort by start time
+        #check if the current start is <= end time prev
+        #if it is, return false
+        #else after checking everything,r eturn true
+
+        intervals.sort(key=lambda x:x.start)
+
+        for i in range(1, len(intervals)):
+           if intervals[i].start < intervals[i - 1].end:
+            return False
+            
+        return True
 
 
 
