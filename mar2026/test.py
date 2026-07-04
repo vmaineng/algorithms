@@ -3126,6 +3126,37 @@ class Solution:
             
         return True
 
+"""
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[Interval]) -> int:
+        #receive a room
+        #return the min rooms needed
+        #for each room you need, increment
+        #keep track of room needed
+
+        #ex: [(1,5),(4,10),(8, 9)]
+        #.                  i
+
+        intervals.sort(key=lambda i:i.start)
+        min_heap = []
+
+        if len(intervals) == 1:
+            return 1
+
+        for interval in intervals:
+            if min_heap and min_heap[0] <= interval.start:
+                heapq.heappop(min_heap)
+            heapq.heappush(min_heap, interval.end)
+
+        return len(min_heap)
+
 
 
 
