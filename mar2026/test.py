@@ -3196,7 +3196,22 @@ class Solution:
         return result
 
 
-
+def filter_string(st):
+    #receive a string of integer
+    #return the integers back
+    #ex: 'raw12'=> 12
+    
+    #iterate through the string
+    #check each char if it is a an integer
+    #add together as a list
+    #return it as an int back
+    
+    result = ''
+    
+    for char in st:
+        if char.isdigit():
+            result += char
+    return int(result)
 
         
   
