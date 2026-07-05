@@ -3256,6 +3256,23 @@ def filter_string(st):
             
 #     return longWord
   
+  def valid_braces(string):
+    parens = {
+        '(': ')',
+        '{':'}',
+        '[':']'
+    }
+    stack = []
+    
+    for char in string:
+        if char in parens: #opening
+            stack.append(char)
+        else:
+            if len(stack) == 0:
+                return False
+            if parens[stack.pop()] != char:
+                return False
+    return len(stack) == 0
     
 
 
