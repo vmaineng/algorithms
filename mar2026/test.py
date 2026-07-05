@@ -3214,6 +3214,47 @@ def filter_string(st):
     return int(result)
 
         
+        def longest_consec(strarr, k):
+    #recevie a list of strings
+    #return the string of largest length of string seen
+    #ex: 
+    
+    #iterate thorough the list of strings
+    #keep adding strings until k has been reached
+    #keep track of longest length seen 
+    #return longest word seen
+    
+    if k < 0:
+        return ''
+    
+    longword = ''
+    longlenth = 0
+    
+    for i in range(len(strarr) - k + 1):
+        currentWord = ''.join(strarr[i:i + k])
+        if len(currentWord) > len(longword):
+            longword = currentWord
+            longLength = len(currentWord)
+    return longword
+    
+#     longWord = ''
+#     longLength = 0
+#     current = ''
+#     i = 0
+#     j = 0
+    
+#     while j <len(strarr):
+#         current += strarr[j]
+#         j += 1
+        
+#         while (j - i) == k:
+#             longWord = current
+#             longLength = max(longLength, len(current))
+#             current -= strarr[i]
+#             i += 1
+#             j += 1
+            
+#     return longWord
   
     
 
