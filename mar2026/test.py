@@ -3274,7 +3274,28 @@ def filter_string(st):
                 return False
     return len(stack) == 0
     
+def find_leftmost_index(nums, target):
+  #receive a list of integers, and the target integer of nums
+  #return idx of most left idx
+  #ex: 
 
+  left = 0
+  right = len(nums) - 1
+  leftmost = -1
+
+  while left <= right:
+    mid = (left + right) // 2
+
+    if target < nums[mid]:
+      right = mid - 1
+    elif target > nums[mid]:
+      left = mid + 1
+    else:
+      right = mid - 1
+      leftmost = mid
+
+
+  return leftmost
 
     
   
