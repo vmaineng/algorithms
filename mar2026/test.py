@@ -3342,6 +3342,24 @@ def count_in_sorted_array(nums, target):
     return 0
   else:
     return rightidx - leftidx + 1
+  
+  def min_in_rotated_sorted_array(nums):
+  #receive a list of rotated sorted integers
+  #return mind element found
+  #ex:[5,6,7,8,9]
+  #   l    m   r
+  #   
+
+  left = 0
+  right = len(nums) - 1
+
+  while left < right:
+    mid = (left + right) // 2
+    if nums[mid] < nums[right]:
+      right = mid
+    else:
+      left = mid + 1
+  return nums[left]
 
     
   
