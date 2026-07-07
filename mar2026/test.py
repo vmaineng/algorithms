@@ -3297,6 +3297,52 @@ def find_leftmost_index(nums, target):
 
   return leftmost
 
+def find_leftmost(nums, target):
+  left = 0
+  right = len(nums)-1 
+  leftmost = -1
+
+  while left <= right:
+    mid = (left + right) //2
+    if target < nums[mid]:
+      right = mid - 1
+    elif target > nums[mid]:
+      left = mid + 1
+    else:
+      right = mid - 1
+      leftmost = mid
+  return leftmost
+
+def find_rightmost(nums, target):
+  left = 0
+  right = len(nums)-1 
+  rightmost = -1
+
+  while left <= right:
+    mid = (left + right) //2
+    if target < nums[mid]:
+      right = mid - 1
+    elif target > nums[mid]:
+      left = mid + 1
+    else:
+      left = mid + 1
+      rightmost = mid
+  return rightmost
+
+
+def count_in_sorted_array(nums, target):
+  #receive a list of integers
+  #return the count of occurrences
+  #ex: 
+
+  leftidx = find_leftmost(nums, target)
+  rightidx = find_rightmost(nums, target)
+
+  if rightidx == -1:
+    return 0
+  else:
+    return rightidx - leftidx + 1
+
     
   
 
