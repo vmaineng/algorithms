@@ -3396,6 +3396,21 @@ def find_peak(nums):
       high = mid
 
   return low
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+
+        track1 = { }
+
+        result = []
+        for num in nums1:
+            track1[num] = track1.get(num, 0) + 1
+
+        for item in nums2:
+            if item in track1 and track1.get(item) > 0:
+                result.append(item)
+                track1[item] -= 1
+        return result
       
   
 
