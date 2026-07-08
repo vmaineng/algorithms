@@ -3379,6 +3379,26 @@ def min_in_rotated_sorted_array(nums):
       
   return nums[low]
 
+def find_peak(nums):
+  #receive a list of nums
+  #return the idx of find_peak
+  #ex: ([2,5,7,10,12])
+  #     l    m     h
+
+  low = 0
+  high = len(nums) - 1 
+
+  while low < high:
+    mid = (low + high) // 2
+    if nums[mid] < nums[mid + 1]:
+      low = mid + 1
+    else:
+      high = mid
+
+  return low
+      
+  
+
     
   
 
