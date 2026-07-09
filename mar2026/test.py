@@ -3411,7 +3411,16 @@ class Solution:
                 result.append(item)
                 track1[item] -= 1
         return result
-      
+        
+        def rotate_matrix(arr):
+    result = []
+    for col in range(len(arr[0]) - 1, -1, -1):
+        new_row = []
+        for row in range(len(arr)-1, -1, -1):
+            new_row.append(arr[row][col])
+        new_row.reverse()
+        result.append(new_row)
+    return result
   
 
     
