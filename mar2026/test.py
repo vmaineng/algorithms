@@ -3422,6 +3422,11 @@ class Solution:
         result.append(new_row)
     return result
   
+  def swap(matrix, row1, row2, *columns):
+    for col in columns:
+        matrix[row1][col], matrix[row2][col] = matrix[row2][col], matrix[row1][col]
+    
+    return matrix
 
     
   
