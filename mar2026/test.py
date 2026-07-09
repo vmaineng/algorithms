@@ -3428,6 +3428,19 @@ class Solution:
     
     return matrix
 
+def get_matrix(n):
+    result = [[0] * n for i in range(n)]
+    
+    for row in range(n):
+        for col in range(n):
+            if row == col:
+                result[row][col] =1 
+                
+    return result
+    
+    
+    
+
     
   
 
