@@ -146,3 +146,29 @@ def reverse_some_chars(s, chars):
       else:
         stack.pop()
   return len(stack) == 0 
+
+def befitting_brackets(string):
+  #receive a string of brackets 
+  #return boolean , True if matching brackets, else False
+  #ex: '({}' => False
+
+  brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  }
+
+  stack = []
+
+  for char in string:
+    if char in brackets:
+      stack.append(char)
+    else:
+      if len(stack) == 0:
+        return False
+      else:
+        prev_char = stack.pop()
+        if char != brackets[prev_char]:
+          return False
+  
+  return len(stack) == 0
