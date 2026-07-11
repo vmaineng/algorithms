@@ -90,3 +90,37 @@ def findOutlier(numbers):
 
    
 print(findOutlier([3,5,2,7,9]))
+
+def reverse_some_chars(s, chars):
+  # left = 0
+  # right = len(s) - 1
+
+  # while left <= right:
+  #   if s[left] in chars and s[right] in chars:
+  #     s[left],s[right] = s[right], s[left]
+  #     left += 1
+  #     right -=1 
+  #   elif s[left] not in chars:
+  #     left += 1
+  #   else:
+  #     right -= 1
+
+  # return s
+
+  stack = []
+  result = []
+
+  for char in s:
+    if char in chars:
+      stack.append(char)
+
+
+  for char in s:
+    if char in chars:
+      prev_char = stack.pop()
+      result.append(prev_char)
+    else:
+      result.append(char)
+
+  return ''.join(result)
+  
