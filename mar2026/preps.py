@@ -124,3 +124,25 @@ def reverse_some_chars(s, chars):
 
   return ''.join(result)
   
+  def paired_parentheses(string):
+  #receive a pair of paired_parentheses
+  #return true if parens are equal to each other
+  #ex: (()) => true
+
+  #iterate through the stack
+  #check if opening
+  #add to the stack
+  #if it's a closed, check prev item on stack and pop it off
+
+
+  stack = []
+  for char in string:
+    if char == '(':
+      stack.append(char)
+    elif char == ')':
+      print(stack)
+      if len(stack) < 1:
+        return False
+      else:
+        stack.pop()
+  return len(stack) == 0 
