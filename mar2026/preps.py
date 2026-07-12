@@ -202,3 +202,44 @@ def am_i_wilson(n):
 #     return True if answer == 1 else False
 
     return n in (5, 13, 563)
+
+def decompress_braces(string):
+  #receive a string of numbers and integers
+  #return a string back where number is in front of integers
+  #ex: 
+
+  #keep two pointers
+  #i stays on integers
+  #j goes until it finds end } 
+  #then do i * j 
+  #add to result 
+
+  result = []
+  stack = []
+  numbers = '123456789'
+
+  for char in string:
+    if char in numbers:
+      stack.append(int(char))
+    else:
+      if char == '}':
+        segment = ''
+        while not isinstance(stack[-1], int):
+          popped = stack.pop()
+          segment = popped + segment
+        num = stack.pop()
+        stack.append(num * segment)
+
+      elif char != '{':
+        stack.append(char)
+
+  return ''.join(stack)
+          
+
+      
+          
+
+      
+      
+      
+  return ''.join(result)
