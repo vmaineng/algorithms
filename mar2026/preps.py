@@ -172,3 +172,33 @@ def befitting_brackets(string):
           return False
   
   return len(stack) == 0
+
+import math
+from decimal import Decimal
+
+def am_i_wilson(n):
+    #receive a whole and positive integers
+    #return boolean - where true if n! of n else False
+    
+    #ex: 0 => False
+    #ex: 5 => True
+    
+    #ex: (5 - 1)! + 1
+    # / 5 * 5
+    #(4)! + 1
+    #/ 25
+    #(4* 3 * 2 *1) + 1 = 25
+    # / 25
+    # == 1 = True
+    
+#     if n == 0:
+#         return False
+    
+#     new_num = n - 1
+#     result = math.factorial(new_num) + 1
+#     divider = n * n
+#     answer = Decimal(result)/Decimal(divider)
+    
+#     return True if answer == 1 else False
+
+    return n in (5, 13, 563)
