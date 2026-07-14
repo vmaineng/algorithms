@@ -323,5 +323,30 @@ class Solution:
         return result
         
 
+        class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        #receive a list of strings
+        #return similar strings back together
+        #ex: 
+
+        #iterate through each word
+        #sort them
+        #check if it exists in the object,
+        #if it does, add it specific key
+        #else, create a new key for it
+        #return the result list back from values
+
+
+        anagrams = {}
+
+        for word in strs:
+            ana = ''.join(sorted(word))
+            if ana in anagrams:
+                anagrams[ana].append(word)
+            else:
+                anagrams[ana] = [word]
+        
+        return list(anagrams.values())
+
   
 
