@@ -299,6 +299,29 @@ def knight_attack(n, kr, kc, pr, pc):
         queue.append((new_row, new_col, dst + 1))
   return None
 
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        #receive a list of strings of lowercase letters
+        #return the longest string of starting letters
+        #ex: 
+
+        #initialize an empty list
+        #iterate through each string
+        #check if the beginning letters match for all
+        #if true, add to empty list, else, return ""
+
+
+        result = []
+
+        for i in range(len(strs[0])):
+            letter = strs[0][i]
+            for word in strs:
+                if i >= len(word) or word[i] != letter:
+                    return ''.join(result)
+            result.append(letter)
+
+        return result
+        
 
   
 
