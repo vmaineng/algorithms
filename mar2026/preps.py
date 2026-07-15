@@ -347,6 +347,29 @@ class Solution:
                 anagrams[ana] = [word]
         
         return list(anagrams.values())
+    
+    class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        #receive a list of strings
+        #return similar strings back together
+        #ex: 
+
+        #iterate through each word
+        #sort them
+        #check if it exists in the object,
+        #if it does, add it specific key
+        #else, create a new key for it
+        #return the result list back from values
+
+
+        result = defaultdict(list)
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord('a')] += 1
+            result[tuple(count)].append(s)
+        return list(result.values())
+
 
   
 
