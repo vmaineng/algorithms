@@ -370,6 +370,40 @@ class Solution:
             result[tuple(count)].append(s)
         return list(result.values())
 
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        #receive a list of integers
+        #return a list back sorted without using .sort or any sorted function
+        #ex: 
+
+        #create an empty list
+        #iterate through checking if nums is smaller than previous
+        #return list
+
+        #could do bubble sort => O(n^2)
+
+        # for i in range(0, len(nums) - 1):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[j] < nums[i]:
+        #             nums[i], nums[j] = nums[j], nums[i]
+        # return nums
+
+        #4, 3, 5
+        #.  j
+        #.  i
+        #.  curr
+        #i
+        #curr
+
+        for j in range(1, len(nums)):
+            i = j
+            curr = nums[i]
+            while i > 0 and curr < nums[i - 1]:
+                nums[i] = nums[i - 1]
+                i -=1
+            nums[i] = curr
+        return nums
+
 
   
 
