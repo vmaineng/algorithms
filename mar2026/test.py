@@ -3523,6 +3523,25 @@ class Solution:
         return result
 
 
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        #receive a list of integers
+        #return the most common elements that occurs more than n/3 times
+        # 5 /3 > 1 => add to the reuslt
+        #iterate through
+        #keep track of occurences
+        #then divide it by 3 ; if greater than 1 > add toe the reuslt array
+
+
+        frequency = defaultdict(int)
+        for num in nums:
+            frequency[num] += 1
+
+        result = []
+        for item in frequency:
+            if frequency[item] / 3 > 1:
+                result.append(item)
+        return result
     
   
 
