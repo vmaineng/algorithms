@@ -3496,6 +3496,32 @@ class NumMatrix:
 # obj = NumMatrix(matrix)
 # param_1 = obj.sumRegion(row1,col1,row2,col2)
 
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return the a list of the top k elements
+        #ex: 
+
+        #keep track of the counter
+        #iterate through until k is done
+        #return the item in the list
+
+        frequency = defaultdict(int)
+
+        for num in nums:
+            frequency[num] += 1
+
+        sorted_items = sorted(
+        frequency.items(),
+        key=lambda pair: pair[1],
+        reverse=True)
+
+        result = []
+
+        for num,count in sorted_items[:k]:
+            result.append(num)
+        return result
+
 
     
   
