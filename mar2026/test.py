@@ -3543,6 +3543,37 @@ class Solution:
                 result.append(item)
         return result
     
+    class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        #receive a list of integers,
+        #return the output where ach value is the product of all elements except itself
+        #ex: 
+
+        #create a result list
+        #iterate through the first time and multiply by one
+        #then add to the list
+
+        #nums=[1,2,4,6]
+        #     i
+        #        j
+        #    
+
+
+        result = []
+        i = 0
+
+        
+        for i in range(len(nums)):
+            multiplier = 1
+            for j in range(len(nums)):
+                print(nums[j],nums[i])
+                if i != j:
+                    multiplier *= nums[j]
+
+            result.append(multiplier)
+        
+        return result
+
   
 
         
