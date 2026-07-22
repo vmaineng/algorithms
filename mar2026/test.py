@@ -3622,7 +3622,18 @@ class Solution:
         
         return result
 
-
+def uni_total(s):
+    #keep track of running total
+    #iterate through each char
+    #find the ASCII numbers
+    #return the total
+    
+#     total = 0
+#     for char in s:
+#         asc = ord(char)
+#         total += asc
+#     return total
+    return sum(ord(char) for char in s)
 
         
         
