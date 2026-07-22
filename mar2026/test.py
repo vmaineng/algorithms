@@ -3635,6 +3635,34 @@ def uni_total(s):
 #     return total
     return sum(ord(char) for char in s)
 
+def sort_gift_code(code):
+    #receive a string of integers
+    #return a string back where the charactes are sorted
+    #ex: 'happy' => 'ahppy'
+    
+    
+#     return ''.join(sorted(code))
+    #time:O(n log n)
+    #space:O(n)
+    
+    #iterate through the letters
+    #verify the char's ascII
+    #with two pointers
+    #insert them in correct place
+    
+    ord_positions = [False] * 26
+    
+    for char in code:
+        ord_positions[ord(char) - ord('a')] = True
+        
+    result = []
+    for i in range(26):
+        if ord_positions[i]:
+            result.append(chr(i + ord('a')))
+        
+    return ''.join(result)
+        
+
         
         
   
