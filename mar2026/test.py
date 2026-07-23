@@ -3663,6 +3663,31 @@ def sort_gift_code(code):
     return ''.join(result)
         
 
+class Solution:
+    def isValid(self, s: str) -> bool:
+        #receive a string of characters
+        #return True if open and closed pairs
+        #ex: 
+
+        brackets = { 
+        '{':'}',
+        '[':']',
+        '(':')'
+        }
+
+        stack = []
+
+        for char in s:
+            if char in brackets:
+                stack.append(char)
+            else:
+                if len(stack) == 0:
+                    return False
+                else:
+                    popped = stack.pop()
+                    if char != brackets[popped]:
+                        return False
+        return len(stack) == 0
         
         
   
