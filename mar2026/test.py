@@ -3739,3 +3739,23 @@ class Solution:
             
         return root
 
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        #receive a list of integers
+        #return the values that equal up to target of 0
+        #ex: 
+        #iterate through the 3sums
+        #check if all of them equal 0 
+        #return the values in a list
+
+        result = []
+
+        for i in range(0, len(nums) - 2):
+            for j in range(i + 1, len(nums)- 1):
+                for k in range(j + 1, len(nums)):
+                    if nums[i] + nums[j] + nums[k] == 0:
+                        vals = sorted([nums[i], nums[j], nums[k]])
+                        if vals not in result:
+                            result.append(vals)
+        return result
+
