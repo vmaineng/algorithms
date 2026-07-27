@@ -35,3 +35,22 @@ class Solution:
         if char in vowels:
             result.append(i + 1)
     return result
+
+def in_array(array1, array2):
+    #receive a list of two lists of lowercase letters
+    #return a list back that are substrings of the string in 2
+    #ex: 
+    
+    #iterate through the list of strings
+    #check if in a1 exists in a2
+    #add to the result list
+    #return result list sorted
+    
+    result = set()
+    for word in array1:
+        curr = word
+        for word2 in array2:
+            if curr in word2:
+                result.add(curr)
+                break
+    return sorted(result)
