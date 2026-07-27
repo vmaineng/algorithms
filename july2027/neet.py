@@ -22,3 +22,16 @@ class Solution:
             
         return False
         
+        def vowel_indices(word):
+	#receive a string of letters
+    #return vowels index in a list
+    
+    #ex: 
+    
+    result = []
+    vowels = 'aeiouy'
+    
+    for i, char in enumerate(word.lower()):
+        if char in vowels:
+            result.append(i + 1)
+    return result
