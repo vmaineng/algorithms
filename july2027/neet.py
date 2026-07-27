@@ -54,3 +54,28 @@ def in_array(array1, array2):
                 result.add(curr)
                 break
     return sorted(result)
+
+def dir_reduc(arr):
+    #receive a list of directions
+    #return a list of directions back that is simplified
+    #ex: 
+    
+    #iterate through the words
+    #check the word right next to it to see if it's adjacanet kind
+    #if not, add to result list
+    
+    pairs = {
+        'NORTH': 'SOUTH',
+        'EAST': 'WEST',
+        'SOUTH': 'NORTH',
+        'WEST': 'EAST'
+    }
+    
+    stack = []
+    for direct in arr:
+        if stack and direct == pairs[stack[-1]]:
+            stack.pop()
+        else:
+            stack.append(direct)
+                     
+    return stack
