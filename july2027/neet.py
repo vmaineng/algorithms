@@ -113,3 +113,32 @@ class Solution:
                         l += 1
 
         return res
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return min value found in O(log n) time
+        #ex: [3,4,5,1,2] => 
+        #     l   m    r
+        #iterate through using binary search
+        #keep track of the value seen in mid
+        #is it smaller than mid
+        #if so, udpate mid
+        #then check to the left of it if l < r
+        #then move l if r is smaller
+        #else move r
+        #find the mid
+
+        left = 0
+        right = len(nums) - 1
+
+        while left < right:
+            mid = (left + right) // 2
+        
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+
+        return nums[left]
+        
