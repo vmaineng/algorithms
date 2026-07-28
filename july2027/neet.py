@@ -79,3 +79,37 @@ def dir_reduc(arr):
             stack.append(direct)
                      
     return stack
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        #receive a list of integers
+        #return the values that equal up to target of 0
+        #ex: 
+        #iterate through the 3sums
+        #check if all of them equal 0 
+        #return the values in a list
+
+        nums.sort()
+
+        res = []
+
+        for i, a in enumerate(nums):
+            if i > 0 and a == nums[i - 1]:
+                continue
+
+            l = i + 1
+            r = len(nums) - 1
+            while l < r:
+                threeSum = a + nums[l] + nums[r]
+                if threeSum > 0: 
+                    r -=1
+                elif threeSum < 0:
+                    l += 1
+                else:
+                    res.append([a, nums[l], nums[r]])
+                    l += 1
+                    r-=1
+                    while nums[l] == nums[l-1] and l < r:
+                        l += 1
+
+        return res
