@@ -141,4 +141,40 @@ class Solution:
                 right = mid
 
         return nums[left]
+
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        #receive a binary tree
+        #return the amount of nodes 
+        #ex: 
+
+        #if node from root to the tree < max val
+        #increment count
+
         
+        max_val = float("-inf")
+
+        if not root:
+            return 0
+
+        def dfs(node, max_val):
+            if not node:
+                return 0
+            count = 0
+
+            if node.val >= max_val:
+                count += 1
+            max_val = max(max_val, node.val)
+    
+            left_node = dfs(node.left, max_val)
+            right_node = dfs(node.right, max_val)
+
+            return count + left_node + right_node
+        return dfs(root, float("-inf"))
