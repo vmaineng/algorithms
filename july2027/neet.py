@@ -216,5 +216,17 @@ class Solution:
                 seen.add(num)
             else:
                 return num
-            
+
+
+            class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        #receive a two strings
+        #return the product of the two
+        #ex: 
+
+        #convert strings into integers
+        #multiply and then convert them back into a string
+
+        total = int(num1) * int(num2)
+        return str(total)
         
