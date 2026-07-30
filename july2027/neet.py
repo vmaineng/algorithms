@@ -199,3 +199,22 @@ class Solution:
             return res
         return dfs(root, root.val)
         
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the num that's repeated twice
+        #ex: 
+
+        #could do O(n^2)
+
+        #use an object to track what's number been seen
+
+        seen = set()
+
+        for num in nums:
+            if num not in seen:
+                seen.add(num)
+            else:
+                return num
+            
+        
