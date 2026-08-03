@@ -58,3 +58,7 @@ class Solution:
 
         
         return heap[0] #O(logK) #space:O(K)
+
+    class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums *2
