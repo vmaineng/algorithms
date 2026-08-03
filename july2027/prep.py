@@ -202,3 +202,37 @@ class Solution:
                 return True
             seen.add(nums[right])
         return False
+
+    class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        #receive a list of profits
+        #return the maxprofit found
+        #ex: [1,2,5] => buy at 1, sell at 5, => profit of 4
+        
+        #iterate through each num
+        #buy and sell next day
+        #keep track of maxprofit found
+        #return maxprofit
+
+        # maxprofit = 0
+
+        # for buy in range(len(prices)):
+        #     for sell in range(buy+1, len(prices)):
+            
+        #         profit = prices[sell] - prices[buy]
+        #         maxprofit = max(maxprofit, profit)
+
+        # return maxprofit
+
+        #time:O(n^2) ; space: O(1)
+
+        maxprofit = 0
+        buy = 0
+
+        for sell in range(1, len(prices)):
+            profit = prices[sell] - prices[buy]
+            maxprofit = max(maxprofit, profit)
+            if prices[sell] < prices[buy]:
+                buy = sell
+        return maxprofit
+
