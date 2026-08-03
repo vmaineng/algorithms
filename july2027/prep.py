@@ -129,3 +129,28 @@ class Solution:
                 return False
         
         return all(count == 0 for count in seen.values())
+
+    class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        #receive a list of lowercase chars
+        #return the list back in reverse
+        #ex: ['h','e'] => ['e','h'] 
+
+        #could use the reverse function
+        # return s.reverse()
+
+        #to do it in place - use two pointers
+        #starting from left and right
+        #keep going until it hits middle and swap them
+
+        left = 0
+        right = len(s) - 1
+
+        while left < right:
+            s[left],s[right] = s[right], s[left]
+            left += 1
+            right -=1 
+        return s
