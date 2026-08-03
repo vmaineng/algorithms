@@ -154,3 +154,36 @@ class Solution:
             left += 1
             right -=1 
         return s
+
+    class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #receive a string of upper and lowercase letters and punctation marks
+        #return boolean if it is written backward same as backward
+        #ex: could reverse and check if lowercase version is the same
+        #omit anything that is not chars
+
+        fixedString = s.lower()
+        
+        result = []
+        for char in fixedString:
+            if char.isalnum():
+                result.append(char)
+        updatedStr = ''.join(result)
+        
+        # return updatedStr == updatedStr[::-1]
+
+        #time:O(n); space:O(n)
+
+        print(updatedStr)
+
+        left = 0
+        right = len(updatedStr) - 1
+
+        while left < right:
+            if updatedStr[left] == updatedStr[right]:
+                right -=1 
+                left += 1
+            else:
+                return False
+        return True
+        
