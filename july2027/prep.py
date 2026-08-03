@@ -92,3 +92,40 @@ class Solution:
             else:
                 return True
         return False
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #receive two strings and check if anagrams of each
+        #anagram = same amount of letters as each other
+        #ex: 'helllo', 'joje => False
+        #ex: 'hi', 'ih' => True
+
+        #if not the same length, can return False
+
+        #sort them
+        #check ift he sorted versions == other
+
+        if len(s) != len(t):
+            return False
+
+        # return sorted(s)== sorted(t)
+
+        #time: O(2nlogn) => O(logn)
+        #space: O(2n) => O(n)
+
+        #keep track of chars from one of the words
+        #then iterate through the second word
+        #if the object is empty, we used all words => return True else return False
+
+        seen = { }
+
+        for char in s:
+            seen[char] = seen.get(char, 0) + 1
+
+        for char in t:
+            if char in seen:
+                seen[char] -= 1
+            else:
+                return False
+        
+        return all(count == 0 for count in seen.values())
