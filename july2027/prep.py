@@ -62,3 +62,33 @@ class Solution:
     class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         return nums *2
+
+    class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        #receive an integer of nums
+        #return True if value > 1, else False
+        #ex: [1,3,5] => False
+        #ex: [1, 3,1] => True b/c 1 is duplicate
+
+        #iterate through the array
+        #iterate again through the array at second number
+        #this will be O(n ^2)
+
+        # for i in range(len(nums)):
+        #     for j in range(i + 1, len(nums)):
+             
+        #         if nums[i] == nums[j]:
+        #             return True
+        # return False
+
+        #use a set
+        #iterate through
+        #check if num exists in set, if not add, in, if it does, return False
+
+        seen = set()
+        for num in nums:
+            if num not in seen:
+                seen.add(num)
+            else:
+                return True
+        return False
