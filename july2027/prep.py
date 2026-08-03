@@ -271,3 +271,43 @@ class Solution:
             else:
                 right = mid - 1
         return left
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        #receive two linked lists
+        #return the linked lists in order by values
+        #ex: 
+
+        #start with a dummy node
+        #check which value is smaller from list1 and lsit 2
+        #then add it in
+        #if we finished one list more than the other, then add in the rest of the list afterwards
+
+        dummy = ListNode()
+        head1 = list1
+        head2 = list2
+        current = dummy
+        
+        while head1 and head2:
+            if head1.val < head2.val:
+                current.next = head1
+                head1 = head1.next
+            else:
+                current.next = head2
+                head2 = head2.next
+            
+            current = current.next
+
+        if head1:
+            current.next = head1
+
+        if head2:
+            current.next = head2
+        return dummy.next
