@@ -362,3 +362,33 @@ class Solution:
             if second > first:
                 heapq.heappush(stones, second-first)
         return stones[0]
+
+    class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        #receive a string of letters spaces and chars
+        #return boolean if palindrome, else False
+        #ex: 
+
+        # result = []
+        # for char in s:
+        #     if char.isalpha():
+        #         result.append(char.lower())
+        # modifiedWord = ''.join(result)
+        # return modifiedWord == modifiedWord[::-1]
+
+        left = 0
+        right = len(s) - 1
+
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -=1
+
+            if s[left].lower() != s[right].lower():
+                return False
+            left += 1
+            right -=1
+        return True
+
+
