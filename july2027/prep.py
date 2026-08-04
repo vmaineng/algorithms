@@ -409,3 +409,29 @@ class Solution:
             if prices[sell] < prices[buy]:
                 buy = sell
         return maxProfit
+
+    class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # maxProfit = 0
+        # for buy in range(len(prices)):
+        #     for sell in range(buy +1, len(prices)):
+        #         profit = prices[sell] - prices[buy]
+        #         maxProfit = max(maxProfit, profit)
+        # return maxProfit
+
+        maxProfit = 0
+        buy = 0 
+        sell = 1
+
+        while sell < len(prices):
+            diff = prices[sell]- prices[buy]
+            if diff > 0:
+                maxProfit = max(maxProfit, diff)
+            
+            if prices[buy] > prices[sell]:
+                buy +=1
+                sell +=1
+            else:
+                sell +=1
+        return maxProfit
+
