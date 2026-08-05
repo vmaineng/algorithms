@@ -449,6 +449,38 @@ class Solution:
             heapq.heappop(self.heap)
         return self.heap[0]
 
+
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        #receive a m x n grid
+        #return the count of perimeter
+        #ex: 
+
+        count = 0 
+        visited = set() 
+
+        def dfs(row, col):
+            if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 0:
+                        return 1
+            if (row,col) in visited:
+                return 0
+                    
+            visited.add((row, col))
+
+            perim = dfs(row + 1, col) + dfs(row-1, col) + dfs(row, col + 1) + dfs(row, col -1)
+            return perim
+
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == 1:
+                    return dfs(row, col)
+       
+        return 0
+
+            
+
+
+        
         
 
 
