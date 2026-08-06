@@ -477,7 +477,32 @@ class Solution:
        
         return 0
 
-            
+            class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        #receive a list of integers
+        #return boolean if can pay all customers, else false
+
+        #iterate through the list of bills
+        #check if the amount is 5
+        #if not, check then check if any money is left on stack
+        #, can we use that for chagne, if so, then give to them
+        #iterate through back
+
+        if bills[0] != 5:
+            return False
+
+        stack = []
+
+        for num in bills:
+            if num == 5:
+                stack.append(5)
+            else:
+                if stack and num - stack[-1] > 0:
+                    stack.pop()
+                    stack.append(num)
+                else:
+                    return False
+        return len(stack) == 0
 
 
         
