@@ -547,6 +547,27 @@ class Solution:
                 stones.append(diff)
         return stones[0] if stones else 0
 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #receive a list of integers
+        #return the index position of where two values are equal to each other
+        #ex: 
+
+        # for i in range(len(nums)-1):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+        # return -1
+
+        seen = { }
+
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in seen:
+                return [seen[diff], i]
+            else:
+                seen[nums[i]] = i
+    
         
         
 
