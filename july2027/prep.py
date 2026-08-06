@@ -527,6 +527,26 @@ class Solution:
                     return False
         return True
 
+    class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        #receive a list of integers
+        #return the weight of stone left after crushing them all else return 0
+
+        #find top two max stones
+        #and remove from list
+        #then add back their difference
+
+        
+
+        while len(stones) > 1:
+            stones.sort()
+            first = stones.pop()
+            second = stones.pop()
+            diff = first - second
+            if diff > 0:
+                stones.append(diff)
+        return stones[0] if stones else 0
+
         
         
 
