@@ -715,3 +715,19 @@ class Solution:
                     return dfs(row, col)
 
         return 0
+
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        perim = 0
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == 1:
+                    perim += 4
+
+                    if row > 0 and grid[row-1][col] == 1:
+                        perim -= 2
+                    
+                    if col > 0 and grid[row][col-1] == 1:
+                        perim -=2 
+
+        return perim
