@@ -677,3 +677,19 @@ class Solution:
             if prices[sell] <prices[buy]:
                 buy = sell
         return maxProfit
+
+    class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        #receive a list of integers
+        #return a boolean if two same values are == to each other and close to each other, else false
+        seen = set()
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] in seen:
+                return True
+            seen.add(nums[right])
+
+            if right - left >= k:
+                seen.remove(nums[left])
+                left += 1
+        return False
