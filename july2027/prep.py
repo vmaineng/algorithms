@@ -639,5 +639,31 @@ class KthLargest:
             heapq.heappop(self.minHeap)
         return self.minHeap[0]
 
-        
+        class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        #receive a list of changes
+        #return true if can make change for all of them, else False
+        #ex: [10, 5 , 20] => False, b/c no change for a drink
+
+        five = 0
+        ten = 0
+
+        for bill in bills:
+            if bill == 5:
+                five += 1
+            elif bill == 10:
+                if five == 0:
+                    return False
+                five -= 1
+                ten += 1
+            else: #20
+                if five >= 3:
+                    five -= 3
+                elif five > 0 and ten > 0:
+                    ten -= 1
+                    five -= 1
+                else:
+                    return False
+        return True
+
         
