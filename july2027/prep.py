@@ -667,3 +667,13 @@ class KthLargest:
         return True
 
         
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        buy = 0
+        maxProfit = 0
+        for sell in range(len(prices)):
+            profit = prices[sell] - prices[buy]
+            maxProfit = max(maxProfit, profit)
+            if prices[sell] <prices[buy]:
+                buy = sell
+        return maxProfit
