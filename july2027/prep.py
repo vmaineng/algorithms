@@ -731,3 +731,24 @@ class Solution:
                         perim -=2 
 
         return perim
+
+def neutralise(s1, s2):
+    #receive a string of + and -
+    #return a new string of the output
+    #ex: '--', '--' = '--'
+    
+    #initialize an empty string
+    #keep a pointer on both
+    #check what the signs are
+    
+    result = ''
+    
+    for i in range(len(s1)):
+        if s1[i] == '-' and s2[i] == '-':
+            result += '-'
+        elif s1[i] == '+' and s2[i] == '+':
+            result += '+'
+        else:
+            result += '0'
+    return result
+    
