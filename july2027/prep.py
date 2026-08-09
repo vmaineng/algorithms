@@ -751,4 +751,21 @@ def neutralise(s1, s2):
         else:
             result += '0'
     return result
-    
+
+
+    def eval_object(v):
+    match v["operation"]:
+        case "+":
+            return v["a"] + v["b"]
+        case "-":
+            return v["a"] - v["b"]
+        case "/":
+            return v["a"] / v["b"]
+        case "*":
+            return v["a"] * v["b"]
+        case "%":
+            return v["a"] % v["b"]
+        case "**":
+            return v["a"] ** v["b"]
+        case _:
+            return 1
