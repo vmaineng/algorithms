@@ -793,5 +793,38 @@ def neutralise(s1, s2):
         if n != self.number:
             self.lives -= 1
             return False
-            
+
+
+            def two_highest(arg1):
+#     arg1.sort()
+#     max1 = arg1[-1]
+#     max2 = arg1[-2]
+# #     for i in range(len(arg1)-1, -1, -1):
+# #         print(arg1[i])
+# #         max2 = arg1[i]
+
+#     if max2 == max1:
+#         return max2 = arg1[-3]
+        
+#     return [max1, max2]
+
+    #receive a list of integers
+    #return the biggest and second biggest
+    #ex: [15, 20, 20, 17] => 20 , 17
+    
+    #sort them, grab the inters
+    #if they are the same
+    
+    if not arg1:
+        return []
+    
+    if len(arg1) == 1:
+        return [arg1[0]]
+    
+    arg1.sort()
+    max1 = arg1[-1]
+    max2 = arg1[-2]
+    if max1 == max2:
+        max2 = arg1[-3]
+    return [max1, max2]
         
