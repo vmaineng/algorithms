@@ -827,4 +827,7 @@ def neutralise(s1, s2):
     if max1 == max2:
         max2 = arg1[-3]
     return [max1, max2]
+
+def two_highest(arg1):
+    return sorted(set(arg1), reverse=True)[:2]
         
