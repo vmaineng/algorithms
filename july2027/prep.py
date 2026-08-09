@@ -777,3 +777,21 @@ def neutralise(s1, s2):
         self.health = 100
         self.position = '00'
         self.damage = 5
+
+        class Guesser:
+    def __init__(self, number, lives):
+        self.number = number
+        self.lives = lives
+  
+    def guess(self,n):
+        if self.lives < 1:
+            raise ValueError("OOM")
+            
+        if n == self.number:
+            return True
+        
+        if n != self.number:
+            self.lives -= 1
+            return False
+            
+        
