@@ -934,3 +934,32 @@ class Solution:
             if diff:
                 stones.append(diff)
         return stones[0] if stones else 0
+
+    """
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def canAttendMeetings(self, intervals: List[Interval]) -> bool:
+        #receive a list of tuples
+        #return True if can attend all meetings, else False
+        #ex: 
+
+        #sort by start time for all of them
+        #iterate through the second interval
+        #compared start time of second interval with last's end time
+        #if they conflict, return False
+        #else return True
+
+
+        intervals.sort(lambda=key x:x[0])
+
+        for interval in range(len(intervals)):
+            if interval[i][1] >= interval[i + 1][0]:
+                return False
+        return True
+
