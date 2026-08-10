@@ -916,3 +916,21 @@ class Solution:
                 seen.remove(nums[left])
                 left += 1
         return False
+
+    class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        #receive a list of two integers
+        #return the last weight of remaining stone
+
+        #iterate and pop off the last two biggest
+        #add their weight back on 
+        #resort
+        
+        while len(stones) > 0:
+            stones.sort()
+            first = stones[-1]
+            second = stones[-2]
+            diff = first - second
+            if diff:
+                stones.append(diff)
+        return stones[0] if stones else 0
