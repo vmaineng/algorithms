@@ -830,4 +830,51 @@ def neutralise(s1, s2):
 
 def two_highest(arg1):
     return sorted(set(arg1), reverse=True)[:2]
-        
+
+def merge_arrays(first, second): 
+    #receive two lists of integers
+    #return one list sorted integers
+    #ex: 
+    
+    #intialize an empty result
+    #iterate through the lists at same time
+    #check if the numbers is less, add it from the first one, else add from second
+    #then if same number, continue
+    
+    result = []
+    for idx in range(len(first)):
+        if first[idx] == second[idx]:
+            result.append(first[idx])
+        elif first[idx] < second[idx]:
+            result.append(first[idx])
+            result.append(second[idx])
+        else:
+            result.append(second[idx])
+            result.append(first[idx])
+    return result
+
+
+        def merge_arrays(first, second): 
+    #receive two lists of integers
+    #return one list sorted integers
+    #ex: 
+    
+    #intialize an empty result
+    #iterate through the lists at same time
+    #check if the numbers is less, add it from the first one, else add from second
+    #then if same number, continue
+    
+#     result = []
+#     for idx in range(len(first)):
+#         if first[idx] == second[idx]:
+#             result.append(first[idx])
+#         elif first[idx] < second[idx]:
+#             result.append(first[idx])
+#             result.append(second[idx])
+#         else:
+#             result.append(second[idx])
+#             result.append(first[idx])
+#     return result
+
+    result = first + second
+    return sorted(set(result))
