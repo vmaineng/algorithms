@@ -993,3 +993,41 @@ class Solution:
             left += 1
             right -=1 
         return True
+
+    class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        def build_graph(edges):
+            graph = {}
+
+            for a,b in edges:
+                if a not in graph:
+                    graph[a] = []
+
+                if b not in graph:
+                    graph[b] = []
+
+                graph[a].append(b)
+                graph[b].append(a)
+
+            return graph
+
+        def explore(graph, node, visited):
+            if node in visited:
+                return False
+            visited.add(node)
+            for neighbor in graph[node]:
+                explore(graph, neighbor, visited)
+            return True
+
+        graph = build_graph(edges)
+        visited = set()
+
+        count = 0
+
+        for node in graph:
+            if explore(graph, node, visited) == True:
+                count += 1
+        return count
+
+        
+       
