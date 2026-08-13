@@ -1086,3 +1086,28 @@ class Solution:
             last -=1
             
 
+def find(roots, node):
+  if roots[node] == node:
+    return node
+  return find(roots, roots[node])
+
+
+def union(roots, node_a, node_b):
+  root_a = find(roots, node_a)
+  root_b = find(roots, node_b)
+
+  if root_a == root_b:
+    return 
+  roots[root_b] = root_a
+
+def count_components(n, edges):
+  roots = [i for i in range(0, n)]
+
+  for edge in edges:
+    node_a, node_b = edge
+    union(roots, node_a, node_b)
+  count = 0
+  for i in range(0, n):
+    if roots[i] == i:
+      count += 1
+  return count
