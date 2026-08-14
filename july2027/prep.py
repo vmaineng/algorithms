@@ -1128,4 +1128,38 @@ class Solution:
             if a:
                 stack.append(a)
         return stack
-        
+
+
+        def find(roots, node):
+  if roots[node] == node:
+    return node
+  return find(roots, roots[node])
+
+def union(roots, a, b):
+  root_a = find(roots, a)
+  root_b = find(roots, b)
+  if root_a == root_b:
+    return node
+
+  roots[root_b] = root_a
+
+def count_components(n, edges):
+  #receive nodes, and list of edges
+  #return count of components 
+  #ex: 
+
+  #create a roots list
+  #iterate through the list
+  #find their parent nodes
+  #update it accordingly in the roots list
+
+  roots = [i for i in range(0, n)]
+
+  for a,b in edges:
+    union(roots, a, b)
+
+  count = 0
+  for i in range(len(roots)):
+    if roots[i] == i:
+      count += 1
+  return count
