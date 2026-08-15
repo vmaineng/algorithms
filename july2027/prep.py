@@ -1174,3 +1174,19 @@ class Solution:
                     return word[:i]
         return strs[0]
                 
+def is_opposite(s1,s2):
+    #receive two strings
+    #return a boolean if they are the opposite of each other, else, return False
+    #ex: 'HI', 'hi' => True; 'hi', 'HI' => True
+    
+    if len(s1) == 0 and len(s2) == 0:
+        return False
+    
+    if len(s1) != len(s2):
+        return False
+    
+    for a,b in zip(s1,s2):
+        if a.isupper() == b.isupper():
+            return False
+        
+    return True
