@@ -1210,3 +1210,36 @@ def alias_gen(f_name: str, l_name: str) -> str:
     first_name = FIRST_NAME[f_name[0].upper()]
     last_name = SURNAME[l_name[0].upper()]
     return first_name +' ' + last_name
+
+class Solution:
+    def integerBreak(self, n: int) -> int:
+        #receive an integer
+        #return the max product you get (multiply)
+        #ex: 4
+        #output divided by something to get an equal amount of numbers
+        #12 / 4 => 3  ( 3 * 3 * 3 * 3) => 81
+        # 12/. 2 => 6  (6 +6) => 36
+        # 12/ 6 => 2 (2 + 2 + 2 + 2+ 2 + 2 ) => 48 
+        #12 /12 => (1 + 1 + 1)
+
+        #output % each individual even numbers, 
+        #we are going to check to see the output * divisior >= max
+        #if so, update our max
+        
+        max_value= float("-inf")
+
+        for num in range(2, n + 1): # 2, 12, ; skip by 2; 3, 
+            if n % num == 0: #12 / 2 == 0; 12 /3 == 0; 
+                divisor = n / num # 12 / 2=> 6 ; 12 / 3 => 4
+                # value = divisor * num # 6 * 2 => 12;  4 * 3
+                total = 1
+                while divisor > 0: # 3
+                    print(total)
+                    total *= num # 3 * 1 => 3, 3 * 3 
+                    divisor -= 1 # 3
+                max_value = max(total, max_value)
+            else:
+                continue
+
+        return max_value
+
