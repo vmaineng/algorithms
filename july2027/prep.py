@@ -1190,3 +1190,23 @@ def is_opposite(s1,s2):
             return False
         
     return True
+
+from preloaded import FIRST_NAME, SURNAME
+
+def alias_gen(f_name: str, l_name: str) -> str:
+    #receive a string for first name and last name where first character is capitalized
+    #return a first name and last name nicknamed
+    #ex: 'Mary', 'Berry' => 'Malware', 'Beta'
+    
+    #if the first character if each name is not a letter, then return 'Your name must start with a letter from A - Z.'
+    #if the first name is not capitalize, uppercase the first character
+    #match the charcter from first name first char, return that as first nick name
+    #do the same for surname as well
+    #joined the two names together 
+    
+    if not f_name[0].isalpha() or not l_name[0].isalpha():
+        return 'Your name must start with a letter from A - Z.'
+    
+    first_name = FIRST_NAME[f_name[0].upper()]
+    last_name = SURNAME[l_name[0].upper()]
+    return first_name +' ' + last_name
