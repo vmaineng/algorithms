@@ -1260,3 +1260,15 @@ class Solution:
             if diff:
                 stones.append(diff)
         return stones[0] if stones else 0
+
+def cannons_ready(gunners):
+
+    nay_count =0
+    for name in gunners:
+        if gunners[name] == 'nay':
+            nay_count += 1
+  
+            
+    return 'Shiver me timbers!' if nay_count >= 1 else 'Fire!'
+
+return 'Shiver me timbers' if 'nay' in gunners.values() else 'Fire!'
