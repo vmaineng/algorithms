@@ -1243,3 +1243,20 @@ class Solution:
 
         return max_value
 
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        #receive a list of stones
+        #return the last remaining stone
+        #else 0
+
+        #iterate through and knock off the two highest ones
+        #resort it
+
+        while len(stones) > 1:
+            stones.sort()
+            diff = stones.pop() - stones.pop()
+            # first = stones.pop()
+            # second = stones.pop()
+            if diff:
+                stones.append(diff)
+        return stones[0] if stones else 0
