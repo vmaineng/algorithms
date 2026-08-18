@@ -1301,4 +1301,21 @@ class Solution:
                 nums[idx] = i
                 idx += 1
             
+
+        from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return top k elements
+
+        #keep track of count
+        #sort by values 
+        #return top k
+
+        count = Counter(nums)
+
+        return [num for num, freq in count.most_common(k)]
+
+
         
