@@ -1272,3 +1272,33 @@ def cannons_ready(gunners):
     return 'Shiver me timbers!' if nay_count >= 1 else 'Fire!'
 
 return 'Shiver me timbers' if 'nay' in gunners.values() else 'Fire!'
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        # time: O (Nlogn) nums.sort()
+
+        #start with two pointers
+        #left and right
+        #compare the value
+
+        #or insertion sort
+        #start with first value
+        #check with next value
+        #iterate through entire list until it's sorted
+
+
+        count = [0] * 3
+        for num in nums:
+            count[num] += 1
+
+        idx = 0
+        for i in range(3):
+            while count[i]:
+                count[i] -= 1
+                nums[idx] = i
+                idx += 1
+            
+        
