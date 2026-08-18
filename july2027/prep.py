@@ -1318,4 +1318,33 @@ class Solution:
         return [num for num, freq in count.most_common(k)]
 
 
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers
+        #return top k elements
+
+        #keep track of count
+        #sort by values 
+        #return top k
+
+        count = Counter(nums)
+        freq = [[] for i in range(len(nums) + 1)]
+
+        for num, cnt in count.items():
+            freq[cnt].append(num)
+
+        res = []
+        for i in range(len(freq)-1, 0, -1):
+            for num in freq[i]:
+                res.append(num)
+                if len(res) == k:
+                    return res
+
+
+
+
+
+
         
