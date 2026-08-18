@@ -1343,7 +1343,34 @@ class Solution:
                     return res
 
 
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        #receive a list of integers
+        #return the max profit gained by buying and selling multiple times
+        #ex: [7,1,5,3,6,4]
+        #.    b s
+        #.      b s
 
+        #start off of with first item
+        #iterate through and check if the next day's price is than current price
+        #buy on low price, sell on high, check the profit
+        #add to maxprofit seen
+
+        maxprofit = 0
+
+        buy = 0
+
+        for sell in range(len(prices)):
+            if prices[buy] < prices[sell]:
+                print(prices[sell], prices[buy])
+                profit = prices[sell] - prices[buy]
+                maxprofit += profit
+                buy += 1
+            else:
+                buy = sell
+        return maxprofit
+
+        
 
 
 
