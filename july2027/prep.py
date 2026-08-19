@@ -1393,6 +1393,33 @@ class Solution:
                 result.append(key)
         return result
 
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+        #receive a list of integers
+        #return the max amount of water a container can store
+        #ex: 
+
+        #iterate through starting with o(n^2) operation to test all operations out to find max
+        #else do it with sliding window
+        #start from left and right
+
+
+        left = 0
+        right = len(heights) - 1
+        maxHeight = 0
+
+        while left <= right:
+            minHeight = min(heights[left], heights[right])
+            height = minHeight * (right -left)
+            maxHeight = max(maxHeight, height)
+
+            if heights[left] < heights[right]:
+                left += 1
+            else:
+                right -=1
+
+        return maxHeight
+
 
         
 
