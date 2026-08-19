@@ -1370,6 +1370,30 @@ class Solution:
                 buy = sell
         return maxprofit
 
+        from collections import Counter
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        #receive a list of nums
+        #return the nums that exceeds more than len(n) / 3
+
+        #iterate through the list of integers
+        #keep count of it
+        #check if the amount they have >= len(n) / 3
+        #if so add in a the result list
+
+
+        result = []
+
+        count = Counter(nums)
+        check = len(nums)/ 3
+
+        for key, val in count.items():
+            if val > check:
+                result.append(key)
+        return result
+
+
         
 
 
