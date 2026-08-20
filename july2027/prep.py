@@ -1446,6 +1446,18 @@ def has_path(graph, src, dst):
   return False
         
 
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        #receive a list of integers
+        #return max profit seen from selling and buying continuously
+        #ex:
+
+        maxProfit = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i-1]:
+                maxProfit += prices[i] -prices[i - 1]
+        return maxProfit
+        
 
 
         
