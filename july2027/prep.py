@@ -1492,6 +1492,31 @@ class Solution:
                 
 
 
+        from collections import Counter
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        # time: O (Nlogn) nums.sort()
+        #iterate through the array
+        #keep count
+        #start placing the values at the specific spots at 
+
+        count = Counter(nums)
+
+        idx = 0
+
+        for i in range(3):
+            while count[i]:
+                count[i] -= 1
+                nums[idx] = i
+                idx += 1
+
+
+
+        
         
 
         
