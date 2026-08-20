@@ -1515,7 +1515,42 @@ class Solution:
                 idx += 1
 
 
+def undirected_path(edges, node_A, node_B):
+  graph = build_edges(edges)
+  visited = set()
 
+  return has_path(graph, node_A, node_B,visited)
+
+
+
+def build_edges(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+  return graph
+
+def has_path(graph, node_A, node_B, visited):
+
+  if node_A == node_B:
+    return True
+    
+  if node_A in visited:
+    return False
+
+  visited.add(node_A)
+
+
+  for neighbor in graph[node_A]:
+    if has_path(graph, neighbor, node_B, visited):
+      return True
+  return False
         
         
 
