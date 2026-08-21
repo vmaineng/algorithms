@@ -1552,6 +1552,37 @@ def has_path(graph, node_A, node_B, visited):
       return True
   return False
         
-        
+
+        def connected_components_count(graph):
+  #receive a graph
+  #return connected connected_components_count
+  #ex: 
+
+  #iterate through the edges
+  #track visited
+  #if node in visitied, return False
+
+  count = 0
+  visited = set()
+
+  for node in graph:
+    if has_path(graph, node, visited) == True:
+      count += 1
+  
+  return count
+
+def has_path(graph, node, visited):
+  if node in visited:
+    return False
+
+  visited.add(node)
+
+  for neighbor in graph[node]:
+    has_path(graph, neighbor, visited)
+      
+  return True
+
+  
+    
 
         
