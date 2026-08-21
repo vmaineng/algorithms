@@ -43,5 +43,21 @@ def countXO(str):
 
     return x == o #1 == 2 => False
 
-print(countXO('AxOdXo')) 
-print(countXO('xOo'))
+# print(countXO('AxOdXo')) 
+# print(countXO('xOo'))
+
+
+def isItNext(string):
+    #receive a string of chars
+    #return True if they are not next to it, else False
+    #ex: 'abc'=> False
+
+    i = 0
+
+    for char in range(1, len(string)):
+        if ord(string[char]) == ord(string[i]) + 1:
+            return True
+    return False
+
+# print(isItNext('abc'))
+
