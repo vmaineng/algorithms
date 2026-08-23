@@ -1608,6 +1608,48 @@ def explore(graph, node, visited):
     size += explore(graph, neighbor, visited)
 
   return size  
+
+from collections import deque
+
+def shortest_path(edges, node_A, node_B):
+  #iterate through edges => create a graph
+  #if we iterate through, and the current node == Node_b, we found iterate
+
+
+  graph = build_graph(edges)
+
+  queue = deque([(node_A, 0)])
+  visited = set([node_A])
+
+  while queue:
+    current, dst = queue.popleft()
+
+    if current == node_B:
+      return dst
+
+    for neighbor in graph[current]:
+      if neighbor not in visited:
+        visited.add(neighbor)
+        queue.append((neighbor, dst+ 1))
+
+  return -1
+
+def build_graph(edges):
+  graph = {}
+
+  for a,b in edges:
+    if a not in graph:
+      graph[a] = []
+
+    if b not in graph:
+      graph[b] = []
+
+    graph[a].append(b)
+    graph[b].append(a)
+
+  return graph
+
+  
     
 
         
