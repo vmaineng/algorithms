@@ -1648,7 +1648,25 @@ def build_graph(edges):
     graph[b].append(a)
 
   return graph
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
 
+        count = {}
+        for num in nums:
+            count[num] = count.get(num, 0)+ 1
+
+        idx = 0
+
+        for i in range(3):
+            while count[i]:
+                count[i] -=1
+                nums[idx] = i
+                idx += 1
+
+        
   
     
 
