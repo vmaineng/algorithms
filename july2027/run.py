@@ -55,9 +55,45 @@ def isItNext(string):
     i = 0
 
     for char in range(1, len(string)):
-        if ord(string[char]) == ord(string[i]) + 1:
+        if ord(string[char]) == ord(string[i])+ 1:
             return True
     return False
 
-# print(isItNext('abc'))
+print(isItNext('abc'))
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        #receive the root of a binary tree
+        #return boolean where true if balanced by no more than 1,e lse false
+
+        #iterate through left trees, keep track of it
+        #iterate through right trees, keep track of nodes
+        #check if it's not off by 1, return true, else return False
+
+        if not root:
+            return True
+
+        leftHeight = self.getHeight(root.left)
+        rightHeight = self.getHeight(root.right)
+
+        if abs(leftHeight - rightHeight) > 1:
+            return False
+
+        return self.isBalanced(root.left) and self.isBalanced(root.right)
+
+
+    def getHeight(self, node):
+        if not node:
+            return 0
+
+        leftHeight = self.getHeight(node.left)
+        rightHeight = self.getHeight(node.right)
+
+        return 1 + max(leftHeight, rightHeight)
