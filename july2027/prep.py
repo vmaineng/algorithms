@@ -1742,6 +1742,53 @@ class Solution:
 
         return result_p == result_q
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+from collections import deque
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        #receive two trees 
+        #return if same structure and amount of nodes
+        #ex:
+
+        #do two bfs and check both of their outputs are equal to each other
+
+        queue_p = deque([p])
+        queue_q = deque([q])
+
+        result_p = []
+        while queue_p and queue_p:
+            node_p = queue_p.popleft()
+            node_q = queue_q.popleft()
+
+            if not node_p and not node_q:
+                continue
+
+            if not node_q or not node_p:
+                return False
+            
+            if node_q.val != node_p.val:
+                return False
+            
+            queue_p.append(node_p.left)
+            queue_p.append(node_p.right)
+            queue_q.append(node_p.left)
+            queue_q.append(node_q.right)
+
+        return True
+            
+
+
+            
+
+
+
 
             
 
