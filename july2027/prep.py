@@ -1697,4 +1697,52 @@ class Solution:
         return 1 + max(leftHeight, rightHeight)
     
 
-        
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+from collections import deque
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        #receive two trees 
+        #return if same structure and amount of nodes
+        #ex:
+
+        #do two bfs and check both of their outputs are equal to each other
+
+        queue_p = deque([p])
+        queue_q = deque([q])
+
+        result_p = []
+        while queue_p:
+            current = queue_p.popleft()
+            result_p.append(current.val)
+
+            if current.left:
+                queue_p.append(current.left)
+
+            if current.right:
+                queue_p.append(current.right)
+
+        result_q = []
+        while queue_q:
+            current = queue_q.popleft()
+            result_q.append(current.val)
+
+            if current.left:
+                queue_q.append(current.left)
+
+            if current.right:
+                queue_q.append(current.right)
+
+
+        return result_p == result_q
+
+
+            
+
+
