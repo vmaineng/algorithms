@@ -144,3 +144,6 @@ WHERE price < 50000
 
 SELECT brand, model,color, price FROM cars
 WHERE color != 'yellow'
+
+SELECT brand, model,color, year FROM cars
+WHERE color like '%green%'
