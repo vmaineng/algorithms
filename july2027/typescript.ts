@@ -147,3 +147,6 @@ WHERE color != 'yellow'
 
 SELECT brand, model,color, year FROM cars
 WHERE color like '%green%'
+
+SELECT brand, model,color, year FROM cars
+WHERE model like 'DB_'
