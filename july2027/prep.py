@@ -1823,6 +1823,22 @@ class Solution:
         return False
 
 
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.left = None
+#     self.right = None
+
+def how_high(root):
+  
+  if not root:
+    return -1 
+
+  leftHeight = how_high(root.left)
+  rightHeight = how_high(root.right)
+
+  return 1 + max(leftHeight, rightHeight)
+
 
             
 
