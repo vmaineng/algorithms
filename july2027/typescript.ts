@@ -159,3 +159,8 @@ WHERE condition >+ 3 and year < 1970 and price <= 100000
 
 select brand, model, year, price from cars 
 where year between 1980 and 1989
+
+select brand, model, year, price from cars
+where price between 20000 and 60000 
+and condition between 1 and 3 
+and color like '%red%'
