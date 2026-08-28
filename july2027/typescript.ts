@@ -70,7 +70,13 @@ function updateUser(id: number, updates: any) {
     // Use Object.assign to update the found user in place. 
     // Check MDN if you need help with using Object.assign
 
-    users.find(user=> user.id === id)
+    const foundUser = users.find(user=> user.id === id)
+
+    if (!foundUser) { 
+        console.error("user not found")
+        return
+    }
+    Object.assign(foundUser, updates)
 }
 
 // Example updates:
