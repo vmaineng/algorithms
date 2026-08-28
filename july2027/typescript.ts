@@ -132,4 +132,15 @@ console.log(users)
 
 select BroadcastChannel, model, color price from cars WHERE color = 'black'
 
-SELECT brand, model, condition, price FROM cars WHERE condition = 0
+SELECT brand, model, condition, price FROM cars 
+WHERE condition = 0
+
+SELECT brand, model, condition, price FROM cars
+WHERE condition > 3
+
+SELECT brand, model, condition, price FROM cars
+WHERE price < 50000
+
+
+SELECT brand, model,color, price FROM cars
+WHERE color != 'yellow'
