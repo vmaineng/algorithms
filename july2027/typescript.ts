@@ -129,3 +129,7 @@ function addNewUser(newUser: any): User {
 addNewUser({ username: "joe_schmoe", role: "member" })
 
 console.log(users)
+
+select BroadcastChannel, model, color price from cars WHERE color = 'black'
+
+SELECT brand, model, condition, price FROM cars WHERE condition = 0
