@@ -150,3 +150,6 @@ WHERE color like '%green%'
 
 SELECT brand, model,color, year FROM cars
 WHERE model like 'DB_'
+
+SELECT brand, model,color, year FROM cars
+WHERE color not like '%green%' and model like 'DB_'
