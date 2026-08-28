@@ -153,3 +153,9 @@ WHERE model like 'DB_'
 
 SELECT brand, model,color, year FROM cars
 WHERE color not like '%green%' and model like 'DB_'
+
+SELECT brand, model,condition, price, year FROM cars
+WHERE condition >+ 3 and year < 1970 and price <= 100000
+
+select brand, model, year, price from cars 
+where year between 1980 and 1989
