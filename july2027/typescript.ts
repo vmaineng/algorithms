@@ -185,3 +185,6 @@ select brand, model, price, sold from cars
 where (brand not in ('Ford', 'Triumph', 'Chevrolet')
 or price < 50000 )
 and sold IS false
+
+select brand, model,color from cars
+where color is '%red%' and brand not like 'Ferrari' and sold is False
