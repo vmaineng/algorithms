@@ -164,3 +164,24 @@ select brand, model, year, price from cars
 where price between 20000 and 60000 
 and condition between 1 and 3 
 and color like '%red%'
+
+select brand, model, condition, price from cars
+where price < 250000 or brand = 'porsche' and condition > 3
+
+select brand, color, year, price from cars
+where (color like '%red%' or year between 1960 and 1969)
+and sold IS false
+
+select brand, color, price, sold from cars
+where brand in ('porsche', 'ferrari', 'lamborghini')
+and sold IS false
+
+select brand, model, condition, sold from cars
+where year in (1961, 1963, 1965, 1967, 1969)
+and condition >= 3
+and sold IS false
+
+select brand, model, price, sold from cars
+where (brand not in ('Ford', 'Triumph', 'Chevrolet')
+or price < 50000 )
+and sold IS false
