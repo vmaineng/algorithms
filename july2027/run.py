@@ -150,5 +150,35 @@ class Solution:
 
         #time:O(n * m)
             
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        #receive the root node
+        #return longest path
+        #ex:
+
+        #get the height of the tree
+
+
+        self.diameter = 0
+        self.getHeight(root)
+        return self.diameter
+        
+
+    def getHeight(self, node):
+        if not node:
+            return 0 
+
+        leftHeight = self.getHeight(node.left)
+        rightHeight = self.getHeight(node.right)
+
+        self.diameter = max(self.diameter, leftHeight+ rightHeight)
+
+        return 1 + max(leftHeight, rightHeight)
         
