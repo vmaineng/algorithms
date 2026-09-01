@@ -131,4 +131,24 @@ class Solution:
             result.append(current_level)
         return result
 
+    class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        #receive a a list of strings
+        #return the most common prefix
+        #ex: 
+
+        #start out with the first word in the list
+        #iterate through the rest of the strings in the list
+        #if they are not the same, break and return what you have up to
+        #else, return the netire word b/c they are the same prefix
+
+        for i in range(len(strs[0])):
+            for s in strs:
+                if i == len(s) or s[i] != strs[0][i]:
+                    return s[:i]
+        return strs[0]
+
+        #time:O(n * m)
+            
+
         
