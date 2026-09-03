@@ -244,4 +244,27 @@ class Solution:
             return -1
         return 1 + max(leftHeight, rightHeight)
 
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        #receive the root node of a tree
+        #return boolean if same tree, else False
+        #ex: 
+
+        #iterate through left and right
+        #if they aren't the same, return False immediately,e lse return True after traversing
+
+        if not p and not q:
+            return True
+        
+        if p and q and p.val == q.val:
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        else:
+            return False
         
