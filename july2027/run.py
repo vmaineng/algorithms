@@ -267,4 +267,56 @@ class Solution:
             return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
         else:
             return False
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        #receive the root node
+        #return True if valid bst else false
+        #ex: 
+
+        if not root:
+            return True
+
+        if root.left < root.val < root.right:
+            return True
+        else:
+            return False
+
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        #receive the root of a binary tree
+        #return the length of any two nodes 
+        #ex:
+
+        #if root is empty, return 0 b/c no path
+        #else get the height
+        #look at the left height vs right height to get diameter
+        self.diameter = 0
+        self.getHeight(root)
+        return self.diameter
+
+
+    def getHeight(self, node):
+        if not node:
+            return 0
+        
+        leftHeight = self.getHeight(node.left)
+        rightHeight = self.getHeight(node.right)
+
+        self.diameter = max(self.diameter, leftHeight + rightHeight)
+
+        return 1 + max(leftHeight, rightHeight)
         
