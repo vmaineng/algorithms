@@ -351,3 +351,17 @@ class Solution:
             return self.sameTree(root.left, subRoot.left) and self.sameTree(root.right, subRoot.right)
         else:
             return False
+
+        def grader(score):
+    match score:
+        case x if x >= 0.9 and x <= 1:
+            return 'A'
+        case x if x >= 0.8 and x < 0.9:
+            return 'B'
+        case x if x >= 0.7 and x < 0.8:
+            return 'C'
+        case x if x >= 0.6 and x < 0.7:
+            return 'D'
+        case _:
+            return 'F'
+            
