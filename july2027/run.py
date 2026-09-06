@@ -422,3 +422,27 @@ def alphabet_war(fight):
         return 'Right side wins!'
     else:
         return 'Let'+ "'" + 's fight again!'
+
+    def wave(people):
+    #receive a word
+    #return the word back where it creates a wave of capitalize letters
+    #ex:
+    
+    #intiialize a result
+    #enter in the word into the list
+    
+    result = []
+    for i in range(len(people)):
+        if people[i] == ' ':
+            continue
+        new_word = ''
+        for j in range(len(people)):
+            
+            if i == j:
+                uppercase = people[j].upper()
+                new_word += uppercase
+            else:
+                new_word += people[j]
+            
+        result.append(new_word)
+    return result
