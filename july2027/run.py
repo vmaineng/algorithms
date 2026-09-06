@@ -382,3 +382,43 @@ def adjacent_element_product(array):
         max_product = max(max_product, current_product)
         i += 1
     return max_product
+def alphabet_war(fight):
+    #receive a lowercase strs
+    #return which side won,or else lets fight again
+    #ex: 
+    
+    #create an obj
+    #second create a right obj
+    
+    #compare scores
+    
+    left_obj = { 
+    "w": 4,
+"p": 3,
+ "b" : 2,
+ "s" : 1
+    }
+    right_obj = { 
+    "m": 4,
+"q": 3,
+ "d" : 2,
+ "z" : 1
+    }
+    
+    left_score = 0
+    right_score = 0
+    
+    for char in fight:
+        if char in left_obj:
+            left_score += left_obj[char]
+        elif char in right_obj:
+            right_score += right_obj[char]
+        else: 
+            continue
+    
+    if left_score > right_score:
+        return "Left side wins!"
+    elif right_score > left_score:
+        return 'Right side wins!'
+    else:
+        return 'Let'+ "'" + 's fight again!'
