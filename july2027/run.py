@@ -371,3 +371,14 @@ class Solution:
         total *= number
         p -=1
     return total
+
+def adjacent_element_product(array):
+    max_product = float('-inf')
+    
+    i = 0
+    
+    for j in range(1, len(array)):
+        current_product = array[i] * array[j]
+        max_product = max(max_product, current_product)
+        i += 1
+    return max_product
