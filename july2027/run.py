@@ -364,4 +364,10 @@ class Solution:
             return 'D'
         case _:
             return 'F'
-            
+
+            def number_to_pwr(number, p): 
+    total = 1
+    while p > 0:
+        total *= number
+        p -=1
+    return total
