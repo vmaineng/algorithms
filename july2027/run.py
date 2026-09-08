@@ -446,3 +446,18 @@ def alphabet_war(fight):
             
         result.append(new_word)
     return result
+
+def wave(people):
+    result = []
+    for i in range(len(people)):
+        if people[i] == ' ':
+            continue
+        new_word = ''
+        for j in range(len(people)):
+            if i == j:
+                new_word += people[j].upper()
+            else:
+                new_word += people[j]
+        result.append(new_word)
+    return result
+        
