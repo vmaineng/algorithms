@@ -460,4 +460,38 @@ def wave(people):
                 new_word += people[j]
         result.append(new_word)
     return result
+
+
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        #receive the root node
+        #return the the right side of bst
+        #ex:
+
+        #if not right, return left
+
+        result = []
+
+        self.dfs(root, 0, result)
+        return result
+    
+    def dfs(self, node, depth, result):
+        if not node:
+            return
+
+        if len(result) == depth:
+            result.append(node.val)
+        
+        self.dfs(node.right, depth + 1, result)
+        self.dfs(node.left, depth + 1, result)
+
+        
+
         
