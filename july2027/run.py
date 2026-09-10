@@ -515,5 +515,34 @@ class Solution:
 
         return max_sum
 
+    class Solution:
+    def maxSubarraySumCircular(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the max sum seen
+        #ex: 
+
+        #intitialize a max sum total
+        #iterate through the nums list
+        #track current total
+        #when to the end of the list, can loop back around
+        #
+
+        globMax = nums[0]
+        globMin = nums[0]
+        curMax = 0
+        curMin = 0
+        total = 0
+
+        for num in nums:
+            curMax = max(curMax + num, num)
+            curMin = min(curMin + num, num)
+
+            globMin = min(globMin, curMin)
+            globMax= max(globMax, curMax)
+            total += num
+
+        return max(globMax, total - globMin) if globMax > 0 else globMax
+
+
 
         
