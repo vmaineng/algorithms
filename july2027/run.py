@@ -492,6 +492,28 @@ class Solution:
         self.dfs(node.right, depth + 1, result)
         self.dfs(node.left, depth + 1, result)
 
+        class Solution:
+    def maxSubarraySumCircular(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the max sum seen
+        #ex: 
+
+        #intitialize a max sum total
+        #iterate through the nums list
+        #track current total
+        #when to the end of the list, can loop back around
+        #
+
+        max_sum = float('-inf')
         
+
+        for i in range(len(nums)):
+            current_sum = 0
+            for j in range(i, i + len(nums)):
+                current_sum += nums[j % len(nums)]
+                max_sum = max(current_sum, max_sum)
+
+        return max_sum
+
 
         
