@@ -1858,6 +1858,89 @@ class Solution:
         return root
 
 
+def first(seq, n= 1): 
+    #receive a list of lowercase letters, up to n amount
+    #return a list back of  n items
+    #ex: ['a', 'b', 'c', 'd', 'e'],5  => ['a', 'b', 'c', 'd', 'e']
+    #ex: ['a', 'b', 'c', 'd', 'e'], 1 => ['a']
+    
+    #iterate through each individual item
+    #adding to the list from seq up to n times doing a while loop
+    
+    if n == 0:
+        return []
+    
+    return seq[:n]
+    
+#     result = []
+    
+#     for item in seq: # ['a', 'b', 'c', 'd', 'e']
+#         if n != 0:
+#             result.append(item) # ['a']
+#             n -= 1 # 0 
+#         else:
+#             break
+#     return result
+        
             
+
+            def mygcd(x, y):
+    #receive two integers greater than 1 that are positive
+    #return the smallest number that can be divided by both
+    #ex: (mygcd(30, 12),  6)
+    #if numbers are even, divide by two
+    # 6 * 5 = 30,
+    #6 * 2 =12
+    
+    #iterating from 1 up to the smallest (x, y)
+    #try each individual number and divide them by x
+    #if both x and y can be divided by this integer, return this integer
+    #1 ,2, 3,4, 5, 6, 7, 8 , 9 , 10, 11, 12
+    #T, T, T, F, F, T, F, F F.    F, F , F
+    #30, 15,10     5
+    #12, 6, 4      2
+    
+    if x == 0 and y == 0:
+        return 0
+    
+    max_num = 0
+    
+#     for i in range(1, min(x,y) + 1): #1, 12
+#         current_num = 1
+#         if x % i == 0 and y % i == 0:
+#             current_num = i
+#             max_num = max(max_num, current_num)
+#         else:
+#             continue
+
+    x_result = []
+
+    for i in range(1, x + 1):
+        if x % i == 0:
+            x_result.append(i)
+        else:
+            continue
+            
+    y_result = []
+    
+    for i in range(1, y + 1):
+        if y % i == 0:
+            y_result.append(i)
+        else:
+            continue
+            
+    main_set =set(x_result) 
+    
+    common = []
+    
+    for num in y_result:
+#         print(main_set)
+        if num in main_set:
+            common.append(num) 
+            print(main_set)
+    
+    return max(common)
+#time: O(min(m, n ))
+    
 
 
