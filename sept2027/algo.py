@@ -118,3 +118,32 @@ class Solution:
 
             # second_big = max(stones)
             # stones.pop(second_big)
+
+
+            """
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def canAttendMeetings(self, intervals: List[Interval]) -> bool:
+        #receive a list of intervals
+        #return a boolean if can attend all meetings, else False
+        #ex: 
+
+        #sort by start time
+        #check through each interval
+        #if end time >= start time, return False
+        #after checking all intervals, can return True
+
+        intervals.sort(key=lambda x:x.start)
+
+        for i in range(1, len(intervals)):
+            current = intervals[i]
+            previous = intervals[i - 1]
+            if previous.end > current.start:
+                return False
+        return True
