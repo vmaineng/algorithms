@@ -87,4 +87,34 @@ class Solution:
                 if i >= len(word) or word[i] != strs[0][i]:
                     return word[:i]
         return strs[0]
-        
+
+
+        class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        #receive a list of rock sizes
+        #return an integer of remaining weight or else none
+        #ex: 
+
+        #iterate through the stones to find top two max every time
+        #pop them off
+        #figure out if they are == or <  or > 
+        #return on list if they < or > 
+
+        while len(stones) > 1:
+            stones.sort()
+            first_big = stones.pop()
+            second_big = stones.pop()
+
+            if second_big < first_big:
+                new_big = first_big - second_big
+                stones.append(new_big)
+
+        return stones[0] if len(stones) > 0 else 0
+
+
+          # first_big = max(stones)
+            # print(first_big)
+            # stones.pop(first_big)
+
+            # second_big = max(stones)
+            # stones.pop(second_big)
