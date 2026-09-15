@@ -73,3 +73,18 @@ def HQ9(code):
 #             left += 1
 #             right -=1 
 #     return s
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        #iterate through the rest of thew ord
+        #then iterate through the current word
+        #check if values are same
+        #else, return what you currently have at the moment
+
+
+        for i in range(len(strs[0])):
+            for word in strs:
+                if i >= len(word) or word[i] != strs[0][i]:
+                    return word[:i]
+        return strs[0]
+        
