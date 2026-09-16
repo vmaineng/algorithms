@@ -147,3 +147,32 @@ class Solution:
             if previous.end > current.start:
                 return False
         return True
+
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        
+        visited = set()
+
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == 1:
+                    return self.dfs(grid, row, col, visited)
+        
+
+    def dfs(self, grid, row, col, visited):
+        if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == 0:
+            return 1
+        
+        if (row, col) in visited:
+            return 0
+        
+        visited.add((row, col))
+
+        return (
+            self.dfs(grid, row + 1, col, visited) + 
+            self.dfs(grid, row -1, col, visited) +
+            self.dfs(grid, row, col + 1, visited) +
+            self.dfs(grid, row, col - 1, visited)
+        )
+
+        
