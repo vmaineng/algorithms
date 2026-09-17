@@ -209,3 +209,38 @@ class Solution:
                 
  def temple_strings(obj, feature): 
     return f"{obj} are {feature}"
+def min_sum(arr):
+    #receive a list of integers
+    #return the smallest sum from adding two product integers
+    
+    #ex: [5,4,2,3]), 22
+    #5 * 4 = 20
+    #4 * 2 = 8
+    #3 * 2 = 6
+    #5* 2 = 10
+    #5 * 3 = 15
+    #4 * 3  = 12
+    
+    #going from smallest to biggest [ 2, 3, 4, 5] => 
+    
+    #5 * 2 , 3 * 4
+    
+    sort_arr = sorted(arr)
+    
+    left = 0
+    right = len(sort_arr) - 1
+    max_total = float('inf')
+    
+    total = 0
+    count = 0
+    
+    while left <= right:
+        prod = sort_arr[left] * sort_arr[right]
+        total += prod
+        count += 1
+        if count == 2:
+            max_total = min(max_total, total)
+        left += 1
+        right -=1
+    return total
+    
