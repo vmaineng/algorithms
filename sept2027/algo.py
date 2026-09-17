@@ -242,5 +242,37 @@ def min_sum(arr):
             max_total = min(max_total, total)
         left += 1
         right -=1
-    return total
+    return max_total
+
+    def good_vs_evil(good, evil):
+    #receive a string of equal lengths
+    #return a string of who won
+    #ex: 
     
+    #convert strings into a list
+    #check them against each other 
+    #tally up the score for good or bad
+    #check grand total at end
+    
+    good_list = [int(val) for val in good.split(" ")]
+    evil_list = [int(val) for val in evil.split(" ")]
+    
+    good_weights = [1, 2, 3, 3, 4, 10]
+    evil_weights = [1, 2, 2, 2, 3, 5, 10]
+
+    good_total = 0
+    evil_total = 0
+
+    for i in range(len(good_list)):
+        good_total += good_list[i] * good_weights[i]
+
+    for i in range(len(evil_list)):
+        evil_total += evil_list[i] * evil_weights[i]
+            
+    if good_total > evil_total:
+        return "Battle Result: Good triumphs over Evil"
+    elif evil_total > good_total:
+        return "Battle Result: Evil eradicates all trace of Good"
+    else:
+        return 'Battle Result: No victor on this battle field'
+        
