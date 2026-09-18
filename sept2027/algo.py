@@ -275,4 +275,23 @@ def min_sum(arr):
         return "Battle Result: Evil eradicates all trace of Good"
     else:
         return 'Battle Result: No victor on this battle field'
-        
+
+        class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return the lognest consecutive seqquence count
+        #ex: 
+
+        longest = 0
+        unique_num = set(nums)
+
+        for num in nums:
+            current = 0
+            curr = num
+            while curr in unique_num:
+                
+                current += 1
+                curr += 1
+                longest = max(longest, current)
+
+        return longest
