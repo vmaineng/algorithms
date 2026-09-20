@@ -128,5 +128,32 @@ def correct_polish_letters(st):
             result.append(char) #['J'], #['J', 'o', 'e']
     return ''.join(result) #'Joe'
     
-
+def most_frequent_item_count(collection):
+    #receive a list of integers
+    #return the max freqeuent element seen (an integer)
+    #ex: [1,3,2,2,4,6] => 2
+    
+    #create a hash map
+    #iterate through each integer
+    #if the key is not in here, we are going to create key, and incrment it one
+    #iterate through the object later
+    #check the values to see which one is the max, we will return the key
+    
+    if not collection:
+        return 0
+    
+    seen_val = {}
+    
+    for num in collection:
+        seen_val[num] = seen_val.get(num, 0)+ 1
+        
+    max_count = 0
+    frequent_int = 0
+    
+    for key,val in seen_val.items():
+        if val > max_count:
+            max_count = val
+            frequent_int = key
+    return max_count
+            
 
