@@ -156,4 +156,26 @@ def most_frequent_item_count(collection):
             frequent_int = key
     return max_count
             
-
+def highest_rank(arr):
+    #receive a list of integers
+    #return back an integer of the highest occurences or if tie, return highest number
+    #ex: [3,3,3,4,4,4,5,2] => 3, 4 => 4 
+    #ex: [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]), 12)
+    #{10: 2}
+    #{12, 2} => 
+    
+    seen_val = {}
+    for num in arr:
+        seen_val[num] = seen_val.get(num, 0) + 1
+        
+    max_count = 0
+    max_val = 0
+    
+    for key,val in seen_val.items():
+        if val > max_count:
+            max_count = val
+            max_val = key
+        elif val >= max_count:
+            max_count = val
+            max_val = max(key, max_val)
+    return max_val
