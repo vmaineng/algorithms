@@ -99,5 +99,34 @@ class Solution:
                 return False
         return True
 
+def correct_polish_letters(st): 
+    #receive a string of upper and lowercase chars
+    #return the string baack with no diacritics
+    #ex: 'Jóe Mąry' => 'Joe Mary'
+
+    diacritics = { "ą": "a",
+"ć": "c",
+"ę": "e",
+"ł":"l",
+"ń":"n",
+"ó":"o",
+"ś":"s",
+"ź":"z",
+"ż":"z"
+    }
+    
+    #iterate through the string
+    #find the char that is diacritics
+    #replace it with the Engnlish char
+    #return the string back
+    
+    result = []
+    for char in st: #J, o, e
+        if char in diacritics:
+            result.append(diacritics[char]) #['J', 'o']
+        else:
+            result.append(char) #['J'], #['J', 'o', 'e']
+    return ''.join(result) #'Joe'
+    
 
 
