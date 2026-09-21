@@ -231,4 +231,36 @@ class Solution:
         result.append(newInterval)
         return result
 
+def reverse_number(n):
+    #receive an integer
+    #return an integer back where the numbers are reversed
+    #ex: -54 => -45, 4 => 4
+    #ex: 100 => 1
+    
+    #conver integer into string
+    #iterate through the string
+    #reverse them
+    #add them back together
+    #if the integer starts with 0, don't add in
+    #if negative, leave negative in the beginning
+    
+    if len(str(n)) == 1:
+        return n
+    
+    result = []
+    strNum = str(abs(n))
+    
+    for item in range(len(strNum)-1, -1, -1):
+        if strNum[item] == '0':
+            continue
+        else:
+            result.append(strNum[item])
+    
+    strOutput = ''.join(result)
+    
+    if n < 0:
+        return int('-'+ strOutput)
+    else:
+        return int(strOutput)
+            
         
