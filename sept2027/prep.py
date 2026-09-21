@@ -203,3 +203,32 @@ class Solution:
                 return False
         return True
 
+
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of intervals
+        #return the list where the newInterval is added in
+        #ex: 
+
+        #sort by start
+        #check if prev.end > curr.start
+        #merge them in together, update the end time to curr.end
+        #add to the list of result
+
+        intervals.sort(key=lambda x:x[0])
+
+        result = []
+
+        for i in range(len(intervals)): 
+            if newInterval[1] < intervals[i][0]:
+                result.append(newInterval)
+                return result + intervals[i:]
+            elif newInterval[0] > intervals[i][1]:
+                result.append(intervals[i])
+            else:
+                newInterval[0] = min(newInterval[0], intervals[i][0])
+                newInterval[1] = max(newInterval[1], intervals[i][1])
+        result.append(newInterval)
+        return result
+
+        
