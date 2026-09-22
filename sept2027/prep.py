@@ -281,4 +281,28 @@ def reverse_number(n):
         result.append(newInterval)
         return result
         
-        
+        def wave(people):
+    #receive a word
+    #return back the word where the items are uppercase
+    #ex;
+    
+    #create a result
+    #iterate through
+    #uppercase the letter at idx
+    #iterate add in the rest of the letter
+    #add to result
+    
+    result = []
+    
+    for i in range(len(people)):
+        if people[i] == " ":
+            continue
+        word = ''
+        for j in range(len(people)):
+            if i == j:
+                word += people[j].upper()
+            else:
+                word += people[j]
+        result.append(word)
+    return result
+                
