@@ -305,4 +305,18 @@ def reverse_number(n):
                 word += people[j]
         result.append(word)
     return result
-                
+
+                def incrementer(nums):
+    #receive a list of integers
+    #return a list where each integer is added by the index position in their role
+    #ex: [2,3] =>[2+ 1, 3+2] => [3,5]
+    
+    result = []
+    for num, idx in enumerate(nums):
+        pos = num + (idx + 1)
+        if pos > 9:
+            new_pos = pos % 10
+            result.append(new_pos)
+        else:
+            result.append(pos)
+    return result
