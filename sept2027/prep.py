@@ -320,3 +320,28 @@ def reverse_number(n):
         else:
             result.append(pos)
     return result
+
+def stock_list(stocklist, categories):
+    #receive a stock list of strings
+    #return a string of categories and amount associated with it
+    
+    #ex:
+    
+    #iterate through the bookseller's stocklist starting at the first letter
+    #split stocklist = [name, amount]
+    #iterate through the categories
+    #check the first lietter in stocklist
+    #find the total
+    #add total together
+    
+    result = []
+    
+    for category in categories:
+        total = 0
+        for item in stocklist:
+            name, quantity = item.split()
+            if category == name[0]:
+                total += int(quantity)
+        result.append( f"({category} : {total})" )
+    return ' - '.join(result)
+            
