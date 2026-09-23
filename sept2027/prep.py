@@ -360,3 +360,25 @@ def dating_range(age):
         max_age = math.floor(2 * (age - 7))
     
     return f"{min_age}-{max_age}"
+
+def vaporcode(s):
+    #receive a string of letters and spaces
+    #return a new string where chars are all uppercases and two spaces between
+    #ex: "hello" => 'H  E  L  L  O'
+    
+    #intialize a result list
+    #iterate through the string
+    #capitalize the letter
+    #add it to the result along with two spaces
+    #if its a space, continue
+    #return list as string
+    
+    result = []
+    
+    for char in s:
+        if char == ' ':
+            continue
+        else:
+            new_char = char.upper()
+            result.append(new_char)
+    return '  '.join(result)
