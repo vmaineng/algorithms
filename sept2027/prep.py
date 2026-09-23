@@ -344,4 +344,19 @@ def stock_list(stocklist, categories):
                 total += int(quantity)
         result.append( f"({category} : {total})" )
     return ' - '.join(result)
-            
+
+            import math
+
+def dating_range(age):
+    #receive an integer
+    #return a range of string of integers
+    #ex: 
+    
+    if age <= 14:
+        min_age = math.floor(age - 0.10 * age)
+        max_age = math.floor(age + 0.10 * age)
+    else:
+        min_age = math.floor(age /2) + 7
+        max_age = math.floor(2 * (age - 7))
+    
+    return f"{min_age}-{max_age}"
