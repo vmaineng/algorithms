@@ -406,7 +406,22 @@ def multiplication_table(size):
         result.append(new_result)
     return result
             
+def repeats(arr):
+    #receive a list of integers, pos or neegative
+    #return an integer total of the single occurences of number
+    #ex: [3, 4, 3, 5, ]  => 
+    # 3: 2, 4: 1, 5:1 => 4 + 5 => 9
+    
+    count = {}
+    
+    for num in arr: #3, 4, 3, 5
+        count[num] = count.get(num, 0) + 1 #3: 2, 4: 1, 5:1
         
-        
-        
+    total = 0
+    
+    for key, val in count.items():
+        if val == 1:
+            total += key #4 + 5 => 9
+    return total 
+    
     
