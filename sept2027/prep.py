@@ -382,3 +382,31 @@ def vaporcode(s):
             new_char = char.upper()
             result.append(new_char)
     return '  '.join(result)
+
+return "  ".join(char.upper() for char in s if char != ' ' )
+
+def multiplication_table(size):
+    #receive an int of size
+    #return a mxn grid
+    #ex: 2 => 
+    #[1, 2] X1, starts with 1
+    #[2, 4] X 2 starts with 2
+    
+    #start row and col starting from 1 up to the integer
+    #then iterate through the integer until we reach 2
+    #multiply them by 2
+    
+    result = []
+    
+    for row in range(1, size + 1):
+        new_result = []
+        for col in range(1, size + 1):
+            val = row * col
+            new_result.append(val)
+        result.append(new_result)
+    return result
+            
+        
+        
+        
+    
