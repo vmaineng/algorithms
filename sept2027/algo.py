@@ -295,3 +295,29 @@ def min_sum(arr):
                 longest = max(longest, current)
 
         return longest
+
+    def html_special_chars(data): 
+    #receive a string of chars
+    #return a string of chars where the characters are replaced with other words
+    #ex: '<Hello' => '&lt;Hello'
+    
+    #create an object with the matching the key value pairs
+    #iterate through the chars if it maches with key, update it with the value
+    #add it into a string
+    #return the string
+    
+    result = []
+    
+    chars = {
+        '<':'&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        '&': '&amp;'
+    }
+    
+    for char in data:
+        if char in chars:
+            result.append(chars[char])
+        else:
+            result.append(char)
+    return ''.join(result)
