@@ -354,3 +354,30 @@ def to_float_array(arr):
         elif idx == len(ls):
             result.append(0)
     return result
+
+def parts_sums(ls):
+    #receive a list of integers
+    #return the sum of the integers starting from idx 0 all the way to the rest of the idx
+    #ex: [3,4] => [7,4]
+    
+    
+    #initialize an empty list
+    #start out the first integer
+    #add all the totals together
+    #then iterate to the next, add all sum together
+    
+    if not ls:
+        return [0]
+    
+    result = []
+    total = sum(ls)
+    result.append(total)
+    
+    for num in ls:
+        total -= num
+        result.append(total)
+       
+    return result
+
+#     for idx in range(0, len(ls)+ 1)
+    
