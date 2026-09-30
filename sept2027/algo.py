@@ -321,3 +321,10 @@ def min_sum(arr):
         else:
             result.append(char)
     return ''.join(result)
+
+def to_float_array(arr): 
+    #receive a list of strings of integers
+    #return a list of integers
+    #ex: ['4.4', '3'] => [4.4, 3]
+    
+    return [float(num) for num in arr]
