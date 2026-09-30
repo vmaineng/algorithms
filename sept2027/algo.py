@@ -328,3 +328,29 @@ def to_float_array(arr):
     #ex: ['4.4', '3'] => [4.4, 3]
     
     return [float(num) for num in arr]
+
+
+    def parts_sums(ls):
+    #receive a list of integers
+    #return the sum of the integers starting from idx 0 all the way to the rest of the idx
+    #ex: [3,4] => [7,4]
+    
+    
+    #initialize an empty list
+    #start out the first integer
+    #add all the totals together
+    #then iterate to the next, add all sum together
+    
+    if not ls:
+        return [0]
+    
+    result = []
+    
+    for idx in range(0, len(ls) + 1):
+        if idx < len(ls):
+            print(idx, len(ls))
+            total = sum(ls[idx:])
+            result.append(total)
+        elif idx == len(ls):
+            result.append(0)
+    return result
