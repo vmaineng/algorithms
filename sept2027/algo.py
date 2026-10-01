@@ -381,3 +381,42 @@ def parts_sums(ls):
 
 #     for idx in range(0, len(ls)+ 1)
     
+
+    """
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[Interval]) -> int:
+        #receive a list intervals
+        #return max rooms needed for all meetings
+        #ex: 
+
+        #break start and end time
+        #iterate through start and check if it collides with end time
+        #then increment room count
+
+
+        count = 0
+        room = 0
+
+        starts = sorted(i.start for i in intervals)
+        ends = sorted(i.end for i in intervals)
+
+        i = 0
+        j = 0
+
+        while i < len(starts):
+            if starts[i] < ends[j]:
+                room += 1
+                count = max(count, room)
+                i += 1
+            else:
+                room -= 1
+                j += 1
+                
+        return count
