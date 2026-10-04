@@ -462,3 +462,37 @@ class Solution:
             
     return 'Car Dead' if bumps > 15 else 'Woohoo!'
             
+
+            def number_of_pairs(gloves):
+    #receive a list of strings of collors
+    #return how manys pairs can be created
+    #ex: ['orange', 'yellow'] => 0 ; orange: 1, yellow: 1
+    #ex: ['red', 'blue', 'green','green'] => 1, red: 1, blue: 1, green: 2
+    
+    #have a pointer that starts at the current idx
+    #then looks throught he entire list for that color
+    #count that as a pair
+    #then we move on from the idx
+    
+    #count of all the colors
+    #iterate through the colors
+    #then, we are going to look at their value, divide by 2 and if the output is even, then we count as a pair
+    #return pairs
+    
+    
+    pairs = 0
+    
+    colors = { }
+    
+    for glove in gloves: #[orange, yellow]
+        colors[glove] = colors.get(glove, 0) + 1 #orange: 1, yellow: 1
+    
+    for key,val in colors.items():
+        print(key,val)
+        if val // 2:
+            print(val // 2)
+            output = val // 2
+            
+            pairs += output
+            print('pairs', pairs)
+    return pairs
