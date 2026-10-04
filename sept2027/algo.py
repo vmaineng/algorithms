@@ -420,3 +420,25 @@ class Solution:
                 j += 1
                 
         return count
+
+
+        def to_freud(sentence):
+  #receive a string of words
+  #return a string of words of'sex' up to the same length of the input
+    #ex: "hello" => 'sex'
+    #ex: 'hello world' => 'sex sex'
+    #ex: '' => ''
+    
+    #iterate through the words in the string
+    #for each word, we are going to add 'sex'to our output string
+    #return output string
+    
+    if not sentence:
+        return ''
+    
+    word_split = sentence.split()
+    
+    result = [] #sex
+    for word in word_split: #hello
+        result.append('sex')
+    return ' '.join(result)
