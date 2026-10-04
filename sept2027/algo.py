@@ -442,3 +442,23 @@ class Solution:
     for word in word_split: #hello
         result.append('sex')
     return ' '.join(result)
+
+    def bumps(road):
+    #receive a string of _ or n
+    #return a word based on the counts of n
+    #if bump are <= 15, return 'Woohoo!' or else > 15 'Car dead'
+    
+    #ex: '_n_' => count = 1 => Woohoo!
+    #ex: '' => return Woohoo!
+    #ex: '__nnnnn___nnn__nnn_n_nnnn_' => 'Car dead' 
+    
+    #keep track of n 
+    #if n > 15, return 'Car dead' or else 'Woohoo!'
+    
+    bumps= 0 #1
+    for bump in road:
+        if bump == 'n':
+            bumps += 1
+            
+    return 'Car Dead' if bumps > 15 else 'Woohoo!'
+            
