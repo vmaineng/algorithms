@@ -528,3 +528,26 @@ class Solution:
                 count -=1 
                 j += 1
         return max_rooms
+
+    from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #receive a list of integers, and an integer
+        #return the most frequent integers seen
+        #ex: [1,2 2, 3,3], 1 => 2
+        #ex: [1], 2 => 1
+
+        nums = Counter(nums)
+
+        arr = []
+        for key, num in nums.items():
+            arr.append([key, num])
+
+
+        res = []
+
+        while len(res) < k:
+            res.append(arr.pop()[1])
+        return res
+        
