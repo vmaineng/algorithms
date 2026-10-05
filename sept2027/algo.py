@@ -496,3 +496,35 @@ class Solution:
             pairs += output
             print('pairs', pairs)
     return pairs
+
+"""
+Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[Interval]) -> int:
+        #receive a list of intervals
+        #return max rooms needed
+
+        starts = sorted([i.start for i in intervals])
+        ends = sorted([i.end for i in intervals])
+
+        count = 0
+        max_rooms = 0
+
+        i = 0
+        j = 0
+
+        while i < len(starts):
+            if starts[i] < ends[j]:
+                count += 1
+                max_rooms = max(max_rooms, count)
+                i += 1
+            else:
+                count -=1 
+                j += 1
+        return max_rooms
