@@ -570,3 +570,25 @@ class Solution:
         for i in range(k):
             res.append(heapq.heappop(heap)[1])
         return res
+
+    class Solution:
+    def jump(self, nums: List[int]) -> int:
+        #receive a list of integers
+        #return how many steps to get to the end of the list
+        #ex: [2,4,1,1,1,1]
+        #       i
+        #.     j
+
+        res = 0
+        l, r = 0, 0
+
+        while r < len(nums) - 1:
+            farthest = 0
+
+            for i in range(l, r + 1): #creating a window
+                farthest = max(farthest, i + nums[i])
+
+            l = r + 1
+            r = farthest
+            res += 1
+        return 1
