@@ -634,5 +634,33 @@ class Solution:
                     return self.dfs(grid, row, col, visited)
         return size
 
+    class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+
+
+        #receive a list of integers
+        #return the list sorted
+        #know that we are only getting 0, 1, 2
+        #keep track of counts of 0, 1 and 2
+        #iterate through key of 0 and add in their value back into the list
+
+        count = {}
+
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+
+        i = 0
+
+        for num in range(3):
+            while count.get(num, 0 ) > 0:
+                nums[i] = num
+                count[num] -= 1
+                i += 1
+
+
+
 
     
