@@ -660,7 +660,25 @@ class Solution:
                 count[num] -= 1
                 i += 1
 
-
+def find_smallest(numbers, to_return):
+    #receive a list of intgeeters and a string
+    #return val or idx
+    
+    #ex: [3, 4,5 ], 'val' => 3
+    #ex: [8,9, 2] => idx => 2
+    
+    
+    #if val,
+    #find the smallest val with min funciton
+    #else idx:
+    #find the smallest val, and return the idx position
+    
+    min_num = min(numbers)
+    
+    if to_return == 'value':
+        return min_num
+    else:
+        return numbers.index(min_num)
 
 
     
