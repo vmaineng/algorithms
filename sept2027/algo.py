@@ -592,3 +592,47 @@ class Solution:
             r = farthest
             res += 1
         return 1
+
+
+        class Solution:
+    def dfs(self, grid, row, col, visited):
+        if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]):
+            return 1
+
+        if grid[row][col] == 0:
+            return 1
+
+        pos = (row, col)
+
+        if pos in visited:
+            return 0 
+        
+        visited.add(pos)
+
+        size = (
+            self.dfs(grid, row + 1, col, visited) + 
+            self.dfs(grid, row - 1, col, visited) + 
+            self.dfs(grid, row, col + 1, visited) + 
+            self.dfs(grid, row, col - 1, visited) 
+        )
+        return size
+
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        #receive a 2d of 0's and 1's
+        #return the perimeter of the islands
+        #ex: 
+        #start from the first box
+        #check if it is a 1
+        #then do dfs
+
+        visited = set()
+        size = 0
+
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == 1:
+                    return self.dfs(grid, row, col, visited)
+        return size
+
+
+    
