@@ -680,5 +680,23 @@ def find_smallest(numbers, to_return):
     else:
         return numbers.index(min_num)
 
+def div_con(x):
+   #receive a list of of string and numbers integers
+    #return total of integers - string integers
+    #ex: [3, '3'] => 0
+    
+    #find the type of numbers, add to a total
+    #find the string of numbers, add to a total
+    #take the two totals and subtract them
+    
+    num_total = 0
+    string_total = 0
+    
+    for num in x:
+        if isinstance(num, str):
+            string_total += int(num)
+        else:
+            num_total += num
+    return num_total - string_total
 
     
