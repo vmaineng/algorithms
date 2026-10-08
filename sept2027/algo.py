@@ -704,4 +704,13 @@ def div_con(x):
 def is_today(date : datetime) -> bool:
     return date.date() == date.today().date()
 
+# input: names - unsorted list
+# output: sorted list
+def sortme(names):
+    #receive a string of characters
+    #returns the string sorted by alphabet
+    #ex: 
+    
+    return sorted(names)
+
     
