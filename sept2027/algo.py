@@ -699,4 +699,9 @@ def div_con(x):
             num_total += num
     return num_total - string_total
 
+    from datetime import datetime
+
+def is_today(date : datetime) -> bool:
+    return date.date() == date.today().date()
+
     
