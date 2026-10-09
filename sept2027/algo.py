@@ -713,4 +713,47 @@ def sortme(names):
     
     return sorted(names)
 
+
+class Solution:
+    def dfs(self, grid, row, col, visited):
+        pos = (row, col)
+
+        if (row <0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] == '0'):
+            return 
+        
+        if pos in visited:
+            return 
+        
+        visited.add(pos)
+
+      
+        self.dfs(grid, row + 1, col, visited) 
+        self.dfs(grid, row - 1, col, visited)  
+        self.dfs(grid, row, col + 1, visited)  
+        self.dfs(grid, row, col - 1, visited) 
+        
+
+    def numIslands(self, grid: List[List[str]]) -> int:
+        #receive a list of lists of '0' and '1', 
+        #return count of numbers of islands seen 
+        #ex :
+
+
+        #iterate through the row and col until you see a 1
+        # start counting it as an island
+        #then once your reach a 0, stop
+        #mark each cell as visited
+
+        if not grid:
+            return 0
+
+        visited = set()
+        count = 0
+
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == '1' and (row, col) not in visited:
+                    count += 1
+                    self.dfs(grid, row, col, visited)
+        return count
     
