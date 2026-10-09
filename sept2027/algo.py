@@ -756,4 +756,15 @@ class Solution:
                     count += 1
                     self.dfs(grid, row, col, visited)
         return count
+
+    def nth_smallest(arr, pos):
+    #receive a list of integers
+    #return the position of the n'th smallest element in array
+    #ex: [2,3,4], 2 => 3
     
+    #if pos > arr, return -1
+    
+    #sort arr
+    #find the pos they're looking for
+    
+    return sorted(arr)[pos - 1]
