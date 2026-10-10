@@ -424,4 +424,14 @@ def repeats(arr):
             total += key #4 + 5 => 9
     return total 
     
-    
+
+    class Solution:
+    def findRepeatedDnaSequences(self, s: str) -> list[str]:
+        current, res = set(), set()
+
+        for i in range(len(s) - 9):
+            word = s[i:i+10]
+            if word in current:
+                res.add(word)
+            current.add(word)
+        return list(res)
