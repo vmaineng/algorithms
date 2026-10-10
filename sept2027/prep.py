@@ -435,3 +435,41 @@ def repeats(arr):
                 res.add(word)
             current.add(word)
         return list(res)
+
+    class Solution:
+    def romanToInt(self, s: str) -> int:
+        #receive a string of chars
+        #return the output for it
+        #ex: V => 5
+        #ex: IV => 4
+        #ex: VI => 6
+
+
+        #iterate through the string
+        #check if the next val is either before or below it
+        #if it's come belowadd as normal
+        #else, add the V first than add the I
+
+
+        roman_map = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
+        total = 0
+
+        for idx in range(len(s)):
+            if s[idx] in roman_map:
+                if idx < len(s)- 1 and roman_map[s[idx]] < roman_map[s[idx + 1]]:
+                    total -= roman_map[s[idx]]
+                else:
+                    total += roman_map[s[idx]]
+        return total
+
+
+
+        
