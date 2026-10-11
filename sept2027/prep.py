@@ -481,6 +481,56 @@ def logs(x, a, b):
     b_total = math.log(b,x)
     
     return a_total + b_total
-    
 
+
+    def solve(arr): 
+    #receive a list of integers
+    #return back a list of integers where duplicates starting from left to right is removed
+    #ex: [3,2, 5,3,2, 1] => 
+       #  i
+    #seen = { 1, 2,3, 5, }
+    #return back seen
+    
+#     seen = set()
+    
+#     for i in range(len(arr)-1, -1, -1):
+#         if arr[i] not in seen:
+#             seen.add(arr[i])
+#     return list(seen)
+
+    #intiailize an empty result list
+    #two pointers - starting at left and right
+    #if teh numbers 
+
+def solve(arr): 
+    #receive a list of integers
+    #return back a list of integers where duplicates starting from left to right is removed
+    #ex: [3,2, 5,3,2, 1] => 
+       #    i
+      #            j
+    
+    
+    #do on^2
+    #if j doesn't come up with the same value
+    #we will add in the value from left the side
+    #return result list
+    
+    #[3, 4, 4, 3, 6, 3]
+    # i
+    #.  j
+    
+    #seen ={3,6,4 }
+    
+    result = []
+    
+    seen = set()
+    for i in range(len(arr)-1, -1, -1): # #[ 3, 6]
+        if arr[i] not in seen:
+            seen.add(arr[i]) #{3, 6, }
+            result.append(arr[i]) #[ 3, 6 , 4]
+    return result[::-1]
+        
+        
+            
+    
         
