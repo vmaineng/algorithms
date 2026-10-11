@@ -530,7 +530,33 @@ def solve(arr):
             result.append(arr[i]) #[ 3, 6 , 4]
     return result[::-1]
         
+       class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #receive two strings of words of lowercase chars
+        #return boolean - true if same amount of characters for both s && t, else False
+        #ex: 'star', 'rats' => true
+        #{"s": 1," t": 1," a": 1, 'r': 1}
+
+        #edge case: if length of s and t are not equal, then return False 
+
+        #keep track of their object counts
+
+        if len(s) != len(t):
+            return False
+
+        s_count = {}
+        t_count = {}
+
+        for char in s:
+            s_count[char] = s_count.get(char, 0) + 1
+
+        for char in t:
+            t_count[char] = t_count.get(char, 0) + 1
+        print(s_count, t_count)
+
+        return s_count == t_count
         
+ 
             
     
         
