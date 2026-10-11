@@ -470,6 +470,17 @@ def repeats(arr):
                     total += roman_map[s[idx]]
         return total
 
+import math
 
+def logs(x, a, b):
+    #receive integers (floats and whole numbers)
+    #return the sum of it
+    #ex: 
+    
+    a_total = math.log(a,x)
+    b_total = math.log(b,x)
+    
+    return a_total + b_total
+    
 
         
