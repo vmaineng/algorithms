@@ -575,7 +575,23 @@ def solve(arr):
         if window[0] + 1 == window[1] or window[1] + 1 == window[0]:
             count += 1
     return count
-        
+
+        def tidyNumber(n):
+    #receive an integer
+    #return boolean if integer is in an increasing order
+    #ex: 
+    
+    #split the integer into a string
+    #iterate through and check the integer
+    #if it is  not > in front of it, return False
+    #else return True after checking after everything
+    
+    strNum = str(n)
+    
+    for i in range(1, len(strNum)):
+        if int(strNum[i]) < int(strNum[i - 1]):
+            return False
+    return True
  
             
     
