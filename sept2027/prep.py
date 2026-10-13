@@ -555,6 +555,26 @@ def solve(arr):
         print(s_count, t_count)
 
         return s_count == t_count
+
+        def pairs(arr):
+    #receive a list of integers
+    #return count of consecutive numbers together
+    #ex: [3, 5, 2] => [3,5], 2 => 0
+    
+    #keep count
+    #iterate through two pairs at a time
+    #check if the number is +1 ahead of it
+    #increment count, return count
+    
+    
+    count = 0
+    
+    for i in range(0, len(arr)-1, 2):
+        window = arr[i: i + 2]
+#         print(window, window[0], window[1])
+        if window[0] + 1 == window[1] or window[1] + 1 == window[0]:
+            count += 1
+    return count
         
  
             
