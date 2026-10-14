@@ -593,6 +593,29 @@ def solve(arr):
             return False
     return True
  
-            
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        #receive a p and a q
+        #return boolean if same tree
+        #ex: if one or the other don't exist, return FALSE
+        #if one of their vals aren't right, return False
+
+        if not p and not q:
+            return True
+
+        if not p or not q or p.val != q.val:
+            return False
+        
+        
+        return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
+
     
         
