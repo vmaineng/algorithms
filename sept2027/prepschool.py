@@ -31,6 +31,15 @@ def splitPairs(word):
 
     return result
 
-print(splitPairs('hello'))
-print(splitPairs('star'))
+# print(splitPairs('hello'))
+# print(splitPairs('star'))
         
+#check to see if string has same amount of x's and o's
+#return boolean
+#
+
+def checkXO(word):
+    word = word.lower()
+    return word.count('x') == word.count('o')
+
+print(checkXO('xoo'))
