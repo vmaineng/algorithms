@@ -884,6 +884,34 @@ class Solution:
         else:
             return root
 
+        # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+
+    def valid(self, node, left, right):
+        if not node:
+            return True
+        if not (left < node.val < right):
+            return False
+        
+        return self.valid(node.left, left, node.val) and self.valid(node.right, node.val, right)
+
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        #receive a binary tree
+        #return boolean if valid
+        #ex:
+
+        #while root node
+        #if the left node > root node, return False
+        #if the right node < root node, return false
+        return self.valid(root, float("-inf"), float("inf"))
+    
+
         
              
         
