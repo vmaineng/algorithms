@@ -42,4 +42,28 @@ def checkXO(word):
     word = word.lower()
     return word.count('x') == word.count('o')
 
-print(checkXO('xoo'))
+print(checkXO('xoo1bco'))
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+
+    def valid(self, node, left, right):
+        if not node:
+            return True
+        if not (left < node.val < right):
+            return False
+        
+        return self.valid(node.val, left, right) and self.valid(left, node.val, right)
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        #receive the root node of a tree
+        #return boolean
+
+        return self.valid(root, float("-inf"), float("inf"))
+
+        
