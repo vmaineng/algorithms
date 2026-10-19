@@ -66,4 +66,35 @@ class Solution:
 
         return self.valid(root, float("-inf"), float("inf"))
 
-        
+        class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        #receive a rotated list
+        #return the position of the target we are looking at
+        #ex: 
+
+        #using two left pointers 
+        #find middle
+        #check if middle <= target <= right, then go right
+
+
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            middle = (left + right) // 2
+
+            if nums[middle] == target:
+                return middle
+            
+            if nums[left] <= nums[middle]: 
+                if nums[left] <= target <= nums[middle]:
+                    right = middle - 1
+                else:
+                    left = middle + 1
+            
+            else:
+                if nums[middle] <= target <= nums[right]:
+                    left = middle + 1
+                else:
+                    right = middle - 1
+        return -1
