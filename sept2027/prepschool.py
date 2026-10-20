@@ -98,3 +98,36 @@ class Solution:
                 else:
                     right = middle - 1
         return -1
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        #receive a list of pivoted points
+        #return the idx of the target value
+        #ex: 
+
+        #find middle
+        #check if the left val < = middle
+        #then check if target wouild fall in between
+        #else check right
+        #check if val would fall in between
+        #else return - 1
+
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            middle = (left + right) // 2
+            if nums[middle] == target:
+                return middle
+            
+            if nums[left] <= nums[middle]:
+                if nums[left] <= target <= nums[middle]:
+                    right = middle - 1
+                else:
+                    left = middle + 1
+            else:
+                if nums[middle] <= target <= nums[right]:
+                    left = middle + 1
+                else:
+                    right = middle - 1
+        return - 1
