@@ -159,4 +159,39 @@ class Solution:
             nodes[j].next = nodes[i]
             j -= 1
         nodes[i].next= None
+
+        # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        #receive the head of linked list
+        #return the linkedlist where nth node is removed
+        #ex: 1 -> 2 -> 3, 1 => return head.next
+
+        if not head:
+            return None
+
+
+        count = 0
+        curr = head
+
+        while curr:
+            count += 1
+            curr = curr.next
+            
+        if count == n:
+            return head.next
+
+        curr = head
+        for node in range(count - n - 1):
+            curr = curr.next
+        curr.next = curr.next.next
+            
+        return head
+
+        
         
