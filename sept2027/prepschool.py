@@ -263,5 +263,30 @@ class Solution:
         
         curr.next = curr.next.next
         return head
-        
+
+        class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive an integerval
+        #return intervals that overlap each other
+        #ex: 
+
+        #sort the intervals
+        #add the first interval into result
+        #check start, end of second interval compared to first
+
+
+        intervals.sort(key=lambda x:x[0])
+
+        result = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            cur_start, cur_end = intervals[i] #[1,5]
+            prev_start, prev_end = intervals[i - 1] #[1,3]
+
+            if cur_start <= prev_end: #3 <= 1
+            
+                result[-1][-1] = max(prev_end, cur_end)
+            else:
+                result.append(intervals[i])
+        return result
         
