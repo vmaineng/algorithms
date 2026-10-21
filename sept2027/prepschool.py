@@ -318,6 +318,33 @@ class Solution:
             left += 1
             right -=1
         return True
+
+    # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
+        #receive the root tree
+        #return boolean if targetsum can be found
+        #ex:
+
+        if not root and targetSum == 0:
+            return True
+        
+        if not root and targetSum > 0:
+            return False
+
+        
+        left = self.hasPathSum(root.left, targetSum)
+        right = self.hasPathSum(root.right, targetSum)
+
+        leftSum = root.val + left
+        rightSum = root.val + right
+
+        return leftSum == targetSum or rightSum == targetSum
             
        
 
