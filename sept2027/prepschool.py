@@ -193,5 +193,43 @@ class Solution:
             
         return head
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        #receive a list of linked list
+        #return a linked list where nodes are added from outside in
+        #ex: 
+
+        #add nodes to a list
+        #start from left to right
+        #add them in together
+        #and return the head
+
+
+        if not head:
+            return []
+
+        res = []
+        cur = head
+        while cur:
+            res.append(cur)
+            cur = cur.next
+
+        i = 0
+        j = len(res) - 1
+
+        while i < j:
+            res[i].next = res[j]
+            i += 1
+            if i > j:
+                break
+            res[j].next = res[i]
+            j -= 1
+        res[i].next = None        
         
         
