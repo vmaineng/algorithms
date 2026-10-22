@@ -421,7 +421,49 @@ class Solution:
             nodes[j].next = nodes[i]
             j -=1
         nodes[i].next = None
+
+        # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        #do two pointers
+        #go fast and slow
+        #find middle, reverse middle
+        #then keep pointer on the new list
+        #and add it back in
+
+        if not head:
+            return None
         
+        slow = head
+        fast = head.next
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        prev = None
+        second = slow.next
+        slow.next = None
+        while second:
+            nxt = second.next
+            second.next = prev
+            prev = second
+            second = nxt
+        
+        slow = head
+        curr = prev
+
+        while curr:
+            tmp1, tmp2 = slow.next, curr.next
+            slow.next = curr
+            curr.next = tmp1
+            slow, curr = tmp1, tmp2
+
             
        
 
