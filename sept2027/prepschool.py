@@ -345,6 +345,44 @@ class Solution:
         rightSum = root.val + right
 
         return leftSum == targetSum or rightSum == targetSum
+
+
+    # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        #receive head of a linked list
+        #return the n'th node removed
+        #ex: 
+
+        #keep track of count
+        #if count == head
+        #return after head.next
+        
+        if not head:
+            return None
+        
+        count = 0
+        curr = head
+        while curr:
+            count += 1
+            curr = curr.next
+
+        if count == n: 
+            return head.next
+        
+        curr = head
+
+        for i in range(count - n - 1):
+            curr = curr.next
+        
+        curr.next = curr.next.next
+        return head
+        
             
        
 
