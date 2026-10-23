@@ -512,5 +512,32 @@ class Solution:
         return self.hasPathSum(root.left, targetSum) or self.hasPathSum(root.right, targetSum)
        
 
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        #receive a string 
+        #return an int of longest substring count
+        #ex: 
 
+        #iterate through the list with two pointers
+        #keep track of characters seen in hash map
+        #if characters in set
+        #return longest length seen
+
+        unique = set()
+        longest = 0
+
+        left = 0
+        right = 0
+
+        while right < len(s):
+            if s[right] not in unique:
+                unique.add(s[right])
+                longest = max(longest, right-left + 1)
+                right += 1
+            else:
+                unique.remove(s[left])
+                left +=1
+        
+        return longest
+        
         
