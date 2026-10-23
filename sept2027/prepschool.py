@@ -464,6 +464,27 @@ class Solution:
             curr.next = tmp1
             slow, curr = tmp1, tmp2
 
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive a list of intervals
+        #return the list merged
+        #ex: 
+
+        #sort
+        #check prevend <= current start
+        #if so update the end
+        #else merge in the intervals
+
+        intervals.sort(key=lambda x:x[0])
+
+        results = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            if results[-1][-1] >= intervals[i][0]:
+                results[-1][1] = max(results[-1][-1],intervals[i][1] )
+            else:
+                results.append(intervals[i])
+        return results
             
        
 
