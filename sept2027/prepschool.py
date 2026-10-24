@@ -548,8 +548,8 @@ class Solution:
   #check if the number * number is equal to n
   #return the n 
 
-  if n == 1:
-    return 1
+  if n < 2:
+  return n
 
 
   left = 1
@@ -566,4 +566,43 @@ class Solution:
       right =mid - 1
   
 
+def find(arr, ele):
+    return arr.index(ele) if ele in arr else 'Not found'
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
+        #receive the root node of a tree
+        #return boolean - true if we can go from root to leaf and the total == targetSum, else False
+        #ex:       3
+        #         /. \
+        #      3     5
+        # 8 => True
+        # 10 => False
+        #
+
+        #base case - if not the root is empty and targetsum != 0, return false
+        #recursive case - keep calling the current node , subtract from targetSum 
+        #return a boolean if we meet targetSum
+
+        if not root:
+            return False
+
+        if not root.left and not root.right:
+            return targetSum - root.val == 0
+
+        targetSum -= root.val
+
+        return (
+        self.hasPathSum(root.left, targetSum) or
+         self.hasPathSum(root.right, targetSum)
+         )
+
+        
+        
         
