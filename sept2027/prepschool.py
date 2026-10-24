@@ -539,5 +539,31 @@ class Solution:
                 left +=1
         
         return longest
-        
+
+        def square_root(n):
+  #receive an integer
+  #return the integer that is the square root of it
+  #ex: 2 -> 2
+  #use left and right of b1 up to n 
+  #check if the number * number is equal to n
+  #return the n 
+
+  if n == 1:
+    return 1
+
+
+  left = 1
+  right = n // 2
+
+  while left <= right:
+    mid = (left + right) // 2
+
+    if mid * mid == n:
+      return mid
+    elif mid * mid <= n:
+      left = mid + 1
+    else:
+      right =mid - 1
+  
+
         
