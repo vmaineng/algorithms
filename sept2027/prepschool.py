@@ -603,6 +603,29 @@ class Solution:
          self.hasPathSum(root.right, targetSum)
          )
 
-        
+        def min_in_rotated_sorted_array(nums):
+  #receive a list of int 
+  #return the min element found
+  #ex: [5,6,7, 8,2,3,4] => 2
+  #     l      m     r
+  #           l   m r
+  
+
+  #find mid, 
+  #check if left <= mid == sorted
+  # or else check if mid < = right ; if not smallest exist over here
+
+  left = 0
+  right = len(nums) - 1
+
+  while left < right:
+    mid = (left + right) // 2
+    if nums[mid] < nums[right]:
+      right = mid
+    else:
+      left = mid + 1
+  return nums[left]
+    
+      
         
         
