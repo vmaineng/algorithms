@@ -648,7 +648,33 @@ class Solution:
         right = mid - 1
 
   return -1
-    
+
+    def max_subarray_sum_size_k(nums, k):
+  #receive a list and an int
+  #return max sum found in window of 3
+
+  #ex: 
+
+  #keep track of current sum
+  #iterate through the list of integers up to 3 max_subarray_sum_size_k
+  #return max sum found
+
+  # max_sum = float('-inf')
+
+  # for i in range(len(nums)):
+  #   current = sum(nums[i: i+k])
+  #   max_sum = max(max_sum, current)
+  # return max_sum
+
+  current = sum(nums[0:k])
+  max_sum = current
+
+  for i in range(len(nums) - k ):
+    current -= nums[i]
+    current += nums[i + k]
+    max_sum = max(max_sum, current)
+  return max_sum
+
   
         
         
