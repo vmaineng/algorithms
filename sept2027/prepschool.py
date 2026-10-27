@@ -675,6 +675,27 @@ class Solution:
     max_sum = max(max_sum, current)
   return max_sum
 
+def subarray_target_sum_size_k(nums, target, k):
+  #receive a list of integers
+  #return how many subarrays make the target
+  #ex: 
+
+  #keep a count
+  #check if the current subarray == target, increase count
+
+  
+  current_sum = sum(nums[0:k])
+  count = 1 if current_sum == target else 0
+  
+  for i in range(len(nums) - k):
+
+    current_sum -= nums[i]
+    current_sum += nums[i + k]
+    if current_sum == target:
+      count += 1
+  return count
+
+
   
         
         
