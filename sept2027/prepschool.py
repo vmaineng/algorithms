@@ -715,6 +715,23 @@ class Solution:
                 if nums[i] != nums[i] + 1 :
                     return nums[i] + 1
 
+        class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        #receive an integer
+        #return the missing num
+        #ex: [0,1,2, 4] => 3 
+
+        #is array sorted? 
+        #iterate from 0 to n 
+        #check if n - 1 is there
+        #if not return the missing num
+
+        res = len(nums)
+        
+        for i in range(len(nums)):
+            res += i - nums[i]
+        return res
+
         
 
 
