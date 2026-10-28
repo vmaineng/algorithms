@@ -732,7 +732,31 @@ class Solution:
             res += i - nums[i]
         return res
 
+        class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        #receive a list of integers
+        #return the two index that equals up to the target (but it's 1 index)
+        #ex: 
+
+        # for i in range(len(numbers)):
+        #     for j in range(i + 1, len(numbers)):
+        #         if numbers[i] + numbers[j] == target:
+        #             return [i+1, j+ 1]
+
+
+        sums = { }
+
+        for i in range(len(numbers)):
+            difference = target - numbers[i]
+            if difference in sums:
+                return [sums[difference], i + 1]
+            sums[numbers[i]] = i + 1
         
+        #{2: 0, 3: 1}
+        #
+
+
+                
 
 
   
