@@ -695,6 +695,28 @@ def subarray_target_sum_size_k(nums, target, k):
       count += 1
   return count
 
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        #receive an integer
+        #return the missing num
+        #ex: [0,1,2, 4] => 3 
+
+        #is array sorted? 
+        #iterate from 0 to n 
+        #check if n - 1 is there
+        #if not return the missing num
+        
+
+        for i in range(0, len(nums)-1):
+            if nums[i] != 0:
+                if nums[i] != nums[i] -1 :
+                    return nums[i] - 1
+            else:
+                if nums[i] != nums[i] + 1 :
+                    return nums[i] + 1
+
+        
+
 
   
         
