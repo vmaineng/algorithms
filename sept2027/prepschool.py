@@ -754,6 +754,32 @@ class Solution:
         
         #{2: 0, 3: 1}
         #
+def has_substring_anagram(s, anagram):
+  #receive a string of lowercase chars
+  #return if it has anagram in s
+
+  #ex: 
+
+  #create a set of the s and anagram
+  #check if anagram letters are in s when reach the end
+
+
+  anagram_set = set(anagram)
+  window = set(s[0: len(anagram)])
+
+  if anagram_set == window:
+    return True
+
+  for i in range(0, len(s)-len(anagram)):
+    window.remove(s[i])
+    window.add(s[i+len(anagram)])
+
+    if anagram_set == window:
+      return True
+    
+  return False
+      
+      
 
 
                 
