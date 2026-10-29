@@ -780,7 +780,28 @@ def has_substring_anagram(s, anagram):
   return False
       
       
+from collections import Counter
 
+def count_substring_anagrams(s, anagram):
+  #receive a len of count_substring_anagrams
+  #return the occurence of how many times it shows up
+  #ex: 
+
+  anagram_count = Counter(anagram)
+  window = Counter(s[0:len(anagram)])
+  count = 0
+
+  if anagram_count == window:
+    count += 1
+
+  for i in range(0, len(s) - len(anagram)):
+    window[s[i]] -= 1
+    window[s[i+len(anagram)]] += 1
+
+    if anagram_count == window:
+      count += 1
+
+  return countv
 
                 
 
