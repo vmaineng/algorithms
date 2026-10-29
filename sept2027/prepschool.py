@@ -803,6 +803,44 @@ def count_substring_anagrams(s, anagram):
 
   return countv
 
+def find_subarray_sum(nums, target_sum):
+  #receive a list of integers
+  #return the start and end index 
+
+  #ex: 
+
+  #create a left and right
+  #right moves to the end
+  #if the current target > target, move left to right
+  #else keep moving right to find_subarray_sum
+
+  #([3, 1, 4, 9, 2, 1, 7], 10) 
+   #             l
+  #             r 
+  # total: 2
+
+  #([1, 2, 3, 7, 5], 12)
+  #     l
+  #              r
+  #tota=13
+  left = 0
+  right = 0
+  current_sum = 0
+  
+  while right < len(nums):
+    current_sum += nums[right]
+      
+    while current_sum > target_sum:
+      current_sum -= nums[left]
+      left += 1
+      
+    if current_sum == target_sum:
+      return (left, right)
+    right += 1
+    
+      
+      
+      
                 
 
 
