@@ -865,6 +865,32 @@ class Solution:
 
         return root
 
+    class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        #receive two lowercase strings
+        #return boolean
+        #ex: 
+
+        #iterate through sets of them
+        #check if it exists
+
+        uniques1 = set(s1)
+        uniques2 = set(s2[0:len(uniques1)])
+       
+
+        for idx in range(len(s2)-len(uniques1) + 1):
+            if uniques1 == uniques2:
+                return True
+
+            uniques2.remove(s2[idx])
+            uniques2.add(s2[idx + len(uniques1)])
+         
+
+        return False
+
+
+        
+
       
       
                 
