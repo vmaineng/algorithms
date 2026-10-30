@@ -838,7 +838,33 @@ def find_subarray_sum(nums, target_sum):
       return (left, right)
     right += 1
     
-      
+      # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        #receive a root node
+        #return the binary tree where nodes are swapped
+        #ex: 
+
+        #iterate through the root node
+        #take the left and right child, swap them
+        #then iterate through the right and left trees
+
+        if not root:
+            return None
+        
+        root.left, root.right = root.right, root.left
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+
       
       
                 
