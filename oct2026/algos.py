@@ -25,4 +25,26 @@ def longest_subarray_sum(nums, target_sum):
 
   return max_window if max_window != 0 else -1
       
-    
+    def longest_unique_substring(s):
+  #receive a string of chars lowercase
+  #return the longest unique strings
+  #ex: 
+
+  #put chars in sets
+  #if char not in set
+  #add, extend right
+  #if char in set, move left
+
+  unique = set()
+  left = 0
+  longest = 0
+
+  for right in range(len(s)):
+    if s[right] not in unique:
+      unique.add(s[right])
+    elif s[right] in unique:
+      longest = max(longest, (right - left + 1))
+      left += 1
+      unique.remove(s[left])
+      print(unique)
+  return longest
