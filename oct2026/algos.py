@@ -48,3 +48,40 @@ def longest_subarray_sum(nums, target_sum):
       unique.remove(s[left])
       print(unique)
   return longest
+
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        #receive a list of strings
+        #return the integer representation of it
+        #ex:
+
+        #if reach integer, add to stack
+        #if reach a '+', '-', '*', and '/'.
+        #then pop the previous number to calculate
+
+        stack = []
+        symbols = ['+', '-', '*', '/']
+
+        result = 0
+
+        for char in tokens:
+            if char not in symbols:
+                stack.append(int(char))
+            else:
+                first = stack.pop()
+                second = stack.pop()
+
+                if char == "+":
+                    result = first + second
+                elif char == '-':
+                    result = second - first
+                elif char == "*":
+                    result = first * second
+                elif char == '/':
+                    result = int(second /first)
+                stack.append(result)
+        return stack[0]
+
+                    
+
+
