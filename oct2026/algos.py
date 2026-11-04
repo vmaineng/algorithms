@@ -117,3 +117,28 @@ class Solution:
             j-=1
         nodes[i].next = None
 
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        #receive a list of integers
+        #return the max profit received
+        #ex: [2,3,4]
+        #.   buy. sell => 2
+
+       # [10,1,5,6,7,1]
+       #. b
+       #. s
+        # 0
+
+        #iterate through the list of integers with sell adn buy
+        #calculate the price made and keep track of max price
+        
+        maxProfit = 0
+        buy = 0
+
+        for sell in range(len(prices)):
+            if prices[sell] < prices[buy]:
+                buy = sell
+            profit = prices[sell] - prices[buy]
+            maxProfit = max(maxProfit, profit)
+
+        return maxProfit
