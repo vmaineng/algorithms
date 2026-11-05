@@ -229,6 +229,32 @@ class Solution:
                     right -=1 
         return result
 
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        # Your code goes here
+        count = 0
+
+        nums.sort()
+
+        for i in range(len(nums)- 2):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            left = 1
+            right = len(nums) -1 
+
+            while left < right:
+                if nums[i] + nums[left] > nums[right] and nums[i] + nums[right] > nums[left] and nums[left] + nums[right] > nums[i]:
+                    count += 1
+                    left += 1
+                    right -=1
+                elif nums[i] + nums[left] > nums[right] and nums[i] + nums[right] > nums[left] and nums[left] + nums[right] > nums[i]:
+                
+
+
+
+
+        return count
+
 
 
 
