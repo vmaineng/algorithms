@@ -142,3 +142,38 @@ class Solution:
             maxProfit = max(maxProfit, profit)
 
         return maxProfit
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+        #receive a list of integers
+        #return the max heigt you can get 
+
+        #[1,7,2,5,4,7,3,6]
+        #   l             r
+        #. 
+        #ex: iterate through with two pointers
+        #cal the width  * highest height seen
+        #store as max height seen
+
+        left = 0
+        right = len(heights) - 1
+        maxHeight = 0
+
+        while left < right:
+            width = right - left
+            height = min(heights[right], heights[left])
+            curr = height * width
+            maxHeight = max(maxHeight, curr)
+
+            if heights[left] < heights[right]:
+                left += 1
+            elif heights[right] < heights[left]:
+                right -=1
+            else:
+                left += 1
+                
+
+        return maxHeight
+
+            
+
+
