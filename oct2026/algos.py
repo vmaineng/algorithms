@@ -175,5 +175,24 @@ class Solution:
         return maxHeight
 
             
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> bool:
+        #receive a list of integers, and a target int
+        #return true if pair is found, else False
+        #ex:
+
+        #left and right since it is sorted
+
+        left = 0
+        right = len(nums) - 1
+
+        while left < right:
+            if nums[left] + nums[right] == target:
+                return True
+            elif nums[left] + nums[right] < target:
+                left += 1
+            else:
+                right -=1
+        return False
 
 
