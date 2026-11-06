@@ -274,4 +274,38 @@ class Solution:
                     left += 1
         return count
 
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        #receive a list of integers
+        #return a list where all 0's are pushed to the end
+        #ex: 
 
+        #use i and j (right)
+        
+        #check if j is 0, then move it down
+        #else check if i is 0, swap it with j's position
+        
+        i = 0
+        j = len(nums) - 1
+
+        while i < j:
+            if nums[j] == 0:
+                j -=1
+            elif nums[i] == 0 and nums[j] != 0:
+               nums[i], nums[j] = nums[j], nums[i]
+               j-=1
+               i += 1
+            elif nums[i] != 0:
+                i += 1
+        return nums
+
+print(Solution().moveZeroes([0,1,0,3,12]))
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        i = 0
+
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                nums[i], nums[j] = nums[j],nums[i]
+                i += 1
