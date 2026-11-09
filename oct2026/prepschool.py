@@ -51,7 +51,26 @@ def subK(nums,k):
             
     return max_sum
 
-print(subK([2, 1, 5, 1, 3, 2], 3))
+# print(subK([2, 1, 5, 1, 3, 2], 3))
 
 
 
+def findMax3(cards, k):
+    #receie a list of cards
+    #return maxSum found
+    #ex:
+
+    #look at first 3, look at last 3, look at firs tand last 2, look at first 2 and last
+    #compare who has highest score
+
+    first_three = sum(cards[0:k])
+    last_three = sum(cards[-k:])
+    first_max = max(first_three, last_three)  
+
+    first_mix = cards[0]+ sum(cards[-2:])
+    second_mix = sum(cards[:2]) + cards[-1]
+    second_max= max(first_mix, second_mix)
+
+    return max(first_max, second_max)
+
+print(findMax3([2,11,4,5,3,9,2], 3))
