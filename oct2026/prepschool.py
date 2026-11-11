@@ -74,3 +74,26 @@ def findMax3(cards, k):
     return max(first_max, second_max)
 
 print(findMax3([2,11,4,5,3,9,2], 3))
+
+class Solution:
+    def trappingWater(self, height: List[int]) -> int:
+        left, right = 0, len(height) - 1
+        leftMax = height[left]
+        rightMax= height[right]
+        total = 0
+
+        while left < right: 
+            if leftMax < rightMax:
+                left += 1
+                if height[left] >= leftMax:
+                    leftMax = height[left]
+                else:
+                    total += leftMax - height[left]
+            
+        else:
+            right -=1
+            if height[right] >= rightMax:
+                rightMax = height[right]
+            else:
+                total += rightMax - heights[right]
+        return total
