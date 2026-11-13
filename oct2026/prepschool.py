@@ -169,3 +169,30 @@ class Solution:
             
 
         return max_sum 
+
+class Solution:
+    def longestSubstringWithoutRepeat(self, s: str) -> int:
+        #receive a string of characters
+        #return longest size of unique chars
+        #ex: 
+
+        #iterate, add to set
+        #while the character is not in set, 
+        #keep adding to the longest
+        #return longest
+
+
+        unique = set()
+        longest = 0
+
+        left = 0
+
+        for right in range(len(s)):
+            while s[right] in unique:
+                unique.remove(s[left])
+                
+                left += 1
+            longest = max(longest, (right - left) + 1)
+            unique.add(s[right])
+            
+        return longest
