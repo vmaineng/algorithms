@@ -152,3 +152,20 @@ def maxSum(nums, k) -> int:
 #set: [2, 4, 5, 6 ]
 
 print(maxSum( [1,2,3,4,5], 4))
+
+class Solution:
+    def maxSum(self, nums: List[int], k: int) -> int:
+        left = 0
+        max_sum = float('-inf')
+        total = 0
+
+        for right in range(len(nums)): 
+            total += nums[right]
+            print(total )
+            if (right - left) + 1 == k:
+                max_sum =max(max_sum, total)
+                total -= nums[left]
+                left += 1
+            
+
+        return max_sum 
