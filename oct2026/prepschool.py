@@ -205,3 +205,33 @@ class Solution:
             if intervals[i][0] < intervals[i-1][1]:
                 return False
         return True
+
+    class Solution:
+    def insertIntervals(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of lists
+        #return the list where the new interval is added
+        #ex: 
+
+        #sort by start times
+        #add in first result to list
+        #then check if the start of curr interval < end of prev
+        #if so, update the end
+        #else, add it in
+        #return list
+
+        if not intervals:
+            return [newInterval]
+
+        result = [ ]
+
+        for start, end in intervals:
+            if end <  newInterval[0]:
+                result.append([start, end])
+            elif start > newInterval[1]:
+                result.append(newInterval)
+                newInterval = [start, end]
+            else:
+                newInterval[0] = min(newInterval[0], start)
+                newInterval[1] = max(newInterval[1], end)
+        result.append(newInterval)
+        return result
