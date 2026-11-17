@@ -235,3 +235,27 @@ class Solution:
                 newInterval[1] = max(newInterval[1], end)
         result.append(newInterval)
         return result
+
+class Solution:
+    def insertIntervals(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of integers
+        #while the end of current is less than new interval start, add 
+        #overlap: take the min of starts and max of ends
+        #if the end < start of intervals, add
+
+        if not intervals:
+            return [newInterval]
+
+        merged = []
+        for start, end in intervals:
+            if end < newInterval[0]:
+                merged.append([start, end])
+
+            elif start <= newInterval[1]:
+                newInterval[0] = min(start, newInterval[0])
+                newInterval[1] = max(end, newInterval[1])
+            else:
+                merged.append(newInterval)
+                newInterval = [start, end]
+        merged.append(newInterval)
+        return merged
