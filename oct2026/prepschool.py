@@ -259,3 +259,36 @@ class Solution:
                 newInterval = [start, end]
         merged.append(newInterval)
         return merged
+
+    class Solution:
+    def insertIntervals(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of lists
+        #return the list where the newINterval is added in 
+        #ex: 
+
+        #check the end time is < start of newInt
+        #add to merged
+        #if overlap, update min and max
+        #if after newINt end, add it in 
+
+        if not intervals:
+            return newInterval
+
+
+        merged = []
+        i = 0
+        n  = len(intervals)
+
+        while i < n and intervals[i][1] < newInterval[0]:
+            merged.append(intervals[i])
+            i += 1
+
+        while i < n and intervals[i][0] <= newInterval[1]:
+            newInterval[0] = min(intervals[i][0], newInterval[0])
+            newInterval[1] = max(intervals[i][0], newInterval[1])
+            i += 1
+
+        merged.append(newInterval)
+        for j in range(i, n):
+            merged.append(intervals[j])
+        return merged
