@@ -285,10 +285,33 @@ class Solution:
 
         while i < n and intervals[i][0] <= newInterval[1]:
             newInterval[0] = min(intervals[i][0], newInterval[0])
-            newInterval[1] = max(intervals[i][0], newInterval[1])
+            newInterval[1] = max(intervals[i][1], newInterval[1])
             i += 1
 
         merged.append(newInterval)
         for j in range(i, n):
             merged.append(intervals[j])
         return merged
+
+    class Solution:
+    def mergeIntervals(self, intervals: List[List[int]]) -> List[List[int]]:
+        #receive a list of lists
+        #return a list of lists back where overlapping intervals merge together
+        #ex: 
+
+        #sort by start
+        #check if the start of curr <= result
+        #update the end
+
+        if not intervals:
+            return []
+
+        intervals.sort(key=lambda x: x[0])
+        result = [intervals[0]]
+
+        for i in range(1, len(intervals)):
+            if intervals[i][0] <= result[-1][-1]:
+                result[-1][-1] = max(result[-1][-1], intervals[i][1])
+            else:
+                result.append(intervals[i])
+        return result
