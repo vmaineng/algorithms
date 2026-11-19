@@ -315,3 +315,20 @@ class Solution:
             else:
                 result.append(intervals[i])
         return result
+
+    class Solution:
+    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        #receive a list of pairs
+        #return boolean if person can attend all meetings
+        #ex: 
+
+        #sort by start time
+        #check if the start of curr is < prev: return False
+        #else return True
+
+        intervals.sort(key=lambda x:x[0])
+
+        for i in range(1, len(intervals)):
+            if intervals[i][0] < intervals[i-1][1]:
+                return False
+        return True
