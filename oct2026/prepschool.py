@@ -351,3 +351,23 @@ class Solution:
                 newInterval = [start, end]
         merged.append(newInterval)
         return merged
+
+    class Solution:
+    def insertIntervals(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        if not intervals:
+            return [newInterval]
+
+        merged = []
+
+        for start,end in intervals:
+            if end < newInterval[0]:
+                merged.append([start,end])
+
+            elif start <= newInterval[1]:
+                newInterval[0]= min(newInterval[0], start)
+                newInterval[1]= max(newInterval[1], end)
+            else:
+                merged.append(newInterval)
+                newInterval = [start, end]
+        merged.append(newInterval)
+        return merged
