@@ -387,3 +387,32 @@ class Solution:
             else:
                 count += 1
         return count
+
+    class Solution:
+    def insertIntervals(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #receive a list of lists
+        #return a new list of lists where the newinterval is added in
+        #ex: 
+
+        #iterate through
+        #if end < start of new int, add in 
+        #else, merge them b /c they overlap
+        #set the range afterwards as new interval, then merge them in
+
+        if not intervals:
+            return [newInterval]
+
+        merged = []
+
+        for start,end in intervals:
+            if end < newInterval[0]:
+                merged.append([start, end])
+            elif start <= newInterval[1]:
+                newInterval[0] = min(newInterval[0], start)
+                newInterval[1] = max(newInterval[1], end)
+            else:
+                merged.append(newInterval)
+                newInterval = [start, end]
+        merged.append(newInterval)
+
+        return merged
