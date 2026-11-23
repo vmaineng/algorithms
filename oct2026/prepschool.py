@@ -416,3 +416,29 @@ class Solution:
         merged.append(newInterval)
 
         return merged
+
+    class Solution:
+    def isValid(self, s: str) -> bool:
+        #receive a string of parens
+        #return boolean if pairs or not
+        #ex: 
+
+        stack = []
+
+        parens = {
+            '(':')',
+            '[':']',
+            '{':'}'
+        }
+
+        for paren in s:
+            if paren in parens:
+                stack.append(paren)
+            else:
+                if not stack:
+                    return False
+                last = stack.pop()
+                if paren != parens[last]:
+                    return False
+        return not stack
+        
