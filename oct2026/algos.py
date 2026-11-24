@@ -310,5 +310,29 @@ class Solution:
                 nums[i], nums[j] = nums[j],nums[i]
                 i += 1
 
+class Solution:
+    def isValid(self, s: str) -> bool:
+        #receive a string of parens
+        #return boolean if matching, else False
+        #ex: 
 
+        stack = []
+
+        parens = {
+            '{':'}',
+            '(':')',
+            '[':']'
+        }
+
+        for paren in s:
+            if paren in parens:
+                stack.append(paren)
+            else:
+                if not stack:
+                    return False
+                else:
+                    last = stack.pop()
+                    if paren != parens[last]:
+                        return False
+        return not stack
     
